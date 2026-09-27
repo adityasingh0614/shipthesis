@@ -1,0 +1,23 @@
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 24px+ tap target around a small visual dot. */
+.dotHit {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  height: 32px;
+  padding: 0 3px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.dot {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+}

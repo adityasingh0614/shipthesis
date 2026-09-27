@@ -1,0 +1,102 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 88px) var(--gutter) clamp(48px, 7vw, 96px);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.875rem, 7.2vw, 5.75rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.titleMuted {
+  color: var(--ink-muted);
+}
+
+/* Two lines on desktop: grey line, then ink line. */
+@media (min-width: 720px) {
+  .titleMuted,
+  .titleLine {
+    display: block;
+  }
+}
+
+.sub {
+  max-width: 42ch;
+  margin-top: clamp(20px, 2.5vw, 28px);
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 28px;
+  margin-top: clamp(28px, 3.5vw, 40px);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 160ms ease-out;
+}
+.link svg {
+  transition: transform 160ms ease-out;
+}
+.link:hover {
+  text-decoration-color: currentColor;
+}
+.link:hover svg {
+  transform: translateX(3px);
+}
+
+.stage {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: clamp(40px, 6vw, 72px);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface-alt);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 719px) {
+  .title {
+    font-size: min(2.875rem, 11.6vw);
+  }
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .actions :global(.btn) {
+    width: 100%;
+  }
+  .stage {
+    aspect-ratio: 4 / 5;
+  }
+}

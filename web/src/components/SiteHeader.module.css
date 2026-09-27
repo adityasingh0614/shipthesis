@@ -1,0 +1,105 @@
+/* Sticky positioning, fill and height animation live in motion-ui/shrink-header. */
+.header {
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.wordmark {
+  flex-shrink: 0;
+}
+
+.wordmarkText {
+  display: inline-block;
+  transform-origin: left center;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cluster {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+  transform-origin: right center;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.nav a {
+  padding: 6px 0;
+  transition: color 160ms ease-out;
+}
+.nav a:hover {
+  color: var(--ink);
+}
+
+.cta {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: 0.9375rem;
+}
+
+.menu {
+  display: none;
+  margin-left: auto;
+}
+.menu summary {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  list-style: none;
+}
+.menu summary::-webkit-details-marker {
+  display: none;
+}
+
+/* top: 100% tracks the header's animated height. */
+.menuPanel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px var(--gutter) 24px;
+  background: var(--surface);
+  border-bottom: 2px solid var(--line);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.menuPanel a:not(:global(.btn)) {
+  padding: 12px 0;
+}
+.menuPanel :global(.btn) {
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .cluster {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+}

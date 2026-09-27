@@ -1,0 +1,273 @@
+.section {
+  background: var(--surface-alt);
+}
+
+/* ---- Shared ---- */
+
+/* Section headings are centred site-wide (CLAUDE.md). */
+.head {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 112px) var(--gutter) 0;
+  text-align: center;
+}
+
+/* Inside the pinned frame: heading and card pause together. */
+.headPinned {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.lede {
+  max-width: 56ch;
+  margin: 14px auto 0;
+  font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: clamp(24px, 3.4vw, 44px);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+/* Top-aligned so shorter cards don't float down (e.g. no time line). */
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: start;
+  min-width: 0;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  /* Darkened so small text clears 4.5:1 for every project colour. */
+  color: color-mix(in srgb, var(--accent) 70%, #000);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Two-colour title: first part in the project colour, rest in ink. */
+.name {
+  margin-top: 16px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.7vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.nameAccent {
+  color: var(--accent);
+}
+
+.description {
+  max-width: 48ch;
+  margin-top: 12px;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-control);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 18px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.metaItem svg {
+  color: var(--ink-soft);
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green-bright);
+}
+
+/* Secondary to the single "Book a Discovery Call" button: outlined, not filled. */
+.caseLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  margin-top: 22px;
+  padding: 0 18px;
+  border: 2px solid var(--green);
+  border-radius: var(--radius-control);
+  color: var(--green);
+  font-weight: 600;
+  transition:
+    background-color 160ms ease-out,
+    color 160ms ease-out;
+}
+.caseLink svg {
+  transition: transform 200ms ease-out;
+}
+.caseLink:hover {
+  background: var(--green);
+  color: #fff;
+}
+.caseLink:hover svg {
+  transform: translateX(4px);
+}
+
+.visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 3.4;
+  justify-self: center;
+  border: 2px dashed color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+.visualNote {
+  font-size: 0.75rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  max-width: var(--max);
+  width: 100%;
+  margin: 16px auto 0;
+}
+
+/* ---- Pinned (desktop): section sticks, scroll slides the rail ---- */
+
+.pin {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+  height: 100dvh;
+  padding: 24px var(--gutter);
+  overflow: hidden;
+}
+
+/* Clip so only the current card shows, no peek of the next. */
+.track {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.rail {
+  display: flex;
+  gap: 32px;
+  will-change: transform;
+}
+
+/* ---- Swipe (phones, short screens, reduced motion) ---- */
+
+.flow {
+  padding: 0 var(--gutter) clamp(64px, 9vw, 112px);
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  max-width: var(--max);
+  margin: 28px auto 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.row::-webkit-scrollbar {
+  display: none;
+}
+/* One full card at a time, no peek of the next. */
+.row .card {
+  flex-basis: 100%;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 860px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .visual {
+    max-width: none;
+    aspect-ratio: 16 / 10;
+    order: -1;
+  }
+}

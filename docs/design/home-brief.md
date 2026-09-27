@@ -1,0 +1,186 @@
+# Home Page Brief
+
+**Version:** v22
+**Last updated:** 2026-09-26
+**For:** whoever designs and builds the Ship Thesis homepage (Impeccable + the taste skill).
+**Facts source:** `.agents/product-marketing.md` (the brand brief wins on any fact). **Copy:** `docs/copy/home.md`. **Motion:** `docs/design/motion-components.md` (which motion component each section uses; each section below names its own).
+
+This brief says **what each section must say and achieve**. It deliberately does not prescribe layout, sizes, spacing, card styles or animation mechanics: those are design decisions for the design skills. Where the founder has a direction in mind, it's noted as a starting point, not a spec.
+
+---
+
+## 0. Fixed rules (content and brand, not layout)
+
+**Content truth**
+- No invented facts: no numbers, logos, ratings, quotes or claims that aren't in the brand brief. Missing items stay as clearly marked placeholders.
+- Client names allowed: Aptellic (Access Yourself), EHS Guru (EHS Training Platform). Nothing else.
+- One button label everywhere: "Book a Discovery Call".
+- Prices only as stated in the brand brief; /pricing owns the detail.
+- No code-drawn fake app screens. App screens are real screenshots or recordings with demo data.
+- Sections with no real content yet (testimonials, blog) are built with placeholders and hidden on the live site until real content exists.
+
+**Brand commitments the founder has pinned** (honour these; everything else is open)
+- Light theme only.
+- Green is the brand: deep green `#0A7F55` for actions, bright green `#24B47E` for small highlights only (never text or button fills).
+- Headings: Phudu, uppercase.
+- Labels and prices: JetBrains Mono.
+- Secondary text colour `#445048` (the founder rejected the lighter grey as dull).
+- Sections alternate between two tones of one neutral (white and a slightly darker shade), so bands are clearly visible.
+- Cards need a visible border (the founder found 1px too faint).
+- No gradients, no emoji, no em dashes in visible copy.
+
+**Quality floor:** accessible (contrast, focus, keyboard), works at 360px first, respects reduced motion, fast to load.
+
+---
+
+## 1. Hero
+
+**Job:** in five seconds, a founder knows we take an idea to a live AI-powered app or SaaS product, and books a call.
+
+**Copy (final):**
+- H1: FROM FIRST IDEA *(grey)* TO A LIVE PRODUCT.
+- Subheading: AI-powered mobile apps and SaaS for founders: a new build on your phone every week, and code you own.
+- Actions: Book a Discovery Call · See our work →
+
+**Founder's direction:** centred text, with one big animation below it (like Flutter Your Way's hero proportion). **The animation itself is undecided and gets built last.** Leave a placeholder until then.
+
+**Motion:** Stagger Reveal on the headline, subheading and buttons; header uses Shrink Header (hides on scroll down, returns on scroll up). See `docs/design/motion-components.md`.
+
+---
+
+## 2. Our work
+
+**Job:** prove we ship real work, fast: client apps and our own product.
+
+**Content:** four projects, in this order. Own products join the same carousel as they ship; never a second section for them.
+
+| Project | Client line | What it is | Stack | Status / time |
+|---|---|---|---|---|
+| Access Yourself | Client: Aptellic | A scalable ed-tech platform with a TypeScript/Express REST API and Flutter mobile app, featuring exam prep, live tests, subscriptions via Razorpay, and Firebase-backed auth. | Flutter, Node.js, Express, Firebase, Razorpay (pending: founder to supply final stack) | 3-4 weeks · Delivered, launching soon |
+| EHS Training Platform | Client: EHS Guru | A dedicated, brand-first LMS built for live cohort-based learning. | Next.js, Supabase, Zoom API, TypeScript, Sentry, Tailwind CSS | Since May 2026 · Live, on our maintenance plan |
+| Poststeady | Our own product | A client-reporting SaaS that turns messy CSV exports into a branded report, with the analysis written, not just charted. | Next.js, Supabase, TypeScript, Tailwind CSS, Dodo Payments, Puppeteer | Built in 11 weeks · Live |
+| ChromaLayer | Our own product | A native Windows utility for advanced, system-wide display color and temperature control. | C# / .NET / WPF, Magnification API, Velopack, Astro, Tailwind CSS, Dodo + Cloudflare Workers | Live · /work/chromalayer; product page link, never the installer |
+
+Each project shows a visual of the product (real screens, demo data), its name, client line, description, stack, status and a link to its case study.
+
+**Project colours:** each project title is two colours: the first part in the project colour, the rest in ink (Access / Yourself, EHS Training / Platform, Poststeady Client / Reporting Tool, Chroma / Layer; colour covers Poststeady Client, EHS Training and Chroma); the subheading and everything else stay in the page colours. Access Yourself `#283593` (darker shade `#1C2B7A`), EHS Training Platform `#00674C`, Poststeady `#1A5BFA`, ChromaLayer `#030d26`. The same colour is that project's primary accent on its case study page. These are the only exception to green-as-brand, and only inside that project's card or page; buttons stay green.
+
+**Also say here** (answers "can a small studio do this?"): we build and run our own products, so we deal with the same releases, bugs, payments and support you will. This sits in the section subheading.
+
+**Founder's direction:** a carousel of project cards that moves as you scroll, one full card at a time (no arrows, no peek of the next card), with the top six stack items per project.
+
+**Motion:** Carousel Controls + Screenshot Scroll Reveal. See `docs/design/motion-components.md`.
+
+---
+
+## 3. How it works
+
+**Job:** show a thorough, visible process from first call to launch, so a founder trusts we won't disappear.
+
+**Content:** six steps.
+
+| Step | When | What you get |
+|---|---|---|
+| Discovery call | Day 1, 30 minutes | A straight answer on fit, plus a Discovery Sprint: a written scope, wireframes and a fixed quote with timeline and milestones |
+| Design | Before each screen is built | Designs for your app's screens, which you see and approve before we build them |
+| Development | Weeks 2 onward | A new build on your phone every week, against the milestones in your quote |
+| Testing | Every week, and before submission | Each weekly build is tested before it reaches your phone, and the whole app is checked end to end before store submission |
+| Store submission | End of build | We handle App Store and Play Store submission and review |
+| Launch | Launch day | Your app, live, on accounts in your name |
+
+Link: "What each stage includes →" (to /services). No prices here.
+
+**Founder's direction:** follow the founder's reference: a grid of step cards (three per row on desktop), each with a visual on top (placeholder until real visuals arrive), a STEP 01-06 badge, the step name, one line on what you get, and its timing. Arrows sit between cards in a row. Design, Development and Testing carry an "Every week" marker. The earlier drawn-line diagram was dropped.
+
+**Motion:** Stagger Reveal, cards fade up in sequence as they come into view. See `docs/design/motion-components.md`.
+
+---
+
+## 4. What we build
+
+**Job:** show we build the whole product, not just screens, including AI.
+
+| Service | Line |
+|---|---|
+| Cross-platform apps | Built once in Flutter, live on both the App Store and Play Store. Our default for most MVPs. |
+| Native iOS & Android | When your app needs everything the phone can do, we build it natively in Swift and Kotlin. |
+| Custom solutions | Bespoke products tailored to your unique business needs and goals. |
+| AI features | AI added where it makes the product better: summaries, chat, automation and more. Not as a gimmick. |
+| SaaS apps & platforms | Customer-facing web apps with accounts, billing, dashboards and the systems behind them. It's the kind of product we build and run ourselves. |
+Link: "See how each one works →" (to /services).
+
+**Founder's direction:** service cards with motion, in the spirit of Flutter Your Way's services section. Built 2026-09-26: five cards (three on the first row, two wider below), each with a visual on top (placeholder until the founder's animated visuals arrive), the service name and its line. Heading: WHAT WE BUILD, with a subheading. Copy lives in `docs/copy/home.md`.
+
+**Motion:** each card has its own coded animated scene (shapes only, no fake app screens); no card tilt. See `docs/design/motion-components.md`.
+
+---
+
+## 5. Pricing
+
+**Job:** show our prices in the open (competitors hide theirs) and send people to /pricing.
+
+| Item | Price | Line |
+|---|---|---|
+| Discovery Sprint | $750 | One week. Credited toward your build if you continue. |
+| MVP Build | From $6,000 | Typically 6-10 weeks, as a fixed quote. |
+| Support | From $300/month | After 30 days of free fixes. |
+
+Link: "See full pricing →". No "recommended" option, no discounts.
+
+**Motion:** Border Beam. See `docs/design/motion-components.md`.
+
+---
+
+## 6. Testimonials
+
+**Job:** third-party proof. **We have none yet:** placeholders only, hidden on the live site until real, approved quotes exist. Never write sample quotes that look real.
+
+**Founder's direction:** a mixed grid of video and text testimonials.
+
+**Motion:** Stagger Reveal. See `docs/design/motion-components.md`.
+
+---
+
+## 7. From the blog
+
+**Job:** show we write about building apps. **No posts yet:** placeholders only, hidden on the live site until three real posts exist. A blog automation will fill it later, so each post needs: title, excerpt, date, cover image, link. Link: "See all posts →" (to /blog).
+
+**Motion:** Stagger Reveal. See `docs/design/motion-components.md`.
+
+---
+
+## 8. Final call to action
+
+**Heading:** TELL US WHAT YOU WANT TO BUILD
+**Body:** Book a call and bring the idea as it is. We'll talk it through and tell you honestly if we're the right fit. If we are, the next step is a one-week Discovery Sprint for $750, credited toward your build if you continue. It ends with a fixed quote.
+**Button:** Book a Discovery Call. **Links:** How the Discovery Sprint works → · See pricing →
+
+**Motion:** Magnetic Pull on the button. See `docs/design/motion-components.md`.
+
+---
+
+## Open items
+
+- Hero animation: to be decided (built last).
+- Access Yourself logo: is it covered by Aptellic's approval?
+- Real demo-data screens for the three projects.
+- Testimonials: none yet.
+- Blog: no posts yet; automation later.
+
+## Changelog
+
+- v22 (2026-09-26): Card copy is the founder's own (five cards, order: Cross-platform, Native, Custom solutions, AI features, SaaS apps & platforms).
+- v21 (2026-09-26): Reverted to five cards (3+2 grid); backend card copy rewritten instead of moved to a bar.
+- v20 (2026-09-26): Backend shown as included with every app, not as a separate service card.
+- v19 (2026-09-26): What we build lines rewritten (copywriting skill); no Poststeady tag on the AI card.
+- v18 (2026-09-26): What we build built: five service cards with Tilt Card motion.
+- v17 (2026-09-26): How it works rebuilt from the founder's reference as a step-card grid; the drawn-line diagram is dropped. Our work pins with its heading visible.
+- v16 (2026-09-26): How it works built as a drawn line with a weekly loop (option A).
+- v15 (2026-09-26): Founder's card titles and subheadings; EHS Training Platform renamed; colours updated (Access Yourself #283593, ChromaLayer #020914); one full card at a time.
+- v14 (2026-09-26): Project colours and two-colour project headings; the colour carries into each case study page.
+- v13 (2026-09-26): ChromaLayer becomes the fourth carousel card; own products share the one carousel. The own-products point moved into the subheading. Section headings are centred.
+- v12 (2026-09-26): Our work is a scroll-driven carousel with no arrows and five stack items per project.
+- v11 (2026-09-26): Each section names its motion component; full plan in `docs/design/motion-components.md`. Header: Shrink Header that hides on scroll down and returns on scroll up.
+- v10 (2026-09-26): Stripped to content and goals. Removed prescriptive layout, sizing, card styling and motion specs so Impeccable and the taste skill can design freely; the founder's directions stay as starting points, and the brand commitments the founder pinned are listed in section 0.
+- v9 (2026-09-26): Added pricing teaser, blog section and an AI features service.
+- v1–v8 (2026-09-25/26): Earlier drafts, including the dropped week-by-week hero stage, phone-recording hero and isometric scene.
