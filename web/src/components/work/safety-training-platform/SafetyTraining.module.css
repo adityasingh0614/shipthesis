@@ -111,14 +111,18 @@
   gap: clamp(32px, 6vw, 96px);
   margin-top: 64px;
 }
+/* Smaller ceiling than Assess Yourself's .big ("3-4 / weeks"): "Live
+   since" and "May 2026" are longer words, so a display size that big
+   wraps mid-word instead of holding two lines. */
 .big {
   font-family: var(--font-display);
-  font-size: clamp(4.5rem, 13vw, 10rem);
+  font-size: clamp(2.75rem, 6.6vw, 5.5rem);
   font-weight: 700;
-  line-height: 0.86;
-  letter-spacing: -0.03em;
+  line-height: 1;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--accent);
+  white-space: nowrap;
 }
 .bigLine {
   margin-top: 14px;
