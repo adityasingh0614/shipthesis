@@ -1,24 +1,22 @@
 # Sitemap
 
-**Version:** v10
-**Last updated:** 2026-09-26
+**Version:** v11
+**Last updated:** 2026-09-28
 
 Launch scope only — pages we can fill with real content today. See reasoning for omitted pages at the bottom.
 
 ## Page Hierarchy
 
 ```
-Home (/)
-├── Work (/work)
-│   ├── Access Yourself (/work/access-yourself)
-│   ├── EHS Training Platform (/work/safety-training-platform)
-│   ├── Poststeady (/work/poststeady)
-│   └── ChromaLayer (/work/chromalayer)
+Home (/)  (Our work = #work, Get in touch = #contact)
+├── Assess Yourself (/work/assess-yourself)
+├── EHS Training Platform (/work/safety-training-platform)
+├── Poststeady (/work/poststeady)
+├── ChromaLayer (/work/chromalayer)
 ├── Services (/services)
 ├── Pricing (/pricing)
 ├── Blog (/blog) — planned, placeholder until posts exist
-├── About (/about)
-└── Contact (/contact)
+└── About (/about)
 ```
 
 ## URL Map
@@ -27,7 +25,7 @@ Home (/)
 |---|---|---|---|---|
 | Home | `/` | Establish who we are + the fear-reduction pitch (fixed scope, weekly builds, you own the code); route to Work/Services | mobile app development for startups | Book a Discovery Call |
 | Work (index) | `/work` | Proof hub — list all three case studies (no filter) | — (no clean seed match) | Book a Discovery Call |
-| Access Yourself | `/work/access-yourself` | Lead case study: client Flutter app, problem→outcome | — (project-specific, not a seed term) | Book a Discovery Call |
+| Assess Yourself | `/work/assess-yourself` | Lead case study: client Flutter app, problem→outcome | — (project-specific, not a seed term) | Book a Discovery Call |
 | EHS Training Platform | `/work/safety-training-platform` | Case study: EHS Guru's web platform, live | — (project-specific) | Book a Discovery Call |
 | Poststeady | `/work/poststeady` | Full case study: own live product, proves we ship and maintain our own SaaS | — (project-specific; could target "Poststeady" branded search) | Try Poststeady / Book a Discovery Call |
 | Services | `/services` | Explain the three-stage engagement (Discovery Sprint → MVP Build → Ship & Support), scope/cost/timeline honesty | MVP app development (secondary: Flutter app development) | Book a Discovery Call |
@@ -41,7 +39,7 @@ Home (/)
 
 ## Navigation
 
-**Header nav** (5 items + CTA): `Work · Services · Pricing · About · Contact` — CTA button: **Book a Discovery Call** (rightmost, links to `/contact`)
+**Header nav** (5 items + CTA): `Work (/#work) · Services · Pricing · About · Contact (/#contact)` — CTA button: **Book a Discovery Call** (rightmost, links to `/#contact`)
 
 **Footer:**
 - **Studio** — Work, Services, Pricing, About (Blog added here once it has three real posts)
@@ -51,7 +49,7 @@ Home (/)
 ## Internal Linking
 
 - Every case study card on `/work` links to its own page; every case study page links back to `/work` and forward to `/contact`.
-- `/services` links out to 1–2 relevant case studies per stage (e.g. MVP Build → Access Yourself as mobile proof; EHS Training Platform and Poststeady for backend and web).
+- `/services` links out to 1–2 relevant case studies per stage (e.g. MVP Build → Assess Yourself as mobile proof; EHS Training Platform and Poststeady for backend and web).
 - `/services` links to `/pricing` from each stage and from the FAQ cost answer; `/pricing` links back to `/services` for what each stage includes.
 - `/about` links to `/work` ("judge us by live work, not headcount" — ties directly to the differentiation point in the marketing doc) and to `/contact`.
 - `/contact` ("What happens next") and the Home final CTA link to `/pricing`.
@@ -87,6 +85,7 @@ Covers founder objections within the page:
 
 ## Changelog
 
+- v11 (2026-09-28) — No `/work` index (Home's Our work carousel is the index) and no `/contact` page (Get in touch is Home's closing section, `#contact`). Case study pages follow `docs/design/case-study-brief.md`. The URL map rows for Work and Contact below are historical.
 - v10 (2026-09-26) — Blog planned at /blog: Home shows a placeholder blog section (hidden until three real posts); blog automation later. Not in the header nav yet.
 - v9 (2026-09-25): Footer email is hello@shipthesis.com.
 - v8 (2026-09-25) — Time-zone FAQ line updated; no overlap-hours placeholder.
@@ -94,6 +93,6 @@ Covers founder objections within the page:
 - v6 (2026-09-25) — Added `/pricing` (primary keyword: cost to build an app / MVP) with the final pricing; added to header nav and footer. Services FAQ list expanded to cost, timeline, ownership, after launch and time zones. Secondary keyword is "Flutter app development". Contact uses a Cal.com embed.
 - v5 (2026-09-24) — Work index has no filter.
 - v4 (2026-09-24) — EHS Guru can now be named on the Safety training platform case study.
-- v3 (2026-09-24) — Final project list. Case studies: Access Yourself, Safety training platform (/work/safety-training-platform, replaces EHS LMS), Poststeady. Removed /work/pawgloo, EHS Guru and NIEV.
-- v2 (2026-09-24) — Case studies now Access Yourself, Pawgloo (lead, mobile), EHS LMS (replaces Train Platform), Poststeady. Removed /work/chromalayer (one-line mention only). EHS Guru confirmed not a case study. CTA is "Book a Discovery Call" everywhere.
+- v3 (2026-09-24) — Final project list. Case studies: Assess Yourself, Safety training platform (/work/safety-training-platform, replaces EHS LMS), Poststeady. Removed /work/pawgloo, EHS Guru and NIEV.
+- v2 (2026-09-24) — Case studies now Assess Yourself, Pawgloo (lead, mobile), EHS LMS (replaces Train Platform), Poststeady. Removed /work/chromalayer (one-line mention only). EHS Guru confirmed not a case study. CTA is "Book a Discovery Call" everywhere.
 - v1 (2026-09-23) — Initial launch sitemap: Home, Work index + 4 case studies, Services (single page), About, Contact.

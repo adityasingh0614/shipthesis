@@ -8,36 +8,36 @@ import styles from "./HowItWorks.module.css";
 const STEPS = [
   {
     label: "Discovery call",
-    when: "Day 1, 30 minutes",
-    body: "A straight answer on fit, plus a Discovery Sprint: a written scope, wireframes and a fixed quote with timeline and milestones.",
+    when: "Day 1 · 30 minutes",
+    body: "We learn what you're building, what you need, and whether we're the right fit. Then we turn it into a clear scope, wireframes, timeline, and milestones.",
   },
   {
     label: "Design",
     when: "Before each screen is built",
-    body: "Designs for your app's screens, which you see and approve before we build them.",
+    body: "We design the screens your users will see, then get your approval before development begins.",
     weekly: true,
   },
   {
     label: "Development",
-    when: "Weeks 2 onward",
-    body: "A new build on your phone every week, against the milestones in your quote.",
+    when: "Weeks 2 onward · Every week",
+    body: "You get a new working build on your phone every week, with progress tied to the agreed milestones.",
     weekly: true,
   },
   {
     label: "Testing",
-    when: "Every week, and before submission",
-    body: "Each weekly build is tested before it reaches your phone, and the whole app is checked end to end before store submission.",
+    when: "Every week + before submission",
+    body: "Every build is tested before it reaches you, with full end-to-end testing before submission.",
     weekly: true,
   },
   {
     label: "Store submission",
     when: "End of build",
-    body: "We handle App Store and Play Store submission and review.",
+    body: "We handle the App Store and Play Store submission, including the review process.",
   },
   {
     label: "Launch",
     when: "Launch day",
-    body: "Your app, live, on accounts in your name.",
+    body: "Your app, live on the App Store and Play Store.",
   },
 ];
 
@@ -52,8 +52,8 @@ export function HowItWorks() {
             How it works
           </h2>
           <p className={styles.lede}>
-            From the first call to launch, with design, development and testing
-            repeating every week until your app ships.
+            From the first call to launch, design, development, and testing move
+            in weekly cycles until your product is ready to ship.
           </p>
         </div>
 

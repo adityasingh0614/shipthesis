@@ -2,15 +2,7 @@
 
 import { motion } from "motion/react";
 import { siAndroid, siApple, siFlutter, type SimpleIcon } from "simple-icons";
-import {
-  enter,
-  Logo,
-  mono,
-  POP,
-  useLoop,
-  useShadow,
-  sceneFade,
-} from "./shared";
+import { Logo, POP, enter, mono, useLoop, useShadow } from "./shared";
 
 /*
  * Cross-platform apps: one Flutter codebase is written, the build branches,
@@ -134,13 +126,7 @@ export function CrossPlatformVisual() {
   };
 
   return (
-    <motion.svg
-      {...sceneFade(play)}
-      viewBox="0 0 400 300"
-      width="100%"
-      height="100%"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 400 300" width="100%" height="100%" aria-hidden="true">
       <defs>{shadow.def}</defs>
       {branch("M200,112 C200,140 118,132 118,158")}
       {branch("M200,112 C200,140 282,132 282,158")}
@@ -190,6 +176,6 @@ export function CrossPlatformVisual() {
 
       {phone(118, siApple, "iOS", 0, "var(--ink)")}
       {phone(282, siAndroid, "Android", 0.04)}
-    </motion.svg>
+    </svg>
   );
 }

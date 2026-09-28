@@ -1,5 +1,7 @@
 # Safety training platform
 
+> **Superseded 2026-09-28.** This copy follows the retired shared template. The page's plan now lives in `docs/design/case-study-brief.md` §3 ("The Session Console"). Rewrite this file to match once the page is built.
+
 **Page accent:** `#00674C` (project colour; use it as this page's primary accent, buttons stay green). See `docs/design/home-brief.md` §2.
 
 A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.

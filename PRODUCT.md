@@ -49,8 +49,8 @@ Founders arrive mostly already aware of their problem and comparing studios (org
 
 ## Evidence on Hand
 
-- Case studies: Access Yourself (client Aptellic, Flutter exam-prep app, 3-4 weeks, delivered, launching soon; new exams go live from a single Excel upload), EHS Training Platform (client EHS Guru, Next.js + Supabase, live since May 2026, on a maintenance plan), Poststeady (own product, Next.js + Supabase, built in 11 weeks, live, AI-written report summaries). Copy in `docs/copy/case-studies/`.
-- Aptellic approved using Access Yourself (demo data) on the site; logo approval unconfirmed.
+- Case studies: Assess Yourself (client Aptellic, Flutter exam-prep app, 3-4 weeks, delivered, launching soon; new exams go live from a single Excel upload), EHS Training Platform (client EHS Guru, Next.js + Supabase, live since May 2026, on a maintenance plan), Poststeady (own product, Next.js + Supabase, built in 11 weeks, live, AI-written report summaries). Copy in `docs/copy/case-studies/`.
+- Aptellic approved using Assess Yourself (demo data) on the site; logo approval unconfirmed.
 - Absent, never fabricate: testimonials, user or revenue numbers, client logos, ratings, blog posts.
 
 ## Product Principles

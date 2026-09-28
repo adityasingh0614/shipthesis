@@ -18,9 +18,9 @@
 
 ## 2. Project grid
 
-**Card 1: Access Yourself**
+**Card 1: Assess Yourself**
 > Client · Mobile app · Flutter, Node.js/Express, Firebase · 3–4 weeks · Delivered to client, launching soon
-> **Access Yourself**
+> **Assess Yourself**
 > One app for students to find a government exam, sit timed papers and track their scores.
 > Read the case study →
 

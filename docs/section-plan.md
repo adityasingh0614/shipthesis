@@ -30,13 +30,13 @@ Structure only. Content notes are directions, not final copy. Write copy in the 
 | Code ownership | Services | 7. FAQ |
 | Post-launch | Services | 5. Ship & Support |
 
-**Own products aren't mobile apps.** Poststeady is a web SaaS and ChromaLayer is a Windows desktop app. Use them as proof that we **ship and run real products as founders**, never as proof of mobile work. Mobile proof comes from Access Yourself, our Flutter case study.
+**Own products aren't mobile apps.** Poststeady is a web SaaS and ChromaLayer is a Windows desktop app. Use them as proof that we **ship and run real products as founders**, never as proof of mobile work. Mobile proof comes from Assess Yourself, our Flutter case study.
 
 **ChromaLayer: one line only.** No card, no case study page. It appears once, in Home section 3: "We also built ChromaLayer, a Windows app that keeps laptop screen colors right after every restart, sleep and update." Link to the ChromaLayer product page, never the installer download.
 
 **Safety training platform: the client is EHS Guru, and can be named.** Their previous platform stays unnamed ("an off-the-shelf learning platform").
 
-**Case study order everywhere:** Access Yourself, Safety training platform, Poststeady. No other projects appear on the site.
+**Case study order everywhere:** Assess Yourself, Safety training platform, Poststeady. No other projects appear on the site.
 
 ---
 
@@ -50,17 +50,17 @@ Structure only. Content notes are directions, not final copy. Write copy in the 
   - One heading (H1) and one subheading only — no separate eyebrow line. The primary keyword goes in the subheading, not a standalone eyebrow.
   - Under the CTA, an own-products line naming Poststeady, as a live link. ChromaLayer is left to section 3.
   - Primary CTA: Book a Discovery Call. Secondary text link: See our work.
-  - Hero stage below the buttons: "How your app comes together, week by week." Four checkpoints (Week 1, Week 3, Week 6, Launch) describe our process, using Access Yourself screens with demo data, captioned as such. "Ready for launch" with no store badges until the app is live. Spec in `docs/design/DESIGN.md`.
+  - Hero stage below the buttons: "How your app comes together, week by week." Four checkpoints (Week 1, Week 3, Week 6, Launch) describe our process, using Assess Yourself screens with demo data, captioned as such. "Ready for launch" with no store badges until the app is live. Spec in `docs/design/DESIGN.md`.
 - **Proof:** Poststeady live link.
 - **Differentiation:** Gap 2 (own live products) above the fold. Gap 6 (one CTA).
 
 ### 2. Client work
 - **Purpose:** The visitor sees we build real products for real clients, including mobile.
 - **Content:**
-  - Two cards: Access Yourself and the Safety training platform. Each has: problem (one line), outcome (one line), platform, stack, status, and a link to the case study.
+  - Two cards: Assess Yourself and the Safety training platform. Each has: problem (one line), outcome (one line), platform, stack, status, and a link to the case study.
   - Link to /work.
 - **Proof:**
-  - Access Yourself: Flutter + Node/Express on Firebase. Delivered to client · launching soon. 3–4 weeks.
+  - Assess Yourself: Flutter + Node/Express on Firebase. Delivered to client · launching soon. 3–4 weeks.
   - Safety training platform: EHS Guru. Next.js + Supabase web platform. Live since May 2026.
 - **Differentiation:** Gap 7 (shipped work only). Gap 1 (outcome on the card).
 
@@ -126,7 +126,7 @@ Structure only. Content notes are directions, not final copy. Write copy in the 
 ### 2. Project grid
 - **Purpose:** The visitor can compare projects quickly and pick one to read.
 - **Content:**
-  - 3 cards, in this order: Access Yourself, Safety training platform, Poststeady.
+  - 3 cards, in this order: Assess Yourself, Safety training platform, Poststeady.
   - Every card shows the same fields: type (client / own product), platform, stack, timeline, status, one-line outcome, and a link to the case study.
   - Not listed: ChromaLayer (one-line mention on Home only).
 - **Proof:** Each card's outcome line comes from its case study. `[METRIC TBD]` where missing. If no real number exists, use a factual line instead (e.g. "Live on Play Store").
@@ -141,7 +141,9 @@ Structure only. Content notes are directions, not final copy. Write copy in the 
 
 ## Case study pages `/work/{slug}`
 
-All three (Access Yourself, Safety training platform, Poststeady) follow the brand brief's case study structure, in this order. Copy lives in `docs/copy/case-studies/[slug].md`. About 300 words each, written for a non-technical founder.
+> **Superseded 2026-09-28** by `docs/design/case-study-brief.md` (four case studies incl. ChromaLayer, layered depth, no /work index). Kept for history.
+
+All three (Assess Yourself, Safety training platform, Poststeady) follow the brand brief's case study structure, in this order. Copy lives in `docs/copy/case-studies/[slug].md`. About 300 words each, written for a non-technical founder.
 
 **Shared template**
 
@@ -160,7 +162,7 @@ All three (Access Yourself, Safety training platform, Poststeady) follow the bra
 **Differentiation (all case studies):** Gap 1 (challenge, result and timeline on every page, which only Apps Value's best case study matches). Gap 7.
 **Fears:** none answered here. Case studies are evidence; they link to Services for terms.
 
-### `/work/access-yourself` (lead)
+### `/work/assess-yourself` (lead)
 - **Known:** client is Aptellic (confirmed, can be named). Flutter app + Node/Express on Firebase. 3–4 weeks. Delivered to client · launching soon. Confirmed result: new exams go live from a single Excel upload.
 - **Needed before launch:** student/question numbers `[METRIC TBD]`, store link once live `[TBD]`, testimonial `[TESTIMONIAL TBD]`.
 - **Note:** carries mobile proof on Home, and is the Flutter proof for Services "What we build", item 1.
@@ -224,7 +226,7 @@ All three (Access Yourself, Safety training platform, Poststeady) follow the bra
      - What: one Flutter codebase for iOS and Android. Our default.
      - When: most MVPs. One codebase for both stores keeps the build faster and cheaper.
      - Secondary keyword "Flutter app development" is this block's subheading.
-     - Proof: Access Yourself (Flutter).
+     - Proof: Assess Yourself (Flutter).
   2. **Native iOS & Android**
      - What: Swift (iOS) and Kotlin (Android).
      - When: the app needs full device access or performance that cross-platform can't give.
@@ -235,7 +237,7 @@ All three (Access Yourself, Safety training platform, Poststeady) follow the bra
      - What: logins, payments, subscriptions, notifications, and the admin dashboard the founder runs the business from.
      - Stack: Node.js, Next.js / React, Firebase, Supabase, AWS. Growth path: "We start on Firebase or Supabase so your MVP launches fast and cheap. If your usage outgrows it, we can move you to AWS and manage the hosting for you."
      - Also list these as general capabilities, with no project named: location-based features, realtime chat that works on poor networks, automatic image moderation.
-     - Proof: Access Yourself (Node/Express on Firebase, trials and payments). EHS Guru's training platform (Zoom classes, attendance, recordings). Poststeady's backend (Supabase).
+     - Proof: Assess Yourself (Node/Express on Firebase, trials and payments). EHS Guru's training platform (Zoom classes, attendance, recordings). Poststeady's backend (Supabase).
   4. **SaaS platforms**
      - What: the web product that works alongside the app: accounts, subscriptions, dashboards.
      - Frame it as part of shipping the full product, not a standalone offer (brief v3).
@@ -257,7 +259,7 @@ All three (Access Yourself, Safety training platform, Poststeady) follow the bra
 
 ### 6. Proof strip
 - **Purpose:** Connect the offer to shipped work.
-- **Content:** 2 case study cards linking to /work: Access Yourself (mobile) and Poststeady.
+- **Content:** 2 case study cards linking to /work: Assess Yourself (mobile) and Poststeady.
 - **Proof:** Case studies.
 - **Differentiation:** Gap 2, Gap 7.
 
@@ -413,7 +415,7 @@ All three (Access Yourself, Safety training platform, Poststeady) follow the bra
 
 ## Changelog
 
-- v19 (2026-09-25): Access Yourself's client (Aptellic) and the Excel-upload result are confirmed. Home hero is one heading + one subheading, no eyebrow.
+- v19 (2026-09-25): Assess Yourself's client (Aptellic) and the Excel-upload result are confirmed. Home hero is one heading + one subheading, no eyebrow.
 - v18 (2026-09-25): Home hero gets the week-by-week stage.
 - v17 (2026-09-25): Studio name final: Ship Thesis. Contact email is hello@shipthesis.com; name item removed from open items.
 - v16 (2026-09-25): Time-zone FAQ answer set; overlap-hours open item removed.
@@ -428,7 +430,7 @@ All three (Access Yourself, Safety training platform, Poststeady) follow the bra
 - v7 (2026-09-24): Work: filter removed. Contact: H1 without keyword, Cal.com embed replaces the form, budget ranges set, 30-minute call, proposal within 2 business days, email as fallback.
 - v6 (2026-09-24): About founder block is required (name, photo, role line). ChromaLayer removed from About.
 - v5 (2026-09-24): EHS Guru can now be named as the Safety training platform client. Ship & Support gets the EHS Guru maintenance proof line. Case study template replaced with the short format (header, challenge, what we built, hard part, result, screens). Poststeady screens must come from a demo account.
-- v4 (2026-09-24): Final project list. Case studies are Access Yourself (lead, Flutter), Safety training platform (client unnamed, replaces EHS LMS) and Poststeady, in that order everywhere. Removed Pawgloo, the unnamed compliance platform line and all "multi-tenant" wording. ChromaLayer fixed to one line in Home section 3. Services gets three general capabilities; About gets the founder's pet-app line. Closed open items on stacks and descriptions.
-- v3 (2026-09-24): CTA is "Book a Discovery Call" everywhere. Case studies are now Access Yourself and Pawgloo (lead, mobile), EHS LMS (replaces Train Platform), and Poststeady (full). ChromaLayer reduced to one line on Home, and its case study page is removed. EHS Guru confirmed as not a case study. Swift confirmed (brief v3). Resolved the old open items on CTA wording, mobile proof and Swift.
+- v4 (2026-09-24): Final project list. Case studies are Assess Yourself (lead, Flutter), Safety training platform (client unnamed, replaces EHS LMS) and Poststeady, in that order everywhere. Removed Pawgloo, the unnamed compliance platform line and all "multi-tenant" wording. ChromaLayer fixed to one line in Home section 3. Services gets three general capabilities; About gets the founder's pet-app line. Closed open items on stacks and descriptions.
+- v3 (2026-09-24): CTA is "Book a Discovery Call" everywhere. Case studies are now Assess Yourself and Pawgloo (lead, mobile), EHS LMS (replaces Train Platform), and Poststeady (full). ChromaLayer reduced to one line on Home, and its case study page is removed. EHS Guru confirmed as not a case study. Swift confirmed (brief v3). Resolved the old open items on CTA wording, mobile proof and Swift.
 - v2 (2026-09-24): Added "What we build" (4 items) as Home section 5 and Services section 4. Moved stack detail out of Services MVP Build. Renumbered later sections. Flagged Swift/native iOS and Flutter proof as open items.
 - v1 (2026-09-23): Initial section plan for all 9 pages. Home order: client work before own products. Sprint price on Home final CTA. Unnamed compliance platform on Home client work.

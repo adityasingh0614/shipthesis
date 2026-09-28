@@ -14,9 +14,11 @@ import {
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
+  useSpring,
   useTransform,
   type MotionValue,
 } from "motion/react";
+import { navHideLock } from "./nav-hide-lock";
 
 /** Scroll distance (px) over which the header condenses. */
 const CONDENSE_RANGE = 96;
@@ -54,9 +56,12 @@ export function ShrinkHeader({
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const delta = y - (scrollY.getPrevious() ?? 0);
-    // Never hide at the top, or while the mobile menu is open.
+    // Never hide at the top, while the mobile menu is open, or while a
+    // section below is driving its own scroll (Our work's carousel).
     if (y < HIDE_AFTER || ref.current?.querySelector("details[open]")) {
       setHidden(false);
+    } else if (navHideLock.current) {
+      // frozen: leave `hidden` exactly as it was
     } else if (delta > DIRECTION_THRESHOLD) {
       setHidden(true);
     } else if (delta < -DIRECTION_THRESHOLD) {
@@ -64,8 +69,16 @@ export function ShrinkHeader({
     }
   });
 
-  const scrollCondense = useTransform(scrollY, [0, CONDENSE_RANGE], [0, 1], {
+  const rawCondense = useTransform(scrollY, [0, CONDENSE_RANGE], [0, 1], {
     clamp: true,
+  });
+  // Light smoothing: the raw value follows every scroll event (touchpads and
+  // some mice fire dozens per frame), which reads as jittery once height and
+  // opacity are riding on it. This settles it to one clean value per frame.
+  const scrollCondense = useSpring(rawCondense, {
+    stiffness: 700,
+    damping: 60,
+    mass: 0.2,
   });
   // Reduced motion: skip the scroll-driven animation and settle condensed
   // (solid, compact) so the header never shifts size under the user.
@@ -94,18 +107,16 @@ export function ShrinkHeader({
   );
 }
 
-/** Absolutely-positioned backdrop that fades in behind the row as it condenses. */
+/**
+ * Absolutely-positioned backdrop that fades in behind the row as it
+ * condenses. Only `opacity` is scroll-driven: a fixed border and shadow that
+ * fade in with it look identical to animating their own colour/blur every
+ * scroll pixel, without the per-frame string interpolation and blur repaint
+ * that made the header feel laggy.
+ */
 export function ShrinkHeaderFill({ className }: { className?: string }) {
   const condense = useCondenseProgress();
   const opacity = useTransform(condense, [0, 1], [0, 1]);
-  const borderColor = useTransform(
-    condense,
-    (v) => `rgb(201 211 204 / ${v})`
-  );
-  const boxShadow = useTransform(
-    condense,
-    (v) => `0 8px 24px -14px rgb(15 26 20 / ${v * 0.35})`
-  );
 
   return (
     <motion.div
@@ -116,9 +127,8 @@ export function ShrinkHeaderFill({ className }: { className?: string }) {
         inset: 0,
         background: "var(--surface)",
         opacity,
-        borderBottom: "1px solid",
-        borderColor,
-        boxShadow,
+        borderBottom: "1px solid #c9d3cc",
+        boxShadow: "0 8px 24px -14px rgb(15 26 20 / 0.35)",
         pointerEvents: "none",
       }}
     />
@@ -142,7 +152,9 @@ export function ShrinkHeaderRow({
   return (
     <motion.div
       className={className}
-      style={{ height, position: "relative", zIndex: 1 }}
+      // will-change hints the browser to promote this to its own layer
+      // before the animation starts, instead of on the first scroll frame.
+      style={{ height, position: "relative", zIndex: 1, willChange: "height" }}
     >
       {children}
     </motion.div>

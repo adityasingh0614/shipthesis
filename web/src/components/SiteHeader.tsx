@@ -11,11 +11,11 @@ import {
 import styles from "./SiteHeader.module.css";
 
 const NAV = [
-  { href: "/work", label: "Work" },
+  { href: "/#work", label: "Work" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 function HeaderContents() {
@@ -40,7 +40,7 @@ function HeaderContents() {
           ))}
         </nav>
 
-        <Link href="/contact" className={`btn ${styles.cta}`}>
+        <Link href="/#contact" className={`btn ${styles.cta}`}>
           Book a Discovery Call
         </Link>
       </motion.div>
@@ -58,7 +58,7 @@ function HeaderContents() {
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn">
+          <Link href="/#contact" className="btn">
             Book a Discovery Call
           </Link>
         </nav>

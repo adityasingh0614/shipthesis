@@ -1,5 +1,7 @@
 # Poststeady
 
+> **Superseded 2026-09-28.** This copy follows the retired shared template. The page's plan now lives in `docs/design/case-study-brief.md` §4 ("The Press Room"). Rewrite this file to match once the page is built.
+
 **Page accent:** `#1A5BFA` (project colour; use it as this page's primary accent, buttons stay green). See `docs/design/home-brief.md` §2.
 
 Our own product. It turns the analytics files social media freelancers already download into a branded monthly report for their clients.
@@ -46,4 +48,4 @@ Capture every screen from a demo account with made-up data. Do not reuse the cur
 > Start with a 30-minute call about your idea.
 
 **Button:** Book a Discovery Call
-**Links:** Try Poststeady → *(poststeady.com)* · Next: Access Yourself → *(/work/access-yourself)* · Back to all work → *(/work)*
+**Links:** Try Poststeady → *(poststeady.com)* · Next: Assess Yourself → *(/work/assess-yourself)* · Back to all work → *(/work)*

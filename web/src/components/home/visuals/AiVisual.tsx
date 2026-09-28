@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { motion } from "motion/react";
-import { enter, mono, POP, useLoop, useShadow, sceneFade } from "./shared";
+import { POP, enter, mono, useLoop, useShadow } from "./shared";
 
 /*
  * AI features, read left to right: your content goes in, the AI reads it,
@@ -62,13 +62,7 @@ export function AiVisual() {
   const shadow = useShadow();
 
   return (
-    <motion.svg
-      {...sceneFade(play)}
-      viewBox="0 0 560 260"
-      width="100%"
-      height="100%"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 560 260" width="100%" height="100%" aria-hidden="true">
       <defs>{shadow.def}</defs>
       {/* wires: dashed track, green draws over it */}
       <path
@@ -244,6 +238,6 @@ export function AiVisual() {
           </motion.g>
         );
       })}
-    </motion.svg>
+    </svg>
   );
 }

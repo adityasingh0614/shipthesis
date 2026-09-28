@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import {
+  useEffect,
   useRef,
   useState,
   useSyncExternalStore,
@@ -32,6 +33,7 @@ import {
   type SimpleIcon,
 } from "simple-icons";
 import { CarouselDots } from "@/components/motion-ui/carousel-controls";
+import { navHideLock } from "@/components/motion-ui/nav-hide-lock";
 import styles from "./OurWork.module.css";
 
 /** Tools with no Simple Icons mark render as a text-only chip. */
@@ -57,14 +59,14 @@ type Project = {
 // Logos are Simple Icons placeholders until the founder's logo files arrive.
 const PROJECTS: Project[] = [
   {
-    name: "Access Yourself",
+    name: "Assess Yourself",
     title: ["Access", " Yourself"],
     type: "Mobile app",
     color: "#283593",
     description:
       "A scalable ed-tech platform with a TypeScript/Express REST API and Flutter mobile app, featuring exam prep, live tests, subscriptions via Razorpay, and Firebase-backed auth.",
     client: "Client: Aptellic",
-    // Pending: founder will supply the final Access Yourself stack.
+    // Pending: founder will supply the final Assess Yourself stack.
     stack: [
       { icon: siFlutter },
       { icon: siNodedotjs },
@@ -74,7 +76,7 @@ const PROJECTS: Project[] = [
     ],
     time: "3-4 weeks",
     status: "Delivered, launching soon",
-    href: "/work/access-yourself",
+    href: "/work/assess-yourself",
   },
   {
     name: "EHS Training Platform",
@@ -285,6 +287,18 @@ function PinnedCarousel() {
   useMotionValueEvent(progress, "change", (p) =>
     setIndex(Math.round(p * last)),
   );
+  // Lock the nav's hide-on-scroll while this section is actively pinned:
+  // strictly between 0 and 1 means the carousel currently owns the scroll,
+  // 0 or 1 means it hasn't started yet or has fully handed scroll back.
+  useMotionValueEvent(scrollYProgress, "change", (p) => {
+    navHideLock.current = p > 0 && p < 1;
+  });
+  useEffect(
+    () => () => {
+      navHideLock.current = false;
+    },
+    [],
+  );
 
   const scrollToCard = (i: number) => {
     const el = pinRef.current;
@@ -388,7 +402,7 @@ function SwipeCarousel() {
 export function OurWork() {
   const pinned = usePinned();
   return (
-    <section className={styles.section} aria-labelledby="work-title">
+    <section id="work" className={styles.section} aria-labelledby="work-title">
       {pinned ? (
         <PinnedCarousel />
       ) : (

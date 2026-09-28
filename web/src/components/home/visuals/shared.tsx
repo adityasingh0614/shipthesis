@@ -16,19 +16,20 @@ import {
 import type { SimpleIcon } from "simple-icons";
 
 /*
- * One grammar for every service visual, a 6s loop:
- *   0.00-0.05  scene fades in while the first pieces start building
- *   ...-0.84   pieces land, then the finished picture holds
- *   0.84-0.92  the whole scene fades out as one layer
- *   0.92-1.00  fully hidden: pieces snap back and the loop wraps here,
- *              so the restart is never on screen
- * Off-screen or with reduced motion, the finished picture stands still.
+ * One grammar for every service visual, a 5s loop:
+ *   0.00-...   pieces build in, each with its own small stagger delay
+ *   ...-0.72   short hold on the finished picture
+ *   0.72-0.94  pieces float back apart, in the same stagger order they
+ *              arrived, mirroring the build; the last one settles by 0.94
+ *   0.94-1.00  a beat at rest before the next build starts
+ * Because the loop ends exactly where it began, there is no reset to mask:
+ * no snap, no scene-wide fade, just the reverse of the build. Off-screen or
+ * with reduced motion, the finished picture stands still.
  */
-export const DURATION = 6;
-const FADED_IN = 0.05;
-const BUILT_BY = 0.84; // every piece has landed by here
-const FADED = 0.92; // scene fully hidden
-const SNAP = 0.94; // pieces jump back to their start, unseen
+export const DURATION = 5;
+const BUILD_END = 0.66; // every piece has landed by here, latest of them
+const HOLD_END = 0.72; // short hold before pieces start leaving
+const EXIT_END = 0.94; // every piece is back at rest by here
 export const OUT = [0.22, 1, 0.36, 1] as const; // ease-out-quint
 export const POP = [0.34, 1.56, 0.64, 1] as const; // slight overshoot
 const STILL: Transition = { duration: 0 };
@@ -36,12 +37,22 @@ const STILL: Transition = { duration: 0 };
 type Vals = Record<string, number>;
 type Opts = { d?: number; ease?: Easing };
 
-const loop = (at: number, d: number, ease: Easing): Transition => ({
-  duration: DURATION,
-  times: [0, at, Math.min(at + d, BUILT_BY), SNAP, SNAP + 0.005, 1],
-  ease: ["linear", ease, "linear", "linear", "linear"],
-  repeat: Infinity,
-});
+// A piece that entered later leaves later too, same relative order, mapped
+// proportionally into the (shorter) exit window.
+const mirror = (at: number, d: number) => {
+  const start = HOLD_END + (at / BUILD_END) * (EXIT_END - HOLD_END - d);
+  return Math.min(start, EXIT_END - d);
+};
+
+const loop = (at: number, d: number, ease: Easing): Transition => {
+  const back = mirror(at, d);
+  return {
+    duration: DURATION,
+    times: [0, at, at + d, back, back + d, 1],
+    ease: ["linear", ease, "linear", ease, "linear"],
+    repeat: Infinity,
+  };
+};
 
 const frames = (a: Vals, b: Vals) => {
   const out: Record<string, number[]> = {};
@@ -49,7 +60,7 @@ const frames = (a: Vals, b: Vals) => {
   return out;
 };
 
-/** Hidden (`from`) until `at`, then `to` until the reset. Still: `to`. */
+/** Hidden (`from`) until `at`, built to `to`, holds, then floats back to `from`. */
 export function enter(
   play: boolean,
   at: number,
@@ -66,7 +77,7 @@ export function enter(
     : { initial: false as const, animate: to, transition: STILL };
 }
 
-/** Shown until `at`, then `gone` until the reset. Still: `gone`. */
+/** Shown until `at`, then leaves to `gone`, and returns to `shown` with the rest. */
 export function leave(
   play: boolean,
   at: number,
@@ -81,26 +92,6 @@ export function leave(
         transition: loop(at, d, ease),
       }
     : { initial: false as const, animate: gone, transition: STILL };
-}
-
-/**
- * Spread on the visual's root <motion.svg>: the one calm exit. Fading the
- * whole <svg> (a single GPU layer) keeps the drop shadows from flickering.
- */
-export function sceneFade(play: boolean) {
-  return play
-    ? {
-        initial: { opacity: 0 },
-        animate: { opacity: [0, 1, 1, 0, 0] },
-        transition: {
-          duration: DURATION,
-          times: [0, FADED_IN, BUILT_BY, FADED, 1],
-          ease: "easeInOut" as const,
-          repeat: Infinity,
-        },
-        style: { willChange: "opacity" },
-      }
-    : { initial: false as const, animate: { opacity: 1 }, transition: STILL };
 }
 
 const PlayContext = createContext(false);

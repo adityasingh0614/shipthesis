@@ -33,8 +33,8 @@ The studio name (Ship Thesis), domain (shipthesis.com) and email (hello@shipthes
 | Item | Where |
 |---|---|
 | `[TESTIMONIAL TBD]` quote, name, role, project. Hide the section if there's none | home.md §6 |
-| `[RESULT TBD]` Access Yourself: student numbers, questions loaded, store link once live | case-studies/access-yourself.md |
-| Access Yourself: confirm the logo can be shown in screenshots | case-studies/access-yourself.md, Screens |
+| `[RESULT TBD]` Assess Yourself: student numbers, questions loaded, store link once live | case-studies/assess-yourself.md |
+| Assess Yourself: confirm the logo can be shown in screenshots | case-studies/assess-yourself.md, Screens |
 | `[RESULT TBD]` EHS Guru: cost saved against the old platform, total learners, classes run | case-studies/safety-training-platform.md |
 
 ## 5. Our own data: we pull it ourselves

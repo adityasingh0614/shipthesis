@@ -5,7 +5,7 @@
 .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(64px, 9vw, 112px) var(--gutter);
+  padding: var(--section-py) var(--gutter);
 }
 
 /* Section headings are centred site-wide (CLAUDE.md). */
@@ -55,6 +55,15 @@
   background: var(--surface);
   border: 2px solid var(--line);
   border-radius: var(--radius-card);
+  transition:
+    transform 200ms ease-out,
+    border-color 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
+.cell:hover .card {
+  transform: translateY(-4px);
+  border-color: var(--green);
+  box-shadow: 0 14px 28px -18px rgb(15 26 20 / 0.35);
 }
 
 .visual {

@@ -66,7 +66,7 @@ Placeholders in `[BRACKETS]` must be filled or the element hidden before launch.
 *Subheading: Flutter app development*
 > We build in Flutter first. One Flutter app ships to both the App Store and Play Store, so you pay for one build and maintain one codebase. It's the right choice for most first versions.
 > **Stack:** Flutter, Dart
-> **Proof:** Access Yourself, an exam-prep app we built in Flutter in 3–4 weeks. Read the case study →
+> **Proof:** Assess Yourself, an exam-prep app we built in Flutter in 3–4 weeks. Read the case study →
 
 **Native iOS & Android**
 > Swift for iOS, Kotlin for Android. Native is worth it when the app leans hard on the device: heavy background work, advanced camera or Bluetooth use, or performance that cross-platform can't reach.
@@ -77,7 +77,7 @@ Placeholders in `[BRACKETS]` must be filled or the element hidden before launch.
 > The part your users never see: logins, payments, subscriptions, notifications, and an admin dashboard to run the business. We also build location-based features, realtime chat that holds up on poor networks, and automatic image moderation.
 > We start on Firebase or Supabase so your MVP launches fast and cheap. If your usage outgrows it, we can move you to AWS and manage the hosting for you.
 > **Stack:** Node.js, Next.js / React, Firebase, Supabase, AWS
-> **Proof:** Access Yourself runs its free trials and Razorpay payments on a backend we built. EHS Guru runs its Zoom classes, attendance and recordings on a platform we built. Read the case studies →
+> **Proof:** Assess Yourself runs its free trials and Razorpay payments on a backend we built. EHS Guru runs its Zoom classes, attendance and recordings on a platform we built. Read the case studies →
 
 **SaaS platforms**
 > When your product needs a web side too: customer accounts, subscriptions and dashboards that share data with the app. We build it as part of the same product.
@@ -114,7 +114,7 @@ Placeholders in `[BRACKETS]` must be filled or the element hidden before launch.
 
 **Heading:** The work behind these services
 
-> **Access Yourself:** a Flutter exam-prep app, delivered in 3–4 weeks. Read the case study →
+> **Assess Yourself:** a Flutter exam-prep app, delivered in 3–4 weeks. Read the case study →
 > **Poststeady:** our own SaaS, live, built in 11 weeks. Read the case study →
 
 **Link:** See all our work →
@@ -127,7 +127,7 @@ Placeholders in `[BRACKETS]` must be filled or the element hidden before launch.
 > An MVP app with us costs from $6,000, after a $750 Discovery Sprint that's credited toward your build if you continue. Your exact price is the fixed quote at the end of the sprint, based on your scope. After launch, support plans start from $300/month. See the full breakdown, including how payments work, on our pricing page →
 
 **How long does it take to build an app?**
-> Most MVP apps take 6–10 weeks to build, after a one-week Discovery Sprint. More features, more types of user, and outside services like payments or video all add time. Your quote includes a timeline for your scope. For reference, Access Yourself took 3–4 weeks.
+> Most MVP apps take 6–10 weeks to build, after a one-week Discovery Sprint. More features, more types of user, and outside services like payments or video all add time. Your quote includes a timeline for your scope. For reference, Assess Yourself took 3–4 weeks.
 
 **Do I own the code?**
 > Yes, you own all of the code from day one. It lives in your GitHub, and the App Store, Play Store and cloud accounts are in your name. If you ever want another team to take over, they can pick it up without us.

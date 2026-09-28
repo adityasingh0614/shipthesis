@@ -4,7 +4,10 @@
   align-items: center;
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(40px, 7vw, 88px) var(--gutter) clamp(48px, 7vw, 96px);
+  /* Tighter on top than --section-py: the hero sits right under the nav
+     with no colour break, so the same gap that reads right between two
+     sections reads as empty space here. */
+  padding: clamp(32px, 4vw, 56px) var(--gutter) var(--section-py);
   text-align: center;
 }
 
@@ -22,7 +25,7 @@
   color: var(--ink-muted);
 }
 
-/* Two lines on desktop: grey line, then ink line. */
+/* Two lines on desktop. */
 @media (min-width: 720px) {
   .titleMuted,
   .titleLine {
@@ -32,7 +35,7 @@
 
 .sub {
   max-width: 42ch;
-  margin-top: clamp(20px, 2.5vw, 28px);
+  margin-top: clamp(12px, 1.6vw, 18px);
   font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
   line-height: 1.5;
   color: var(--ink-soft);
@@ -48,41 +51,22 @@
   margin-top: clamp(28px, 3.5vw, 40px);
 }
 
-.link {
-  display: inline-flex;
-  align-items: center;
+/* Secondary button: white, outlined, same size as the primary. */
+.secondary {
   gap: 6px;
-  min-height: 48px;
-  font-weight: 600;
-  color: var(--green);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-  text-decoration-color: transparent;
-  transition: text-decoration-color 160ms ease-out;
+  background: var(--surface);
+  color: var(--ink);
+  border: 2px solid var(--line);
 }
-.link svg {
+.secondary:hover {
+  background: var(--surface);
+  border-color: var(--ink);
+}
+.secondary svg {
   transition: transform 160ms ease-out;
 }
-.link:hover {
-  text-decoration-color: currentColor;
-}
-.link:hover svg {
+.secondary:hover svg {
   transform: translateX(3px);
-}
-
-.stage {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-top: clamp(40px, 6vw, 72px);
-  border: 2px dashed var(--line);
-  border-radius: var(--radius-card);
-  background: var(--surface-alt);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--ink-muted);
 }
 
 @media (max-width: 719px) {
@@ -95,8 +79,5 @@
   }
   .actions :global(.btn) {
     width: 100%;
-  }
-  .stage {
-    aspect-ratio: 4 / 5;
   }
 }

@@ -46,7 +46,7 @@ Also on Home: `WebSite` with `name` and `url`, and `publisher` set to the Organi
 |---|---|---|---|---|---|
 | Home | `/` | Full definition | — | — | — (root page) |
 | Work | `/work` | Reference | — | — | Home › Work |
-| Access Yourself | `/work/access-yourself` | Reference | — | — | Home › Work › Access Yourself |
+| Assess Yourself | `/work/assess-yourself` | Reference | — | — | Home › Work › Assess Yourself |
 | Safety training platform | `/work/safety-training-platform` | Reference | — | — | Home › Work › Safety training platform |
 | Poststeady | `/work/poststeady` | Reference | — | — | Home › Work › Poststeady |
 | Services | `/services` | Reference | Yes, 3 services | Yes, 6 questions | Home › Services |

@@ -1,0 +1,12 @@
+.wrap {
+  width: 100%;
+  max-width: 760px;
+  margin: clamp(24px, 4vw, 48px) auto 0;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}

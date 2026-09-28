@@ -1,0 +1,174 @@
+.section {
+  background: var(--surface-alt);
+}
+
+.inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--section-py) var(--gutter);
+}
+
+/* Section headings are centred site-wide (CLAUDE.md). */
+.head {
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.lede {
+  max-width: 54ch;
+  margin: 14px auto 0;
+  font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+/* Three staggered columns: quote cards and tall video cards interleave. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+  max-width: 1040px;
+  margin: clamp(40px, 5vw, 64px) auto 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.quote,
+.video {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+/* ---- Quote card ---- */
+
+.quote {
+  gap: 20px;
+  padding: clamp(20px, 2.4vw, 26px);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  background: var(--surface-alt);
+}
+
+.name {
+  display: block;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.role {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.body {
+  display: flex;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 2px dashed var(--line);
+  color: var(--ink-soft);
+}
+
+.mark {
+  flex: none;
+  margin-top: -0.12em;
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 0.8;
+  color: var(--green);
+}
+
+/* ---- Video card ---- */
+
+.video {
+  gap: 14px;
+  padding: 8px 8px 16px;
+}
+.video .person {
+  padding: 0 10px;
+}
+
+.frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--green) 7%, var(--surface));
+}
+.video[data-tall] .frame {
+  aspect-ratio: 3 / 4.4;
+}
+
+.frameLabel {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.play {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding-left: 3px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--green);
+  box-shadow: 0 8px 20px -10px rgb(10 127 85 / 0.45);
+}
+
+/* Tablet: two columns would orphan the third, so cards flow in one row set. */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .column {
+    display: contents;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .video[data-tall] .frame {
+    aspect-ratio: 4 / 5;
+  }
+}

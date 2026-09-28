@@ -75,7 +75,7 @@ We asked specifically where Synergy's wording lands on the same themes as ours. 
 
 ## Gaps We Can Beat Them On
 
-1. **Case studies with a challenge, a result and a timeline, every time.** Only Apps Value's Evesport case study does this. Synergy's and Flutter Your Way's stop at features. Our case study template already requires it. *Condition:* we still need confirmed results for Access Yourself, the Safety training platform (EHS Guru) and Poststeady.
+1. **Case studies with a challenge, a result and a timeline, every time.** Only Apps Value's Evesport case study does this. Synergy's and Flutter Your Way's stop at features. Our case study template already requires it. *Condition:* we still need confirmed results for Assess Yourself, the Safety training platform (EHS Guru) and Poststeady.
 2. **Our own products as proof.** No competitor ships its own products. Poststeady (live) and ChromaLayer (in beta) are the proof no one else can show.
 3. **Weekly builds.** Apps Value builds every two weeks. The others don't state a cadence.
 4. **Saying what we won't do.** No competitor does this. It directly answers the "anti-persona" and trust fears in our brief.

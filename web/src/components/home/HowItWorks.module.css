@@ -5,7 +5,7 @@
 .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(64px, 9vw, 112px) var(--gutter);
+  padding: var(--section-py) var(--gutter);
 }
 
 /* Section headings are centred site-wide (CLAUDE.md). */

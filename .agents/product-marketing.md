@@ -12,7 +12,7 @@
 **Product type:** Service / studio (project-based + support plans).
 **Business model:** Fixed-scope, fixed-timeline projects (Discovery Sprint, MVP Build) plus monthly support plans (Ship & Support). Pricing: see the Pricing section.
 **Mobile stack:** Flutter for cross-platform apps (default). Native iOS in Swift and native Android in Kotlin when an app needs it. Backend, admin dashboards and web built alongside the app in Node.js and Next.js / React, with Firebase, Supabase and AWS. Growth path: start on Firebase or Supabase so the MVP launches fast and cheap. If usage outgrows it, we can move the client to AWS and manage the hosting for them. We sell mobile apps; web and SaaS are part of shipping the full product, not a separate service.
-**AI capability (confirmed 2026-09-26):** we can add AI features to any app or SaaS product, whatever the client needs — summaries, chat, automation, and similar. Real proof on record: Poststeady's AI-written report summaries (Gemini), with rules against inventing numbers. No AI feature is built into Access Yourself or the EHS Training Platform today.
+**AI capability (confirmed 2026-09-26):** we can add AI features to any app or SaaS product, whatever the client needs — summaries, chat, automation, and similar. Real proof on record: Poststeady's AI-written report summaries (Gemini), with rules against inventing numbers. No AI feature is built into Assess Yourself or the EHS Training Platform today.
 
 ## Pricing
 **Discovery Sprint:** 1 week, $750. Deliverables: a written scope, a feature list split into "version one" and "later", user flows or wireframes, a stack plan, and a fixed quote with timeline and milestones. If the founder doesn't continue, they keep everything from the sprint. The $750 is credited toward the build if they continue (a standard term, not a discount).
@@ -102,18 +102,18 @@
 **Customers / Projects:**
 | Project | Type | Stack | Ownership | Status / site use |
 |---|---|---|---|---|
-| Access Yourself | Mobile app | Flutter + Node/Express on Firebase | Client: Aptellic | Delivered to client · launching soon. Built in 3–4 weeks. Lead case study and our Flutter proof. New exams go live from a single Excel upload. Aptellic approved using the app (demo data) in the Home hero; logo approval still to confirm |
+| Assess Yourself | Mobile app | Flutter + Node/Express on Firebase | Client: Aptellic | Delivered to client · launching soon. Built in 3–4 weeks. Lead case study and our Flutter proof. New exams go live from a single Excel upload. Aptellic approved using the app (demo data) in the Home hero; logo approval still to confirm |
 | EHS Training Platform | Web platform | Next.js / Supabase | Client: EHS Guru (can be named) | Live since May 2026; client on our monthly maintenance plan since launch. Case study at /work/safety-training-platform |
 | Poststeady | SaaS | Next.js / Supabase | Own product | Live, built in 11 weeks. Case study |
 | ChromaLayer | Windows desktop app | .NET/WPF | Own product | Live (launched, confirmed 2026-09-26). Last card in the Home work carousel, with a case study at /work/chromalayer. Link the product page, never the installer download |
 
-Case study order everywhere: Access Yourself, EHS Training Platform, Poststeady. This list is final; no other projects appear on the site.
+Case study order everywhere: Assess Yourself, EHS Training Platform, Poststeady. This list is final; no other projects appear on the site.
 **Testimonials:** unknown — do not infer
 **Value themes:**
 | Theme | Proof |
 |-------|-------|
 | We ship our own products | Poststeady (live), ChromaLayer (live) |
-| Production systems, not demos | EHS Guru's training platform (live classes, attendance, recordings), Access Yourself (payments, subscriptions), ChromaLayer (licensing) |
+| Production systems, not demos | EHS Guru's training platform (live classes, attendance, recordings), Assess Yourself (payments, subscriptions), ChromaLayer (licensing) |
 | Honest, specific scoping | Fixed quotes after Discovery Sprint |
 
 ## Goals
@@ -139,8 +139,8 @@ Header (name, one line, then tags: Client or Own product · Platform · Stack ·
 *Newest first. One line per revision: what changed and why.*
 - v17 (2026-09-26) — Added the AI capability: we can add AI features to any client app or SaaS, confirmed by the founder. Proof on record is Poststeady's AI-written summaries. Added as a differentiator.
 - v16 (2026-09-26) — Process line: design and testing are part of every build.
-- v15 (2026-09-26) — Aptellic approved Access Yourself (demo data) in the Home hero.
-- v14 (2026-09-25) — Access Yourself's client is Aptellic (confirmed). Added the confirmed Excel-upload result.
+- v15 (2026-09-26) — Aptellic approved Assess Yourself (demo data) in the Home hero.
+- v14 (2026-09-25) — Assess Yourself's client is Aptellic (confirmed). Added the confirmed Excel-upload result.
 - v13 (2026-09-25) — Studio name is final: Ship Thesis (shipthesis.com, hello@shipthesis.com).
 - v12 (2026-09-25) — Time zones: calls in the founder's working hours, Slack or email with a one-business-day reply. No overlap-hours figure.
 - v11 (2026-09-25) — AWS wording: move to AWS if usage outgrows Firebase or Supabase, and manage the hosting.
@@ -150,7 +150,7 @@ Header (name, one line, then tags: Client or Own product · Platform · Stack ·
 - v7 (2026-09-25) — No public hourly rate; work beyond a plan is quoted per request. Mobile stack keeps Firebase and AWS, with the growth-path framing (Firebase or Supabase first, AWS when usage needs it).
 - v6 (2026-09-25) — Added Pricing section: sprint, MVP, payments, scope changes, warranty, three support plans, requests and response times, plus rules (no client prices, no discounts). Objections updated with the numbers.
 - v5 (2026-09-24) — EHS Guru can now be named as the Safety training platform client; on our maintenance plan since launch. Case study structure replaced with the short format used in `docs/copy/case-studies/`.
-- v4 (2026-09-24) — Proof Points set to the final project list: Access Yourself (Flutter, lead), Safety training platform (client unnamed), Poststeady, ChromaLayer (one line). Removed Pawgloo (former-employer IP), EHS Guru and NIEV. Removed "multi-tenant" throughout.
-- v3 (2026-09-24) — Added native iOS (Swift) to Mobile stack. Proof Points: added Stack column; Access Yourself and Pawgloo are mobile lead case studies (stacks TBD); EHS LMS replaces "Train Platform"; EHS Guru is not a case study; Poststeady full case study; ChromaLayer one-line mention only. Conversion action fixed as "Book a Discovery Call".
+- v4 (2026-09-24) — Proof Points set to the final project list: Assess Yourself (Flutter, lead), Safety training platform (client unnamed), Poststeady, ChromaLayer (one line). Removed Pawgloo (former-employer IP), EHS Guru and NIEV. Removed "multi-tenant" throughout.
+- v3 (2026-09-24) — Added native iOS (Swift) to Mobile stack. Proof Points: added Stack column; Assess Yourself and Pawgloo are mobile lead case studies (stacks TBD); EHS LMS replaces "Train Platform"; EHS Guru is not a case study; Poststeady full case study; ChromaLayer one-line mention only. Conversion action fixed as "Book a Discovery Call".
 - v2 (2026-09-23) — Added mobile stack details (Flutter default, Kotlin native when needed, Next.js/React + Firebase/AWS for web/backend) to Product Overview, for sitemap keyword targeting and stack-accuracy in case studies.
 - v1 (2026-09-23) — Initial context, migrated from `product-marketing-context.md` (project root) into the standard template.

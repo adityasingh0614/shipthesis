@@ -13,7 +13,7 @@ This brief says **what each section must say and achieve**. It deliberately does
 
 **Content truth**
 - No invented facts: no numbers, logos, ratings, quotes or claims that aren't in the brand brief. Missing items stay as clearly marked placeholders.
-- Client names allowed: Aptellic (Access Yourself), EHS Guru (EHS Training Platform). Nothing else.
+- Client names allowed: Aptellic (Assess Yourself), EHS Guru (EHS Training Platform). Nothing else.
 - One button label everywhere: "Book a Discovery Call".
 - Prices only as stated in the brand brief; /pricing owns the detail.
 - No code-drawn fake app screens. App screens are real screenshots or recordings with demo data.
@@ -37,14 +37,20 @@ This brief says **what each section must say and achieve**. It deliberately does
 
 **Job:** in five seconds, a founder knows we take an idea to a live AI-powered app or SaaS product, and books a call.
 
-**Copy (final):**
-- H1: FROM FIRST IDEA *(grey)* TO A LIVE PRODUCT.
-- Subheading: AI-powered mobile apps and SaaS for founders: a new build on your phone every week, and code you own.
-- Actions: Book a Discovery Call · See our work →
+**Copy:** in `docs/copy/home.md` §1. H1: "From first idea (grey) to a live product." Buttons: Book a Discovery Call (green) and See our work (white, outlined).
 
-**Founder's direction:** centred text, with one big animation below it (like Flutter Your Way's hero proportion). **The animation itself is undecided and gets built last.** Leave a placeholder until then.
+**Visual (built 2026-09-27, refined same day): "exploded phone".** Flat isometric inline SVG, no photos or 3D renders. Four layers of one phone on the same axis, each with its own detail:
+- Idea: a cream paper note with tape, a handwritten title, bullets, a lightbulb doodle, a mini flow sketch and a small yellow sticky.
+- Design: the dashed wireframe of the same screen Build shows, with a measurement line, a comment pin and a cursor.
+- Build: that screen finished (status bar, header, chart card with one green bar, tabs, list, the one green button).
+- Ship: the phone body (dynamic island, side buttons, a home screen of apps and a dock).
+Labels on thin leader lines, each with a short caption (your sketch, screens you approve, a build every week, App Store & Play Store). Flutter, Swift, Kotlin and AWS logos sit upright and readable under the Ship label. Faint isometric dot grid behind, fading at the edges. One soft shadow under the whole stack.
 
-**Motion:** Stagger Reveal on the headline, subheading and buttons; header uses Shrink Header (hides on scroll down, returns on scroll up). See `docs/design/motion-components.md`.
+**Motion:** one 7s loop. Layers start spread apart; each lands on the one below and merges into it; Build drops into the phone and the merged layers show as thin edges on its side; "✓ Shipped" pops; hold about 2s; the layers float apart again. Scrolling compresses the stack slightly. Reduced motion: the assembled phone, still. Built with Motion (already on the site) instead of GSAP.
+
+**Proof strip (under the visual):** "Built & shipped by Ship Thesis" and one row of app tiles: Poststeady, EHS Training Platform, ChromaLayer, Assess Yourself. Hover or focus lifts a tile 4px and shows its type and status. Monogram tiles until the real app icons arrive.
+
+**Founder's rules kept over the source prompt:** green stays #0A7F55 (not #16A34A), the button stays "Book a Discovery Call", no eyebrow, proof strip uses the brief's four projects and statuses.
 
 ---
 
@@ -56,14 +62,14 @@ This brief says **what each section must say and achieve**. It deliberately does
 
 | Project | Client line | What it is | Stack | Status / time |
 |---|---|---|---|---|
-| Access Yourself | Client: Aptellic | A scalable ed-tech platform with a TypeScript/Express REST API and Flutter mobile app, featuring exam prep, live tests, subscriptions via Razorpay, and Firebase-backed auth. | Flutter, Node.js, Express, Firebase, Razorpay (pending: founder to supply final stack) | 3-4 weeks · Delivered, launching soon |
+| Assess Yourself | Client: Aptellic | A scalable ed-tech platform with a TypeScript/Express REST API and Flutter mobile app, featuring exam prep, live tests, subscriptions via Razorpay, and Firebase-backed auth. | Flutter, Node.js, Express, Firebase, Razorpay (pending: founder to supply final stack) | 3-4 weeks · Delivered, launching soon |
 | EHS Training Platform | Client: EHS Guru | A dedicated, brand-first LMS built for live cohort-based learning. | Next.js, Supabase, Zoom API, TypeScript, Sentry, Tailwind CSS | Since May 2026 · Live, on our maintenance plan |
 | Poststeady | Our own product | A client-reporting SaaS that turns messy CSV exports into a branded report, with the analysis written, not just charted. | Next.js, Supabase, TypeScript, Tailwind CSS, Dodo Payments, Puppeteer | Built in 11 weeks · Live |
 | ChromaLayer | Our own product | A native Windows utility for advanced, system-wide display color and temperature control. | C# / .NET / WPF, Magnification API, Velopack, Astro, Tailwind CSS, Dodo + Cloudflare Workers | Live · /work/chromalayer; product page link, never the installer |
 
 Each project shows a visual of the product (real screens, demo data), its name, client line, description, stack, status and a link to its case study.
 
-**Project colours:** each project title is two colours: the first part in the project colour, the rest in ink (Access / Yourself, EHS Training / Platform, Poststeady Client / Reporting Tool, Chroma / Layer; colour covers Poststeady Client, EHS Training and Chroma); the subheading and everything else stay in the page colours. Access Yourself `#283593` (darker shade `#1C2B7A`), EHS Training Platform `#00674C`, Poststeady `#1A5BFA`, ChromaLayer `#030d26`. The same colour is that project's primary accent on its case study page. These are the only exception to green-as-brand, and only inside that project's card or page; buttons stay green.
+**Project colours:** each project title is two colours: the first part in the project colour, the rest in ink (Access / Yourself, EHS Training / Platform, Poststeady Client / Reporting Tool, Chroma / Layer; colour covers Poststeady Client, EHS Training and Chroma); the subheading and everything else stay in the page colours. Assess Yourself `#283593` (darker shade `#1C2B7A`), EHS Training Platform `#00674C`, Poststeady `#1A5BFA`, ChromaLayer `#030d26`. The same colour is that project's primary accent on its case study page. These are the only exception to green-as-brand, and only inside that project's card or page; buttons stay green.
 
 **Also say here** (answers "can a small studio do this?"): we build and run our own products, so we deal with the same releases, bugs, payments and support you will. This sits in the section subheading.
 
@@ -81,12 +87,12 @@ Each project shows a visual of the product (real screens, demo data), its name, 
 
 | Step | When | What you get |
 |---|---|---|
-| Discovery call | Day 1, 30 minutes | A straight answer on fit, plus a Discovery Sprint: a written scope, wireframes and a fixed quote with timeline and milestones |
-| Design | Before each screen is built | Designs for your app's screens, which you see and approve before we build them |
-| Development | Weeks 2 onward | A new build on your phone every week, against the milestones in your quote |
-| Testing | Every week, and before submission | Each weekly build is tested before it reaches your phone, and the whole app is checked end to end before store submission |
-| Store submission | End of build | We handle App Store and Play Store submission and review |
-| Launch | Launch day | Your app, live, on accounts in your name |
+| Discovery call | Day 1 · 30 minutes | We learn what you're building, what you need, and whether we're the right fit. Then we turn it into a clear scope, wireframes, timeline and milestones |
+| Design | Before each screen is built | We design the screens your users will see, then get your approval before development begins |
+| Development | Weeks 2 onward · Every week | You get a new working build on your phone every week, with progress tied to the agreed milestones |
+| Testing | Every week + before submission | Every build is tested before it reaches you, with full end-to-end testing before submission |
+| Store submission | End of build | We handle the App Store and Play Store submission, including the review process |
+| Launch | Launch day | Your app, live on the App Store and Play Store |
 
 Link: "What each stage includes →" (to /services). No prices here.
 
@@ -127,7 +133,9 @@ Link: "See how each one works →" (to /services).
 
 Link: "See full pricing →". No "recommended" option, no discounts.
 
-**Motion:** Border Beam. See `docs/design/motion-components.md`.
+**Built 2026-09-27 (founder's direction):** a Get it built / Keep it running toggle. Build: Discovery Sprint, MVP Build, After launch (30 days free fixes). Maintain: App Care, Product Care, Full Care (from the brand brief's support plans), one line each. Copy in `docs/copy/home.md` §5.
+
+**Motion:** Segmented Toggle (pill slides on a spring), cards swap with a short staggered fade and blur, Border Beam on hover. See `docs/design/motion-components.md`.
 
 ---
 
@@ -137,6 +145,8 @@ Link: "See full pricing →". No "recommended" option, no discounts.
 
 **Founder's direction:** a mixed grid of video and text testimonials.
 
+**Built 2026-09-27 (placeholders):** three staggered columns interleaving quote cards and tall video cards (1 column on phones). Hidden when `VERCEL_ENV` is `production`; shows locally and on preview deploys. Copy in `docs/copy/home.md` §6.
+
 **Motion:** Stagger Reveal. See `docs/design/motion-components.md`.
 
 ---
@@ -145,30 +155,50 @@ Link: "See full pricing →". No "recommended" option, no discounts.
 
 **Job:** show we write about building apps. **No posts yet:** placeholders only, hidden on the live site until three real posts exist. A blog automation will fill it later, so each post needs: title, excerpt, date, cover image, link. Link: "See all posts →" (to /blog).
 
+**Built 2026-09-27 (placeholders):** three-card grid (cover image, date, title, excerpt), one column on phones. `/blog` is a placeholder holding page until real posts exist. Hidden when `VERCEL_ENV` is `production`. Copy in `docs/copy/home.md` §7.
+
 **Motion:** Stagger Reveal. See `docs/design/motion-components.md`.
 
 ---
 
-## 8. Final call to action
+## 8. Final call to action — removed 2026-09-28
 
-**Heading:** TELL US WHAT YOU WANT TO BUILD
-**Body:** Book a call and bring the idea as it is. We'll talk it through and tell you honestly if we're the right fit. If we are, the next step is a one-week Discovery Sprint for $750, credited toward your build if you continue. It ends with a fixed quote.
-**Button:** Book a Discovery Call. **Links:** How the Discovery Sprint works → · See pricing →
+Replaced by the FAQ's own "Talk to us" link and the site-wide "Book a Discovery Call" (header nav + hero), all pointing to `/contact`. The standalone CTA band, its magnetic-pull button and `home/FinalCta.tsx` were deleted rather than kept as dead code; `/contact` is now the one real destination. If the founder wants Home to end on a bigger closing moment again later, revisit then.
 
-**Motion:** Magnetic Pull on the button. See `docs/design/motion-components.md`.
+---
+
+## 9. FAQ — redesigned 2026-09-28
+
+**Job:** answer the objections a founder has before they book a call, using the brand brief's own Objections table (`.agents/product-marketing.md`). Now also Home's closing section.
+
+**Built 2026-09-28, redesigned same day:** five-item accordion, each row a bordered card with a Phosphor icon, question and chevron; first item open by default; open card and icon border turn green. Top 5 of 9 shown by default, a "Show 4 more questions" toggle reveals the rest. Subheading ends with a real "Talk to us" link to `#contact`. No category pills (General/Pricing/Dashboard/API in the reference): we don't have enough real content to split into categories, so it's a single list. Copy in `docs/copy/home.md` §9.
+
+---
+
+## 10. Get in touch (Home's closing section, replaces /contact page, 2026-09-28)
+
+**Job:** the real destination for every "Book a Discovery Call" link/button on the site. A standalone `/contact` page felt wrong for a single-scroll site: clicking the button shouldn't drop the visitor onto a fresh page repeating the pitch they just read. It's now the last section on Home (`id="contact"`), and every link on the site (header nav, header CTA, hero CTA, FAQ's "Talk to us") points to `/#contact` / `#contact` instead of a route.
+
+**Built:** centred heading "Get in touch", one line, then a single card (Email, WhatsApp, Location) and an "Email us" button. No repeated pitch or 3-step process: the visitor already read that earlier on the same scroll.
+
+**Facts used:** email `hello@shipthesis.com`, WhatsApp +91 88169 55217, location "Remote only" (the brief's fuller line is "based in India, working with US and Europe founders"; the founder asked for "Remote only" here).
+
+**Open item:** no Cal.com booking embed yet, needs the founder's Cal.com link/username. Until then, "Email us" and WhatsApp are the working contact actions.
 
 ---
 
 ## Open items
 
-- Hero animation: to be decided (built last).
-- Access Yourself logo: is it covered by Aptellic's approval?
+- Assess Yourself logo: is it covered by Aptellic's approval?
 - Real demo-data screens for the three projects.
 - Testimonials: none yet.
 - Blog: no posts yet; automation later.
+- Get in touch (Home §10): no Cal.com booking embed yet, needs the founder's Cal.com link/username.
 
 ## Changelog
 
+- v16 (2026-09-27): Hero rebuilt: new headline, exploded-phone visual and proof strip.
+- v15 (2026-09-27): How it works table updated to the founder's own copy.
 - v22 (2026-09-26): Card copy is the founder's own (five cards, order: Cross-platform, Native, Custom solutions, AI features, SaaS apps & platforms).
 - v21 (2026-09-26): Reverted to five cards (3+2 grid); backend card copy rewritten instead of moved to a bar.
 - v20 (2026-09-26): Backend shown as included with every app, not as a separate service card.
@@ -176,7 +206,7 @@ Link: "See full pricing →". No "recommended" option, no discounts.
 - v18 (2026-09-26): What we build built: five service cards with Tilt Card motion.
 - v17 (2026-09-26): How it works rebuilt from the founder's reference as a step-card grid; the drawn-line diagram is dropped. Our work pins with its heading visible.
 - v16 (2026-09-26): How it works built as a drawn line with a weekly loop (option A).
-- v15 (2026-09-26): Founder's card titles and subheadings; EHS Training Platform renamed; colours updated (Access Yourself #283593, ChromaLayer #020914); one full card at a time.
+- v15 (2026-09-26): Founder's card titles and subheadings; EHS Training Platform renamed; colours updated (Assess Yourself #283593, ChromaLayer #020914); one full card at a time.
 - v14 (2026-09-26): Project colours and two-colour project headings; the colour carries into each case study page.
 - v13 (2026-09-26): ChromaLayer becomes the fourth carousel card; own products share the one carousel. The own-products point moved into the subheading. Section headings are centred.
 - v12 (2026-09-26): Our work is a scroll-driven carousel with no arrows and five stack items per project.

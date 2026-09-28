@@ -2,15 +2,7 @@
 
 import { motion } from "motion/react";
 import { siKotlin, siSwift } from "simple-icons";
-import {
-  enter,
-  Logo,
-  mono,
-  POP,
-  useLoop,
-  useShadow,
-  sceneFade,
-} from "./shared";
+import { Logo, POP, enter, mono, useLoop, useShadow } from "./shared";
 
 /*
  * Native iOS & Android: the phone's chip powers up, then each hardware
@@ -90,13 +82,7 @@ export function NativeVisual() {
   const shadow = useShadow();
 
   return (
-    <motion.svg
-      {...sceneFade(play)}
-      viewBox="0 0 400 300"
-      width="100%"
-      height="100%"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 400 300" width="100%" height="100%" aria-hidden="true">
       <defs>{shadow.def}</defs>
       {/* wires: dashed track, green line draws over it */}
       {NODES.map((n, i) => (
@@ -240,6 +226,6 @@ export function NativeVisual() {
           </text>
         </motion.g>
       ))}
-    </motion.svg>
+    </svg>
   );
 }

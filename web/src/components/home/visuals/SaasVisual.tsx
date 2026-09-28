@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { enter, POP, useLoop, useShadow, sceneFade } from "./shared";
+import { POP, enter, useLoop, useShadow } from "./shared";
 
 /*
  * SaaS apps & platforms: a web app window builds its dashboard, then the
@@ -22,29 +22,23 @@ export function SaasVisual() {
   };
 
   return (
-    <motion.svg
-      {...sceneFade(play)}
-      viewBox="0 0 560 260"
-      width="100%"
-      height="100%"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 560 260" width="100%" height="100%" aria-hidden="true">
       <defs>{shadow.def}</defs>
-      {/* the web app */}
+      {/* the web app: window frame always on screen, tabs and title animate in */}
+      <g filter={shadow.filter}>
+        <rect x={150} y={24} width={262} height={212} rx={12} {...card} />
+      </g>
+      <line
+        x1={150}
+        y1={50}
+        x2={412}
+        y2={50}
+        stroke="var(--line)"
+        strokeWidth={1.5}
+      />
       <motion.g
         {...enter(play, 0.02, { opacity: 0, y: 12 }, { opacity: 1, y: 0 })}
       >
-        <g filter={shadow.filter}>
-          <rect x={150} y={24} width={262} height={212} rx={12} {...card} />
-        </g>
-        <line
-          x1={150}
-          y1={50}
-          x2={412}
-          y2={50}
-          stroke="var(--line)"
-          strokeWidth={1.5}
-        />
         {[166, 178, 190].map((cx, i) => (
           <circle
             key={cx}
@@ -251,6 +245,6 @@ export function SaasVisual() {
           { d: 0.1 },
         )}
       />
-    </motion.svg>
+    </svg>
   );
 }

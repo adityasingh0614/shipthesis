@@ -14,6 +14,10 @@
   --radius-card: 16px;
   --gutter: clamp(16px, 4vw, 40px);
   --max: 1200px;
+  /* Standard section top/bottom padding, used by every section including the hero. */
+  --section-py: clamp(64px, 9vw, 112px);
+  /* Nav height once condensed (shrink-header.tsx condensedHeight) — the pinned Our work frame sticks below this, not behind the nav. */
+  --nav-h: 60px;
 
   color-scheme: light;
 }

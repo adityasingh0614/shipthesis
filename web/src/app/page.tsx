@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { HeroVisual } from "@/components/home/hero/HeroVisual";
+import { ProofStrip } from "@/components/home/hero/ProofStrip";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { OurWork } from "@/components/home/OurWork";
+import { Pricing } from "@/components/home/Pricing";
+import { Contact } from "@/components/home/Contact";
+import { Faq } from "@/components/home/Faq";
+import { FromTheBlog } from "@/components/home/FromTheBlog";
+import { Testimonials } from "@/components/home/Testimonials";
 import { WhatWeBuild } from "@/components/home/WhatWeBuild";
 import styles from "./page.module.css";
 
@@ -17,10 +24,10 @@ export default function Home() {
           phone every week, and code you own.
         </p>
         <div className={styles.actions}>
-          <Link href="/contact" className="btn">
+          <Link href="/#contact" className="btn">
             Book a Discovery Call
           </Link>
-          <Link href="/work" className={styles.link}>
+          <Link href="/#work" className={`btn ${styles.secondary}`}>
             See our work
             <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
               <path
@@ -35,14 +42,19 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Hero animation slot: undecided, built last (home-brief §1). */}
-        <div className={styles.stage} aria-hidden="true">
-          <span>Hero animation</span>
-        </div>
+        <HeroVisual />
+        <ProofStrip />
       </section>
       <OurWork />
       <HowItWorks />
       <WhatWeBuild />
+      <Pricing />
+      {/* Placeholders: hidden on the live site until real, approved quotes exist. */}
+      {process.env.VERCEL_ENV !== "production" && <Testimonials />}
+      {/* Placeholders: hidden on the live site until 3 real posts exist. */}
+      {process.env.VERCEL_ENV !== "production" && <FromTheBlog />}
+      <Faq />
+      <Contact />
     </>
   );
 }

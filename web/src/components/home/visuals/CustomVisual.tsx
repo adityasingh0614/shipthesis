@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { motion } from "motion/react";
-import { enter, POP, useLoop, useShadow, sceneFade } from "./shared";
+import { POP, enter, useLoop, useShadow } from "./shared";
 
 /*
  * Custom solutions: an outline of "your business" appears, pieces of
@@ -110,16 +110,10 @@ export function CustomVisual() {
   const shadow = useShadow();
 
   return (
-    <motion.svg
-      {...sceneFade(play)}
-      viewBox="0 0 400 300"
-      width="100%"
-      height="100%"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 400 300" width="100%" height="100%" aria-hidden="true">
       <defs>{shadow.def}</defs>
-      {/* the shape of your business: dashed, then solid green once filled */}
-      <motion.rect
+      {/* the shape of your business: always on screen, dashed until it fills */}
+      <rect
         x={116}
         y={60}
         width={168}
@@ -129,7 +123,6 @@ export function CustomVisual() {
         stroke="var(--line)"
         strokeWidth={2}
         strokeDasharray="5 6"
-        {...enter(play, 0.02, { opacity: 0 }, { opacity: 1 })}
       />
       <motion.rect
         x={116}
@@ -193,6 +186,6 @@ export function CustomVisual() {
           strokeLinejoin="round"
         />
       </motion.g>
-    </motion.svg>
+    </svg>
   );
 }

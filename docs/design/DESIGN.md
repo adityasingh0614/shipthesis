@@ -34,6 +34,10 @@ typography:
 
 spacing: { 1: 4px, 2: 8px, 3: 12px, 4: 16px, 5: 24px, 6: 32px, 7: 48px, 8: 64px, 9: 96px, 10: 128px }
 
+section-padding: "clamp(64px, 9vw, 112px)"  # --section-py in globals.css. Top/bottom padding for every full-width section — no section defines its own.
+hero-padding-top: "clamp(32px, 4vw, 56px)"  # Hero only: sits directly under the sticky nav with no colour break, so it uses a tighter top inset than --section-py; its bottom stays --section-py.
+nav-height: "60px"  # --nav-h in globals.css, the condensed nav height. Any section that pins with `position: sticky; top: 0` (Our work) must offset by this, or the nav (also sticky top:0, higher z-index) sits on top of it. Reclaim the height lost to that offset in the pinned frame's own spacing (padding, gaps, card padding) or its tallest card clips against `overflow: hidden`.
+
 rounded: { sm: 6px, md: 10px, lg: 16px, xl: 24px, device: 44px, device-screen: 34px }
 
 shadows:
@@ -289,7 +293,7 @@ Base unit **4px**. Tokens: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 1
 **Tags and badges**
 - **Tag:** `tint` fill, `primary` text, caption size, radius `sm`.
 - **"Live" badge:** `accent` fill, `ink` label in mono, radius `sm`. Only on work that is actually live (Poststeady; EHS Guru's platform).
-- **"Delivered · launching soon" badge:** `surface` fill, `muted` text. Access Yourself uses this until it's live.
+- **"Delivered · launching soon" badge:** `surface` fill, `muted` text. Assess Yourself uses this until it's live.
 - **Build label:** mono `label` in `muted`, e.g. `WEEK 3`. No fill.
 
 ### Icons
@@ -354,10 +358,10 @@ Base unit **4px**. Tokens: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 1
 
 ### Signature: the week-by-week hero (Home only)
 
-**Story:** "How your app comes together, week by week." The weeks describe **our process**, not Access Yourself's build history. One phone uses Access Yourself screens (demo data) as the example app, ending at launch. It visualises the promise under the H1: a working build on your phone every week.
+**Story:** "How your app comes together, week by week." The weeks describe **our process**, not Assess Yourself's build history. One phone uses Assess Yourself screens (demo data) as the example app, ending at launch. It visualises the promise under the H1: a working build on your phone every week.
 
 **Stage heading** (`h3`, above the phone): "How your app comes together, week by week."
-**Stage caption** (`caption`, `muted`, below the phone, always visible): "Screens from Access Yourself, shown with demo data."
+**Stage caption** (`caption`, `muted`, below the phone, always visible): "Screens from Assess Yourself, shown with demo data."
 
 **Frames.** Four checkpoints across a typical build, consistent with the brief's 1-week sprint and 6–10 week MVP:
 
@@ -383,8 +387,8 @@ Base unit **4px**. Tokens: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 1
 - **Build label:** swaps text at each frame boundary, with no animation on the text itself.
 - **Launch moment (frame 4):**
   - A checkmark in `accent` scales from 0.8 to 1 with opacity 0 → 1 over 320ms.
-  - A card slides up 12px under the phone, reading "Ready for launch". **No store badges** until Access Yourself is live (see "Open items").
-  - The "Live"-style `accent` badge is **not** used here, because Access Yourself isn't live yet. The launch frame shows *submitted / ready*, never ratings, download counts or a fake store listing.
+  - A card slides up 12px under the phone, reading "Ready for launch". **No store badges** until Assess Yourself is live (see "Open items").
+  - The "Live"-style `accent` badge is **not** used here, because Assess Yourself isn't live yet. The launch frame shows *submitted / ready*, never ratings, download counts or a fake store listing.
 
 **Implementation**
 - **Progressive enhancement:** use CSS scroll-driven animations (`animation-timeline: view()` on the stage section) where the browser supports them (`@supports (animation-timeline: view())`).
@@ -448,7 +452,7 @@ Every image has explicit dimensions or an `aspect-ratio`. The heading font's fal
 - **Focus:** visible `:focus-visible` ring on every interactive element (3px `primary`, 3px offset).
 - **Text size:** the page works at 200% text zoom and at 320px width, with no horizontal scroll and no clipped text.
 - **Images:**
-  - App screens get alt text describing what the screen shows, e.g. "Access Yourself timed test screen with a question and a countdown timer".
+  - App screens get alt text describing what the screen shows, e.g. "Assess Yourself timed test screen with a question and a countdown timer".
   - The phone frame is decorative.
   - The hero's build log is real text, not part of an image.
 - **Headings:** one `<h1>` per page, and heading levels never skip.
@@ -477,8 +481,8 @@ Every image has explicit dimensions or an `aspect-ratio`. The heading font's fal
 
 ## Open items
 
-1. **Access Yourself logo:** pending client approval. The hero and the case study card use the placeholder wordmark in the swappable logo slot until then.
-2. **Launch frame stores:** Access Yourself is launching on Google Play; whether it also launches on the App Store is still to confirm. Either way, the launch card says "Ready for launch" with no store badges until the app is live.
+1. **Assess Yourself logo:** pending client approval. The hero and the case study card use the placeholder wordmark in the swappable logo slot until then.
+2. **Launch frame stores:** Assess Yourself is launching on Google Play; whether it also launches on the App Store is still to confirm. Either way, the launch card says "Ready for launch" with no store badges until the app is live.
 3. **Final hero screens:** placeholders until the demo-data screens are exported.
 4. **Phudu file size and glyph coverage:** verify the real static-700 woff2 size against the 40 KB budget, and confirm the Latin subset covers every character used in headings (including the em dash, curly quotes and any accented names in case studies).
 5. **Ship Thesis logo:** not designed yet. The header uses a text wordmark ("Ship Thesis" in Phudu 700) until it exists.
@@ -492,6 +496,6 @@ Every image has explicit dimensions or an `aspect-ratio`. The heading font's fal
 - v6 (2026-09-26): `muted` darkened from `#55635C` to `#445048` (option B). The old grey read washed out next to heavy Phudu headings; the new one stays lighter than body text but is clearly readable (8.44:1 on white).
 - v5 (2026-09-26): Card, pricing-panel and pricing-toggle borders are now 2px, so the edge is visible without relying on a shadow. `surface` darkened from `#F5F7F5` to `#F0F4F1` so section bands read clearly against `canvas`, the way Stripe and Apple pair two tones of one neutral for section separation.
 - v3 (2026-09-25): Added the Pricing toggle component (Build your app / After launch), built as an accessible tab list with both price groups always present in the DOM for search and AI answers.
-- v2 (2026-09-25): Hero reframed as our process: heading "How your app comes together, week by week.", caption "Screens from Access Yourself, shown with demo data." Checkpoints are Week 1, Week 3, Week 6, Launch (matching the brief's 6–10 week MVP). No store badges until the app is live. `accent` keeps its small-use rules.
+- v2 (2026-09-25): Hero reframed as our process: heading "How your app comes together, week by week.", caption "Screens from Assess Yourself, shown with demo data." Checkpoints are Week 1, Week 3, Week 6, Launch (matching the brief's 6–10 week MVP). No store badges until the app is live. `accent` keeps its small-use rules.
 - v4 (2026-09-25): Replaced Instrument Sans with Phudu (weight 700 only, no negative tracking) as the heading font. Prices and build labels both run in JetBrains Mono by default, since Phudu has no confirmed tabular figures. Webfont budget raised to 54 KB pending the real file size.
-- v1 (2026-09-25): First design system. Light theme; deep green `#0A7F55` for actions, bright `#24B47E` for highlights and launch; Instrument Sans 600 headings, system UI body, JetBrains Mono build labels; neutral phone frames with real Access Yourself screens (demo data, swappable logo); week-by-week scroll-driven hero with reduced-motion and no-JS fallbacks; performance and accessibility targets.
+- v1 (2026-09-25): First design system. Light theme; deep green `#0A7F55` for actions, bright `#24B47E` for highlights and launch; Instrument Sans 600 headings, system UI body, JetBrains Mono build labels; neutral phone frames with real Assess Yourself screens (demo data, swappable logo); week-by-week scroll-driven hero with reduced-motion and no-JS fallbacks; performance and accessibility targets.

@@ -1,10 +1,10 @@
-# AccessYourself
+# AssessYourself
 
 > Portfolio case study raw draft. Written for a non-technical founder evaluating whether to hire us.
 
 ## 1. One-line description
 
-**AccessYourself is an exam-discovery and government-exam preparation app for students preparing for exams such as UPSC, SSC, MPSC, and PSU exams.** [EVIDENCE: user-provided previous portfolio case study]
+**AssessYourself is an exam-discovery and government-exam preparation app for students preparing for exams such as UPSC, SSC, MPSC, and PSU exams.** [EVIDENCE: user-provided previous portfolio case study]
 
 The product combines exam discovery, exam-detail information, practice tests, previous-year papers/live tests, and a backend workflow for bringing large question banks into the product. [EVIDENCE: user-provided previous portfolio case study]
 
@@ -49,7 +49,7 @@ The supplied case study also indicates that the content team had a large bank of
 
 ### After
 
-AccessYourself brings exam discovery and preparation into one student-facing product, including exam details, practice tests, previous-year papers, live tests, timed question answering, review marking, submission, instant analysis, and score history. [EVIDENCE: user-provided previous portfolio case study]
+AssessYourself brings exam discovery and preparation into one student-facing product, including exam details, practice tests, previous-year papers, live tests, timed question answering, review marking, submission, instant analysis, and score history. [EVIDENCE: user-provided previous portfolio case study]
 
 The question-bank workflow turns an Excel upload into structured content with row-level error reporting instead of requiring every question to be entered manually. [EVIDENCE: user-provided previous portfolio case study]
 

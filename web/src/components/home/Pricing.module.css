@@ -1,0 +1,221 @@
+.section {
+  background: var(--surface);
+}
+
+.inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--section-py) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section headings are centred site-wide (CLAUDE.md). */
+.head {
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.lede {
+  max-width: 54ch;
+  margin: 14px auto 0;
+  font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+/* ---- Segmented toggle ---- */
+
+.toggle {
+  display: inline-flex;
+  gap: 4px;
+  margin-top: clamp(28px, 4vw, 40px);
+  padding: 4px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-alt);
+}
+
+.tab {
+  position: relative;
+  min-width: 150px;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 200ms ease-out;
+}
+.tab[aria-selected="true"] {
+  color: #fff;
+}
+.tab:not([aria-selected="true"]):hover {
+  color: var(--ink);
+}
+
+.pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--green);
+  box-shadow: 0 6px 14px -8px rgb(10 127 85 / 0.6);
+}
+
+.tabLabel {
+  position: relative;
+}
+
+/* ---- Cards ---- */
+
+.panel {
+  width: 100%;
+  margin-top: clamp(24px, 3vw, 36px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(22px, 2.6vw, 30px);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+/* A short green light that runs around the card border on hover. */
+.beam {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  overflow: visible;
+  pointer-events: none;
+}
+.beam rect {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 12 88;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+.card:hover .beam rect {
+  opacity: 1;
+  animation: beam 2.4s linear infinite;
+}
+@keyframes beam {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+}
+.from,
+.per {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+.amount {
+  font-size: clamp(2rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.line {
+  margin-top: 14px;
+  color: var(--ink-soft);
+}
+
+/* Reserves its line so the section height never jumps between tabs. */
+.note {
+  min-height: 1.5em;
+  margin-top: 16px;
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  margin-top: 12px;
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 160ms ease-out;
+}
+.link svg {
+  transition: transform 160ms ease-out;
+}
+.link:hover {
+  text-decoration-color: currentColor;
+}
+.link:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .tab {
+    min-width: 0;
+    flex: 1;
+  }
+  .toggle {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .beam rect {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
