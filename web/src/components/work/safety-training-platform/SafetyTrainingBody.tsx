@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getCaseStudy } from "@/content/case-studies";
+import { getVisibleCaseStudy } from "@/content/case-studies";
 import { Reveal } from "../Reveal";
 import { GoLive } from "./GoLive";
 import styles from "./SafetyTraining.module.css";
@@ -55,7 +55,7 @@ const Arrow = () => (
 );
 
 export function SafetyTrainingBody() {
-  const next = getCaseStudy("poststeady");
+  const next = getVisibleCaseStudy("poststeady");
   const isProduction = process.env.VERCEL_ENV === "production";
   const showTestimonial = !isProduction;
 

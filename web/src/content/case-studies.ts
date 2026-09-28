@@ -5,11 +5,15 @@
 // components in components/work/<slug>/.
 
 export type Shot = { src: string; width: number; height: number; alt: string };
+/** A dashed, labelled frame standing in for a screen that isn't captured yet. */
+export type HeroPlaceholder = { placeholder: string };
 
 export type CaseStudy = {
   slug: string;
   /** Rendered on one line: [accent part, ink part], space-joined. */
   title: [string, string];
+  /** The two title parts run together with no space (Post + steady). */
+  joined?: boolean;
   /** Project accent: art direction only, never buttons. */
   accent: string;
   /** Small mono line above the title. */
@@ -25,10 +29,13 @@ export type CaseStudy = {
   };
   /** The status, dressed in the project's world: a rotated stamp (Assess
       Yourself) or a pulsing on-air badge in the card head (EHS). */
-  stamp: { status: string; note?: string; variant?: "stamp" | "live" };
+  stamp: { status: string; note?: string; variant?: "stamp" | "live" | "dateline" };
   liveHref?: string;
   /** A single pre-composed hero shot (the product's own promo render). */
-  hero: Shot;
+  hero: Shot | HeroPlaceholder;
+  /** Placeholder frames stand in for screens, so the page is hidden on
+      production until real ones replace them (case-study-brief §0). */
+  hiddenOnProduction?: boolean;
   seo: { title: string; description: string };
 };
 
@@ -94,8 +101,50 @@ export const CASE_STUDIES: CaseStudy[] = [
         "How we built EHS Guru's custom training platform in about 2 months: one-click Zoom classes, automatic attendance, every class recorded, and free webinars that bring in new learners.",
     },
   },
+  {
+    slug: "poststeady",
+    title: ["Post", "steady"],
+    joined: true,
+    accent: "#1A5BFA",
+    kicker: "Case study · Own product",
+    line: "A web app that turns the analytics files social media freelancers already download into a branded monthly report for their clients.",
+    card: {
+      label: "Proof · Case study 03",
+      fields: [
+        ["Type", "Our own product"],
+        ["Platform", "Web app"],
+        ["Industry", "Social media marketing"],
+        ["Service", "Product design, build and launch"],
+        ["Stack", "Next.js · Supabase · Gemini"],
+        ["Timeline", "11 weeks"],
+      ],
+    },
+    stamp: { status: "Live · poststeady.com", variant: "dateline" },
+    liveHref: "https://www.poststeady.com",
+    hero: {
+      placeholder:
+        "Finished report, page 1, fanned over the upload screen (made-up client, once captured)",
+    },
+    hiddenOnProduction: true,
+    seo: {
+      title: "Poststeady: client reports from the files freelancers already export | Ship Thesis case study",
+      description:
+        "How we built Poststeady, our own product, in 11 weeks: 175 column names matched to the right metric, an AI summary that quotes only real figures, and a branded PDF or share link.",
+    },
+  },
 ];
 
 export function getCaseStudy(slug: string) {
   return CASE_STUDIES.find((c) => c.slug === slug);
+}
+
+/** Pages with placeholder frames don't exist on production. */
+export function isVisible(study: CaseStudy) {
+  return !(study.hiddenOnProduction && process.env.VERCEL_ENV === "production");
+}
+
+/** For links between case studies: undefined while a page is hidden. */
+export function getVisibleCaseStudy(slug: string) {
+  const study = getCaseStudy(slug);
+  return study && isVisible(study) ? study : undefined;
 }

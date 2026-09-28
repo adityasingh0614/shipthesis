@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseOpening } from "@/components/work/CaseOpening";
 import { AssessYourselfBody } from "@/components/work/assess-yourself/AssessYourselfBody";
+import { PoststeadyBody } from "@/components/work/poststeady/PoststeadyBody";
 import { SafetyTrainingBody } from "@/components/work/safety-training-platform/SafetyTrainingBody";
-import { CASE_STUDIES, getCaseStudy } from "@/content/case-studies";
+import { CASE_STUDIES, getVisibleCaseStudy, isVisible } from "@/content/case-studies";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -13,27 +14,29 @@ type Props = { params: Promise<{ slug: string }> };
 const BODIES: Record<string, ComponentType> = {
   "assess-yourself": AssessYourselfBody,
   "safety-training-platform": SafetyTrainingBody,
+  poststeady: PoststeadyBody,
 };
 
-// Only slugs in the content file exist; anything else is a 404.
+// Only visible slugs in the content file exist; anything else (including a
+// page with placeholder frames, on production) is a 404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return CASE_STUDIES.map(({ slug }) => ({ slug }));
+  return CASE_STUDIES.filter(isVisible).map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const study = getCaseStudy((await params).slug);
+  const study = getVisibleCaseStudy((await params).slug);
   if (!study) return {};
   return {
     title: study.seo.title,
     description: study.seo.description,
-    openGraph: { images: [study.hero.src] },
+    openGraph: { images: "src" in study.hero ? [study.hero.src] : [] },
   };
 }
 
 export default async function CaseStudyPage({ params }: Props) {
-  const study = getCaseStudy((await params).slug);
+  const study = getVisibleCaseStudy((await params).slug);
   if (!study) notFound();
   const Body = BODIES[study.slug];
 

@@ -225,7 +225,7 @@
   max-width: 540px;
 }
 /* A lanyard slot, so it reads as a pass you'd wear at a live event. */
-.livePass .card::before {
+.livePass:not(.proof) .card::before {
   content: "";
   position: absolute;
   top: -9px;
@@ -301,4 +301,85 @@
   .cardFoot {
     flex-wrap: wrap;
   }
+}
+
+/* ---- Poststeady: a proof sheet (web/public/_design/poststeady.html) ---- */
+/* Printer's crop marks at the card's four corners, in place of the lanyard
+   slot; the status is a dateline whose dot doesn't pulse. */
+.proof .card::before,
+.proof .card::after,
+.cmBl,
+.cmBr {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+.proof .card::before {
+  top: -8px;
+  left: -8px;
+  border-top: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
+}
+.proof .card::after {
+  top: -8px;
+  right: -8px;
+  border-top: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+}
+.cmBl {
+  bottom: -8px;
+  left: -8px;
+  border-bottom: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
+}
+.cmBr {
+  bottom: -8px;
+  right: -8px;
+  border-bottom: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+}
+.proof .onAir i {
+  background: var(--accent);
+  animation: none;
+}
+
+/* A screen that isn't captured yet: a dashed, labelled printed page. */
+.shotPh {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  padding: 18px;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 3%, var(--surface));
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.shotPh::before,
+.shotPh::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+}
+.shotPh::before {
+  top: -7px;
+  left: -7px;
+  border-top: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
+}
+.shotPh::after {
+  bottom: -7px;
+  right: -7px;
+  border-bottom: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
 }
