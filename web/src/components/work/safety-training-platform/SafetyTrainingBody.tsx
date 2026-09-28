@@ -1,0 +1,454 @@
+import type { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { getCaseStudy } from "@/content/case-studies";
+import { Reveal } from "../Reveal";
+import { GoLive } from "./GoLive";
+import styles from "./SafetyTraining.module.css";
+
+// EHS Training Platform, below the hero. Its own world: "The Session
+// Console", live-broadcast language (run sheet, cues, on air, logs), in
+// EHS green (approved design: web/public/_design/safety-training-platform.html).
+// Facts: docs/case-studies/ehs-training-platform-raw.md, [EVIDENCE]/[FOUNDER] only.
+
+const MARQUEE = [
+  "One-click classes",
+  "Automatic attendance",
+  "Every class recorded",
+  "Engagement analytics",
+  "Free webinars",
+  "Email and WhatsApp reminders",
+];
+
+function Asterisk() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true">
+      <path
+        d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function Head({ label, id, children }: { label: string; id: string; children: ReactNode }) {
+  return (
+    <>
+      <p className={styles.label}>{label}</p>
+      <h2 id={id} className={styles.h2}>
+        {children}
+      </h2>
+    </>
+  );
+}
+
+const A = ({ children }: { children: ReactNode }) => (
+  <span className={styles.accent}>{children}</span>
+);
+
+const Arrow = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+    <path d="M3 9h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export function SafetyTrainingBody() {
+  const next = getCaseStudy("poststeady");
+  const isProduction = process.env.VERCEL_ENV === "production";
+  const showTestimonial = !isProduction;
+
+  return (
+    <>
+      {/* Marquee: the whole platform in one line */}
+      <div className={styles.marquee} aria-hidden="true">
+        <div className={styles.track}>
+          {[0, 1].map((copy) => (
+            <span key={copy}>
+              {MARQUEE.map((m) => (
+                <span key={m} className={styles.item}>
+                  {m} <Asterisk />
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* 01 · The brief, set as a broadcast run sheet */}
+      <section className={styles.section} aria-labelledby="brief-title">
+        <div className={styles.wrap}>
+          <Head label="01 · The brief" id="brief-title">
+            Live classes, run on <A>their own platform</A>
+          </Head>
+          <Reveal className={styles.sheet}>
+            <div className={styles.sheetHead}>
+              <div>
+                Run sheet<b>EHS Training Platform</b>
+              </div>
+              <div>
+                Client<b>EHS Guru</b>
+              </div>
+              <div>
+                Runtime<b>About 2 months to live</b>
+              </div>
+            </div>
+            {[
+              ["01", "What EHS Guru needed", "They teach live Zoom classes in batches of nearly 80 learners, with several batches running. They were on an off-the-shelf learning platform, paying for features they didn't use, under someone else's brand. They wanted a platform built for how they actually teach, on their own domain."],
+              ["02", "What made it hard", "The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order."],
+              ["03", "What went live", "One platform for admins, trainers, learners and webinar guests: one-click Zoom classes, automatic attendance, every class recorded into a private library, engagement analytics, and free webinars that bring in new learners."],
+            ].map(([n, title, body]) => (
+              <div key={n} className={styles.cue}>
+                <div className={styles.cueN}>
+                  Cue<b>{n}</b>
+                </div>
+                <div className={styles.cueB}>
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </div>
+              </div>
+            ))}
+          </Reveal>
+          <ul className={styles.stats}>
+            {[
+              ["76", "pages across four portals"],
+              ["52", "API routes behind them"],
+              ["~80", "learners in a single live class"],
+              ["4", "audiences, each with its own view"],
+            ].map(([num, cap], i) => (
+              <Reveal as="li" key={cap} delay={i * 0.09} className={styles.stat}>
+                <b>{num}</b>
+                <span>{cap}</span>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 02 · Four audiences, one system */}
+      <section className={`${styles.section} ${styles.band}`} aria-labelledby="platform-title">
+        <div className={styles.wrap}>
+          <Head label="02 · The platform" id="platform-title">
+            Four audiences, <A>one system</A>
+          </Head>
+          <p className={styles.lede}>
+            Admins run the schedule, trainers teach, learners join from any
+            browser, and guests come in through free webinars. Each sees only
+            what they need.
+          </p>
+          <div className={styles.grid4}>
+            {[
+              { src: "sessions.webp", who: "Admin", strong: "One-click classes.", line: "Schedule a session and the Zoom meeting is created for you.", alt: "Admin training sessions list with Start Session buttons" },
+              { src: "learner.webp", who: "Learner", strong: "Join from the portal.", line: "Nothing to install, no Zoom sign-up.", alt: "Learner dashboard with progress, upcoming sessions and recordings" },
+              { src: "users.webp", who: "Admin", strong: "Everyone in one place.", line: "Roles, batches and bulk CSV import.", alt: "Admin user management with roles and CSV import" },
+              { src: "webinars.webp", who: "Guest", strong: "Free webinars.", line: "Sign up without an account, get reminders, come back as a learner.", alt: "Free sessions portal for webinar guests" },
+            ].map((a, i) => (
+              <Reveal key={a.src} delay={i % 2 ? 0.12 : 0} className={styles.aud}>
+                <figure>
+                  <Image
+                    src={`/work/safety-training-platform/${a.src}`}
+                    width={1400}
+                    height={824}
+                    alt={a.alt}
+                    sizes="(max-width: 760px) 90vw, 530px"
+                  />
+                  <figcaption className={styles.audCap}>
+                    <small>{a.who}</small>
+                    <span>
+                      <strong>{a.strong}</strong> {a.line}
+                    </span>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 03 · Showtime: pinned screen, cues light up */}
+      <section className={styles.section} aria-labelledby="live-title">
+        <div className={styles.wrap}>
+          <Head label="03 · Showtime" id="live-title">
+            What happens when a class <A>goes live</A>
+          </Head>
+          <GoLive />
+        </div>
+      </section>
+
+      {/* 04 · The hard parts, as a status-page reliability log */}
+      <section className={`${styles.section} ${styles.band}`} aria-labelledby="hard-title">
+        <div className={styles.wrap}>
+          <Head label="04 · The hard parts" id="hard-title">
+            The <A>reliability log</A>
+          </Head>
+          <p className={styles.lede}>
+            Zoom sits at the centre of every class, and it doesn&apos;t always
+            behave. These are the problems we designed for before a single paid
+            class ran.
+          </p>
+          <Reveal className={styles.log}>
+            <div className={styles.logHead}>
+              <span>ehs-training-platform · status</span>
+              <span className={styles.ok}>
+                <i aria-hidden="true" />
+                All classes recorded
+              </span>
+            </div>
+            {[
+              { area: "Recording", when: "during class", title: "A recording stops mid-class", cause: "Trainers pause, or stop by accident, and Zoom splits the recording.", fix: "Recording restarts automatically, and every segment is kept in order." },
+              { area: "Attendance", when: "on join", title: "“Who is ‘John’ in Zoom?”", cause: "People type their names differently when they join.", fix: "Matched by email first, then by name within the enrolled batch." },
+              { area: "Session", when: "on leave", title: "A class that ends too early", cause: "A learner joining early and leaving, or a trainer testing the link.", fix: "The class ends only when it really ends." },
+            ].map((e) => (
+              <div key={e.area} className={styles.entry}>
+                <div className={styles.ts}>
+                  <b>{e.area}</b>
+                  {e.when}
+                </div>
+                <div>
+                  <h3>{e.title}</h3>
+                  <dl>
+                    <dt>Cause</dt>
+                    <dd>{e.cause}</dd>
+                    <dt>Fix</dt>
+                    <dd>{e.fix}</dd>
+                  </dl>
+                </div>
+                <span className={styles.chip}>Resolved</span>
+              </div>
+            ))}
+            <div className={`${styles.entry} ${styles.entryBig}`}>
+              <div className={styles.ts}>
+                <b>Playback</b>library
+              </div>
+              <div>
+                <h3>Class videos loading slowly</h3>
+                <dl>
+                  <dt>Fix</dt>
+                  <dd>Moved playback to a fast delivery network, measured before choosing: 0.12 → 0.90 MB/s.</dd>
+                </dl>
+              </div>
+              <div className={styles.x}>
+                7.5×<small>faster video playback</small>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Mid-page call: right after the engineering proof. The page's one
+          full-bleed brand-green moment. */}
+      <section className={styles.callBand} aria-labelledby="call-title">
+        <div className={styles.wrap}>
+          <Reveal>
+            <h2 id="call-title">
+              Want a platform
+              <br />
+              built like this?
+            </h2>
+            <p>Start with a 30-minute call about your idea.</p>
+            <Link href="/#contact" className={styles.callBtn}>
+              Book a Discovery Call
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 05 · Judgement: what we left out, on purpose */}
+      <section className={styles.section} aria-labelledby="judgement-title">
+        <div className={styles.wrap}>
+          <Head label="05 · Judgement" id="judgement-title">
+            What we <A>left out</A>, on purpose
+          </Head>
+          <ul className={styles.cuts}>
+            {[
+              ["Cut 01", "Payments, kept offline", "EHS Guru's choice. It kept the build on teaching, not billing."],
+              ["Cut 02", "Waiting for WhatsApp", "Email went live first. WhatsApp followed once Meta approved the templates, so launch was never held."],
+              ["Cut 03", "A premium hosting tier", "Reminders run on external scheduling, so the platform stays on low-cost hosting."],
+            ].map(([tag, title, why], i) => (
+              <Reveal as="li" key={title} delay={i * 0.12} className={styles.cut}>
+                <small>{tag}</small>
+                <h3>{title}</h3>
+                <p>{why}</p>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 06 · Result */}
+      <section className={`${styles.section} ${styles.band}`} aria-labelledby="result-title">
+        <div className={styles.wrap}>
+          <p className={styles.label} id="result-title">
+            06 · Result
+          </p>
+          <div className={styles.result}>
+            <Reveal>
+              <div className={styles.big}>
+                Live since
+                <br />
+                May 2026
+              </div>
+              <p className={styles.bigLine}>about 2 months after the build started.</p>
+            </Reveal>
+            <Reveal delay={0.14}>
+              <ul className={styles.facts}>
+                <li>
+                  <small>Classes</small>Runs EHS Guru&apos;s paid live classes, in batches of nearly 80.
+                </li>
+                <li>
+                  <small>Brand</small>On their own domain, under their own name.
+                </li>
+                <li>
+                  <small>After launch</small>Still on our monthly maintenance plan.
+                </li>
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Under the hood: open by default, same band as the result */}
+      <section className={`${styles.section} ${styles.band} ${styles.hoodSection}`}>
+        <div className={styles.wrap}>
+          <details className={styles.hood} open>
+            <summary>
+              <div>
+                <h2>Under the hood</h2>
+                <p>Architecture and the decisions behind it.</p>
+              </div>
+            </summary>
+            <div className={styles.hoodBody}>
+              <ul className={styles.flow}>
+                <li>Any browser</li>
+                <li>Next.js on Vercel</li>
+                <li>52 API routes</li>
+                <li>Supabase · 27 tables</li>
+              </ul>
+              <ul className={styles.flow2}>
+                <li>Zoom events</li>
+                <li>Webhook, every event logged</li>
+                <li>Attendance in one step</li>
+                <li>Best recording picked</li>
+                <li>Client&apos;s own storage</li>
+              </ul>
+              <ol className={styles.decis}>
+                <li><b>Attendance counted inside the database, in one step.</b> Duplicate or late Zoom events never double count.</li>
+                <li><b>Recordings copied into EHS Guru&apos;s own storage.</b> Their video library doesn&apos;t depend on Zoom&apos;s.</li>
+                <li><b>Every Zoom event logged.</b> Any class&apos;s full history can be traced.</li>
+                <li><b>Access checked at three layers.</b> A fast check at the door, backed by an authoritative one.</li>
+                <li><b>Quality:</b> regression tests on the Zoom and recording logic, error monitoring, security headers and rate limits.</li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      {/* 07 · Testimonial: placeholder, hidden on the live site until a
+          real, approved quote from EHS Guru exists (home-brief §0). */}
+      {showTestimonial && (
+        <section className={styles.section} aria-labelledby="words-title">
+          <div className={styles.wrap}>
+            <Head label="07 · In their words" id="words-title">
+              What <A>EHS Guru</A> says
+            </Head>
+            <Reveal className={styles.panel}>
+              <div className={styles.video}>
+                <span className={styles.videoTag}>Video testimonial</span>
+                <span className={styles.play} aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24">
+                    <path d="M8 5.5v13l10.5-6.5z" fill="currentColor" />
+                  </svg>
+                </span>
+              </div>
+              <figure className={styles.quote}>
+                <span className={styles.mark} aria-hidden="true">
+                  &ldquo;
+                </span>
+                <span className={styles.placeholder}>Placeholder · hidden on the live site until real</span>
+                <blockquote>
+                  A short, approved quote from EHS Guru about working with us
+                  goes here, in their own words.
+                </blockquote>
+                <figcaption>
+                  Name Surname<span>Role · EHS Guru</span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      {/* 08 · Conclusion: the end-of-show log, then the two calls */}
+      <section className={`${styles.section} ${showTestimonial ? styles.band : ""}`} aria-labelledby="conclusion-title">
+        <div className={styles.wrap}>
+          <Head label={`${showTestimonial ? "08" : "07"} · Conclusion`} id="conclusion-title">
+            What this build says about <A>yours</A>
+          </Head>
+          <Reveal className={styles.final}>
+            <p className={styles.finalHead}>
+              <span>End of show</span>
+              <span className={styles.off}>
+                <i aria-hidden="true" />
+                Off air · still running
+              </span>
+            </p>
+            <ol className={styles.points}>
+              {[
+                ["i.", "We make the tools you already use dependable", "Zoom, email and WhatsApp stayed. We built the platform that makes them work together."],
+                ["ii.", "We measure before we choose", "Video playback was tested both ways before we picked the faster one: 7.5×."],
+                ["iii.", "We stay after launch", "EHS Guru is still on our maintenance plan, and the platform keeps improving alongside real classes."],
+              ].map(([n, title, body]) => (
+                <li key={n} className={styles.point}>
+                  <small>{n}</small>
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </li>
+              ))}
+            </ol>
+            <p className={styles.sum}>
+              The same goes for your app: <b>a fixed quote</b> after a one-week
+              Discovery Sprint, <b>a new build every week</b>, and{" "}
+              <b>code you own</b>.
+            </p>
+          </Reveal>
+          <div className={styles.finalActions}>
+            <Link href="/#contact" className="btn">
+              Book a Discovery Call
+            </Link>
+            <Link href="/#pricing" className={`btn ${styles.secondaryBtn}`}>
+              See pricing <Arrow />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Next project: the page turn. Poststeady's page isn't built yet, so
+          the card falls back to Home's work carousel. */}
+      <section className={`${styles.section} ${showTestimonial ? "" : styles.band}`}>
+        <div className={styles.wrap}>
+          <Reveal>
+            <Link className={`${styles.next} ${isProduction ? styles.nextSolo : ""}`} href={next ? `/work/${next.slug}` : "/#work"}>
+              <div>
+                <small className={styles.nextLabel}>Next project</small>
+                <h2>
+                  <span>Poststeady</span> Client Reporting Tool
+                </h2>
+                <p>
+                  Our own product: it turns the analytics files social media
+                  freelancers already download into a branded monthly report.
+                </p>
+                <span className={styles.go}>
+                  {next ? "View case study" : "See our work"} <Arrow />
+                </span>
+              </div>
+              {/* Dashed frame until a Poststeady screen is captured; never
+                  on the live site (case-study-brief §0, placeholders). */}
+              {!isProduction && <div className={styles.phFrame}>Poststeady screen, once captured</div>}
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}

@@ -209,3 +209,96 @@
     right: 10px;
   }
 }
+
+/* ---- EHS: a session pass (web/public/_design/safety-training-platform.html) ---- */
+/* The longer name sits smaller so it still fits one line beside the product. */
+.livePass {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+}
+.livePass .title {
+  font-size: clamp(2.25rem, 3.8vw, 4rem);
+}
+.livePass .line {
+  max-width: 36ch;
+}
+.livePass .card {
+  max-width: 540px;
+}
+/* A lanyard slot, so it reads as a pass you'd wear at a live event. */
+.livePass .card::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  translate: -50% 0;
+  width: 56px;
+  height: 14px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-alt);
+}
+.livePass .cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--accent);
+  color: #fff;
+}
+.onAir {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.onAir strong,
+.onAir a {
+  font-weight: 700;
+}
+.onAir i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d93b2b;
+  animation: onAir 1.6s ease-out infinite;
+}
+@keyframes onAir {
+  0% {
+    box-shadow: 0 0 0 0 rgb(217 59 43 / 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 9px rgb(217 59 43 / 0);
+  }
+}
+.cardFoot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 18px;
+  border-top: 2px dashed var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.livePass .shot img {
+  width: 100%;
+}
+@media (max-width: 959px) {
+  .livePass {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .livePass .cardHead,
+  .cardFoot {
+    flex-wrap: wrap;
+  }
+}

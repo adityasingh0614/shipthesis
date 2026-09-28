@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseOpening } from "@/components/work/CaseOpening";
 import { AssessYourselfBody } from "@/components/work/assess-yourself/AssessYourselfBody";
+import { SafetyTrainingBody } from "@/components/work/safety-training-platform/SafetyTrainingBody";
 import { CASE_STUDIES, getCaseStudy } from "@/content/case-studies";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -11,6 +12,7 @@ type Props = { params: Promise<{ slug: string }> };
 // bespoke world (docs/design/case-study-brief.md).
 const BODIES: Record<string, ComponentType> = {
   "assess-yourself": AssessYourselfBody,
+  "safety-training-platform": SafetyTrainingBody,
 };
 
 // Only slugs in the content file exist; anything else is a 404.

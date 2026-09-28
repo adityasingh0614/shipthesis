@@ -1,52 +1,121 @@
-# Safety training platform
+# EHS Training Platform
 
-> **Superseded 2026-09-28.** This copy follows the retired shared template. The page's plan now lives in `docs/design/case-study-brief.md` §3 ("The Session Console"). Rewrite this file to match once the page is built.
+> Matches the built page `/work/safety-training-platform` (ported from the approved design `web/public/_design/safety-training-platform.html`, 2026-09-28). World: "The Session Console" (`docs/design/case-study-brief.md` §3). Facts: `docs/case-studies/ehs-training-platform-raw.md`, [EVIDENCE]/[FOUNDER] only.
 
-**Page accent:** `#00674C` (project colour; use it as this page's primary accent, buttons stay green). See `docs/design/home-brief.md` §2.
+**Page accent:** `#00674C` (art direction only; buttons stay green).
 
-A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.
+## Opening
 
-**Client · Web app (desktop and mobile browsers) · Next.js, Supabase · Live since May 2026 · Live**
+**Kicker:** Case study · Web platform
+**Title:** EHS TRAINING PLATFORM ("EHS Training" in the accent)
+**Line:** A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.
 
-## The challenge
+**Session pass · Case study 02** (on-air badge: ● Live since May 2026)
+Client EHS Guru · Platform Web app, any browser · Industry Corporate safety training · Service Web platform design and development · Stack Next.js · Supabase · Zoom · Timeline About 2 months to live
+Foot: Access: admin · trainer · learner · guest │ On our maintenance plan
 
-EHS Guru teaches live classes on Zoom, in batches of nearly 80 learners, with several batches running at once. They were on an off-the-shelf learning platform, paying for features they didn't use, under someone else's brand. They wanted a platform built for how they actually teach, on their own domain.
+**Marquee:** One-click classes ✱ Automatic attendance ✱ Every class recorded ✱ Engagement analytics ✱ Free webinars ✱ Email and WhatsApp reminders
 
-## What we built
+## 01 · The brief
 
-- One-click classes: the admin schedules a session, the Zoom meeting is created and learners get an email.
-- Joining from the learner portal in any browser, with nothing to install and no extra sign-up.
-- Automatic attendance, with minutes present for every learner.
-- A private video library: every class is recorded, the admin publishes it when ready, and watch progress is tracked per learner.
-- Free webinar pages that bring in new learners, with automatic reminders.
+**Live classes, run on their own platform**
 
-## The hard part we solved
+Run sheet: EHS Training Platform │ Client: EHS Guru │ Runtime: About 2 months to live
 
-- **Every class recorded, start to finish.** If a trainer pauses or accidentally stops the recording, it restarts automatically and every part is kept in order.
-- **Attendance on the right person.** People type their names differently in Zoom. The platform matches each attendee to the enrolled learner, so attendance reports stay accurate.
-- **Videos that load 7.5× faster.** We moved playback to a fast delivery network and measured the difference before choosing it.
+- **Cue 01 · What EHS Guru needed.** They teach live Zoom classes in batches of nearly 80 learners, with several batches running. They were on an off-the-shelf learning platform, paying for features they didn't use, under someone else's brand. They wanted a platform built for how they actually teach, on their own domain.
+- **Cue 02 · What made it hard.** The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order.
+- **Cue 03 · What went live.** One platform for admins, trainers, learners and webinar guests: one-click Zoom classes, automatic attendance, every class recorded into a private library, engagement analytics, and free webinars that bring in new learners.
 
-## Result
+Stats: **76** pages across four portals · **52** API routes behind them · **~80** learners in a single live class · **4** audiences, each with its own view
 
-- Live since May 2026.
-- Runs EHS Guru's paid live classes, in batches of nearly 80 learners.
-- Runs on EHS Guru's own domain and brand.
-- The client stayed on after launch with a monthly maintenance plan.
-- [RESULT TBD: cost saved against the old platform, total learners, classes run]
+## 02 · The platform
 
-## Screens
+**Four audiences, one system**
 
-Use a demo dataset. EHS Guru's branding can be shown.
+Admins run the schedule, trainers teach, learners join from any browser, and guests come in through free webinars. Each sees only what they need.
 
-1. Admin sessions list. ⚠ EHS Guru branding; real trainer names.
-2. Recordings library. ⚠ EHS Guru branding; thumbnails may show faces.
-3. Engagement analytics. ⚠ EHS Guru branding; real learner names and attendance, so demo data only.
-4. Learner video player with progress. ⚠ EHS Guru branding; class content may show real people.
+- ADMIN · **One-click classes.** Schedule a session and the Zoom meeting is created for you. (`sessions.webp`)
+- LEARNER · **Join from the portal.** Nothing to install, no Zoom sign-up. (`learner.webp`)
+- ADMIN · **Everyone in one place.** Roles, batches and bulk CSV import. (`users.webp`)
+- GUEST · **Free webinars.** Sign up without an account, get reminders, come back as a learner. (`webinars.webp`)
 
-## CTA
+## 03 · Showtime
 
-**Heading:** Want an app built like this?
-> Start with a 30-minute call about your idea.
+**What happens when a class goes live** (pinned `sessions.webp`, class clock follows the active cue)
 
-**Button:** Book a Discovery Call
-**Links:** Next: Poststeady → *(/work/poststeady)* · Back to all work → *(/work)*
+- **T-24h · Reminders go out.** Email and WhatsApp reminders land at the right time in each learner's time zone, within a 10-minute window either side.
+- **T-0 · Admin clicks Start.** The Zoom meeting is ready, and it shows the trainer's name before they walk in.
+- **Join · Learners join.** From the portal, in any browser. Their attendance starts counting the moment they click Join.
+- **Live · Every minute counted.** Every join and leave is recorded in one step, so a duplicate notification from Zoom can never count twice.
+- **Pause · Recording stops by accident.** It restarts on its own, and every segment of the class is kept, in order.
+- **After · Class ends, video lands.** The best video file is copied into EHS Guru's own storage, published when the admin is ready, and watch time is checked on the server.
+
+## 04 · The hard parts
+
+**The reliability log**
+
+Zoom sits at the centre of every class, and it doesn't always behave. These are the problems we designed for before a single paid class ran.
+
+Log header: ehs-training-platform · status │ ● All classes recorded
+
+- **Recording, during class · A recording stops mid-class.** Cause: trainers pause, or stop by accident, and Zoom splits the recording. Fix: recording restarts automatically, and every segment is kept in order. RESOLVED
+- **Attendance, on join · "Who is 'John' in Zoom?"** Cause: people type their names differently when they join. Fix: matched by email first, then by name within the enrolled batch. RESOLVED
+- **Session, on leave · A class that ends too early.** Cause: a learner joining early and leaving, or a trainer testing the link. Fix: the class ends only when it really ends. RESOLVED
+- **Playback, library · Class videos loading slowly.** Fix: moved playback to a fast delivery network, measured before choosing: 0.12 → 0.90 MB/s. **7.5×** faster video playback (the page's one big number).
+
+## Mid-page CTA
+
+**Want a platform built like this?**
+Start with a 30-minute call about your idea.
+**Button:** Book a Discovery Call → `/#contact`
+
+## 05 · Judgement
+
+**What we left out, on purpose**
+
+- **Cut 01 · Payments, kept offline.** EHS Guru's choice. It kept the build on teaching, not billing.
+- **Cut 02 · Waiting for WhatsApp.** Email went live first. WhatsApp followed once Meta approved the templates, so launch was never held.
+- **Cut 03 · A premium hosting tier.** Reminders run on external scheduling, so the platform stays on low-cost hosting.
+
+## 06 · Result
+
+**LIVE SINCE MAY 2026**, about 2 months after the build started.
+
+- Classes: Runs EHS Guru's paid live classes, in batches of nearly 80.
+- Brand: On their own domain, under their own name.
+- After launch: Still on our monthly maintenance plan.
+
+## Under the hood (open by default)
+
+Architecture and the decisions behind it.
+
+Flow: Any browser → Next.js on Vercel → 52 API routes → Supabase · 27 tables
+Zoom events → Webhook, every event logged → Attendance in one step → Best recording picked → Client's own storage
+
+- **Attendance counted inside the database, in one step.** Duplicate or late Zoom events never double count.
+- **Recordings copied into EHS Guru's own storage.** Their video library doesn't depend on Zoom's.
+- **Every Zoom event logged.** Any class's full history can be traced.
+- **Access checked at three layers.** A fast check at the door, backed by an authoritative one.
+- **Quality:** regression tests on the Zoom and recording logic, error monitoring, security headers and rate limits.
+
+## 07 · In their words (hidden on production)
+
+**What EHS Guru says**: placeholder video and quote until a real, approved testimonial exists.
+
+## 08 · Conclusion (07 on production)
+
+**What this build says about yours**, set as the end-of-show log (End of show │ ● Off air · still running):
+
+- **i. We make the tools you already use dependable.** Zoom, email and WhatsApp stayed. We built the platform that makes them work together.
+- **ii. We measure before we choose.** Video playback was tested both ways before we picked the faster one: 7.5×.
+- **iii. We stay after launch.** EHS Guru is still on our maintenance plan, and the platform keeps improving alongside real classes.
+
+The same goes for your app: **a fixed quote** after a one-week Discovery Sprint, **a new build every week**, and **code you own**.
+
+**Buttons:** Book a Discovery Call → `/#contact` · See pricing → `/#pricing`
+
+## Next project
+
+**Poststeady Client Reporting Tool** ("Poststeady" in `#1A5BFA`)
+Our own product: it turns the analytics files social media freelancers already download into a branded monthly report.
+**Link:** See our work → `/#work` (switches to "View case study" → `/work/poststeady` once that page exists). The dashed "Poststeady screen, once captured" frame shows only off production.

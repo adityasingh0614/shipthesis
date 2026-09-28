@@ -5,15 +5,26 @@ import styles from "./CaseOpening.module.css";
 
 // Shared hero for every case study (approved design:
 // web/public/_design/assess-yourself-v2.html). Text and a facts card on
-// the left, the product on the right. The card's label and the stamp
-// carry each project's own world (Assess Yourself: an exam admit card).
+// the left, the product on the right. The card's label and the status
+// carry each project's own world (Assess Yourself: an exam admit card with
+// a stamp; EHS: a session pass with an on-air badge,
+// web/public/_design/safety-training-platform.html).
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 export function CaseOpening({ study }: { study: CaseStudy }) {
   const { title, kicker, line, card, stamp, liveHref, hero } = study;
+  const live = stamp.variant === "live";
+
+  const status = liveHref ? (
+    <a href={liveHref} target="_blank" rel="noreferrer">
+      {stamp.status}
+    </a>
+  ) : (
+    <strong>{stamp.status}</strong>
+  );
 
   return (
-    <header className={styles.opening}>
+    <header className={`${styles.opening} ${live ? styles.livePass : ""}`}>
       <div className={styles.text}>
         <p className={`${styles.kicker} ${styles.rise}`}>{kicker}</p>
         <h1 className={`${styles.title} ${styles.rise}`} style={d(80)}>
@@ -24,7 +35,19 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
         </p>
 
         <div className={`${styles.card} ${styles.rise}`} style={d(240)}>
-          <p className={styles.cardHead}>{card.label}</p>
+          {live ? (
+            // EHS: a session pass, its status an on-air badge in the head.
+            <p className={styles.cardHead}>
+              <span>{card.label}</span>
+              <span className={styles.onAir}>
+                <i aria-hidden="true" />
+                <span className={styles.visuallyHidden}>Status: </span>
+                {status}
+              </span>
+            </p>
+          ) : (
+            <p className={styles.cardHead}>{card.label}</p>
+          )}
           <dl className={styles.fields}>
             {card.fields.map(([label, value]) => (
               <div key={label} className={styles.field}>
@@ -33,17 +56,19 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
               </div>
             ))}
           </dl>
-          <p className={styles.stamp}>
-            <span className={styles.visuallyHidden}>Status: </span>
-            {liveHref ? (
-              <a href={liveHref} target="_blank" rel="noreferrer">
-                {stamp.status}
-              </a>
-            ) : (
-              <strong>{stamp.status}</strong>
-            )}
-            {stamp.note && <small>{stamp.note}</small>}
-          </p>
+          {card.foot && (
+            <p className={styles.cardFoot}>
+              <span>{card.foot[0]}</span>
+              <span>{card.foot[1]}</span>
+            </p>
+          )}
+          {!live && (
+            <p className={styles.stamp}>
+              <span className={styles.visuallyHidden}>Status: </span>
+              {status}
+              {stamp.note && <small>{stamp.note}</small>}
+            </p>
+          )}
         </div>
       </div>
 
@@ -53,7 +78,7 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
           width={hero.width}
           height={hero.height}
           alt={hero.alt}
-          sizes="(max-width: 959px) 420px, 560px"
+          sizes={live ? "(max-width: 959px) 90vw, 620px" : "(max-width: 959px) 420px, 560px"}
           priority
         />
       </div>
