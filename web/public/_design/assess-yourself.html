@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design mock: Assess Yourself case study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Phudu:wght@700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN MOCK ONLY (docs/design/case-study-brief.md). Not site code.
+   World: an exam paper. Answer-sheet bubbles, questions, scores, ruled
+   answers, in the app's own indigo. Brand: light only, no glows,
+   buttons green, Phudu headings. */
+:root{
+  --ink:#0f1a14; --ink-soft:#445048; --ink-muted:#6b766f;
+  --green:#0a7f55; --surface:#fff; --line:#c9d3cc;
+  --accent:#283593; --accent-deep:#1c2b7a;
+  --paper:color-mix(in srgb,var(--accent) 5%,#fff);
+  --paper-2:color-mix(in srgb,var(--accent) 9%,#fff);
+  --max:1200px; --gutter:clamp(16px,4vw,40px);
+  --py:clamp(96px,11vw,160px);
+  --display:"Phudu",sans-serif; --body:"Geist",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--surface);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+::selection{background:color-mix(in srgb,var(--accent) 22%,#fff)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+section{padding:var(--py) 0}
+
+/* ---- shared type ---- */
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-align:center}
+.h2{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.98;
+    font-size:clamp(2.5rem,5.6vw,4.5rem);text-align:center;text-wrap:balance;max-width:16ch;margin:14px auto 0}
+.lede{max-width:56ch;margin:22px auto 0;text-align:center;font-size:clamp(1.0625rem,1.5vw,1.25rem);color:var(--ink-soft);text-wrap:pretty}
+.accentword{color:var(--accent)}
+
+/* Headlines settle from grey to ink as the reader reaches them. */
+@supports (animation-timeline: view()){
+  .h2{animation:ink linear both;animation-timeline:view();animation-range:entry 10% cover 38%}
+  @keyframes ink{from{color:#c3c9c5}}
+}
+/* Staggered entrances. */
+.reveal{opacity:0;translate:0 28px;transition:opacity .8s cubic-bezier(.16,1,.3,1),translate .8s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;translate:0 0}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;translate:none;transition:none}.h2{animation:none}.marquee-track{animation:none}}
+
+/* ---- nav (static, like the site) ---- */
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #e6ebe7}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-size:1.25rem;text-transform:uppercase}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.95rem;color:var(--ink-soft)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:10px;background:var(--green);color:#fff;font-weight:600;text-decoration:none;white-space:nowrap}
+@media(max-width:860px){.nav ul{display:none}}
+
+/* ---- 0 · hero (as approved) ---- */
+.hero{padding:clamp(32px,4vw,56px) 0 clamp(64px,8vw,112px);text-align:center}
+.hero h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.25rem,7vw,5rem);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.hero .line{max-width:36ch;margin:20px auto 0;font-size:clamp(1.125rem,1.8vw,1.375rem);color:var(--ink-soft)}
+.meta{display:flex;flex-wrap:wrap;justify-content:center;row-gap:8px;margin-top:30px;list-style:none;font-family:var(--mono);font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.meta li{padding:2px 18px;border-left:1px solid var(--line)}.meta li:first-child{border-left:0}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--mono);font-size:.8125rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero img{width:min(620px,100%);margin:40px auto 0;filter:drop-shadow(0 22px 34px rgb(15 26 20 / .18))}
+@media(max-width:719px){.meta{flex-direction:column;gap:6px}.meta li{border:0;padding:0}.hero h1{font-size:min(2.25rem,11.5vw)}}
+
+/* ---- 1 · marquee ---- */
+.marquee{background:var(--accent);color:#fff;overflow:hidden;padding:22px 0}
+.marquee-track{display:flex;width:max-content;gap:40px;animation:slide 38s linear infinite}
+.marquee span{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.25rem,2.4vw,1.75rem);display:inline-flex;align-items:center;gap:40px;white-space:nowrap}
+.marquee svg{width:18px;height:18px;flex:none}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---- 2 · the brief, set as an answer paper ---- */
+.paper{max-width:920px;margin:56px auto 0;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden}
+.paper-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 28px;border-bottom:2px solid var(--line);background:var(--paper);font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.q{display:grid;grid-template-columns:72px 1fr;border-bottom:1px solid #e3e8e4}
+.q:last-child{border-bottom:0}
+.qn{padding:26px 0 26px 28px;font-family:var(--mono);font-weight:700;color:var(--accent);border-right:2px solid color-mix(in srgb,var(--accent) 35%,#fff)}
+.qb{padding:24px 28px 26px}
+.qb h3{font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600;letter-spacing:-.01em}
+.ans{margin-top:12px;display:flex;gap:12px;color:var(--ink-soft)}
+.ans b{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;color:var(--accent);padding-top:3px;flex:none}
+@media(max-width:600px){.q{grid-template-columns:1fr}.qn{border-right:0;padding:18px 20px 0}.qb{padding:10px 20px 22px}.paper-head{padding:14px 20px}}
+
+/* scores */
+.scores{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:920px;margin:24px auto 0;list-style:none}
+.score{border:2px solid var(--line);border-radius:16px;padding:22px 22px 20px;background:#fff}
+.score .num{font-family:var(--mono);font-weight:700;font-size:clamp(2.25rem,4vw,3.25rem);line-height:1;letter-spacing:-.03em;color:var(--accent)}
+.score .cap{margin-top:12px;font-size:.9375rem;color:var(--ink-soft);line-height:1.35}
+@media(max-width:860px){.scores{grid-template-columns:repeat(2,1fr)}}
+
+/* ---- 3 · exam discovery ---- */
+.band{background:var(--paper)}
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,56px);align-items:end;max-width:980px;margin:72px auto 0}
+.phone figure{margin:0}
+.phone img{filter:drop-shadow(0 22px 30px rgb(15 26 20 / .16))}
+.phone:nth-child(1) img{rotate:-4deg}
+.phone:nth-child(2){margin-bottom:48px}
+.phone:nth-child(3) img{rotate:4deg}
+.phone .crop img{mask-image:linear-gradient(#000 75%,transparent)}
+.pcap{margin-top:22px;text-align:center}
+.pcap small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.pcap span{display:block;margin-top:6px;font-size:.95rem;color:var(--ink-soft);max-width:28ch;margin-inline:auto}
+@media(max-width:719px){.phones{grid-template-columns:1fr;max-width:280px;gap:56px}.phone:nth-child(2){margin-bottom:0}}
+
+/* ---- 4 · exam day: pinned phone + answer-sheet steps ---- */
+.day{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(40px,7vw,120px);margin-top:72px;align-items:start}
+.pin{position:sticky;top:110px;display:flex;justify-content:center}
+.pin img{width:min(300px,100%);filter:drop-shadow(0 22px 34px rgb(15 26 20 / .18))}
+.steps{list-style:none}
+.step{display:grid;grid-template-columns:36px 1fr;gap:18px;padding:40px 0;border-bottom:1px solid #e3e8e4;opacity:.32;transition:opacity .5s}
+.step:first-child{padding-top:8px}
+.step.active{opacity:1}
+.bubble{width:28px;height:28px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--accent);transition:background .35s,color .35s}
+.step.active .bubble{background:var(--accent);color:#fff}
+.step small{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.step h3{margin-top:6px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.5rem,2.6vw,2.125rem);line-height:1;letter-spacing:-.01em}
+.step p{margin-top:10px;color:var(--ink-soft);max-width:44ch}
+@media(max-width:860px){.day{grid-template-columns:1fr}.pin{position:static}.step{opacity:1}}
+
+/* ---- 5 · question bank pipeline ---- */
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1040px;margin:72px auto 0;list-style:none;position:relative}
+.pipe::before{content:"";position:absolute;left:12.5%;right:12.5%;top:58px;height:2px;background:var(--accent)}
+.node{position:relative;text-align:center;padding:0 14px}
+.cell{width:116px;height:116px;margin:0 auto;border:2px solid var(--accent);border-radius:16px;background:#fff;display:grid;place-items:center;position:relative;z-index:1}
+.cell svg{width:56px;height:56px}
+.node h3{margin-top:20px;font-family:var(--display);text-transform:uppercase;font-size:1.375rem;line-height:1}
+.node p{margin-top:8px;font-size:.95rem;color:var(--ink-soft)}
+.node small{display:block;margin-top:10px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.pipe-note{max-width:60ch;margin:48px auto 0;text-align:center;color:var(--ink-soft);padding-top:22px;border-top:1px solid var(--line)}
+@media(max-width:860px){.pipe{grid-template-columns:1fr 1fr;row-gap:48px}.pipe::before{display:none}}
+
+/* ---- 6 · hard parts, as a marking scheme ---- */
+.scheme{max-width:1100px;margin:64px auto 0;list-style:none;border-top:2px solid var(--ink)}
+.scheme-head,.row{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:28px}
+.scheme-head{padding:14px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.row{padding:30px 0;border-bottom:1px solid var(--line)}
+.row .t small{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.row .t h3{margin-top:8px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.375rem,2.2vw,1.75rem);line-height:1.02}
+.row p{color:var(--ink-soft)}
+.row p.win{color:var(--ink);font-weight:500}
+.row .k{display:none;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px}
+@media(max-width:900px){.scheme-head{display:none}.row{grid-template-columns:1fr;gap:14px}.row .k{display:block}}
+
+/* ---- 7 · decisions ---- */
+.decisions{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:980px;margin:64px auto 0;list-style:none}
+.decision{border-top:2px solid var(--accent);padding-top:22px}
+.decision small{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.decision h3{margin-top:10px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.02}
+.decision p{margin-top:12px;color:var(--ink-soft);max-width:44ch}
+@media(max-width:760px){.decisions{grid-template-columns:1fr;gap:44px}}
+
+/* ---- 8 · result ---- */
+.result{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-top:64px}
+.big{font-family:var(--display);text-transform:uppercase;line-height:.86;letter-spacing:-.03em;font-size:clamp(4.5rem,13vw,10rem);color:var(--accent)}
+.big + p{margin-top:14px;font-size:1.25rem;color:var(--ink-soft)}
+.facts{list-style:none;border-top:2px solid var(--ink)}
+.facts li{padding:22px 0;border-bottom:1px solid var(--line);font-size:clamp(1.125rem,1.8vw,1.375rem);font-weight:500}
+.facts li small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:400}
+@media(max-width:860px){.result{grid-template-columns:1fr}}
+
+/* ---- 9 · under the hood ---- */
+details.hood{max-width:1040px;margin:0 auto;border:2px solid var(--line);border-radius:16px;background:#fff}
+.hood summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 32px}
+.hood summary::-webkit-details-marker{display:none}
+.hood summary h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1}
+.hood summary p{margin-top:6px;color:var(--ink-soft)}
+.hood summary b{font-family:var(--mono);font-size:.8rem;letter-spacing:.12em;color:var(--accent);white-space:nowrap}
+.hood[open] summary b::after{content:" −"}.hood:not([open]) summary b::after{content:" +"}
+.hood-body{padding:8px 32px 36px;border-top:1px solid var(--line)}
+.arch{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;list-style:none}
+.arch li{border:2px solid var(--accent);border-radius:10px;padding:14px;text-align:center;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep);background:var(--paper)}
+.arch-side{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;list-style:none}
+.arch-side li{border:1.5px dashed var(--accent);border-radius:10px;padding:10px 14px;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep)}
+.decis{margin-top:28px;list-style:none;counter-reset:d}
+.decis li{padding:14px 0;border-bottom:1px solid #e3e8e4;color:var(--ink-soft)}
+.decis li b{color:var(--ink)}
+@media(max-width:760px){.arch{grid-template-columns:1fr 1fr}}
+
+/* ---- 10 · closing band (project blue, still light theme) ---- */
+.close{background:var(--accent);color:#fff;padding:var(--py) 0}
+.close .label{color:#c8cdf0}
+.next{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:center;text-decoration:none;color:#fff;border-bottom:1px solid rgb(255 255 255 / .25);padding-bottom:var(--py)}
+.next h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(3rem,7vw,6rem);line-height:.92;letter-spacing:-.02em}
+.next p{margin-top:14px;max-width:44ch;color:#dfe2f7}
+.next .go{display:inline-block;margin-top:22px;font-weight:600;border-bottom:2px solid #fff;padding-bottom:4px}
+.next .thumb{border-radius:16px;background:#fff;overflow:hidden;padding:18px 18px 0;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.next:hover .thumb{transform:translateY(-6px)}
+.cta{text-align:center;padding-top:var(--py)}
+.cta h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.25rem,4.6vw,3.5rem);line-height:1}
+.cta p{margin-top:14px;color:#dfe2f7}
+.cta .btn{margin-top:28px}
+@media(max-width:860px){.next{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap"><span class="brand">Ship Thesis</span><ul><li>Work</li><li>Services</li><li>Pricing</li><li>About</li><li>Contact</li></ul><a class="btn" href="#">Book a Discovery Call</a></div></header>
+
+<!-- 0 · HERO (as approved, unchanged) -->
+<section class="hero"><div class="wrap">
+  <h1><span class="accentword">Assess</span> Yourself</h1>
+  <p class="line">An exam-prep app that takes students from finding the right government exam to sitting a timed paper.</p>
+  <ul class="meta"><li>Client: Aptellic</li><li>Mobile app</li><li>Flutter / Node.js / Firebase</li><li>3-4 weeks</li><li>Industry: Education, exam preparation</li><li>Service: Mobile app design and development</li></ul>
+  <p class="status"><span class="dot"></span>Delivered, launching soon</p>
+  <img src="/work/assess-yourself/hero.webp" alt="Assess Yourself exam list next to its splash screen">
+</div></section>
+
+<!-- 1 · MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>Exam discovery <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Timed tests <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Previous-year papers <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Live tests <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Instant analysis <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Excel question import <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> 15-day free trial <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+  <span>Exam discovery <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Timed tests <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Previous-year papers <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Live tests <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Instant analysis <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Excel question import <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> 15-day free trial <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+</div></div>
+
+<!-- 2 · THE BRIEF, AS AN ANSWER PAPER -->
+<section><div class="wrap">
+  <p class="label">01 · The brief</p>
+  <h2 class="h2">One app from <span class="accentword">"which exam?"</span> to exam day</h2>
+  <div class="paper reveal">
+    <div class="paper-head"><span>Assess Yourself · Case paper</span><span>Client: Aptellic</span><span>Time allowed: 3-4 weeks</span></div>
+    <div class="q"><div class="qn">Q1.</div><div class="qb"><h3>What did Aptellic need?</h3><p class="ans"><b>ANS.</b><span>One app where students preparing for UPSC, SSC and MPSC could find an exam, check its details and practise, instead of gathering it all from many different places.</span></p></div></div>
+    <div class="q"><div class="qn">Q2.</div><div class="qb"><h3>What made it hard?</h3><p class="ans"><b>ANS.</b><span>A large question bank lived in Excel files with two layouts, Marathi numerals and image-based answers. And a timed paper of 60+ questions couldn't be lost when the phone closed the app.</span></p></div></div>
+    <div class="q"><div class="qn">Q3.</div><div class="qb"><h3>What shipped?</h3><p class="ans"><b>ANS.</b><span>A Flutter app with exam discovery, a full test engine, instant analysis and a 15-day free trial, plus an upload that turns Excel files into ready-to-use tests.</span></p></div></div>
+  </div>
+  <ul class="scores">
+    <li class="score reveal" style="--d:0ms"><div class="num">3-4</div><p class="cap">weeks to deliver the app to Aptellic</p></li>
+    <li class="score reveal" style="--d:90ms"><div class="num">15</div><p class="cap">REST APIs behind the content and tests</p></li>
+    <li class="score reveal" style="--d:180ms"><div class="num">60+</div><p class="cap">questions in a single timed paper</p></li>
+    <li class="score reveal" style="--d:270ms"><div class="num">15</div><p class="cap">day free trial, then Razorpay plans</p></li>
+  </ul>
+</div></section>
+
+<!-- 3 · EXAM DISCOVERY -->
+<section class="band"><div class="wrap">
+  <p class="label">02 · Exam discovery</p>
+  <h2 class="h2">Every government exam, one <span class="accentword">student corner</span></h2>
+  <p class="lede">Students start from the exam, not a search bar. Central and state exams sit in one list, and each exam has its own page with the details, notices and study material they need before choosing a paper.</p>
+  <div class="phones">
+    <div class="phone reveal" style="--d:0ms"><figure><img src="/work/assess-yourself/exam-list.webp" alt="Student corner exam list"></figure><div class="pcap"><small>Exam list</small><span>UPSC, SSC, RRB and IBPS in one place.</span></div></div>
+    <div class="phone reveal" style="--d:120ms"><figure><img src="/work/assess-yourself/exam-categories.webp" alt="Exam categories"></figure><div class="pcap"><small>Exam categories</small><span>Central, state and PSU, sorted the way students think.</span></div></div>
+    <div class="phone reveal" style="--d:240ms"><figure class="crop"><img src="/work/assess-yourself/exam-details.webp" alt="Exam details with study material tabs"></figure><div class="pcap"><small>Exam details</small><span>Details, notices and study material before the paper.</span></div></div>
+  </div>
+</div></section>
+
+<!-- 4 · EXAM DAY: PINNED PHONE, STEPS FILL LIKE AN ANSWER SHEET -->
+<section><div class="wrap">
+  <p class="label">03 · Exam day</p>
+  <h2 class="h2">A timed paper that <span class="accentword">survives the phone</span></h2>
+  <div class="day">
+    <div class="pin"><img src="/work/assess-yourself/analytics.webp" alt="Analytics after a test"></div>
+    <ol class="steps">
+      <li class="step"><span class="bubble">A</span><div><small>Before</small><h3>Pick a paper</h3><p>A previous-year paper, a practice test, or a live test that opens and closes on schedule.</p></div></li>
+      <li class="step"><span class="bubble">B</span><div><small>0:00</small><h3>Start the clock</h3><p>Up to 60+ questions against a strict time limit.</p></div></li>
+      <li class="step"><span class="bubble">C</span><div><small>Mid-paper</small><h3>Mark for review</h3><p>Flag a question, move on, and come back to it before submitting.</p></div></li>
+      <li class="step"><span class="bubble">D</span><div><small>The worst moment</small><h3>The app gets closed</h3><p>Android kills it, the phone crashes, or a thumb slips.</p></div></li>
+      <li class="step"><span class="bubble">E</span><div><small>Reopen</small><h3>Carry on</h3><p>Answers, review marks and the time already spent come back exactly as they were.</p></div></li>
+      <li class="step"><span class="bubble">F</span><div><small>Submit</small><h3>Instant analysis</h3><p>Score, rank, accuracy and time per question straight away, with every past test kept in the history.</p></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<!-- 5 · THE QUESTION BANK -->
+<section class="band"><div class="wrap">
+  <p class="label">04 · The question bank</p>
+  <h2 class="h2">Excel in, <span class="accentword">clean tests</span> out</h2>
+  <ol class="pipe">
+    <li class="node reveal" style="--d:0ms"><div class="cell"><svg viewBox="0 0 56 56" fill="none" stroke="#283593" stroke-width="2.2"><rect x="8" y="10" width="40" height="36" rx="4"/><path d="M8 22h40M8 34h40M22 10v36M35 10v36"/></svg></div><h3>Excel files</h3><p>From the content team, as they already keep them.</p><small>2 layouts · Marathi numerals</small></li>
+    <li class="node reveal" style="--d:140ms"><div class="cell"><svg viewBox="0 0 56 56" fill="none" stroke="#283593" stroke-width="2.2"><path d="M12 18h32M12 28h32M12 38h20"/><path d="m38 34 6 4-6 4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Read both layouts</h3><p>Text and image-based answer options included.</p><small>One importer</small></li>
+    <li class="node reveal" style="--d:280ms"><div class="cell"><svg viewBox="0 0 56 56" fill="none" stroke="#283593" stroke-width="2.2"><path d="M14 20l5 5 9-10M14 36l5 5 9-10" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 22h10M34 38h10"/></svg></div><h3>Check every row</h3><p>Rows that need a fix are listed; the rest carry on.</p><small>Row-level error report</small></li>
+    <li class="node reveal" style="--d:420ms"><div class="cell"><svg viewBox="0 0 56 56" fill="none" stroke="#283593" stroke-width="2.2"><rect x="14" y="8" width="28" height="40" rx="4"/><circle cx="21" cy="20" r="3"/><circle cx="21" cy="30" r="3" fill="#283593"/><circle cx="21" cy="40" r="3"/><path d="M28 20h8M28 30h8M28 40h8"/></svg></div><h3>Ready-to-use tests</h3><p>Questions land in the app, grouped by exam and subject.</p><small>No retyping</small></li>
+  </ol>
+  <p class="pipe-note">The content team uploads a file. Anything that needs fixing is flagged by row; every other question goes live. That's how new exams reach students from a single upload.</p>
+</div></section>
+
+<!-- 6 · THE HARD PARTS -->
+<section><div class="wrap">
+  <p class="label">05 · The hard parts</p>
+  <h2 class="h2">Three problems we <span class="accentword">had to get right</span></h2>
+  <div class="scheme">
+    <div class="scheme-head"><span>Question</span><span>The problem</span><span>What we did</span><span>Why it matters to you</span></div>
+    <div class="row reveal" style="--d:0ms"><div class="t"><small>Q1 · Reliability</small><h3>Tests that survive interruptions</h3></div><div><span class="k">The problem</span><p>A long timed paper can't start over because the phone closed the app.</p></div><div><span class="k">What we did</span><p>Answers, review marks and elapsed time are saved on the phone after every tap.</p></div><div><span class="k">Why it matters</span><p class="win">Students never lose a paper they've half finished.</p></div></div>
+    <div class="row reveal" style="--d:100ms"><div class="t"><small>Q2 · Content</small><h3>Messy spreadsheets in</h3></div><div><span class="k">The problem</span><p>Question files came in two layouts, with Marathi numerals and image options.</p></div><div><span class="k">What we did</span><p>One importer reads both and flags bad rows without stopping the rest.</p></div><div><span class="k">Why it matters</span><p class="win">New exams go live from one upload, not weeks of retyping.</p></div></div>
+    <div class="row reveal" style="--d:200ms"><div class="t"><small>Q3 · Payments</small><h3>One source of truth for plans</h3></div><div><span class="k">The problem</span><p>Trial and plan status could disagree between the phone and the server.</p></div><div><span class="k">What we did</span><p>The server decides who's on a trial or a plan; the app only shows it.</p></div><div><span class="k">Why it matters</span><p class="win">Every student always sees the right plan.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 7 · WHAT WE CHOSE NOT TO BUILD -->
+<section class="band"><div class="wrap">
+  <p class="label">06 · Judgement</p>
+  <h2 class="h2">What we <span class="accentword">chose not</span> to build</h2>
+  <ul class="decisions">
+    <li class="decision reveal" style="--d:0ms"><small>Decision 01</small><h3>Recurring auto-pay, held back</h3><p>The renewal model wasn't decided yet, so we didn't hard-code a billing flow the client hadn't chosen.</p></li>
+    <li class="decision reveal" style="--d:140ms"><small>Decision 02</small><h3>An importer that stops at row one</h3><p>Real files would fail it on the first bad row. Ours reports every bad row and keeps going.</p></li>
+  </ul>
+</div></section>
+
+<!-- 8 · RESULT -->
+<section><div class="wrap">
+  <p class="label">07 · Result</p>
+  <div class="result">
+    <div class="reveal"><div class="big">3-4<br>weeks</div><p>to deliver the app to Aptellic.</p></div>
+    <ul class="facts reveal" style="--d:140ms">
+      <li><small>Content</small>New exams go live from a single Excel upload.</li>
+      <li><small>Students</small>Exam discovery, timed tests and instant analysis in one app.</li>
+      <li><small>Status</small>Delivered, launching on the Play Store soon.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- 9 · UNDER THE HOOD -->
+<section style="padding-top:0"><div class="wrap">
+  <details class="hood">
+    <summary><div><h2>Under the hood</h2><p>Architecture and the decisions behind it.</p></div><b>EXPAND</b></summary>
+    <div class="hood-body">
+      <ul class="arch"><li>Flutter app</li><li>15 REST APIs</li><li>Express on Firebase Functions</li><li>Firestore</li></ul>
+      <ul class="arch-side"><li>Excel importer</li><li>Razorpay payments</li><li>Test state saved on the phone</li></ul>
+      <ol class="decis">
+        <li><b>Trial rules live on the server.</b> The app never decides who is on a trial.</li>
+        <li><b>Row-level error reports on import.</b> One bad row never blocks an upload.</li>
+        <li><b>Content linked by IDs.</b> Each screen fetches only the layer it needs.</li>
+        <li><b>Test state saved after every tap.</b> A closed app resumes where it stopped.</li>
+        <li><b>Uploads handled below Firebase's default parser.</b> Excel files arrive intact.</li>
+      </ol>
+    </div>
+  </details>
+</div></section>
+
+<!-- 10 · CLOSING (project blue, light theme) -->
+<section class="close"><div class="wrap">
+  <a class="next" href="#">
+    <div><p class="label" style="text-align:left">Next project</p><h2>EHS Training Platform</h2><p>A custom training platform for EHS Guru: live Zoom classes, automatic attendance and every class recorded.</p><span class="go">View case study →</span></div>
+    <div class="thumb"><img src="/work/safety-training-platform/sessions.webp" alt="EHS Training Platform: admin training sessions"></div>
+  </a>
+  <div class="cta"><h2>Have something worth building?</h2><p>Start with a 30-minute call about your idea.</p><a class="btn" href="#">Book a Discovery Call</a></div>
+</div></section>
+
+<script>
+// Staggered entrances.
+const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .2 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// Exam day: the step nearest the middle of the screen fills its bubble.
+const steps = [...document.querySelectorAll('.step')];
+const so = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { steps.forEach(s => s.classList.remove('active')); e.target.classList.add('active'); } }), { rootMargin: '-45% 0px -45% 0px' });
+steps.forEach(s => so.observe(s));
+</script>
+</body>
+</html>

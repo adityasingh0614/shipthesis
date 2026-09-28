@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design mock v2: Assess Yourself hero, testimonial, conclusion, close</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Phudu:wght@700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN MOCK ONLY: the parts the founder asked to redesign/add.
+   Exam-paper world continues: the hero is an admit card with a stamp,
+   the conclusion is the paper's final answer. Sections alternate white /
+   --alt (site neutral); the accent never fills a band. */
+:root{
+  --ink:#0f1a14; --ink-soft:#445048; --ink-muted:#6b766f;
+  --green:#0a7f55; --surface:#fff; --alt:#eef2ef; --line:#c9d3cc;
+  --accent:#283593; --ehs:#00674C;
+  --max:1200px; --gutter:clamp(16px,4vw,40px); --py:clamp(96px,11vw,160px);
+  --display:"Phudu",sans-serif; --body:"Geist",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--surface);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+section{padding:var(--py) 0}
+.alt{background:var(--alt)}
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-align:center}
+.h2{max-width:16ch;margin:14px auto 0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.5rem,5.6vw,4.5rem);text-align:center;text-wrap:balance}
+.ac{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:10px;background:var(--green);color:#fff;font-weight:600;text-decoration:none;white-space:nowrap}
+.btn:hover{background:#086a47}
+.rise{animation:rise .8s cubic-bezier(.16,1,.3,1) var(--d,0ms) both}
+@keyframes rise{from{opacity:0;translate:0 24px}}
+.reveal{opacity:0;translate:0 28px;transition:opacity .8s cubic-bezier(.16,1,.3,1),translate .8s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;translate:0 0}
+@media (prefers-reduced-motion:reduce){.rise,.stamp{animation:none}.reveal{opacity:1;translate:none;transition:none}}
+
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #e6ebe7}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-size:1.25rem;text-transform:uppercase}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.95rem;color:var(--ink-soft)}
+@media(max-width:860px){.nav ul{display:none}}
+.gap{padding:28px 0;text-align:center;font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);border-block:1px dashed var(--line)}
+
+/* ================= HERO: the project's admit card ================= */
+.hero{padding:clamp(40px,5vw,72px) 0 clamp(64px,8vw,112px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:clamp(32px,5vw,72px)}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin-top:14px;font-family:var(--display);text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(2.75rem,5.4vw,5rem);white-space:nowrap}
+.hero .line{max-width:34ch;margin-top:18px;font-size:clamp(1.125rem,1.7vw,1.375rem);color:var(--ink-soft);text-wrap:pretty}
+.admit{position:relative;margin-top:32px;max-width:560px;border:2px solid var(--line);border-radius:16px;background:#fff}
+.admit-head{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;border-bottom:2px solid var(--line);background:var(--alt);border-radius:14px 14px 0 0;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.fields{display:grid;grid-template-columns:1fr 1fr}
+.field{padding:14px 18px;border-bottom:1px solid #e3e8e4}
+.field:nth-child(odd){border-right:1px solid #e3e8e4}
+.field:nth-last-child(-n+2){border-bottom:0}
+.field small{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.field b{display:block;margin-top:4px;font-weight:600;font-size:.98rem;line-height:1.3}
+/* The status, stamped on like an exam hall ticket. */
+.stamp{position:absolute;right:-18px;top:-26px;padding:10px 14px;border:3px solid var(--accent);border-radius:10px;background:#fff;color:var(--accent);text-align:center;rotate:-8deg;font-family:var(--display);text-transform:uppercase;line-height:1;animation:stamp .5s cubic-bezier(.2,1.6,.4,1) .9s both}
+.stamp span{display:block;font-size:1.35rem}
+.stamp small{display:block;margin-top:4px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em}
+@keyframes stamp{from{opacity:0;scale:1.6;rotate:-2deg}}
+.shot{display:flex;justify-content:center}
+.shot img{width:min(560px,100%);filter:drop-shadow(0 22px 34px rgb(15 26 20 / .18));transition:transform .4s cubic-bezier(.16,1,.3,1),filter .4s}
+.shot:hover img{transform:translateY(-8px) scale(1.015);filter:drop-shadow(0 32px 44px rgb(15 26 20 / .24))}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero h1{white-space:normal}.shot{order:-1}.shot img{width:min(420px,100%)}}
+@media(max-width:480px){.fields{grid-template-columns:1fr}.field:nth-child(odd){border-right:0}.field:nth-last-child(2){border-bottom:1px solid #e3e8e4}.stamp{right:-6px;top:-30px}}
+
+/* ================= TESTIMONIAL (placeholder, hidden live) ================= */
+.panel{display:grid;grid-template-columns:360px 1fr;gap:clamp(32px,6vw,88px);align-items:center;max-width:1040px;margin:56px auto 0;padding:clamp(20px,3vw,40px);background:#fff;border:2px solid var(--line);border-radius:24px}
+.video{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#dfe6e1;display:grid;place-items:center}
+.video .tag{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.play{width:76px;height:76px;border-radius:50%;background:rgb(255 255 255 / .9);display:grid;place-items:center;color:var(--accent);box-shadow:0 10px 24px -12px rgb(15 26 20 / .35);transition:transform .3s}
+.video:hover .play{transform:scale(1.08)}
+.quote .mark{font-family:var(--display);font-size:5rem;line-height:.6;color:var(--accent)}
+.quote .ph{display:inline-block;margin-top:18px;padding:4px 8px;border:1.5px dashed var(--line);border-radius:6px;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.quote blockquote{margin-top:16px;font-size:clamp(1.25rem,2vw,1.625rem);line-height:1.5;color:var(--ink)}
+.quote cite{display:block;margin-top:24px;font-style:normal;font-weight:700}
+.quote cite span{display:block;margin-top:2px;font-weight:400;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:860px){.panel{grid-template-columns:1fr}.video{max-width:300px;width:100%;margin:0 auto}}
+
+/* ================= CONCLUSION: the paper's final answer ================= */
+.final{max-width:1040px;margin:56px auto 0;border:2px solid var(--ink);border-radius:16px;overflow:hidden}
+.final-head{display:flex;justify-content:space-between;gap:12px;padding:14px 24px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.points{display:grid;grid-template-columns:repeat(3,1fr);list-style:none}
+.point{padding:28px 26px;border-right:1px solid var(--line)}
+.point:last-child{border-right:0}
+.point small{font-family:var(--mono);font-size:.8rem;font-weight:700;color:var(--accent)}
+.point h3{margin-top:10px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.375rem,2.2vw,1.75rem);line-height:1.02}
+.point p{margin-top:10px;color:var(--ink-soft)}
+.sum{padding:22px 26px;border-top:2px solid var(--ink);background:var(--alt);font-size:clamp(1.0625rem,1.5vw,1.25rem);font-weight:500}
+.sum b{color:var(--accent)}
+@media(max-width:860px){.points{grid-template-columns:1fr}.point{border-right:0;border-bottom:1px solid var(--line)}.point:last-child{border-bottom:0}}
+
+/* ================= NEXT PROJECT ================= */
+.next{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:clamp(24px,5vw,72px);text-decoration:none;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,56px);overflow:hidden;transition:border-color .3s}
+.next:hover{border-color:var(--ehs)}
+.next small{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}
+.next h2{margin-top:12px;font-family:var(--display);text-transform:uppercase;font-size:clamp(2.5rem,5.2vw,4.5rem);line-height:.92;letter-spacing:-.02em}
+.next h2 span{color:var(--ehs)}
+.next p{margin-top:14px;max-width:40ch;color:var(--ink-soft)}
+.go{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-weight:600;color:var(--ehs)}
+.go svg{transition:transform .3s}
+.next:hover .go svg{transform:translateX(5px)}
+.next .img{margin-right:calc(-1 * clamp(24px,4vw,56px));transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.next:hover .img{transform:translateX(-10px)}
+@media(max-width:860px){.next{grid-template-columns:1fr}.next .img{margin-right:0}}
+
+/* ================= FINAL CTA ================= */
+.cta{text-align:center}
+.cta p.sub{margin:16px auto 30px;max-width:46ch;color:var(--ink-soft);font-size:clamp(1.0625rem,1.5vw,1.25rem)}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><span class="brand">Ship Thesis</span><ul><li>Work</li><li>Services</li><li>Pricing</li><li>About</li><li>Contact</li></ul><a class="btn" href="#">Book a Discovery Call</a></div></header>
+
+<!-- ================= NEW HERO ================= -->
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="kicker rise">Case study · Mobile app</p>
+    <h1 class="rise" style="--d:80ms"><span class="ac">Assess</span> Yourself</h1>
+    <p class="line rise" style="--d:160ms">An exam-prep app that takes students from finding the right government exam to sitting a timed paper.</p>
+    <div class="admit rise" style="--d:240ms">
+      <div class="admit-head"><span>Admit card · Case study 01</span></div>
+      <div class="fields">
+        <div class="field"><small>Client</small><b>Aptellic</b></div>
+        <div class="field"><small>Platform</small><b>Mobile app, Flutter</b></div>
+        <div class="field"><small>Industry</small><b>Education, exam preparation</b></div>
+        <div class="field"><small>Service</small><b>Mobile app design and development</b></div>
+        <div class="field"><small>Stack</small><b>Flutter · Node.js · Firebase</b></div>
+        <div class="field"><small>Timeline</small><b>3-4 weeks</b></div>
+      </div>
+      <div class="stamp" aria-label="Status: delivered, launching soon"><span>Delivered</span><small>Launching soon</small></div>
+    </div>
+  </div>
+  <div class="shot rise" style="--d:200ms"><img src="/work/assess-yourself/hero.webp" alt="Assess Yourself exam list next to its splash screen"></div>
+</div></section>
+
+<div class="gap">Marquee and sections 01 to 07 stay as they are</div>
+
+<!-- ================= TESTIMONIAL (after the result, before the conclusion) ================= -->
+<section class="alt"><div class="wrap">
+  <p class="label">08 · In their words</p>
+  <h2 class="h2">What <span class="ac">Aptellic</span> says</h2>
+  <div class="panel reveal">
+    <div class="video">
+      <span class="tag">Video testimonial</span>
+      <div class="play"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></div>
+    </div>
+    <div class="quote">
+      <div class="mark" aria-hidden="true">&ldquo;</div>
+      <span class="ph">Placeholder · hidden on the live site until real</span>
+      <blockquote>A short, approved quote from Aptellic about working with us goes here, in their own words.</blockquote>
+      <cite>Name Surname<span>Role · Aptellic</span></cite>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= CONCLUSION ================= -->
+<section><div class="wrap">
+  <p class="label">09 · Conclusion</p>
+  <h2 class="h2">What this build says about <span class="ac">yours</span></h2>
+  <div class="final reveal">
+    <div class="final-head"><span>Final answer</span><span>Assess Yourself</span></div>
+    <ol class="points">
+      <li class="point"><small>i.</small><h3>We plan for how people really use your app</h3><p>Students close apps mid-exam, so the app saves every answer as they go.</p></li>
+      <li class="point"><small>ii.</small><h3>We build around the data you already have</h3><p>Aptellic kept its questions in Excel, so the upload reads their files instead of asking them to retype.</p></li>
+      <li class="point"><small>iii.</small><h3>We don't build decisions you haven't made</h3><p>Auto-pay waited until Aptellic chose how renewals should work.</p></li>
+    </ol>
+    <p class="sum">The same goes for your app: <b>a fixed quote</b> after a one-week Discovery Sprint, <b>a new build on your phone every week</b>, and <b>code you own</b>.</p>
+  </div>
+</div></section>
+
+<!-- ================= NEXT PROJECT ================= -->
+<section class="alt"><div class="wrap">
+  <a class="next reveal" href="#">
+    <div>
+      <small>Next project</small>
+      <h2><span>EHS Training</span> Platform</h2>
+      <p>A custom training platform for EHS Guru: live Zoom classes, automatic attendance and every class recorded.</p>
+      <span class="go">View case study <svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="img"><img src="/work/safety-training-platform/sessions.webp" alt="EHS Training Platform admin training sessions"></div>
+  </a>
+</div></section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="cta"><div class="wrap">
+  <p class="label">Your turn</p>
+  <h2 class="h2">Have something worth building?</h2>
+  <p class="sub">Start with a 30-minute call about your idea. We'll tell you honestly if we're the right fit.</p>
+  <a class="btn" href="#">Book a Discovery Call</a>
+</div></section>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

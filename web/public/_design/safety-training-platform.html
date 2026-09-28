@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design mock: EHS Training Platform case study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Phudu:wght@700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN MOCK ONLY (docs/design/case-study-brief.md §3). World: "The
+   Session Console", live broadcast language: session pass, run sheet,
+   cues, on-air, logs. Device: laptops. Accent EHS green. Sections
+   alternate the two site neutrals; full-bleed colour only in the marquee
+   (EHS green) and the mid CTA (brand green). */
+:root{
+  --ink:#0f1a14; --ink-soft:#445048; --ink-muted:#6b766f;
+  --green:#0a7f55; --surface:#fff; --alt:#eef2ef; --line:#c9d3cc;
+  --accent:#00674C; --live:#d93b2b;
+  --max:1200px; --gutter:clamp(16px,4vw,40px); --py:clamp(96px,11vw,160px);
+  --display:"Phudu",sans-serif; --body:"Geist",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--surface);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+::selection{background:color-mix(in srgb,var(--accent) 22%,#fff)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+section{padding:var(--py) 0}
+.alt{background:var(--alt)}
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-align:center}
+.h2{max-width:17ch;margin:14px auto 0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.5rem,5.6vw,4.5rem);text-align:center;text-wrap:balance}
+.lede{max-width:56ch;margin:22px auto 0;text-align:center;font-size:clamp(1.0625rem,1.5vw,1.25rem);color:var(--ink-soft);text-wrap:pretty}
+.ac{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:10px;background:var(--green);color:#fff;font-weight:600;text-decoration:none;white-space:nowrap}
+.btn:hover{background:#086a47}
+.btn.sec{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn.sec:hover{border-color:var(--ink)}
+@supports (animation-timeline: view()){.h2{animation:ink linear both;animation-timeline:view();animation-range:entry 10% cover 38%}@keyframes ink{from{color:#c3c9c5}}}
+.rise{animation:rise .8s cubic-bezier(.16,1,.3,1) var(--d,0ms) both}
+@keyframes rise{from{opacity:0;translate:0 24px}}
+.reveal{opacity:0;translate:0 28px;transition:opacity .8s cubic-bezier(.16,1,.3,1),translate .8s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;translate:0 0}
+
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #e6ebe7}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-size:1.25rem;text-transform:uppercase}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.95rem;color:var(--ink-soft)}
+@media(max-width:860px){.nav ul{display:none}}
+
+/* ============ HERO: the session pass ============ */
+.hero{padding:clamp(40px,5vw,72px) 0 clamp(64px,8vw,112px);overflow-x:clip}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(32px,5vw,64px)}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin-top:14px;font-family:var(--display);text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(2.25rem,3.8vw,4rem);white-space:nowrap}
+@media(max-width:600px){.hero h1{white-space:normal}}
+.hero .line{max-width:36ch;margin-top:18px;font-size:clamp(1.125rem,1.7vw,1.375rem);color:var(--ink-soft)}
+.pass{position:relative;margin-top:32px;max-width:540px;border:2px solid var(--line);border-radius:16px;background:#fff}
+/* A lanyard slot, so it reads as a pass you'd wear at a live event. */
+.pass::before{content:"";position:absolute;top:-9px;left:50%;translate:-50% 0;width:56px;height:14px;border-radius:8px;border:2px solid var(--line);background:var(--alt)}
+.pass-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--line);border-radius:14px 14px 0 0;background:var(--accent);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.onair{display:inline-flex;align-items:center;gap:8px;padding:5px 10px;border-radius:6px;background:#fff;color:var(--ink);font-weight:700}
+.onair i{width:8px;height:8px;border-radius:50%;background:var(--live);animation:pulse 1.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgb(217 59 43 / .55)}100%{box-shadow:0 0 0 9px rgb(217 59 43 / 0)}}
+.fields{display:grid;grid-template-columns:1fr 1fr}
+.field{padding:14px 18px;border-bottom:1px solid #e3e8e4}
+.field:nth-child(odd){border-right:1px solid #e3e8e4}
+.field:nth-last-child(-n+2){border-bottom:0}
+.field small{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.field b{display:block;margin-top:4px;font-weight:600;font-size:.98rem;line-height:1.3}
+.pass-foot{display:flex;justify-content:space-between;padding:10px 18px;border-top:2px dashed var(--line);font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.shot img{width:100%;filter:drop-shadow(0 22px 30px rgb(15 26 20 / .16));transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.shot:hover img{transform:translateY(-8px) scale(1.015)}
+@media(max-width:959px){.hero .wrap{grid-template-columns:1fr}.shot{order:-1}}
+@media(max-width:480px){.fields{grid-template-columns:1fr}.field:nth-child(odd){border-right:0}.field:nth-last-child(2){border-bottom:1px solid #e3e8e4}}
+
+/* ============ MARQUEE (EHS green) ============ */
+.marquee{background:var(--accent);color:#fff;overflow:hidden;padding:22px 0}
+.track{display:flex;width:max-content;animation:slide 40s linear infinite}
+.track span{display:inline-flex;align-items:center;gap:40px;padding-right:40px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.25rem,2.4vw,1.75rem);white-space:nowrap}
+.track svg{width:18px;height:18px;flex:none}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ============ 01 RUN SHEET ============ */
+.sheet{max-width:960px;margin:56px auto 0;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden}
+.sheet-head{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:2px solid var(--ink);background:var(--ink);color:#fff}
+.sheet-head div{padding:14px 22px;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.sheet-head div+div{border-left:1px solid rgb(255 255 255 / .2)}
+.sheet-head b{display:block;margin-top:4px;font-family:var(--body);font-size:.95rem;letter-spacing:0;text-transform:none}
+.cue{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid #e3e8e4}
+.cue:last-child{border-bottom:0}
+.cue-n{padding:24px 0 24px 22px;border-right:2px solid color-mix(in srgb,var(--accent) 30%,#fff);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.cue-n b{display:block;font-family:var(--display);font-size:2rem;line-height:1;letter-spacing:0;color:var(--accent)}
+.cue-b{padding:24px 26px}
+.cue-b h3{font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600}
+.cue-b p{margin-top:8px;color:var(--ink-soft)}
+@media(max-width:640px){.sheet-head{grid-template-columns:1fr}.sheet-head div+div{border-left:0;border-top:1px solid rgb(255 255 255 / .2)}.cue{grid-template-columns:1fr}.cue-n{border-right:0;padding:18px 20px 0}.cue-b{padding:8px 20px 22px}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:960px;margin:24px auto 0;list-style:none}
+.stat{padding:22px;background:#fff;border:2px solid var(--line);border-radius:16px}
+.stat b{display:block;font-family:var(--mono);font-size:clamp(2.25rem,4vw,3.25rem);line-height:1;letter-spacing:-.03em;color:var(--accent)}
+.stat span{display:block;margin-top:12px;font-size:.9375rem;line-height:1.35;color:var(--ink-soft)}
+@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ============ 02 FOUR AUDIENCES ============ */
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px) clamp(24px,4vw,48px);max-width:1100px;margin:72px auto 0}
+.aud:nth-child(even){margin-top:clamp(0px,6vw,96px)}
+.aud img{filter:drop-shadow(0 18px 26px rgb(15 26 20 / .14));transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.aud:hover img{transform:translateY(-6px)}
+.aud-cap{margin-top:16px;display:flex;gap:14px;align-items:baseline}
+.aud-cap small{flex:none;padding:4px 8px;border-radius:6px;background:color-mix(in srgb,var(--accent) 12%,#fff);font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.aud-cap span{color:var(--ink-soft)}
+.aud-cap strong{color:var(--ink);font-weight:600}
+@media(max-width:760px){.grid4{grid-template-columns:1fr}.aud:nth-child(even){margin-top:0}}
+
+/* ============ 03 WHEN A CLASS GOES LIVE ============ */
+.golive{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);margin-top:72px;align-items:start}
+.pin{position:sticky;top:110px}
+.pin img{filter:drop-shadow(0 22px 30px rgb(15 26 20 / .16))}
+.clock{margin-top:18px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:var(--mono);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.clock b{padding:6px 12px;border-radius:8px;background:var(--ink);color:#fff;font-size:1rem;letter-spacing:.06em;min-width:92px;text-align:center}
+.cues{list-style:none}
+.step{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:38px 0;border-bottom:1px solid #e3e8e4;opacity:.32;transition:opacity .5s}
+.step:first-child{padding-top:4px}
+.step.on{opacity:1}
+.tc{align-self:start;padding:6px 0;border-radius:8px;border:2px solid var(--accent);font-family:var(--mono);font-size:.78rem;font-weight:700;text-align:center;color:var(--accent);transition:background .35s,color .35s}
+.step.on .tc{background:var(--accent);color:#fff}
+.step h3{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1}
+.step p{margin-top:10px;color:var(--ink-soft);max-width:42ch}
+@media(max-width:900px){.golive{grid-template-columns:1fr}.pin{position:static}.step{opacity:1}}
+
+/* ============ 04 RELIABILITY LOG ============ */
+.log{max-width:1040px;margin:64px auto 0;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden}
+.log-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 24px;border-bottom:2px solid var(--line);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.ok{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:700}
+.ok i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.entry{display:grid;grid-template-columns:150px 1fr auto;gap:24px;padding:26px 24px;border-bottom:1px solid #e3e8e4;transition:background .25s}
+.entry:hover{background:color-mix(in srgb,var(--accent) 4%,#fff)}
+.entry:last-child{border-bottom:0}
+.ts{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--ink-muted);line-height:1.6}
+.ts b{display:block;color:var(--ink);font-size:.8rem}
+.entry h3{font-size:clamp(1.125rem,1.7vw,1.375rem);font-weight:600}
+.entry dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin-top:10px}
+.entry dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);padding-top:3px}
+.entry dd{color:var(--ink-soft)}
+.chip{align-self:start;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent) 12%,#fff);color:var(--accent);font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.entry.entry-big{grid-template-columns:150px 1fr 220px;align-items:center;background:color-mix(in srgb,var(--accent) 5%,#fff)}
+.x{text-align:right;font-family:var(--display);font-size:clamp(4rem,8vw,6rem);line-height:.85;color:var(--accent)}
+.x small{display:block;margin-top:8px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:760px){.entry,.entry.entry-big{grid-template-columns:1fr;gap:10px}.x{text-align:left}}
+
+/* ============ MID CTA ============ */
+.call{padding:clamp(72px,9vw,112px) 0;background-color:var(--green);background-image:radial-gradient(circle,rgb(255 255 255 / .22) 1.5px,transparent 1.5px);background-size:22px 22px;color:#fff;text-align:center}
+.call h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.75rem,6.4vw,5.5rem);line-height:.95;letter-spacing:-.02em;text-wrap:balance}
+.call p{margin:18px auto 34px;color:rgb(255 255 255 / .88);font-size:clamp(1.0625rem,1.5vw,1.25rem)}
+.call a{display:inline-flex;min-height:56px;align-items:center;padding:0 30px;border-radius:10px;background:#fff;color:var(--ink);font-weight:700;text-decoration:none;transition:transform .16s}
+.call a:hover{transform:translateY(-2px)}
+
+/* ============ 05 JUDGEMENT ============ */
+.cuts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:64px auto 0;list-style:none}
+.cut{padding-top:22px;border-top:2px solid var(--accent)}
+.cut small{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.cut h3{margin-top:10px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.5rem,2.4vw,1.875rem);line-height:1.02}
+.cut p{margin-top:12px;color:var(--ink-soft)}
+@media(max-width:860px){.cuts{grid-template-columns:1fr;gap:40px}}
+
+/* ============ 06 RESULT ============ */
+.result{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-top:64px}
+.big{font-family:var(--display);text-transform:uppercase;line-height:.86;letter-spacing:-.03em;font-size:clamp(4rem,11vw,8.5rem);color:var(--accent)}
+.big+p{margin-top:14px;font-size:1.25rem;color:var(--ink-soft)}
+.facts{list-style:none;border-top:2px solid var(--ink)}
+.facts li{padding:22px 0;border-bottom:1px solid var(--line);font-size:clamp(1.125rem,1.8vw,1.375rem);font-weight:500}
+.facts small{display:block;margin-bottom:6px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:400}
+@media(max-width:860px){.result{grid-template-columns:1fr}}
+
+/* ============ UNDER THE HOOD ============ */
+details.hood{max-width:1040px;margin:0 auto;background:#fff;border:2px solid var(--line);border-radius:16px}
+.hood summary{list-style:none;cursor:pointer;padding:28px 32px}
+.hood summary::-webkit-details-marker{display:none}
+.hood summary h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1}
+.hood summary p{margin-top:6px;color:var(--ink-soft)}
+.hood-body{padding:8px 32px 36px;border-top:1px solid var(--line)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;list-style:none}
+.flow li,.flow2 li{padding:14px;border:2px solid var(--accent);border-radius:10px;background:color-mix(in srgb,var(--accent) 5%,#fff);font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;text-align:center;color:var(--accent)}
+.flow2{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:12px;list-style:none}
+.flow2 li:first-child{border-style:dashed}
+.decis{margin-top:28px;list-style:none}
+.decis li{padding:14px 0;border-bottom:1px solid #e3e8e4;color:var(--ink-soft)}
+.decis b{color:var(--ink)}
+@media(max-width:760px){.flow,.flow2{grid-template-columns:1fr 1fr}}
+
+/* ============ TESTIMONIAL (placeholder, hidden live) ============ */
+.panel{display:grid;grid-template-columns:360px 1fr;gap:clamp(32px,6vw,88px);align-items:center;max-width:1040px;margin:56px auto 0;padding:clamp(20px,3vw,40px);background:#fff;border:2px solid var(--line);border-radius:24px}
+.video{position:relative;aspect-ratio:9/16;border-radius:16px;background:#dfe6e1;display:grid;place-items:center}
+.video span{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.play{width:76px;height:76px;border-radius:50%;background:rgb(255 255 255 / .9);display:grid;place-items:center;color:var(--accent)}
+.mark{font-family:var(--display);font-size:5rem;line-height:.6;color:var(--accent)}
+.ph{display:inline-block;margin-top:18px;padding:4px 8px;border:1.5px dashed var(--line);border-radius:6px;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.quote blockquote{margin-top:16px;font-size:clamp(1.25rem,2vw,1.625rem);line-height:1.5}
+.quote cite{display:block;margin-top:24px;font-style:normal;font-weight:700}
+.quote cite span{display:block;font-weight:400;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:860px){.panel{grid-template-columns:1fr}.video{max-width:300px;width:100%;margin:0 auto}}
+
+/* ============ CONCLUSION: the end-of-show log ============ */
+.final{max-width:1040px;margin:56px auto 0;background:#fff;border:2px solid var(--ink);border-radius:16px;overflow:hidden}
+.final-head{display:flex;justify-content:space-between;gap:12px;padding:14px 24px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.final-head .off{display:inline-flex;align-items:center;gap:8px}
+.final-head .off i{width:8px;height:8px;border-radius:50%;background:#8a948e}
+.points{display:grid;grid-template-columns:repeat(3,1fr);list-style:none}
+.point{padding:28px 26px;border-right:1px solid var(--line)}
+.point:last-child{border-right:0}
+.point small{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--accent);font-weight:700}
+.point h3{margin-top:10px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.375rem,2.2vw,1.75rem);line-height:1.02}
+.point p{margin-top:10px;color:var(--ink-soft)}
+.sum{padding:22px 26px;border-top:2px solid var(--ink);background:var(--alt);font-size:clamp(1.0625rem,1.5vw,1.25rem);font-weight:500}
+.sum b{color:var(--accent)}
+.acts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 16px;margin-top:40px}
+@media(max-width:860px){.points{grid-template-columns:1fr}.point{border-right:0;border-bottom:1px solid var(--line)}.point:last-child{border-bottom:0}}
+
+/* ============ NEXT PROJECT ============ */
+.next{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:clamp(24px,5vw,72px);padding:clamp(24px,4vw,56px);background:#fff;border:2px solid var(--line);border-radius:24px;color:var(--ink);text-decoration:none;overflow:hidden;transition:border-color .3s}
+.next:hover{border-color:#1A5BFA}
+.next small{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}
+.next h2{margin-top:12px;font-family:var(--display);text-transform:uppercase;font-size:clamp(2.5rem,5.2vw,4.5rem);line-height:.92;letter-spacing:-.02em}
+.next h2 span{color:#1A5BFA}
+.next p{margin-top:14px;max-width:40ch;color:var(--ink-soft)}
+.go{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-weight:600;color:#1A5BFA}
+.next:hover .go svg{transform:translateX(5px)}
+.go svg{transition:transform .3s}
+.next .ph-frame{aspect-ratio:16/10;border:2px dashed var(--line);border-radius:12px;display:grid;place-items:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+@media(max-width:860px){.next{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){.rise,.onair i,.track{animation:none}.reveal{opacity:1;translate:none;transition:none}.h2{animation:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><span class="brand">Ship Thesis</span><ul><li>Work</li><li>Services</li><li>Pricing</li><li>About</li><li>Contact</li></ul><a class="btn" href="#">Book a Discovery Call</a></div></header>
+
+<!-- HERO -->
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="kicker rise">Case study · Web platform</p>
+    <h1 class="rise" style="--d:80ms"><span class="ac">EHS Training</span> Platform</h1>
+    <p class="line rise" style="--d:160ms">A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.</p>
+    <div class="pass rise" style="--d:240ms">
+      <div class="pass-head"><span>Session pass · Case study 02</span><span class="onair"><i></i>Live since May 2026</span></div>
+      <div class="fields">
+        <div class="field"><small>Client</small><b>EHS Guru</b></div>
+        <div class="field"><small>Platform</small><b>Web app, any browser</b></div>
+        <div class="field"><small>Industry</small><b>Corporate safety training</b></div>
+        <div class="field"><small>Service</small><b>Web platform design and development</b></div>
+        <div class="field"><small>Stack</small><b>Next.js · Supabase · Zoom</b></div>
+        <div class="field"><small>Timeline</small><b>About 2 months to live</b></div>
+      </div>
+      <div class="pass-foot"><span>Access: admin · trainer · learner · guest</span><span>On our maintenance plan</span></div>
+    </div>
+  </div>
+  <div class="shot rise" style="--d:200ms"><img src="/work/safety-training-platform/hero.webp" alt="EHS Training Platform: an admin cohort page, the trainer dashboard and the class calendar"></div>
+</div></section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>One-click classes <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Automatic attendance <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Every class recorded <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Engagement analytics <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Free webinars <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Email and WhatsApp reminders <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+  <span>One-click classes <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Automatic attendance <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Every class recorded <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Engagement analytics <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Free webinars <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg> Email and WhatsApp reminders <svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+</div></div>
+
+<!-- 01 RUN SHEET -->
+<section><div class="wrap">
+  <p class="label">01 · The brief</p>
+  <h2 class="h2">Live classes, run on <span class="ac">their own platform</span></h2>
+  <div class="sheet reveal">
+    <div class="sheet-head"><div>Run sheet<b>EHS Training Platform</b></div><div>Client<b>EHS Guru</b></div><div>Runtime<b>About 2 months to live</b></div></div>
+    <div class="cue"><div class="cue-n">Cue<b>01</b></div><div class="cue-b"><h3>What EHS Guru needed</h3><p>They teach live Zoom classes in batches of nearly 80 learners, with several batches running. They were on an off-the-shelf learning platform, paying for features they didn't use, under someone else's brand. They wanted a platform built for how they actually teach, on their own domain.</p></div></div>
+    <div class="cue"><div class="cue-n">Cue<b>02</b></div><div class="cue-b"><h3>What made it hard</h3><p>The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order.</p></div></div>
+    <div class="cue"><div class="cue-n">Cue<b>03</b></div><div class="cue-b"><h3>What went live</h3><p>One platform for admins, trainers, learners and webinar guests: one-click Zoom classes, automatic attendance, every class recorded into a private library, engagement analytics, and free webinars that bring in new learners.</p></div></div>
+  </div>
+  <ul class="stats">
+    <li class="stat reveal"><b>76</b><span>pages across four portals</span></li>
+    <li class="stat reveal" style="--d:90ms"><b>52</b><span>API routes behind them</span></li>
+    <li class="stat reveal" style="--d:180ms"><b>~80</b><span>learners in a single live class</span></li>
+    <li class="stat reveal" style="--d:270ms"><b>4</b><span>audiences, each with its own view</span></li>
+  </ul>
+</div></section>
+
+<!-- 02 FOUR AUDIENCES -->
+<section class="alt"><div class="wrap">
+  <p class="label">02 · The platform</p>
+  <h2 class="h2">Four audiences, <span class="ac">one system</span></h2>
+  <p class="lede">Admins run the schedule, trainers teach, learners join from any browser, and guests come in through free webinars. Each sees only what they need.</p>
+  <div class="grid4">
+    <figure class="aud reveal"><img src="/work/safety-training-platform/sessions.webp" alt="Admin training sessions list with Start Session buttons"><figcaption class="aud-cap"><small>Admin</small><span><strong>One-click classes.</strong> Schedule a session and the Zoom meeting is created for you.</span></figcaption></figure>
+    <figure class="aud reveal" style="--d:120ms"><img src="/work/safety-training-platform/learner.webp" alt="Learner dashboard with progress, upcoming sessions and recordings"><figcaption class="aud-cap"><small>Learner</small><span><strong>Join from the portal.</strong> Nothing to install, no Zoom sign-up.</span></figcaption></figure>
+    <figure class="aud reveal"><img src="/work/safety-training-platform/users.webp" alt="Admin user management with roles and CSV import"><figcaption class="aud-cap"><small>Admin</small><span><strong>Everyone in one place.</strong> Roles, batches and bulk CSV import.</span></figcaption></figure>
+    <figure class="aud reveal" style="--d:120ms"><img src="/work/safety-training-platform/webinars.webp" alt="Free sessions portal for webinar guests"><figcaption class="aud-cap"><small>Guest</small><span><strong>Free webinars.</strong> Sign up without an account, get reminders, come back as a learner.</span></figcaption></figure>
+  </div>
+</div></section>
+
+<!-- 03 WHEN A CLASS GOES LIVE -->
+<section><div class="wrap">
+  <p class="label">03 · Showtime</p>
+  <h2 class="h2">What happens when a class <span class="ac">goes live</span></h2>
+  <div class="golive">
+    <div class="pin"><img src="/work/safety-training-platform/sessions.webp" alt="Admin training sessions list"><p class="clock">Class clock <b id="tc">T-24H</b></p></div>
+    <ol class="cues">
+      <li class="step on" data-tc="T-24H"><span class="tc">T-24h</span><div><h3>Reminders go out</h3><p>Email and WhatsApp reminders land at the right time in each learner's time zone, within a 10-minute window either side.</p></div></li>
+      <li class="step" data-tc="T-0"><span class="tc">T-0</span><div><h3>Admin clicks Start</h3><p>The Zoom meeting is ready, and it shows the trainer's name before they walk in.</p></div></li>
+      <li class="step" data-tc="JOIN"><span class="tc">Join</span><div><h3>Learners join</h3><p>From the portal, in any browser. Their attendance starts counting the moment they click Join.</p></div></li>
+      <li class="step" data-tc="LIVE"><span class="tc">Live</span><div><h3>Every minute counted</h3><p>Every join and leave is recorded in one step, so a duplicate notification from Zoom can never count twice.</p></div></li>
+      <li class="step" data-tc="PAUSE"><span class="tc">Pause</span><div><h3>Recording stops by accident</h3><p>It restarts on its own, and every segment of the class is kept, in order.</p></div></li>
+      <li class="step" data-tc="AFTER"><span class="tc">After</span><div><h3>Class ends, video lands</h3><p>The best video file is copied into EHS Guru's own storage, published when the admin is ready, and watch time is checked on the server.</p></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<!-- 04 RELIABILITY LOG -->
+<section class="alt"><div class="wrap">
+  <p class="label">04 · The hard parts</p>
+  <h2 class="h2">The <span class="ac">reliability log</span></h2>
+  <p class="lede">Zoom sits at the centre of every class, and it doesn't always behave. These are the problems we designed for before a single paid class ran.</p>
+  <div class="log reveal">
+    <div class="log-head"><span>ehs-training-platform · status</span><span class="ok"><i></i>All classes recorded</span></div>
+    <div class="entry"><div class="ts"><b>Recording</b>during class</div><div><h3>A recording stops mid-class</h3><dl><dt>Cause</dt><dd>Trainers pause, or stop by accident, and Zoom splits the recording.</dd><dt>Fix</dt><dd>Recording restarts automatically, and every segment is kept in order.</dd></dl></div><span class="chip">Resolved</span></div>
+    <div class="entry"><div class="ts"><b>Attendance</b>on join</div><div><h3>"Who is 'John' in Zoom?"</h3><dl><dt>Cause</dt><dd>People type their names differently when they join.</dd><dt>Fix</dt><dd>Matched by email first, then by name within the enrolled batch.</dd></dl></div><span class="chip">Resolved</span></div>
+    <div class="entry"><div class="ts"><b>Session</b>on leave</div><div><h3>A class that ends too early</h3><dl><dt>Cause</dt><dd>A learner joining early and leaving, or a trainer testing the link.</dd><dt>Fix</dt><dd>The class ends only when it really ends.</dd></dl></div><span class="chip">Resolved</span></div>
+    <div class="entry entry-big"><div class="ts"><b>Playback</b>library</div><div><h3>Class videos loading slowly</h3><dl><dt>Fix</dt><dd>Moved playback to a fast delivery network, measured before choosing: 0.12 → 0.90 MB/s.</dd></dl></div><div class="x">7.5×<small>faster video playback</small></div></div>
+  </div>
+</div></section>
+
+<!-- MID CTA -->
+<section class="call"><div class="wrap">
+  <h2>Want a platform<br>built like this?</h2>
+  <p>Start with a 30-minute call about your idea.</p>
+  <a href="#">Book a Discovery Call</a>
+</div></section>
+
+<!-- 05 JUDGEMENT -->
+<section><div class="wrap">
+  <p class="label">05 · Judgement</p>
+  <h2 class="h2">What we <span class="ac">left out</span>, on purpose</h2>
+  <ul class="cuts">
+    <li class="cut reveal"><small>Cut 01</small><h3>Payments, kept offline</h3><p>EHS Guru's choice. It kept the build on teaching, not billing.</p></li>
+    <li class="cut reveal" style="--d:120ms"><small>Cut 02</small><h3>Waiting for WhatsApp</h3><p>Email went live first. WhatsApp followed once Meta approved the templates, so launch was never held.</p></li>
+    <li class="cut reveal" style="--d:240ms"><small>Cut 03</small><h3>A premium hosting tier</h3><p>Reminders run on external scheduling, so the platform stays on low-cost hosting.</p></li>
+  </ul>
+</div></section>
+
+<!-- 06 RESULT -->
+<section class="alt"><div class="wrap">
+  <p class="label">06 · Result</p>
+  <div class="result">
+    <div class="reveal"><div class="big">Live since<br>May 2026</div><p>about 2 months after the build started.</p></div>
+    <ul class="facts reveal" style="--d:140ms">
+      <li><small>Classes</small>Runs EHS Guru's paid live classes, in batches of nearly 80.</li>
+      <li><small>Brand</small>On their own domain, under their own name.</li>
+      <li><small>After launch</small>Still on our monthly maintenance plan.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- UNDER THE HOOD (open) -->
+<section style="padding-top:0" class="alt"><div class="wrap">
+  <details class="hood" open>
+    <summary><h2>Under the hood</h2><p>Architecture and the decisions behind it.</p></summary>
+    <div class="hood-body">
+      <ul class="flow"><li>Any browser</li><li>Next.js on Vercel</li><li>52 API routes</li><li>Supabase · 27 tables</li></ul>
+      <ul class="flow2"><li>Zoom events</li><li>Webhook, every event logged</li><li>Attendance in one step</li><li>Best recording picked</li><li>Client's own storage</li></ul>
+      <ol class="decis">
+        <li><b>Attendance counted inside the database, in one step.</b> Duplicate or late Zoom events never double count.</li>
+        <li><b>Recordings copied into EHS Guru's own storage.</b> Their video library doesn't depend on Zoom's.</li>
+        <li><b>Every Zoom event logged.</b> Any class's full history can be traced.</li>
+        <li><b>Access checked at three layers.</b> A fast check at the door, backed by an authoritative one.</li>
+        <li><b>Quality:</b> regression tests on the Zoom and recording logic, error monitoring, security headers and rate limits.</li>
+      </ol>
+    </div>
+  </details>
+</div></section>
+
+<!-- 07 TESTIMONIAL (placeholder, hidden live) -->
+<section><div class="wrap">
+  <p class="label">07 · In their words</p>
+  <h2 class="h2">What <span class="ac">EHS Guru</span> says</h2>
+  <div class="panel reveal">
+    <div class="video"><span>Video testimonial</span><div class="play"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></div></div>
+    <div class="quote"><div class="mark">&ldquo;</div><span class="ph">Placeholder · hidden on the live site until real</span><blockquote>A short, approved quote from EHS Guru about working with us goes here, in their own words.</blockquote><cite>Name Surname<span>Role · EHS Guru</span></cite></div>
+  </div>
+</div></section>
+
+<!-- 08 CONCLUSION: end-of-show log -->
+<section class="alt"><div class="wrap">
+  <p class="label">08 · Conclusion</p>
+  <h2 class="h2">What this build says about <span class="ac">yours</span></h2>
+  <div class="final reveal">
+    <div class="final-head"><span>End of show</span><span class="off"><i></i>Off air · still running</span></div>
+    <ol class="points">
+      <li class="point"><small>i.</small><h3>We make the tools you already use dependable</h3><p>Zoom, email and WhatsApp stayed. We built the platform that makes them work together.</p></li>
+      <li class="point"><small>ii.</small><h3>We measure before we choose</h3><p>Video playback was tested both ways before we picked the faster one: 7.5×.</p></li>
+      <li class="point"><small>iii.</small><h3>We stay after launch</h3><p>EHS Guru is still on our maintenance plan, and the platform keeps improving alongside real classes.</p></li>
+    </ol>
+    <p class="sum">The same goes for your app: <b>a fixed quote</b> after a one-week Discovery Sprint, <b>a new build every week</b>, and <b>code you own</b>.</p>
+  </div>
+  <div class="acts"><a class="btn" href="#">Book a Discovery Call</a><a class="btn sec" href="#">See pricing →</a></div>
+</div></section>
+
+<!-- NEXT PROJECT -->
+<section><div class="wrap">
+  <a class="next reveal" href="#">
+    <div><small>Next project</small><h2><span>Poststeady</span> Client Reporting Tool</h2><p>Our own product: it turns the analytics files social media freelancers already download into a branded monthly report.</p><span class="go">See our work <svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    <div class="ph-frame">Poststeady screen, once captured</div>
+  </a>
+</div></section>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Scrollspy, same fix as Assess Yourself: the lowest step still crossing the top half wins.
+const steps=[...document.querySelectorAll('.step')], tc=document.getElementById('tc'), seen=new Set();
+const so=new IntersectionObserver(es=>{for(const e of es){const i=steps.indexOf(e.target);e.isIntersecting?seen.add(i):seen.delete(i)}
+  if(seen.size){const a=Math.max(...seen);steps.forEach((s,i)=>s.classList.toggle('on',i===a));tc.textContent=steps[a].dataset.tc}},{rootMargin:'0px 0px -45% 0px'});
+steps.forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
