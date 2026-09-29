@@ -252,3 +252,19 @@ Client-branding flag: the app name and logo are the product's own. If this was a
 9. Was code signing bought, or is the product still shipping unsigned?
 10. Did the 1.0.x → 1.0.4 / 1.0.5 updates reach real users through the feed as the 2026-09-09 commit suggests?
 11. Is the Windows angle useful for the mobile-focused site, or should this case study sit under "desktop / utility apps"?
+
+---
+
+## 18. Founder answers and public README (2026-09-29)
+
+**Why we built it [FOUNDER]:** Intel's colour-changing software was poor and very frustrating; there was no full control over the screen itself. The aim was a tool that works for both Intel and AMD.
+
+**Decisions [FOUNDER]:** skip the test count (no test number on the page). The before/after photo will be a phone photo of a real laptop screen, taken by the founder. The ChromaLayer source repo is in the `chromalayerlab` organisation (not yet visible to this session; only the public `ChromaLayer-Releases` repo is).
+
+**Public `ChromaLayer-Releases` README, compared with the notes above:**
+- README says "Any GPU (Intel, AMD, NVIDIA), no vendor-specific dependencies". The code notes (§16) say `CompatibilityAnalyzer`: **Intel supported; AMD/NVIDIA experimental**. **[NEEDS FOUNDER]** Has it been tested on AMD? Until confirmed, the page says "built for Intel laptops, designed to work on any GPU", never "works on AMD".
+- README is stale on presets: it lists Gaming, Movie Night, Reading, Night Mode; the code notes list Natural, Vivid, Cinema, Gaming, Night. Use the code's list.
+- README says "game-safe / avoids anti-cheat conflicts": not backed by the repo notes. Do not publish.
+- README roadmap mentions Display Clarity / sharpening for v2. Do not mention on the page (it was built then removed).
+- README license, contact and roadmap lines are unfinished placeholders.
+
