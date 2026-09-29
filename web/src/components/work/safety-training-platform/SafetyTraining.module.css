@@ -223,7 +223,7 @@
 /* ---- mid-page call: the one full-bleed colour moment, in action green ---- */
 .callBand {
   /* Sized to its text, not the viewport: a full-bleed moment, not a hero. */
-  padding: clamp(72px, 9vw, 112px) 0;
+  padding: clamp(48px, 6vw, 80px) 0;
   background-color: var(--green);
   background-image: radial-gradient(circle, rgb(255 255 255 / 0.22) 1.5px, transparent 1.5px);
   background-size: 22px 22px;
@@ -565,7 +565,7 @@
 }
 .cue {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 180px 1fr;
   border-bottom: 1px solid #e3e8e4;
 }
 .cue:last-child {
@@ -683,7 +683,8 @@
 }
 .pin {
   position: sticky;
-  top: calc(var(--nav-h) + 48px);
+  top: calc(var(--nav-h, 60px) + 48px);
+  align-self: start;
 }
 .pin img {
   width: 100%;
