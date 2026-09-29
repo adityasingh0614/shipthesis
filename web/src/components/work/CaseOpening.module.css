@@ -440,7 +440,7 @@
   width: 100%;
   border-radius: 10px;
   filter: none;
-  box-shadow: 0 30px 60px -24px rgb(3 13 38 / 0.45);
+  box-shadow: 0 30px 60px -24px rgb(28 36 80 / 0.45);
 }
 .bench:hover img {
   transform: none;

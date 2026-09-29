@@ -98,10 +98,10 @@ export function ChromaLayerBody() {
               no kernel driver. */}
           <ul className={styles.stats}>
             {[
-              ["7", "colour controls, combined into one", "#c0c000"],
-              ["5", "ready-made presets", "#00c0c0"],
-              ["9", "re-checks in the 25 seconds after each sign-in", "#c000c0"],
-              ["0", "admin rights or drivers needed", "#0000c0"],
+              ["7", "colour controls, combined into one", "#8f9fe8"],
+              ["5", "ready-made presets", "#8f9fe8"],
+              ["9", "re-checks in the 25 seconds after each sign-in", "#8f9fe8"],
+              ["0", "admin rights or drivers needed", "#8f9fe8"],
             ].map(([num, cap, sw], i) => (
               <Reveal as="li" key={cap} delay={i * 0.09} className={styles.stat} style={{ "--sw": sw } as React.CSSProperties}>
                 <b>{num}</b>
@@ -229,10 +229,10 @@ export function ChromaLayerBody() {
           </Reveal>
           <ul className={styles.facts}>
             {[
-              ["Live", "#c0c000", <>At{" "}<a className={styles.out} href="https://chromalayer.app" target="_blank" rel="noreferrer">chromalayer.app</a>.</>],
-              ["Works on", "#00c0c0", "Intel, AMD and NVIDIA graphics, tested on each."],
-              ["Built in", "#c000c0", "A 14-day free trial and licensing."],
-              ["Updates", "#0000c0", "Installs and updates through its own release channel."],
+              ["Live", "#8f9fe8", <>At{" "}<a className={styles.out} href="https://chromalayer.app" target="_blank" rel="noreferrer">chromalayer.app</a>.</>],
+              ["Works on", "#8f9fe8", "Intel, AMD and NVIDIA graphics, tested on each."],
+              ["Built in", "#8f9fe8", "A 14-day free trial and licensing."],
+              ["Updates", "#8f9fe8", "Installs and updates through its own release channel."],
             ].map(([k, sw, body], i) => (
               <Reveal as="li" key={k as string} delay={i * 0.09} style={{ "--sw": sw } as React.CSSProperties}>
                 <small>{k}</small>

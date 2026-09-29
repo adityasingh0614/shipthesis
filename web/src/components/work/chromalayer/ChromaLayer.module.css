@@ -663,7 +663,7 @@
   top: 12px;
   padding: 4px 8px;
   border-radius: 4px;
-  background: rgb(3 13 38 / 0.78);
+  background: rgb(28 36 80 / 0.8);
   color: #fff;
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -1173,4 +1173,36 @@
   max-width: 520px;
   height: auto;
   justify-self: center;
+}
+
+/* Hold to compare: press and hold shows the original picture. */
+.hold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 14px 0 0;
+  padding: 0 18px;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+.hold svg {
+  width: 18px;
+  height: 18px;
+}
+.hold[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+}
+.hold:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
 }

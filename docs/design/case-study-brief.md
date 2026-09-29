@@ -22,7 +22,7 @@ This brief says what each case study page must say, in what order, and the visua
 - **Pages:** `/work/assess-yourself`, `/work/safety-training-platform`, `/work/poststeady`, `/work/chromalayer`. **No `/work` index**: Home's Our work carousel is the index. Nav "Work" goes to `/#work`.
 - **Order everywhere:** Assess Yourself → EHS Training Platform → Poststeady → ChromaLayer → back to Assess Yourself.
 - **Every CTA:** "Book a Discovery Call" → `/#contact`.
-- **Project accent** (from Home §2) is an art-direction colour, never the page colour. It goes on: the coloured half of the title, section heading markers, diagram lines, screenshot captions, the hero's tinted field, small emphasis, text selection. **Buttons stay green.** Assess Yourself `#283593`, EHS Training Platform `#00674C`, Poststeady `#1A5BFA`, ChromaLayer `#030d26`.
+- **Project accent** (from Home §2) is an art-direction colour, never the page colour. It goes on: the coloured half of the title, section heading markers, diagram lines, screenshot captions, the hero's tinted field, small emphasis, text selection. **Buttons stay green.** Assess Yourself `#283593`, EHS Training Platform `#00674C`, Poststeady `#1A5BFA`, ChromaLayer `#4a5fd6`.
 - **No eyebrows** above headings (no "CASE STUDY / MOBILE APP", no "THE CHALLENGE" label over "The challenge"). The heading carries its own weight. Mono is for metadata, captions and numbers only.
 - **No decorative numbering** (no giant faint 01/02/03, no "DECISION 01", no "01 / 04" page counters). Numbers appear only when they are data.
 - **No generic cards.** Sections are open compositions of type, screens and hairlines. A bordered box exists only where it does a job (the Under the hood toggle, the facts rail on mobile).
@@ -212,7 +212,7 @@ Each page: title `[Project]: [what it is] | Ship Thesis case study`, a meta desc
 
 ## 5. ChromaLayer `/work/chromalayer`
 
-**World: "The Colour Lab."** ChromaLayer is about what a screen shows, so this page is a display-calibration bench: test patterns, colour swatches, measurement rulers, lab notes, a monitor's on-screen readout. Device: **Windows app windows** plus a **real-hardware photo** (screen capture can't show the effect). Accent `#030d26` is near-ink, so the page's colour comes from the **swatches themselves**, which are data (presets and test patterns), not decoration. It's **our own product** and proof of reliability engineering, **never** App Store or mobile proof.
+**World: "The Colour Lab."** ChromaLayer is about what a screen shows, so this page is a display-calibration bench: test patterns, colour swatches, measurement rulers, lab notes, a monitor's on-screen readout. Device: **Windows app windows** plus a **real-hardware photo** (screen capture can't show the effect). Accent `#4a5fd6` (ChromaLayer Brand Blue; secondary `#8f9fe8`; no rainbow strips, founder 2026-09-29), with colour also from the **swatches themselves**, which are data (presets and test patterns), not decoration. It's **our own product** and proof of reliability engineering, **never** App Store or mobile proof.
 
 **Status:** design file can be built now with placeholder frames; **page hidden on production** until real screens and the before/after photo exist.
 

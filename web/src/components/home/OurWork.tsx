@@ -124,7 +124,7 @@ const PROJECTS: Project[] = [
     name: "ChromaLayer",
     title: ["Chroma", "Layer"],
     type: "Windows app",
-    color: "#030d26",
+    color: "#4a5fd6",
     description:
       "A native Windows utility for advanced, system-wide display color and temperature control.",
     client: "Our own product",

@@ -20,6 +20,7 @@ export function Lab() {
   const uid = useId().replace(/:/g, "");
   const [p, setP] = useState<Profile>({ ...PRESETS.vivid });
   const [x, setX] = useState(50);
+  const [held, setHeld] = useState(false);
   // A preset button is lit only while the sliders still match it exactly.
   const preset = NAMES.find((n) => DIALS.every((d) => PRESETS[n][d.key] === p[d.key]));
   const filter = `cl-after-${uid}`;
@@ -31,7 +32,10 @@ export function Lab() {
           <svg viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <SceneDefs uid={`${uid}a`} />
           </svg>
-          <svg className={styles.after} viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <svg
+            className={styles.after}
+            style={held ? { clipPath: "inset(0 0 0 100%)" } : undefined}
+            viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <defs>
               <filter id={filter} colorInterpolationFilters="sRGB">
                 <feColorMatrix type="matrix" values={feValues(p)} />
@@ -44,7 +48,7 @@ export function Lab() {
           <span className={styles.divider} aria-hidden="true" />
           <span className={`${styles.tag} ${styles.tagA}`}>Before</span>
           <span className={`${styles.tag} ${styles.tagB}`}>
-            After · {preset ? preset[0].toUpperCase() + preset.slice(1) : "Custom"}
+            {held ? "Original" : `After \u00b7 ${preset ? preset[0].toUpperCase() + preset.slice(1) : "Custom"}`}
           </span>
           <input
             type="range"
@@ -70,6 +74,24 @@ export function Lab() {
             </button>
           ))}
         </div>
+        <button
+          type="button"
+          className={styles.hold}
+          aria-pressed={held}
+          onPointerDown={() => setHeld(true)}
+          onPointerUp={() => setHeld(false)}
+          onPointerLeave={() => setHeld(false)}
+          onPointerCancel={() => setHeld(false)}
+          onBlur={() => setHeld(false)}
+          onKeyDown={(e) => (e.key === " " || e.key === "Enter") && setHeld(true)}
+          onKeyUp={(e) => (e.key === " " || e.key === "Enter") && setHeld(false)}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="2" />
+          </svg>
+          Hold to compare
+        </button>
         <p className={styles.note}>
           A drawn test scene, rendered in your browser with the app&apos;s own
           colour maths and preset values. Move any dial to make your own. The

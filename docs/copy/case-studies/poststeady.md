@@ -118,7 +118,7 @@ The same goes for your app: **a fixed quote** after a one-week Discovery Sprint,
 
 ## Next project
 
-**ChromaLayer** ("Chroma" in near-ink `#030d26`)
+**ChromaLayer** ("Chroma" in ChromaLayer blue `#4a5fd6`)
 Our own Windows app: seven colour controls for laptop screens that stay applied after every restart, sleep and sign-in.
 **Link:** See our work → `/#work` (becomes "View case study" → `/work/chromalayer` once that page exists and is visible). Dashed "ChromaLayer screen, once captured" frame.
 

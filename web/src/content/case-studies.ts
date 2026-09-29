@@ -136,7 +136,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "chromalayer",
     title: ["Chroma", "Layer"],
     joined: true,
-    accent: "#030d26",
+    accent: "#4a5fd6",
     kicker: "Case study · Own product",
     line: "A Windows app that gives a laptop\u2019s built-in screen seven colour controls, and keeps them applied after every restart, sleep and sign-in.",
     card: {

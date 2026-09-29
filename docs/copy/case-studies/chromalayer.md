@@ -2,7 +2,7 @@
 
 > Matches the built page `/work/chromalayer` (ported from the approved design `web/public/_design/chromalayer.html`, 2026-09-29). World: "The Colour Lab" (`docs/design/case-study-brief.md` §5). Facts: the product repo `chromalayerlab/Chromalayer` (`docs/product-truth.md`, verified against the code) and `docs/case-studies/chromalayer-raw.md`. **Hidden on production** until the real-hardware before/after photo and a real testimonial exist.
 
-**Page accent:** `#030d26` (near-ink; the only colour on the page is swatches: preset chips, stat and fact card tops. No colour-strip underlines or bars (founder, 2026-09-29)).
+**Page accent:** `#4a5fd6` (ChromaLayer Brand Blue, from the founder's brand palette, 2026-09-29; chosen over the darker indigo/navy so it does not sit on top of Assess Yourself `#283593` or Poststeady `#1A5BFA`). Secondary `#8f9fe8` for the stat and fact card tops. No rainbow colour strips anywhere; the preset chips keep their small colour dots as data. Buttons stay site green.
 
 ## Opening
 
@@ -28,7 +28,7 @@ Stats: **7** colour controls, combined into one · **5** ready-made presets · *
 
 ## 02 · Seven dials, one picture
 
-Live before/after on a **drawn test scene** (not a photo; the landing page's photo is a film still we can't publish). Uses the app's own colour maths and its real preset values (`PresetDefinitions.cs`): Natural, Vivid, Cinema, Gaming, Night. The seven dials are **live sliders** (move any one and the picture changes; the tag reads "Custom" once they no longer match a preset), with real ranges: Vibrancy 0–200 · Warmth 2700–10000 K · Brightness ±100 · Contrast 0–200 · Hue ±180° · Black level 0–30 · White point 70–100. Note: "A drawn test scene, rendered in your browser with the app's own colour maths and preset values. Move any dial to make your own. The app itself changes your whole screen."
+Live before/after on a **drawn test scene** (not a photo; the landing page's photo is a film still we can't publish). Uses the app's own colour maths and its real preset values (`PresetDefinitions.cs`): Natural, Vivid, Cinema, Gaming, Night. The seven dials are **live sliders** (move any one and the picture changes; the tag reads "Custom" once they no longer match a preset), and a **Hold to compare** button (press and hold shows the original), with real ranges: Vibrancy 0–200 · Warmth 2700–10000 K · Brightness ±100 · Contrast 0–200 · Hue ±180° · Black level 0–30 · White point 70–100. Note: "A drawn test scene, rendered in your browser with the app's own colour maths and preset values. Move any dial to make your own. Hold the button to see the original, like Ctrl+Shift+C in the app. The app itself changes your whole screen."
 
 ## 03 · Sign in, and Windows resets you
 
@@ -51,7 +51,7 @@ No overlay, no driver (same built-in Windows feature as its accessibility colour
 
 ## 06 · Result
 
-**LIVE** (centred), "Our own Windows app, running today.", then four fact cards in a row with a colour swatch on top: Live at chromalayer.app · Works on Intel, AMD and NVIDIA graphics, tested on each (founder, 2026-09-29) · Built in: a 14-day free trial and licensing · Updates through its own release channel. Off production only: a placeholder for the real-hardware before/after photo.
+**LIVE** (centred), "Our own Windows app, running today.", then four fact cards in a row with a periwinkle top edge: Live at chromalayer.app · Works on Intel, AMD and NVIDIA graphics, tested on each (founder, 2026-09-29) · Built in: a 14-day free trial and licensing · Updates through its own release channel. Off production only: a placeholder for the real-hardware before/after photo.
 
 ## Under the hood (open by default)
 
