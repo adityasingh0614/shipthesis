@@ -220,7 +220,7 @@ export function PoststeadyBody() {
       {/* 05 · Judgement: stories we spiked */}
       <section className={styles.section} aria-labelledby="judgement-title">
         <div className={styles.wrap}>
-          <Head label="05 · Product decisions" id="decisions-title">
+          <Head label="05 · Product decisions" id="judgement-title">
             What we <A>left out</A>
           </Head>
           <p className={styles.lede}>
