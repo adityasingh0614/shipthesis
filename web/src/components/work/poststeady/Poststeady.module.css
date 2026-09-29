@@ -592,6 +592,37 @@
   color: var(--ink-soft);
 }
 
+/* ---- 01 · engineering scale ---- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 960px;
+  margin: 24px auto 0;
+  list-style: none;
+}
+.stat {
+  padding: 22px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-card);
+}
+.stat b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+.stat span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
 /* ---- 02 · 175 ways to say Spend ---- */
 .spend {
   display: grid;
@@ -920,6 +951,9 @@
   }
 }
 @media (max-width: 860px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .desk {
     grid-template-columns: 1fr;
   }

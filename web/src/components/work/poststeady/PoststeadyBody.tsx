@@ -111,6 +111,21 @@ export function PoststeadyBody() {
               </div>
             ))}
           </Reveal>
+          {/* Engineering scale, from the raw notes (§6): 21 pages, 11 API
+              routes, 47 versioned database changes, a three-page report. */}
+          <ul className={styles.stats}>
+            {[
+              ["21", "pages, app and marketing site together"],
+              ["11", "API routes behind them"],
+              ["47", "versioned database changes"],
+              ["3", "pages in every finished report"],
+            ].map(([num, cap], i) => (
+              <Reveal as="li" key={cap} delay={i * 0.09} className={styles.stat}>
+                <b>{num}</b>
+                <span>{cap}</span>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
 

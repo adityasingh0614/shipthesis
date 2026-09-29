@@ -29,6 +29,8 @@ Assignment memo, same sheet shape as EHS's run sheet: a dark header (To: Every f
 - **The problem · What made it hard.** Each platform exports them in its own format, with its own name for the same figure.
 - **What ran · What we built.** Upload the exports, get a branded three-page report with a summary you can edit.
 
+Stat cards under the sheet (from `docs/case-studies/poststeady-raw.md` §6, as on the other two case studies): **21** pages, app and marketing site together · **11** API routes behind them · **47** versioned database changes · **3** pages in every finished report. (175 stays the page's one big number, in section 02.)
+
 ## 02 · The centrepiece
 
 **175 ways to say "Spend"**
