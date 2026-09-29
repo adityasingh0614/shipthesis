@@ -268,3 +268,5 @@ Client-branding flag: the app name and logo are the product's own. If this was a
 - README roadmap mentions Display Clarity / sharpening for v2. Do not mention on the page (it was built then removed).
 - README license, contact and roadmap lines are unfinished placeholders.
 
+**Correction [FOUNDER, 2026-09-29]:** ChromaLayer is not sold as an Intel-only tool. Intel's tool is the origin story only; the product is for any Windows laptop. The page says "any Windows laptop"; any named-GPU claim (Intel, AMD) waits until `CompatibilityAnalyzer` in the source repo is checked, or the founder confirms testing.
+
