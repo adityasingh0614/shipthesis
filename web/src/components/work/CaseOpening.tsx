@@ -46,7 +46,6 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
               <span className={styles.cmBr} aria-hidden="true" />
             </>
           )}
-          {osd && <div className={styles.bars} aria-hidden="true" />}
           {live ? (
             // EHS: a session pass, its status an on-air badge in the head.
             // Poststeady: the same slot, as a newspaper dateline.

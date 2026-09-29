@@ -10,7 +10,6 @@
   padding: 0 var(--gutter);
 }
 .section {
-  --bars: linear-gradient(90deg, #c0c0c0 0 14.28%, #c0c000 0 28.57%, #00c0c0 0 42.85%, #00c000 0 57.14%, #c000c0 0 71.42%, #c00000 0 85.71%, #0000c0 85.71%);
   --paper: color-mix(in srgb, var(--accent) 5%, var(--surface));
   padding: clamp(96px, 11vw, 160px) 0;
 }
@@ -19,13 +18,8 @@
 .band {
   background: var(--surface-alt);
 }
-/* The page's accent is near-ink, so the accent word gets a test-bar
-   underline; the colour on this page comes from the swatches. */
 .accent {
-  background: var(--bars) left bottom / 100% 0.12em no-repeat;
-  padding-bottom: 0.06em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  color: var(--accent);
 }
 
 /* ---- shared type ---- */
@@ -77,8 +71,6 @@
   padding: 22px 0;
   background: var(--accent);
   color: #fff;
-  border-top: 6px solid transparent;
-  border-image: linear-gradient(90deg, #c0c0c0 0 14.28%, #c0c000 0 28.57%, #00c0c0 0 42.85%, #00c000 0 57.14%, #c000c0 0 71.42%, #c00000 0 85.71%, #0000c0 85.71%) 1;
 }
 .track {
   display: flex;
@@ -110,25 +102,18 @@
   }
 }
 
-/* ---- 06 · result ---- */
+/* ---- 06 · result: a big "Live", then the facts in a row ---- */
 .result {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  align-items: center;
-  gap: clamp(32px, 6vw, 96px);
-  margin-top: 64px;
+  margin-top: 40px;
+  text-align: center;
 }
-/* Smaller ceiling than Assess Yourself's .big ("3-4 / weeks"): "Live
-   since" and "May 2026" are longer words, so a display size that big
-   wraps mid-word instead of holding two lines. */
 .big {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 6.6vw, 5.5rem);
+  font-size: clamp(4.5rem, 12vw, 9rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 0.9;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 .bigLine {
   margin-top: 14px;
@@ -136,18 +121,26 @@
   color: var(--ink-soft);
 }
 .facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  max-width: 1040px;
+  margin: 56px auto 0;
   list-style: none;
-  border-top: 2px solid var(--ink);
+  text-align: left;
 }
 .facts li {
-  padding: 22px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+  padding: 20px 20px 22px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-top: 5px solid var(--sw);
+  border-radius: 14px;
+  font-size: 1.0625rem;
   font-weight: 500;
 }
 .facts small {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 400;
@@ -428,7 +421,7 @@
   transition: border-color 300ms ease-out;
 }
 .next:hover {
-  border-color: #030d26;
+  border-color: #283593;
 }
 .next:focus-visible {
   outline: 2px solid var(--green);
@@ -452,7 +445,7 @@
 }
 /* The next project's own accent, a preview of its world. */
 .next h2 span {
-  color: #030d26;
+  color: #283593;
 }
 .next p {
   max-width: 40ch;
@@ -465,7 +458,7 @@
   gap: 8px;
   margin-top: 24px;
   font-weight: 600;
-  color: #030d26;
+  color: #283593;
 }
 .go svg {
   transition: transform 300ms ease-out;
@@ -474,9 +467,7 @@
   transform: translateX(5px);
 }
 /* On the live site the placeholder frame is gone: text only. */
-.nextSolo {
-  grid-template-columns: 1fr;
-}
+
 
 
 /* Placeholder frames: a browser window or a printed page, dashed, until a
@@ -535,10 +526,6 @@
   white-space: nowrap;
 }
 
-.finalBars {
-  height: 8px;
-  background: var(--bars);
-}
 .out {
   color: var(--ink);
   text-decoration: underline;
@@ -775,23 +762,50 @@
   letter-spacing: 0.08em;
   color: var(--ink-muted);
 }
-.meter {
-  position: relative;
+.dials label {
+  font-weight: 600;
+}
+.dials input[type="range"] {
+  --p: 50%;
   grid-column: 1 / -1;
+  width: 100%;
+  height: 22px;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.dials input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
   border-radius: 2px;
-  background: #e3e8e4;
+  background: linear-gradient(90deg, var(--accent) var(--p), #e3e8e4 var(--p));
 }
-.meter i {
-  position: absolute;
-  top: -4px;
-  left: var(--p);
-  width: 12px;
-  height: 12px;
-  margin-left: -6px;
+.dials input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent) var(--p), #e3e8e4 var(--p));
+}
+.dials input[type="range"]::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  margin-top: -7px;
+  appearance: none;
+  border: 3px solid #fff;
   border-radius: 50%;
   background: var(--accent);
-  transition: left 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.4);
+}
+.dials input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.4);
+}
+.dials input[type="range"]:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
 }
 
 /* ---- 03 · the fight for your screen: pinned test screen + time ruler ---- */
@@ -1035,7 +1049,8 @@
 
 /* ---- 06 · the real-hardware photo (placeholder until taken) ---- */
 .photo {
-  margin-top: 56px;
+  max-width: 1040px;
+  margin: 40px auto 0;
 }
 .photo .ph {
   aspect-ratio: 16 / 7;
@@ -1088,7 +1103,6 @@
   .track {
     animation: none;
   }
-  .meter i,
   .tick,
   .step,
   .sn {
@@ -1098,7 +1112,6 @@
 
 /* ---- tablets and phones ---- */
 @media (max-width: 960px) {
-  .result,
   .next,
   .panel {
     grid-template-columns: 1fr;
@@ -1153,4 +1166,11 @@
     grid-template-columns: 1fr;
     gap: 6px;
   }
+}
+
+.nextImg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  justify-self: center;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { DIALS, PRESETS, feValues, type PresetName } from "./engine";
+import { DIALS, PRESETS, feValues, type PresetName, type Profile } from "./engine";
 import { SceneDefs } from "./Scene";
 import styles from "./ChromaLayer.module.css";
 
@@ -18,9 +18,10 @@ const NAMES = Object.keys(PRESETS) as PresetName[];
 // seven dials read out for the chosen preset. Labelled as an illustration.
 export function Lab() {
   const uid = useId().replace(/:/g, "");
-  const [preset, setPreset] = useState<PresetName>("vivid");
+  const [p, setP] = useState<Profile>({ ...PRESETS.vivid });
   const [x, setX] = useState(50);
-  const p = PRESETS[preset];
+  // A preset button is lit only while the sliders still match it exactly.
+  const preset = NAMES.find((n) => DIALS.every((d) => PRESETS[n][d.key] === p[d.key]));
   const filter = `cl-after-${uid}`;
 
   return (
@@ -43,7 +44,7 @@ export function Lab() {
           <span className={styles.divider} aria-hidden="true" />
           <span className={`${styles.tag} ${styles.tagA}`}>Before</span>
           <span className={`${styles.tag} ${styles.tagB}`}>
-            After · {preset[0].toUpperCase() + preset.slice(1)}
+            After · {preset ? preset[0].toUpperCase() + preset.slice(1) : "Custom"}
           </span>
           <input
             type="range"
@@ -62,7 +63,7 @@ export function Lab() {
               className={styles.chip}
               aria-pressed={n === preset}
               style={{ "--sw": SWATCH[n] } as React.CSSProperties}
-              onClick={() => setPreset(n)}
+              onClick={() => setP({ ...PRESETS[n] })}
             >
               <i />
               {n[0].toUpperCase() + n.slice(1)}
@@ -71,18 +72,25 @@ export function Lab() {
         </div>
         <p className={styles.note}>
           A drawn test scene, rendered in your browser with the app&apos;s own
-          colour maths and preset values. The app itself changes your whole
-          screen.
+          colour maths and preset values. Move any dial to make your own. The
+          app itself changes your whole screen.
         </p>
       </div>
       <ul className={styles.dials}>
         {DIALS.map((d) => (
           <li key={d.key}>
-            <b>{d.name}</b>
-            <output>{d.fmt(p[d.key])}</output>
-            <span className={styles.meter}>
-              <i style={{ "--p": `${((p[d.key] - d.lo) / (d.hi - d.lo)) * 100}%` } as React.CSSProperties} />
-            </span>
+            <label htmlFor={`${uid}-${d.key}`}>{d.name}</label>
+            <output htmlFor={`${uid}-${d.key}`}>{d.fmt(p[d.key])}</output>
+            <input
+              id={`${uid}-${d.key}`}
+              type="range"
+              min={d.lo}
+              max={d.hi}
+              step={d.key === "temp" ? 100 : 1}
+              value={p[d.key]}
+              onChange={(e) => setP({ ...p, [d.key]: Number(e.target.value) })}
+              style={{ "--p": `${((p[d.key] - d.lo) / (d.hi - d.lo)) * 100}%` } as React.CSSProperties}
+            />
             <small>{d.range}</small>
           </li>
         ))}

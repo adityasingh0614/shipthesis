@@ -396,29 +396,8 @@
 /* ---- ChromaLayer: a calibration target (web/public/_design/chromalayer.html) ---- */
 /* Colour-bar strip along the card's top edge; the status is a monitor's
    on-screen-display readout, in mono, with a blinking dot. */
-.osd {
-  --bars: linear-gradient(
-    90deg,
-    #c0c0c0 0 14.28%,
-    #c0c000 0 28.57%,
-    #00c0c0 0 42.85%,
-    #00c000 0 57.14%,
-    #c000c0 0 71.42%,
-    #c00000 0 85.71%,
-    #0000c0 85.71%
-  );
-}
 .osd .card {
   overflow: hidden;
-}
-.bars {
-  height: 14px;
-  background: var(--bars);
-}
-.osd .titleAccent {
-  color: inherit;
-  background: var(--bars) left bottom / 100% 0.1em no-repeat;
-  padding-bottom: 0.06em;
 }
 .osdBadge {
   padding: 4px 10px;

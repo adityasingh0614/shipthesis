@@ -2,15 +2,15 @@
 
 > Matches the built page `/work/chromalayer` (ported from the approved design `web/public/_design/chromalayer.html`, 2026-09-29). World: "The Colour Lab" (`docs/design/case-study-brief.md` §5). Facts: the product repo `chromalayerlab/Chromalayer` (`docs/product-truth.md`, verified against the code) and `docs/case-studies/chromalayer-raw.md`. **Hidden on production** until the real-hardware before/after photo and a real testimonial exist.
 
-**Page accent:** `#030d26` (near-ink; the page's colour comes from the test-bar swatches, which are data).
+**Page accent:** `#030d26` (near-ink; the only colour on the page is swatches: preset chips, stat and fact card tops. No colour-strip underlines or bars (founder, 2026-09-29)).
 
 ## Opening
 
 **Kicker:** Case study · Own product
-**Title:** CHROMALAYER (test-bar underline under "Chroma")
+**Title:** CHROMALAYER 
 **Line:** A Windows app that gives a laptop's built-in screen seven colour controls, and keeps them applied after every restart, sleep and sign-in.
 
-**Test pattern · Case study 04** (colour-bar strip on the card's top edge; OSD readout: ● LIVE · chromalayer.app, linking to https://chromalayer.app)
+**Test pattern · Case study 04** (OSD readout: ● LIVE · chromalayer.app, linking to https://chromalayer.app)
 Type Our own product · Platform Windows 10 and 11 laptops · Industry Consumer software, display tools · Service Product design, build and release · Stack C# · .NET · WPF
 
 **Hero:** the real app window (`/work/chromalayer/hero.webp`, the Display Studio screenshot from the landing-page repo), on a test-card grid.
@@ -28,7 +28,7 @@ Stats: **7** colour controls, combined into one · **5** ready-made presets · *
 
 ## 02 · Seven dials, one picture
 
-Live before/after on a **drawn test scene** (not a photo; the landing page's photo is a film still we can't publish). Uses the app's own colour maths and its real preset values (`PresetDefinitions.cs`): Natural, Vivid, Cinema, Gaming, Night. Dial readout with real ranges: Vibrancy 0–200 · Warmth 2700–10000 K · Brightness ±100 · Contrast 0–200 · Hue ±180° · Black level 0–30 · White point 70–100. Note: "A drawn test scene, rendered in your browser with the app's own colour maths and preset values. The app itself changes your whole screen."
+Live before/after on a **drawn test scene** (not a photo; the landing page's photo is a film still we can't publish). Uses the app's own colour maths and its real preset values (`PresetDefinitions.cs`): Natural, Vivid, Cinema, Gaming, Night. The seven dials are **live sliders** (move any one and the picture changes; the tag reads "Custom" once they no longer match a preset), with real ranges: Vibrancy 0–200 · Warmth 2700–10000 K · Brightness ±100 · Contrast 0–200 · Hue ±180° · Black level 0–30 · White point 70–100. Note: "A drawn test scene, rendered in your browser with the app's own colour maths and preset values. Move any dial to make your own. The app itself changes your whole screen."
 
 ## 03 · Sign in, and Windows resets you
 
@@ -51,7 +51,7 @@ No overlay, no driver (same built-in Windows feature as its accessibility colour
 
 ## 06 · Result
 
-**LIVE**, "Our own Windows app, running today." Live at chromalayer.app · Works on Intel, AMD and NVIDIA graphics, tested on each (founder, 2026-09-29) · A 14-day free trial and licensing · Installs and updates through its own release channel. Off production only: a placeholder for the real-hardware before/after photo.
+**LIVE** (centred), "Our own Windows app, running today.", then four fact cards in a row with a colour swatch on top: Live at chromalayer.app · Works on Intel, AMD and NVIDIA graphics, tested on each (founder, 2026-09-29) · Built in: a 14-day free trial and licensing · Updates through its own release channel. Off production only: a placeholder for the real-hardware before/after photo.
 
 ## Under the hood (open by default)
 
@@ -71,4 +71,4 @@ Price ($5.99), the unsigned installer and its download link, user or sales numbe
 
 ## Next project
 
-**Assess Yourself** → `/work/assess-yourself`.
+**Assess Yourself**, in its own indigo (`#283593`), with its real phone hero image → `/work/assess-yourself`.

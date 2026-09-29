@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { getVisibleCaseStudy } from "@/content/case-studies";
 import { Reveal } from "../Reveal";
@@ -119,8 +120,8 @@ export function ChromaLayerBody() {
           </Head>
           <p className={styles.lede}>
             Every control becomes one small piece of maths, and all seven are
-            combined into a single change to the screen. Pick a preset, then
-            drag the divider.
+            combined into a single change to the screen. Pick a preset, move any
+            dial, then drag the divider.
           </p>
           <Reveal>
             <Lab />
@@ -222,32 +223,23 @@ export function ChromaLayerBody() {
           <p className={styles.label} id="result-title">
             06 · Result
           </p>
-          <div className={styles.result}>
-            <Reveal>
-              <div className={styles.big}>Live</div>
-              <p className={styles.bigLine}>Our own Windows app, running today.</p>
-            </Reveal>
-            <Reveal delay={0.14}>
-              <ul className={styles.facts}>
-                <li>
-                  <small>Live</small>At{" "}
-                  <a className={styles.out} href="https://chromalayer.app" target="_blank" rel="noreferrer">
-                    chromalayer.app
-                  </a>
-                  .
-                </li>
-                <li>
-                  <small>Works on</small>Intel, AMD and NVIDIA graphics, tested on each.
-                </li>
-                <li>
-                  <small>Built in</small>A 14-day free trial and licensing.
-                </li>
-                <li>
-                  <small>Updates</small>Installs and updates through its own release channel.
-                </li>
-              </ul>
-            </Reveal>
-          </div>
+          <Reveal className={styles.result}>
+            <div className={styles.big}>Live</div>
+            <p className={styles.bigLine}>Our own Windows app, running today.</p>
+          </Reveal>
+          <ul className={styles.facts}>
+            {[
+              ["Live", "#c0c000", <>At{" "}<a className={styles.out} href="https://chromalayer.app" target="_blank" rel="noreferrer">chromalayer.app</a>.</>],
+              ["Works on", "#00c0c0", "Intel, AMD and NVIDIA graphics, tested on each."],
+              ["Built in", "#c000c0", "A 14-day free trial and licensing."],
+              ["Updates", "#0000c0", "Installs and updates through its own release channel."],
+            ].map(([k, sw, body], i) => (
+              <Reveal as="li" key={k as string} delay={i * 0.09} style={{ "--sw": sw } as React.CSSProperties}>
+                <small>{k}</small>
+                {body}
+              </Reveal>
+            ))}
+          </ul>
           {showPlaceholders && (
             <Reveal className={styles.photo}>
               <div className={styles.ph} role="img" aria-label="Placeholder: real-hardware photo, the same laptop screen before and after">
@@ -332,7 +324,6 @@ export function ChromaLayerBody() {
             Why a Windows app is on a <A>mobile studio&apos;s</A> site
           </Head>
           <Reveal className={styles.final}>
-            <div className={styles.finalBars} aria-hidden="true" />
             <p className={styles.finalHead}>
               <span>Final reading</span>
               <span>ChromaLayer</span>
@@ -371,7 +362,7 @@ export function ChromaLayerBody() {
       <section className={`${styles.section} ${showPlaceholders ? "" : styles.band}`}>
         <div className={styles.wrap}>
           <Reveal>
-            <Link className={`${styles.next} ${styles.nextSolo}`} href={next ? `/work/${next.slug}` : "/#work"}>
+            <Link className={styles.next} href={next ? `/work/${next.slug}` : "/#work"}>
               <div>
                 <small className={styles.nextLabel}>Next project</small>
                 <h2>
@@ -382,6 +373,16 @@ export function ChromaLayerBody() {
                   View case study <Arrow />
                 </span>
               </div>
+              {next && "src" in next.hero && (
+                <Image
+                  className={styles.nextImg}
+                  src={next.hero.src}
+                  width={next.hero.width}
+                  height={next.hero.height}
+                  alt=""
+                  sizes="(max-width: 860px) 90vw, 520px"
+                />
+              )}
             </Link>
           </Reveal>
         </div>
