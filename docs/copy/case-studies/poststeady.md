@@ -23,11 +23,11 @@ Type Our own product · Platform Web app · Industry Social media marketing · S
 
 **One report, from whatever they export**
 
-Assignment memo. To: Every freelancer with a monthly report due │ From: Ship Thesis │ Re: Poststeady, 11 weeks
+Assignment memo, same sheet shape as EHS's run sheet: a dark header (To: Every freelancer with a monthly report due │ From: Ship Thesis │ Re: Poststeady, 11 weeks), then three labelled rows.
 
-- **The story.** Social media freelancers send each client a report every month. The numbers come from Meta, Instagram, TikTok, LinkedIn and Google Ads.
-- **The problem.** Each platform exports them in its own format, with its own name for the same figure.
-- **What ran.** Upload the exports, get a branded three-page report with a summary you can edit.
+- **The story · What freelancers do.** Social media freelancers send each client a report every month. The numbers come from Meta, Instagram, TikTok, LinkedIn and Google Ads.
+- **The problem · What made it hard.** Each platform exports them in its own format, with its own name for the same figure.
+- **What ran · What we built.** Upload the exports, get a branded three-page report with a summary you can edit.
 
 ## 02 · The centrepiece
 

@@ -86,49 +86,30 @@ export function PoststeadyBody() {
             One report, from <A>whatever they export</A>
           </Head>
           <Reveal className={styles.memo}>
-            <dl className={styles.memoHead}>
+            <div className={styles.memoHead}>
               <div>
-                <dt>To</dt>
-                <dd>Every freelancer with a monthly report due</dd>
-              </div>
-              <div>
-                <dt>From</dt>
-                <dd>Ship Thesis</dd>
+                To<b>Every freelancer with a monthly report due</b>
               </div>
               <div>
-                <dt>Re</dt>
-                <dd>Poststeady, 11 weeks</dd>
+                From<b>Ship Thesis</b>
               </div>
-            </dl>
-            <div className={styles.memoCols}>
-              <div className={styles.memoCol}>
-                <small>The story</small>
-                <p className={styles.lead}>
-                  Social media freelancers send each client a report{" "}
-                  <A>every month</A>.
-                </p>
-                <p className={styles.rest}>
-                  The numbers come from Meta, Instagram, TikTok, LinkedIn and
-                  Google Ads.
-                </p>
-              </div>
-              <div className={styles.memoCol}>
-                <small>The problem</small>
-                <p className={styles.lead}>
-                  Each platform exports them in its own format, with{" "}
-                  <A>its own name for the same figure</A>.
-                </p>
-              </div>
-              <div className={styles.memoCol}>
-                <small>What ran</small>
-                <p className={styles.lead}>
-                  Upload the exports, get <A>
-                    a branded <span className={styles.nowrap}>three-page</span> report
-                  </A>{" "}
-                  with a summary you can edit.
-                </p>
+              <div>
+                Re<b>Poststeady, 11 weeks</b>
               </div>
             </div>
+            {[
+              ["The story", "What freelancers do", "Social media freelancers send each client a report every month. The numbers come from Meta, Instagram, TikTok, LinkedIn and Google Ads."],
+              ["The problem", "What made it hard", "Each platform exports them in its own format, with its own name for the same figure."],
+              ["What ran", "What we built", "Upload the exports, get a branded three-page report with a summary you can edit."],
+            ].map(([k, title, body]) => (
+              <div key={k} className={styles.memoRow}>
+                <div className={styles.memoK}>{k}</div>
+                <div className={styles.memoB}>
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </div>
+              </div>
+            ))}
           </Reveal>
         </div>
       </section>

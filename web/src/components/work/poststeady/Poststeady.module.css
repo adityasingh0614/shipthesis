@@ -529,72 +529,66 @@
 }
 
 /* ---- 01 · the brief, as an assignment memo ---- */
-/* Set like a newspaper column rule: a thick and a thin line on top, the
-   memo header on one line, then three columns of large type divided by
-   hairlines. Open composition, no card. */
+/* Same clean shape as EHS's run sheet and Assess Yourself's answer paper:
+   one bordered sheet, a dark To / From / Re header, then labelled rows. */
 .memo {
-  margin: 64px auto 0;
-  border-top: 4px solid var(--ink);
+  max-width: 960px;
+  margin: 56px auto 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-card);
 }
 .memoHead {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 40px;
-  margin-top: 3px;
-  padding: 16px 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  background: var(--ink);
+  color: #fff;
 }
 .memoHead div {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-.memoHead dt {
+  padding: 14px 22px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
 }
-.memoHead dd {
-  font-weight: 600;
+.memoHead div + div {
+  border-left: 1px solid rgb(255 255 255 / 0.2);
 }
-.memoCols {
+.memoHead b {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.memoRow {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-bottom: 2px solid var(--ink);
+  grid-template-columns: 140px 1fr;
+  border-bottom: 1px solid #e3e8e4;
 }
-.memoCol {
-  padding: 40px 32px 44px;
-  border-right: 1px solid var(--line);
+.memoRow:last-child {
+  border-bottom: 0;
 }
-.memoCol:first-child {
-  padding-left: 0;
-}
-.memoCol:last-child {
-  padding-right: 0;
-  border-right: 0;
-}
-.memoCol small {
+.memoK {
+  padding: 26px 0 26px 22px;
+  border-right: 2px solid color-mix(in srgb, var(--accent) 30%, var(--surface));
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
 }
-.lead {
-  margin-top: 16px;
-  font-size: clamp(1.375rem, 2.1vw, 1.875rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
+.memoB {
+  padding: 24px 26px;
 }
-.rest {
-  margin-top: 16px;
-  font-size: 1.0625rem;
+.memoB h3 {
+  font-size: clamp(1.125rem, 1.7vw, 1.375rem);
+  font-weight: 600;
+}
+.memoB p {
+  margin-top: 8px;
   color: var(--ink-soft);
 }
 
@@ -926,19 +920,6 @@
   }
 }
 @media (max-width: 860px) {
-  .memoCols {
-    grid-template-columns: 1fr;
-  }
-  .memoCol,
-  .memoCol:first-child,
-  .memoCol:last-child {
-    padding: 28px 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .memoCol:last-child {
-    border-bottom: 0;
-  }
   .desk {
     grid-template-columns: 1fr;
   }
@@ -952,6 +933,25 @@
   .spiked {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+}
+@media (max-width: 640px) {
+  .memoHead {
+    grid-template-columns: 1fr;
+  }
+  .memoHead div + div {
+    border-left: 0;
+    border-top: 1px solid rgb(255 255 255 / 0.2);
+  }
+  .memoRow {
+    grid-template-columns: 1fr;
+  }
+  .memoK {
+    padding: 18px 20px 0;
+    border-right: 0;
+  }
+  .memoB {
+    padding: 8px 20px 22px;
   }
 }
 @media (max-width: 760px) {
