@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getVisibleCaseStudy } from "@/content/case-studies";
+import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
 import { Fight } from "./Fight";
 import { Lab } from "./Lab";
@@ -77,6 +78,7 @@ export function ChromaLayerBody() {
           <Head label="01 · The brief" id="brief-title">
             A laptop screen that <A>stays how you set it</A>
           </Head>
+          <BriefFacts slug="chromalayer" />
           <Reveal className={styles.sheet}>
             <div className={styles.sheetHead}>
               <span>Calibration report · ChromaLayer</span>

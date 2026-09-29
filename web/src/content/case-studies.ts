@@ -24,12 +24,15 @@ export type CaseStudy = {
   card: {
     label: string;
     fields: [string, string][];
+    /** Facts kept off the hero and set at the top of the brief instead
+      (Industry, Service). The hero shows a "see the brief" hint. */
+    more?: [string, string][];
     /** Optional strip along the card's foot (EHS: the pass's tear-off). */
     foot?: [string, string];
   };
   /** The status, dressed in the project's world: a rotated stamp (Assess
       Yourself) or a pulsing on-air badge in the card head (EHS). */
-  stamp: { status: string; note?: string; variant?: "stamp" | "live" | "dateline" | "osd" };
+  stamp: { status: string; note?: string; variant?: "stamp" | "live" | "dateline" | "osd" | "admit" };
   liveHref?: string;
   /** A single pre-composed hero shot (the product's own promo render). */
   hero: Shot | HeroPlaceholder;
@@ -47,19 +50,21 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: ["Assess", "Yourself"],
     accent: "#283593",
     kicker: "Case study · Mobile app",
-    line: "An exam-prep app that takes students from finding the right government exam to sitting a timed paper.",
+    line: "An exam-prep app that takes students from finding the right exam to sitting a timed paper.",
     card: {
       label: "Admit card · Case study 01",
       fields: [
         ["Client", "Aptellic"],
         ["Platform", "Mobile app, Flutter"],
-        ["Industry", "Education, exam preparation"],
-        ["Service", "Mobile app design and development"],
         ["Stack", "Flutter · Node.js · Firebase"],
         ["Timeline", "3-4 weeks"],
       ],
+      more: [
+        ["Industry", "Education, exam preparation"],
+        ["Service", "Mobile app design and development"],
+      ],
     },
-    stamp: { status: "Delivered", note: "Launching soon" },
+    stamp: { status: "Delivered \u00b7 launching soon", variant: "admit" },
     hero: {
       src: "/work/assess-yourself/hero.webp",
       width: 1400,
@@ -83,9 +88,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       fields: [
         ["Client", "EHS Guru"],
         ["Platform", "Web app, any browser"],
+        ["Stack", "Next.js · Supabase · Zoom"],
+      ],
+      more: [
         ["Industry", "Environment, health and safety training"],
         ["Service", "Web platform design and development"],
-        ["Stack", "Next.js · Supabase · Zoom"],
       ],
       foot: ["Access: admin · trainer · learner · guest", "On our maintenance plan"],
     },
@@ -114,9 +121,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       fields: [
         ["Type", "Our own product"],
         ["Platform", "Web app"],
+        ["Stack", "Next.js · Supabase · Gemini"],
+      ],
+      more: [
         ["Industry", "Social media marketing"],
         ["Service", "Product design, build and launch"],
-        ["Stack", "Next.js · Supabase · Gemini"],
       ],
     },
     stamp: { status: "Live · poststeady.com", variant: "dateline" },
@@ -144,9 +153,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       fields: [
         ["Type", "Our own product"],
         ["Platform", "Windows 10 and 11 laptops"],
+        ["Stack", "C# \u00b7 .NET \u00b7 WPF"],
+      ],
+      more: [
         ["Industry", "Consumer software, display tools"],
         ["Service", "Product design, build and release"],
-        ["Stack", "C# \u00b7 .NET \u00b7 WPF"],
       ],
     },
     stamp: { status: "LIVE \u00b7 chromalayer.app", variant: "osd" },

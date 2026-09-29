@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getVisibleCaseStudy } from "@/content/case-studies";
+import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
 import { GoLive } from "./GoLive";
 import styles from "./SafetyTraining.module.css";
@@ -82,6 +83,7 @@ export function SafetyTrainingBody() {
           <Head label="01 · The brief" id="brief-title">
             Live classes, run on <A>their own platform</A>
           </Head>
+          <BriefFacts slug="safety-training-platform" />
           <Reveal className={styles.sheet}>
             <div className={styles.sheetHead}>
               <div>

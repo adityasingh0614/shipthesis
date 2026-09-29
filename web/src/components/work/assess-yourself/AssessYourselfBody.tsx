@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getCaseStudy } from "@/content/case-studies";
+import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
 import { ExamDay } from "./ExamDay";
 import styles from "./AssessYourself.module.css";
@@ -75,6 +76,7 @@ export function AssessYourselfBody() {
           <Head label="01 · The brief" id="brief-title">
             One app from <A>&ldquo;which exam?&rdquo;</A> to exam day
           </Head>
+          <BriefFacts slug="assess-yourself" />
           <Reveal className={styles.paper}>
             <div className={styles.paperHead}>
               <span>Assess Yourself · Case paper</span>

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { getVisibleCaseStudy } from "@/content/case-studies";
+import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
 import { SpendMerge } from "./SpendMerge";
 import { Wizard } from "./Wizard";
@@ -86,6 +87,7 @@ export function PoststeadyBody() {
           <Head label="01 · The brief" id="brief-title">
             One report, from <A>whatever they export</A>
           </Head>
+          <BriefFacts slug="poststeady" />
           <Reveal className={styles.memo}>
             <div className={styles.memoHead}>
               <div>

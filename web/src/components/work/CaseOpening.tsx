@@ -13,10 +13,11 @@ import styles from "./CaseOpening.module.css";
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 export function CaseOpening({ study }: { study: CaseStudy }) {
-  const { title, joined, kicker, line, card, stamp, liveHref, hero, heroCaption } = study;
+  const { title, joined, line, card, stamp, liveHref, hero, heroCaption } = study;
   const proof = stamp.variant === "dateline";
   const osd = stamp.variant === "osd";
-  const live = stamp.variant === "live" || proof || osd;
+  const admit = stamp.variant === "admit";
+  const live = stamp.variant === "live" || proof || osd || admit;
 
   const status = liveHref ? (
     <a href={liveHref} target="_blank" rel="noreferrer">
@@ -27,9 +28,8 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
   );
 
   return (
-    <header className={`${styles.opening} ${live ? styles.livePass : ""} ${proof ? styles.proof : ""} ${osd ? styles.osd : ""}`}>
+    <header className={`${styles.opening} ${live ? styles.livePass : ""} ${proof ? styles.proof : ""} ${osd ? styles.osd : ""} ${admit ? styles.admit : ""}`}>
       <div className={styles.text}>
-        <p className={`${styles.kicker} ${styles.rise}`}>{kicker}</p>
         <h1 className={`${styles.title} ${styles.rise}`} style={d(80)}>
           <span className={styles.titleAccent}>{title[0]}</span>
           {joined ? "" : " "}
@@ -50,7 +50,7 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
             // EHS: a session pass, its status an on-air badge in the head.
             // Poststeady: the same slot, as a newspaper dateline.
             <p className={styles.cardHead}>
-              <span>{card.label}</span>
+              <span className={styles.cardLabel}>{card.label}</span>
               <span className={`${styles.onAir} ${osd ? styles.osdBadge : ""}`}>
                 <i aria-hidden="true" />
                 <span className={styles.visuallyHidden}>Status: </span>
@@ -68,6 +68,11 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
               </div>
             ))}
           </dl>
+          {card.more && (
+            <a className={styles.more} href="#brief-title">
+              {card.more.map(([k]) => k).join(" and ")}: see the brief <span aria-hidden="true">{"\u2193"}</span>
+            </a>
+          )}
           {card.foot && (
             <p className={styles.cardFoot}>
               <span>{card.foot[0]}</span>
