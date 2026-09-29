@@ -25,7 +25,7 @@ const APPS = [
   {
     name: "ChromaLayer",
     mark: "C",
-    color: "#4a5fd6",
+    color: "#1c2450",
     type: "Windows app",
     status: "Live",
     slug: "chromalayer",

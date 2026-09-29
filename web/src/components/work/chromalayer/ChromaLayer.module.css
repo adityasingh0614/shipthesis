@@ -92,6 +92,7 @@
   white-space: nowrap;
 }
 .item svg {
+  color: #8f9fe8;
   flex: none;
   width: 18px;
   height: 18px;

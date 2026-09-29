@@ -2,7 +2,7 @@
 
 > Matches the built page `/work/chromalayer` (ported from the approved design `web/public/_design/chromalayer.html`, 2026-09-29). World: "The Colour Lab" (`docs/design/case-study-brief.md` §5). Facts: the product repo `chromalayerlab/Chromalayer` (`docs/product-truth.md`, verified against the code) and `docs/case-studies/chromalayer-raw.md`. **Hidden on production** until the real-hardware before/after photo and a real testimonial exist.
 
-**Page accent:** `#4a5fd6` (ChromaLayer Brand Blue, from the founder's brand palette, 2026-09-29; chosen over the darker indigo/navy so it does not sit on top of Assess Yourself `#283593` or Poststeady `#1A5BFA`). Secondary `#8f9fe8` for the stat and fact card tops. No rainbow colour strips anywhere; the preset chips keep their small colour dots as data. Buttons stay site green.
+**Page accent:** `#1c2450` (ChromaLayer Brand Navy, from the founder's brand palette; founder, 2026-09-29). Chosen after Brand Blue `#4a5fd6` read as too close to Poststeady's `#1A5BFA`, and Brand Indigo/Dark Blue sit on Assess Yourself's `#283593`. Navy is the one palette colour clearly apart from both. Secondary `#8f9fe8` (Accent) for the stat and fact card tops and the marquee stars. No rainbow colour strips; preset chips keep their small colour dots as data. Buttons stay site green.
 
 ## Opening
 
