@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design mock: ChromaLayer case study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Phudu:wght@700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN MOCK ONLY (docs/design/case-study-brief.md §5). World: "The Colour
+   Lab", a display-calibration bench: test patterns, a calibration report,
+   a time ruler, lab notes, a monitor's on-screen readout. Accent #030d26 is
+   near-ink, so colour comes from the swatches themselves (test bars and
+   presets), which are data, not decoration.
+   Real assets: the Display Studio screenshot and the colour engine are taken
+   from chromalayerlab/ChromaLayer_web. The demo uses the desktop app's own
+   preset values (PresetDefinitions.cs), not the landing page's tuned ones.
+   The sample scene is drawn in SVG (the landing page's photo is a film still we can't publish).
+   Placeholders: the real-hardware before/after photo, tray menu. Page stays
+   hidden on production until those exist. */
+:root{
+  --ink:#0f1a14; --ink-soft:#445048; --ink-muted:#6b766f;
+  --green:#0a7f55; --surface:#fff; --alt:#eef2ef; --line:#c9d3cc;
+  --accent:#030d26;
+  --max:1200px; --gutter:clamp(16px,4vw,40px); --py:clamp(96px,11vw,160px);
+  --display:"Phudu",sans-serif; --body:"Geist",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+  /* SMPTE-style test bars: the page's only decorative colour, and it's data. */
+  --bars:linear-gradient(90deg,#c0c0c0 0 14.28%,#c0c000 0 28.57%,#00c0c0 0 42.85%,#00c000 0 57.14%,#c000c0 0 71.42%,#c00000 0 85.71%,#0000c0 0);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--surface);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+section{padding:var(--py) 0}
+.alt{background:var(--alt)}
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-align:center}
+.h2{max-width:18ch;margin:14px auto 0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.5rem,5.6vw,4.5rem);text-align:center;text-wrap:balance}
+.lede{max-width:56ch;margin:22px auto 0;text-align:center;font-size:clamp(1.0625rem,1.5vw,1.25rem);color:var(--ink-soft);text-wrap:pretty}
+/* The accent word gets a test-bar underline, since #030d26 alone reads as black. */
+.ac{background:var(--bars) left bottom/100% .12em no-repeat;padding-bottom:.06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:10px;background:var(--green);color:#fff;font-weight:600;text-decoration:none;white-space:nowrap}
+.btn:hover{background:#086a47}
+.btn.sec{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn.sec:hover{border-color:var(--ink)}
+.rise{animation:rise .8s cubic-bezier(.16,1,.3,1) var(--d,0ms) both}
+@keyframes rise{from{opacity:0;translate:0 24px}}
+.reveal{opacity:0;translate:0 28px;transition:opacity .8s cubic-bezier(.16,1,.3,1),translate .8s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;translate:0 0}
+
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #e6ebe7}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-size:1.25rem;text-transform:uppercase}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.95rem;color:var(--ink-soft)}
+@media(max-width:860px){.nav ul{display:none}}
+
+.ph{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed var(--line);border-radius:12px;background:#f7f9f8;color:var(--ink-muted);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:18px}
+
+/* ============ HERO: the calibration target ============ */
+.hero{padding:clamp(40px,5vw,72px) 0 clamp(64px,8vw,112px);overflow-x:clip}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(32px,5vw,64px)}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}
+.hero h1{margin-top:14px;font-family:var(--display);text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(2.5rem,4.4vw,4.5rem)}
+.hero h1 .ac{background-size:100% .1em}
+.hero .line{max-width:38ch;margin-top:18px;font-size:clamp(1.125rem,1.7vw,1.375rem);color:var(--ink-soft)}
+.target{margin-top:32px;max-width:540px;border:2px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+.bars{height:14px;background:var(--bars)}
+.target-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;background:var(--accent);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+/* Monitor OSD readout, in place of a badge. */
+.osd{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border:1px solid rgb(255 255 255 / .35);border-radius:4px;color:#7CFFB2;font-weight:700;text-decoration:none}
+.osd i{width:7px;height:7px;border-radius:50%;background:#7CFFB2;animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+.fields{display:grid;grid-template-columns:1fr 1fr}
+.field{padding:14px 18px;border-bottom:1px solid #e3e8e4}
+.field:nth-child(odd){border-right:1px solid #e3e8e4}
+.field:nth-last-child(-n+2){border-bottom:0}
+.field small{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.field b{display:block;margin-top:4px;font-weight:600;font-size:.98rem;line-height:1.3}
+/* The real app window, on a grey test-card backdrop with registration marks. */
+.bench{position:relative;padding:clamp(18px,3vw,36px);border-radius:20px;background:repeating-linear-gradient(90deg,#e9edea 0 1px,transparent 1px 32px),repeating-linear-gradient(0deg,#e9edea 0 1px,transparent 1px 32px),#f4f6f5}
+.bench img{border-radius:10px;box-shadow:0 30px 60px -24px rgb(3 13 38 / .45);width:100%}
+.bench figcaption{margin-top:14px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);text-align:center}
+@media(max-width:959px){.hero .wrap{grid-template-columns:1fr}.shot{order:-1}}
+@media(max-width:480px){.fields{grid-template-columns:1fr}.field:nth-child(odd){border-right:0}.field:nth-last-child(2){border-bottom:1px solid #e3e8e4}}
+
+/* ============ MARQUEE: the seven controls ============ */
+.marquee{background:var(--accent);color:#fff;overflow:hidden;padding:22px 0;border-top:6px solid transparent;border-image:var(--bars) 1}
+.track{display:flex;width:max-content;animation:slide 40s linear infinite}
+.track span{display:inline-flex;align-items:center;gap:40px;padding-right:40px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.25rem,2.4vw,1.75rem);white-space:nowrap}
+.track svg{width:18px;height:18px;flex:none}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ============ 01 CALIBRATION REPORT (same clean sheet as EHS/Poststeady) ============ */
+.sheet{max-width:880px;margin:56px auto 0;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden}
+.sheet-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;padding:14px 22px;background:var(--accent);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.row{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:20px 22px;border-top:1px solid #e3e8e4}
+.row:first-of-type{border-top:0}
+.row small{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);padding-top:3px}
+.row p{color:var(--ink-soft)}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:6px}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:880px;margin:24px auto 0;list-style:none}
+.stat{position:relative;padding:22px 20px 20px;background:#fff;border:2px solid var(--line);border-radius:14px;overflow:hidden}
+.stat::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--sw)}
+.stat b{display:block;font-family:var(--display);font-size:clamp(2.5rem,4vw,3.25rem);line-height:1}
+.stat span{display:block;margin-top:8px;color:var(--ink-soft);font-size:.95rem}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+
+/* ============ 02 SEVEN DIALS: live demo ============ */
+.lab{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;max-width:1100px;margin:64px auto 0;align-items:start}
+.compare{position:relative;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:1600/849;touch-action:none;user-select:none}
+.compare svg{position:absolute;inset:0;width:100%;height:100%}
+.compare .after{clip-path:inset(0 0 0 var(--x,50%))}
+.divider{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
+.divider::after{content:"";position:absolute;top:50%;left:50%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgb(0 0 0 / .35)}
+.tag{position:absolute;top:12px;padding:4px 8px;border-radius:4px;background:rgb(3 13 38 / .78);color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase}
+.tag.a{left:12px}.tag.b{right:12px}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+.note{margin-top:12px;font-size:.9rem;color:var(--ink-muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:2px solid var(--line);border-radius:999px;background:#fff;font:600 .9rem var(--body);color:var(--ink);cursor:pointer}
+.chip i{width:12px;height:12px;border-radius:50%;background:var(--sw)}
+.chip[aria-pressed=true]{border-color:var(--accent);background:var(--accent);color:#fff}
+.dials{list-style:none;background:#fff;border:2px solid var(--line);border-radius:14px;overflow:hidden}
+.dials li{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:12px 16px;border-top:1px solid #e3e8e4}
+.dials li:first-child{border-top:0}
+.dials b{font-weight:600}
+.dials output{font-family:var(--mono);font-size:.85rem;font-weight:700}
+.dials small{grid-column:1/-1;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--ink-muted)}
+.meter{grid-column:1/-1;position:relative;height:4px;border-radius:2px;background:#e3e8e4}
+.meter i{position:absolute;top:-4px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--accent);left:var(--p);transition:left .5s cubic-bezier(.16,1,.3,1)}
+@media(max-width:900px){.lab{grid-template-columns:1fr}}
+
+/* ============ 03 TIME RULER (pinned) ============ */
+.fight{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);margin-top:72px;align-items:start}
+.pin{position:sticky;top:110px}
+.screen{position:relative;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/10;border:10px solid #16181d}
+.screen svg{position:absolute;inset:0;width:100%;height:100%}
+.screen .osdline{position:absolute;left:12px;bottom:12px;padding:4px 8px;border-radius:4px;background:rgb(0 0 0 / .7);color:#7CFFB2;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em}
+.screen.lost .osdline{color:#ffb3b3}
+.ruler{position:relative;height:56px;margin-top:22px}
+.ruler::before{content:"";position:absolute;left:0;right:0;top:18px;height:2px;background:var(--ink)}
+.tick{position:absolute;top:10px;width:2px;height:18px;margin-left:-1px;background:var(--ink);transition:background .3s,height .3s}
+.tick.hit{background:var(--green);height:24px;top:7px}
+.tick em{position:absolute;top:24px;left:50%;translate:-50% 0;font:700 .62rem var(--mono);font-style:normal;color:var(--ink-muted);white-space:nowrap}
+.tick.m em{display:none}
+.steps{list-style:none}
+.step{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:32px 0;border-bottom:1px solid #e3e8e4;opacity:.32;transition:opacity .5s}
+.step:first-child{padding-top:4px}
+.step.on{opacity:1}
+.sn{align-self:start;padding:6px 0;border-radius:8px;border:2px solid var(--accent);font-family:var(--mono);font-size:.74rem;font-weight:700;text-align:center;color:var(--accent);transition:background .35s,color .35s}
+.step.on .sn{background:var(--accent);color:#fff}
+.step h3{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.375rem,2.2vw,1.75rem);line-height:1}
+.step p{margin-top:10px;color:var(--ink-soft);max-width:42ch}
+@media(max-width:900px){.fight{grid-template-columns:1fr}.pin{position:static}.step{opacity:1}}
+
+/* ============ 04 LAB NOTES ============ */
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:64px auto 0;list-style:none}
+.lnote{background:#fff;border:2px solid var(--line);border-radius:14px;overflow:hidden}
+.lnote h3{padding:18px 20px;border-bottom:2px solid var(--ink);font-family:var(--display);text-transform:uppercase;font-size:clamp(1.25rem,2vw,1.5rem);line-height:1.05}
+.lnote dl{padding:6px 20px 18px}
+.lnote dt{margin-top:12px;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.lnote dd{margin-top:4px;color:var(--ink-soft)}
+.lnote dd.ok{color:var(--green);font-weight:600}
+.count{margin:72px auto 0;text-align:center}
+.count b{display:block;font-family:var(--display);font-size:clamp(5rem,13vw,10rem);line-height:.85}
+.count span{display:block;max-width:44ch;margin:18px auto 0;font-size:clamp(1.0625rem,1.5vw,1.25rem);color:var(--ink-soft)}
+@media(max-width:860px){.notes{grid-template-columns:1fr}}
+
+/* ============ MID CTA ============ */
+.call{padding:clamp(72px,9vw,112px) 0;background-color:var(--green);background-image:radial-gradient(circle,rgb(255 255 255 / .22) 1.5px,transparent 1.5px);background-size:22px 22px;color:#fff;text-align:center}
+.call h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.75rem,6.4vw,5.5rem);line-height:.95;letter-spacing:-.02em;text-wrap:balance}
+.call p{margin:18px auto 34px;color:rgb(255 255 255 / .88);font-size:clamp(1.0625rem,1.5vw,1.25rem)}
+.call a{display:inline-flex;min-height:56px;align-items:center;padding:0 30px;border-radius:10px;background:#fff;color:var(--ink);font-weight:700;text-decoration:none}
+
+/* ============ 05 LEFT OUT ============ */
+.cuts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:64px auto 0;list-style:none}
+.cut{position:relative;padding:26px 22px 22px;background:#fff;border:2px solid var(--line);border-radius:14px}
+.cut::before{content:"OUT OF SCOPE";position:absolute;top:-11px;left:18px;padding:2px 8px;background:var(--accent);color:#fff;border-radius:4px;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em}
+.cut h3{margin-top:6px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.25rem,2vw,1.5rem);line-height:1.05}
+.cut p{margin-top:10px;color:var(--ink-soft)}
+@media(max-width:860px){.cuts{grid-template-columns:1fr;gap:20px}}
+
+/* ============ 06 RESULT ============ */
+.result{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,96px);align-items:center;margin-top:64px}
+.big{font-family:var(--display);text-transform:uppercase;line-height:1;letter-spacing:-.02em;font-size:clamp(2.75rem,6.6vw,5.5rem);white-space:nowrap}
+.big+p{margin-top:14px;font-size:1.25rem;color:var(--ink-soft)}
+.facts{list-style:none;border-top:2px solid var(--ink)}
+.facts li{padding:22px 0;border-bottom:1px solid var(--line);font-size:clamp(1.125rem,1.8vw,1.375rem);font-weight:500}
+.facts a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.facts small{display:block;margin-bottom:6px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);font-weight:400}
+.photo{margin-top:56px}
+.photo .ph{aspect-ratio:16/7}
+@media(max-width:860px){.result{grid-template-columns:1fr}}
+
+/* ============ UNDER THE HOOD ============ */
+details.hood{max-width:1040px;margin:0 auto;background:#fff;border:2px solid var(--line);border-radius:16px}
+.hood summary{list-style:none;cursor:pointer;padding:28px 32px;text-align:center}
+.hood summary::-webkit-details-marker{display:none}
+.hood summary h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.75rem,3vw,2.5rem);line-height:1}
+.hood summary p{margin-top:6px;color:var(--ink-soft)}
+.hood-body{padding:8px 32px 36px;border-top:1px solid var(--line)}
+.stack{display:grid;gap:10px;margin-top:28px;list-style:none}
+.stack li{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:center;padding:14px 18px;border:2px solid var(--accent);border-radius:10px}
+.stack li b{font-weight:600}
+.stack li small{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ink-muted)}
+.stack li span{color:var(--ink-soft)}
+.side{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;list-style:none}
+.side li{padding:8px 12px;border:1.5px dashed var(--accent);border-radius:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em}
+.decis{margin-top:28px;list-style:none}
+.decis li{padding:14px 0;border-bottom:1px solid #e3e8e4;color:var(--ink-soft)}
+.decis b{color:var(--ink)}
+.decis small{font-family:var(--mono);font-size:.7rem;color:var(--ink-muted)}
+@media(max-width:700px){.stack li{grid-template-columns:1fr;gap:4px}}
+
+/* ============ TESTIMONIAL (placeholder, hidden live) ============ */
+.panel{display:grid;grid-template-columns:360px 1fr;gap:clamp(32px,6vw,88px);align-items:center;max-width:1040px;margin:56px auto 0;padding:clamp(20px,3vw,40px);background:#fff;border:2px solid var(--line);border-radius:24px}
+.panel .ph{aspect-ratio:1}
+.q-mark{font-family:var(--display);font-size:5rem;line-height:.6}
+.phword{display:inline-block;margin-top:18px;padding:4px 8px;border:1.5px dashed var(--line);border-radius:6px;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.quote blockquote{margin-top:16px;font-size:clamp(1.25rem,2vw,1.625rem);line-height:1.5}
+.quote cite{display:block;margin-top:24px;font-style:normal;font-weight:700}
+.quote cite span{display:block;font-weight:400;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:860px){.panel{grid-template-columns:1fr}}
+
+/* ============ CONCLUSION: the final reading ============ */
+.final{max-width:1040px;margin:56px auto 0;background:#fff;border:2px solid var(--ink);border-radius:16px;overflow:hidden}
+.final .bars{height:8px}
+.final-head{display:flex;justify-content:space-between;gap:12px;padding:14px 24px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.points{display:grid;grid-template-columns:repeat(3,1fr);list-style:none}
+.point{padding:28px 26px;border-right:1px solid var(--line)}
+.point:last-child{border-right:0}
+.point small{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--ink-muted);font-weight:700}
+.point h3{margin-top:10px;font-family:var(--display);text-transform:uppercase;font-size:clamp(1.375rem,2.2vw,1.75rem);line-height:1.02}
+.point p{margin-top:10px;color:var(--ink-soft)}
+.sum{padding:22px 26px;border-top:2px solid var(--ink);background:var(--alt);font-size:clamp(1.0625rem,1.5vw,1.25rem);font-weight:500}
+.acts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 16px;margin-top:40px}
+@media(max-width:860px){.points{grid-template-columns:1fr}.point{border-right:0;border-bottom:1px solid var(--line)}.point:last-child{border-bottom:0}}
+
+/* ============ NEXT PROJECT ============ */
+.next{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:clamp(24px,5vw,72px);padding:clamp(24px,4vw,56px);background:#fff;border:2px solid var(--line);border-radius:24px;color:var(--ink);text-decoration:none;transition:border-color .3s}
+.next:hover{border-color:#283593}
+.next small{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}
+.next h2{margin-top:12px;font-family:var(--display);text-transform:uppercase;font-size:clamp(2.5rem,5.2vw,4.5rem);line-height:.92;letter-spacing:-.02em}
+.next h2 span{color:#283593}
+.next p{margin-top:14px;max-width:40ch;color:var(--ink-soft)}
+.go{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-weight:600}
+.next .ph{aspect-ratio:16/10}
+@media(max-width:860px){.next{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){.rise,.track,.osd i{animation:none}.reveal{opacity:1;translate:none;transition:none}.meter i{transition:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><span class="brand">Ship Thesis</span><ul><li>Work</li><li>Services</li><li>Pricing</li><li>About</li><li>Contact</li></ul><a class="btn" href="#">Book a Discovery Call</a></div></header>
+
+<!-- One shared SVG filter per viewport; values written by the engine below. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="fAfter" color-interpolation-filters="sRGB"><feColorMatrix id="mAfter" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/></filter>
+  <filter id="fScreen" color-interpolation-filters="sRGB"><feColorMatrix id="mScreen" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/></filter>
+  <g id="scene">
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7fd0"/><stop offset="1" stop-color="#9fd0f2"/></linearGradient>
+    <rect width="1600" height="849" fill="url(#sky)"/>
+    <circle cx="1210" cy="220" r="110" fill="#ffcf6b"/>
+    <path d="M0 560 C260 430 420 560 700 470 C940 395 1120 520 1600 420 V849 H0Z" fill="#3f8f4a"/>
+    <path d="M0 650 C300 560 520 690 820 600 C1080 525 1300 640 1600 570 V849 H0Z" fill="#23603a"/>
+    <g transform="translate(90 660)">
+      <rect width="120" height="120" rx="10" fill="#d93a3a"/><rect x="135" width="120" height="120" rx="10" fill="#f0a030"/><rect x="270" width="120" height="120" rx="10" fill="#f2d94b"/><rect x="405" width="120" height="120" rx="10" fill="#e7b48f"/><rect x="540" width="120" height="120" rx="10" fill="#8a4fd0"/>
+    </g>
+    <g transform="translate(900 660)">
+      <rect width="100" height="120" fill="#ffffff"/><rect x="100" width="100" height="120" fill="#c8c8c8"/><rect x="200" width="100" height="120" fill="#909090"/><rect x="300" width="100" height="120" fill="#585858"/><rect x="400" width="100" height="120" fill="#262626"/><rect x="500" width="100" height="120" fill="#000000"/>
+    </g>
+  </g>
+</defs></svg>
+
+<!-- HERO: the calibration target -->
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="kicker rise">Case study · Own product</p>
+    <h1 class="rise" style="--d:80ms"><span class="ac">Chroma</span>Layer</h1>
+    <p class="line rise" style="--d:160ms">A Windows app that gives a laptop's built-in screen seven colour controls, and keeps them applied after every restart, sleep and sign-in.</p>
+    <div class="target rise" style="--d:240ms">
+      <div class="bars" aria-hidden="true"></div>
+      <div class="target-head"><span>Test pattern · Case study 04</span><a class="osd" href="https://chromalayer.app" target="_blank" rel="noreferrer"><i></i>LIVE · chromalayer.app</a></div>
+      <div class="fields">
+        <div class="field"><small>Type</small><b>Our own product</b></div>
+        <div class="field"><small>Platform</small><b>Windows 10 and 11 laptops</b></div>
+        <div class="field"><small>Industry</small><b>Consumer software, display tools</b></div>
+        <div class="field"><small>Service</small><b>Product design, build and release</b></div>
+        <div class="field"><small>Stack</small><b>C# · .NET · WPF</b></div>
+        <div class="field"><small>Timeline</small><b>About 10 weeks</b></div>
+      </div>
+    </div>
+  </div>
+  <figure class="shot bench rise" style="--d:200ms">
+    <img src="chromalayer/app-display-studio-full.webp" width="896" height="850" alt="The ChromaLayer window: vibrancy, colour temperature, brightness and contrast sliders, with Hold to Compare, Updates, License and Feedback buttons.">
+    <figcaption>The real app window · one of its seven-control screens</figcaption>
+  </figure>
+</div></section>
+
+<!-- MARQUEE: the seven controls -->
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>Vibrancy ✱ Warmth ✱ Brightness ✱ Contrast ✱ Hue ✱ Black level ✱ White point ✱</span>
+  <span>Vibrancy ✱ Warmth ✱ Brightness ✱ Contrast ✱ Hue ✱ Black level ✱ White point ✱</span>
+</div></div>
+
+<!-- 01 THE BRIEF: calibration report -->
+<section><div class="wrap">
+  <p class="label">01 · The brief</p>
+  <h2 class="h2">A laptop screen that <span class="ac">stays how you set it</span></h2>
+  <div class="sheet reveal">
+    <div class="sheet-head"><span>Calibration report · ChromaLayer</span><span>Subject: built-in laptop screens</span></div>
+    <div class="row"><small>Why we built it</small><p>Changing colours with Intel's own software was frustrating, and it never gave full control over the screen. We wanted one tool that works across laptops, not just one brand of graphics.</p></div>
+    <div class="row"><small>What we observed</small><p>Colours look washed out or too yellow, Windows has no proper colour controls for the built-in screen, and the settings that do exist quietly reset after a restart.</p></div>
+    <div class="row"><small>What shipped</small><p>Seven colour controls and five presets, from one small window in the system tray, re-applied after every restart, sleep, sign-in and display change.</p></div>
+  </div>
+  <ul class="stats reveal" style="--d:120ms">
+    <li class="stat" style="--sw:#c0c000"><b>7</b><span>colour controls, combined into one</span></li>
+    <li class="stat" style="--sw:#00c0c0"><b>5</b><span>ready-made presets</span></li>
+    <li class="stat" style="--sw:#c000c0"><b>9</b><span>re-checks in the 25 seconds after each sign-in</span></li>
+    <li class="stat" style="--sw:#0000c0"><b>0</b><span>admin rights or drivers needed</span></li>
+  </ul>
+</div></section>
+
+<!-- 02 CENTREPIECE: seven dials (live) -->
+<section class="alt"><div class="wrap">
+  <p class="label">02 · The centrepiece</p>
+  <h2 class="h2">Seven dials, <span class="ac">one picture</span></h2>
+  <p class="lede">Every control becomes one small piece of maths, and all seven are combined into a single change to the screen. Pick a preset, then drag the divider.</p>
+  <div class="lab reveal">
+    <div>
+      <div class="compare" id="cmp" style="--x:50%">
+        <svg viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg>
+        <svg class="after" viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene" filter="url(#fAfter)"/></svg>
+        <span class="divider" aria-hidden="true"></span>
+        <span class="tag a">Before</span><span class="tag b">After · <span id="cmpName">Vivid</span></span>
+        <input type="range" min="0" max="100" value="50" id="cmpRange" aria-label="Before and after divider. Use the arrow keys to move it.">
+      </div>
+      <div class="chips" role="group" aria-label="Preset">
+        <button class="chip" data-p="natural" aria-pressed="false" style="--sw:#c0c0c0"><i></i>Natural</button>
+        <button class="chip" data-p="vivid" aria-pressed="true" style="--sw:#c000c0"><i></i>Vivid</button>
+        <button class="chip" data-p="cinema" aria-pressed="false" style="--sw:#c0c000"><i></i>Cinema</button>
+        <button class="chip" data-p="gaming" aria-pressed="false" style="--sw:#00c000"><i></i>Gaming</button>
+        <button class="chip" data-p="night" aria-pressed="false" style="--sw:#c00000"><i></i>Night</button>
+      </div>
+      <p class="note">A drawn test scene, rendered in your browser with the app's own colour maths and preset values. The app itself changes your whole screen.</p>
+    </div>
+    <ul class="dials" id="dials"></ul>
+  </div>
+</div></section>
+
+<!-- 03 PINNED STORY: the fight for your screen -->
+<section><div class="wrap">
+  <p class="label">03 · The fight for your screen</p>
+  <h2 class="h2">Sign in, and <span class="ac">Windows resets you</span></h2>
+  <p class="lede">The hard part wasn't changing the colours. It was keeping them after Windows quietly undoes them.</p>
+  <div class="fight">
+    <div class="pin">
+      <div class="screen" id="scr">
+        <svg viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene" filter="url(#fScreen)"/></svg>
+        <span class="osdline" id="scrOsd">● VIVID APPLIED · 0 s</span>
+      </div>
+      <div class="ruler" id="ruler" aria-hidden="true"></div>
+    </div>
+    <ol class="steps">
+      <li class="step on" data-state="on" data-hit="0,0.25,1"><span class="sn">0 s</span><div><h3>You sign in</h3><p>Your colours go on the moment the desktop appears, then get checked again a quarter-second and one second later.</p></div></li>
+      <li class="step" data-state="lost" data-hit="0,0.25,1,2.5,5,10,15"><span class="sn">15-25 s</span><div><h3>Windows quietly resets them</h3><p>Some time between 15 and 25 seconds after you sign in, Windows rebuilds part of its display pipeline and wipes the colours. Most tools lose here.</p></div></li>
+      <li class="step" data-state="lost" data-hit="0,0.25,1,2.5,5,10,15,20"><span class="sn">Every ½ s</span><div><h3>The app notices</h3><p>For the first 30 seconds it checks twice a second whether the screen still shows your settings. After that, every 5 seconds.</p></div></li>
+      <li class="step" data-state="on" data-hit="0,0.25,1,2.5,5,10,15,20,25"><span class="sn">25 s</span><div><h3>Colours back, and they hold</h3><p>Nine planned re-checks cover the whole window, after every sign-in, unlock, wake from sleep and display change.</p></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<!-- 04 LAB NOTES -->
+<section class="alt"><div class="wrap">
+  <p class="label">04 · The hard parts</p>
+  <h2 class="h2">Lab <span class="ac">notes</span></h2>
+  <p class="lede">A colour tool that breaks your screen is worse than no tool. These are the three things it could never get wrong.</p>
+  <ul class="notes">
+    <li class="lnote reveal"><h3>Greys stay grey</h3><dl><dt>Observation</dt><dd>Boosting colour usually tints whites and greys too.</dd><dt>Fix</dt><dd>The vibrancy control is built so black, grey and white never shift, however far you push it.</dd><dt>Result</dt><dd class="ok">Richer colour, clean whites.</dd></dl></li>
+    <li class="lnote reveal" style="--d:120ms"><h3>Restore always works</h3><dl><dt>Observation</dt><dd>If a colour app crashes, you can be stuck with a strange screen.</dd><dt>Fix</dt><dd>One shortcut, the tray menu or the main window puts the original colours back, and they're restored even if the app crashes.</dd><dt>Result</dt><dd class="ok">You can always get back.</dd></dl></li>
+    <li class="lnote reveal" style="--d:240ms"><h3>Startup never waits</h3><dl><dt>Observation</dt><dd>The window used to wait up to 10 seconds on a licence check.</dd><dt>Fix</dt><dd>Startup no longer waits on the network, and if the first colour change fails, it tries again up to 5 times.</dd><dt>Result</dt><dd class="ok">Colours on as soon as you sign in.</dd></dl></li>
+  </ul>
+  <div class="count reveal"><b>25 s</b><span>the window after every sign-in, wake and display change that the app watches over.</span></div>
+</div></section>
+
+<!-- MID CTA -->
+<section class="call"><div class="wrap">
+  <h2>Want an app that<br>just keeps working?</h2>
+  <p>Start with a 30-minute call about your idea.</p>
+  <a href="#">Book a Discovery Call</a>
+</div></section>
+
+<!-- 05 JUDGEMENT -->
+<section><div class="wrap">
+  <p class="label">05 · Judgement</p>
+  <h2 class="h2">What we <span class="ac">left out</span>, on purpose</h2>
+  <ul class="cuts">
+    <li class="cut reveal"><h3>No overlay, no driver</h3><p>It uses the same built-in Windows feature as its own accessibility colour filters, so it needs no admin rights and installs nothing deep in the system.</p></li>
+    <li class="cut reveal" style="--d:120ms"><h3>One screen, done well</h3><p>No HDR, multiple monitors or ARM laptops in version one. The built-in screen had to be right first.</p></li>
+    <li class="cut reveal" style="--d:240ms"><h3>No health claims</h3><p>No "eye health", no "calibrated". It makes the screen look better, and says only that.</p></li>
+  </ul>
+</div></section>
+
+<!-- 06 RESULT -->
+<section class="alt"><div class="wrap">
+  <p class="label">06 · Result</p>
+  <div class="result">
+    <div class="reveal"><div class="big">~10 weeks</div><p>to a shipped Windows app.</p></div>
+    <ul class="facts reveal" style="--d:140ms">
+      <li><small>Live</small>At <a href="https://chromalayer.app" target="_blank" rel="noreferrer">chromalayer.app</a>.</li>
+      <li><small>Built in</small>A 14-day free trial and licensing.</li>
+      <li><small>Updates</small>Installs and updates through its own release channel.</li>
+    </ul>
+  </div>
+  <div class="photo reveal"><div class="ph">REAL-HARDWARE PHOTO: THE SAME LAPTOP SCREEN, BEFORE AND AFTER<br>(FOUNDER'S PHONE, ONCE TAKEN)</div></div>
+</div></section>
+
+<!-- UNDER THE HOOD (open) -->
+<section style="padding-top:0" class="alt"><div class="wrap">
+  <details class="hood" open>
+    <summary><h2>Under the hood</h2><p>How it's built, in plain words.</p></summary>
+    <div class="hood-body">
+      <ol class="stack">
+        <li><div><b>The tray app</b><br><small>WPF</small></div><span>The window, the sliders and the presets.</span></li>
+        <li><div><b>Settings and licensing</b><br><small>Application layer</small></div><span>Saves your profile safely and runs the trial.</span></li>
+        <li><div><b>The colour maths</b><br><small>ColorEngine · one 5×5 matrix</small></div><span>Turns seven sliders into one change. No Windows code, so it's fully testable.</span></li>
+        <li><div><b>The screen</b><br><small>Windows Magnification API</small></div><span>Applies the change, watched by the watchdog and the sign-in and wake monitor.</span></li>
+      </ol>
+      <ul class="side"><li>Licence check · Cloudflare Workers</li><li>Updates · GitHub Releases + Velopack</li></ul>
+      <ol class="decis">
+        <li><b>One combined change per adjustment.</b> Seven controls never fight each other. <small>(single colour matrix)</small></li>
+        <li><b>Colour maths kept apart from Windows.</b> It can be tested on its own, and moved to another platform later.</li>
+        <li><b>Never block startup on the network.</b> Your colours don't wait for a server.</li>
+        <li><b>Settings saved in one step.</b> A crash mid-save can't leave a half-written file. <small>(atomic write)</small></li>
+      </ol>
+    </div>
+  </details>
+</div></section>
+
+<!-- 07 TESTIMONIAL (placeholder, hidden live) -->
+<section><div class="wrap">
+  <p class="label">07 · In their words</p>
+  <h2 class="h2">What <span class="ac">users</span> say</h2>
+  <div class="panel reveal">
+    <div class="ph">USER PHOTO<br>(ONCE APPROVED)</div>
+    <div class="quote"><div class="q-mark">&ldquo;</div><span class="phword">Placeholder · hidden on the live site until real</span><blockquote>A short, approved quote from a ChromaLayer user goes here, in their own words.</blockquote><cite>Name Surname<span>Role</span></cite></div>
+  </div>
+</div></section>
+
+<!-- 08 CONCLUSION: the final reading -->
+<section class="alt"><div class="wrap">
+  <p class="label">08 · Conclusion</p>
+  <h2 class="h2">Why a Windows app is on a <span class="ac">mobile studio's</span> site</h2>
+  <div class="final reveal">
+    <div class="bars" aria-hidden="true"></div>
+    <div class="final-head"><span>Final reading</span><span>ChromaLayer</span></div>
+    <ol class="points">
+      <li class="point"><small>i.</small><h3>Staying right is the hard part</h3><p>Here, Windows resets the colours. On phones, it's the system closing your app or an update changing the rules. Same fight.</p></li>
+      <li class="point"><small>ii.</small><h3>We design for the real system</h3><p>The 25-second window comes from how Windows actually behaves after a sign-in, not from a guess.</p></li>
+      <li class="point"><small>iii.</small><h3>We ship updates safely</h3><p>Its own release channel, and a way back to the original screen that always works.</p></li>
+    </ol>
+    <p class="sum">The same goes for your app: <b>a fixed quote</b> after a one-week Discovery Sprint, <b>a new build every week</b>, and <b>code you own</b>.</p>
+  </div>
+  <div class="acts"><a class="btn" href="#">Book a Discovery Call</a><a class="btn sec" href="#">See pricing →</a></div>
+</div></section>
+
+<!-- NEXT PROJECT -->
+<section><div class="wrap">
+  <a class="next reveal" href="#">
+    <div><small>Next project</small><h2><span>Assess</span> Yourself</h2><p>A government exam-prep app built in Flutter, with timed tests, live tests and subscriptions.</p><span class="go">View case study →</span></div>
+    <div class="ph">Assess Yourself screen</div>
+  </a>
+</div></section>
+
+<script>
+/* Colour engine: a copy of ChromaLayer_web/public/home.js §1, itself a JS
+   port of the desktop app's transforms (BT.709 luma, Tanner Helland kelvin). */
+const clamp=(v,lo,hi)=>Math.min(Math.max(v,lo),hi);
+function matmul(a,b){const o=[];for(let i=0;i<5;i++){o[i]=[];for(let j=0;j<5;j++){let s=0;for(let k=0;k<5;k++)s+=a[i][k]*b[k][j];o[i][j]=s}}return o}
+const LR=.2126,LG=.7152,LB=.0722;
+function mVib(v){const n=(v-100)/100,sat=n>=0?1+.6*Math.pow(n,1.4):1+n,inv=1-sat,r=LR*inv,g=LG*inv,b=LB*inv;return[[r+sat,r,r,0,0],[g,g+sat,g,0,0],[b,b,b+sat,0,0],[0,0,0,1,0],[0,0,0,0,1]]}
+function lowB(t){return[1,clamp((99.4708025861*Math.log(t)-161.1195681661)/255,0,1),t<=19?0:clamp((138.5177312231*Math.log(t-10)-305.0447927307)/255,0,1)]}
+function highB(t){return[clamp(329.698727446*Math.pow(t-60,-.1332047592)/255,0,1),clamp(288.1221695283*Math.pow(t-60,-.0755148492)/255,0,1),1]}
+function k2rgb(k){const t=k/100;if(t<=65)return lowB(t);if(t>=67)return highB(t);const f=(t-65)/2,l=lowB(t),h=highB(t);return l.map((v,i)=>v*(1-f)+h[i]*f)}
+function mTemp(k){const[r,g,b]=k2rgb(k),[dr,dg,db]=k2rgb(6500);let a=r/dr,c=g/dg,d=b/db;const m=Math.max(a,c,d);if(m>1){a/=m;c/=m;d/=m}return[[a,0,0,0,0],[0,c,0,0,0],[0,0,d,0,0],[0,0,0,1,0],[0,0,0,0,1]]}
+const sc=(s,o)=>[[s,0,0,0,0],[0,s,0,0,0],[0,0,s,0,0],[0,0,0,1,0],[o,o,o,0,1]];
+const mBri=v=>sc(1,v/100*.25);
+function mBlk(v){const o=v/30*.15;return sc(1-o,o)}
+function mCon(v){const s=1+(v-100)/100*.5;return sc(s,.5*(1-s))}
+function mWp(v){return sc(.7+v/100*.3,0)}
+function mHue(d){const r=d*Math.PI/180,c=Math.cos(r),s=Math.sin(r);return[[LR+c*(1-LR)-s*LR,LR-c*LR+s*.143,LR-c*LR-s*(1-LR),0,0],[LG-c*LG-s*LG,LG+c*(1-LG)+s*.14,LG-c*LG+s*LG,0,0],[LB-c*LB+s*(1-LB),LB-c*LB-s*.283,LB+c*(1-LB)+s*LB,0,0],[0,0,0,1,0],[0,0,0,0,1]]}
+function compose(p){let m=mVib(p.vib);m=matmul(m,mHue(p.hue));m=matmul(m,mTemp(p.temp));m=matmul(m,mCon(p.con));m=matmul(m,mBri(p.bri));m=matmul(m,mBlk(p.blk));return matmul(m,mWp(p.wp))}
+function fe(m){const o=[];for(let j=0;j<4;j++)o.push(m[0][j],m[1][j],m[2][j],m[3][j],m[4][j]);return o.map(v=>v.toFixed(5)).join(' ')}
+const ID='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0';
+
+/* The desktop app's real presets (ChromaLayer.Application/PresetDefinitions.cs). */
+const P={
+  natural:{vib:100,temp:6500,bri:0,con:100,hue:0,blk:0,wp:100},
+  vivid:{vib:140,temp:7000,bri:-20,con:120,hue:0,blk:0,wp:100},
+  cinema:{vib:120,temp:5500,bri:-5,con:110,hue:0,blk:10,wp:90},
+  gaming:{vib:150,temp:7000,bri:-10,con:120,hue:0,blk:0,wp:100},
+  night:{vib:80,temp:3500,bri:-20,con:90,hue:0,blk:0,wp:100}
+};
+/* Real ranges (ColorProfile.cs / product-truth §2). */
+const D=[['vib','Vibrancy',0,200,v=>v],['temp','Warmth',2700,10000,v=>v+' K'],['bri','Brightness',-100,100,v=>(v>0?'+':'')+v],['con','Contrast',0,200,v=>v],['hue','Hue',-180,180,v=>v+'°'],['blk','Black level',0,30,v=>v],['wp','White point',70,100,v=>v]];
+const dials=document.getElementById('dials');
+dials.innerHTML=D.map(([k,n,lo,hi])=>`<li><b>${n}</b><output id="o-${k}"></output><span class="meter"><i id="m-${k}"></i></span><small>${k==='temp'?lo+'–'+hi+' K':k==='hue'?'±180°':k==='bri'?'±100':lo+'–'+hi}</small></li>`).join('');
+function setPreset(name){
+  const p=P[name];document.getElementById('mAfter').setAttribute('values',fe(compose(p)));
+  document.getElementById('cmpName').textContent=name[0].toUpperCase()+name.slice(1);
+  D.forEach(([k,,lo,hi,f])=>{document.getElementById('o-'+k).textContent=f(p[k]);document.getElementById('m-'+k).style.setProperty('--p',((p[k]-lo)/(hi-lo)*100)+'%')});
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.p===name));
+}
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>setPreset(c.dataset.p)));
+const cmp=document.getElementById('cmp');
+document.getElementById('cmpRange').addEventListener('input',e=>cmp.style.setProperty('--x',e.target.value+'%'));
+setPreset('vivid');
+
+/* Time ruler: 0 to 25 s, the nine real recovery checkpoints. */
+const CP=[0,.25,1,2.5,5,10,15,20,25],ruler=document.getElementById('ruler');
+ruler.innerHTML=CP.map(t=>`<span class="tick${[.25,1,2.5].includes(t)?' m':''}" data-t="${t}" style="left:${t/25*100}%"><em>${t}s</em></span>`).join('');
+const VIV=fe(compose(P.vivid)),scrM=document.getElementById('mScreen'),scr=document.getElementById('scr'),osd=document.getElementById('scrOsd');
+const OSD=['● VIVID APPLIED · 0 s','● COLOURS RESET BY WINDOWS · ~18 s','● MISMATCH FOUND · RE-APPLYING','● VIVID APPLIED · HOLDING · 25 s'];
+function screenState(i,step){
+  const on=step.dataset.state==='on';scrM.setAttribute('values',on?VIV:ID);scr.classList.toggle('lost',!on);osd.textContent=OSD[i];
+  const hits=step.dataset.hit.split(',').map(Number);ruler.querySelectorAll('.tick').forEach(t=>t.classList.toggle('hit',hits.includes(+t.dataset.t)));
+}
+const steps=[...document.querySelectorAll('.step')],seen=new Set();
+const so=new IntersectionObserver(es=>{for(const e of es){const i=steps.indexOf(e.target);e.isIntersecting?seen.add(i):seen.delete(i)}
+  if(seen.size){const a=Math.max(...seen);steps.forEach((s,i)=>s.classList.toggle('on',i===a));screenState(a,steps[a])}},{rootMargin:'0px 0px -45% 0px'});
+steps.forEach(s=>so.observe(s));screenState(0,steps[0]);
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
