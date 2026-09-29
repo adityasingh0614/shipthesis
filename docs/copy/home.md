@@ -46,7 +46,7 @@ A scroll-driven carousel, one full card at a time. Each card: type tag, two-colo
 
 | Card | Colour | Tag | Subheading | Stack | Client · Time · Status | Link |
 |---|---|---|---|---|---|---|
-| Assess Yourself | #283593 | Mobile app | A scalable ed-tech platform with a TypeScript/Express REST API and Flutter mobile app, featuring exam prep, live tests, subscriptions via Razorpay, and Firebase-backed auth. | Flutter, Node.js, Express, Firebase, Razorpay (pending: founder to supply final stack) | Client: Aptellic · 3-4 weeks · Delivered, launching soon | /work/assess-yourself |
+| Assess Yourself | #283593 | Mobile app | A government exam-prep app built in Flutter, with exam discovery, timed tests, live tests and Razorpay subscriptions on a Node.js/Express REST API. | Flutter, Node.js, Express, Firebase, Razorpay (pending: founder to supply final stack) | Client: Aptellic · 3-4 weeks · Delivered, launching soon | /work/assess-yourself |
 | EHS Training Platform | #00674C | Web platform | A dedicated, brand-first LMS built for live cohort-based learning. | Next.js, Supabase, Zoom API, TypeScript, Sentry, Tailwind CSS | Client: EHS Guru · Since May 2026 · Live, on our maintenance plan | /work/safety-training-platform |
 | Poststeady Client Reporting Tool | #1A5BFA | SaaS | A client-reporting SaaS that turns messy CSV exports into a branded report, with the analysis written, not just charted. | Next.js, Supabase, TypeScript, Tailwind CSS, Dodo Payments, Puppeteer | Our own product · Built in 11 weeks · Live | /work/poststeady |
 | ChromaLayer | #030d26 | Windows app | A native Windows utility for advanced, system-wide display color and temperature control. | C# / .NET / WPF, Magnification API, Velopack, Astro, Tailwind CSS, Dodo + Cloudflare Workers | Our own product · Live | /work/chromalayer |
@@ -84,7 +84,7 @@ Five cards (three on the first row, two wider below), each with a visual (placeh
 |---|---|
 | Cross-platform apps | Built once in Flutter, live on both the App Store and Play Store. Our default for most MVPs. |
 | Native iOS & Android | When your app needs everything the phone can do, we build it natively in Swift and Kotlin. |
-| Custom solutions | Bespoke products tailored to your unique business needs and goals. |
+| Custom solutions | Products built around how your business actually works, not squeezed into a template. |
 | AI features | AI added where it makes the product better: summaries, chat, automation and more. Not as a gimmick. |
 | SaaS apps & platforms | Customer-facing web apps with accounts, billing, dashboards and the systems behind them. It's the kind of product we build and run ourselves. |
 

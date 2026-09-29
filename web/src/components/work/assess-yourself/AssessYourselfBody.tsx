@@ -386,7 +386,7 @@ export function AssessYourselfBody() {
               {[
                 ["i.", "We plan for how people really use your app", "Students close apps mid-exam, so the app saves every answer as they go."],
                 ["ii.", "We build around the data you already have", "Aptellic kept its questions in Excel, so the upload reads their files instead of asking them to retype."],
-                ["iii.", "We don't build decisions you haven't made", "Auto-pay waited until Aptellic chose how renewals should work."],
+                ["iii.", "We don't build decisions you haven't made", "Auto-pay was held back while the renewal model was still undecided."],
               ].map(([n, title, body]) => (
                 <li key={n} className={styles.point}>
                   <small>{n}</small>

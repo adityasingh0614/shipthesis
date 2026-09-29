@@ -11,7 +11,7 @@
 **Line:** A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.
 
 **Session pass · Case study 02** (on-air badge: ● Live since May 2026)
-Client EHS Guru · Platform Web app, any browser · Industry Corporate safety training · Service Web platform design and development · Stack Next.js · Supabase · Zoom · Timeline About 2 months to live
+Client EHS Guru · Platform Web app, any browser · Industry Safety training (EHS) · Service Web platform design and development · Stack Next.js · Supabase · Zoom · Timeline About 2 months to live
 Foot: Access: admin · trainer · learner · guest │ On our maintenance plan
 
 **Marquee:** One-click classes ✱ Automatic attendance ✱ Every class recorded ✱ Engagement analytics ✱ Free webinars ✱ Email and WhatsApp reminders
@@ -43,7 +43,7 @@ Admins run the schedule, trainers teach, learners join from any browser, and gue
 
 **What happens when a class goes live** (pinned `sessions.webp`, class clock follows the active cue)
 
-- **T-24h · Reminders go out.** Email and WhatsApp reminders land at the right time in each learner's time zone, within a 10-minute window either side.
+- **Before · Reminders go out.** Email and WhatsApp reminders land at the right time in each learner's time zone.
 - **T-0 · Admin clicks Start.** The Zoom meeting is ready, and it shows the trainer's name before they walk in.
 - **Join · Learners join.** From the portal, in any browser. Their attendance starts counting the moment they click Join.
 - **Live · Every minute counted.** Every join and leave is recorded in one step, so a duplicate notification from Zoom can never count twice.

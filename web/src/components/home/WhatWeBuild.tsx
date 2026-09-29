@@ -23,7 +23,7 @@ const SERVICES: { name: string; line: string; visual?: ReactNode }[] = [
   {
     name: "Custom solutions",
     visual: <CustomVisual />,
-    line: "Bespoke products tailored to your unique business needs and goals.",
+    line: "Products built around how your business actually works, not squeezed into a template.",
   },
   {
     name: "SaaS apps & platforms",

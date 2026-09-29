@@ -29,7 +29,7 @@ Assignment memo, same sheet shape as EHS's run sheet: a dark header (To: Every f
 - **The problem · What made it hard.** Each platform exports them in its own format, with its own name for the same figure.
 - **What ran · What we built.** Upload the exports, get a branded three-page report with a summary you can edit.
 
-Stat cards under the sheet (from `docs/case-studies/poststeady-raw.md` §6, as on the other two case studies): **21** pages, app and marketing site together · **11** API routes behind them · **47** versioned database changes · **3** pages in every finished report. (175 stays the page's one big number, in section 02.)
+Stat cards under the sheet (from `docs/case-studies/poststeady-raw.md` §6, as on the other two case studies): **21** pages, app and marketing site together · **11** API routes behind them · **221** automated tests · **3** pages in every finished report. (175 stays the page's one big number, in section 02.)
 
 ## 02 · The centrepiece
 
@@ -82,7 +82,7 @@ The newsroom word for a story cut on purpose, not one that ran out of time.
 
 - Live: At poststeady.com.
 - Plans: Free and Pro, both live.
-- Tested: 221 automated tests.
+- Audited: Two dated security audits.
 
 ## Under the hood (open by default)
 
@@ -90,7 +90,7 @@ Flow: Browser, files read client-side → Next.js on Vercel → Supabase · RLS 
 Gemini drafts the summary → Headless Chrome prints the reviewed page → PDF or share link → Payments · signed webhook
 
 - **Plan limits enforced in the database.** The free quota can't be bypassed from the browser.
-- **One list of metrics everything reads from.** It replaced three copies that had drifted apart.
+- **One list of metrics everything reads from.** Defined once, used everywhere.
 - **Client text treated as data, never instructions.** Names and pasted notes can't redirect the AI.
 - **The AI model is pinned.** 4 out of 4 successes in testing, averaging 2.4 seconds.
 - **Quality:** 221 automated tests and two dated security audits.

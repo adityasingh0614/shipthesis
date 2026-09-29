@@ -60,11 +60,11 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     name: "Assess Yourself",
-    title: ["Access", " Yourself"],
+    title: ["Assess", " Yourself"],
     type: "Mobile app",
     color: "#283593",
     description:
-      "A scalable ed-tech platform with a TypeScript/Express REST API and Flutter mobile app, featuring exam prep, live tests, subscriptions via Razorpay, and Firebase-backed auth.",
+      "A government exam-prep app built in Flutter, with exam discovery, timed tests, live tests and Razorpay subscriptions on a Node.js/Express REST API.",
     client: "Client: Aptellic",
     // Pending: founder will supply the final Assess Yourself stack.
     stack: [

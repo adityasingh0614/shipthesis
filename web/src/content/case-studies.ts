@@ -81,7 +81,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       fields: [
         ["Client", "EHS Guru"],
         ["Platform", "Web app, any browser"],
-        ["Industry", "Corporate safety training"],
+        ["Industry", "Safety training (EHS)"],
         ["Service", "Web platform design and development"],
         ["Stack", "Next.js · Supabase · Zoom"],
         ["Timeline", "About 2 months to live"],

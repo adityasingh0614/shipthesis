@@ -69,7 +69,7 @@ Labels on thin leader lines, each with a short caption (your sketch, screens you
 
 Each project shows a visual of the product (real screens, demo data), its name, client line, description, stack, status and a link to its case study.
 
-**Project colours:** each project title is two colours: the first part in the project colour, the rest in ink (Access / Yourself, EHS Training / Platform, Poststeady Client / Reporting Tool, Chroma / Layer; colour covers Poststeady Client, EHS Training and Chroma); the subheading and everything else stay in the page colours. Assess Yourself `#283593` (darker shade `#1C2B7A`), EHS Training Platform `#00674C`, Poststeady `#1A5BFA`, ChromaLayer `#030d26`. The same colour is that project's primary accent on its case study page. These are the only exception to green-as-brand, and only inside that project's card or page; buttons stay green.
+**Project colours:** each project title is two colours: the first part in the project colour, the rest in ink (Assess / Yourself, EHS Training / Platform, Poststeady Client / Reporting Tool, Chroma / Layer; colour covers Poststeady Client, EHS Training and Chroma); the subheading and everything else stay in the page colours. Assess Yourself `#283593` (darker shade `#1C2B7A`), EHS Training Platform `#00674C`, Poststeady `#1A5BFA`, ChromaLayer `#030d26`. The same colour is that project's primary accent on its case study page. These are the only exception to green-as-brand, and only inside that project's card or page; buttons stay green.
 
 **Also say here** (answers "can a small studio do this?"): we build and run our own products, so we deal with the same releases, bugs, payments and support you will. This sits in the section subheading.
 
@@ -110,7 +110,7 @@ Link: "What each stage includes →" (to /services). No prices here.
 |---|---|
 | Cross-platform apps | Built once in Flutter, live on both the App Store and Play Store. Our default for most MVPs. |
 | Native iOS & Android | When your app needs everything the phone can do, we build it natively in Swift and Kotlin. |
-| Custom solutions | Bespoke products tailored to your unique business needs and goals. |
+| Custom solutions | Products built around how your business actually works, not squeezed into a template. |
 | AI features | AI added where it makes the product better: summaries, chat, automation and more. Not as a gimmick. |
 | SaaS apps & platforms | Customer-facing web apps with accounts, billing, dashboards and the systems behind them. It's the kind of product we build and run ourselves. |
 Link: "See how each one works →" (to /services).

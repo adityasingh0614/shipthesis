@@ -5,11 +5,11 @@ import Image from "next/image";
 import styles from "./SafetyTraining.module.css";
 
 // Facts: docs/case-studies/ehs-training-platform-raw.md (reminder window
-// ±10 min, host rename, portal join, one-step attendance, recording
+// time-zone-aware timing, host rename, portal join, one-step attendance, recording
 // auto-restart with every segment kept, best file to R2, server-checked
 // watch time).
 const STEPS = [
-  { tc: "T-24h", title: "Reminders go out", body: "Email and WhatsApp reminders land at the right time in each learner's time zone, within a 10-minute window either side." },
+  { tc: "Before", title: "Reminders go out", body: "Email and WhatsApp reminders land at the right time in each learner's time zone." },
   { tc: "T-0", title: "Admin clicks Start", body: "The Zoom meeting is ready, and it shows the trainer's name before they walk in." },
   { tc: "Join", title: "Learners join", body: "From the portal, in any browser. Their attendance starts counting the moment they click Join." },
   { tc: "Live", title: "Every minute counted", body: "Every join and leave is recorded in one step, so a duplicate notification from Zoom can never count twice." },

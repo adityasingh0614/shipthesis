@@ -111,13 +111,13 @@ export function PoststeadyBody() {
               </div>
             ))}
           </Reveal>
-          {/* Engineering scale, from the raw notes (§6): 21 pages, 11 API
-              routes, 47 versioned database changes, a three-page report. */}
+          {/* Engineering scale, from the raw notes: 21 pages, 11 API routes,
+              221 automated tests, a three-page report. */}
           <ul className={styles.stats}>
             {[
               ["21", "pages, app and marketing site together"],
               ["11", "API routes behind them"],
-              ["47", "versioned database changes"],
+              ["221", "automated tests"],
               ["3", "pages in every finished report"],
             ].map(([num, cap], i) => (
               <Reveal as="li" key={cap} delay={i * 0.09} className={styles.stat}>
@@ -258,7 +258,7 @@ export function PoststeadyBody() {
                   <small>Plans</small>Free and Pro, both live.
                 </li>
                 <li>
-                  <small>Tested</small>221 automated tests.
+                  <small>Audited</small>Two dated security audits.
                 </li>
               </ul>
             </Reveal>
@@ -291,7 +291,7 @@ export function PoststeadyBody() {
               </ul>
               <ol className={styles.decis}>
                 <li><b>Plan limits enforced in the database.</b> The free quota can&apos;t be bypassed from the browser.</li>
-                <li><b>One list of metrics everything reads from.</b> It replaced three copies that had drifted apart.</li>
+                <li><b>One list of metrics everything reads from.</b> Defined once, used everywhere.</li>
                 <li><b>Client text treated as data, never instructions.</b> Names and pasted notes can&apos;t redirect the AI.</li>
                 <li><b>The AI model is pinned.</b> 4 out of 4 successes in testing, averaging 2.4 seconds.</li>
                 <li><b>Quality:</b> 221 automated tests and two dated security audits.</li>
