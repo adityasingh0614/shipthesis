@@ -24,7 +24,7 @@ Run sheet: EHS Training Platform │ Client: EHS Guru │ Runtime: About 2 month
 
 - **Cue 01 · What EHS Guru needed.** EHS Guru is an environment, health and safety company that creates its own courses and teaches them live on Zoom, in batches of nearly 80 learners. Their off-the-shelf learning platform came loaded with features they never used, at a price to match, under someone else's brand. They wanted only the core, on their own domain, so they decided to build their own and came to us. (Founder, 2026-09-29.)
 - **Cue 02 · What made it hard.** The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order.
-- **Cue 03 · What went live.** One platform for admins, trainers, learners and webinar guests: one-click Zoom classes, automatic attendance, every class recorded into a private library, engagement analytics, and free webinars that bring in new learners.
+- **Cue 03 · What went live.** One platform for admins, trainers, learners and webinar guests: courses, modules and batches, one-click Zoom classes, automatic attendance, every class recorded into a private library, assignments that trainers review, engagement analytics, and free webinars that bring in new learners.
 
 Stats: **76** pages across four portals · **7** outside services joined into one: Zoom, email, WhatsApp and more · **~80** learners in a single live class · **4** audiences, each with its own view
 
@@ -61,6 +61,7 @@ Log header: ehs-training-platform · status │ ● Recording safeguards on
 - **Recording, during class · A recording stops mid-class.** Cause: trainers pause, or stop by accident, and Zoom splits the recording. Fix: recording restarts automatically, and every segment is kept in order. RESOLVED
 - **Attendance, on join · "Who is 'John' in Zoom?"** Cause: people type their names differently when they join. Fix: matched by email first, then by name within the enrolled batch. RESOLVED
 - **Session, on leave · A class that ends too early.** Cause: a learner joining early and leaving, or a trainer testing the link. Fix: the class ends only when it really ends. RESOLVED
+- **Watch time, recordings · Watch time that can't be faked.** Cause: a learner could skip ahead, or leave a recording playing in a background tab. Fix: skipped parts never count, the video pauses when the tab is hidden, and the server rejects any stretch it couldn't have played. RESOLVED
 - **Playback, library · Class videos loading slowly.** Fix: moved playback to a fast delivery network, measured before choosing: 0.12 → 0.90 MB/s. **7.5×** faster video playback (the page's one big number).
 
 ## Mid-page CTA

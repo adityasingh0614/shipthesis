@@ -97,7 +97,7 @@ export function SafetyTrainingBody() {
             {[
               ["01", "What EHS Guru needed", "EHS Guru is an environment, health and safety company that creates its own courses and teaches them live on Zoom, in batches of nearly 80 learners. Their off-the-shelf learning platform came loaded with features they never used, at a price to match, under someone else's brand. They wanted only the core, on their own domain, so they decided to build their own and came to us."],
               ["02", "What made it hard", "The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order."],
-              ["03", "What went live", "One platform for admins, trainers, learners and webinar guests: one-click Zoom classes, automatic attendance, every class recorded into a private library, engagement analytics, and free webinars that bring in new learners."],
+              ["03", "What went live", "One platform for admins, trainers, learners and webinar guests: courses, modules and batches, one-click Zoom classes, automatic attendance, every class recorded into a private library, assignments that trainers review, engagement analytics, and free webinars that bring in new learners."],
             ].map(([n, title, body]) => (
               <div key={n} className={styles.cue}>
                 <div className={styles.cueN}>
@@ -199,6 +199,7 @@ export function SafetyTrainingBody() {
               { area: "Recording", when: "during class", title: "A recording stops mid-class", cause: "Trainers pause, or stop by accident, and Zoom splits the recording.", fix: "Recording restarts automatically, and every segment is kept in order." },
               { area: "Attendance", when: "on join", title: "“Who is ‘John’ in Zoom?”", cause: "People type their names differently when they join.", fix: "Matched by email first, then by name within the enrolled batch." },
               { area: "Session", when: "on leave", title: "A class that ends too early", cause: "A learner joining early and leaving, or a trainer testing the link.", fix: "The class ends only when it really ends." },
+              { area: "Watch time", when: "recordings", title: "Watch time that can\u2019t be faked", cause: "A learner could skip ahead, or leave a recording playing in a background tab.", fix: "Skipped parts never count, the video pauses when the tab is hidden, and the server rejects any stretch it couldn\u2019t have played." },
             ].map((e) => (
               <div key={e.area} className={styles.entry}>
                 <div className={styles.ts}>

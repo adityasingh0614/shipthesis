@@ -293,3 +293,10 @@ First commit 2026-02-14 · go-live 2026-05-27 [FOUNDER] · latest commit 2026-09
 ## 17. Founder story (2026-09-29)
 
 EHS Guru is an environment, health and safety company that creates its own courses in the EHS field and runs them in batches. They used an off-the-shelf LMS with many features they never used; they wanted only the core features, decided to build their own, and came to us. (The old platform stays unnamed on the site, per the brief.)
+
+## 18. Watch-time integrity, verified (2026-09-29, founder asked)
+
+- Seeking flushes the segment played so far and starts a new one at the landing point, so skipped ranges are never counted (`hooks/useWatchTracker.ts` handleSeeking/handleSeeked).
+- A hidden tab pauses the video (`visibilitychange` → `video.pause()`), so background play counts nothing.
+- Server (`app/api/recording-progress/route.ts`): rejects backwards segments, any segment over 90 s, anything past the recording's real length; total duration always read from the database, never the browser.
+- Also confirmed present: free sessions (sign-up, portal, join, reminders, recording-ready notify), courses, modules, batches, materials, assignments, trainer assessments, calendar, engagement analytics with nudge, attendance override.
