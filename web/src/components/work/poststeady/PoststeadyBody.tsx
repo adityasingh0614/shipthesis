@@ -60,7 +60,8 @@ export function PoststeadyBody() {
   // ChromaLayer's page isn't built yet, so the card falls back to Home's
   // work carousel until it exists and is visible.
   const next = getVisibleCaseStudy("chromalayer");
-  const showTestimonial = process.env.VERCEL_ENV !== "production";
+  const showTestimonial = false; // Hidden until a real quote exists
+
 
   return (
     <>
@@ -88,19 +89,18 @@ export function PoststeadyBody() {
           <Reveal className={styles.memo}>
             <div className={styles.memoHead}>
               <div>
-                To<b>Every freelancer with a monthly report due</b>
+                Built for<b>Social media freelancers</b>
               </div>
               <div>
-                From<b>Ship Thesis</b>
+                Built by<b>Ship Thesis</b>
               </div>
               <div>
-                Re<b>Poststeady</b>
+                Timeline<b>11 weeks</b>
               </div>
             </div>
             {[
-              ["The story", "What freelancers do", "Social media freelancers send each client a report every month, built from the numbers Meta, Instagram, TikTok, LinkedIn and Google Ads export."],
-              ["The problem", "What the month looked like", "One file per platform, none shaped the same, each with its own name for the same number. They all had to line up before anything could be said. Then the commentary was rewritten from scratch for every client, and the evening went on formatting."],
-              ["The gap", "Why we built it", "Most social media tools bundle features freelancers don\u2019t need, like scheduling, live dashboards and team seats, and keep reporting for their premium plans: from about $50 a month, up to $200. A solo freelancer with three clients can\u2019t justify that. So the report gets made in Canva, or by pasting numbers into ChatGPT: slow, manual, and it looks it."],
+              ["The problem", "Why we built it", "Reporting was still manual. Freelancers downloaded files from multiple platforms, reconciled different column names, rewrote commentary, and formatted the final report every month."],
+              ["The solution", "Not another dashboard", "The obvious solution wasn't another analytics dashboard. It was a faster way to turn the exports they already had into something client-ready."],
               ["What ran", "What we built", "Upload the exports, get a branded three-page report with a summary you can edit."],
             ].map(([k, title, body]) => (
               <div key={k} className={styles.memoRow}>
@@ -137,8 +137,7 @@ export function PoststeadyBody() {
             175 ways to say <A>&ldquo;Spend&rdquo;</A>
           </Head>
           <p className={styles.lede}>
-            Every platform names the same number differently. The report needs
-            one name, so Poststeady does the translating.
+            Meta says <b>Amount Spent</b>. Another export says <b>Cost</b>. Another says <b>Total Spend</b>. Poststeady turns them all into <b>Spend</b>.
           </p>
           <Reveal>
             <SpendMerge />
@@ -146,8 +145,7 @@ export function PoststeadyBody() {
           <Reveal className={styles.count}>
             <b>175</b>
             <span>
-              column names Poststeady matches to the right metric, across every
-              platform it reads.
+              column variations matched automatically.
             </span>
           </Reveal>
         </div>
@@ -157,7 +155,7 @@ export function PoststeadyBody() {
       <section className={styles.section} aria-labelledby="wizard-title">
         <div className={styles.wrap}>
           <Head label="03 · The wizard" id="wizard-title">
-            One report, <A>start to finish</A>
+            From export to <A>client-ready report</A>
           </Head>
           {/* Founder's design story (2026-09-29). */}
           <p className={styles.lede}>
@@ -165,8 +163,7 @@ export function PoststeadyBody() {
             accounts. We cut it before it shipped: those accounts belong to
             their clients, who don&apos;t want to share logins, and platform
             rules change without warning. So the wizard works from the files
-            each platform already gives you, and 175 known column names mean
-            the matching step rarely needs a touch. It runs once a month, with
+            each platform already gives you. Columns are matched automatically from 175 known variations; you confirm or correct them. It runs once a month, with
             nothing to set up.
           </p>
           <Wizard />
@@ -223,12 +220,11 @@ export function PoststeadyBody() {
       {/* 05 · Judgement: stories we spiked */}
       <section className={styles.section} aria-labelledby="judgement-title">
         <div className={styles.wrap}>
-          <Head label="05 · Judgement" id="judgement-title">
-            Stories we <A>spiked</A>
+          <Head label="05 · Product decisions" id="decisions-title">
+            What we <A>left out</A>
           </Head>
           <p className={styles.lede}>
-            The newsroom word for a story cut on purpose, not one that ran out
-            of time.
+            Three features cut on purpose to keep scope tight and focus on the core problem.
           </p>
           <ul className={styles.spiked}>
             {[
@@ -254,22 +250,18 @@ export function PoststeadyBody() {
           <div className={styles.result}>
             <Reveal>
               <div className={styles.big}>Live</div>
-              <p className={styles.bigLine}>Our own product, running today.</p>
+              <p className={styles.bigLine}>in 11 weeks.</p>
             </Reveal>
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
                 <li>
-                  <small>Live</small>At{" "}
-                  <a className={styles.out} href="https://www.poststeady.com" target="_blank" rel="noreferrer">
-                    poststeady.com
-                  </a>
-                  .
+                  <small>Speed</small>Working first version by week 1.
                 </li>
                 <li>
-                  <small>Plans</small>Free for 2 reports a month, and Pro for unlimited.
+                  <small>Quality</small>230 automated tests and 2 dated security audits.
                 </li>
                 <li>
-                  <small>Sending</small>A branded PDF, or a link the client opens in any browser with no login.
+                  <small>Business</small>Live product with Free and Pro plans.
                 </li>
               </ul>
             </Reveal>
@@ -277,35 +269,28 @@ export function PoststeadyBody() {
         </div>
       </section>
 
-      {/* Under the hood: open by default, same band as the result */}
-      <section className={`${styles.section} ${styles.band} ${styles.hoodSection}`}>
+      {/* 07 · Under the hood: separated from result */}
+      <section className={`${styles.section} ${styles.hoodSection}`} aria-labelledby="hood-title">
         <div className={styles.wrap}>
           <details className={styles.hood} open>
             <summary>
               <div>
-                <h2>Under the hood</h2>
+                <h2 id="hood-title">07 · Under the hood</h2>
                 <p>How it works, in plain words, with the technical name underneath.</p>
               </div>
             </summary>
             <div className={styles.hoodBody}>
               <ul className={styles.flow}>
-                <li>Files read on your own computer<small>Browser</small></li>
-                <li>The app itself<small>Next.js on Vercel</small></li>
-                <li>Each account sees only its own data<small>Supabase, row-level security</small></li>
-                <li>Uploads stored safely<small>File storage</small></li>
-              </ul>
-              <ul className={styles.flow2}>
+                <li>Files are processed on your computer first<small>Browser processing</small></li>
+                <li>Each account sees only its own data<small>Supabase · Row-level security</small></li>
+                <li>The PDF uses the page you approved<small>Headless Chrome</small></li>
                 <li>AI drafts the summary<small>Gemini</small></li>
-                <li>The PDF is printed from the page you approved<small>Headless Chrome</small></li>
-                <li>PDF, or a no-login link<small>Share link</small></li>
-                <li>Payments confirmed by the provider itself<small>Signed webhook</small></li>
               </ul>
               <ol className={styles.decis}>
                 <li><b>Plan limits are counted on the server.</b> The free allowance can&apos;t be switched off from the browser.</li>
                 <li><b>One list of metrics, read by every screen.</b> The upload, the review and the finished report always agree.</li>
                 <li><b>Client text treated as data, never instructions.</b> Names and pasted notes can&apos;t redirect the AI.</li>
-                <li><b>The AI model was tested before it was chosen.</b> The fixed version answered 4 of 4 test runs in 2.4 seconds on average; the auto-updating version managed 3 of 4 at 15.7 seconds. So it stays fixed, and changes only when we decide.</li>
-                <li><b>Quality:</b> 230 automated tests and two dated security audits.</li>
+                <li><b>The AI model is fixed.</b> We tested model versions for speed and consistency before choosing one, so its behavior doesn&apos;t silently change underneath the product.</li>
               </ol>
             </div>
           </details>
@@ -349,7 +334,7 @@ export function PoststeadyBody() {
       {/* 08 · Conclusion: the back page, then the two calls */}
       <section className={`${styles.section} ${showTestimonial ? styles.band : ""}`} aria-labelledby="conclusion-title">
         <div className={styles.wrap}>
-          <Head label={`${showTestimonial ? "08" : "07"} · Conclusion`} id="conclusion-title">
+          <Head label="08 · Conclusion" id="conclusion-title">
             What running our own product <A>means for yours</A>
           </Head>
           <Reveal className={styles.final}>
@@ -359,9 +344,9 @@ export function PoststeadyBody() {
             </p>
             <ol className={styles.points}>
               {[
-                ["i.", "We live with what we ship", "Payments, support and two dated security audits: we carry the same weight your product will."],
-                ["ii.", "We cut scope on purpose", "No social logins, no YouTube guessing, no scheduling. Three spiked stories, not three missed deadlines."],
-                ["iii.", "We guard accuracy before polish", "The AI quotes only real figures. A number a client will see is checked before it looks good."],
+                ["i.", "We live with what we ship", "We don't just build and hand over a product. We run one ourselves — including payments, support, testing, security, and everything that happens after launch."],
+                ["ii.", "We cut scope on purpose", "Poststeady shipped without social logins, scheduling, or a live dashboard because they weren't necessary to solve the core problem."],
+                ["iii.", "We build for the real world", "Messy files, permissions, payments, AI output, edge cases and maintenance are part of the product too."],
               ].map(([n, title, body]) => (
                 <li key={n} className={styles.point}>
                   <small>{n}</small>
@@ -371,8 +356,7 @@ export function PoststeadyBody() {
               ))}
             </ol>
             <p className={styles.sum}>
-              The same goes for your app: <b>a fixed quote</b> after a one-week
-              Discovery Sprint, <b>a new build every week</b>, and{" "}
+              The same approach goes into every product we build: <b>clear scope</b>, <b>working builds every week</b>, and{" "}
               <b>code you own</b>.
             </p>
           </Reveal>

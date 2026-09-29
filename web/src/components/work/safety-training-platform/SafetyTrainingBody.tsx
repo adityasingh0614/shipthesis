@@ -95,13 +95,13 @@ export function SafetyTrainingBody() {
               </div>
             </div>
             {[
-              ["01", "What EHS Guru needed", "EHS Guru is an environment, health and safety company that creates its own courses and teaches them live on Zoom, in batches of nearly 80 learners. Their off-the-shelf learning platform came loaded with features they never used, at a price to match, under someone else's brand. They wanted only the core, on their own domain, so they decided to build their own and came to us."],
-              ["02", "What made it hard", "The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order."],
-              ["03", "What went live", "One platform for admins, trainers, learners and webinar guests: courses, modules and batches, one-click Zoom classes, automatic attendance, every class recorded into a private library, assignments that trainers review, engagement analytics, and free webinars that bring in new learners."],
+              ["What they needed", "What EHS Guru needed", "EHS Guru is an environment, health and safety company that creates its own courses and teaches them live on Zoom, in batches of nearly 80 learners. Their off-the-shelf learning platform came loaded with features they never used, at a price to match, under someone else\u2019s brand. They wanted only the core, on their own domain, so they decided to build their own and came to us."],
+              ["What made it hard", "The problem with Zoom", "The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom\u2019s notifications, which can arrive late, twice or out of order."],
+              ["What we built", "What went live", "One platform for admins, trainers, learners and webinar guests: courses, modules and batches, one-click Zoom classes, automatic attendance, every class recorded into a private library, assignments that trainers review, engagement analytics, and free webinars that bring in new learners."],
             ].map(([n, title, body]) => (
               <div key={n} className={styles.cue}>
                 <div className={styles.cueN}>
-                  Cue<b>{n}</b>
+                  {n}
                 </div>
                 <div className={styles.cueB}>
                   <h3>{title}</h3>
@@ -112,10 +112,10 @@ export function SafetyTrainingBody() {
           </Reveal>
           <ul className={styles.stats}>
             {[
-              ["76", "pages across four portals"],
-              ["7", "outside services joined into one: Zoom, email, WhatsApp and more"],
+              ["4", "audiences — admin, trainer, learner, guest"],
               ["~80", "learners in a single live class"],
-              ["4", "audiences, each with its own view"],
+              ["7", "integrations — Zoom, email, WhatsApp and more"],
+              ["Live", "since May 2026"],
             ].map(([num, cap], i) => (
               <Reveal as="li" key={cap} delay={i * 0.09} className={styles.stat}>
                 <b>{num}</b>
@@ -140,7 +140,8 @@ export function SafetyTrainingBody() {
           <div className={styles.grid4}>
             {[
               { src: "sessions.webp", who: "Admin", strong: "One-click classes.", line: "Schedule a session and the Zoom meeting is created for you.", alt: "Admin training sessions list with Start Session buttons" },
-              { src: "learner.webp", who: "Learner", strong: "Join from the portal.", line: "Nothing to install, no Zoom sign-up.", alt: "Learner dashboard with progress, upcoming sessions and recordings" },
+              { src: "trainer.webp", who: "Trainer", strong: "Your classes, your students.", line: "See who attended, review assignments, and find your recordings in one place.", alt: "Trainer dashboard showing class roster and assignments" },
+              { src: "learner.webp", who: "Learner", strong: "Join from the portal.", line: "Nothing to install, no Zoom sign-up. Your progress, recordings and assignments in one place.", alt: "Learner dashboard with progress, upcoming sessions and recordings" },
               { src: "users.webp", who: "Admin", strong: "Everyone in one place.", line: "Roles, batches and bulk CSV import.", alt: "Admin user management with roles and CSV import" },
               { src: "webinars.webp", who: "Guest", strong: "Free webinars.", line: "Sign up without an account, get reminders, come back as a learner.", alt: "Free sessions portal for webinar guests" },
             ].map((a, i) => (
@@ -263,9 +264,9 @@ export function SafetyTrainingBody() {
           </Head>
           <ul className={styles.cuts}>
             {[
-              ["Cut 01", "Payments, kept offline", "EHS Guru's choice. It kept the build on teaching, not billing."],
+              ["Cut 01", "Payments, kept offline", "EHS Guru\u2019s choice. It kept the build on teaching, not billing."],
               ["Cut 02", "Waiting for WhatsApp", "Email went live first. WhatsApp followed once Meta approved the templates, so launch was never held."],
-              ["Cut 03", "A premium hosting tier", "Reminders run on external scheduling, so the platform stays on low-cost hosting."],
+              ["Cut 03", "No mobile app", "The platform works in any browser on any device. A native app wasn\u2019t necessary for launch \u2014 and would have doubled the build time for the same result."],
             ].map(([tag, title, why], i) => (
               <Reveal as="li" key={title} delay={i * 0.12} className={styles.cut}>
                 <small>{tag}</small>
@@ -395,9 +396,9 @@ export function SafetyTrainingBody() {
             </p>
             <ol className={styles.points}>
               {[
-                ["i.", "We make the tools you already use dependable", "Zoom, email and WhatsApp stayed. We built the platform that makes them work together."],
-                ["ii.", "We measure before we choose", "Video playback was tested both ways before we picked the faster one: 7.5×."],
-                ["iii.", "We stay after launch", "EHS Guru is still on our maintenance plan, and the platform keeps improving alongside real classes."],
+                ["i.", "We stay after launch", "EHS Guru is still on our maintenance plan, and the platform keeps improving alongside real classes. Our work doesn\u2019t stop when the first version goes live."],
+                ["ii.", "We make the tools you already use dependable", "Zoom, email and WhatsApp stayed. We built the platform that makes them work together reliably."],
+                ["iii.", "We measure before we choose", "Video playback was tested before choosing the implementation \u2014 resulting in 7.5\u00d7 faster delivery."],
               ].map(([n, title, body]) => (
                 <li key={n} className={styles.point}>
                   <small>{n}</small>
@@ -407,8 +408,8 @@ export function SafetyTrainingBody() {
               ))}
             </ol>
             <p className={styles.sum}>
-              The same goes for your app: <b>a fixed quote</b> after a one-week
-              Discovery Sprint, <b>a new build every week</b>, and{" "}
+              The same goes for your product: <b>a clear scope</b>,{" "}
+              <b>a new working build every week</b>, and{" "}
               <b>code you own</b>.
             </p>
           </Reveal>

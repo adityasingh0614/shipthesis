@@ -108,7 +108,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     joined: true,
     accent: "#1A5BFA",
     kicker: "Case study · Own product",
-    line: "A web app that turns the analytics files social media freelancers already download into a branded monthly report for their clients.",
+    line: "A SaaS product that turns the analytics files social media freelancers already download into a branded monthly report for their clients.",
     card: {
       label: "Proof · Case study 03",
       fields: [
