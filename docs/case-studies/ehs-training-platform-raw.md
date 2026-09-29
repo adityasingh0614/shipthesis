@@ -275,3 +275,21 @@ First commit 2026-02-14 · go-live 2026-05-27 [FOUNDER] · latest commit 2026-09
 4. ~~**WhatsApp:** live with approved templates?~~ Answered above.
 5. **AI-assisted development:** mention it in the case study or not?
 6. **Screenshots:** a demo dataset to capture from, so no real learner data shows?
+
+## 16. Verified against the code (2026-09-29, `EHS-Training-Platform` HEAD `1f85493`)
+
+- ✓ 76 pages, 52 API routes, 27 database tables, 245 commits.
+- ✓ Recording auto-restart, capped at 20 per recording; segments of 30 s or more kept (`app/api/zoom/webhook/route.ts`).
+- ✓ Attendance matched by email first, then by name among enrolled learners (`findParticipant`); counted in one step in the database (`20260602000001_attendance_rpc.sql`).
+- ✓ A class ends only when it really ends: `meeting.ended` is skipped if the host never joined.
+- ✓ Every Zoom event logged (`webhook_logs`); best recording picked (`lib/recording-pick.ts`); copied to Cloudflare R2 (`lib/r2.ts`); trainer's name set on the host (`renameMasterHost`, up to 8 s).
+- ✓ Watch time checked on the server: segments over 90 s rejected, total length never trusted from the browser.
+- ✓ 7.5×: commit `3de7c1a` measured 0.12 vs 0.90 MB/s before moving playback to the public CDN domain.
+- ✓ Access checked at three layers (`proxy.ts`, `lib/auth/requireRole.ts`, JWT hook migration). ✓ 6 test files on the Zoom/recording logic, Sentry, CSP and HSTS headers.
+- ✓ Scheduling on cron-job.org (`vercel.json` is empty). ✓ Bulk CSV user import (`app/admin/users/import`).
+- **Open:** timeline. The page says "about 2 months" (founder, 2026-09-24), but commits run continuously from 2026-02-14 (8 in Feb, 45 in Mar, 54 in Apr) to the 2026-05-27 launch, about 3.5 months.
+- Changed on the page: "All classes recorded" status line → "Recording safeguards on" (the code proves the safeguards, not a record of every class).
+
+## 17. Founder story (2026-09-29)
+
+EHS Guru is an environment, health and safety company that creates its own courses in the EHS field and runs them in batches. They used an off-the-shelf LMS with many features they never used; they wanted only the core features, decided to build their own, and came to us. (The old platform stays unnamed on the site, per the brief.)

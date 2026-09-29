@@ -95,7 +95,7 @@ export function SafetyTrainingBody() {
               </div>
             </div>
             {[
-              ["01", "What EHS Guru needed", "They teach live Zoom classes in batches of nearly 80 learners, with several batches running. They were on an off-the-shelf learning platform, paying for features they didn't use, under someone else's brand. They wanted a platform built for how they actually teach, on their own domain."],
+              ["01", "What EHS Guru needed", "EHS Guru is an environment, health and safety company that creates its own courses and teaches them live on Zoom, in batches of nearly 80 learners. Their off-the-shelf learning platform came loaded with features they never used, at a price to match, under someone else's brand. They wanted only the core, on their own domain, so they decided to build their own and came to us."],
               ["02", "What made it hard", "The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order."],
               ["03", "What went live", "One platform for admins, trainers, learners and webinar guests: one-click Zoom classes, automatic attendance, every class recorded into a private library, engagement analytics, and free webinars that bring in new learners."],
             ].map(([n, title, body]) => (
@@ -113,7 +113,7 @@ export function SafetyTrainingBody() {
           <ul className={styles.stats}>
             {[
               ["76", "pages across four portals"],
-              ["52", "API routes behind them"],
+              ["7", "outside services joined into one: Zoom, email, WhatsApp and more"],
               ["~80", "learners in a single live class"],
               ["4", "audiences, each with its own view"],
             ].map(([num, cap], i) => (
@@ -192,7 +192,7 @@ export function SafetyTrainingBody() {
               <span>ehs-training-platform · status</span>
               <span className={styles.ok}>
                 <i aria-hidden="true" />
-                All classes recorded
+                Recording safeguards on
               </span>
             </div>
             {[
@@ -315,29 +315,29 @@ export function SafetyTrainingBody() {
             <summary>
               <div>
                 <h2>Under the hood</h2>
-                <p>Architecture and the decisions behind it.</p>
+                <p>How it works, in plain words, with the technical name underneath.</p>
               </div>
             </summary>
             <div className={styles.hoodBody}>
               <ul className={styles.flow}>
-                <li>Any browser</li>
-                <li>Next.js on Vercel</li>
-                <li>52 API routes</li>
-                <li>Supabase · 27 tables</li>
+                <li>Opens in any browser<small>Browser</small></li>
+                <li>The platform itself<small>Next.js on Vercel</small></li>
+                <li>Everything the screens ask for<small>52 API routes</small></li>
+                <li>Learners, batches, attendance, videos<small>Supabase, 27 tables</small></li>
               </ul>
               <ul className={styles.flow2}>
-                <li>Zoom events</li>
-                <li>Webhook, every event logged</li>
-                <li>Attendance in one step</li>
-                <li>Best recording picked</li>
-                <li>Client&apos;s own storage</li>
+                <li>Zoom reports who joined and left<small>Zoom events</small></li>
+                <li>Every message kept on record<small>Webhook log</small></li>
+                <li>Minutes counted once<small>Attendance in one step</small></li>
+                <li>The best video file chosen<small>Recording picker</small></li>
+                <li>Kept in EHS Guru&apos;s own storage<small>Cloudflare R2</small></li>
               </ul>
               <ol className={styles.decis}>
-                <li><b>Attendance counted inside the database, in one step.</b> Duplicate or late Zoom events never double count.</li>
+                <li><b>Every minute counted once.</b> When Zoom repeats a message or sends it late, attendance still adds up exactly.</li>
                 <li><b>Recordings copied into EHS Guru&apos;s own storage.</b> Their video library doesn&apos;t depend on Zoom&apos;s.</li>
                 <li><b>Every Zoom event logged.</b> Any class&apos;s full history can be traced.</li>
-                <li><b>Access checked at three layers.</b> A fast check at the door, backed by an authoritative one.</li>
-                <li><b>Quality:</b> regression tests on the Zoom and recording logic, error monitoring, security headers and rate limits.</li>
+                <li><b>Who can see what is checked three times.</b> At the door, on every page, and in the login itself.</li>
+                <li><b>Quality:</b> automated tests on the Zoom and recording logic, an alert whenever something breaks, and limits that stop repeated login attempts.</li>
               </ol>
             </div>
           </details>

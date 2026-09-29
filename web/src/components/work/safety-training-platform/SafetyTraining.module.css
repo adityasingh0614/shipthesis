@@ -1035,3 +1035,26 @@
     padding: 8px 20px 22px;
   }
 }
+
+/* Under the hood: plain words first, the technical name small underneath. */
+.flow li,
+.flow2 li {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-transform: none;
+  color: var(--ink);
+}
+.flow li small,
+.flow2 li small {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}

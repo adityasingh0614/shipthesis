@@ -11,7 +11,7 @@
 **Line:** A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.
 
 **Session pass · Case study 02** (on-air badge: ● Live since May 2026)
-Client EHS Guru · Platform Web app, any browser · Industry Safety training (EHS) · Service Web platform design and development · Stack Next.js · Supabase · Zoom · Timeline About 2 months to live
+Client EHS Guru · Platform Web app, any browser · Industry Environment, health and safety training · Service Web platform design and development · Stack Next.js · Supabase · Zoom · Timeline About 2 months to live
 Foot: Access: admin · trainer · learner · guest │ On our maintenance plan
 
 **Marquee:** One-click classes ✱ Automatic attendance ✱ Every class recorded ✱ Engagement analytics ✱ Free webinars ✱ Email and WhatsApp reminders
@@ -22,11 +22,11 @@ Foot: Access: admin · trainer · learner · guest │ On our maintenance plan
 
 Run sheet: EHS Training Platform │ Client: EHS Guru │ Runtime: About 2 months to live
 
-- **Cue 01 · What EHS Guru needed.** They teach live Zoom classes in batches of nearly 80 learners, with several batches running. They were on an off-the-shelf learning platform, paying for features they didn't use, under someone else's brand. They wanted a platform built for how they actually teach, on their own domain.
+- **Cue 01 · What EHS Guru needed.** EHS Guru is an environment, health and safety company that creates its own courses and teaches them live on Zoom, in batches of nearly 80 learners. Their off-the-shelf learning platform came loaded with features they never used, at a price to match, under someone else's brand. They wanted only the core, on their own domain, so they decided to build their own and came to us. (Founder, 2026-09-29.)
 - **Cue 02 · What made it hard.** The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order.
 - **Cue 03 · What went live.** One platform for admins, trainers, learners and webinar guests: one-click Zoom classes, automatic attendance, every class recorded into a private library, engagement analytics, and free webinars that bring in new learners.
 
-Stats: **76** pages across four portals · **52** API routes behind them · **~80** learners in a single live class · **4** audiences, each with its own view
+Stats: **76** pages across four portals · **7** outside services joined into one: Zoom, email, WhatsApp and more · **~80** learners in a single live class · **4** audiences, each with its own view
 
 ## 02 · The platform
 
@@ -56,7 +56,7 @@ Admins run the schedule, trainers teach, learners join from any browser, and gue
 
 Zoom sits at the centre of every class, and it doesn't always behave. These are the problems we designed for before a single paid class ran.
 
-Log header: ehs-training-platform · status │ ● All classes recorded
+Log header: ehs-training-platform · status │ ● Recording safeguards on
 
 - **Recording, during class · A recording stops mid-class.** Cause: trainers pause, or stop by accident, and Zoom splits the recording. Fix: recording restarts automatically, and every segment is kept in order. RESOLVED
 - **Attendance, on join · "Who is 'John' in Zoom?"** Cause: people type their names differently when they join. Fix: matched by email first, then by name within the enrolled batch. RESOLVED
