@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseOpening } from "@/components/work/CaseOpening";
 import { AssessYourselfBody } from "@/components/work/assess-yourself/AssessYourselfBody";
+import { ChromaLayerBody } from "@/components/work/chromalayer/ChromaLayerBody";
 import { PoststeadyBody } from "@/components/work/poststeady/PoststeadyBody";
 import { SafetyTrainingBody } from "@/components/work/safety-training-platform/SafetyTrainingBody";
 import { CASE_STUDIES, getVisibleCaseStudy, isVisible } from "@/content/case-studies";
@@ -15,6 +16,7 @@ const BODIES: Record<string, ComponentType> = {
   "assess-yourself": AssessYourselfBody,
   "safety-training-platform": SafetyTrainingBody,
   poststeady: PoststeadyBody,
+  chromalayer: ChromaLayerBody,
 };
 
 // Only visible slugs in the content file exist; anything else (including a

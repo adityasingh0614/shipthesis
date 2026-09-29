@@ -29,13 +29,15 @@ export type CaseStudy = {
   };
   /** The status, dressed in the project's world: a rotated stamp (Assess
       Yourself) or a pulsing on-air badge in the card head (EHS). */
-  stamp: { status: string; note?: string; variant?: "stamp" | "live" | "dateline" };
+  stamp: { status: string; note?: string; variant?: "stamp" | "live" | "dateline" | "osd" };
   liveHref?: string;
   /** A single pre-composed hero shot (the product's own promo render). */
   hero: Shot | HeroPlaceholder;
   /** Placeholder frames stand in for screens, so the page is hidden on
       production until real ones replace them (case-study-brief §0). */
   hiddenOnProduction?: boolean;
+  /** Small mono caption under the hero shot (ChromaLayer's bench). */
+  heroCaption?: string;
   seo: { title: string; description: string };
 };
 
@@ -130,6 +132,42 @@ export const CASE_STUDIES: CaseStudy[] = [
       title: "Poststeady: client reports from the files freelancers already export | Ship Thesis case study",
       description:
         "How we built Poststeady, our own product, in 11 weeks: 175 column names matched to the right metric, an AI summary that quotes only real figures, and a branded PDF or share link.",
+    },
+  },
+  {
+    slug: "chromalayer",
+    title: ["Chroma", "Layer"],
+    joined: true,
+    accent: "#030d26",
+    kicker: "Case study · Own product",
+    line: "A Windows app that gives a laptop\u2019s built-in screen seven colour controls, and keeps them applied after every restart, sleep and sign-in.",
+    card: {
+      label: "Test pattern · Case study 04",
+      fields: [
+        ["Type", "Our own product"],
+        ["Platform", "Windows 10 and 11 laptops"],
+        ["Industry", "Consumer software, display tools"],
+        ["Service", "Product design, build and release"],
+        ["Stack", "C# \u00b7 .NET \u00b7 WPF"],
+        ["Timeline", "About 10 weeks"],
+      ],
+    },
+    stamp: { status: "LIVE \u00b7 chromalayer.app", variant: "osd" },
+    liveHref: "https://chromalayer.app",
+    hero: {
+      src: "/work/chromalayer/hero.webp",
+      width: 896,
+      height: 850,
+      alt: "The ChromaLayer window: vibrancy, colour temperature, brightness and contrast sliders, with Hold to Compare, Updates, License and Feedback buttons.",
+    },
+    heroCaption: "The real app window \u00b7 one of its seven-control screens",
+    // Stays hidden on production until the real-hardware before/after photo
+    // and a real testimonial exist (case-study-brief \u00a75).
+    hiddenOnProduction: true,
+    seo: {
+      title: "ChromaLayer: seven colour controls that stay applied | Ship Thesis case study",
+      description:
+        "How we built ChromaLayer, our own Windows app, in about 10 weeks: seven colour controls for a laptop\u2019s built-in screen, re-applied after every restart, sleep and sign-in.",
     },
   },
 ];

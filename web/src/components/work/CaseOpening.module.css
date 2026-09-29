@@ -383,3 +383,95 @@
   border-bottom: 2px solid var(--accent);
   border-right: 2px solid var(--accent);
 }
+
+/* ---- ChromaLayer: a calibration target (web/public/_design/chromalayer.html) ---- */
+/* Colour-bar strip along the card's top edge; the status is a monitor's
+   on-screen-display readout, in mono, with a blinking dot. */
+.osd {
+  --bars: linear-gradient(
+    90deg,
+    #c0c0c0 0 14.28%,
+    #c0c000 0 28.57%,
+    #00c0c0 0 42.85%,
+    #00c000 0 57.14%,
+    #c000c0 0 71.42%,
+    #c00000 0 85.71%,
+    #0000c0 85.71%
+  );
+}
+.osd .card {
+  overflow: hidden;
+}
+.bars {
+  height: 14px;
+  background: var(--bars);
+}
+.osd .titleAccent {
+  color: inherit;
+  background: var(--bars) left bottom / 100% 0.1em no-repeat;
+  padding-bottom: 0.06em;
+}
+.osdBadge {
+  padding: 4px 10px;
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 4px;
+  background: transparent;
+  color: #7cffb2;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.osdBadge a,
+.osdBadge strong {
+  color: inherit;
+  text-decoration: none;
+}
+.osdBadge i {
+  width: 7px;
+  height: 7px;
+  background: #7cffb2;
+  animation: osdBlink 1.6s steps(2) infinite;
+}
+@keyframes osdBlink {
+  50% {
+    opacity: 0.25;
+  }
+}
+/* The real app window, on a grey test-card grid. */
+.bench {
+  flex-direction: column;
+  align-items: stretch;
+  padding: clamp(18px, 3vw, 36px);
+  border-radius: 20px;
+  background:
+    repeating-linear-gradient(90deg, #e9edea 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(0deg, #e9edea 0 1px, transparent 1px 32px), #f4f6f5;
+}
+.bench img {
+  width: 100%;
+  border-radius: 10px;
+  filter: none;
+  box-shadow: 0 30px 60px -24px rgb(3 13 38 / 0.45);
+}
+.bench:hover img {
+  transform: none;
+  filter: none;
+}
+.benchCaption {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .osdBadge i {
+    animation: none;
+  }
+}
+.osd .card::before {
+  display: none;
+}

@@ -8,13 +8,15 @@ import styles from "./CaseOpening.module.css";
 // the left, the product on the right. The card's label and the status
 // carry each project's own world (Assess Yourself: an exam admit card with
 // a stamp; EHS: a session pass with an on-air badge; Poststeady: a proof
-// sheet with crop marks and a dateline strip, web/public/_design/*.html).
+// sheet with crop marks and a dateline strip; ChromaLayer: a test pattern
+// with an on-screen-display readout, web/public/_design/*.html).
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 export function CaseOpening({ study }: { study: CaseStudy }) {
-  const { title, joined, kicker, line, card, stamp, liveHref, hero } = study;
+  const { title, joined, kicker, line, card, stamp, liveHref, hero, heroCaption } = study;
   const proof = stamp.variant === "dateline";
-  const live = stamp.variant === "live" || proof;
+  const osd = stamp.variant === "osd";
+  const live = stamp.variant === "live" || proof || osd;
 
   const status = liveHref ? (
     <a href={liveHref} target="_blank" rel="noreferrer">
@@ -25,7 +27,7 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
   );
 
   return (
-    <header className={`${styles.opening} ${live ? styles.livePass : ""} ${proof ? styles.proof : ""}`}>
+    <header className={`${styles.opening} ${live ? styles.livePass : ""} ${proof ? styles.proof : ""} ${osd ? styles.osd : ""}`}>
       <div className={styles.text}>
         <p className={`${styles.kicker} ${styles.rise}`}>{kicker}</p>
         <h1 className={`${styles.title} ${styles.rise}`} style={d(80)}>
@@ -44,12 +46,13 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
               <span className={styles.cmBr} aria-hidden="true" />
             </>
           )}
+          {osd && <div className={styles.bars} aria-hidden="true" />}
           {live ? (
             // EHS: a session pass, its status an on-air badge in the head.
             // Poststeady: the same slot, as a newspaper dateline.
             <p className={styles.cardHead}>
               <span>{card.label}</span>
-              <span className={styles.onAir}>
+              <span className={`${styles.onAir} ${osd ? styles.osdBadge : ""}`}>
                 <i aria-hidden="true" />
                 <span className={styles.visuallyHidden}>Status: </span>
                 {status}
@@ -82,7 +85,7 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
         </div>
       </div>
 
-      <div className={`${styles.shot} ${styles.rise}`} style={d(200)}>
+      <div className={`${styles.shot} ${osd ? styles.bench : ""} ${styles.rise}`} style={d(200)}>
         {"src" in hero ? (
           <Image
             src={hero.src}
@@ -99,6 +102,7 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
             {hero.placeholder}
           </div>
         )}
+        {heroCaption && <p className={styles.benchCaption}>{heroCaption}</p>}
       </div>
     </header>
   );
