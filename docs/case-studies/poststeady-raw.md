@@ -237,3 +237,9 @@ Checked line by line for the case study page. ✓ = matches the code.
 - ✓ First commit 2026-07-10; PDF engine, billing and settings in by 2026-07-15 (end of week 1); 448 commits, work continuing after launch.
 - Before-state pains used on the page come from the product repo's `docs/02-audience-and-positioning.md` ("already the pain-point section on the live site").
 
+
+## 17. Founder answers (2026-09-29)
+
+- **Why we built it [FOUNDER]:** most reporting tools bundle scheduling, live dashboards and team seats and charge for them; reporting-only tools start at $50/month or more; a solo freelancer with three clients can't justify that, so they use Canva or paste numbers into ChatGPT. (Competitor price is the founder's figure; the product repo's own positioning doc still marks competitor pricing "verify".)
+- **Design story [FOUNDER]:** the first wizard asked users to connect social accounts; cut before shipping (clients own the accounts and won't share logins; platform API rules change and revoke access). Became file-based; 175 names mapped before launch; ambiguous files are not guessed.
+- **YouTube misattribution:** leave out of the case study.

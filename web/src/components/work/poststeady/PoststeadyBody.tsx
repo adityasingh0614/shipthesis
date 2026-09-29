@@ -100,6 +100,7 @@ export function PoststeadyBody() {
             {[
               ["The story", "What freelancers do", "Social media freelancers send each client a report every month, built from the numbers Meta, Instagram, TikTok, LinkedIn and Google Ads export."],
               ["The problem", "What the month looked like", "One file per platform, none shaped the same, each with its own name for the same number. They all had to line up before anything could be said. Then the commentary was rewritten from scratch for every client, and the evening went on formatting."],
+              ["The gap", "Why we built it", "Most reporting tools bundle features freelancers don\u2019t need, like scheduling, live dashboards and team seats, and charge for them. The reporting-only ones start at $50 a month or more, which a solo freelancer with three clients can\u2019t justify. So the report gets made in Canva, or by pasting numbers into ChatGPT: slow, manual, and it looks it."],
               ["What ran", "What we built", "Upload the exports, get a branded three-page report with a summary you can edit."],
             ].map(([k, title, body]) => (
               <div key={k} className={styles.memoRow}>
@@ -158,6 +159,16 @@ export function PoststeadyBody() {
           <Head label="03 · The wizard" id="wizard-title">
             One report, <A>start to finish</A>
           </Head>
+          {/* Founder's design story (2026-09-29). */}
+          <p className={styles.lede}>
+            The first version asked freelancers to connect their social
+            accounts. We cut it before it shipped: those accounts belong to
+            their clients, who don&apos;t want to share logins, and platform
+            rules change without warning. So the wizard works from the files
+            each platform already gives you, and 175 known column names mean
+            the matching step rarely needs a touch. It runs once a month, with
+            nothing to set up.
+          </p>
           <Wizard />
         </div>
       </section>
@@ -221,7 +232,7 @@ export function PoststeadyBody() {
           </p>
           <ul className={styles.spiked}>
             {[
-              ["No social-account logins", "Works for clients whose accounts can’t be connected, and keeps working when platforms change their rules."],
+              ["No social-account logins", "It was in the first version, and we cut it before launch. The accounts belong to the freelancer’s clients, who don’t want to share logins, and platform rules change without warning."],
               ["No YouTube auto-detection", "Its export looks identical to Meta’s, and a wrong guess would corrupt a client’s report."],
               ["No scheduling or live dashboard", "Scope stays tight on the report, not a broader analytics product."],
             ].map(([title, why], i) => (

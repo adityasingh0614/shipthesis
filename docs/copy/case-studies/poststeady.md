@@ -27,6 +27,7 @@ Assignment memo, same sheet shape as EHS's run sheet: a dark header (To: Every f
 
 - **The story · What freelancers do.** Social media freelancers send each client a report every month, built from the numbers Meta, Instagram, TikTok, LinkedIn and Google Ads export.
 - **The problem · What the month looked like.** One file per platform, none shaped the same, each with its own name for the same number. They all had to line up before anything could be said. Then the commentary was rewritten from scratch for every client, and the evening went on formatting. (Source: Poststeady repo `docs/02-audience-and-positioning.md`, the pain points already on poststeady.com.)
+- **The gap · Why we built it.** Most reporting tools bundle features freelancers don't need, like scheduling, live dashboards and team seats, and charge for them. The reporting-only ones start at $50 a month or more, which a solo freelancer with three clients can't justify. So the report gets made in Canva, or by pasting numbers into ChatGPT: slow, manual, and it looks it. (Founder, 2026-09-29.)
 - **What ran · What we built.** Upload the exports, get a branded three-page report with a summary you can edit.
 
 Stat cards under the sheet (verified in the Poststeady repo, 2026-09-29): **21** screens, app and website together · **3** pages in every finished report · **230** automated tests · **2** dated security audits. (175 stays the page's one big number, in section 02.)
@@ -40,6 +41,8 @@ Every platform names the same number differently. The report needs one name, so 
 Three header cells (Amount Spent, Cost, Total Spend) are struck through and merge into one clean cell, **Spend**. Then the page's one big number: **175** column names Poststeady matches to the right metric, across every platform it reads.
 
 ## 03 · The wizard
+
+Lede (founder's design story, 2026-09-29): The first version asked freelancers to connect their social accounts. We cut it before it shipped: those accounts belong to their clients, who don't want to share logins, and platform rules change without warning. So the wizard works from the files each platform already gives you, and 175 known column names mean the matching step rarely needs a touch. It runs once a month, with nothing to set up.
 
 **One report, start to finish** (pinned browser-frame placeholder; its label follows the active step). Steps match the product's real five-step wizard (`app/reports/new/step-1..5`), then sending.
 
@@ -72,7 +75,7 @@ Start with a 30-minute call about your idea.
 
 The newsroom word for a story cut on purpose, not one that ran out of time.
 
-- **No social-account logins.** Works for clients whose accounts can't be connected, and keeps working when platforms change their rules.
+- **No social-account logins.** It was in the first version, and we cut it before launch. The accounts belong to the freelancer's clients, who don't want to share logins, and platform rules change without warning.
 - **No YouTube auto-detection.** Its export looks identical to Meta's, and a wrong guess would corrupt a client's report.
 - **No scheduling or live dashboard.** Scope stays tight on the report, not a broader analytics product.
 
