@@ -52,11 +52,14 @@ type Project = {
   stack: Tech[];
   time?: string;
   status: string;
-  href?: string;
+  slug: string;
 };
 
 // Facts: .agents/product-marketing.md, home-brief §2. Stacks: founder's top six, checked against docs/case-studies/*-raw.md.
 // Logos are Simple Icons placeholders until the founder's logo files arrive.
+/** slug -> case study page, resolved on the server. */
+type Hrefs = Record<string, string | undefined>;
+
 const PROJECTS: Project[] = [
   {
     name: "Assess Yourself",
@@ -76,7 +79,7 @@ const PROJECTS: Project[] = [
     ],
     time: "3-4 weeks",
     status: "Delivered, launching soon",
-    href: "/work/assess-yourself",
+    slug: "assess-yourself",
   },
   {
     name: "EHS Training Platform",
@@ -96,7 +99,7 @@ const PROJECTS: Project[] = [
     ],
     time: "Since May 2026",
     status: "Live, on our maintenance plan",
-    href: "/work/safety-training-platform",
+    slug: "safety-training-platform",
   },
   {
     name: "Poststeady Client Reporting Tool",
@@ -116,7 +119,7 @@ const PROJECTS: Project[] = [
     ],
     time: "Built in 11 weeks",
     status: "Live",
-    href: "/work/poststeady",
+    slug: "poststeady",
   },
   {
     name: "ChromaLayer",
@@ -135,7 +138,7 @@ const PROJECTS: Project[] = [
       { icon: siCloudflareworkers, label: "Dodo + Cloudflare Workers" },
     ],
     status: "Live",
-    href: "/work/chromalayer",
+    slug: "chromalayer",
   },
 ];
 
@@ -161,7 +164,16 @@ function usePinned() {
   );
 }
 
-function ProjectCard({ project, i }: { project: Project; i: number }) {
+function ProjectCard({
+  project,
+  i,
+  href,
+}: {
+  project: Project;
+  i: number;
+  /** The case study page, when there is one. */
+  href?: string;
+}) {
   return (
     <article
       className={styles.card}
@@ -232,8 +244,8 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
           </span>
         </p>
 
-        {project.href && (
-          <Link href={project.href} className={styles.caseLink}>
+        {href && (
+          <Link href={href} className={styles.caseLink}>
             Read the case study
             <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
               <path
@@ -271,7 +283,7 @@ const Heading = ({ pinned = false }: { pinned?: boolean }) => (
 );
 
 /** Desktop: the section pins and vertical scroll slides the cards sideways. */
-function PinnedCarousel() {
+function PinnedCarousel({ hrefs }: { hrefs: Hrefs }) {
   const pinRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const last = PROJECTS.length - 1;
@@ -334,7 +346,7 @@ function PinnedCarousel() {
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
             {PROJECTS.map((p, i) => (
-              <ProjectCard key={p.name} project={p} i={i} />
+              <ProjectCard key={p.name} project={p} i={i} href={hrefs[p.slug]} />
             ))}
           </motion.div>
         </div>
@@ -352,7 +364,7 @@ function PinnedCarousel() {
 }
 
 /** Phones, short screens and reduced motion: a native swipe row. */
-function SwipeCarousel() {
+function SwipeCarousel({ hrefs }: { hrefs: Hrefs }) {
   const rowRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
@@ -384,7 +396,7 @@ function SwipeCarousel() {
         onScroll={onScroll}
       >
         {PROJECTS.map((p, i) => (
-          <ProjectCard key={p.name} project={p} i={i} />
+          <ProjectCard key={p.name} project={p} i={i} href={hrefs[p.slug]} />
         ))}
       </div>
       <div className={styles.controls}>
@@ -399,16 +411,16 @@ function SwipeCarousel() {
   );
 }
 
-export function OurWork() {
+export function OurWork({ hrefs }: { hrefs: Hrefs }) {
   const pinned = usePinned();
   return (
     <section id="work" className={styles.section} aria-labelledby="work-title">
       {pinned ? (
-        <PinnedCarousel />
+        <PinnedCarousel hrefs={hrefs} />
       ) : (
         <>
           <Heading />
-          <SwipeCarousel />
+          <SwipeCarousel hrefs={hrefs} />
         </>
       )}
     </section>

@@ -265,11 +265,13 @@ First commit 2026-02-14 · go-live 2026-05-27 [FOUNDER] · latest commit 2026-09
 
 **Answered 2026-09-24:** name the client (EHS Guru) · before = Edmingle LMS, too many unused features, too expensive, not their own brand · batches of ~80 learners, several batches · live 2026-05-27 after ~2 months of build · full team, end to end, fully custom · payments offline · the only running cost is a Zoom Pro account (not to be published). [FOUNDER]
 
+**Answered 2026-09-29:** WhatsApp reminders are fully live, using Meta-approved templates. [FOUNDER] (The reminder lead time, how long before a class they go out, is still not on file.)
+
 **Still open:**
 
 1. **Business results:** what changed since leaving Edmingle? Money saved per month (even as "less than before"), admin time, webinar-to-paid conversion.
 2. **Usage numbers** the client will approve: how many batches so far, total learners, trainers, classes run.
 3. **Testimonial:** a quote from EHS Guru or a trainer?
-4. **WhatsApp:** live with approved templates? If yes, it can be listed as a live channel.
+4. ~~**WhatsApp:** live with approved templates?~~ Answered above.
 5. **AI-assisted development:** mention it in the case study or not?
 6. **Screenshots:** a demo dataset to capture from, so no real learner data shows?

@@ -143,6 +143,13 @@ export function isVisible(study: CaseStudy) {
   return !(study.hiddenOnProduction && process.env.VERCEL_ENV === "production");
 }
 
+/** Where a project's case study lives, or undefined while it has no page
+    (not built yet, or hidden on production). Server-side only: the
+    production flag isn't visible to client bundles, so pass the result down. */
+export function caseStudyHref(slug: string) {
+  return getVisibleCaseStudy(slug) ? `/work/${slug}` : undefined;
+}
+
 /** For links between case studies: undefined while a page is hidden. */
 export function getVisibleCaseStudy(slug: string) {
   const study = getCaseStudy(slug);

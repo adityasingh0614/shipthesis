@@ -9,9 +9,20 @@ import { Faq } from "@/components/home/Faq";
 import { FromTheBlog } from "@/components/home/FromTheBlog";
 import { Testimonials } from "@/components/home/Testimonials";
 import { WhatWeBuild } from "@/components/home/WhatWeBuild";
+import { caseStudyHref } from "@/content/case-studies";
 import styles from "./page.module.css";
 
+// Cards link to a case study only where its page exists (a page with
+// placeholder screens is hidden on production).
+const SLUGS = [
+  "assess-yourself",
+  "safety-training-platform",
+  "poststeady",
+  "chromalayer",
+];
+
 export default function Home() {
+  const hrefs = Object.fromEntries(SLUGS.map((s) => [s, caseStudyHref(s)]));
   return (
     <>
       <section className={styles.hero} aria-labelledby="hero-title">
@@ -45,7 +56,7 @@ export default function Home() {
         <HeroVisual />
         <ProofStrip />
       </section>
-      <OurWork />
+      <OurWork hrefs={hrefs} />
       <HowItWorks />
       <WhatWeBuild />
       <Pricing />

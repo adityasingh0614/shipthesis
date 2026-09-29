@@ -1,5 +1,6 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
+import { caseStudyHref } from "@/content/case-studies";
+import type { CSSProperties, ReactNode } from "react";
 import styles from "./ProofStrip.module.css";
 
 // Facts: .agents/product-marketing.md; colours match the Our work cards.
@@ -11,7 +12,7 @@ const APPS = [
     color: "#1A5BFA",
     type: "SaaS",
     status: "Live",
-    href: "/work/poststeady",
+    slug: "poststeady",
   },
   {
     name: "EHS Training Platform",
@@ -19,7 +20,7 @@ const APPS = [
     color: "#00674C",
     type: "Web platform",
     status: "Live",
-    href: "/work/safety-training-platform",
+    slug: "safety-training-platform",
   },
   {
     name: "ChromaLayer",
@@ -27,7 +28,7 @@ const APPS = [
     color: "#030d26",
     type: "Windows app",
     status: "Live",
-    href: "/work/chromalayer",
+    slug: "chromalayer",
   },
   {
     name: "Assess Yourself",
@@ -35,9 +36,31 @@ const APPS = [
     color: "#283593",
     type: "Mobile app",
     status: "Delivered, launching soon",
-    href: "/work/assess-yourself",
+    slug: "assess-yourself",
   },
 ];
+
+/** A link when the case study exists; otherwise a focusable tile so the
+    type and status tip still shows on hover and keyboard focus. */
+function Tile({
+  href,
+  tip,
+  children,
+}: {
+  href?: string;
+  tip: string;
+  children: ReactNode;
+}) {
+  return href ? (
+    <Link href={href} className={styles.tile} aria-describedby={tip}>
+      {children}
+    </Link>
+  ) : (
+    <span className={styles.tile} tabIndex={0} aria-describedby={tip}>
+      {children}
+    </span>
+  );
+}
 
 export function ProofStrip() {
   return (
@@ -46,13 +69,10 @@ export function ProofStrip() {
       <ul className={styles.row}>
         {APPS.map((a) => {
           const tip = `tip-${a.mark}`;
+          const href = caseStudyHref(a.slug);
           return (
             <li key={a.name}>
-              <Link
-                href={a.href}
-                className={styles.tile}
-                aria-describedby={tip}
-              >
+              <Tile href={href} tip={tip}>
                 <span
                   className={styles.icon}
                   style={{ "--app": a.color } as CSSProperties}
@@ -64,7 +84,7 @@ export function ProofStrip() {
                 <span id={tip} role="tooltip" className={styles.tip}>
                   {a.type} · {a.status}
                 </span>
-              </Link>
+              </Tile>
             </li>
           );
         })}

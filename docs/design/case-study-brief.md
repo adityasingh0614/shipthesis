@@ -233,7 +233,7 @@ Each page: title `[Project]: [what it is] | Ship Thesis case study`, a meta desc
 | 08 Conclusion | **"Why a Windows app is on a mobile studio's site"**, set as the **lab's final result**: the hard part of any app is staying correct while the system works against it (Windows resetting colours here; background kills and OS updates on phones) · we test on real hardware · we ship updates safely. Brand-promise line + two buttons. Must not claim App Store experience |
 | Next | **Assess Yourself** (wraps to the first project) |
 
-**Rules for this page:** no price (even though it's our own product). Never mention the unsigned installer, the installer switches or two authors. Link the product page, never the installer download. "Live" matches Home; the founder confirms it's on sale before launch.
+**Rules for this page:** no price (even though it's our own product). Never mention the unsigned installer, the installer switches or two authors. Link the product page, never the installer download. "Live" matches Home and the brand brief (founder, 2026-09-29: ChromaLayer is live).
 
 **Assets needed:** main window with Vivid selected, tray menu, onboarding, licence window (hide key and email), update dialog, and a **real-hardware before/after photo** of the same scene.
 
@@ -259,7 +259,7 @@ Each page: title `[Project]: [what it is] | Ship Thesis case study`, a meta desc
 - **Assess Yourself:** Subject Details (`a2`) re-captured without the "Smoke B1…B4" test rows; a test-taking screen; a trial/plans screen; store link; student numbers; testimonial.
 - **EHS:** a larger export of `ehs_hero` if it looks soft at 1440px; screens of the recordings library and engagement analytics; business results since the old platform; testimonial.
 - **Poststeady:** all screens from a demo account (6 wizard steps, report pages 1-2, dashboard, share page); users or subscribers you're willing to share; testimonial.
-- **ChromaLayer:** all screens and a real-hardware before/after photo; re-run the test suite on .NET 10. **Answered 2026-09-28:** product page is https://chromalayer.app/ (source for any ChromaLayer facts); **not on sale today**, so the status must not say "Live" or imply it can be bought (use e.g. "Built · not on sale yet" until it is, and fix Home's "Live" label to match); the "drag to try" demo exists on the landing page: reuse that code exactly.
+- **ChromaLayer:** all screens and a real-hardware before/after photo; re-run the test suite on .NET 10. **Answered 2026-09-28:** product page is https://chromalayer.app/ (source for any ChromaLayer facts); **Corrected 2026-09-29 (founder): ChromaLayer is live**, so the status says Live, as the brand brief and Home already do (the "not on sale yet" note above was wrong); the "drag to try" demo exists on the landing page: reuse that code exactly.
 - **EHS hero:** use the current 731px `ehs_hero.webp` for now; founder will upload a larger export later.
 
 ## Changelog
