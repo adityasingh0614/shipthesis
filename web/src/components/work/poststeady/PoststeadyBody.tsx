@@ -100,7 +100,7 @@ export function PoststeadyBody() {
             {[
               ["The story", "What freelancers do", "Social media freelancers send each client a report every month, built from the numbers Meta, Instagram, TikTok, LinkedIn and Google Ads export."],
               ["The problem", "What the month looked like", "One file per platform, none shaped the same, each with its own name for the same number. They all had to line up before anything could be said. Then the commentary was rewritten from scratch for every client, and the evening went on formatting."],
-              ["The gap", "Why we built it", "Most reporting tools bundle features freelancers don\u2019t need, like scheduling, live dashboards and team seats, and charge for them. The reporting-only ones start at $50 a month or more, which a solo freelancer with three clients can\u2019t justify. So the report gets made in Canva, or by pasting numbers into ChatGPT: slow, manual, and it looks it."],
+              ["The gap", "Why we built it", "Most social media tools bundle features freelancers don\u2019t need, like scheduling, live dashboards and team seats, and keep reporting for their premium plans: from about $50 a month, up to $200. A solo freelancer with three clients can\u2019t justify that. So the report gets made in Canva, or by pasting numbers into ChatGPT: slow, manual, and it looks it."],
               ["What ran", "What we built", "Upload the exports, get a branded three-page report with a summary you can edit."],
             ].map(([k, title, body]) => (
               <div key={k} className={styles.memoRow}>
