@@ -25,11 +25,11 @@ Type Our own product · Platform Web app · Industry Social media marketing · S
 
 Assignment memo, same sheet shape as EHS's run sheet: a dark header (To: Every freelancer with a monthly report due │ From: Ship Thesis │ Re: Poststeady, 11 weeks), then three labelled rows.
 
-- **The story · What freelancers do.** Social media freelancers send each client a report every month. The numbers come from Meta, Instagram, TikTok, LinkedIn and Google Ads.
-- **The problem · What made it hard.** Each platform exports them in its own format, with its own name for the same figure.
+- **The story · What freelancers do.** Social media freelancers send each client a report every month, built from the numbers Meta, Instagram, TikTok, LinkedIn and Google Ads export.
+- **The problem · What the month looked like.** One file per platform, none shaped the same, each with its own name for the same number. They all had to line up before anything could be said. Then the commentary was rewritten from scratch for every client, and the evening went on formatting. (Source: Poststeady repo `docs/02-audience-and-positioning.md`, the pain points already on poststeady.com.)
 - **What ran · What we built.** Upload the exports, get a branded three-page report with a summary you can edit.
 
-Stat cards under the sheet (from `docs/case-studies/poststeady-raw.md` §6, as on the other two case studies): **21** pages, app and marketing site together · **11** API routes behind them · **221** automated tests · **3** pages in every finished report. (175 stays the page's one big number, in section 02.)
+Stat cards under the sheet (verified in the Poststeady repo, 2026-09-29): **21** screens, app and website together · **3** pages in every finished report · **230** automated tests · **2** dated security audits. (175 stays the page's one big number, in section 02.)
 
 ## 02 · The centrepiece
 
@@ -41,14 +41,14 @@ Three header cells (Amount Spent, Cost, Total Spend) are struck through and merg
 
 ## 03 · The wizard
 
-**One report, start to finish** (pinned browser-frame placeholder; its label follows the active step)
+**One report, start to finish** (pinned browser-frame placeholder; its label follows the active step). Steps match the product's real five-step wizard (`app/reports/new/step-1..5`), then sending.
 
-1. **Download what you already have.** The exports each platform already gives you. No social-account logins. (Upload step)
-2. **Upload, checked on arrival.** Row counts, the date range and the platform, detected as the files land. (Upload step)
-3. **Confirm the matches.** Column names are pre-filled from 175 known aliases; you confirm or correct them. (Column matching screen)
-4. **Check the numbers.** Headline metrics are editable before anything is written or sent. (Metrics review)
-5. **The summary, drafted for you.** An AI-written summary you edit, with month-over-month comparisons. (AI summary editor)
-6. **Send it.** A branded PDF, or a share link the client opens without logging in. (Finished report, page 1)
+1. **Pick the client and the month.** Their logo and brand colour come along automatically. (Setup step)
+2. **Upload the exports.** The files each platform already gives you, no social-account logins. Rows, dates and platform are checked as they land. Add last month's too, for a real comparison. (Upload step)
+3. **Confirm the matches.** Columns are pre-matched from 175 known names; you confirm or correct them. (Column matching screen)
+4. **Check the numbers.** Every imported number, by platform. Fix any value, or hide what this client doesn't need. (Metrics review)
+5. **Edit the summary.** The AI drafts it from the real figures; you edit any line before it goes out. (Review step)
+6. **Send it.** A branded three-page PDF, or a link the client opens in any browser, with no login. (Finished report, page 1)
 
 ## 04 · The hard parts
 
@@ -56,7 +56,7 @@ Three header cells (Amount Spent, Cost, Total Spend) are struck through and merg
 
 The output is a document a freelancer's client reads. A silent mistake costs trust twice, so nothing ships unchecked.
 
-- ✓ **Asked, not guessed · When a file could belong to two platforms.** Poststeady asks instead of guessing, so the report the client sees is accurate.
+- ✓ **Asked, not guessed · When a file could belong to two platforms.** Poststeady doesn't guess. You pick the platform in one click, so the report the client sees is accurate.
 - ✓ **Facts only · What the AI is allowed to say.** It quotes only real figures and never states a cause it can't know. Jumps over 300% are flagged before it sees the data.
 - ✓ **What you see prints · One design, three outputs.** The screen, the share link and the PDF render from the same design, so they can never drift apart.
 
@@ -81,19 +81,21 @@ The newsroom word for a story cut on purpose, not one that ran out of time.
 **11 WEEKS**, with a working first version at the end of week 1. (Centred against the facts.)
 
 - Live: At poststeady.com.
-- Plans: Free and Pro, both live.
-- Audited: Two dated security audits.
+- Plans: Free for 2 reports a month, and Pro for unlimited.
+- Sending: A branded PDF, or a link the client opens in any browser with no login.
 
 ## Under the hood (open by default)
 
-Flow: Browser, files read client-side → Next.js on Vercel → Supabase · RLS everywhere → File storage
-Gemini drafts the summary → Headless Chrome prints the reviewed page → PDF or share link → Payments · signed webhook
+How it works, in plain words, with the technical name underneath.
 
-- **Plan limits enforced in the database.** The free quota can't be bypassed from the browser.
-- **One list of metrics everything reads from.** Defined once, used everywhere.
+Files read on your own computer (Browser) → The app itself (Next.js on Vercel) → Each account sees only its own data (Supabase, row-level security) → Uploads stored safely (File storage)
+AI drafts the summary (Gemini) → The PDF is printed from the page you approved (Headless Chrome) → PDF, or a no-login link (Share link) → Payments confirmed by the provider itself (Signed webhook)
+
+- **Plan limits are counted on the server.** The free allowance can't be switched off from the browser.
+- **One list of metrics, read by every screen.** The upload, the review and the finished report always agree.
 - **Client text treated as data, never instructions.** Names and pasted notes can't redirect the AI.
-- **The AI model is pinned.** 4 out of 4 successes in testing, averaging 2.4 seconds.
-- **Quality:** 221 automated tests and two dated security audits.
+- **The AI model was tested before it was chosen.** The fixed version answered 4 of 4 test runs in 2.4 seconds on average; the auto-updating version managed 3 of 4 at 15.7 seconds. So it stays fixed, and changes only when we decide.
+- **Quality:** 230 automated tests and two dated security audits.
 
 ## 07 · In their words (placeholder)
 

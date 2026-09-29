@@ -218,3 +218,22 @@ Also in `public/Landing_page_images/`: `Clients_page.webp`, `Client_details.webp
 10. Search results from the blog (impressions, clicks) you're happy to cite?
 11. Why the price drop from $19 to $10.99, and did it change conversion?
 12. What's next: team features (built but hidden), more platforms?
+
+---
+
+## 16. Verified against the code (2026-09-29, `Post_Steady_app` HEAD `0d3e086`)
+
+Checked line by line for the case study page. ✓ = matches the code.
+
+- ✓ 21 pages (`find app -name page.tsx`), 11 API routes, 47 migrations.
+- ✓ 175 header aliases across 31 metric keys (`lib/reports/auto-map.ts` `ALIAS_MAP`); "Amount Spent", "Cost", "Total Spend" are real `spend` aliases.
+- **Changed:** tests are now **230** (was 221): all 230 pass in IST; one date test assumes the machine's timezone and fails under UTC (a test issue, not a product bug).
+- ✓ Row-level security enabled on all 19 tables. ✓ Two dated audits (`AUDIT-2026-08-29.md`, `AUDIT-2026-09-14.md`).
+- ✓ AI rules (`REPORT_COPY_RULES`): no invented numbers, no causes, no change of 300%+; client text wrapped as data. ✓ Pinned `gemini-3.5-flash`: 4/4 at 2.4s vs the `-latest` alias 3/4 at 15.7s; thinking budget 0.
+- ✓ Report canvas is 3 pages; the share page (`/share/[token]`), the preview and the PDF all render the same `<ReportCanvas>`; share link needs no login.
+- ✓ Free plan: 2 reports and 2 clients a month; Pro unlimited.
+- **Changed:** the wizard is 5 steps: Setup (client + month) → Upload → Mapping → Metrics → Review (edit AI summary, export or share). The page previously listed "Download" as step 1.
+- ✓ Ambiguous files: `detectSource()` declines rather than guesses; the platform is then picked from a dropdown in step 2.
+- ✓ First commit 2026-07-10; PDF engine, billing and settings in by 2026-07-15 (end of week 1); 448 commits, work continuing after launch.
+- Before-state pains used on the page come from the product repo's `docs/02-audience-and-positioning.md` ("already the pain-point section on the live site").
+

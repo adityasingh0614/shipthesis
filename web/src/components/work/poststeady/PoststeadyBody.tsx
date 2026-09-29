@@ -98,8 +98,8 @@ export function PoststeadyBody() {
               </div>
             </div>
             {[
-              ["The story", "What freelancers do", "Social media freelancers send each client a report every month. The numbers come from Meta, Instagram, TikTok, LinkedIn and Google Ads."],
-              ["The problem", "What made it hard", "Each platform exports them in its own format, with its own name for the same figure."],
+              ["The story", "What freelancers do", "Social media freelancers send each client a report every month, built from the numbers Meta, Instagram, TikTok, LinkedIn and Google Ads export."],
+              ["The problem", "What the month looked like", "One file per platform, none shaped the same, each with its own name for the same number. They all had to line up before anything could be said. Then the commentary was rewritten from scratch for every client, and the evening went on formatting."],
               ["What ran", "What we built", "Upload the exports, get a branded three-page report with a summary you can edit."],
             ].map(([k, title, body]) => (
               <div key={k} className={styles.memoRow}>
@@ -111,14 +111,14 @@ export function PoststeadyBody() {
               </div>
             ))}
           </Reveal>
-          {/* Engineering scale, from the raw notes: 21 pages, 11 API routes,
-              221 automated tests, a three-page report. */}
+          {/* Verified in the Poststeady repo (2026-09-29): 21 page files, a
+              3-page report canvas, 230 passing tests, 2 dated audits. */}
           <ul className={styles.stats}>
             {[
-              ["21", "pages, app and marketing site together"],
-              ["11", "API routes behind them"],
-              ["221", "automated tests"],
+              ["21", "screens, app and website together"],
               ["3", "pages in every finished report"],
+              ["230", "automated tests"],
+              ["2", "dated security audits"],
             ].map(([num, cap], i) => (
               <Reveal as="li" key={cap} delay={i * 0.09} className={styles.stat}>
                 <b>{num}</b>
@@ -174,7 +174,7 @@ export function PoststeadyBody() {
           </p>
           <Reveal className={styles.desk}>
             {[
-              ["Asked, not guessed", "When a file could belong to two platforms", "Poststeady asks instead of guessing, so the report the client sees is accurate."],
+              ["Asked, not guessed", "When a file could belong to two platforms", "Poststeady doesn't guess. You pick the platform in one click, so the report the client sees is accurate."],
               ["Facts only", "What the AI is allowed to say", "It quotes only real figures and never states a cause it can’t know. Jumps over 300% are flagged before it sees the data."],
               ["What you see prints", "One design, three outputs", "The screen, the share link and the PDF render from the same design, so they can never drift apart."],
             ].map(([mark, title, body]) => (
@@ -255,10 +255,10 @@ export function PoststeadyBody() {
                   .
                 </li>
                 <li>
-                  <small>Plans</small>Free and Pro, both live.
+                  <small>Plans</small>Free for 2 reports a month, and Pro for unlimited.
                 </li>
                 <li>
-                  <small>Audited</small>Two dated security audits.
+                  <small>Sending</small>A branded PDF, or a link the client opens in any browser with no login.
                 </li>
               </ul>
             </Reveal>
@@ -273,28 +273,28 @@ export function PoststeadyBody() {
             <summary>
               <div>
                 <h2>Under the hood</h2>
-                <p>Architecture and the decisions behind it.</p>
+                <p>How it works, in plain words, with the technical name underneath.</p>
               </div>
             </summary>
             <div className={styles.hoodBody}>
               <ul className={styles.flow}>
-                <li>Browser, files read client-side</li>
-                <li>Next.js on Vercel</li>
-                <li>Supabase · RLS everywhere</li>
-                <li>File storage</li>
+                <li>Files read on your own computer<small>Browser</small></li>
+                <li>The app itself<small>Next.js on Vercel</small></li>
+                <li>Each account sees only its own data<small>Supabase, row-level security</small></li>
+                <li>Uploads stored safely<small>File storage</small></li>
               </ul>
               <ul className={styles.flow2}>
-                <li>Gemini drafts the summary</li>
-                <li>Headless Chrome prints the reviewed page</li>
-                <li>PDF or share link</li>
-                <li>Payments · signed webhook</li>
+                <li>AI drafts the summary<small>Gemini</small></li>
+                <li>The PDF is printed from the page you approved<small>Headless Chrome</small></li>
+                <li>PDF, or a no-login link<small>Share link</small></li>
+                <li>Payments confirmed by the provider itself<small>Signed webhook</small></li>
               </ul>
               <ol className={styles.decis}>
-                <li><b>Plan limits enforced in the database.</b> The free quota can&apos;t be bypassed from the browser.</li>
-                <li><b>One list of metrics everything reads from.</b> Defined once, used everywhere.</li>
+                <li><b>Plan limits are counted on the server.</b> The free allowance can&apos;t be switched off from the browser.</li>
+                <li><b>One list of metrics, read by every screen.</b> The upload, the review and the finished report always agree.</li>
                 <li><b>Client text treated as data, never instructions.</b> Names and pasted notes can&apos;t redirect the AI.</li>
-                <li><b>The AI model is pinned.</b> 4 out of 4 successes in testing, averaging 2.4 seconds.</li>
-                <li><b>Quality:</b> 221 automated tests and two dated security audits.</li>
+                <li><b>The AI model was tested before it was chosen.</b> The fixed version answered 4 of 4 test runs in 2.4 seconds on average; the auto-updating version managed 3 of 4 at 15.7 seconds. So it stays fixed, and changes only when we decide.</li>
+                <li><b>Quality:</b> 230 automated tests and two dated security audits.</li>
               </ol>
             </div>
           </details>

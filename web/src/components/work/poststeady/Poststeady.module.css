@@ -878,7 +878,8 @@
   text-underline-offset: 3px;
 }
 
-/* ---- under the hood: two rows of flow boxes ---- */
+/* ---- under the hood: two rows of flow boxes, plain words first and the
+   technical name small underneath ---- */
 .flow,
 .flow2 {
   display: grid;
@@ -1011,4 +1012,26 @@
   .flow2 {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.flow li,
+.flow2 li {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-transform: none;
+  color: var(--ink);
+}
+.flow li small,
+.flow2 li small {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }

@@ -3,17 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Poststeady.module.css";
 
-// Facts: docs/case-studies/poststeady-raw.md §5 (the five-step wizard, then
-// the PDF or share link). Every screen is a placeholder until captured from
+// Facts: the Poststeady repo's own five-step wizard (app/reports/new/
+// step-1..5, docs/01-product-truth.md §4), then the PDF or share link. Every screen is a placeholder until captured from
 // a demo account with made-up clients.
-const UPLOAD = ["Upload step", "File checks: row counts, date range, platform detected"];
 const STEPS = [
-  { n: "01", title: "Download what you already have", body: "The exports each platform already gives you. No social-account logins.", shot: UPLOAD },
-  { n: "02", title: "Upload, checked on arrival", body: "Row counts, the date range and the platform, detected as the files land.", shot: UPLOAD },
-  { n: "03", title: "Confirm the matches", body: "Column names are pre-filled from 175 known aliases; you confirm or correct them.", shot: ["Column matching screen", "Pre-filled matches"] },
-  { n: "04", title: "Check the numbers", body: "Headline metrics are editable before anything is written or sent.", shot: ["Metrics review", "Editable headline cards"] },
-  { n: "05", title: "The summary, drafted for you", body: "An AI-written summary you edit, with month-over-month comparisons.", shot: ["AI summary editor"] },
-  { n: "06", title: "Send it", body: "A branded PDF, or a share link the client opens without logging in.", shot: ["Finished report, page 1", "Branded, made-up client"] },
+  { n: "01", title: "Pick the client and the month", body: "Their logo and brand colour come along automatically.", shot: ["Setup step", "Client and reporting month"] },
+  { n: "02", title: "Upload the exports", body: "The files each platform already gives you, no social-account logins. Rows, dates and platform are checked as they land. Add last month's too, for a real comparison.", shot: ["Upload step", "File checks: rows, dates, platform"] },
+  { n: "03", title: "Confirm the matches", body: "Columns are pre-matched from 175 known names; you confirm or correct them.", shot: ["Column matching screen", "Pre-filled matches"] },
+  { n: "04", title: "Check the numbers", body: "Every imported number, by platform. Fix any value, or hide what this client doesn\u2019t need.", shot: ["Metrics review", "Numbers by platform"] },
+  { n: "05", title: "Edit the summary", body: "The AI drafts it from the real figures; you edit any line before it goes out.", shot: ["Review step", "AI summary, editable"] },
+  { n: "06", title: "Send it", body: "A branded three-page PDF, or a link the client opens in any browser, with no login.", shot: ["Finished report, page 1", "Branded, made-up client"] },
 ];
 
 // The browser frame stays pinned while the steps scroll past; the step
