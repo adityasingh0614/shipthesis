@@ -270,3 +270,8 @@ Client-branding flag: the app name and logo are the product's own. If this was a
 
 **Correction [FOUNDER, 2026-09-29]:** ChromaLayer is not sold as an Intel-only tool. Intel's tool is the origin story only; the product is for any Windows laptop. The page says "any Windows laptop"; any named-GPU claim (Intel, AMD) waits until `CompatibilityAnalyzer` in the source repo is checked, or the founder confirms testing.
 
+
+## 19. Founder answers, 2026-09-29 (later)
+
+- **GPU support [FOUNDER]:** ChromaLayer supports all the main graphics makers (Intel, AMD, NVIDIA), and it is tested on them. This supersedes the product repo's "Intel supported, AMD/NVIDIA experimental" wording (`CompatibilityAnalyzer`, `docs/product-truth.md`), which should be updated in that repo. The case study says "Intel, AMD and NVIDIA graphics, tested on each".
+- **Build time [FOUNDER]:** 3 weeks. **Not shown on the site:** the founder decided no project states a timeline except Assess Yourself.

@@ -82,9 +82,9 @@ export function ChromaLayerBody() {
               <span>Subject: built-in laptop screens</span>
             </div>
             {[
-              ["Why we built it", "Changing colours with Intel’s own software was frustrating, and it never gave full control over the screen. We wanted one tool that works across laptops, not just one brand of graphics."],
+              ["Why we built it", "Changing colours with Intel’s own software was frustrating, and it never gave full control over the screen. We wanted one tool that works on Intel, AMD and NVIDIA, not just one brand of graphics."],
               ["What we observed", "Colours look washed out or too yellow, Windows has no proper colour controls for the built-in screen, and the settings that do exist quietly reset after a restart."],
-              ["What shipped", "Seven colour controls and five presets, from one small window in the system tray, re-applied after every restart, sleep, sign-in and display change."],
+              ["What shipped", "Seven colour controls and five presets, from one small window in the system tray, on Intel, AMD and NVIDIA graphics, re-applied after every restart, sleep, sign-in and display change."],
             ].map(([k, body]) => (
               <div key={k} className={styles.row}>
                 <small>{k}</small>
@@ -224,8 +224,8 @@ export function ChromaLayerBody() {
           </p>
           <div className={styles.result}>
             <Reveal>
-              <div className={styles.big}>~10 weeks</div>
-              <p className={styles.bigLine}>to a shipped Windows app.</p>
+              <div className={styles.big}>Live</div>
+              <p className={styles.bigLine}>Our own Windows app, running today.</p>
             </Reveal>
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
@@ -235,6 +235,9 @@ export function ChromaLayerBody() {
                     chromalayer.app
                   </a>
                   .
+                </li>
+                <li>
+                  <small>Works on</small>Intel, AMD and NVIDIA graphics, tested on each.
                 </li>
                 <li>
                   <small>Built in</small>A 14-day free trial and licensing.

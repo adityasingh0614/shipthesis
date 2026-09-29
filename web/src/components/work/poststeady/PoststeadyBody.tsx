@@ -94,7 +94,7 @@ export function PoststeadyBody() {
                 From<b>Ship Thesis</b>
               </div>
               <div>
-                Re<b>Poststeady, 11 weeks</b>
+                Re<b>Poststeady</b>
               </div>
             </div>
             {[
@@ -253,8 +253,8 @@ export function PoststeadyBody() {
           </p>
           <div className={styles.result}>
             <Reveal>
-              <div className={styles.big}>11 weeks</div>
-              <p className={styles.bigLine}>with a working first version at the end of week 1.</p>
+              <div className={styles.big}>Live</div>
+              <p className={styles.bigLine}>Our own product, running today.</p>
             </Reveal>
             <Reveal delay={0.14}>
               <ul className={styles.facts}>

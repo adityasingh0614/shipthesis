@@ -104,8 +104,8 @@
 |---|---|---|---|---|
 | Assess Yourself | Mobile app | Flutter + Node/Express on Firebase | Client: Aptellic | Delivered to client · launching soon. Built in 3–4 weeks. Lead case study and our Flutter proof. New exams go live from a single Excel upload. Aptellic approved using the app (demo data) in the Home hero; logo approval still to confirm |
 | EHS Training Platform | Web platform | Next.js / Supabase | Client: EHS Guru (can be named) | Live since May 2026; client on our monthly maintenance plan since launch. Case study at /work/safety-training-platform |
-| Poststeady | SaaS | Next.js / Supabase | Own product | Live, built in 11 weeks. Case study |
-| ChromaLayer | Windows desktop app | .NET/WPF | Own product | Live (launched, confirmed 2026-09-26). Last card in the Home work carousel, with a case study at /work/chromalayer. Link the product page, never the installer download |
+| Poststeady | SaaS | Next.js / Supabase | Own product | Live. Case study (no build time shown; founder, 2026-09-29) |
+| ChromaLayer | Windows desktop app | .NET/WPF | Own product | Live (launched, confirmed 2026-09-26). Works on Intel, AMD and NVIDIA graphics, tested on each (founder, 2026-09-29). Last card in the Home work carousel, with a case study at /work/chromalayer. Link the product page, never the installer download |
 
 Case study order everywhere: Assess Yourself, EHS Training Platform, Poststeady. This list is final; no other projects appear on the site.
 **Testimonials:** unknown — do not infer
@@ -133,7 +133,7 @@ Case study order everywhere: Assess Yourself, EHS Training Platform, Poststeady.
 - hire a mobile app developer
 
 **Case study structure (every project):**
-Header (name, one line, then tags: Client or Own product · Platform · Stack · Timeline · Status) → The challenge (2–3 sentences) → What we built (4–5 short items) → The hard part we solved (2–3 highlights, 1–2 sentences each, framed as wins) → Result (confirmed facts only, otherwise [RESULT TBD]) → Screens (3–4, demo data only). About 300 words, written for a non-technical founder. Nothing negative, no invented metrics, no technical appendix. Copy lives in `docs/copy/case-studies/[slug].md`.
+Header (name, one line, then tags: Client or Own product · Platform · Stack · Status. Timeline is shown for Assess Yourself only: founder, 2026-09-29) → The challenge (2–3 sentences) → What we built (4–5 short items) → The hard part we solved (2–3 highlights, 1–2 sentences each, framed as wins) → Result (confirmed facts only, otherwise [RESULT TBD]) → Screens (3–4, demo data only). About 300 words, written for a non-technical founder. Nothing negative, no invented metrics, no technical appendix. Copy lives in `docs/copy/case-studies/[slug].md`.
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*

@@ -82,6 +82,15 @@
 .field:nth-last-child(-n + 2) {
   border-bottom: 0;
 }
+/* Five fields (no timeline): the last one spans the row and the one above
+   keeps its rule. */
+.field:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-right: 0;
+}
+.field:nth-last-child(2):nth-child(even) {
+  border-bottom: 1px solid #e3e8e4;
+}
 .field dt {
   font-family: var(--font-mono);
   font-size: 0.66rem;

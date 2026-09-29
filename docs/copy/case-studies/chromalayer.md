@@ -11,7 +11,7 @@
 **Line:** A Windows app that gives a laptop's built-in screen seven colour controls, and keeps them applied after every restart, sleep and sign-in.
 
 **Test pattern · Case study 04** (colour-bar strip on the card's top edge; OSD readout: ● LIVE · chromalayer.app, linking to https://chromalayer.app)
-Type Our own product · Platform Windows 10 and 11 laptops · Industry Consumer software, display tools · Service Product design, build and release · Stack C# · .NET · WPF · Timeline About 10 weeks
+Type Our own product · Platform Windows 10 and 11 laptops · Industry Consumer software, display tools · Service Product design, build and release · Stack C# · .NET · WPF
 
 **Hero:** the real app window (`/work/chromalayer/hero.webp`, the Display Studio screenshot from the landing-page repo), on a test-card grid.
 
@@ -20,9 +20,9 @@ Type Our own product · Platform Windows 10 and 11 laptops · Industry Consumer 
 ## 01 · The brief: "A laptop screen that stays how you set it"
 
 Calibration report (ChromaLayer │ Subject: built-in laptop screens):
-- **Why we built it.** Changing colours with Intel's own software was frustrating, and it never gave full control over the screen. We wanted one tool that works across laptops, not just one brand of graphics. (Founder, 2026-09-29.)
+- **Why we built it.** Changing colours with Intel's own software was frustrating, and it never gave full control over the screen. We wanted one tool that works on Intel, AMD and NVIDIA, not just one brand of graphics. (Founder, 2026-09-29.)
 - **What we observed.** Colours look washed out or too yellow, Windows has no proper colour controls for the built-in screen, and the settings that do exist quietly reset after a restart.
-- **What shipped.** Seven colour controls and five presets, from one small window in the system tray, re-applied after every restart, sleep, sign-in and display change.
+- **What shipped.** Seven colour controls and five presets, from one small window in the system tray, on Intel, AMD and NVIDIA graphics, re-applied after every restart, sleep, sign-in and display change.
 
 Stats: **7** colour controls, combined into one · **5** ready-made presets · **9** re-checks in the 25 seconds after each sign-in · **0** admin rights or drivers needed
 
@@ -51,7 +51,7 @@ No overlay, no driver (same built-in Windows feature as its accessibility colour
 
 ## 06 · Result
 
-**~10 WEEKS** to a shipped Windows app. Live at chromalayer.app · A 14-day free trial and licensing · Installs and updates through its own release channel. Off production only: a placeholder for the real-hardware before/after photo.
+**LIVE**, "Our own Windows app, running today." Live at chromalayer.app · Works on Intel, AMD and NVIDIA graphics, tested on each (founder, 2026-09-29) · A 14-day free trial and licensing · Installs and updates through its own release channel. Off production only: a placeholder for the real-hardware before/after photo.
 
 ## Under the hood (open by default)
 
@@ -67,7 +67,7 @@ Placeholder photo and quote until a real, approved testimonial exists.
 
 ## Deliberately left out
 
-Price ($5.99), the unsigned installer and its download link, user or sales numbers, the test count (founder skipped it), "calibrated" / "eye health" / "driver-level" claims, and named graphics chips. Intel is the supported target in the code and AMD/NVIDIA are labelled experimental, so the page says "Windows 10 and 11 laptops" until the founder confirms AMD.
+Price ($5.99), the unsigned installer and its download link, user or sales numbers, the test count (founder skipped it), "calibrated" / "eye health" / "driver-level" claims, and any timeline (founder: only Assess Yourself shows one). The founder confirmed (2026-09-29) that it works on Intel, AMD and NVIDIA, tested on each, so the page says so; the product repo's docs still label AMD/NVIDIA "experimental" and should be updated.
 
 ## Next project
 

@@ -117,7 +117,6 @@ const PROJECTS: Project[] = [
       { label: "Dodo Payments" },
       { icon: siPuppeteer },
     ],
-    time: "Built in 11 weeks",
     status: "Live",
     slug: "poststeady",
   },

@@ -82,7 +82,7 @@ Placeholders in `[BRACKETS]` must be filled or the element hidden before launch.
 **SaaS platforms**
 > When your product needs a web side too: customer accounts, subscriptions and dashboards that share data with the app. We build it as part of the same product.
 > **Stack:** Next.js, Supabase
-> **Proof:** Poststeady, our own SaaS, live and built in 11 weeks. How we built it →
+> **Proof:** Poststeady, our own SaaS, live today. How we built it →
 
 ---
 
@@ -115,7 +115,7 @@ Placeholders in `[BRACKETS]` must be filled or the element hidden before launch.
 **Heading:** The work behind these services
 
 > **Assess Yourself:** a Flutter exam-prep app, delivered in 3–4 weeks. Read the case study →
-> **Poststeady:** our own SaaS, live, built in 11 weeks. Read the case study →
+> **Poststeady:** our own SaaS, live today. Read the case study →
 
 **Link:** See all our work →
 

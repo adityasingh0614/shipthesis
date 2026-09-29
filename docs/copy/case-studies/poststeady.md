@@ -13,7 +13,7 @@
 **Line:** A web app that turns the analytics files social media freelancers already download into a branded monthly report for their clients.
 
 **Proof · Case study 03** (crop marks at the four corners; dateline: ● Live · poststeady.com, links out)
-Type Our own product · Platform Web app · Industry Social media marketing · Service Product design, build and launch · Stack Next.js · Supabase · Gemini · Timeline 11 weeks
+Type Our own product · Platform Web app · Industry Social media marketing · Service Product design, build and launch · Stack Next.js · Supabase · Gemini
 
 **Hero image:** placeholder: finished report, page 1, fanned over the upload screen (made-up client, once captured).
 
@@ -23,7 +23,7 @@ Type Our own product · Platform Web app · Industry Social media marketing · S
 
 **One report, from whatever they export**
 
-Assignment memo, same sheet shape as EHS's run sheet: a dark header (To: Every freelancer with a monthly report due │ From: Ship Thesis │ Re: Poststeady, 11 weeks), then three labelled rows.
+Assignment memo, same sheet shape as EHS's run sheet: a dark header (To: Every freelancer with a monthly report due │ From: Ship Thesis │ Re: Poststeady), then three labelled rows.
 
 - **The story · What freelancers do.** Social media freelancers send each client a report every month, built from the numbers Meta, Instagram, TikTok, LinkedIn and Google Ads export.
 - **The problem · What the month looked like.** One file per platform, none shaped the same, each with its own name for the same number. They all had to line up before anything could be said. Then the commentary was rewritten from scratch for every client, and the evening went on formatting. (Source: Poststeady repo `docs/02-audience-and-positioning.md`, the pain points already on poststeady.com.)
@@ -81,7 +81,7 @@ The newsroom word for a story cut on purpose, not one that ran out of time.
 
 ## 06 · Result
 
-**11 WEEKS**, with a working first version at the end of week 1. (Centred against the facts.)
+**LIVE**, "Our own product, running today." (Centred against the facts. No build time: founder, 2026-09-29.)
 
 - Live: At poststeady.com.
 - Plans: Free for 2 reports a month, and Pro for unlimited.

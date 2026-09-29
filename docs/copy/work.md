@@ -12,7 +12,7 @@
 > Apps and platforms we've built
 
 **Line:**
-> Client projects and products we run ourselves, each with its stack, its timeline and where it stands today.
+> Client projects and products we run ourselves, each with its stack and where it stands today.
 
 ---
 
@@ -31,12 +31,12 @@
 > Read the case study →
 
 **Card 3: Poststeady**
-> Own product · Web app · Next.js, Supabase · 11 weeks · Live
+> Own product · Web app · Next.js, Supabase · Live
 > **Poststeady**
 > Turns the files social media freelancers already export into a branded monthly report for their clients.
 > Read the case study →
 
-*Every card shows the same fields in the same order: type, platform, stack, timeline, status.*
+*Every card shows the same fields in the same order: type, platform, stack, status. Only Assess Yourself shows a build time (3–4 weeks); no other project states one (founder, 2026-09-29).*
 
 ---
 
@@ -51,7 +51,7 @@
 ## Meta
 
 - **Page title:** Our Work: App and Platform Case Studies | Ship Thesis
-- **Meta description:** Case studies from our client work and our own products, each with the stack, the timeline and its current status.
+- **Meta description:** Case studies from our client work and our own products, each with the stack and its current status.
 
 ---
 

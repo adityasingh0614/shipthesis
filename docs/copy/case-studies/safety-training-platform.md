@@ -11,7 +11,7 @@
 **Line:** A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.
 
 **Session pass · Case study 02** (on-air badge: ● Live since May 2026)
-Client EHS Guru · Platform Web app, any browser · Industry Environment, health and safety training · Service Web platform design and development · Stack Next.js · Supabase · Zoom · Timeline About 2 months to live
+Client EHS Guru · Platform Web app, any browser · Industry Environment, health and safety training · Service Web platform design and development · Stack Next.js · Supabase · Zoom
 Foot: Access: admin · trainer · learner · guest │ On our maintenance plan
 
 **Marquee:** One-click classes ✱ Automatic attendance ✱ Every class recorded ✱ Engagement analytics ✱ Free webinars ✱ Email and WhatsApp reminders
@@ -20,7 +20,7 @@ Foot: Access: admin · trainer · learner · guest │ On our maintenance plan
 
 **Live classes, run on their own platform**
 
-Run sheet: EHS Training Platform │ Client: EHS Guru │ Runtime: About 2 months to live
+Run sheet: EHS Training Platform │ Client: EHS Guru │ Status: Live since May 2026
 
 - **Cue 01 · What EHS Guru needed.** EHS Guru is an environment, health and safety company that creates its own courses and teaches them live on Zoom, in batches of nearly 80 learners. Their off-the-shelf learning platform came loaded with features they never used, at a price to match, under someone else's brand. They wanted only the core, on their own domain, so they decided to build their own and came to us. (Founder, 2026-09-29.)
 - **Cue 02 · What made it hard.** The class itself happens inside Zoom, so attendance and recordings have to be rebuilt from Zoom's notifications, which can arrive late, twice or out of order.
@@ -80,7 +80,7 @@ Start with a 30-minute call about your idea.
 
 ## 06 · Result
 
-**LIVE SINCE MAY 2026**, about 2 months after the build started.
+**LIVE SINCE MAY 2026**. (No build time stated: founder, 2026-09-29.)
 
 - Classes: Runs EHS Guru's paid live classes, in batches of nearly 80.
 - Brand: On their own domain, under their own name.

@@ -86,7 +86,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Industry", "Environment, health and safety training"],
         ["Service", "Web platform design and development"],
         ["Stack", "Next.js · Supabase · Zoom"],
-        ["Timeline", "About 2 months to live"],
       ],
       foot: ["Access: admin · trainer · learner · guest", "On our maintenance plan"],
     },
@@ -100,7 +99,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     seo: {
       title: "EHS Training Platform: live Zoom classes on their own platform | Ship Thesis case study",
       description:
-        "How we built EHS Guru's custom training platform in about 2 months: one-click Zoom classes, automatic attendance, every class recorded, and free webinars that bring in new learners.",
+        "How we built EHS Guru's custom training platform: one-click Zoom classes, automatic attendance, every class recorded, and free webinars that bring in new learners.",
     },
   },
   {
@@ -118,7 +117,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Industry", "Social media marketing"],
         ["Service", "Product design, build and launch"],
         ["Stack", "Next.js · Supabase · Gemini"],
-        ["Timeline", "11 weeks"],
       ],
     },
     stamp: { status: "Live · poststeady.com", variant: "dateline" },
@@ -131,7 +129,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     seo: {
       title: "Poststeady: client reports from the files freelancers already export | Ship Thesis case study",
       description:
-        "How we built Poststeady, our own product, in 11 weeks: 175 column names matched to the right metric, an AI summary that quotes only real figures, and a branded PDF or share link.",
+        "How we built Poststeady, our own product: 175 column names matched to the right metric, an AI summary that quotes only real figures, and a branded PDF or share link.",
     },
   },
   {
@@ -149,7 +147,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Industry", "Consumer software, display tools"],
         ["Service", "Product design, build and release"],
         ["Stack", "C# \u00b7 .NET \u00b7 WPF"],
-        ["Timeline", "About 10 weeks"],
       ],
     },
     stamp: { status: "LIVE \u00b7 chromalayer.app", variant: "osd" },
@@ -167,7 +164,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     seo: {
       title: "ChromaLayer: seven colour controls that stay applied | Ship Thesis case study",
       description:
-        "How we built ChromaLayer, our own Windows app, in about 10 weeks: seven colour controls for a laptop\u2019s built-in screen, re-applied after every restart, sleep and sign-in.",
+        "How we built ChromaLayer, our own Windows app: seven colour controls for a laptop\u2019s built-in screen, re-applied after every restart, sleep and sign-in.",
     },
   },
 ];

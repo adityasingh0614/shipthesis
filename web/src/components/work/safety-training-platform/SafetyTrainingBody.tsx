@@ -91,7 +91,7 @@ export function SafetyTrainingBody() {
                 Client<b>EHS Guru</b>
               </div>
               <div>
-                Runtime<b>About 2 months to live</b>
+                Status<b>Live since May 2026</b>
               </div>
             </div>
             {[
@@ -290,7 +290,6 @@ export function SafetyTrainingBody() {
                 <br />
                 May 2026
               </div>
-              <p className={styles.bigLine}>about 2 months after the build started.</p>
             </Reveal>
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
