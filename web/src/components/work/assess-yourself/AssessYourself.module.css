@@ -194,7 +194,7 @@
 .phones {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: start;
+  align-items: end;
   gap: clamp(20px, 4vw, 56px);
   max-width: 980px;
   margin: 72px auto 0;
@@ -207,7 +207,7 @@
 .phone:nth-child(1) img {
   rotate: -4deg;
 }
-.phone:nth-child(1), .phone:nth-child(3) { margin-top: 48px; }
+.phone:nth-child(2) { margin-bottom: 48px; }
 .phone:nth-child(3) img {
   rotate: 4deg;
 }
@@ -1003,7 +1003,7 @@
     max-width: 280px;
     gap: 56px;
   }
-  .phone:nth-child(1), .phone:nth-child(3) { margin-top: 0; }
+  .phone:nth-child(2) { margin-bottom: 0; }
 }
 @media (max-width: 600px) {
   .q {
