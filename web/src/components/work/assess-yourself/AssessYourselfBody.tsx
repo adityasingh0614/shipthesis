@@ -132,7 +132,7 @@ export function AssessYourselfBody() {
             {[
               { src: "exam-list.webp", w: 1000, h: 2064, cap: "Exam list", line: "UPSC, SSC, RRB and IBPS in one place.", alt: "Student corner listing central government exams: UPSC, SSC, RRB and IBPS" },
               { src: "exam-categories.webp", w: 1000, h: 2068, cap: "Exam categories", line: "Central, state and PSU, sorted the way students think.", alt: "Exam categories: central government, state and PSU" },
-              { src: "a7.webp", w: 1000, h: 2064, cap: "Exam details", line: "Details, notices and study material before the paper.", alt: "Exam details with tabs for exam details, advertisements and study material" },
+              { src: "a11.png", w: 1000, h: 2064, cap: "Exam details", line: "Details, notices and study material before the paper.", alt: "Exam details with tabs for exam details, advertisements and study material" },
             ].map((p, i) => (
               <Reveal key={p.src} delay={i * 0.12} className={styles.phone}>
                 <figure className={p.crop ? styles.crop : undefined}>
