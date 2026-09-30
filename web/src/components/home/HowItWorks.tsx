@@ -11,7 +11,8 @@ const STEPS = [
     label: "Discovery call",
     when: "Day 1 · 30 minutes",
     body: "We learn what you're building, what you need, and whether we're the right fit. Then we turn it into a clear scope, wireframes, timeline, and milestones.",
-    img: "/discovery-call.png"
+    img: "/discovery-call.webp",
+    imgAlt: "A booking screen for a 30-minute discovery call: pick a day, then a time.",
   },
   {
     label: "Design",
@@ -74,18 +75,17 @@ export function HowItWorks() {
               }}
             >
               {step.img ? (
-                <div style={{ position: "relative", width: "100%", marginBottom: "24px" }}>
-                  <img 
-                    src={step.img} 
-                    alt={step.label} 
-                    style={{ 
-                      width: "100%", 
-                      height: "auto", 
-                      display: "block",
-                      transform: "scale(1.15)",
-                      transformOrigin: "center center"
-                    }} 
-                  />
+                <div className={`${styles.visual} ${styles.hasImg}`}>
+                  <div className={styles.frame}>
+                    <Image
+                      src={step.img}
+                      alt={step.imgAlt ?? ""}
+                      width={1672}
+                      height={941}
+                      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 380px"
+                      className={styles.shot}
+                    />
+                  </div>
                   {i % 3 !== 2 && (
                     <svg
                       className={styles.arrow}

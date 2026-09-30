@@ -62,7 +62,20 @@
 .visual.hasImg {
   border: none;
   background: none;
+}
+/* The frame clips the picture; the arrow sits outside it, in the gap. */
+.frame {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
+  border-radius: var(--radius-card);
+  /* Matches the screenshot's own soft background, so the letterbox is invisible. */
+  background: #f6faf8;
+}
+.shot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Sits in the gap between cards in a row, level with the visual. */
