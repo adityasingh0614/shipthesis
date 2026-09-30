@@ -130,7 +130,7 @@ export function AssessYourselfBody() {
           </p>
           <div className={styles.phones}>
             {[
-              { src: "exam-list.webp", w: 1000, h: 2064, cap: "Exam list", line: "UPSC, SSC, RRB and IBPS in one place.", alt: "Student corner listing central government exams: UPSC, SSC, RRB and IBPS" },
+              { src: "exam-list.webp", w: 1000, h: 2064, cap: "Exam list", line: "UPSC, SSC, RRB and IBPS in one place.", alt: "Student corner listing central government exams: UPSC, SSC, RRB and IBPS", crop: true },
               { src: "exam-categories.webp", w: 1000, h: 2068, cap: "Exam categories", line: "Central, state and PSU, sorted the way students think.", alt: "Exam categories: central government, state and PSU" },
               { src: "exam-details.webp", w: 1000, h: 1406, cap: "Exam details", line: "Details, notices and study material before the paper.", alt: "Exam details with tabs for exam details, advertisements and study material", crop: true },
             ].map((p, i) => (
