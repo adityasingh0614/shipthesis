@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   background: var(--surface-alt);
 }
 
@@ -60,11 +60,7 @@
     border-color 200ms ease-out,
     box-shadow 200ms ease-out;
 }
-.cell:hover .card {
-  transform: translateY(-4px);
-  border-color: var(--green);
-  box-shadow: 0 14px 28px -18px rgb(15 26 20 / 0.35);
-}
+
 
 .visual {
   position: relative;
@@ -157,3 +153,4 @@
     aspect-ratio: 560 / 260;
   }
 }
+

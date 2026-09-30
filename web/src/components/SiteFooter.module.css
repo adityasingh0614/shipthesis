@@ -1,0 +1,173 @@
+.footer {
+  padding: var(--section-py) var(--gutter) clamp(32px, 5vw, 64px);
+  margin-top: 0;
+  width: 100%;
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+  border-top: none;
+}
+
+.box {
+  position: relative;
+}
+
+.topGrid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .topGrid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 48px;
+  }
+}
+
+.brandCol {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .brandCol {
+    grid-column: span 2;
+  }
+}
+
+.brandHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.brandDesc {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.socialRow {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  transition: all 200ms ease;
+}
+
+.socialIcon:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.linksContainer {
+  grid-column: span 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .linksContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .linksContainer {
+    grid-column: span 3;
+  }
+}
+
+.colTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link svg {
+  color: var(--ink-muted);
+}
+
+.link:hover {
+  color: var(--ink);
+}
+
+.bottomRow {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .bottomRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 0.75rem;
+}
+
+.legalLink {
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.legalLink:hover {
+  color: var(--ink);
+}

@@ -1,85 +1,210 @@
-.section {
+.wrapper {
   background: var(--surface-alt);
+  padding: var(--section-py) 0;
 }
 
-.inner {
-  max-width: 560px;
+.section {
+  padding: 0 var(--gutter);
+  width: 100%;
+  max-width: var(--max);
   margin: 0 auto;
-  padding: var(--section-py) var(--gutter);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.headerTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.headerSub {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.leftCol {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-/* Section headings are centred site-wide (CLAUDE.md). */
-.head {
-  text-align: center;
+  gap: 32px;
 }
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4.6vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ink);
   text-transform: uppercase;
-  text-wrap: balance;
 }
 
 .lede {
-  max-width: 44ch;
-  margin: 14px auto 0;
-  font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+  font-size: 1.125rem;
   color: var(--ink-soft);
+  line-height: 1.5;
+  max-width: 480px;
+}
+
+.buttonPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--green);
+  color: var(--surface);
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 200ms ease;
+  width: fit-content;
+}
+
+.buttonPrimary:hover {
+  background: var(--ink);
+  transform: translateY(-2px);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 16px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+  border-left: 1px dashed var(--line);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.stepNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.stepText {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: clamp(32px, 5vw, 48px);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.divider {
+  border-bottom: 1px dashed var(--line);
+  margin-bottom: 32px;
 }
 
 .methods {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  width: 100%;
-  margin-top: clamp(32px, 4vw, 44px);
-  padding: clamp(22px, 2.6vw, 30px);
-  background: var(--surface);
-  border: 2px solid var(--line);
-  border-radius: var(--radius-card);
+  gap: 24px;
   list-style: none;
 }
 
 .method {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
 }
 
-.icon {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+.methodIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
   background: var(--surface-alt);
-  color: var(--green);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink-muted);
+}
+
+.methodContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .methodLabel {
-  display: block;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--ink-soft);
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .methodValue {
-  display: block;
-  margin-top: 2px;
-  font-weight: 700;
-}
-a.methodValue:hover {
-  color: var(--green);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 200ms ease;
 }
 
-.section > .inner > .btn,
-.inner a.btn {
-  margin-top: clamp(24px, 3vw, 32px);
+a.methodValue:hover {
+  color: var(--green);
 }

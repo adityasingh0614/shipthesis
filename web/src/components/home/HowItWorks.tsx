@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -9,38 +9,48 @@ import styles from "./HowItWorks.module.css";
 const STEPS = [
   {
     label: "Discovery call",
-    when: "Day 1 · 30 minutes",
+    when: "Day 1 - 30 minutes",
     body: "We learn what you're building, what you need, and whether we're the right fit. Then we turn it into a clear scope, wireframes, timeline, and milestones.",
-    img: "/discovery-call.webp",
-    imgAlt: "A booking screen for a 30-minute discovery call: pick a day, then a time.",
+    img: "/How it works/step1.webp",
+    imgAlt: "Discovery call illustration",
   },
   {
     label: "Design",
     when: "Before each screen is built",
     body: "We design the screens your users will see, then get your approval before development begins.",
     weekly: true,
+    img: "/How it works/step2.webp",
+    imgAlt: "Design step illustration",
   },
   {
     label: "Development",
-    when: "Weeks 2 onward · Every week",
+    when: "Weeks 2 onward - Every week",
     body: "You get a new working build on your phone every week, with progress tied to the agreed milestones.",
     weekly: true,
+    img: "/How it works/step3.webp",
+    imgAlt: "Development step illustration",
   },
   {
     label: "Testing",
     when: "Every week + before submission",
     body: "Every build is tested before it reaches you, with full end-to-end testing before submission.",
     weekly: true,
+    img: "/How it works/step4.webp",
+    imgAlt: "Testing step illustration",
   },
   {
     label: "Store submission",
     when: "End of build",
     body: "We handle the App Store and Play Store submission, including the review process.",
+    img: "/How it works/step5.webp",
+    imgAlt: "Store submission step illustration",
   },
   {
     label: "Launch",
     when: "Launch day",
     body: "Your app, live on the App Store and Play Store.",
+    img: "/How it works/step6.webp",
+    imgAlt: "Launch step illustration",
   },
 ];
 
@@ -203,3 +213,6 @@ export function HowItWorks() {
     </section>
   );
 }
+
+
+
