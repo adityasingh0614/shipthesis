@@ -27,6 +27,9 @@ export function Fight() {
   const filter = `cl-scr-${uid}`;
 
   useEffect(() => {
+    // Scrollspy: narrowed down to a 1% sliver exactly in the middle of the
+    // screen (-49% to -50%). Because the cues are stacked, this ensures
+    // only one cue intersects at a time, preventing skips when fast-scrolling.
     const seen = new Set<number>();
     const io = new IntersectionObserver(
       (entries) => {
@@ -35,9 +38,9 @@ export function Fight() {
           if (e.isIntersecting) seen.add(i);
           else seen.delete(i);
         }
-        if (seen.size) setActive(Math.max(...seen));
+        if (seen.size) setActive(Math.min(...seen));
       },
-      { rootMargin: "0px 0px -45% 0px", threshold: 0 },
+      { rootMargin: "-49% 0px -50% 0px", threshold: 0 },
     );
     refs.current.forEach((el) => el && io.observe(el));
     return () => io.disconnect();

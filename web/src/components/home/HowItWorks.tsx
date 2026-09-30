@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import styles from "./HowItWorks.module.css";
 
@@ -10,6 +11,7 @@ const STEPS = [
     label: "Discovery call",
     when: "Day 1 · 30 minutes",
     body: "We learn what you're building, what you need, and whether we're the right fit. Then we turn it into a clear scope, wireframes, timeline, and milestones.",
+    img: "/discovery-call.png"
   },
   {
     label: "Design",
@@ -71,28 +73,60 @@ export function HowItWorks() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              {/* Placeholder until real visuals arrive. */}
-              <div className={styles.visual}>
-                <span>{step.label} visual</span>
-                {i % 3 !== 2 && (
-                  <svg
-                    className={styles.arrow}
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M4 12h15m-5-5 5 5-5 5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                )}
-              </div>
+              {step.img ? (
+                <div style={{ position: "relative", width: "100%", marginBottom: "24px" }}>
+                  <img 
+                    src={step.img} 
+                    alt={step.label} 
+                    style={{ 
+                      width: "100%", 
+                      height: "auto", 
+                      display: "block",
+                      transform: "scale(1.15)",
+                      transformOrigin: "center center"
+                    }} 
+                  />
+                  {i % 3 !== 2 && (
+                    <svg
+                      className={styles.arrow}
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 12h15m-5-5 5 5-5 5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </div>
+              ) : (
+                <div className={styles.visual}>
+                  {i % 3 !== 2 && (
+                    <svg
+                      className={styles.arrow}
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 12h15m-5-5 5 5-5 5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </div>
+              )}
 
               <span className={styles.badge}>
                 Step {String(i + 1).padStart(2, "0")}

@@ -54,12 +54,15 @@
   place-items: center;
   width: 100%;
   aspect-ratio: 16 / 10;
-  border: 2px dashed var(--line);
   border-radius: var(--radius-card);
-  background: var(--surface-alt);
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   color: var(--ink-muted);
+}
+.visual.hasImg {
+  border: none;
+  background: none;
+  overflow: hidden;
 }
 
 /* Sits in the gap between cards in a row, level with the visual. */
