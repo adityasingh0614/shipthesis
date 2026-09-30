@@ -27,7 +27,9 @@ function HeaderContents() {
     <>
       <Link href="/" className={styles.wordmark} aria-label="Ship Thesis, home">
         <motion.span style={{ scale: wordmarkScale }} className={styles.wordmarkText}>
-          Ship Thesis
+          {/* Decorative: the link's aria-label already names it. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo/logo-light.svg" alt="" width={143} height={40} className={styles.logo} />
         </motion.span>
       </Link>
 
