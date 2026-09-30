@@ -35,7 +35,7 @@ export default function Home() {
           phone every week, and code you own.
         </p>
         <div className={styles.actions}>
-          <Link href="/#contact" className={`btn ${styles.primary}`}>
+          <Link href="/#contact" className="btn">
             Book a Discovery Call
           </Link>
           <Link href="/#work" className={`btn ${styles.secondary}`}>
