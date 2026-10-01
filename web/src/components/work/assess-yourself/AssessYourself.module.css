@@ -260,7 +260,7 @@
   display: grid;
   grid-template-columns: 36px 1fr;
   align-content: center;
-  min-height: 70vh;
+  min-height: 50vh;
   gap: 18px;
   padding: 40px 0;
   border-bottom: 1px solid #e3e8e4;
@@ -271,6 +271,7 @@
 @media (min-width: 861px) {
   :global(html):has(.day) {
     scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
   }
   .step {
     scroll-snap-align: center;
