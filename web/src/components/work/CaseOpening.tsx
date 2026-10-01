@@ -96,7 +96,7 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
             width={hero.width}
             height={hero.height}
             alt={hero.alt}
-            sizes={live ? "(max-width: 959px) 90vw, 620px" : "(max-width: 959px) 420px, 560px"}
+            sizes="100vw"
             priority
           />
         ) : (

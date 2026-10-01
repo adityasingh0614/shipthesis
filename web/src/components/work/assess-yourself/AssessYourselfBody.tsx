@@ -102,10 +102,10 @@ export function AssessYourselfBody() {
           </Reveal>
           <ul className={styles.scores}>
             {[
-              ["3-4", "weeks to deliver the app to Aptellic"],
-              ["15", "REST APIs behind the content and tests"],
-              ["60+", "questions in a single timed paper"],
-              ["15", "day free trial, then Razorpay plans"],
+              ["3-4 weeks", "To deliver the app"],
+              ["2 Excel formats", "Turned into usable test content"],
+              ["60+ questions", "In a single timed paper"],
+              ["15-day trial", "Then paid plans"],
             ].map(([num, cap], i) => (
               <Reveal as="li" key={cap} delay={i * 0.09} className={styles.score}>
                 <div className={styles.num}>{num}</div>
@@ -136,7 +136,7 @@ export function AssessYourselfBody() {
             ].map((p, i) => (
               <Reveal key={p.src} delay={i * 0.12} className={styles.phone}>
                 <figure className={p.crop ? styles.crop : undefined}>
-                  <Image src={`/work/assess-yourself/${p.src}`} width={p.w} height={p.h} alt={p.alt} sizes="(max-width: 719px) 280px, 300px" />
+                  <Image src={`/work/assess-yourself/${p.src}`} width={p.w} height={p.h} alt={p.alt} sizes="100vw" />
                 </figure>
                 <div className={styles.pcap}>
                   <small>{p.cap}</small>
@@ -183,6 +183,11 @@ export function AssessYourselfBody() {
               </Reveal>
             ))}
           </ol>
+          <Reveal delay={0.16}>
+            <div className={styles.excelPh} role="img" aria-label="Placeholder: Messy Excel to clean test flow">
+              Visual: Messy Excel → Validation → Clean Test
+            </div>
+          </Reveal>
           <p className={styles.pipeNote}>
             The content team uploads a file. Anything that needs fixing is
             flagged by row; every other question goes live. That&apos;s how new
@@ -205,9 +210,9 @@ export function AssessYourselfBody() {
               <span>Why it matters to you</span>
             </div>
             {[
-              ["Q1 · Reliability", "Tests that survive interruptions", "A long timed paper can't start over because the phone closed the app.", "Answers, review marks and elapsed time are saved on the phone after every tap.", "Students never lose a paper they've half finished."],
-              ["Q2 · Content", "Messy spreadsheets in", "Question files came in two layouts, with Marathi numerals and image options.", "One importer reads both and flags bad rows without stopping the rest.", "New exams go live from one upload, not weeks of retyping."],
-              ["Q3 · Payments", "One source of truth for plans", "Trial and plan status could disagree between the phone and the server.", "The server decides who's on a trial or a plan; the app only shows it.", "Every student always sees the right plan."],
+              ["Problem 01", "Two Excel formats", "Question files came in two distinct column layouts, sometimes switching mid-archive.", "One importer reads both automatically without needing manual reformatting.", "New exams go live directly from the team's existing spreadsheets."],
+              ["Problem 02", "Marathi numerals + image answers", "Subjects used regional numerals, and complex maths relied on image-based answers.", "The parser treats images as valid answer choices and handles local numeral parsing.", "Every subject can be imported and tested, not just English text."],
+              ["Problem 03", "Test must survive app closure", "Android aggressively kills background apps, which would wipe a 60-question test.", "The app commits state to local storage on every tap, instantly.", "A student can reopen a closed app and carry on exactly where they left off."],
             ].map(([tag, title, problem, did, win], i) => (
               <Reveal key={title} delay={i * 0.1} className={styles.row}>
                 <div className={styles.rowTitle}>
@@ -259,8 +264,8 @@ export function AssessYourselfBody() {
           </Head>
           <ul className={styles.decisions}>
             {[
-              ["Decision 01", "Recurring auto-pay, held back", "The renewal model wasn't decided yet, so we didn't hard-code a billing flow the client hadn't chosen."],
-              ["Decision 02", "An importer that stops at row one", "Real files would fail it on the first bad row. Ours reports every bad row and keeps going."],
+              ["Decision 01", "Recurring auto-pay", "We deliberately left this out of v1 because it wasn't necessary to validate the core product. A simple one-time payment flow was enough for launch."],
+              ["Decision 02", "A custom question CMS", "Instead of building a massive custom dashboard to type out questions, we built an importer for the Excel files the team already used. This saved weeks of dev time and training."],
             ].map(([tag, title, why], i) => (
               <Reveal as="li" key={title} delay={i * 0.14} className={styles.decision}>
                 <small>{tag}</small>
@@ -279,7 +284,7 @@ export function AssessYourselfBody() {
             07 · Result
           </p>
           <div className={styles.result}>
-            <Reveal>
+            <Reveal className={styles.resultLeft}>
               <div className={styles.big}>
                 3-4
                 <br />
@@ -315,16 +320,11 @@ export function AssessYourselfBody() {
               </div>
             </summary>
             <div className={styles.hoodBody}>
-              <ul className={styles.arch}>
-                <li>Flutter app</li>
-                <li>15 REST APIs</li>
-                <li>Express on Firebase Functions</li>
-                <li>Firestore</li>
-              </ul>
-              <ul className={styles.archSide}>
-                <li>Excel importer</li>
-                <li>Razorpay payments</li>
-                <li>Test state saved on the phone</li>
+              <ul className={styles.flow}>
+                <li>The test resumes exactly where you left off<small>Test state saved locally</small></li>
+                <li>Trial access is controlled securely<small>Server-side trial rules</small></li>
+                <li>Excel errors are caught row by row<small>Row-level import validation</small></li>
+                <li>The app talks to a dedicated backend<small>Express · Firebase Functions</small></li>
               </ul>
               <ol className={styles.decis}>
                 <li><b>Trial rules live on the server.</b> The app never decides who is on a trial.</li>
@@ -386,9 +386,9 @@ export function AssessYourselfBody() {
             </p>
             <ol className={styles.points}>
               {[
-                ["i.", "We plan for how people really use your app", "Students close apps mid-exam, so the app saves every answer as they go."],
-                ["ii.", "We build around the data you already have", "Aptellic kept its questions in Excel, so the upload reads their files instead of asking them to retype."],
-                ["iii.", "We don't build decisions you haven't made", "Auto-pay was held back while the renewal model was still undecided."],
+                ["i.", "We ship the core first", "3–4 weeks to a working product, not months of empty updates."],
+                ["ii.", "We design around real failure points", "A test shouldn't disappear because a phone closed or the OS paused the app."],
+                ["iii.", "We build for the next version, not just the first demo", "The architecture supports new exams, tests and content without rebuilding the app."],
               ].map(([n, title, body]) => (
                 <li key={n} className={styles.point}>
                   <small>{n}</small>
@@ -444,7 +444,7 @@ export function AssessYourselfBody() {
                   width={1400}
                   height={824}
                   alt="EHS Training Platform: the admin training sessions list"
-                  sizes="(max-width: 859px) 90vw, 600px"
+                  sizes="100vw"
                 />
               </div>
             </Link>

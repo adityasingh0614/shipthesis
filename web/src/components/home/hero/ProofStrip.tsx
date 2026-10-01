@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { caseStudyHref } from "@/content/case-studies";
 import type { CSSProperties, ReactNode } from "react";
 import styles from "./ProofStrip.module.css";
@@ -13,6 +14,7 @@ const APPS = [
     type: "SaaS",
     status: "Live",
     slug: "poststeady",
+    iconSrc: "/logo/poststeady-logo-full.svg",
   },
   {
     name: "EHS Training Platform",
@@ -21,6 +23,7 @@ const APPS = [
     type: "Web platform",
     status: "Live",
     slug: "safety-training-platform",
+    iconSrc: "/logo/ehs_logo.png",
   },
   {
     name: "ChromaLayer",
@@ -29,6 +32,7 @@ const APPS = [
     type: "Windows app",
     status: "Live",
     slug: "chromalayer",
+    iconSrc: "/logo/ChromaLayer_256x256.png",
   },
   {
     name: "Assess Yourself",
@@ -37,6 +41,7 @@ const APPS = [
     type: "Mobile app",
     status: "Delivered, launching soon",
     slug: "assess-yourself",
+    iconSrc: "/logo/ay_logo.webp",
   },
 ];
 
@@ -75,10 +80,27 @@ export function ProofStrip() {
               <Tile href={href} tip={tip}>
                 <span
                   className={styles.icon}
-                  style={{ "--app": a.color } as CSSProperties}
+                  style={!a.iconSrc ? ({ "--app": a.color } as CSSProperties) : { boxShadow: 'none', background: 'transparent' }}
                   aria-hidden="true"
                 >
-                  {a.mark}
+                  {a.iconSrc ? (
+                    <Image 
+                      src={a.iconSrc} 
+                      alt="" 
+                      width={52} 
+                      height={52} 
+                      style={{ 
+                        objectFit: 'contain', 
+                        width: '100%', 
+                        height: '100%', 
+                        borderRadius: 'inherit',
+                        mixBlendMode: a.slug !== 'chromalayer' ? 'multiply' : 'normal',
+                        transform: a.slug === 'safety-training-platform' ? 'scale(1.8)' : (a.slug !== 'chromalayer' ? 'scale(1.3)' : 'none')
+                      }} 
+                    />
+                  ) : (
+                    a.mark
+                  )}
                 </span>
                 <span className={styles.name}>{a.name}</span>
                 <span id={tip} role="tooltip" className={styles.tip}>

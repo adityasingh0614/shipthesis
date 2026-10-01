@@ -60,7 +60,7 @@ export function GoLive() {
           width={1400}
           height={824}
           alt="Admin training sessions list"
-          sizes="(max-width: 900px) 90vw, 600px"
+          sizes="100vw"
         />
         <p className={styles.clock} aria-hidden="true">
           Class clock <b>{STEPS[active].tc.toUpperCase()}</b>

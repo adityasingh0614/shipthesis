@@ -250,7 +250,7 @@ export function PoststeadyBody() {
             06 · Result
           </p>
           <div className={styles.result}>
-            <Reveal>
+            <Reveal className={styles.resultLeft}>
               <div className={styles.big}>Live</div>
               <p className={styles.bigLine}>in 11 weeks.</p>
             </Reveal>

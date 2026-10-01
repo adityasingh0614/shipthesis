@@ -1,0 +1,7 @@
+<svg viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Poststeady" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#1A5BFA">
+    <path d="M88 72h250c66 0 112 42 112 103s-46 103-112 103H88V72zm82 76v54h168c22 0 36-11 36-27s-14-27-36-27H170z" />
+    <path d="M88 310h108L88 418V310z" />
+    <circle cx="330" cy="378" r="40" />
+  </g>
+</svg>

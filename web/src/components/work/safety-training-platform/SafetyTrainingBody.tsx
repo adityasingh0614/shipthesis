@@ -142,7 +142,7 @@ export function SafetyTrainingBody() {
           <div className={styles.grid4}>
             {[
               { src: "sessions.webp", who: "Admin", strong: "One-click classes.", line: "Schedule a session and the Zoom meeting is created for you.", alt: "Admin training sessions list with Start Session buttons" },
-              { src: "trainer.webp", who: "Trainer", strong: "Your classes, your students.", line: "See who attended, review assignments, and find your recordings in one place.", alt: "Trainer dashboard showing class roster and assignments" },
+              { src: "trainer1.webp", who: "Trainer", strong: "Your classes, your students.", line: "See who attended, review assignments, and find your recordings in one place.", alt: "Trainer dashboard showing class roster and assignments" },
               { src: "learner.webp", who: "Learner", strong: "Join from the portal.", line: "Nothing to install, no Zoom sign-up. Your progress, recordings and assignments in one place.", alt: "Learner dashboard with progress, upcoming sessions and recordings" },
               { src: "users.webp", who: "Admin", strong: "Everyone in one place.", line: "Roles, batches and bulk CSV import.", alt: "Admin user management with roles and CSV import" },
               { src: "webinars.webp", who: "Guest", strong: "Free webinars.", line: "Sign up without an account, get reminders, come back as a learner.", alt: "Free sessions portal for webinar guests" },
@@ -154,7 +154,7 @@ export function SafetyTrainingBody() {
                     width={1400}
                     height={824}
                     alt={a.alt}
-                    sizes="(max-width: 760px) 90vw, 530px"
+                    sizes="100vw"
                   />
                   <figcaption className={styles.audCap}>
                     <small>{a.who}</small>
@@ -287,7 +287,7 @@ export function SafetyTrainingBody() {
             06 · Result
           </p>
           <div className={styles.result}>
-            <Reveal>
+            <Reveal className={styles.resultLeft}>
               <div className={styles.big}>
                 Live since
                 <br />

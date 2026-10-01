@@ -2,7 +2,6 @@
 
 import { useId, useState } from "react";
 import { DIALS, PRESETS, feValues, type PresetName, type Profile } from "./engine";
-import { SceneDefs } from "./Scene";
 import styles from "./ChromaLayer.module.css";
 
 const SWATCH: Record<PresetName, string> = {
@@ -29,21 +28,23 @@ export function Lab() {
     <div className={styles.lab}>
       <div>
         <div className={styles.compare} style={{ "--x": `${x}%` } as React.CSSProperties}>
-          <svg viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <SceneDefs uid={`${uid}a`} />
-          </svg>
-          <svg
-            className={styles.after}
-            style={held ? { clipPath: "inset(0 0 0 100%)" } : undefined}
-            viewBox="0 0 1600 849" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          {/* Before: the scene unfiltered */}
+          <svg viewBox="0 0 1600 849" aria-hidden="true">
             <defs>
               <filter id={filter} colorInterpolationFilters="sRGB">
                 <feColorMatrix type="matrix" values={feValues(p)} />
               </filter>
             </defs>
-            <g filter={`url(#${filter})`}>
-              <SceneDefs uid={`${uid}b`} />
-            </g>
+            <image href="/logo/scene-source.jpg" width="1600" height="849" />
+          </svg>
+          {/* After: same scene with the colour filter applied, clipped to the right of the divider */}
+          <svg
+            viewBox="0 0 1600 849"
+            className={styles.after}
+            style={held ? { clipPath: "inset(0 0 0 100%)" } : undefined}
+            aria-label={`After · ${preset ? preset[0].toUpperCase() + preset.slice(1) : "Custom"}`}
+          >
+            <image href="/logo/scene-source.jpg" width="1600" height="849" filter={`url(#${filter})`} />
           </svg>
           <span className={styles.divider} aria-hidden="true" />
           <span className={`${styles.tag} ${styles.tagA}`}>Before</span>

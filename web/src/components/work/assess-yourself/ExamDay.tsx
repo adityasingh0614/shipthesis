@@ -15,6 +15,8 @@ const STEPS = [
   { key: "F", when: "Submit", title: "Instant analysis", body: "Score, rank, accuracy and time per question straight away, with every past test kept in the history." },
 ];
 
+// The analytics phone stays pinned while the steps scroll past; the step
+// crossing the middle of the screen fills its answer-sheet bubble.
 export function ExamDay() {
   const [active, setActive] = useState(0);
   const listRef = useRef<HTMLOListElement | null>(null);

@@ -382,7 +382,7 @@ export function ChromaLayerBody() {
                   width={next.hero.width}
                   height={next.hero.height}
                   alt=""
-                  sizes="(max-width: 860px) 90vw, 520px"
+                  sizes="100vw"
                 />
               )}
             </Link>
