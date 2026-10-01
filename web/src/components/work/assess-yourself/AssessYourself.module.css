@@ -236,15 +236,21 @@
 
 /* ---- 03 · exam day ---- */
 .day {
-  display: grid;
-  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(40px, 7vw, 120px);
+  position: relative;
   margin-top: 72px;
 }
-.pin {
+.sticky {
   position: sticky;
-  top: calc(var(--nav-h) + 48px);
+  top: var(--nav-h);
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 120px);
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
+  overflow: hidden;
+}
+.pin {
   display: flex;
   justify-content: center;
 }
@@ -253,15 +259,21 @@
   height: auto;
   filter: drop-shadow(0 22px 34px rgb(15 26 20 / 0.18));
 }
+.track {
+  height: 250px;
+}
 .steps {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
 }
 .step {
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 18px;
-  padding: 40px 0;
-  border-bottom: 1px solid #e3e8e4;
+  flex: 0 0 100%;
   opacity: 0.32;
   transition: opacity 500ms ease-out;
 }
