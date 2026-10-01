@@ -65,7 +65,7 @@ export function ExamDay() {
         {STEPS.map((s, i) => (
           <li
             key={s.key}
-            className={`${styles.step} ${i <= active ? styles.done : ""} ${i === active ? styles.active : ""}`}
+            className={`${styles.step} ${i === active ? styles.active : ""}`}
           >
             <span className={styles.bubble} aria-hidden="true">
               {s.key}
