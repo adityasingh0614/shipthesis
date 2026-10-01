@@ -131,10 +131,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     stamp: { status: "Live · poststeady.com", variant: "dateline" },
     liveHref: "https://www.poststeady.com",
     hero: {
-      placeholder:
-        "Finished report, page 1, fanned over the upload screen (made-up client, once captured)",
+      src: "/work/poststeady/hero.webp",
+      width: 1440,
+      height: 900,
+      alt: "Poststeady: Finished report, page 1, fanned over the upload screen",
     },
-    hiddenOnProduction: true,
     seo: {
       title: "Poststeady: client reports from the files freelancers already export | Ship Thesis case study",
       description:

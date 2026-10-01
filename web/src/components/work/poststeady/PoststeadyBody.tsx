@@ -251,8 +251,11 @@ export function PoststeadyBody() {
           </p>
           <div className={styles.result}>
             <Reveal className={styles.resultLeft}>
-              <div className={styles.big}>Live</div>
-              <p className={styles.bigLine}>in 11 weeks.</p>
+              <div className={styles.big}>
+                Live since
+                <br />
+                September 2026
+              </div>
             </Reveal>
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
@@ -358,8 +361,8 @@ export function PoststeadyBody() {
               ))}
             </ol>
             <p className={styles.sum}>
-              The same approach goes into every product we build: <b>clear scope</b>, <b>working builds every week</b>, and{" "}
-              <b>code you own</b>.
+              The same approach goes into every product we build: <b>Clear scope.</b> <b>Weekly builds.</b>{" "}
+              <b>Code you own.</b>
             </p>
           </Reveal>
           <div className={styles.finalActions}>

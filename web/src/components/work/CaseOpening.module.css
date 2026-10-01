@@ -313,6 +313,9 @@
 }
 
 /* ---- Poststeady: a proof sheet (web/public/_design/poststeady.html) ---- */
+.proof .shot img {
+  mix-blend-mode: multiply;
+}
 /* Printer's crop marks at the card's four corners, in place of the lanyard
    slot; the status is a dateline whose dot doesn't pulse. */
 .proof .card::before,
