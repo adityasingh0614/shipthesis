@@ -259,11 +259,24 @@
 .step {
   display: grid;
   grid-template-columns: 36px 1fr;
+  align-content: center;
+  min-height: 70vh;
   gap: 18px;
   padding: 40px 0;
   border-bottom: 1px solid #e3e8e4;
   opacity: 0.32;
   transition: opacity 500ms ease-out;
+}
+
+@media (min-width: 861px) {
+  :global(html):has(.day) {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  .step {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
 }
 .step:first-child {
   padding-top: 8px;
