@@ -43,8 +43,9 @@ export function ExamDay() {
             width={964}
             height={1990}
             alt="Analytics after a test: tests taken, average rank, accuracy, percentile and time per question"
-          sizes="300px"
-        />
+            sizes="300px"
+          />
+        </div>
         <div className={styles.track}>
           <motion.ol
             className={styles.steps}
