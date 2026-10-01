@@ -21,26 +21,35 @@ const STEPS = [
 // crossing the upper half lights up and the class clock follows it.
 export function GoLive() {
   const [active, setActive] = useState(0);
-  const refs = useRef<(HTMLLIElement | null)[]>([]);
+  const listRef = useRef<HTMLOListElement | null>(null);
 
   useEffect(() => {
-    // Scrollspy: narrowed down to a 1% sliver exactly in the middle of the
-    // screen (-49% to -50%). Because the cues are stacked, this ensures
-    // only one cue intersects at a time, preventing skips when fast-scrolling.
-    const seen = new Set<number>();
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          const i = Number((e.target as HTMLElement).dataset.i);
-          if (e.isIntersecting) seen.add(i);
-          else seen.delete(i);
-        }
-        if (seen.size) setActive(Math.min(...seen));
-      },
-      { rootMargin: "-49% 0px -50% 0px", threshold: 0 },
-    );
-    refs.current.forEach((el) => el && io.observe(el));
-    return () => io.disconnect();
+    let raf = 0;
+
+    const update = () => {
+      raf = 0;
+      const list = listRef.current;
+      if (!list) return;
+      const r = list.getBoundingClientRect();
+      const line = window.innerHeight * 0.5;
+      const p = (line - r.top) / r.height;
+      const idx = Math.min(STEPS.length - 1, Math.max(0, Math.floor(p * STEPS.length)));
+      setActive(idx);
+    };
+
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
@@ -57,15 +66,11 @@ export function GoLive() {
           Class clock <b>{STEPS[active].tc.toUpperCase()}</b>
         </p>
       </div>
-      <ol className={styles.cues}>
+      <ol className={styles.cues} ref={listRef}>
         {STEPS.map((s, i) => (
           <li
             key={s.tc}
-            ref={(el) => {
-              refs.current[i] = el;
-            }}
-            data-i={i}
-            className={`${styles.step} ${i === active ? styles.on : ""}`}
+            className={`${styles.step} ${i <= active ? styles.done : ""} ${i === active ? styles.on : ""}`}
           >
             <span className={styles.tc}>{s.tc}</span>
             <div>

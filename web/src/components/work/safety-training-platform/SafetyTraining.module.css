@@ -719,6 +719,8 @@
 .step {
   display: grid;
   grid-template-columns: 88px 1fr;
+  align-content: center;
+  min-height: 50vh;
   gap: 18px;
   padding: 38px 0;
   border-bottom: 1px solid #e3e8e4;
@@ -728,8 +730,11 @@
 .step:first-child {
   padding-top: 4px;
 }
-.on {
+.done {
   opacity: 1;
+}
+.on h3 {
+  /* No additional active styling required beyond the opacity, but can add here if needed */
 }
 .tc {
   align-self: start;
@@ -745,7 +750,7 @@
     background-color 350ms ease-out,
     color 350ms ease-out;
 }
-.on .tc {
+.done .tc {
   background: var(--accent);
   color: #fff;
 }

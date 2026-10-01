@@ -259,6 +259,8 @@
 .step {
   display: grid;
   grid-template-columns: 36px 1fr;
+  align-content: center;
+  min-height: 50vh;
   gap: 18px;
   padding: 40px 0;
   border-bottom: 1px solid #e3e8e4;
@@ -268,8 +270,11 @@
 .step:first-child {
   padding-top: 8px;
 }
-.active {
+.done {
   opacity: 1;
+}
+.active h3 {
+  /* No additional active styling required beyond the opacity, but can add here if needed */
 }
 .bubble {
   display: grid;
@@ -286,7 +291,7 @@
     background-color 350ms ease-out,
     color 350ms ease-out;
 }
-.active .bubble {
+.done .bubble {
   background: var(--accent);
   color: #fff;
 }
