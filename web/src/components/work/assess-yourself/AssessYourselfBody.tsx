@@ -183,11 +183,7 @@ export function AssessYourselfBody() {
               </Reveal>
             ))}
           </ol>
-          <Reveal delay={0.16}>
-            <div className={styles.excelPh} role="img" aria-label="Placeholder: Messy Excel to clean test flow">
-              Visual: Messy Excel → Validation → Clean Test
-            </div>
-          </Reveal>
+
           <p className={styles.pipeNote}>
             The content team uploads a file. Anything that needs fixing is
             flagged by row; every other question goes live. That&apos;s how new
@@ -398,8 +394,8 @@ export function AssessYourselfBody() {
               ))}
             </ol>
             <p className={styles.sum}>
-              The same goes for your app: <b>a fixed quote</b> after a one-week
-              Discovery Sprint, <b>a new build on your phone every week</b>, and{" "}
+              The same goes for your app: <b>a clear scope</b>,{" "}
+              <b>a new working build every week</b>, and{" "}
               <b>code you own</b>.
             </p>
           </Reveal>
@@ -438,14 +434,28 @@ export function AssessYourselfBody() {
                   </svg>
                 </span>
               </div>
-              <div className={styles.nextImg}>
-                <Image
-                  src="/work/safety-training-platform/sessions.webp"
-                  width={1400}
-                  height={824}
-                  alt="EHS Training Platform: the admin training sessions list"
-                  sizes="100vw"
-                />
+              <div className={styles.nextImg} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {(() => {
+                  const shot = next?.hero && "src" in next.hero ? next.hero : null;
+                  return shot ? (
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt || "Next project"}
+                      width={shot.width}
+                      height={shot.height}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto", objectFit: "contain", maxHeight: "220px", transform: "scale(0.85)" }}
+                    />
+                  ) : (
+                    <Image
+                      src="/work/safety-training-platform/sessions.webp"
+                      width={1400}
+                      height={824}
+                      alt="EHS Training Platform: the admin training sessions list"
+                      sizes="100vw"
+                    />
+                  );
+                })()}
               </div>
             </Link>
           </Reveal>

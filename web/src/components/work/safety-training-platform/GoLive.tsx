@@ -71,6 +71,7 @@ export function GoLive() {
           <li
             key={s.tc}
             className={`${styles.step} ${i <= active ? styles.done : ""} ${i === active ? styles.on : ""}`}
+            
           >
             <span className={styles.tc}>{s.tc}</span>
             <div>

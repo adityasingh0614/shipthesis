@@ -1,11 +1,12 @@
-﻿.section {
+.section {
   background: var(--surface-alt);
 }
 
 .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: var(--section-py) var(--gutter);
+  padding: clamp(80px, 10vw, 140px) var(--gutter) var(--section-py);
+  border-top: 1px solid var(--line);
 }
 
 /* Section headings are centred site-wide (CLAUDE.md). */
@@ -51,14 +52,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: hidden;
-  background: var(--surface);
-  border: 2px solid var(--line);
-  border-radius: var(--radius-card);
-  transition:
-    transform 200ms ease-out,
-    border-color 200ms ease-out,
-    box-shadow 200ms ease-out;
+  background: transparent;
+  border: none;
 }
 
 
@@ -68,7 +63,8 @@
   display: grid;
   place-items: center;
   aspect-ratio: 4 / 3;
-  border-bottom: 2px solid var(--line);
+  border: none;
+  border-radius: var(--radius-card);
   background: color-mix(in srgb, var(--green) 5%, var(--surface));
   font-family: var(--font-mono);
   font-size: 0.8125rem;
@@ -76,7 +72,7 @@
 }
 
 .copy {
-  padding: 22px 24px 26px;
+  padding: 24px 0 0 0;
 }
 
 /* Wider second-row cards keep the visual from getting too tall. */

@@ -19,10 +19,31 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
   const admit = stamp.variant === "admit";
   const live = stamp.variant === "live" || proof || osd || admit;
 
+  let statusLabel = stamp.status;
+  let statusLinkText = "";
+  if (liveHref && stamp.status.includes(" \u00b7 ")) {
+    const parts = stamp.status.split(" \u00b7 ");
+    statusLabel = parts[0];
+    statusLinkText = parts[1];
+  } else if (liveHref && stamp.status.includes(" · ")) {
+    const parts = stamp.status.split(" · ");
+    statusLabel = parts[0];
+    statusLinkText = parts[1];
+  }
+
   const status = liveHref ? (
-    <a href={liveHref} target="_blank" rel="noreferrer">
-      {stamp.status}
-    </a>
+    statusLinkText ? (
+      <>
+        <strong>{statusLabel}</strong> &middot;{" "}
+        <a href={liveHref} target="_blank" rel="noreferrer">
+          {statusLinkText} &#x2197;
+        </a>
+      </>
+    ) : (
+      <a href={liveHref} target="_blank" rel="noreferrer">
+        {stamp.status} &#x2197;
+      </a>
+    )
   ) : (
     <strong>{stamp.status}</strong>
   );
@@ -52,7 +73,6 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
             <p className={styles.cardHead}>
               <span className={styles.cardLabel}>{card.label}</span>
               <span className={`${styles.onAir} ${osd ? styles.osdBadge : ""}`}>
-                <i aria-hidden="true" />
                 <span className={styles.visuallyHidden}>Status: </span>
                 {status}
               </span>

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getVisibleCaseStudy } from "@/content/case-studies";
 import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
@@ -361,8 +362,9 @@ export function PoststeadyBody() {
               ))}
             </ol>
             <p className={styles.sum}>
-              The same approach goes into every product we build: <b>Clear scope.</b> <b>Weekly builds.</b>{" "}
-              <b>Code you own.</b>
+              The same goes for your product: <b>a clear scope</b>,{" "}
+              <b>a new working build every week</b>, and{" "}
+              <b>code you own</b>.
             </p>
           </Reveal>
           <div className={styles.finalActions}>
@@ -394,10 +396,24 @@ export function PoststeadyBody() {
                   {next ? "View case study" : "See our work"} <Arrow />
                 </span>
               </div>
-              {/* Dashed frame until a ChromaLayer screen is captured. */}
-              <div className={`${styles.ph} ${styles.phBrowser}`} aria-hidden="true">
-                <span>ChromaLayer screen, once captured</span>
-              </div>
+              {(() => {
+                const shot = next?.hero && "src" in next.hero ? next.hero : null;
+                return shot ? (
+                  <div className={styles.nextImg} aria-hidden="true" style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt || "Next project"}
+                      width={shot.width}
+                      height={shot.height}
+                      style={{ width: "100%", height: "auto", objectFit: "contain", maxHeight: "220px", transform: "scale(0.85)" }}
+                    />
+                  </div>
+                ) : (
+                  <div className={`${styles.ph} ${styles.phBrowser}`} aria-hidden="true">
+                    <span>{next ? next.title.join("") : "Project"} screen, once captured</span>
+                  </div>
+                );
+              })()}
             </Link>
           </Reveal>
         </div>

@@ -21,18 +21,11 @@ export function Contact() {
   return (
     <div className={styles.wrapper}>
       <section id="contact" className={styles.section} aria-labelledby="contact-title">
-        
-        {/* Top Header */}
-        <div className={styles.header}>
-          <h2 id="contact-title" className={styles.headerTitle}>Contact Us</h2>
-          <p className={styles.headerSub}>Bring your idea as it is. We'll tell you honestly if we're the right fit.</p>
-        </div>
-
         <div className={styles.grid}>
           
           {/* Left Column: CTA & Timeline */}
           <div className={styles.leftCol}>
-            <h3 className={styles.title}>Ready to ship your next product?</h3>
+            <h2 className={styles.title}>Ready to ship your next product?</h2>
             <p className={styles.lede}>
               Book a discovery call to get an honest technical assessment of your idea and a timeline for your first build.
             </p>
@@ -44,15 +37,15 @@ export function Contact() {
             <div className={styles.timeline}>
               <div className={styles.step}>
                 <div className={styles.stepNum}>01</div>
-                <span className={styles.stepText}>Pitch your product idea</span>
+                <span className={styles.stepText}>Tell us what you're building</span>
               </div>
               <div className={styles.step}>
                 <div className={styles.stepNum}>02</div>
-                <span className={styles.stepText}>Map the architecture &amp; timeline</span>
+                <span className={styles.stepText}>Talk through the product</span>
               </div>
               <div className={styles.step}>
                 <div className={styles.stepNum}>03</div>
-                <span className={styles.stepText}>Start your first weekly build</span>
+                <span className={styles.stepText}>Decide the next step</span>
               </div>
             </div>
           </div>

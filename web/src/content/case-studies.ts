@@ -132,9 +132,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     liveHref: "https://www.poststeady.com",
     hero: {
       src: "/work/poststeady/hero.webp",
-      width: 1440,
-      height: 900,
-      alt: "Poststeady: Finished report, page 1, fanned over the upload screen",
+      width: 1780,
+      height: 883,
+      alt: "Poststeady: Three laptops showing the app UI",
     },
     seo: {
       title: "Poststeady: client reports from the files freelancers already export | Ship Thesis case study",
@@ -161,7 +161,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Service", "Product design, build and release"],
       ],
     },
-    stamp: { status: "LIVE \u00b7 chromalayer.app", variant: "osd" },
+    stamp: { status: "● LIVE \u00b7 chromalayer.app", variant: "osd" },
     liveHref: "https://chromalayer.app",
     hero: {
       src: "/work/chromalayer/hero.webp",

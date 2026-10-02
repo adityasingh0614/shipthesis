@@ -191,6 +191,11 @@
   color: var(--ink-muted);
   text-align: center;
 }
+.visual.hasImg {
+  border: none;
+  background: transparent;
+  aspect-ratio: auto;
+}
 .visualNote {
   font-size: 0.75rem;
 }
@@ -200,7 +205,25 @@
   justify-content: center;
   max-width: var(--max);
   width: 100%;
-  margin: 16px auto 0;
+  margin: 32px auto 0;
+}
+
+.progressInd {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progressLine {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background-color: var(--line);
 }
 
 /* ---- Pinned (desktop): section sticks, scroll slides the rail ---- */

@@ -9,11 +9,11 @@ import { SaasVisual } from "./visuals/SaasVisual";
 import { VisualsLoop } from "./visuals/shared";
 
 // Copy: docs/copy/home.md §4 (facts from .agents/product-marketing.md).
-const SERVICES: { name: string; line: string; visual?: ReactNode }[] = [
+const SERVICES: { name: string; line: ReactNode; visual?: ReactNode }[] = [
   {
     name: "Cross-platform apps",
     visual: <CrossPlatformVisual />,
-    line: "Built once in Flutter, live on both the App Store and Play Store. Our default for most MVPs.",
+    line: <>Built once in Flutter, live on both the App Store and Play Store. Our default for most <strong>MVPs</strong>.</>,
   },
   {
     name: "Native iOS & Android",
@@ -28,12 +28,12 @@ const SERVICES: { name: string; line: string; visual?: ReactNode }[] = [
   {
     name: "SaaS apps & platforms",
     visual: <SaasVisual />,
-    line: "Customer-facing web apps with accounts, billing, dashboards and the systems behind them. It's the kind of product we build and run ourselves.",
+    line: <>Customer-facing web apps with accounts, billing, dashboards and the systems behind them. It's the kind of <strong>SaaS apps & platforms</strong> we build and run ourselves.</>,
   },
   {
     name: "AI features",
     visual: <AiVisual />,
-    line: "AI added where it makes the product better: summaries, chat, automation and more. Not as a gimmick.",
+    line: <><strong>AI features</strong> added where it makes the product better: summaries, chat, automation and more. Not as a gimmick.</>,
   },
 ];
 
@@ -46,8 +46,7 @@ export function WhatWeBuild() {
             What we build
           </h2>
           <p className={styles.lede}>
-            Everything your product needs to go live, from the app in the store
-            to the systems behind it, built by one team.
+            Everything your product needs to go live, built by one team.
           </p>
         </div>
 

@@ -227,7 +227,11 @@ export function ChromaLayerBody() {
           </p>
           <Reveal className={styles.result}>
             <div className={styles.big}>Live</div>
-            <p className={styles.bigLine}>Our own Windows app, running today.</p>
+            <p className={styles.bigLine}>
+              <a href="https://chromalayer.app" target="_blank" rel="noreferrer" className={styles.out} style={{ color: "inherit", textDecoration: "none" }}>
+                Live at chromalayer.app &#x2197;
+              </a>
+            </p>
           </Reveal>
           <ul className={styles.facts}>
             {[
@@ -242,17 +246,7 @@ export function ChromaLayerBody() {
               </Reveal>
             ))}
           </ul>
-          {showPlaceholders && (
-            <Reveal className={styles.photo}>
-              <div className={styles.ph} role="img" aria-label="Placeholder: real-hardware photo, the same laptop screen before and after">
-                <span>
-                  Real-hardware photo: the same laptop screen, before and after
-                  <br />
-                  (founder&apos;s phone, once taken)
-                </span>
-              </div>
-            </Reveal>
-          )}
+
         </div>
       </section>
 
@@ -323,7 +317,7 @@ export function ChromaLayerBody() {
       <section className={`${styles.section} ${showPlaceholders ? styles.band : ""}`} aria-labelledby="conclusion-title">
         <div className={styles.wrap}>
           <Head label={`${showPlaceholders ? "08" : "07"} · Conclusion`} id="conclusion-title">
-            Why a Windows app is on a <A>mobile studio&apos;s</A> site
+            What this build says <A>about yours</A>
           </Head>
           <Reveal className={styles.final}>
             <p className={styles.finalHead}>
@@ -332,9 +326,9 @@ export function ChromaLayerBody() {
             </p>
             <ol className={styles.points}>
               {[
-                ["i.", "Staying right is the hard part", "Here, Windows resets the colours. On phones, it’s the system closing your app or an update changing the rules. Same fight."],
-                ["ii.", "We design for the real system", "The 25-second window comes from how Windows actually behaves after a sign-in, not from a guess."],
-                ["iii.", "We ship updates safely", "Its own release channel, and a way back to the original screen that always works."],
+                ["i.", "We solve for the real system", "The hard part wasn't the seven controls. It was making them survive the way Windows actually behaves."],
+                ["ii.", "We build for failure, not the demo", "Startup, sleep, crashes, resets and recovery were part of the product from the beginning."],
+                ["iii.", "We ship software we have to live with", "ChromaLayer is our own live product, with licensing, updates and real users."],
               ].map(([n, title, body]) => (
                 <li key={n} className={styles.point}>
                   <small>{n}</small>
@@ -344,8 +338,8 @@ export function ChromaLayerBody() {
               ))}
             </ol>
             <p className={styles.sum}>
-              The same goes for your app: <b>a fixed quote</b> after a one-week
-              Discovery Sprint, <b>a new build every week</b>, and{" "}
+              The same goes for your product: <b>a clear scope</b>,{" "}
+              <b>a new working build every week</b>, and{" "}
               <b>code you own</b>.
             </p>
           </Reveal>
@@ -376,14 +370,16 @@ export function ChromaLayerBody() {
                 </span>
               </div>
               {next && "src" in next.hero && (
-                <Image
-                  className={styles.nextImg}
-                  src={next.hero.src}
-                  width={next.hero.width}
-                  height={next.hero.height}
-                  alt=""
-                  sizes="100vw"
-                />
+                <div className={styles.nextImg} style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <Image
+                    src={next.hero.src}
+                    width={next.hero.width}
+                    height={next.hero.height}
+                    alt=""
+                    sizes="100vw"
+                    style={{ width: "100%", height: "auto", objectFit: "contain", maxHeight: "400px" }}
+                  />
+                </div>
               )}
             </Link>
           </Reveal>

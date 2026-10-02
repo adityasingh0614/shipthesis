@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -84,6 +84,9 @@ export function HowItWorks() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
+              <div className={styles.stepNumber}>
+                0{i + 1}
+              </div>
               {step.img ? (
                 <div className={`${styles.visual} ${styles.hasImg}`}>
                   <div className={styles.frame}>
@@ -96,7 +99,7 @@ export function HowItWorks() {
                       className={styles.shot}
                     />
                   </div>
-                  {i % 3 !== 2 && (
+                  {i % 2 !== 1 && (
                     <svg
                       className={styles.arrow}
                       width="24"
@@ -117,7 +120,7 @@ export function HowItWorks() {
                 </div>
               ) : (
                 <div className={styles.visual}>
-                  {i % 3 !== 2 && (
+                  {i % 2 !== 1 && (
                     <svg
                       className={styles.arrow}
                       width="24"
@@ -138,10 +141,7 @@ export function HowItWorks() {
                 </div>
               )}
 
-              <span className={styles.badge}>
-                Step {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className={styles.label}>{step.label}</h3>
+              <h3 className={styles.label} style={{ marginTop: "24px" }}>{step.label}</h3>
               <p className={styles.body}>{step.body}</p>
 
               <p className={styles.meta}>

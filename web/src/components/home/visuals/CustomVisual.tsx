@@ -45,7 +45,7 @@ const PIECES: Piece[] = [
     w: 50,
     h: 62,
     fill: "var(--surface)",
-    at: 0.18,
+    at: 0.1,
     from: { x: 60, y: -34, rotate: 10 },
     detail: (
       <circle
@@ -64,7 +64,7 @@ const PIECES: Piece[] = [
     w: 50,
     h: 58,
     fill: "var(--surface)",
-    at: 0.26,
+    at: 0.1,
     from: { x: -60, y: 34, rotate: 7 },
     detail: (
       <rect
@@ -136,9 +136,9 @@ export function CustomVisual() {
         {...enter(play, 0.56, { opacity: 0 }, { opacity: 1 }, { d: 0.06 })}
       />
 
-      {PIECES.map((p) => (
+      {PIECES.map((p, i) => (
         <motion.g
-          key={p.at}
+          key={i}
           style={{ originX: 0.5, originY: 0.5 }}
           {...enter(
             play,

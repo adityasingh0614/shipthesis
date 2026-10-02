@@ -92,50 +92,62 @@ export function AiVisual() {
         {...enter(play, 0.42, { pathLength: 0 }, { pathLength: 1 })}
       />
 
-      {/* your content: a long document, read line by line */}
-      <g filter={shadow.filter}>
-        <rect x={40} y={42} width={148} height={176} rx={12} {...card} />
-      </g>
-      <rect
-        x={56}
-        y={58}
-        width={48}
-        height={8}
-        rx={4}
-        fill="var(--surface-alt)"
-      />
-      {DOC_LINES.map((w, i) => (
-        <g key={i}>
-          <rect
-            x={56}
-            y={80 + i * 20}
-            width={w}
-            height={7}
-            rx={3.5}
-            fill="var(--line)"
-          />
-          <motion.rect
-            x={56}
-            y={80 + i * 20}
-            width={w}
-            height={7}
-            rx={3.5}
-            fill="var(--green-bright)"
-            style={{ originX: 0 }}
-            {...enter(
-              play,
-              0.04 + i * 0.03,
-              { scaleX: 0, opacity: 0.9 },
-              { scaleX: 1, opacity: 0.55 },
-              { d: 0.05 },
-            )}
-          />
+      {/* your content: a long document */}
+      <motion.g
+        {...enter(
+          play,
+          0.1,
+          { opacity: 0, x: -16 },
+          { opacity: 1, x: 0 },
+          { ease: POP },
+        )}
+      >
+        <g filter={shadow.filter}>
+          <rect x={40} y={42} width={148} height={176} rx={12} {...card} />
         </g>
-      ))}
+        <rect
+          x={56}
+          y={58}
+          width={48}
+          height={8}
+          rx={4}
+          fill="var(--surface-alt)"
+        />
+        {DOC_LINES.map((w, i) => (
+          <g key={i}>
+            <rect
+              x={56}
+              y={80 + i * 20}
+              width={w}
+              height={7}
+              rx={3.5}
+              fill="var(--line)"
+            />
+            <rect
+              x={56}
+              y={80 + i * 20}
+              width={w}
+              height={7}
+              rx={3.5}
+              fill="var(--green-bright)"
+              opacity={0.55}
+            />
+          </g>
+        ))}
+      </motion.g>
 
       {/* the AI */}
+      <motion.g
+        {...enter(
+          play,
+          0.3,
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0 },
+          { ease: POP },
+        )}
+      >
       {[46, 60].map((r, i) => (
-        <motion.circle
+        <circle
           key={r}
           cx={280}
           cy={130}
@@ -143,14 +155,7 @@ export function AiVisual() {
           fill="none"
           stroke="var(--green-bright)"
           strokeWidth={2}
-          style={{ originX: 0.5, originY: 0.5 }}
-          {...enter(
-            play,
-            0.3 + i * 0.05,
-            { scale: 0.7, opacity: 0.7 },
-            { scale: 1.15, opacity: 0 },
-            { d: 0.14 },
-          )}
+          opacity={0.2}
         />
       ))}
       <g filter={shadow.filter}>
@@ -163,22 +168,19 @@ export function AiVisual() {
           fill="var(--green)"
         />
       </g>
-      <motion.g
-        style={{ originX: 0.5, originY: 0.5 }}
-        {...enter(
-          play,
-          0.28,
-          { rotate: -90, scale: 0.8 },
-          { rotate: 0, scale: 1 },
-          { d: 0.14, ease: POP },
-        )}
-      >
-        <path
+      <g style={{ transformOrigin: "280px 130px" }}>
+        <motion.path
           d={SPARKLE}
-          transform="translate(280 130) scale(1.35)"
           fill="#fff"
+          {...enter(
+            play,
+            0.4,
+            { rotate: -90, scale: 0.8 * 1.35, x: 280, y: 130 },
+            { rotate: 0, scale: 1 * 1.35, x: 280, y: 130 },
+            { d: 0.14, ease: POP },
+          )}
         />
-      </motion.g>
+      </g>
       <text
         x={280}
         y={186}
@@ -190,54 +192,56 @@ export function AiVisual() {
       >
         AI
       </text>
+      </motion.g>
 
       {/* useful results */}
-      <g filter={shadow.filter}>
-        <rect x={372} y={42} width={148} height={176} rx={12} {...card} />
-      </g>
-      {RESULTS.map((r, i) => {
-        const y = 60 + i * 52;
-        return (
-          <motion.g
-            key={r.label}
-            {...enter(
-              play,
-              0.48 + i * 0.07,
-              { opacity: 0, x: -10 },
-              { opacity: 1, x: 0 },
-              { ease: POP },
-            )}
-          >
-            <rect
-              x={386}
-              y={y}
-              width={30}
-              height={30}
-              rx={9}
-              fill="var(--green)"
-            />
-            <g transform={`translate(401 ${y + 15})`}>{r.icon}</g>
-            <text
-              x={426}
-              y={y + 12}
-              fontSize={11}
-              fontWeight={600}
-              fill="var(--ink)"
-              style={mono}
-            >
-              {r.label}
-            </text>
-            <rect
-              x={426}
-              y={y + 20}
-              width={r.bar}
-              height={6}
-              rx={3}
-              fill="var(--line)"
-            />
-          </motion.g>
-        );
-      })}
+      <motion.g
+        {...enter(
+          play,
+          0.6,
+          { opacity: 0, x: 16 },
+          { opacity: 1, x: 0 },
+          { ease: POP },
+        )}
+      >
+        <g filter={shadow.filter}>
+          <rect x={372} y={42} width={148} height={176} rx={12} {...card} />
+        </g>
+        {RESULTS.map((r, i) => {
+          const y = 60 + i * 52;
+          return (
+            <g key={r.label}>
+              <rect
+                x={386}
+                y={y}
+                width={30}
+                height={30}
+                rx={9}
+                fill="var(--green)"
+              />
+              <g transform={`translate(401 ${y + 15})`}>{r.icon}</g>
+              <text
+                x={426}
+                y={y + 12}
+                fontSize={11}
+                fontWeight={600}
+                fill="var(--ink)"
+                style={mono}
+              >
+                {r.label}
+              </text>
+              <rect
+                x={426}
+                y={y + 20}
+                width={r.bar}
+                height={6}
+                rx={3}
+                fill="var(--line)"
+              />
+            </g>
+          );
+        })}
+      </motion.g>
     </svg>
   );
 }

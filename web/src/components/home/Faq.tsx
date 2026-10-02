@@ -31,17 +31,17 @@ const ITEMS = [
   {
     icon: Clock,
     q: "How long does it take to build an MVP app?",
-    a: "Typically 6-10 weeks, delivered as a fixed quote after the Discovery Sprint.",
+    a: "Typically 6-10 weeks, based on a clear scope after the Discovery Sprint.",
   },
   {
     icon: Compass,
     q: "What happens during the Discovery Sprint?",
-    a: "One week, $750: a written scope, a feature list split into version one and later, wireframes, a stack plan, and a fixed quote with milestones. Credited toward your build if you continue.",
+    a: "One week, $750: a written scope, a feature list split into version one and later, wireframes, a stack plan, and a clear scope with milestones. Credited toward your build if you continue.",
   },
   {
     icon: CurrencyDollar,
     q: "What will it really cost, and will the price creep?",
-    a: "A fixed quote after a one-week, $750 Discovery Sprint, credited toward your build if you continue. MVP builds start from $6,000.",
+    a: "A clear scope after a one-week, $750 Discovery Sprint, a new working build every week, and code you own. MVP builds start from $6,000.",
   },
   {
     icon: GithubLogo,
@@ -90,9 +90,6 @@ export function Faq() {
             return (
               <details key={item.q} className={styles.item} open={i === 0}>
                 <summary className={styles.question}>
-                  <span className={styles.icon} aria-hidden="true">
-                    <Icon size={20} weight="regular" />
-                  </span>
                   <span className={styles.questionText}>{item.q}</span>
                   <svg
                     className={styles.chevron}

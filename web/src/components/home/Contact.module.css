@@ -1,6 +1,6 @@
 .wrapper {
-  background: var(--surface-alt);
-  padding: var(--section-py) 0;
+  background: color-mix(in srgb, var(--green) 8%, var(--surface));
+  padding: clamp(100px, 15vw, 200px) 0;
 }
 
 .section {
@@ -8,11 +8,6 @@
   width: 100%;
   max-width: var(--max);
   margin: 0 auto;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 64px;
 }
 
 .headerTitle {

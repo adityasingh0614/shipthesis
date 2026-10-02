@@ -24,21 +24,20 @@ export function SaasVisual() {
   return (
     <svg viewBox="0 0 560 260" width="100%" height="100%" aria-hidden="true">
       <defs>{shadow.def}</defs>
-      {/* the web app: window frame always on screen, tabs and title animate in */}
-      <g filter={shadow.filter}>
-        <rect x={150} y={24} width={262} height={212} rx={12} {...card} />
-      </g>
-      <line
-        x1={150}
-        y1={50}
-        x2={412}
-        y2={50}
-        stroke="var(--line)"
-        strokeWidth={1.5}
-      />
       <motion.g
-        {...enter(play, 0.02, { opacity: 0, y: 12 }, { opacity: 1, y: 0 })}
+        {...enter(play, 0.1, { opacity: 0, y: 12 }, { opacity: 1, y: 0 })}
       >
+        <g filter={shadow.filter}>
+          <rect x={150} y={24} width={262} height={212} rx={12} {...card} />
+        </g>
+        <line
+          x1={150}
+          y1={50}
+          x2={412}
+          y2={50}
+          stroke="var(--line)"
+          strokeWidth={1.5}
+        />
         {[166, 178, 190].map((cx, i) => (
           <circle
             key={cx}
@@ -56,12 +55,8 @@ export function SaasVisual() {
           rx={5.5}
           fill="var(--surface-alt)"
         />
-      </motion.g>
 
-      {/* sidebar */}
-      <motion.g
-        {...enter(play, 0.1, { opacity: 0, x: -8 }, { opacity: 1, x: 0 })}
-      >
+        {/* sidebar */}
         <rect
           x={162}
           y={62}
@@ -73,19 +68,47 @@ export function SaasVisual() {
         <rect x={172} y={76} width={30} height={6} rx={3} fill="var(--green)" />
         <rect x={172} y={92} width={24} height={6} rx={3} fill="var(--line)" />
         <rect x={172} y={108} width={28} height={6} rx={3} fill="var(--line)" />
+
+        {/* chart container */}
+        <rect
+          x={220}
+          y={112}
+          width={180}
+          height={112}
+          rx={8}
+          {...card}
+        />
       </motion.g>
 
+
+      {/* chart */}
+      {BARS.map((h, i) => (
+        <motion.rect
+          key={i}
+          x={236 + i * 26}
+          y={212 - h}
+          width={16}
+          height={h}
+          rx={4}
+          fill={i === BARS.length - 1 ? "var(--green)" : "var(--line)"}
+          style={{ originY: 1 }}
+          {...enter(play, 0.3 + i * 0.035, { scaleY: 0 }, { scaleY: 1 })}
+        />
+      ))}
+
+      {/* dashboard pieces */}
+      <motion.g
+        {...enter(
+          play,
+          0.5,
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0 },
+          { ease: POP },
+        )}
+      >
       {/* two stat tiles */}
       {[220, 312].map((x, i) => (
-        <motion.g
-          key={x}
-          {...enter(
-            play,
-            0.16 + i * 0.04,
-            { opacity: 0, y: 8 },
-            { opacity: 1, y: 0 },
-          )}
-        >
+        <g key={x}>
           <rect x={x} y={62} width={i ? 88 : 84} height={40} rx={8} {...card} />
           <circle
             cx={x + 16}
@@ -110,43 +133,10 @@ export function SaasVisual() {
             fill="var(--ink)"
             opacity={0.75}
           />
-        </motion.g>
+        </g>
       ))}
 
-      {/* chart */}
-      <motion.rect
-        x={220}
-        y={112}
-        width={180}
-        height={112}
-        rx={8}
-        {...card}
-        {...enter(play, 0.2, { opacity: 0 }, { opacity: 1 })}
-      />
-      {BARS.map((h, i) => (
-        <motion.rect
-          key={i}
-          x={236 + i * 26}
-          y={212 - h}
-          width={16}
-          height={h}
-          rx={4}
-          fill={i === BARS.length - 1 ? "var(--green)" : "var(--line)"}
-          style={{ originY: 1 }}
-          {...enter(play, 0.24 + i * 0.035, { scaleY: 0 }, { scaleY: 1 })}
-        />
-      ))}
-
-      {/* billing */}
-      <motion.g
-        {...enter(
-          play,
-          0.46,
-          { opacity: 0, x: -16 },
-          { opacity: 1, x: 0 },
-          { ease: POP },
-        )}
-      >
+      {/* surrounding dashboard elements */}
         <g filter={shadow.filter}>
           <rect
             x={36}
@@ -184,18 +174,7 @@ export function SaasVisual() {
           fill="#fff"
           opacity={0.5}
         />
-      </motion.g>
-
       {/* accounts */}
-      <motion.g
-        {...enter(
-          play,
-          0.52,
-          { opacity: 0, x: 16 },
-          { opacity: 1, x: 0 },
-          { ease: POP },
-        )}
-      >
         <g filter={shadow.filter}>
           <rect x={428} y={40} width={100} height={56} rx={10} {...card} />
         </g>
@@ -212,12 +191,7 @@ export function SaasVisual() {
           opacity={0.75}
         />
         <rect x={472} y={72} width={30} height={6} rx={3} fill="var(--line)" />
-      </motion.g>
-
       {/* growth */}
-      <motion.g
-        {...enter(play, 0.56, { opacity: 0, x: 16 }, { opacity: 1, x: 0 })}
-      >
         <g filter={shadow.filter}>
           <rect x={428} y={112} width={100} height={78} rx={10} {...card} />
         </g>
@@ -229,22 +203,15 @@ export function SaasVisual() {
           stroke="var(--line)"
           strokeWidth={1.5}
         />
-      </motion.g>
-      <motion.path
+      <path
         d="M442,168 L460,156 L476,162 L494,142 L514,130"
         fill="none"
         stroke="var(--green)"
         strokeWidth={3}
         strokeLinecap="round"
         strokeLinejoin="round"
-        {...enter(
-          play,
-          0.62,
-          { pathLength: 0, opacity: 0 },
-          { pathLength: 1, opacity: 1 },
-          { d: 0.1 },
-        )}
       />
+      </motion.g>
     </svg>
   );
 }

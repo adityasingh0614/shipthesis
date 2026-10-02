@@ -52,9 +52,8 @@
 .video {
   display: flex;
   flex-direction: column;
-  background: var(--surface);
-  border: 2px solid var(--line);
-  border-radius: var(--radius-card);
+  background: transparent;
+  border: none;
 }
 
 /* ---- Quote card ---- */
@@ -96,7 +95,6 @@
   display: flex;
   gap: 12px;
   padding-top: 20px;
-  border-top: 2px dashed var(--line);
   color: var(--ink-soft);
 }
 

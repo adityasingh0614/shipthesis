@@ -1,6 +1,6 @@
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.875rem, 7.2vw, 5.75rem);
+  font-size: clamp(3.2rem, 8.5vw, 6.75rem);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.02em;
@@ -23,8 +23,8 @@
 
 .sub {
   max-width: 42ch;
-  margin-top: clamp(12px, 1.6vw, 18px);
-  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  margin-top: clamp(16px, 2.5vw, 28px);
+  font-size: clamp(1.125rem, 1.8vw, 1.35rem);
   line-height: 1.5;
   color: var(--ink-soft);
   text-wrap: pretty;
@@ -36,7 +36,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px 28px;
-  margin-top: clamp(28px, 3.5vw, 40px);
+  margin-top: clamp(40px, 5vw, 64px);
 }
 
 

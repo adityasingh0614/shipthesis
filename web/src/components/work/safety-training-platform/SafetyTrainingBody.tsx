@@ -445,9 +445,22 @@ export function SafetyTrainingBody() {
                   {next ? "View case study" : "See our work"} <Arrow />
                 </span>
               </div>
-              {/* Dashed frame until a Poststeady screen is captured; never
-                  on the live site (case-study-brief §0, placeholders). */}
-              {!isProduction && <div className={styles.phFrame}>Poststeady screen, once captured</div>}
+              {(() => {
+                const shot = next?.hero && "src" in next.hero ? next.hero : null;
+                return shot ? (
+                  <div className={styles.nextImg} aria-hidden="true" style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt || "Next project"}
+                      width={shot.width}
+                      height={shot.height}
+                      style={{ width: "100%", height: "auto", objectFit: "contain", maxHeight: "220px", transform: "scale(0.85)" }}
+                    />
+                  </div>
+                ) : (
+                  !isProduction && <div className={styles.phFrame}>Poststeady screen, once captured</div>
+                );
+              })()}
             </Link>
           </Reveal>
         </div>

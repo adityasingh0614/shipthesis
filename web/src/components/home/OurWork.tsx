@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { CASE_STUDIES } from "@/content/case-studies";
 import {
   useEffect,
   useRef,
@@ -260,10 +262,30 @@ function ProjectCard({
         )}
       </div>
 
-      {/* Placeholder until real screens with demo data arrive. */}
-      <div className={styles.visual}>
-        <span>{project.name} screens</span>
-        <span className={styles.visualNote}>Demo-data screenshots coming</span>
+      {/* The hero image from the case study, or a placeholder if missing. */}
+      <div className={`${styles.visual} ${(() => {
+          const study = CASE_STUDIES.find((c) => c.slug === project.slug);
+          const shot = study?.hero && "src" in study.hero ? study.hero : null;
+          return shot ? styles.hasImg : "";
+      })()}`}>
+        {(() => {
+          const study = CASE_STUDIES.find((c) => c.slug === project.slug);
+          const shot = study?.hero && "src" in study.hero ? study.hero : null;
+          return shot ? (
+            <Image
+              src={shot.src}
+              alt={shot.alt || `${project.name} screens`}
+              width={shot.width}
+              height={shot.height}
+              style={{ width: "100%", height: "auto", objectFit: "contain", padding: "24px", maxHeight: "280px" }}
+            />
+          ) : (
+            <>
+              <span>{project.name} screens</span>
+              <span className={styles.visualNote}>Demo-data screenshots coming</span>
+            </>
+          );
+        })()}
       </div>
     </article>
   );
@@ -350,12 +372,11 @@ function PinnedCarousel({ hrefs }: { hrefs: Hrefs }) {
           </motion.div>
         </div>
         <div className={styles.controls}>
-          <CarouselDots
-            count={PROJECTS.length}
-            index={index}
-            labels={PROJECTS.map((p) => p.name)}
-            onSelect={scrollToCard}
-          />
+          <div className={styles.progressInd}>
+            <span>0{index + 1} / 0{PROJECTS.length}</span>
+            <span className={styles.progressLine}></span>
+            <span>Scroll to explore</span>
+          </div>
         </div>
       </div>
     </div>

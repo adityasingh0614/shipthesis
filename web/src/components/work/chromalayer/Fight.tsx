@@ -90,6 +90,7 @@ export function Fight() {
           <li
             key={st.n}
             className={`${styles.step} ${i <= active ? styles.done : ""} ${i === active ? styles.on : ""}`}
+            
           >
             <span className={styles.sn}>{st.n}</span>
             <div>

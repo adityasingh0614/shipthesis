@@ -41,7 +41,7 @@ export function CrossPlatformVisual() {
         strokeLinecap="round"
         {...enter(
           play,
-          0.24,
+          0.3,
           { pathLength: 0 },
           { pathLength: 1 },
           { d: 0.16 },
@@ -63,7 +63,7 @@ export function CrossPlatformVisual() {
         <motion.g
           {...enter(
             play,
-            0.4 + lag,
+            0.6,
             { opacity: 0, y: 10 },
             { opacity: 1, y: 0 },
             { d: 0.1, ease: POP },
@@ -98,7 +98,7 @@ export function CrossPlatformVisual() {
           style={{ originX: 0.5, originY: 0.5 }}
           {...enter(
             play,
-            0.52 + lag,
+            0.8,
             { scale: 0 },
             { scale: 1 },
             { ease: POP },
@@ -132,50 +132,52 @@ export function CrossPlatformVisual() {
       {branch("M200,112 C200,140 282,132 282,158")}
 
       {/* the one codebase */}
-      <g filter={shadow.filter}>
-        <rect x={116} y={20} width={168} height={92} rx={12} {...card} />
-      </g>
-      <Logo icon={siFlutter} x={130} y={31} size={13} />
-      <text
-        x={149}
-        y={41.5}
-        fontSize={11}
-        fontWeight={600}
-        fill="var(--ink-soft)"
-        style={mono}
+      <motion.g
+        {...enter(
+          play,
+          0.1,
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0 },
+          { d: 0.1, ease: POP },
+        )}
       >
-        main.dart
-      </text>
-      <line
-        x1={116}
-        y1={52}
-        x2={284}
-        y2={52}
-        stroke="var(--line)"
-        strokeWidth={1.5}
-      />
-      {CODE.map(([indent, w, accent], i) => (
-        <motion.rect
-          key={i}
-          x={132 + indent}
-          y={62 + i * 11}
-          width={w}
-          height={5}
-          rx={2.5}
-          fill={accent ? "var(--green)" : "var(--line)"}
-          style={{ originX: 0 }}
-          {...enter(
-            play,
-            0.02 + i * 0.05,
-            { scaleX: 0 },
-            { scaleX: 1 },
-            { d: 0.06 },
-          )}
+        <g filter={shadow.filter}>
+          <rect x={116} y={20} width={168} height={92} rx={12} {...card} />
+        </g>
+        <Logo icon={siFlutter} x={130} y={31} size={13} />
+        <text
+          x={149}
+          y={41.5}
+          fontSize={11}
+          fontWeight={600}
+          fill="var(--ink-soft)"
+          style={mono}
+        >
+          main.dart
+        </text>
+        <line
+          x1={116}
+          y1={52}
+          x2={284}
+          y2={52}
+          stroke="var(--line)"
+          strokeWidth={1.5}
         />
-      ))}
+        {CODE.map(([indent, w, accent], i) => (
+          <rect
+            key={i}
+            x={132 + indent}
+            y={62 + i * 11}
+            width={w}
+            height={5}
+            rx={2.5}
+            fill={accent ? "var(--green)" : "var(--line)"}
+          />
+        ))}
+      </motion.g>
 
       {phone(118, siApple, "iOS", 0, "var(--ink)")}
-      {phone(282, siAndroid, "Android", 0.04)}
+      {phone(282, siAndroid, "Android", 0)}
     </svg>
   );
 }

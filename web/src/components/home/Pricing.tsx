@@ -28,13 +28,13 @@ const TABS: {
       {
         name: "Discovery Sprint",
         price: "$750",
-        line: "One week to a written scope and a fixed quote. Credited toward your build if you continue.",
+        line: "One week to a written scope. Credited toward your build if you continue.",
       },
       {
         name: "MVP Build",
         from: true,
         price: "$6,000",
-        line: "Typically 6-10 weeks, as a fixed quote.",
+        line: "Typically 6-10 weeks, based on a clear scope.",
       },
       {
         name: "After launch",
@@ -100,7 +100,7 @@ export function Pricing() {
           </h2>
           <p className={styles.lede}>
             The real numbers, before you book a call. Every build ends in a
-            fixed quote, and support is priced up front too.
+            clear scope, and support is priced up front too.
           </p>
         </div>
 

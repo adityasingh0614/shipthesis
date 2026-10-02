@@ -66,6 +66,7 @@ export function ExamDay() {
           <li
             key={s.key}
             className={`${styles.step} ${i === active ? styles.active : ""}`}
+            
           >
             <span className={styles.bubble} aria-hidden="true">
               {s.key}

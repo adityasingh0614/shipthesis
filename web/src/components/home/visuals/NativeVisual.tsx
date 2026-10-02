@@ -103,7 +103,7 @@ export function NativeVisual() {
             strokeLinecap="round"
             {...enter(
               play,
-              0.1 + i * 0.08,
+              0.4 + i * 0.1,
               { pathLength: 0 },
               { pathLength: 1 },
             )}
@@ -111,32 +111,32 @@ export function NativeVisual() {
         </g>
       ))}
 
-      {/* the phone */}
-      <g filter={shadow.filter}>
-        <rect
-          x={164}
-          y={46}
-          width={72}
-          height={132}
-          rx={16}
-          fill="var(--surface)"
-          stroke="var(--line)"
-          strokeWidth={2}
-        />
-      </g>
+      {/* phone + chip */}
+      <motion.g
+        {...enter(
+          play,
+          0.1,
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0 },
+          { d: 0.1, ease: POP },
+        )}
+      >
+        <g filter={shadow.filter}>
+          <rect
+            x={164}
+            y={46}
+            width={72}
+            height={132}
+            rx={16}
+            fill="var(--surface)"
+            stroke="var(--line)"
+            strokeWidth={2}
+          />
+        </g>
       <rect x={190} y={53} width={20} height={5} rx={2.5} fill="var(--line)" />
 
       {/* its chip powering up */}
-      <motion.g
-        style={{ originX: 0.5, originY: 0.5 }}
-        {...enter(
-          play,
-          0.03,
-          { scale: 0.4, opacity: 0 },
-          { scale: 1, opacity: 1 },
-          { ease: POP },
-        )}
-      >
+      <g style={{ transformOrigin: "200px 112px" }}>
         <rect
           x={186}
           y={98}
@@ -166,6 +166,7 @@ export function NativeVisual() {
             <line x1={216} y1={y} x2={220} y2={y} />
           </g>
         ))}
+      </g>
       </motion.g>
 
       {/* capabilities */}
@@ -175,7 +176,7 @@ export function NativeVisual() {
           style={{ originX: 0.5, originY: 0.5 }}
           {...enter(
             play,
-            0.16 + i * 0.08,
+            0.5 + i * 0.1,
             { scale: 0, opacity: 0 },
             { scale: 1, opacity: 1 },
             { ease: POP },
@@ -196,10 +197,10 @@ export function NativeVisual() {
       ))}
 
       {/* built natively in */}
-      {LANGS.map((l) => (
+      {LANGS.map((l, i) => (
         <motion.g
           key={l.label}
-          {...enter(play, l.at, { opacity: 0, y: 12 }, { opacity: 1, y: 0 })}
+          {...enter(play, 0.9 + i * 0.05, { opacity: 0, y: 12 }, { opacity: 1, y: 0 })}
         >
           <g filter={shadow.filter}>
             <rect

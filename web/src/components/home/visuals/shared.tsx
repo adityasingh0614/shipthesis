@@ -15,18 +15,9 @@ import {
 } from "motion/react";
 import type { SimpleIcon } from "simple-icons";
 
-/*
- * One grammar for every service visual, a 5s loop:
- *   0.00-...   pieces build in, each with its own small stagger delay
- *   ...-0.72   short hold on the finished picture
- *   0.72-0.94  pieces float back apart, in the same stagger order they
- *              arrived, mirroring the build; the last one settles by 0.94
- *   0.94-1.00  a beat at rest before the next build starts
- * Because the loop ends exactly where it began, there is no reset to mask:
- * no snap, no scene-wide fade, just the reverse of the build. Off-screen or
- * with reduced motion, the finished picture stands still.
- */
-export const DURATION = 5;
+
+
+export const DURATION = 3;
 const BUILD_END = 0.66; // every piece has landed by here, latest of them
 const HOLD_END = 0.72; // short hold before pieces start leaving
 const EXIT_END = 0.94; // every piece is back at rest by here
@@ -45,22 +36,25 @@ const mirror = (at: number, d: number) => {
 };
 
 const loop = (at: number, d: number, ease: Easing): Transition => {
-  const back = mirror(at, d);
   return {
     duration: DURATION,
-    times: [0, at, at + d, back, back + d, 1],
-    ease: ["linear", ease, "linear", ease, "linear"],
-    repeat: Infinity,
+    times: [0, at, at + d, 1],
+    ease: ["linear", ease, "linear"],
   };
 };
 
 const frames = (a: Vals, b: Vals) => {
   const out: Record<string, number[]> = {};
-  for (const k of Object.keys(b)) out[k] = [a[k], a[k], b[k], b[k], a[k], a[k]];
+  const keys = Array.from(new Set([...Object.keys(a), ...Object.keys(b)]));
+  for (const k of keys) {
+    const fromVal = a[k] !== undefined ? a[k] : (b[k] as number);
+    const toVal = b[k] !== undefined ? b[k] : fromVal;
+    out[k] = [fromVal, fromVal, toVal, toVal];
+  }
   return out;
 };
 
-/** Hidden (`from`) until `at`, built to `to`, holds, then floats back to `from`. */
+/** Hidden (`from`) until `at`, built to `to`, holds there. */
 export function enter(
   play: boolean,
   at: number,
@@ -74,10 +68,10 @@ export function enter(
         animate: frames(from, to),
         transition: loop(at, d, ease),
       }
-    : { initial: false as const, animate: to, transition: STILL };
+    : { initial: false as const, animate: from, transition: STILL };
 }
 
-/** Shown until `at`, then leaves to `gone`, and returns to `shown` with the rest. */
+/** Shown until `at`, then leaves to `gone`, and stays gone. */
 export function leave(
   play: boolean,
   at: number,
@@ -91,7 +85,7 @@ export function leave(
         animate: frames(shown, gone),
         transition: loop(at, d, ease),
       }
-    : { initial: false as const, animate: gone, transition: STILL };
+    : { initial: false as const, animate: shown, transition: STILL };
 }
 
 const PlayContext = createContext(false);

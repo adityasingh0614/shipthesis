@@ -72,6 +72,7 @@ export function Wizard() {
           <li
             key={s.n}
             className={`${styles.step} ${i <= active ? styles.done : ""} ${i === active ? styles.on : ""}`}
+            
           >
             <span className={styles.sn}>{s.n}</span>
             <div>

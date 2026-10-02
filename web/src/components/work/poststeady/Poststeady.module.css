@@ -472,7 +472,7 @@
   align-items: center;
   gap: clamp(24px, 5vw, 72px);
   overflow: hidden;
-  padding: clamp(24px, 4vw, 56px);
+  padding: clamp(16px, 3vw, 32px);
   background: var(--surface);
   border: 2px solid var(--line);
   border-radius: 24px;
@@ -496,11 +496,12 @@
 .next h2 {
   margin-top: 12px;
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5.2vw, 4.5rem);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
   font-weight: 700;
   line-height: 0.92;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  text-wrap: balance;
 }
 /* The next project's own accent, a preview of its world. */
 .next h2 span {
