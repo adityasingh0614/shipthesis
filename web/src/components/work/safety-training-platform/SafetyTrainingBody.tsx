@@ -431,7 +431,7 @@ export function SafetyTrainingBody() {
       <section className={`${styles.section} ${showTestimonial ? "" : styles.band}`}>
         <div className={styles.wrap}>
           <Reveal>
-            <Link className={`${styles.next} ${isProduction ? styles.nextSolo : ""}`} href={next ? `/work/${next.slug}` : "/#work"}>
+            <Link className={styles.next} href={next ? `/work/${next.slug}` : "/#work"}>
               <div>
                 <small className={styles.nextLabel}>Next project</small>
                 <h2>

@@ -663,7 +663,7 @@ export function HeroVisual() {
             {logo("/logo/kotlin.svg", LABEL_X + 64, chipsY)}
           </TechChip>
           <TechChip x={LABEL_X + 96} y={chipsY}>
-            {logo("/logo/aws-light.svg", LABEL_X + 96, chipsY)}
+            {logo("/logo/aws-dark.svg", LABEL_X + 96, chipsY)}
           </TechChip>
 
           {/* 3. Build */}
