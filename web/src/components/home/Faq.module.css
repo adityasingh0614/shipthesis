@@ -47,7 +47,7 @@
 
 .item {
   border-top: 1px solid var(--line);
-  background: var(--surface);
+  background: transparent;
 }
 .item:last-child {
   border-bottom: 1px solid var(--line);
