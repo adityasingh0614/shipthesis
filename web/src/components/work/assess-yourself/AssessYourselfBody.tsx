@@ -135,7 +135,7 @@ export function AssessYourselfBody() {
               { src: "a11.png", w: 1000, h: 2064, cap: "Exam details", line: "Details, notices and study material before the paper.", alt: "Exam details with tabs for exam details, advertisements and study material" },
             ].map((p, i) => (
               <Reveal key={p.src} delay={i * 0.12} className={styles.phone}>
-                <figure className={p.crop ? styles.crop : undefined}>
+                <figure className={"crop" in p && (p as any).crop ? styles.crop : undefined}>
                   <Image src={`/work/assess-yourself/${p.src}`} width={p.w} height={p.h} alt={p.alt} sizes="100vw" />
                 </figure>
                 <div className={styles.pcap}>
