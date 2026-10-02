@@ -149,4 +149,26 @@ export function Logo({
   );
 }
 
+export function ImageLogo({
+  src,
+  x,
+  y,
+  size,
+}: {
+  src: string;
+  x: number;
+  y: number;
+  size: number;
+}) {
+  return (
+    <image
+      href={src}
+      x={x}
+      y={y}
+      width={size}
+      height={size}
+    />
+  );
+}
+
 export const mono = { fontFamily: "var(--font-mono)" };

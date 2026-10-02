@@ -12,7 +12,7 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import { siFlutter, siKotlin, siSwift, type SimpleIcon } from "simple-icons";
+
 import { AWS_LOGO } from "./aws-logo";
 import styles from "./HeroVisual.module.css";
 
@@ -394,11 +394,13 @@ function TechChip({
     </g>
   );
 }
-const logo = (icon: SimpleIcon, x: number, y: number) => (
-  <path
-    d={icon.path}
-    fill={`#${icon.hex}`}
-    transform={`translate(${x + 6} ${y + 6}) scale(${14 / 24})`}
+const logo = (src: string, x: number, y: number) => (
+  <image
+    href={src}
+    x={x + 5}
+    y={y + 5}
+    width={16}
+    height={16}
   />
 );
 
@@ -652,22 +654,16 @@ export function HeroVisual() {
             corner={BODY_CORNER}
           />
           <TechChip x={LABEL_X} y={chipsY}>
-            {logo(siFlutter, LABEL_X, chipsY)}
+            {logo("/logo/flutter-svgrepo-com.svg", LABEL_X, chipsY)}
           </TechChip>
           <TechChip x={LABEL_X + 32} y={chipsY}>
-            {logo(siSwift, LABEL_X + 32, chipsY)}
+            {logo("/logo/swift.svg", LABEL_X + 32, chipsY)}
           </TechChip>
           <TechChip x={LABEL_X + 64} y={chipsY}>
-            {logo(siKotlin, LABEL_X + 64, chipsY)}
+            {logo("/logo/kotlin.svg", LABEL_X + 64, chipsY)}
           </TechChip>
           <TechChip x={LABEL_X + 96} y={chipsY}>
-            <g
-              transform={`translate(${LABEL_X + 99} ${chipsY + 3}) scale(${20 / 128})`}
-            >
-              {AWS_LOGO.map((p) => (
-                <path key={p.fill} d={p.d} fill={p.fill} />
-              ))}
-            </g>
+            {logo("/logo/aws-light.svg", LABEL_X + 96, chipsY)}
           </TechChip>
 
           {/* 3. Build */}

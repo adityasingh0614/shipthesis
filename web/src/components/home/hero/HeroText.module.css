@@ -53,11 +53,11 @@
   border-color: var(--ink);
 }
 
-.secondary svg {
+.actions :global(.btn) svg {
   transition: transform 160ms ease-out;
 }
 
-.secondary:hover svg {
+.actions :global(.btn):hover svg {
   transform: translateX(3px);
 }
 

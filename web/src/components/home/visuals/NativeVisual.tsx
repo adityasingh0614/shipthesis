@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { siKotlin, siSwift } from "simple-icons";
-import { Logo, POP, enter, mono, useLoop, useShadow } from "./shared";
+import { ImageLogo, POP, enter, mono, useLoop, useShadow } from "./shared";
 
 /*
  * Native iOS & Android: the phone's chip powers up, then each hardware
@@ -73,8 +72,8 @@ const NODES = [
 ];
 
 const LANGS = [
-  { icon: siSwift, label: "Swift", x: 92, at: 0.5 },
-  { icon: siKotlin, label: "Kotlin", x: 204, at: 0.55 },
+  { src: "/logo/swift.svg", label: "Swift", x: 92, at: 0.5 },
+  { src: "/logo/kotlin.svg", label: "Kotlin", x: 204, at: 0.55 },
 ];
 
 export function NativeVisual() {
@@ -214,7 +213,7 @@ export function NativeVisual() {
               strokeWidth={2}
             />
           </g>
-          <Logo icon={l.icon} x={l.x + 16} y={215} size={16} />
+          <ImageLogo src={l.src} x={l.x + 16} y={215} size={16} />
           <text
             x={l.x + 40}
             y={228}

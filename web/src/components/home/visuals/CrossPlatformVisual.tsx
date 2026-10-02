@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { siAndroid, siApple, siFlutter, type SimpleIcon } from "simple-icons";
-import { Logo, POP, enter, mono, useLoop, useShadow } from "./shared";
+import { siAndroid, siApple, type SimpleIcon } from "simple-icons";
+import { Logo, ImageLogo, POP, enter, mono, useLoop, useShadow } from "./shared";
 
 /*
  * Cross-platform apps: one Flutter codebase is written, the build branches,
@@ -144,7 +144,7 @@ export function CrossPlatformVisual() {
         <g filter={shadow.filter}>
           <rect x={116} y={20} width={168} height={92} rx={12} {...card} />
         </g>
-        <Logo icon={siFlutter} x={130} y={31} size={13} />
+        <ImageLogo src="/logo/flutter-svgrepo-com.svg" x={130} y={31} size={13} />
         <text
           x={149}
           y={41.5}

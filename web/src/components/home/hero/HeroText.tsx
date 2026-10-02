@@ -13,10 +13,7 @@ export function HeroText() {
         phone every week, and code you own.
       </p>
       <div className={styles.actions}>
-        <Link href="/#contact" className="btn">
-          Book a Discovery Call
-        </Link>
-        <Link href="/#work" className={`btn ${styles.secondary}`}>
+        <Link href="/#work" className="btn">
           See our work
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
@@ -28,6 +25,9 @@ export function HeroText() {
               strokeLinejoin="round"
             />
           </svg>
+        </Link>
+        <Link href="/#contact" className={`btn ${styles.secondary}`}>
+          Book a Discovery Call
         </Link>
       </div>
     </>

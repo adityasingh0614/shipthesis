@@ -16,30 +16,12 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import {
-  siAstro,
-  siCloudflareworkers,
-  siDotnet,
-  siExpress,
-  siFirebase,
-  siFlutter,
-  siNextdotjs,
-  siNodedotjs,
-  siPuppeteer,
-  siRazorpay,
-  siSentry,
-  siSupabase,
-  siTailwindcss,
-  siTypescript,
-  siZoom,
-  type SimpleIcon,
-} from "simple-icons";
 import { CarouselDots } from "@/components/motion-ui/carousel-controls";
 import { navHideLock } from "@/components/motion-ui/nav-hide-lock";
 import styles from "./OurWork.module.css";
 
-/** Tools with no Simple Icons mark render as a text-only chip. */
-type Tech = { icon?: SimpleIcon; label?: string };
+/** Tools with no src render as a text-only chip. */
+type Tech = { src?: string; label: string };
 
 type Project = {
   name: string;
@@ -73,11 +55,11 @@ const PROJECTS: Project[] = [
     client: "Client: Aptellic",
     // Pending: founder will supply the final Assess Yourself stack.
     stack: [
-      { icon: siFlutter },
-      { icon: siNodedotjs },
-      { icon: siExpress },
-      { icon: siFirebase },
-      { icon: siRazorpay },
+      { src: "/logo/flutter-svgrepo-com.svg", label: "Flutter" },
+      { src: "/logo/nodejs-logo-svgrepo-com.svg", label: "Node.js" },
+      { src: "/logo/Express.svg", label: "Express" },
+      { src: "/logo/Firebase.svg", label: "Firebase" },
+      { src: "/logo/razorpay-icon.svg", label: "Razorpay" },
     ],
     time: "3-4 weeks",
     status: "Delivered, launching soon",
@@ -92,12 +74,12 @@ const PROJECTS: Project[] = [
       "A dedicated, brand-first LMS built for live cohort-based learning.",
     client: "Client: EHS Guru",
     stack: [
-      { icon: siNextdotjs },
-      { icon: siSupabase },
-      { icon: siZoom, label: "Zoom API" },
-      { icon: siTypescript },
-      { icon: siSentry },
-      { icon: siTailwindcss, label: "Tailwind CSS" },
+      { src: "/logo/next-dot-js-svgrepo-com.svg", label: "Next.js" },
+      { src: "/logo/supabase.svg", label: "Supabase" },
+      { src: "/logo/zoom.svg", label: "Zoom API" },
+      { src: "/logo/typescript.svg", label: "TypeScript" },
+      { src: "/logo/sentry.svg", label: "Sentry" },
+      { src: "/logo/tailwindcss.svg", label: "Tailwind CSS" },
     ],
     time: "Since May 2026",
     status: "Live, on our maintenance plan",
@@ -112,12 +94,12 @@ const PROJECTS: Project[] = [
       "A client-reporting SaaS that turns messy CSV exports into a branded report, with the analysis written, not just charted.",
     client: "Our own product",
     stack: [
-      { icon: siNextdotjs },
-      { icon: siSupabase },
-      { icon: siTypescript },
-      { icon: siTailwindcss, label: "Tailwind CSS" },
-      { label: "Dodo Payments" },
-      { icon: siPuppeteer },
+      { src: "/logo/next-dot-js-svgrepo-com.svg", label: "Next.js" },
+      { src: "/logo/supabase.svg", label: "Supabase" },
+      { src: "/logo/typescript.svg", label: "TypeScript" },
+      { src: "/logo/tailwindcss.svg", label: "Tailwind CSS" },
+      { src: "/logo/dodopayments.svg", label: "Dodo Payments" },
+      { src: "/logo/puppeteer.svg", label: "Puppeteer" },
     ],
     status: "Live",
     slug: "poststeady",
@@ -131,23 +113,18 @@ const PROJECTS: Project[] = [
       "A native Windows utility for advanced, system-wide display color and temperature control.",
     client: "Our own product",
     stack: [
-      { icon: siDotnet, label: "C# / .NET / WPF" },
+      { src: "/logo/Microsoft_.NET_logo.svg", label: "C# / .NET / WPF" },
       { label: "Magnification API" },
-      { label: "Velopack" },
-      { icon: siAstro },
-      { icon: siTailwindcss, label: "Tailwind CSS" },
-      { icon: siCloudflareworkers, label: "Dodo + Cloudflare Workers" },
+      { src: "/logo/velopack-icon.svg", label: "Velopack" },
+      { src: "/logo/astro.svg", label: "Astro" },
+      { src: "/logo/tailwindcss.svg", label: "Tailwind CSS" },
+      { src: "/logo/dodopayments.svg", label: "Dodo Payments" },
+      { src: "/logo/cloudflareworkers.svg", label: "Cloudflare Workers" },
     ],
     status: "Live",
     slug: "chromalayer",
   },
 ];
-
-// Near-black brand marks use the page ink instead.
-const iconColor = ({ hex }: SimpleIcon) =>
-  [0, 2, 4].every((o) => parseInt(hex.slice(o, o + 2), 16) < 0x20)
-    ? "var(--ink)"
-    : `#${hex}`;
 
 /** Pinned scroll-driven carousel only where it fits and motion is welcome. */
 const PIN_QUERY =
@@ -192,19 +169,12 @@ function ProjectCard({
         <p className={styles.description}>{project.description}</p>
 
         <ul className={styles.stack} aria-label="Stack">
-          {project.stack.map(({ icon, label }) => (
-            <li key={label ?? icon?.slug} className={styles.chip}>
-              {icon && (
-                <svg
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                  aria-hidden="true"
-                >
-                  <path d={icon.path} fill={iconColor(icon)} />
-                </svg>
+          {project.stack.map(({ src, label }) => (
+            <li key={label} className={styles.chip}>
+              {src && (
+                <img src={src} alt="" width={16} height={16} aria-hidden="true" />
               )}
-              {label ?? icon?.title}
+              {label}
             </li>
           ))}
         </ul>
