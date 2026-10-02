@@ -1,5 +1,5 @@
 .wrapper {
-  background: color-mix(in srgb, var(--green) 8%, var(--surface));
+  background: var(--surface);
   padding: clamp(100px, 15vw, 200px) 0;
 }
 
