@@ -75,7 +75,6 @@ export function LegalLayout({
         </nav>
 
         <div className={styles.badge}>
-          <span className={styles.badgeDot} aria-hidden="true" />
           <span>{badgeText}</span>
         </div>
 

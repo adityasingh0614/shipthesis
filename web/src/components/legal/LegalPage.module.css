@@ -41,9 +41,8 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   padding: 4px 10px;
-  border-radius: 9999px;
+  border-radius: var(--radius-control);
   background: var(--surface-alt);
   border: 1px solid var(--line);
   font-family: var(--font-mono), monospace;
@@ -53,13 +52,6 @@
   text-transform: uppercase;
   color: var(--green);
   margin-bottom: 14px;
-}
-
-.badgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
 }
 
 .title {

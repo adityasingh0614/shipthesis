@@ -5,7 +5,7 @@ import styles from "@/components/legal/LegalPage.module.css";
 export const metadata: Metadata = {
   title: "Privacy Policy | Ship Thesis",
   description:
-    "How Ship Thesis collects, uses, and safeguards client and visitor information across our website and engineering services.",
+    "Privacy policy, CCPA/GDPR compliance disclosures, subprocessor list, and data security standards for Ship Thesis software engineering services.",
   robots: {
     index: false,
     follow: false,
@@ -15,14 +15,15 @@ export const metadata: Metadata = {
 const TOC: TocItem[] = [
   { id: "principles", num: "01", title: "Privacy Principles" },
   { id: "collection", num: "02", title: "Information We Collect" },
-  { id: "usage", num: "03", title: "How We Use Data" },
-  { id: "processors", num: "04", title: "Third-Party Subprocessors" },
-  { id: "security", num: "05", title: "Project Data Security" },
-  { id: "retention", num: "06", title: "Data Retention" },
-  { id: "rights", num: "07", title: "Your Privacy Rights" },
-  { id: "cookies", num: "08", title: "Cookies & Tracking" },
-  { id: "children", num: "09", title: "Children's Privacy" },
-  { id: "contact", num: "10", title: "Policy Updates & Contact" },
+  { id: "usage", num: "03", title: "How We Use Information" },
+  { id: "ai-privacy", num: "04", title: "AI & Model Training Safeguards" },
+  { id: "processors", num: "05", title: "Third-Party Subprocessors" },
+  { id: "security", num: "06", title: "Security & Secret Management" },
+  { id: "retention", num: "07", title: "Data Retention Protocol" },
+  { id: "us-rights", num: "08", title: "US & California Rights (CCPA)" },
+  { id: "gdpr-rights", num: "09", title: "GDPR & International Rights" },
+  { id: "cookies", num: "10", title: "Cookies & Zero-Tracking" },
+  { id: "contact", num: "11", title: "Data Controller & Contact" },
 ];
 
 export default function PrivacyPage() {
@@ -31,7 +32,7 @@ export default function PrivacyPage() {
       currentDoc="privacy"
       title="Privacy Policy"
       badgeText="Data & Privacy"
-      lede="We respect your privacy and handle founder ideas and company data with strict confidentiality. We do not sell your personal data or track you across the web. Here is exactly what we collect, why we need it, and how it is protected."
+      lede="We respect your privacy and handle founder ideas, project specifications, and codebase data with rigorous confidentiality. We never sell your personal data or track you across the web. Here is our full privacy and data governance framework."
       lastUpdated="October 17, 2026"
       effectiveDate="October 17, 2026"
       toc={TOC}
@@ -40,26 +41,29 @@ export default function PrivacyPage() {
       <section id="principles" className={styles.section}>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>01</span>
-          <h2 className={styles.sectionTitle}>Privacy Principles</h2>
+          <h2 className={styles.sectionTitle}>Privacy Principles &amp; Commitments</h2>
         </div>
         <p className={styles.bodyText}>
-          At Ship Thesis (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), we believe privacy is fundamental to client trust. As an independent software studio building products for founders worldwide, we approach data protection through three unshakeable rules:
+          At <strong>Ship Thesis Studio</strong> (&ldquo;Ship Thesis&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), we recognize that startup founders and engineering teams share sensitive strategic plans, architectural designs, and proprietary concepts with us. We protect this trust through four institutional commitments:
         </p>
         <div className={styles.callout}>
-          <div className={styles.calloutBadge}>Zero-Data-Monetization Pledge</div>
+          <div className={styles.calloutBadge}>Absolute Zero-Monetization Pledge</div>
           <p className={styles.calloutText}>
-            We never sell, rent, monetize, or trade your contact information, startup concepts, or client communications with advertising networks, data brokers, or external third parties.
+            We never sell, rent, monetize, or trade your personal data, contact information, codebase contents, or startup ideas to data brokers, advertising networks, or external third parties under any circumstances.
           </p>
         </div>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Data Minimization:</strong> We request only the minimal information necessary to evaluate your project, schedule discovery calls, and engineer your application.
+            <strong>Data Minimization:</strong> We collect only the information strictly necessary to evaluate project feasibility, schedule discovery meetings, and engineer your application.
           </li>
           <li className={styles.listItem}>
-            <strong>Confidentiality First:</strong> Unreleased founder ideas, product wireframes, and customer metrics are treated with high-security confidentiality.
+            <strong>Strict Confidentiality:</strong> Unreleased founder ideas, design wireframes, financial projections, and database structures are treated as privileged confidential material.
           </li>
           <li className={styles.listItem}>
-            <strong>Ownership &amp; Control:</strong> You maintain full ownership over your code, data schemas, and credentials at every phase of our collaboration.
+            <strong>Client Sovereignty:</strong> You retain complete ownership and control over your customer data, repository access, and production infrastructure.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Transparent Processing:</strong> No hidden background telemetry, cross-site trackers, or surprise third-party integrations.
           </li>
         </ul>
       </section>
@@ -71,202 +75,265 @@ export default function PrivacyPage() {
           <h2 className={styles.sectionTitle}>Information We Collect</h2>
         </div>
         <p className={styles.bodyText}>
-          Depending on how you interact with our website and services, we collect information across two categories:
+          We collect and process personal data across distinct operational categories:
         </p>
-        
-        <h3 className={styles.subHeading}>A. Information You Provide Directly</h3>
+
+        <h3 className={styles.subHeading}>A. Information You Voluntarily Provide</h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Discovery Call Scheduling:</strong> When booking a call via our Cal.com integration, you provide your name, email address, time zone, and notes regarding your target product and timeline.
+            <strong>Discovery Call Scheduling:</strong> When booking a discovery call via our Cal.com integration, you submit your name, corporate email address, time zone, target platform (iOS, Android, Web), and notes regarding your product concept.
           </li>
           <li className={styles.listItem}>
-            <strong>Contact Form &amp; Inquiries:</strong> When reaching out through our contact form or via email, we collect your name, email, company name, and project description.
+            <strong>Inquiries &amp; Scoping Questionnaires:</strong> When reaching out via our contact form or direct email, we collect your name, email, company entity, and written project parameters.
           </li>
           <li className={styles.listItem}>
-            <strong>Client Project Specifications:</strong> In Discovery Sprints or MVP builds, you may share product requirement docs (PRDs), design files (Figma), database structures, and business context.
+            <strong>Project &amp; Technical Assets:</strong> During active Discovery Sprints and MVP builds, Client may provide access to user journey wireframes, Figma designs, technical requirement documents, API documentation, and staging credentials.
           </li>
           <li className={styles.listItem}>
-            <strong>Billing Details:</strong> For invoice generation, we collect billing contact details, company registration numbers (where applicable for tax compliance), and billing addresses. Payment card numbers are processed directly by our PCI-compliant payment gateways and are never stored on our servers.
+            <strong>Invoicing &amp; Billing Records:</strong> For statutory accounting and contract execution, we collect legal entity names, billing addresses, tax registration identifiers (e.g., GSTIN or VAT numbers where applicable), and payment contact details. Payment card credentials are tokenized directly by our PCI-compliant payment gateways and are never accessible to our servers.
           </li>
         </ul>
 
         <h3 className={styles.subHeading}>B. Technical &amp; Operational Information</h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Server Logs:</strong> Standard HTTP request logs (IP address, browser type, referring URL, timestamp) recorded automatically for server health, DDoS mitigation, and diagnostic integrity.
+            <strong>Standard Server Diagnostics:</strong> Like virtually all websites, our infrastructure automatically logs basic HTTP request headers (IP address, browser user-agent, referring URL, timestamp) solely to monitor server health, diagnose 404 errors, and mitigate DDoS attacks.
           </li>
           <li className={styles.listItem}>
-            <strong>Privacy-Friendly Analytics:</strong> We use minimal, privacy-centric operational telemetry to understand website performance without tracking individual identity across websites.
+            <strong>Zero Invasive Profiling:</strong> We do not deploy fingerprinting scripts, behavioral trackers, or third-party marketing beacons (such as Meta Pixel, Google Ads remarketing, or LinkedIn Insight tags).
           </li>
         </ul>
       </section>
 
-      {/* 03 · How We Use Data */}
+      {/* 03 · How We Use Information */}
       <section id="usage" className={styles.section}>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>03</span>
-          <h2 className={styles.sectionTitle}>How We Use Data</h2>
+          <h2 className={styles.sectionTitle}>How We Use Your Information</h2>
         </div>
         <p className={styles.bodyText}>
-          We utilize the data we collect solely for lawful, service-oriented purposes, specifically:
+          We process personal and project data strictly for legitimate business and contract performance purposes:
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Delivering Engineering Services:</strong> Scoping, architecting, programming, testing, and deploying mobile apps and web platforms requested by you.
+            <strong>Contract Performance:</strong> Delivering Discovery Sprints, designing user interfaces, writing clean source code, conducting automated testing, and deploying mobile builds to Client accounts.
           </li>
           <li className={styles.listItem}>
-            <strong>Client Communications:</strong> Responding to inbound inquiries, hosting video discovery calls, providing weekly sprint build demos, and offering customer support.
+            <strong>Direct Communication:</strong> Conducting scheduled video discovery calls, delivering weekly interactive sprint builds, and providing ongoing engineering updates via email or Slack.
           </li>
           <li className={styles.listItem}>
-            <strong>Billing &amp; Financial Compliance:</strong> Generating milestone invoices, processing receipts, and satisfying statutory accounting and taxation duties.
+            <strong>Financial Administration:</strong> Generating fixed-quote milestone invoices, processing receipts, and maintaining records in compliance with corporate taxation statutes.
           </li>
           <li className={styles.listItem}>
-            <strong>Security &amp; Abuse Prevention:</strong> Guarding our systems and repositories against security vulnerabilities, unauthorized access, spam, and fraud.
+            <strong>Security &amp; Legal Compliance:</strong> Safeguarding our systems against fraudulent activities, protecting intellectual property rights, and fulfilling regulatory obligations.
           </li>
         </ul>
       </section>
 
-      {/* 04 · Third-Party Processors */}
-      <section id="processors" className={styles.section}>
+      {/* 04 · AI & Model Training Safeguards */}
+      <section id="ai-privacy" className={styles.section}>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>04</span>
+          <h2 className={styles.sectionTitle}>AI &amp; Model Training Safeguards</h2>
+        </div>
+        <div className={styles.callout}>
+          <div className={styles.calloutBadge}>Codebase Privacy Guarantee</div>
+          <p className={styles.calloutText}>
+            Your proprietary source code, database structures, business algorithms, and client data are NEVER shared with public AI models or used to train external commercial machine learning systems.
+          </p>
+        </div>
+        <p className={styles.bodyText}>
+          As an engineering studio building AI-powered mobile apps and SaaS products, we adhere to strict AI governance:
+        </p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <strong>Zero Training on Client IP:</strong> We contractually configure all enterprise developer tooling (e.g., GitHub Copilot Enterprise, OpenAI API, Anthropic API) with zero-data-retention (ZDR) and no-training flags enabled.
+          </li>
+          <li className={styles.listItem}>
+            <strong>No Public Cloud Leakage:</strong> Client proprietary assets are isolated within dedicated repository workspaces and never contributed to open repositories without explicit authorization.
+          </li>
+        </ul>
+      </section>
+
+      {/* 05 · Third-Party Subprocessors */}
+      <section id="processors" className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionNum}>05</span>
           <h2 className={styles.sectionTitle}>Third-Party Subprocessors</h2>
         </div>
         <p className={styles.bodyText}>
-          We collaborate with reputable, security-audited third-party providers who act as data processors to assist in operations:
+          We engage industry-standard, SOC 2 and ISO 27001 audited service providers to facilitate infrastructure operations:
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Cal.com:</strong> Powers discovery call calendar scheduling and time slot booking.
+            <strong>Cal.com:</strong> Powers discovery meeting scheduling and calendar synchronization.
           </li>
           <li className={styles.listItem}>
-            <strong>Payment Gateways (Razorpay &amp; Stripe):</strong> Handle secure payment tokenization, card processing, and invoice settlements under strict PCI-DSS Level 1 compliance.
+            <strong>Vercel Inc.:</strong> High-availability edge hosting, global CDN, and frontend serverless deployment.
           </li>
           <li className={styles.listItem}>
-            <strong>Vercel &amp; GitHub:</strong> Provide high-availability website hosting, content delivery networks (CDNs), and secure Git version control.
+            <strong>GitHub Inc. (Microsoft):</strong> Secure private source code version control, CI/CD automated test pipelines, and issue tracking.
           </li>
           <li className={styles.listItem}>
-            <strong>Email Services (Resend &amp; Google Workspace):</strong> Deliver inquiry notifications, transactional receipts, and direct client correspondence.
+            <strong>Stripe Inc. &amp; Razorpay Software:</strong> Secure electronic invoice billing and payment processing under PCI-DSS Level 1 compliance.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Resend Inc. &amp; Google Workspace:</strong> Transactional notification delivery, discovery confirmations, and encrypted client correspondence.
           </li>
         </ul>
         <p className={styles.bodyText}>
-          Each subprocessor is contractually bound to process data strictly under our explicit instructions and in compliance with international data privacy standards.
+          Each subprocessor is bound by rigorous Data Processing Agreements (DPAs) requiring adherence to international privacy and security standards.
         </p>
       </section>
 
-      {/* 05 · Project Data Security */}
+      {/* 06 · Security & Secret Management */}
       <section id="security" className={styles.section}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionNum}>05</span>
-          <h2 className={styles.sectionTitle}>Project Data Security</h2>
+          <span className={styles.sectionNum}>06</span>
+          <h2 className={styles.sectionTitle}>Security &amp; Secret Management</h2>
         </div>
         <p className={styles.bodyText}>
-          As developers, we understand the technical risks of credential leaks and data breaches. We implement strict operational safeguards:
+          We take code and credential security seriously. We enforce strict institutional engineering safeguards:
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Zero Hardcoded Secrets:</strong> We enforce an absolute policy against hardcoding production API keys, database credentials, or private certificates. Environment variables and encrypted vaults (e.g., 1Password, Doppler, AWS Secrets Manager) are used exclusively.
+            <strong>Zero Hardcoded Secrets Policy:</strong> We strictly prohibit hardcoding API keys, database connection strings, or cloud tokens in source code. All runtime secrets are managed via encrypted environment variables or dedicated secret managers (e.g., Doppler, AWS Secrets Manager, 1Password Secrets).
           </li>
           <li className={styles.listItem}>
-            <strong>Principle of Least Privilege:</strong> Access to Client Git repositories, developer consoles, and staging environments is restricted to active assigned engineers and revoked immediately upon offboarding.
+            <strong>Least-Privilege Access:</strong> Access to Client Git repositories, Apple Developer teams, and cloud staging accounts is granted only to assigned project engineers and revoked immediately upon project offboarding.
           </li>
           <li className={styles.listItem}>
-            <strong>Encryption in Transit &amp; Rest:</strong> All traffic to our site is enforced over HTTPS with TLS 1.3 encryption. Internal developer workstations employ full-disk encryption and mandatory multi-factor authentication (MFA).
+            <strong>Encryption Standards:</strong> All website traffic is secured using TLS 1.3 encryption. Workstation drives are fully encrypted (FileVault / BitLocker) with mandatory hardware multi-factor authentication (MFA).
+          </li>
+          <li className={styles.listItem}>
+            <strong>Pre-Commit Git Auditing:</strong> Repositories employ pre-commit scanning tools to prevent accidental secret or credential leakage.
           </li>
         </ul>
       </section>
 
-      {/* 06 · Data Retention */}
+      {/* 07 · Data Retention Protocol */}
       <section id="retention" className={styles.section}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionNum}>06</span>
-          <h2 className={styles.sectionTitle}>Data Retention</h2>
-        </div>
-        <p className={styles.bodyText}>
-          We retain personal data only for as long as necessary to fulfill the operational purposes described in this policy:
-        </p>
-        <ul className={styles.list}>
-          <li className={styles.listItem}>
-            <strong>Inquiries &amp; Discovery Notes:</strong> Prospective founder inquiries that do not proceed to a sprint are archived and securely purged after twenty-four (24) months.
-          </li>
-          <li className={styles.listItem}>
-            <strong>Active Client Project Records:</strong> Deliverables, scopes, and communications are preserved throughout the active build and for the duration of any Care retainer or warranty period.
-          </li>
-          <li className={styles.listItem}>
-            <strong>Invoicing &amp; Financial Records:</strong> Retained for statutory periods (typically 7 years) required by tax authorities and commercial regulatory audits.
-          </li>
-        </ul>
-      </section>
-
-      {/* 07 · Privacy Rights */}
-      <section id="rights" className={styles.section}>
-        <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>07</span>
-          <h2 className={styles.sectionTitle}>Your Privacy Rights</h2>
+          <h2 className={styles.sectionTitle}>Data Retention Protocol</h2>
         </div>
         <p className={styles.bodyText}>
-          Regardless of your jurisdiction (including the European Union under GDPR, the United Kingdom under UK GDPR, and California under CCPA/CPRA), we grant all visitors and clients the following rights:
+          We retain personal data only for as long as required to accomplish the legitimate business purposes outlined in this policy:
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Right to Access:</strong> You may request a copy of the personal information we hold about you.
+            <strong>Inquiries &amp; Discovery Calls:</strong> Unconverted lead records and exploratory project notes are archived and permanently purged after twenty-four (24) months.
           </li>
           <li className={styles.listItem}>
-            <strong>Right to Rectification:</strong> You may request correction of inaccurate, outdated, or incomplete personal data.
+            <strong>Client Project Deliverables:</strong> Completed deliverables and documentation are retained during the active development period, 30-day warranty, and any subsequent Care retainer period.
           </li>
           <li className={styles.listItem}>
-            <strong>Right to Erasure (&ldquo;Right to be Forgotten&rdquo;):</strong> You may request that we delete your personal contact records, subject to statutory retention obligations.
+            <strong>Financial Invoices &amp; Accounting:</strong> Statutory financial records and milestone invoices are retained for seven (7) years in accordance with tax and corporate governance laws.
           </li>
           <li className={styles.listItem}>
-            <strong>Right to Restrict or Object:</strong> You may object to the processing of your data or request restriction of certain processing activities.
+            <strong>Credential Offboarding:</strong> Client credentials and temporary administrative access tokens are securely purged within seven (7) business days of final project sign-off.
           </li>
         </ul>
-        <p className={styles.bodyText}>
-          To exercise any of these rights, email us directly at <a href="mailto:hello@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>hello@shipthesis.com</a>. We respond to all verified requests within thirty (30) days without fees or penalties.
-        </p>
       </section>
 
-      {/* 08 · Cookies & Tracking */}
-      <section id="cookies" className={styles.section}>
+      {/* 08 · US & California Rights (CCPA/CPRA) */}
+      <section id="us-rights" className={styles.section}>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>08</span>
-          <h2 className={styles.sectionTitle}>Cookies &amp; Tracking Technologies</h2>
+          <h2 className={styles.sectionTitle}>US &amp; California Privacy Rights (CCPA / CPRA)</h2>
         </div>
         <p className={styles.bodyText}>
-          Ship Thesis does not employ cross-site tracking pixels, advertising retargeting beacons (such as Meta Pixel or Google Ads tags), or third-party behavioral profiling scripts.
+          This section provides disclosures required under the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA), and extends to residents of Virginia, Colorado, Connecticut, Utah, and other US states with comprehensive privacy legislation:
         </p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <strong>No Sale or Sharing:</strong> We do not sell personal information, nor do we share personal information for cross-context behavioral advertising. We have not sold or shared any personal information in the preceding twelve (12) months.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Right to Know / Access:</strong> You have the right to request disclosure of the specific pieces and categories of personal information we have collected about you.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Right to Delete:</strong> You may request deletion of personal information collected from you, subject to legal and statutory recordkeeping exceptions.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Right to Correct:</strong> You have the right to request correction of inaccurate personal information maintained by us.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Non-Discrimination:</strong> We will never discriminate against you, alter service pricing, or deny services for exercising any of your statutory privacy rights.
+          </li>
+        </ul>
         <p className={styles.bodyText}>
-          Our site uses only strictly necessary functional cookies or localized browser storage (such as remembering UI preferences or maintaining session state across embedded scheduling modals). Because we do not run non-essential tracking cookies, you will not encounter invasive cookie consent popups interrupting your reading experience.
+          To exercise your California or US privacy rights, email <a href="mailto:hello@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>hello@shipthesis.com</a> with the subject &ldquo;CCPA Data Request.&rdquo;
         </p>
       </section>
 
-      {/* 09 · Children's Privacy */}
-      <section id="children" className={styles.section}>
+      {/* 09 · GDPR & International Rights */}
+      <section id="gdpr-rights" className={styles.section}>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>09</span>
-          <h2 className={styles.sectionTitle}>Children&rsquo;s Privacy</h2>
+          <h2 className={styles.sectionTitle}>GDPR &amp; International Rights</h2>
         </div>
         <p className={styles.bodyText}>
-          Our website and software engineering services are intended exclusively for professional founders, business owners, and individuals aged eighteen (18) and older. We do not knowingly solicit or collect personal information from children under eighteen. If we discover that personal data of a minor has been collected inadvertently, we will promptly delete it.
+          For visitors and clients situated in the European Economic Area (EEA), the United Kingdom, or Switzerland, processing of personal data is governed by the General Data Protection Regulation (GDPR) and UK Data Protection Act 2018:
         </p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <strong>Lawful Bases:</strong> We process data based on: (a) performance of a contract to deliver software engineering; (b) our legitimate interests in operating and securing our studio; (c) compliance with legal obligations; and (d) your consent when voluntarily submitting inquiries.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Data Subject Rights:</strong> You hold the right to access, rectify, erase, restrict processing, object to processing, and request data portability for your personal data.
+          </li>
+          <li className={styles.listItem}>
+            <strong>International Data Transfers:</strong> Where data is transferred internationally, we ensure appropriate safeguards including standard contractual clauses (SCCs) approved by the European Commission.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Supervisory Authority:</strong> You have the right to lodge a complaint with your local data protection supervisory authority if you believe our processing violates applicable law.
+          </li>
+        </ul>
       </section>
 
-      {/* 10 · Policy Updates & Contact */}
-      <section id="contact" className={styles.section}>
+      {/* 10 · Cookies & Zero-Tracking */}
+      <section id="cookies" className={styles.section}>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>10</span>
-          <h2 className={styles.sectionTitle}>Policy Updates &amp; Contact</h2>
+          <h2 className={styles.sectionTitle}>Cookies &amp; Zero-Tracking Architecture</h2>
         </div>
         <p className={styles.bodyText}>
-          We may update this Privacy Policy periodically to reflect enhancements to our engineering workflows, new regulatory standards, or operational evolutions. Any modifications will be posted directly to this page with an updated &ldquo;Last updated&rdquo; timestamp.
+          We reject the modern surveillance web. Our website is engineered with a zero-tracking philosophy:
+        </p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <strong>No Third-Party Advertising Cookies:</strong> We do not place ad-retargeting cookies or tracking pixels on your machine.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Essential Session Storage Only:</strong> We use only strictly necessary local storage items required to maintain user UI state or embed our Cal.com booking modal.
+          </li>
+          <li className={styles.listItem}>
+            <strong>No Cookie Banner Clutter:</strong> Because we do not run non-essential advertising or tracking cookies, we do not subject you to intrusive cookie consent modals.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Do-Not-Track (DNT) Signals:</strong> Our website respects universal opt-out and Do-Not-Track signals transmitted by modern browsers.
+          </li>
+        </ul>
+      </section>
+
+      {/* 11 · Data Controller & Contact */}
+      <section id="contact" className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionNum}>11</span>
+          <h2 className={styles.sectionTitle}>Data Controller &amp; Contact Information</h2>
+        </div>
+        <p className={styles.bodyText}>
+          The data controller responsible for personal data processed under this Privacy Policy is:
         </p>
         <p className={styles.bodyText}>
-          For any privacy inquiries, data subject requests, or security disclosures, please contact our data controller:
-        </p>
-        <p className={styles.bodyText}>
-          <strong>Data Controller: Ship Thesis</strong><br />
+          <strong>Ship Thesis Studio</strong><br />
+          Data Governance &amp; Privacy Officer<br />
           Email: <a href="mailto:hello@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>hello@shipthesis.com</a><br />
-          Inquiries: <a href="https://shipthesis.com/#contact" style={{ color: "var(--ink)", textDecoration: "underline" }}>shipthesis.com/#contact</a>
+          Web: <a href="https://shipthesis.com" style={{ color: "var(--ink)", textDecoration: "underline" }}>shipthesis.com</a>
+        </p>
+        <p className={styles.bodyText}>
+          We respond to all verified privacy, data access, and deletion requests within thirty (30) business days without cost or penalty.
         </p>
       </section>
     </LegalLayout>
