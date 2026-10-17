@@ -103,7 +103,7 @@ export function AssessYourselfBody() {
           <ul className={styles.scores}>
             {[
               { num: "3–4", unit: "weeks", cap: "To deliver the app" },
-              { num: "2", unit: "Excel formats", cap: "Turned into usable test content" },
+              { num: "2", unit: "Excel formats", cap: "Turned into live tests" },
               { num: "60+", unit: "questions", cap: "In a single timed paper" },
               { num: "15", unit: "day trial", cap: "Then paid plans" },
             ].map(({ num, unit, cap }, i) => (

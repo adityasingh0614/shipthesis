@@ -224,6 +224,7 @@
   align-items: center;
   text-align: center;
   gap: 6px;
+  width: 100%;
 }
 
 .num {
@@ -250,6 +251,7 @@
 
 .scoreCap {
   width: 100%;
+  align-self: stretch;
   margin-top: 18px;
   padding-top: 14px;
   border-top: 1px solid #edf2ee;
@@ -257,6 +259,7 @@
   line-height: 1.45;
   color: var(--ink-soft);
   text-align: center;
+  white-space: nowrap;
 }
 
 /* ---- 02 · exam discovery ---- */
@@ -1228,5 +1231,9 @@
   .scores {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .scoreCap {
+    white-space: normal;
   }
 }
