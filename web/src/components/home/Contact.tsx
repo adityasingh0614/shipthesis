@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
-import { siWhatsapp } from "simple-icons";
 import styles from "./Contact.module.css";
 
 export function Contact() {
@@ -50,46 +49,12 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Right Column: Contact Methods Card */}
+          {/* Right Column: Partnership & Comms Card */}
           <div className={styles.card}>
-            <h4 className={styles.cardTitle}>Direct Channels</h4>
+            <h4 className={styles.cardTitle}>Founder Partnership &amp; Comms</h4>
             <div className={styles.divider} />
             
             <ul className={styles.methods}>
-              <li className={styles.method}>
-                <span className={styles.methodIcon} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24">
-                    <path d={siWhatsapp.path} fill={"#${siWhatsapp.hex}"} />
-                  </svg>
-                </span>
-                <div className={styles.methodContent}>
-                  <span className={styles.methodLabel}>WhatsApp</span>
-                  <a
-                    href="https://wa.me/918816955217"
-                    className={styles.methodValue}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    +91 88169 55217
-                  </a>
-                </div>
-              </li>
-
-              <li className={styles.method}>
-                <span className={styles.methodIcon} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
-                    <path d="M12 18h.01"></path>
-                  </svg>
-                </span>
-                <div className={styles.methodContent}>
-                  <span className={styles.methodLabel}>Phone</span>
-                  <a href="tel:+918816955217" className={styles.methodValue}>
-                    +91 88169 55217
-                  </a>
-                </div>
-              </li>
-
               <li className={styles.method}>
                 <span className={styles.methodIcon} aria-hidden="true">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round">
@@ -98,7 +63,7 @@ export function Contact() {
                   </svg>
                 </span>
                 <div className={styles.methodContent}>
-                  <span className={styles.methodLabel}>Email</span>
+                  <span className={styles.methodLabel}>Direct Email</span>
                   <a href="mailto:hello@shipthesis.com" className={styles.methodValue}>
                     hello@shipthesis.com
                   </a>
@@ -107,27 +72,38 @@ export function Contact() {
 
               <li className={styles.method}>
                 <span className={styles.methodIcon} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 20 20">
-                    <path
-                      d="M10 18s6-5.1 6-9.6A6 6 0 0 0 4 8.4C4 12.9 10 18 10 18Z"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinejoin="round"
-                    />
-                    <circle
-                      cx="10"
-                      cy="8.4"
-                      r="2.1"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                    />
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
                   </svg>
                 </span>
                 <div className={styles.methodContent}>
-                  <span className={styles.methodLabel}>Location</span>
-                  <span className={styles.methodValue}>Working remotely worldwide</span>
+                  <span className={styles.methodLabel}>Time Zone Alignment</span>
+                  <span className={styles.methodValue}>Sync calls in US EST &amp; PST daylight hours</span>
+                </div>
+              </li>
+
+              <li className={styles.method}>
+                <span className={styles.methodIcon} aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                </span>
+                <div className={styles.methodContent}>
+                  <span className={styles.methodLabel}>Sprint Communication</span>
+                  <span className={styles.methodValue}>Private Slack Connect channel &amp; weekly video sync</span>
+                </div>
+              </li>
+
+              <li className={styles.method}>
+                <span className={styles.methodIcon} aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </span>
+                <div className={styles.methodContent}>
+                  <span className={styles.methodLabel}>Code &amp; IP Ownership</span>
+                  <span className={styles.methodValue}>Your GitHub, stores &amp; cloud accounts from day one</span>
                 </div>
               </li>
             </ul>

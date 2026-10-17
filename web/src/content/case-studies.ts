@@ -50,7 +50,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: ["Assess", "Yourself"],
     accent: "#283593",
     kicker: "Case study · Mobile app",
-    line: "An exam-prep app that takes students from finding the right exam to sitting a timed paper.",
+    line: "An offline-first mobile testing app built to handle timed papers that survive phone calls, battery savers, and interruptions.",
     card: {
       label: "Admit card · Case study 01",
       fields: [
@@ -72,9 +72,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "Assess Yourself: student corner exam list next to the app's splash screen, \"Your Ultimate Exam Preparation Companion\"",
     },
     seo: {
-      title: "Assess Yourself: an exam-prep app for government exams | Ship Thesis case study",
+      title: "Assess Yourself: an offline-first mobile testing app | Ship Thesis case study",
       description:
-        "How we built Assess Yourself for Aptellic in 3-4 weeks: exam discovery, timed tests that survive interruptions, and question banks imported from Excel.",
+        "How we built Assess Yourself for Aptellic in 3-4 weeks: structured exam discovery, timed tests that survive OS interruptions, and question banks imported from Excel.",
     },
   },
   {

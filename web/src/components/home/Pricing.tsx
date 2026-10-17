@@ -208,8 +208,8 @@ export function Pricing() {
           </p>
         </div>
 
-        <Link href="/pricing" className={styles.link}>
-          See full pricing
+        <Link href="/#contact" className={styles.link}>
+          Get a scoped quote for your build
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
               d="M3 9h11m-4-4 4 4-4 4"

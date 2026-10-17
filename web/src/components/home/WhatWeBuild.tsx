@@ -39,7 +39,7 @@ const SERVICES: { name: string; line: ReactNode; visual?: ReactNode }[] = [
 
 export function WhatWeBuild() {
   return (
-    <section className={styles.section} aria-labelledby="build-title">
+    <section id="services" className={styles.section} aria-labelledby="build-title">
       <div className={styles.inner}>
         <div className={styles.head}>
           <h2 id="build-title" className={styles.title}>
@@ -68,8 +68,8 @@ export function WhatWeBuild() {
           </ul>
         </VisualsLoop>
 
-        <Link href="/services" className={styles.link}>
-          See how each one works
+        <Link href="/#process" className={styles.link}>
+          See our weekly build process
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
               d="M3 9h11m-4-4 4 4-4 4"

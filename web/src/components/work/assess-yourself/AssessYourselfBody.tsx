@@ -120,18 +120,15 @@ export function AssessYourselfBody() {
       <section className={`${styles.section} ${styles.band}`} aria-labelledby="discovery-title">
         <div className={styles.wrap}>
           <Head label="02 · Exam discovery" id="discovery-title">
-            Every government exam, one <A>student corner</A>
+            Structured syllabi, one <A>student corner</A>
           </Head>
           <p className={styles.lede}>
-            Students start from the exam, not a search bar. Central and state
-            exams sit in one list, and each exam has its own page with the
-            details, notices and study material they need before choosing a
-            paper.
+            Students start from their target certification, not an empty search bar. National and regional tracks sit in one clear hierarchy, and each examination has its own hub with notices and study material before testing begins.
           </p>
           <div className={styles.phones}>
             {[
-              { src: "exam-list.webp", w: 1000, h: 2064, cap: "Exam list", line: "UPSC, SSC, RRB and IBPS in one place.", alt: "Student corner listing central government exams: UPSC, SSC, RRB and IBPS" },
-              { src: "exam-categories.webp", w: 1000, h: 2068, cap: "Exam categories", line: "Central, state and PSU, sorted the way students think.", alt: "Exam categories: central government, state and PSU" },
+              { src: "exam-list.webp", w: 1000, h: 2064, cap: "Exam catalogue", line: "Comprehensive papers indexed in one place.", alt: "Student corner listing examination papers" },
+              { src: "exam-categories.webp", w: 1000, h: 2068, cap: "Category hierarchy", line: "Multi-tier tracks, sorted the way students think.", alt: "Exam categories: national and regional boards" },
               { src: "a11.png", w: 1000, h: 2064, cap: "Exam details", line: "Details, notices and study material before the paper.", alt: "Exam details with tabs for exam details, advertisements and study material" },
             ].map((p, i) => (
               <Reveal key={p.src} delay={i * 0.12} className={styles.phone}>
@@ -166,7 +163,7 @@ export function AssessYourselfBody() {
           </Head>
           <ol className={styles.pipe}>
             {[
-              { t: "Excel files", p: "From the content team, as they already keep them.", s: "2 layouts · Marathi numerals", icon: <><rect x="8" y="10" width="40" height="36" rx="4" /><path d="M8 22h40M8 34h40M22 10v36M35 10v36" /></> },
+              { t: "Excel files", p: "From the client's content team, as they already format them.", s: "Multi-script schemas · Formula columns", icon: <><rect x="8" y="10" width="40" height="36" rx="4" /><path d="M8 22h40M8 34h40M22 10v36M35 10v36" /></> },
               { t: "Read both layouts", p: "Text and image-based answer options included.", s: "One importer", icon: <><path d="M12 18h32M12 28h32M12 38h20" /><path d="m38 34 6 4-6 4" strokeLinecap="round" strokeLinejoin="round" /></> },
               { t: "Check every row", p: "Rows that need a fix are listed; the rest carry on.", s: "Row-level error report", icon: <><path d="M14 20l5 5 9-10M14 36l5 5 9-10" strokeLinecap="round" strokeLinejoin="round" /><path d="M34 22h10M34 38h10" /></> },
               { t: "Ready-to-use tests", p: "Questions land in the app, grouped by exam and subject.", s: "No retyping", icon: <><rect x="14" y="8" width="28" height="40" rx="4" /><circle cx="21" cy="20" r="3" /><circle cx="21" cy="30" r="3" fill="currentColor" /><circle cx="21" cy="40" r="3" /><path d="M28 20h8M28 30h8M28 40h8" /></> },

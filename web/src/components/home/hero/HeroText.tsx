@@ -9,12 +9,12 @@ export function HeroText() {
         <span className={styles.titleLine}>to a live product.</span>
       </h1>
       <p className={styles.sub}>
-        AI-powered mobile apps and SaaS for founders: a new build on your
-        phone every week, and code you own.
+        AI-powered mobile apps and SaaS: a new build on your phone every
+        week, and code you own.
       </p>
       <div className={styles.actions}>
-        <Link href="/#work" className="btn">
-          See our work
+        <Link href="/#contact" className="btn">
+          Book a Discovery Call
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
               d="M3 9h11m-4-4 4 4-4 4"
@@ -26,8 +26,8 @@ export function HeroText() {
             />
           </svg>
         </Link>
-        <Link href="/#contact" className={`btn ${styles.secondary}`}>
-          Book a Discovery Call
+        <Link href="/#work" className={`btn ${styles.secondary}`}>
+          See our work
         </Link>
       </div>
     </>

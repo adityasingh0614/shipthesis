@@ -58,7 +58,7 @@ export function HowItWorks() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className={styles.section} aria-labelledby="how-title">
+    <section id="process" className={styles.section} aria-labelledby="how-title">
       <div className={styles.inner}>
         <div className={styles.head}>
           <h2 id="how-title" className={styles.title}>

@@ -51,7 +51,7 @@ const PROJECTS: Project[] = [
     type: "Mobile app",
     color: "#283593",
     description:
-      "A government exam-prep app built in Flutter, with exam discovery, timed tests, live tests and Razorpay subscriptions on a Node.js/Express REST API.",
+      "An offline-first exam prep and testing mobile app built in Flutter, with crash-resilient timed test recovery, dynamic question bank imports from Excel, and subscription billing.",
     client: "Client: Aptellic",
     // Pending: founder will supply the final Assess Yourself stack.
     stack: [

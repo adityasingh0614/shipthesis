@@ -72,7 +72,7 @@ export function Faq() {
   const items = showAll ? ITEMS : ITEMS.slice(0, VISIBLE);
 
   return (
-    <section className={styles.section} aria-labelledby="faq-title">
+    <section id="faq" className={styles.section} aria-labelledby="faq-title">
       <div className={styles.inner}>
         <div className={styles.head}>
           <h2 id="faq-title" className={styles.title}>
