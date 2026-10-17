@@ -639,11 +639,23 @@
 }
 .stat {
   position: relative;
-  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 156px;
+  padding: 24px 20px 20px;
   background: var(--surface);
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 26, 20, 0.03);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(15, 26, 20, 0.08);
 }
 .stat::before {
   content: "";
@@ -655,15 +667,22 @@
 .stat b {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  font-size: clamp(2rem, 2.75vw, 2.5rem);
   font-weight: 700;
   line-height: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 .stat span {
   display: block;
-  margin-top: 8px;
-  font-size: 0.95rem;
+  width: 100%;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #edf2ee;
+  font-size: 0.875rem;
+  line-height: 1.45;
   color: var(--ink-soft);
+  text-align: center;
 }
 
 /* ---- 02 · seven dials: the live before/after ---- */

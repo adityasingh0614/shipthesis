@@ -102,13 +102,16 @@ export function AssessYourselfBody() {
           </Reveal>
           <ul className={styles.scores}>
             {[
-              ["3-4 weeks", "To deliver the app"],
-              ["2 Excel formats", "Turned into usable test content"],
-              ["60+ questions", "In a single timed paper"],
-              ["15-day trial", "Then paid plans"],
-            ].map(([num, cap], i) => (
-              <Reveal as="li" key={cap} delay={i * 0.09} className={styles.score}>
-                <div className={styles.num}>{num}</div>
+              { num: "3–4", unit: "weeks", cap: "To deliver the app" },
+              { num: "2", unit: "Excel formats", cap: "Turned into usable test content" },
+              { num: "60+", unit: "questions", cap: "In a single timed paper" },
+              { num: "15", unit: "day trial", cap: "Then paid plans" },
+            ].map(({ num, unit, cap }, i) => (
+              <Reveal as="li" key={cap} delay={i * 0.08} className={styles.score}>
+                <div className={styles.scoreTop}>
+                  <span className={styles.num}>{num}</span>
+                  <span className={styles.unit}>{unit}</span>
+                </div>
                 <p className={styles.scoreCap}>{cap}</p>
               </Reveal>
             ))}

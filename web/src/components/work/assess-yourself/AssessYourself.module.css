@@ -193,31 +193,70 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   max-width: 920px;
-  margin: 24px auto 0;
+  margin: 28px auto 0;
   list-style: none;
 }
 
 .score {
-  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 156px;
+  padding: 22px 20px 20px;
   background: var(--surface);
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   border-radius: var(--radius-card);
+  box-shadow: 0 1px 3px rgba(15, 26, 20, 0.03);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.score:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(40, 53, 147, 0.08);
+  transform: translateY(-2px);
+}
+
+.scoreTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
 }
 
 .num {
   font-family: var(--font-mono);
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-size: clamp(2rem, 2.75vw, 2.5rem);
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   color: var(--accent);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.unit {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-align: center;
+  text-wrap: balance;
 }
 
 .scoreCap {
-  margin-top: 12px;
-  font-size: 0.9375rem;
-  line-height: 1.35;
+  width: 100%;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #edf2ee;
+  font-size: 0.875rem;
+  line-height: 1.45;
   color: var(--ink-soft);
+  text-align: center;
 }
 
 /* ---- 02 · exam discovery ---- */
@@ -1184,5 +1223,10 @@
 
   .paperHead {
     padding: 14px 20px;
+  }
+
+  .scores {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
