@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const TOC: TocItem[] = [
   { id: "services", num: "01", title: "Engagement Models & Scope" },
   { id: "ownership", num: "02", title: "IP & Work Made For Hire" },
-  { id: "payments", num: "03", title: "Fees & Payment Milestones" },
+  { id: "payments", num: "03", title: "Payment Milestones & Schedule" },
   { id: "acceptance", num: "04", title: "Review & Deemed Acceptance" },
   { id: "scope-changes", num: "05", title: "Scope Evolution & Swaps" },
   { id: "client-accounts", num: "06", title: "Client Accounts & Access" },
@@ -52,7 +52,7 @@ export default function TermsPage() {
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Discovery Sprint (1 week):</strong> An intensive, fixed-fee exploratory sprint delivering a written product specification, feature taxonomy (&ldquo;version one&rdquo; vs. &ldquo;future roadmap&rdquo;), user journey wireframes, system architecture plan, and a binding fixed quote with milestone timelines.
+            <strong>Discovery Sprint (1 week):</strong> An intensive exploratory sprint delivering a written product specification, feature taxonomy (&ldquo;version one&rdquo; vs. &ldquo;future roadmap&rdquo;), user journey wireframes, system architecture plan, and a fixed quote with milestone timelines.
           </li>
           <li className={styles.listItem}>
             <strong>MVP Build (typically 6–10 weeks):</strong> End-to-end design, database modeling, and production-grade software development with weekly testable builds delivered directly to Client devices for verification.
@@ -93,16 +93,19 @@ export default function TermsPage() {
       <section id="payments" className={styles.section}>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionNum}>03</span>
-          <h2 className={styles.sectionTitle}>Fees, Currency &amp; Payment Milestones</h2>
+          <h2 className={styles.sectionTitle}>Payment Milestones &amp; Schedule</h2>
         </div>
         <p className={styles.bodyText}>
-          All quotes and invoices are denominated and payable in <strong>United States Dollars (USD)</strong> via approved electronic payment methods (Stripe, Razorpay, or wire transfer). We operate on fixed, predictable milestones:
+          The 30% / 40% / 30% payment schedule is straightforward. It is much easier to budget around than an open-ended hourly engagement.
+        </p>
+        <p className={styles.bodyText}>
+          All quotes and invoices are agreed in writing in the applicable Statement of Work prior to kickoff, denominated in <strong>United States Dollars (USD)</strong>, and payable via approved electronic payment methods (Stripe, Razorpay, or wire transfer):
         </p>
         <ul className={styles.numList}>
           <li className={styles.numItem}>
             <span className={styles.numBadge}>1</span>
             <div>
-              <strong>Discovery Sprint:</strong> Fixed fee of $750, due prior to sprint kickoff. If Client commissions the full MVP Build within thirty (30) days of sprint completion, 100% of the $750 fee is credited toward the build cost. If Client elects not to continue, Client retains all Discovery deliverables unconditionally.
+              <strong>Discovery Sprint:</strong> Fixed advance fee agreed prior to sprint kickoff. If Client commissions the full MVP Build within thirty (30) days of sprint completion, the Discovery Sprint fee is credited directly toward the build cost. If Client elects not to continue, Client retains all Discovery deliverables unconditionally.
             </div>
           </li>
           <li className={styles.numItem}>
@@ -180,7 +183,7 @@ export default function TermsPage() {
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Developer Consoles:</strong> Client holds direct accounts with the Apple Developer Program ($99/year) and Google Play Console ($25 one-time).
+            <strong>Developer Consoles:</strong> Client holds direct accounts with the Apple Developer Program and Google Play Console.
           </li>
           <li className={styles.listItem}>
             <strong>Cloud Infrastructure:</strong> Cloud hosting (Supabase, AWS, Vercel, Firebase) and API providers (OpenAI, Resend, payment gateways) are billed directly to Client&rsquo;s corporate payment card.
@@ -225,17 +228,17 @@ export default function TermsPage() {
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>App Care (from $300/mo):</strong> Routine framework dependency upgrades, iOS/Android SDK target compliance, security vulnerability remediation, and priority incident diagnostics.
+            <strong>App Care:</strong> Routine framework dependency upgrades, iOS/Android SDK target compliance, security vulnerability remediation, and priority incident diagnostics.
           </li>
           <li className={styles.listItem}>
-            <strong>Product Care (from $550/mo):</strong> Includes all App Care benefits plus monthly feature optimizations, minor workflow iterations, and database index tuning.
+            <strong>Product Care:</strong> Includes all App Care benefits plus monthly feature optimizations, minor workflow iterations, and database index tuning.
           </li>
           <li className={styles.listItem}>
-            <strong>Full Care (from $900/mo):</strong> Dedicated engineering bandwidth, expedited response SLAs, continuous UX improvements, and architectural advisory.
+            <strong>Full Care:</strong> Dedicated engineering bandwidth, expedited response SLAs, continuous UX improvements, and architectural advisory.
           </li>
         </ul>
         <p className={styles.bodyText}>
-          Care plans are billed monthly in advance and may be canceled by either party with fourteen (14) days&rsquo; written notice prior to the start of the next billing cycle.
+          Care plans are agreed on a monthly retainer basis, billed in advance, and may be canceled by either party with fourteen (14) days&rsquo; written notice prior to the start of the next billing cycle.
         </p>
       </section>
 
