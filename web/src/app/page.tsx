@@ -4,7 +4,6 @@ import { HeroText } from "@/components/home/hero/HeroText";
 import { ProofStrip } from "@/components/home/hero/ProofStrip";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { OurWork } from "@/components/home/OurWork";
-import { Pricing } from "@/components/home/Pricing";
 import { Contact } from "@/components/home/Contact";
 import { Faq } from "@/components/home/Faq";
 import { FromTheBlog } from "@/components/home/FromTheBlog";
@@ -34,7 +33,6 @@ export default function Home() {
       <OurWork hrefs={hrefs} />
       <HowItWorks />
       <WhatWeBuild />
-      <Pricing />
       {/* Placeholders: hidden on the live site until real, approved quotes exist. */}
       {process.env.VERCEL_ENV !== "production" && <Testimonials />}
       {/* Placeholders: hidden on the live site until 3 real posts exist. */}

@@ -209,6 +209,86 @@ export function HowItWorks() {
             />
           </svg>
         </Link>
+
+        {/* Engagement & Milestone Transparency (Trust Guarantees) */}
+        <div className={styles.trustWrap}>
+          <div className={styles.trustHeader}>
+            <span className={styles.trustEyebrow}>Predictable Milestones</span>
+            <h3 className={styles.trustTitle}>
+              How we partner: zero billing surprises
+            </h3>
+            <p className={styles.trustLede}>
+              We don&apos;t bill open-ended hourly rates. Every project moves through agreed deliverables, with payments tied directly to tangible progress.
+            </p>
+          </div>
+
+          <div className={styles.milestonesGrid}>
+            <div className={styles.milestoneCard}>
+              <div className={styles.milestoneTop}>
+                <span className={styles.milestonePercent}>30%</span>
+                <span className={styles.milestonePhase}>Milestone 01</span>
+              </div>
+              <h4 className={styles.milestoneHeading}>Kickoff & Architecture</h4>
+              <p className={styles.milestoneDesc}>
+                Written scope, clickable UI wireframes, technical architecture, and a fixed delivery schedule signed off before coding begins.
+              </p>
+            </div>
+
+            <div className={styles.milestoneCard}>
+              <div className={styles.milestoneTop}>
+                <span className={styles.milestonePercent}>40%</span>
+                <span className={styles.milestonePhase}>Milestone 02</span>
+              </div>
+              <h4 className={styles.milestoneHeading}>Working App on Your Phone</h4>
+              <p className={styles.milestoneDesc}>
+                Core flows built and delivered directly to your device via TestFlight or Android APK, verified with weekly hands-on review.
+              </p>
+            </div>
+
+            <div className={styles.milestoneCard}>
+              <div className={styles.milestoneTop}>
+                <span className={styles.milestonePercent}>30%</span>
+                <span className={styles.milestonePhase}>Milestone 03</span>
+              </div>
+              <h4 className={styles.milestoneHeading}>Store Launch & Handover</h4>
+              <p className={styles.milestoneDesc}>
+                App Store and Google Play submission handling, production launch, and complete intellectual property transfer to your accounts.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.guaranteesGrid}>
+            <div className={styles.guaranteeCard}>
+              <div className={styles.guaranteeIcon}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <div>
+                <h4 className={styles.guaranteeTitle}>100% Code & IP Ownership</h4>
+                <p className={styles.guaranteeDesc}>
+                  All code is committed directly to your GitHub repository and cloud accounts from day one. You own the repository, assets, and infrastructure. Zero vendor lock-in.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.guaranteeCard}>
+              <div className={styles.guaranteeIcon}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h4 className={styles.guaranteeTitle}>30-Day Launch Bug Warranty</h4>
+                <p className={styles.guaranteeDesc}>
+                  Every build includes 30 days of complimentary bug fixes and stability monitoring following store launch, ensuring your app runs smoothly before any optional support plan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

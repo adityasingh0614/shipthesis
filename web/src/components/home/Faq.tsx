@@ -31,22 +31,22 @@ const ITEMS = [
   {
     icon: Clock,
     q: "How long does it take to build an MVP app?",
-    a: "Typically 6-10 weeks, based on a clear scope after the Discovery Sprint.",
-  },
-  {
-    icon: Compass,
-    q: "What happens during the Discovery Sprint?",
-    a: "One week, $750: a written scope, a feature list split into version one and later, wireframes, a stack plan, and a clear scope with milestones. Credited toward your build if you continue.",
+    a: "Typically 6 to 10 weeks depending on scope, with new working builds delivered to your phone every single week.",
   },
   {
     icon: CurrencyDollar,
-    q: "What will it really cost, and will the price creep?",
-    a: "A clear scope after a one-week, $750 Discovery Sprint, a new working build every week, and code you own. MVP builds start from $6,000.",
+    q: "What is your payment and milestone structure?",
+    a: "We work on a predictable 30% / 40% / 30% milestone schedule: 30% on kickoff and architecture sign-off, 40% midway when you test the working build on your device, and 30% on store submission and production handover.",
+  },
+  {
+    icon: Compass,
+    q: "Will the project cost creep or change unexpectedly?",
+    a: "No. Every build starts with a written scope and a fixed quote before kickoff. We don't bill open-ended hourly rates, so there is zero budget creep on agreed deliverables.",
   },
   {
     icon: GithubLogo,
     q: "Will I own the code and be able to hire someone else later?",
-    a: "Yes. The code lives in your GitHub, and the store and cloud accounts are in your name from day one.",
+    a: "Yes. The code lives in your GitHub organization, and the store and cloud accounts are in your name from day one.",
   },
   {
     icon: Rocket,
@@ -61,7 +61,7 @@ const ITEMS = [
   {
     icon: Lifebuoy,
     q: "What happens after launch when something breaks?",
-    a: "30 days of free fixes for in-scope bugs, then support plans from $300/month.",
+    a: "Every build includes 30 days of free fixes for in-scope bugs and store launch support, with optional ongoing care plans available afterwards.",
   },
 ];
 

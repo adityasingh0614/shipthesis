@@ -371,8 +371,8 @@ export function PoststeadyBody() {
             <Link href="/#contact" className="btn">
               Book a Discovery Call
             </Link>
-            <Link href="/#pricing" className={`btn ${styles.secondaryBtn}`}>
-              See pricing <Arrow />
+            <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
+              See how it works <Arrow />
             </Link>
           </div>
         </div>
