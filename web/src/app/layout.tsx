@@ -3,6 +3,7 @@ import { Geist, JetBrains_Mono, Phudu } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { CalInitializer } from "@/components/CalInitializer";
 
 const geist = Geist({ variable: "--font-body", subsets: ["latin"] });
 const phudu = Phudu({ variable: "--font-display", subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       {/* Browser extensions (e.g. Grammarly) add attributes to <body>. */}
       <body suppressHydrationWarning>
+        <CalInitializer />
         <a className="skip-link" href="#main">
           Skip to content
         </a>

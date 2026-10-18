@@ -10,7 +10,7 @@ const STEPS = [
   {
     label: "Discovery call",
     when: "Day 1 - 20 minutes",
-    body: "We learn what you're building, what you need, and whether we're the right fit. Then we turn it into a clear scope, wireframes, timeline, and milestones.",
+    body: "A free 20-minute call to evaluate your idea, discuss technical options, and establish fit. If we decide to build together, we map out a fixed written scope, wireframes, timeline, and deliverables.",
     img: "/How it works/step1.webp",
     imgAlt: "Discovery call illustration",
   },
@@ -24,7 +24,7 @@ const STEPS = [
   },
   {
     label: "Development",
-    when: "Weeks 2 onward - Every week",
+    when: "Weeks 2 onward",
     body: "You get a new working build on your phone every week, with progress tied to the agreed milestones.",
     weekly: true,
     img: "/How it works/step3.webp",
@@ -32,7 +32,7 @@ const STEPS = [
   },
   {
     label: "Testing",
-    when: "Every week + before submission",
+    when: "Before submission",
     body: "Every build is tested before it reaches you, with full end-to-end testing before submission.",
     weekly: true,
     img: "/How it works/step4.webp",

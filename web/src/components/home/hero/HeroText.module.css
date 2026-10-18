@@ -56,6 +56,23 @@
   transform: translateX(3px);
 }
 
+.trustLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+
+.trustDot {
+  color: var(--line-bold);
+}
+
 @media (max-width: 540px) {
   .title {
     font-size: clamp(2rem, 8vw, 2.6rem);

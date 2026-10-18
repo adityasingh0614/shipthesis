@@ -205,9 +205,14 @@ export function LegalLayout({
             For enterprise engagements or regulated domains, we are happy to review your standard NDA prior to discovery.
           </p>
         </div>
-        <Link href="/#contact" className="btn">
+        <a
+          href="https://cal.com/shipthesis/discovery"
+          data-cal-link="shipthesis/discovery"
+          data-cal-config='{"layout":"month_view"}'
+          className="btn"
+        >
           Book a free 20-minute call
-        </Link>
+        </a>
       </div>
     </div>
   );

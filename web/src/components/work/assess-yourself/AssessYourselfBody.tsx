@@ -245,9 +245,14 @@ export function AssessYourselfBody() {
               like this?
             </h2>
             <p>Start with a free 20-minute call about your idea.</p>
-            <Link href="/#contact" className={styles.callBtn}>
+            <a
+              href="https://cal.com/shipthesis/discovery"
+              data-cal-link="shipthesis/discovery"
+              data-cal-config='{"layout":"month_view"}'
+              className={styles.callBtn}
+            >
               Book a free 20-minute call
-            </Link>
+            </a>
           </Reveal>
         </div>
       </section>
@@ -400,9 +405,14 @@ export function AssessYourselfBody() {
             </p>
           </Reveal>
           <div className={styles.finalActions}>
-            <Link href="/#contact" className="btn">
+            <a
+              href="https://cal.com/shipthesis/discovery"
+              data-cal-link="shipthesis/discovery"
+              data-cal-config='{"layout":"month_view"}'
+              className="btn"
+            >
               Book a free 20-minute call
-            </Link>
+            </a>
             <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
               See how it works
               <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">

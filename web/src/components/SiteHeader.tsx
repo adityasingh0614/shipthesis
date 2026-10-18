@@ -42,9 +42,14 @@ function HeaderContents() {
           ))}
         </nav>
 
-        <Link href="/#contact" className={`btn ${styles.cta}`}>
+        <a
+          href="https://cal.com/shipthesis/discovery"
+          data-cal-link="shipthesis/discovery"
+          data-cal-config='{"layout":"month_view"}'
+          className={`btn ${styles.cta}`}
+        >
           Book a free 20-minute call
-        </Link>
+        </a>
       </motion.div>
 
       {/* ponytail: native <details> menu, no JS; swap for a dialog if it needs focus trapping */}
@@ -60,9 +65,14 @@ function HeaderContents() {
               {item.label}
             </Link>
           ))}
-          <Link href="/#contact" className="btn">
+          <a
+            href="https://cal.com/shipthesis/discovery"
+            data-cal-link="shipthesis/discovery"
+            data-cal-config='{"layout":"month_view"}'
+            className="btn"
+          >
             Book a free 20-minute call
-          </Link>
+          </a>
         </nav>
       </details>
     </>

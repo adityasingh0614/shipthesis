@@ -9,11 +9,16 @@ export function HeroText() {
         <span className={styles.titleLine}>to a live product.</span>
       </h1>
       <p className={styles.sub}>
-        AI-powered mobile apps and SaaS: a new build on your phone every
-        week, and code you own.
+        Mobile apps and SaaS with intelligent AI features built in. A new
+        working build on your phone every week, from kickoff to app stores.
       </p>
       <div className={styles.actions}>
-        <Link href="/#contact" className="btn">
+        <a
+          href="https://cal.com/shipthesis/discovery"
+          data-cal-link="shipthesis/discovery"
+          data-cal-config='{"layout":"month_view"}'
+          className="btn"
+        >
           Book a free 20-minute call
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
@@ -25,11 +30,18 @@ export function HeroText() {
               strokeLinejoin="round"
             />
           </svg>
-        </Link>
+        </a>
         <Link href="/#work" className={`btn ${styles.secondary}`}>
           See our work
         </Link>
       </div>
+      <p className={styles.trustLine}>
+        <span>✓ 100% code you own</span>
+        <span className={styles.trustDot}>•</span>
+        <span>✓ Weekly working builds</span>
+        <span className={styles.trustDot}>•</span>
+        <span>✓ Fixed-scope milestones</span>
+      </p>
     </>
   );
 }

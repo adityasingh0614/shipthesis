@@ -20,7 +20,7 @@ const ITEMS = [
   {
     icon: ListChecks,
     q: "How do I know you'll actually finish?",
-    a: "Fixed milestones, and a working build on your phone every week.",
+    a: "Three built-in safeguards: all code and cloud accounts are in your name from day one (meaning you retain full IP and can walk away at any time), payments are milestone-based (30/40/30) released only as working software lands, and you test an updated build on your physical device every week.",
   },
   {
     icon: ArrowsClockwise,
@@ -30,12 +30,12 @@ const ITEMS = [
   {
     icon: Clock,
     q: "How long does it take to build an MVP app?",
-    a: "Typically 6 to 10 weeks depending on scope, with new working builds delivered to your phone every single week.",
+    a: "Typically 6 to 10 weeks for a complete production MVP. Tightly scoped mobile MVPs ship even faster — for instance, our Assess Yourself Flutter app shipped in 3–4 weeks. In all cases, you test working builds every week rather than waiting until the end.",
   },
   {
     icon: CurrencyDollar,
     q: "How does payment work, and will the price creep?",
-    a: "Every build has an agreed fixed scope and a 30% / 40% / 30% milestone schedule paid as working builds land on your phone. We never bill open-ended hourly rates, so there is zero budget creep on agreed deliverables.",
+    a: "Every build has an agreed fixed scope and a 30% / 40% / 30% milestone schedule paid as working software is verified. We never bill open-ended hourly rates, so there are no surprise charges on agreed scope. If you choose to add new features mid-build, we scope and quote them separately beforehand.",
   },
   {
     icon: GithubLogo,

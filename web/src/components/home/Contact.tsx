@@ -79,7 +79,7 @@ export function Contact() {
                 </span>
                 <div className={styles.methodContent}>
                   <span className={styles.methodLabel}>Time Zone Alignment</span>
-                  <span className={styles.methodValue}>Sync calls in US EST &amp; PST daylight hours</span>
+                  <span className={styles.methodValue}>Calls scheduled to match your time zone</span>
                 </div>
               </li>
 

@@ -11,29 +11,29 @@ import { VisualsLoop } from "./visuals/shared";
 // Copy: docs/copy/home.md §4 (facts from .agents/product-marketing.md).
 const SERVICES: { name: string; line: ReactNode; visual?: ReactNode }[] = [
   {
-    name: "Cross-platform apps",
+    name: "Flutter mobile apps",
     visual: <CrossPlatformVisual />,
-    line: <>Built once in Flutter, live on both the App Store and Play Store. Our default for most <strong>MVPs</strong>.</>,
+    line: <>Built in Flutter, live on both iOS and Android with one codebase. Offline-first, fast, and our primary recommendation for <strong>mobile MVPs</strong>.</>,
+  },
+  {
+    name: "SaaS & web platforms",
+    visual: <SaasVisual />,
+    line: <>Full-stack Next.js &amp; Supabase web applications with accounts, billing, dashboards, and database design. Proven by the live platforms we run.</>,
+  },
+  {
+    name: "Applied AI features",
+    visual: <AiVisual />,
+    line: <>Practical <strong>AI integrations</strong> that solve real problems: automated document parsing, data summaries, and workflow automation without gimmicks.</>,
+  },
+  {
+    name: "Desktop & custom software",
+    visual: <CustomVisual />,
+    line: <>Specialized native Windows utilities (.NET / C#) and bespoke software built around your exact business operational needs.</>,
   },
   {
     name: "Native iOS & Android",
     visual: <NativeVisual />,
-    line: "When your app needs everything the phone can do, we build it natively in Swift and Kotlin.",
-  },
-  {
-    name: "Custom solutions",
-    visual: <CustomVisual />,
-    line: "Products built around how your business actually works, not squeezed into a template.",
-  },
-  {
-    name: "SaaS apps & platforms",
-    visual: <SaasVisual />,
-    line: <>Customer-facing web apps with accounts, billing, dashboards and the systems behind them. It's the kind of <strong>SaaS apps & platforms</strong> we build and run ourselves.</>,
-  },
-  {
-    name: "AI features",
-    visual: <AiVisual />,
-    line: <><strong>AI features</strong> added where it makes the product better: summaries, chat, automation and more. Not as a gimmick.</>,
+    line: "When your product requires deep device hardware access or platform-exclusive SDKs, native Swift and Kotlin builds are also available.",
   },
 ];
 
