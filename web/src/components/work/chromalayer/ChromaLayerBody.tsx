@@ -347,8 +347,8 @@ export function ChromaLayerBody() {
             <Link href="/#contact" className="btn">
               Book a Discovery Call
             </Link>
-            <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
-              See how it works <Arrow />
+            <Link href="/#pricing" className={`btn ${styles.secondaryBtn}`}>
+              Pricing & milestones <Arrow />
             </Link>
           </div>
         </div>

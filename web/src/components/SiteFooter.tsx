@@ -43,6 +43,7 @@ export function SiteFooter() {
                 <li><Link href="/#work" className={styles.link}>Case Studies</Link></li>
                 <li><Link href="/#services" className={styles.link}>Services</Link></li>
                 <li><Link href="/#process" className={styles.link}>How It Works</Link></li>
+                <li><Link href="/#pricing" className={styles.link}>Pricing</Link></li>
               </ul>
             </div>
 

@@ -9,6 +9,7 @@ import { Faq } from "@/components/home/Faq";
 import { FromTheBlog } from "@/components/home/FromTheBlog";
 import { Testimonials } from "@/components/home/Testimonials";
 import { WhatWeBuild } from "@/components/home/WhatWeBuild";
+import { Pricing } from "@/components/home/Pricing";
 import { caseStudyHref } from "@/content/case-studies";
 import styles from "./page.module.css";
 
@@ -33,6 +34,7 @@ export default function Home() {
       <OurWork hrefs={hrefs} />
       <HowItWorks />
       <WhatWeBuild />
+      <Pricing />
       {/* Placeholders: hidden on the live site until real, approved quotes exist. */}
       {process.env.VERCEL_ENV !== "production" && <Testimonials />}
       {/* Placeholders: hidden on the live site until 3 real posts exist. */}
