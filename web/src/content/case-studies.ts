@@ -172,7 +172,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroCaption: "The real app window \u00b7 one of its seven-control screens",
     // Stays hidden on production until the real-hardware before/after photo
     // and a real testimonial exist (case-study-brief \u00a75).
-    hiddenOnProduction: true,
     seo: {
       title: "ChromaLayer: seven colour controls that stay applied | Ship Thesis case study",
       description:
