@@ -14,7 +14,7 @@ export function HeroText() {
       </p>
       <div className={styles.actions}>
         <Link href="/#contact" className="btn">
-          Book a Discovery Call
+          Book a free 20-minute call
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
               d="M3 9h11m-4-4 4 4-4 4"

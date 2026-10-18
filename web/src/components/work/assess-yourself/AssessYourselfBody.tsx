@@ -244,9 +244,9 @@ export function AssessYourselfBody() {
               <br />
               like this?
             </h2>
-            <p>Start with a 30-minute call about your idea.</p>
+            <p>Start with a free 20-minute call about your idea.</p>
             <Link href="/#contact" className={styles.callBtn}>
-              Book a Discovery Call
+              Book a free 20-minute call
             </Link>
           </Reveal>
         </div>
@@ -401,10 +401,10 @@ export function AssessYourselfBody() {
           </Reveal>
           <div className={styles.finalActions}>
             <Link href="/#contact" className="btn">
-              Book a Discovery Call
+              Book a free 20-minute call
             </Link>
-            <Link href="/#pricing" className={`btn ${styles.secondaryBtn}`}>
-              Pricing & milestones
+            <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
+              See how it works
               <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
                 <path d="M3 9h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

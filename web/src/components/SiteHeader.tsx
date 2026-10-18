@@ -14,7 +14,6 @@ const NAV = [
   { href: "/#work", label: "Work" },
   { href: "/#services", label: "Services" },
   { href: "/#process", label: "Process" },
-  { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -44,7 +43,7 @@ function HeaderContents() {
         </nav>
 
         <Link href="/#contact" className={`btn ${styles.cta}`}>
-          Book a Discovery Call
+          Book a free 20-minute call
         </Link>
       </motion.div>
 
@@ -62,7 +61,7 @@ function HeaderContents() {
             </Link>
           ))}
           <Link href="/#contact" className="btn">
-            Book a Discovery Call
+            Book a free 20-minute call
           </Link>
         </nav>
       </details>

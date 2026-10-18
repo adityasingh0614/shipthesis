@@ -9,7 +9,7 @@ import styles from "./HowItWorks.module.css";
 const STEPS = [
   {
     label: "Discovery call",
-    when: "Day 1 - 30 minutes",
+    when: "Day 1 - 20 minutes",
     body: "We learn what you're building, what you need, and whether we're the right fit. Then we turn it into a clear scope, wireframes, timeline, and milestones.",
     img: "/How it works/step1.webp",
     imgAlt: "Discovery call illustration",

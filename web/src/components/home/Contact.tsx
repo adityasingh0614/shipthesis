@@ -26,11 +26,11 @@ export function Contact() {
           <div className={styles.leftCol}>
             <h2 className={styles.title}>Ready to ship your next product?</h2>
             <p className={styles.lede}>
-              Book a discovery call to get an honest technical assessment of your idea and a timeline for your first build.
+              Book a free 20-minute call to get an honest technical assessment of your idea and a timeline for your first build.
             </p>
 
             <button data-cal-link="shipthesis/discovery" data-cal-config='{"layout":"month_view"}' className={styles.buttonPrimary}>
-              <span>Book a Discovery Call</span>
+              <span>Book a free 20-minute call</span>
             </button>
 
             <div className={styles.timeline}>

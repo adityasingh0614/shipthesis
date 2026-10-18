@@ -190,9 +190,9 @@ export function ChromaLayerBody() {
               <br />
               just keeps working?
             </h2>
-            <p>Start with a 30-minute call about your idea.</p>
+            <p>Start with a free 20-minute call about your idea.</p>
             <Link href="/#contact" className={styles.callBtn}>
-              Book a Discovery Call
+              Book a free 20-minute call
             </Link>
           </Reveal>
         </div>
@@ -345,10 +345,10 @@ export function ChromaLayerBody() {
           </Reveal>
           <div className={styles.finalActions}>
             <Link href="/#contact" className="btn">
-              Book a Discovery Call
+              Book a free 20-minute call
             </Link>
-            <Link href="/#pricing" className={`btn ${styles.secondaryBtn}`}>
-              Pricing & milestones <Arrow />
+            <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
+              See how it works <Arrow />
             </Link>
           </div>
         </div>

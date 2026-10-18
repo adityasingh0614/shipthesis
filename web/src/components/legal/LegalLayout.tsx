@@ -206,7 +206,7 @@ export function LegalLayout({
           </p>
         </div>
         <Link href="/#contact" className="btn">
-          Book a Discovery Call
+          Book a free 20-minute call
         </Link>
       </div>
     </div>

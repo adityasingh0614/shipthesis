@@ -6,7 +6,6 @@ import {
   ListChecks,
   ArrowsClockwise,
   Clock,
-  Compass,
   CurrencyDollar,
   GithubLogo,
   Rocket,
@@ -35,13 +34,8 @@ const ITEMS = [
   },
   {
     icon: CurrencyDollar,
-    q: "What is your payment and milestone structure?",
-    a: "We work on a predictable 30% / 40% / 30% milestone schedule: 30% on kickoff and architecture sign-off, 40% midway when you test the working build on your device, and 30% on store submission and production handover.",
-  },
-  {
-    icon: Compass,
-    q: "Will the project cost creep or change unexpectedly?",
-    a: "No. Every build starts with a written scope and a fixed quote before kickoff. We don't bill open-ended hourly rates, so there is zero budget creep on agreed deliverables.",
+    q: "How does payment work, and will the price creep?",
+    a: "Every build has an agreed fixed scope and a 30% / 40% / 30% milestone schedule paid as working builds land on your phone. We never bill open-ended hourly rates, so there is zero budget creep on agreed deliverables.",
   },
   {
     icon: GithubLogo,
