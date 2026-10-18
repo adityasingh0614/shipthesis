@@ -372,14 +372,24 @@ function Label({
 function TechChip({
   x,
   y,
+  name,
+  tech,
   children,
 }: {
   x: number;
   y: number;
+  name: string;
+  tech?: "flutter" | "swift" | "kotlin" | "aws";
   children: ReactNode;
 }) {
   return (
-    <g>
+    <g
+      className={`${styles.techChip} ${tech ? styles[tech] : ""}`}
+      tabIndex={0}
+      role="img"
+      aria-label={name}
+    >
+      <title>{name}</title>
       <rect
         x={x}
         y={y}
@@ -389,8 +399,9 @@ function TechChip({
         fill="#fff"
         stroke={line}
         strokeWidth={1.2}
+        className={styles.chipRect}
       />
-      {children}
+      <g className={styles.chipIcon}>{children}</g>
     </g>
   );
 }
@@ -653,16 +664,16 @@ export function HeroVisual() {
             note="App Store & Play Store"
             corner={BODY_CORNER}
           />
-          <TechChip x={LABEL_X} y={chipsY}>
+          <TechChip x={LABEL_X} y={chipsY} name="Flutter" tech="flutter">
             {logo("/logo/flutter-svgrepo-com.svg", LABEL_X, chipsY)}
           </TechChip>
-          <TechChip x={LABEL_X + 32} y={chipsY}>
+          <TechChip x={LABEL_X + 32} y={chipsY} name="Swift" tech="swift">
             {logo("/logo/swift.svg", LABEL_X + 32, chipsY)}
           </TechChip>
-          <TechChip x={LABEL_X + 64} y={chipsY}>
+          <TechChip x={LABEL_X + 64} y={chipsY} name="Kotlin" tech="kotlin">
             {logo("/logo/kotlin.svg", LABEL_X + 64, chipsY)}
           </TechChip>
-          <TechChip x={LABEL_X + 96} y={chipsY}>
+          <TechChip x={LABEL_X + 96} y={chipsY} name="AWS" tech="aws">
             {logo("/logo/aws-dark.svg", LABEL_X + 96, chipsY)}
           </TechChip>
 

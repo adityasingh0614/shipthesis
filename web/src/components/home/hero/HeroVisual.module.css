@@ -17,3 +17,68 @@
     margin-top: 8px;
   }
 }
+
+/* Tech Chips: Interactive hover states */
+.techChip {
+  cursor: pointer;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+  outline: none;
+}
+
+.chipRect {
+  transition: stroke 0.2s ease, stroke-width 0.2s ease, filter 0.22s ease, fill 0.2s ease;
+}
+
+.chipIcon {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.techChip:hover,
+.techChip:focus-visible {
+  transform: translateY(-4px) scale(1.15);
+}
+
+.techChip:hover .chipIcon,
+.techChip:focus-visible .chipIcon {
+  transform: scale(1.1);
+}
+
+.techChip:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Flutter brand hover */
+.techChip.flutter:hover .chipRect,
+.techChip.flutter:focus-visible .chipRect {
+  stroke: #02569B;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 6px 14px rgba(2, 86, 155, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
+}
+
+/* Swift brand hover */
+.techChip.swift:hover .chipRect,
+.techChip.swift:focus-visible .chipRect {
+  stroke: #F05138;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 6px 14px rgba(240, 81, 56, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
+}
+
+/* Kotlin brand hover */
+.techChip.kotlin:hover .chipRect,
+.techChip.kotlin:focus-visible .chipRect {
+  stroke: #7F52FF;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 6px 14px rgba(127, 82, 255, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
+}
+
+/* AWS brand hover */
+.techChip.aws:hover .chipRect,
+.techChip.aws:focus-visible .chipRect {
+  stroke: #FF9900;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 6px 14px rgba(255, 153, 0, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
+}
