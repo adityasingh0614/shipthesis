@@ -33,11 +33,23 @@ export function Fight() {
       raf = 0;
       const list = listRef.current;
       if (!list) return;
-      const r = list.getBoundingClientRect();
-      const line = window.innerHeight * 0.5;
-      const p = (line - r.top) / r.height;
-      const idx = Math.min(STEPS.length - 1, Math.max(0, Math.floor(p * STEPS.length)));
-      setActive(idx);
+
+      const triggerLine = window.innerHeight * 0.45;
+      const items = Array.from(list.children) as HTMLElement[];
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      items.forEach((item, i) => {
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.top + rect.height * 0.5;
+        const distance = Math.abs(itemCenter - triggerLine);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIdx = i;
+        }
+      });
+
+      setActive(closestIdx);
     };
 
     const onScroll = () => {
@@ -54,6 +66,15 @@ export function Fight() {
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);
+
+  const handleStepClick = (idx: number) => {
+    const list = listRef.current;
+    if (!list) return;
+    const item = list.children[idx] as HTMLElement;
+    if (item) {
+      item.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   const s = STEPS[active];
 
@@ -89,8 +110,17 @@ export function Fight() {
         {STEPS.map((st, i) => (
           <li
             key={st.n}
+            onClick={() => handleStepClick(i)}
             className={`${styles.step} ${i <= active ? styles.done : ""} ${i === active ? styles.on : ""}`}
-            
+            tabIndex={0}
+            role="button"
+            aria-current={i === active ? "step" : undefined}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleStepClick(i);
+              }
+            }}
           >
             <span className={styles.sn}>{st.n}</span>
             <div>

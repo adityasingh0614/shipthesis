@@ -29,11 +29,23 @@ export function Wizard() {
       raf = 0;
       const list = listRef.current;
       if (!list) return;
-      const r = list.getBoundingClientRect();
-      const line = window.innerHeight * 0.5;
-      const p = (line - r.top) / r.height;
-      const idx = Math.min(STEPS.length - 1, Math.max(0, Math.floor(p * STEPS.length)));
-      setActive(idx);
+
+      const triggerLine = window.innerHeight * 0.45;
+      const items = Array.from(list.children) as HTMLElement[];
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      items.forEach((item, i) => {
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.top + rect.height * 0.5;
+        const distance = Math.abs(itemCenter - triggerLine);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIdx = i;
+        }
+      });
+
+      setActive(closestIdx);
     };
 
     const onScroll = () => {
@@ -51,28 +63,47 @@ export function Wizard() {
     };
   }, []);
 
-
+  const handleStepClick = (idx: number) => {
+    const list = listRef.current;
+    if (!list) return;
+    const item = list.children[idx] as HTMLElement;
+    if (item) {
+      item.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   return (
     <div className={styles.wizard}>
       <div className={styles.pin}>
         <div className={styles.screenWrap}>
-          <Image
-            src={STEPS[active].img}
-            alt={STEPS[active].shot.join(", ")}
-            width={800}
-            height={500}
-            className={styles.screenImg}
-            priority
-          />
+          {STEPS.map((s, i) => (
+            <Image
+              key={s.n}
+              src={s.img}
+              alt={s.shot.join(", ")}
+              width={800}
+              height={500}
+              className={`${styles.screenImg} ${i === active ? styles.screenActive : styles.screenHidden}`}
+              priority={i <= 1}
+            />
+          ))}
         </div>
       </div>
       <ol className={styles.steps} ref={listRef}>
         {STEPS.map((s, i) => (
           <li
             key={s.n}
+            onClick={() => handleStepClick(i)}
             className={`${styles.step} ${i <= active ? styles.done : ""} ${i === active ? styles.on : ""}`}
-            
+            tabIndex={0}
+            role="button"
+            aria-current={i === active ? "step" : undefined}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleStepClick(i);
+              }
+            }}
           >
             <span className={styles.sn}>{s.n}</span>
             <div>

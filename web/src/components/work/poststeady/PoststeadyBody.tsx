@@ -203,23 +203,6 @@ export function PoststeadyBody() {
         </div>
       </section>
 
-      {/* Mid-page call: right after the engineering proof. The page's one
-          full-bleed brand-green moment. */}
-      <section className={styles.callBand} aria-labelledby="call-title">
-        <div className={styles.wrap}>
-          <Reveal>
-            <h2 id="call-title">
-              Want a product
-              <br />
-              built like this?
-            </h2>
-            <p>Start with a free 20-minute call about your idea.</p>
-            <div style={{ marginTop: "16px" }}>
-              <BookingCta location="case-study-mid" variant="text" />
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* 05 · Judgement: stories we spiked */}
       <section className={styles.section} aria-labelledby="judgement-title">
@@ -373,7 +356,7 @@ export function PoststeadyBody() {
             </p>
           </Reveal>
           <div className={styles.finalActions}>
-            <BookingCta location="case-study-end" variant="text" />
+            <BookingCta location="case-study-end" variant="button" />
             <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
               See how it works <Arrow />
             </Link>

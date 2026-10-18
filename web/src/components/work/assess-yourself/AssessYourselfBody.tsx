@@ -234,24 +234,6 @@ export function AssessYourselfBody() {
         </div>
       </section>
 
-      {/* Mid-page call: right after the engineering proof, where a founder
-          decides "they could build mine". The page's one full-bleed colour
-          moment, in the brand's action green. */}
-      <section className={styles.callBand} aria-labelledby="call-title">
-        <div className={styles.wrap}>
-          <Reveal>
-            <h2 id="call-title">
-              Want an app built
-              <br />
-              like this?
-            </h2>
-            <p>Start with a free 20-minute call about your idea.</p>
-            <div style={{ marginTop: "16px" }}>
-              <BookingCta location="case-study-mid" variant="text" />
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* 06 · What we chose not to build */}
       <section className={`${styles.section} ${styles.band}`} aria-labelledby="judgement-title">
@@ -402,7 +384,7 @@ export function AssessYourselfBody() {
             </p>
           </Reveal>
           <div className={styles.finalActions}>
-            <BookingCta location="case-study-end" variant="text" />
+            <BookingCta location="case-study-end" variant="button" />
             <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
               See how it works
               <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">

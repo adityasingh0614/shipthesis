@@ -28,11 +28,23 @@ export function ExamDay() {
       raf = 0;
       const list = listRef.current;
       if (!list) return;
-      const r = list.getBoundingClientRect();
-      const line = window.innerHeight * 0.5;
-      const p = (line - r.top) / r.height;
-      const idx = Math.min(STEPS.length - 1, Math.max(0, Math.floor(p * STEPS.length)));
-      setActive(idx);
+
+      const triggerLine = window.innerHeight * 0.45;
+      const items = Array.from(list.children) as HTMLElement[];
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      items.forEach((item, i) => {
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.top + rect.height * 0.5;
+        const distance = Math.abs(itemCenter - triggerLine);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIdx = i;
+        }
+      });
+
+      setActive(closestIdx);
     };
 
     const onScroll = () => {
@@ -50,6 +62,15 @@ export function ExamDay() {
     };
   }, []);
 
+  const handleStepClick = (idx: number) => {
+    const list = listRef.current;
+    if (!list) return;
+    const item = list.children[idx] as HTMLElement;
+    if (item) {
+      item.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <div className={styles.day}>
       <div className={styles.pin}>
@@ -65,8 +86,17 @@ export function ExamDay() {
         {STEPS.map((s, i) => (
           <li
             key={s.key}
+            onClick={() => handleStepClick(i)}
             className={`${styles.step} ${i === active ? styles.active : ""}`}
-            
+            tabIndex={0}
+            role="button"
+            aria-current={i === active ? "step" : undefined}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleStepClick(i);
+              }
+            }}
           >
             <span className={styles.bubble} aria-hidden="true">
               {s.key}
