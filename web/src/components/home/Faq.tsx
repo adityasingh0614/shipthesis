@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import {
   ListChecks,
@@ -8,29 +7,39 @@ import {
   Clock,
   CurrencyDollar,
   GithubLogo,
-  Rocket,
   Sparkle,
   Lifebuoy,
+  PhoneCall,
+  UserCheck,
 } from "@phosphor-icons/react/dist/ssr";
+import { BookingCta } from "@/components/BookingCta";
 import styles from "./Faq.module.css";
 
-// Facts: .agents/product-marketing.md (Objections, Pricing, AI capability).
-// Answers are the brief's own wording, lightly tightened for the page voice.
 const ITEMS = [
   {
     icon: ListChecks,
     q: "How do I know you'll actually finish?",
-    a: "Three built-in safeguards: all code and cloud accounts are in your name from day one (meaning you retain full IP and can walk away at any time), payments are milestone-based (30/40/30) released only as working software lands, and you test an updated build on your physical device every week.",
+    a: "You own the code and the store and cloud accounts from day one, so you're never locked in. You see a working build every week, and payments follow working builds.",
   },
   {
-    icon: ArrowsClockwise,
-    q: "Do I see progress during the build, or just the finished app?",
-    a: "A new working build on your phone every week, tested before it reaches you.",
+    icon: CurrencyDollar,
+    q: "How much does it cost?",
+    a: "Every project is scoped first, then quoted as a fixed price in writing after a free 20-minute call. No hourly billing.",
+  },
+  {
+    icon: PhoneCall,
+    q: "What happens on the free call?",
+    a: "We learn what you're building and whether we're a fit. 20 minutes, no pitch. After the call you get a written scope, timeline and milestones, and leave with a clear next step.",
+  },
+  {
+    icon: UserCheck,
+    q: "Who writes the code?",
+    a: "You'll talk to the person who builds it. We design and build directly—no outsourced junior contractors, no account managers, and no handoffs.",
   },
   {
     icon: Clock,
     q: "How long does it take to build an MVP app?",
-    a: "Typically 6 to 10 weeks for a complete production MVP. Tightly scoped mobile MVPs ship even faster — for instance, our Assess Yourself Flutter app shipped in 3–4 weeks. In all cases, you test working builds every week rather than waiting until the end.",
+    a: "MVPs typically take 6-10 weeks; a tightly scoped build (Assess Yourself) shipped in 3-4. In all cases, you test a working build on your phone every week.",
   },
   {
     icon: CurrencyDollar,
@@ -38,14 +47,14 @@ const ITEMS = [
     a: "Every build has an agreed fixed scope and a 30% / 40% / 30% milestone schedule paid as working software is verified. We never bill open-ended hourly rates, so there are no surprise charges on agreed scope. If you choose to add new features mid-build, we scope and quote them separately beforehand.",
   },
   {
+    icon: ArrowsClockwise,
+    q: "Do I see progress during the build, or just the finished app?",
+    a: "A new working build on your phone every week, tested before it reaches you.",
+  },
+  {
     icon: GithubLogo,
     q: "Will I own the code and be able to hire someone else later?",
     a: "Yes. The code lives in your GitHub organization, and the store and cloud accounts are in your name from day one.",
-  },
-  {
-    icon: Rocket,
-    q: "Can a small studio handle this?",
-    a: "We ship our own products, Poststeady and ChromaLayer, both live, and run EHS Guru's live training platform. Judge us by live work, not headcount.",
   },
   {
     icon: Sparkle,
@@ -74,7 +83,6 @@ export function Faq() {
           </h2>
           <p className={styles.lede}>
             The things people usually want to know before they book a call.
-            Can&apos;t find yours? <Link href="#contact">Talk to us</Link>.
           </p>
         </div>
 
@@ -117,6 +125,14 @@ export function Faq() {
             Show {ITEMS.length - VISIBLE} more questions
           </button>
         )}
+
+        <div className={styles.endCta}>
+          <BookingCta
+            location="faq"
+            variant="text"
+            prefix="Still have questions? "
+          />
+        </div>
       </div>
     </section>
   );

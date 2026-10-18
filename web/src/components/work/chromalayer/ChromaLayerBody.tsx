@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getVisibleCaseStudy } from "@/content/case-studies";
 import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
+import { BookingCta } from "@/components/BookingCta";
 import { Fight } from "./Fight";
 import { Lab } from "./Lab";
 import styles from "./ChromaLayer.module.css";
@@ -191,14 +192,9 @@ export function ChromaLayerBody() {
               just keeps working?
             </h2>
             <p>Start with a free 20-minute call about your idea.</p>
-            <a
-              href="https://cal.com/shipthesis/discovery"
-              data-cal-link="shipthesis/discovery"
-              data-cal-config='{"layout":"month_view"}'
-              className={styles.callBtn}
-            >
-              Book a free 20-minute call
-            </a>
+            <div style={{ marginTop: "16px" }}>
+              <BookingCta location="case-study-mid" variant="text" />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -240,6 +236,7 @@ export function ChromaLayerBody() {
           </Reveal>
           <ul className={styles.facts}>
             {[
+              ["Users", "#8f9fe8", "Live · 100+ users"],
               ["Live", "#8f9fe8", <>At{" "}<a className={styles.out} href="https://chromalayer.app" target="_blank" rel="noreferrer">chromalayer.app</a>.</>],
               ["Works on", "#8f9fe8", "Intel, AMD and NVIDIA graphics, tested on each."],
               ["Built in", "#8f9fe8", "A 14-day free trial and licensing."],
@@ -349,14 +346,7 @@ export function ChromaLayerBody() {
             </p>
           </Reveal>
           <div className={styles.finalActions}>
-            <a
-              href="https://cal.com/shipthesis/discovery"
-              data-cal-link="shipthesis/discovery"
-              data-cal-config='{"layout":"month_view"}'
-              className="btn"
-            >
-              Book a free 20-minute call
-            </a>
+            <BookingCta location="case-study-end" variant="text" />
             <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
               See how it works <Arrow />
             </Link>

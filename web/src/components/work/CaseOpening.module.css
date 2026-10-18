@@ -169,6 +169,13 @@
   filter: drop-shadow(0 32px 44px rgb(15 26 20 / 0.24));
 }
 
+.statusCta {
+  padding: 8px 18px;
+  background: color-mix(in srgb, var(--surface-alt) 70%, var(--surface));
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8125rem;
+}
+
 /* ---- Load motion ---- */
 .rise {
   animation: rise 800ms cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms) both;
@@ -180,6 +187,16 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none !important;
+    opacity: 1 !important;
+    translate: none !important;
+  }
+  .stamp {
+    animation: none !important;
+    opacity: 1 !important;
+    scale: 1 !important;
+  }
   .shot img {
     transition: none;
   }

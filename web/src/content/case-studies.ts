@@ -64,7 +64,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Service", "Mobile app design and development"],
       ],
     },
-    stamp: { status: "Delivered \u00b7 launching soon", variant: "admit" },
+    // TODO(owner): update with the Play Store link and real numbers once live
+    stamp: { status: "Delivered · launching soon", variant: "admit" },
     hero: {
       src: "/work/assess-yourself/hero.webp",
       width: 1400,
@@ -82,7 +83,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: ["EHS Training", "Platform"],
     accent: "#00674C",
     kicker: "Case study · Web platform",
-    line: "A custom training platform for EHS Guru, a safety-training company that teaches live classes on Zoom.",
+    line: "A simple, custom platform that replaced a bloated off-the-shelf LMS. Only what they use, nothing they don't.",
     card: {
       label: "Session pass · Case study 02",
       fields: [
@@ -122,13 +123,15 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Type", "Our own product"],
         ["Platform", "Web app"],
         ["Stack", "Next.js · Supabase · Gemini"],
+        // TODO(owner): confirm
+        ["Timeline", "First version running in week 1; live product by week 11."],
       ],
       more: [
         ["Industry", "Social media marketing"],
         ["Service", "Product design, build and launch"],
       ],
     },
-    stamp: { status: "Live · poststeady.com", variant: "dateline" },
+    stamp: { status: "Live · 100+ users", variant: "dateline" },
     liveHref: "https://www.poststeady.com",
     hero: {
       src: "/work/poststeady/hero.webp",
@@ -161,7 +164,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Service", "Product design, build and release"],
       ],
     },
-    stamp: { status: "● LIVE \u00b7 chromalayer.app", variant: "osd" },
+    stamp: { status: "Live · 100+ users", variant: "osd" },
     liveHref: "https://chromalayer.app",
     hero: {
       src: "/work/chromalayer/hero.webp",

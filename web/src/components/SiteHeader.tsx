@@ -9,6 +9,7 @@ import {
   useCondenseProgress,
 } from "@/components/motion-ui/shrink-header";
 import styles from "./SiteHeader.module.css";
+import { BookingCta } from "@/components/BookingCta";
 
 const NAV = [
   { href: "/#work", label: "Work" },
@@ -42,14 +43,7 @@ function HeaderContents() {
           ))}
         </nav>
 
-        <a
-          href="https://cal.com/shipthesis/discovery"
-          data-cal-link="shipthesis/discovery"
-          data-cal-config='{"layout":"month_view"}'
-          className={`btn ${styles.cta}`}
-        >
-          Book a free 20-minute call
-        </a>
+        <BookingCta location="header" className={styles.cta} />
       </motion.div>
 
       {/* ponytail: native <details> menu, no JS; swap for a dialog if it needs focus trapping */}
@@ -65,14 +59,7 @@ function HeaderContents() {
               {item.label}
             </Link>
           ))}
-          <a
-            href="https://cal.com/shipthesis/discovery"
-            data-cal-link="shipthesis/discovery"
-            data-cal-config='{"layout":"month_view"}'
-            className="btn"
-          >
-            Book a free 20-minute call
-          </a>
+          <BookingCta location="header" />
         </nav>
       </details>
     </>

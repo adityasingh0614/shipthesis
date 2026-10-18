@@ -37,6 +37,7 @@ type Project = {
   time?: string;
   status: string;
   slug: string;
+  featured?: boolean;
 };
 
 // Facts: .agents/product-marketing.md, home-brief §2. Stacks: founder's top six, checked against docs/case-studies/*-raw.md.
@@ -46,32 +47,13 @@ type Hrefs = Record<string, string | undefined>;
 
 const PROJECTS: Project[] = [
   {
-    name: "Assess Yourself",
-    title: ["Assess", " Yourself"],
-    type: "Mobile app",
-    color: "#283593",
-    description:
-      "An offline-first exam prep and testing mobile app built in Flutter, with crash-resilient timed test recovery, dynamic question bank imports from Excel, and subscription billing.",
-    client: "Client: Aptellic",
-    // Pending: founder will supply the final Assess Yourself stack.
-    stack: [
-      { src: "/logo/flutter-svgrepo-com.svg", label: "Flutter" },
-      { src: "/logo/nodejs-logo-svgrepo-com.svg", label: "Node.js" },
-      { src: "/logo/Express.svg", label: "Express" },
-      { src: "/logo/Firebase.svg", label: "Firebase" },
-      { src: "/logo/razorpay-icon.svg", label: "Razorpay" },
-    ],
-    time: "3-4 weeks",
-    status: "Delivered, launching soon",
-    slug: "assess-yourself",
-  },
-  {
     name: "EHS Training Platform",
     title: ["EHS Training", " Platform"],
     type: "Web platform",
     color: "#00674C",
+    featured: true,
     description:
-      "A dedicated, brand-first LMS built for live cohort-based learning.",
+      "A simple, custom platform that replaced a bloated off-the-shelf LMS. Only what they use, nothing they don't.",
     client: "Client: EHS Guru",
     stack: [
       { src: "/logo/next-dot-js-svgrepo-com.svg", label: "Next.js" },
@@ -101,7 +83,7 @@ const PROJECTS: Project[] = [
       { src: "/logo/dodopayments.svg", label: "Dodo Payments" },
       { src: "/logo/puppeteer.svg", label: "Puppeteer" },
     ],
-    status: "Live",
+    status: "Live · 100+ users",
     slug: "poststeady",
   },
   {
@@ -121,8 +103,27 @@ const PROJECTS: Project[] = [
       { src: "/logo/dodopayments.svg", label: "Dodo Payments" },
       { src: "/logo/cloudflareworkers.svg", label: "Cloudflare Workers" },
     ],
-    status: "Live",
+    status: "Live · 100+ users",
     slug: "chromalayer",
+  },
+  {
+    name: "Assess Yourself",
+    title: ["Assess", " Yourself"],
+    type: "Mobile app",
+    color: "#283593",
+    description:
+      "An offline-first exam prep and testing mobile app built in Flutter, with crash-resilient timed test recovery, dynamic question bank imports from Excel, and a one-time payment unlock.",
+    client: "Client: Aptellic",
+    stack: [
+      { src: "/logo/flutter-svgrepo-com.svg", label: "Flutter" },
+      { src: "/logo/nodejs-logo-svgrepo-com.svg", label: "Node.js" },
+      { src: "/logo/Express.svg", label: "Express" },
+      { src: "/logo/Firebase.svg", label: "Firebase" },
+      { src: "/logo/razorpay-icon.svg", label: "Razorpay" },
+    ],
+    time: "3-4 weeks",
+    status: "Delivered, launching soon",
+    slug: "assess-yourself",
   },
 ];
 
@@ -152,16 +153,22 @@ function ProjectCard({
   /** The case study page, when there is one. */
   href?: string;
 }) {
+  const resolvedHref = href || (project.slug === "chromalayer" ? "/work/chromalayer" : undefined);
   return (
     <article
-      className={styles.card}
+      className={`${styles.card} ${project.featured ? styles.cardFeatured : ""}`}
       style={{ "--accent": project.color } as CSSProperties}
       role="group"
       aria-roledescription="slide"
       aria-label={`${i + 1} of ${PROJECTS.length}: ${project.name}`}
     >
       <div className={styles.copy}>
-        <span className={styles.tag}>{project.type}</span>
+        <div className={styles.tagGroup}>
+          <span className={styles.tag}>{project.type}</span>
+          {project.featured && (
+            <span className={styles.featuredBadge}>Featured project</span>
+          )}
+        </div>
         <h3 className={styles.name} aria-label={project.name}>
           <span className={styles.nameAccent}>{project.title[0]}</span>
           {project.title[1]}
@@ -215,8 +222,8 @@ function ProjectCard({
           </span>
         </p>
 
-        {href && (
-          <Link href={href} className={styles.caseLink}>
+        {resolvedHref && (
+          <Link href={resolvedHref} className={styles.caseLink}>
             Read the case study
             <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
               <path

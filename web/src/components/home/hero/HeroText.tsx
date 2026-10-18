@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookingCta } from "@/components/BookingCta";
 import styles from "./HeroText.module.css";
 
 export function HeroText() {
@@ -9,32 +10,22 @@ export function HeroText() {
         <span className={styles.titleLine}>to a live product.</span>
       </h1>
       <p className={styles.sub}>
-        Mobile apps and SaaS with intelligent AI features built in. A new
-        working build on your phone every week, from kickoff to app stores.
+        Mobile apps and SaaS for early-stage founders. A working build on your
+        phone every week, and code you own.
       </p>
       <div className={styles.actions}>
-        <a
-          href="https://cal.com/shipthesis/discovery"
-          data-cal-link="shipthesis/discovery"
-          data-cal-config='{"layout":"month_view"}'
-          className="btn"
-        >
-          Book a free 20-minute call
-          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
-            <path
-              d="M3 9h11m-4-4 4 4-4 4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
-        <Link href="/#work" className={`btn ${styles.secondary}`}>
-          See our work
+        <BookingCta location="hero" variant="button" />
+        <Link href="/#work" className={styles.seeWorkLink}>
+          See our work &#x2192;
         </Link>
       </div>
+      <p className={styles.underButton}>
+        20 minutes. No pitch. You leave with a clear next step.
+      </p>
+      {/* TODO(owner): confirm both user counts are real and defined. */}
+      <p className={styles.proofLine}>
+        Two live products with 100+ users each, and a client platform running paid live classes.
+      </p>
       <p className={styles.trustLine}>
         <span>✓ 100% code you own</span>
         <span className={styles.trustDot}>•</span>

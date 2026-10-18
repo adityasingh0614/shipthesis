@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import type { CaseStudy } from "@/content/case-studies";
+import { BookingCta } from "@/components/BookingCta";
 import styles from "./CaseOpening.module.css";
 
 // Shared hero for every case study (approved design:
@@ -80,6 +81,9 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
           ) : (
             <p className={styles.cardHead}>{card.label}</p>
           )}
+          <div className={styles.statusCta}>
+            <BookingCta location="case-study-top" variant="text" />
+          </div>
           <dl className={styles.fields}>
             {card.fields.map(([label, value]) => (
               <div key={label} className={styles.field}>

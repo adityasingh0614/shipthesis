@@ -8,15 +8,6 @@ import styles from "./ProofStrip.module.css";
 // Monogram tiles until the real app icons arrive.
 const APPS = [
   {
-    name: "Poststeady",
-    mark: "P",
-    color: "#1A5BFA",
-    type: "SaaS",
-    status: "Live",
-    slug: "poststeady",
-    iconSrc: "/logo/poststeady-logo-full.svg",
-  },
-  {
     name: "EHS Training Platform",
     mark: "EHS",
     color: "#00674C",
@@ -26,11 +17,20 @@ const APPS = [
     iconSrc: "/logo/ehs_logo.png",
   },
   {
+    name: "Poststeady",
+    mark: "P",
+    color: "#1A5BFA",
+    type: "SaaS",
+    status: "Live · 100+ users",
+    slug: "poststeady",
+    iconSrc: "/logo/poststeady-logo-full.svg",
+  },
+  {
     name: "ChromaLayer",
     mark: "C",
     color: "#1c2450",
     type: "Windows app",
-    status: "Live",
+    status: "Live · 100+ users",
     slug: "chromalayer",
     iconSrc: "/logo/ChromaLayer_256x256.png",
   },

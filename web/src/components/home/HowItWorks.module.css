@@ -130,6 +130,12 @@
   color: var(--green);
 }
 
+.ctaWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(40px, 5vw, 56px);
+}
+
 .link {
   display: flex;
   align-items: center;

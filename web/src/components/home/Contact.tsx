@@ -1,22 +1,7 @@
-"use client";
-
-import { useEffect } from "react";
-import { getCalApi } from "@calcom/embed-react";
+import { BookingCta } from "@/components/BookingCta";
 import styles from "./Contact.module.css";
 
 export function Contact() {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({});
-      cal("ui", {
-        theme: "light",
-        styles: { branding: { brandColor: "#0a7f55" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
-  }, []);
-
   return (
     <div className={styles.wrapper}>
       <section id="contact" className={styles.section} aria-labelledby="contact-title">
@@ -29,9 +14,7 @@ export function Contact() {
               Book a free 20-minute call to get an honest technical assessment of your idea and a timeline for your first build.
             </p>
 
-            <button data-cal-link="shipthesis/discovery" data-cal-config='{"layout":"month_view"}' className={styles.buttonPrimary}>
-              <span>Book a free 20-minute call</span>
-            </button>
+            <BookingCta location="final" variant="button" />
 
             <div className={styles.timeline}>
               <div className={styles.step}>
@@ -52,6 +35,21 @@ export function Contact() {
           {/* Right Column: Partnership & Comms Card */}
           <div className={styles.card}>
             <h4 className={styles.cardTitle}>Founder Partnership &amp; Comms</h4>
+            
+            {/* TODO(owner): name and photo */}
+            <div className={styles.founderBox}>
+              <div className={styles.founderAvatar} aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <div className={styles.founderInfo}>
+                <span className={styles.founderName}>Aditya</span>
+                <span className={styles.founderTagline}>You&apos;ll talk to Aditya, who builds it</span>
+              </div>
+            </div>
+
             <div className={styles.divider} />
             
             <ul className={styles.methods}>
@@ -79,7 +77,7 @@ export function Contact() {
                 </span>
                 <div className={styles.methodContent}>
                   <span className={styles.methodLabel}>Time Zone Alignment</span>
-                  <span className={styles.methodValue}>Calls scheduled to match your time zone</span>
+                  <span className={styles.methodValue}>Calls scheduled in your time zone</span>
                 </div>
               </li>
 

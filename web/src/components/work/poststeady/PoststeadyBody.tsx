@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getVisibleCaseStudy } from "@/content/case-studies";
 import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
+import { BookingCta } from "@/components/BookingCta";
 import { SpendMerge } from "./SpendMerge";
 import { Wizard } from "./Wizard";
 import styles from "./Poststeady.module.css";
@@ -213,14 +214,9 @@ export function PoststeadyBody() {
               built like this?
             </h2>
             <p>Start with a free 20-minute call about your idea.</p>
-            <a
-              href="https://cal.com/shipthesis/discovery"
-              data-cal-link="shipthesis/discovery"
-              data-cal-config='{"layout":"month_view"}'
-              className={styles.callBtn}
-            >
-              Book a free 20-minute call
-            </a>
+            <div style={{ marginTop: "16px" }}>
+              <BookingCta location="case-study-mid" variant="text" />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -266,7 +262,11 @@ export function PoststeadyBody() {
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
                 <li>
-                  <small>Speed</small>Working first version by week 1.
+                  <small>Users</small>Live · 100+ users.
+                </li>
+                {/* TODO(owner): confirm */}
+                <li>
+                  <small>Speed</small>First version running in week 1; live product by week 11.
                 </li>
                 <li>
                   <small>Quality</small>230 automated tests and 2 dated security audits.
@@ -286,7 +286,7 @@ export function PoststeadyBody() {
           <details className={styles.hood} open>
             <summary>
               <div>
-                <h2 id="hood-title">07 · Under the hood</h2>
+                <h2 id="hood-title">Under the hood</h2>
                 <p>How it works, in plain words, with the technical name underneath.</p>
               </div>
             </summary>
@@ -373,14 +373,7 @@ export function PoststeadyBody() {
             </p>
           </Reveal>
           <div className={styles.finalActions}>
-            <a
-              href="https://cal.com/shipthesis/discovery"
-              data-cal-link="shipthesis/discovery"
-              data-cal-config='{"layout":"month_view"}'
-              className="btn"
-            >
-              Book a free 20-minute call
-            </a>
+            <BookingCta location="case-study-end" variant="text" />
             <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
               See how it works <Arrow />
             </Link>

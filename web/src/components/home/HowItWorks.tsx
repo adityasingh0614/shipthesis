@@ -1,16 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
+import { BookingCta } from "@/components/BookingCta";
 import styles from "./HowItWorks.module.css";
 
 // Copy: docs/design/home-brief.md §3. Design, Development and Testing repeat weekly.
 const STEPS = [
   {
-    label: "Discovery call",
+    label: "Free 20-minute call",
     when: "Day 1 - 20 minutes",
-    body: "A free 20-minute call to evaluate your idea, discuss technical options, and establish fit. If we decide to build together, we map out a fixed written scope, wireframes, timeline, and deliverables.",
+    body: "We learn what you're building and whether we're a fit. After the call you get a written scope, timeline and milestones.",
     img: "/How it works/step1.webp",
     imgAlt: "Discovery call illustration",
   },
@@ -33,7 +33,7 @@ const STEPS = [
   {
     label: "Testing",
     when: "Before submission",
-    body: "Every build is tested before it reaches you, with full end-to-end testing before submission.",
+    body: "Every build is tested before it reaches your phone, with full testing before submission.",
     weekly: true,
     img: "/How it works/step4.webp",
     imgAlt: "Testing step illustration",
@@ -41,14 +41,14 @@ const STEPS = [
   {
     label: "Store submission",
     when: "End of build",
-    body: "We handle the App Store and Play Store submission, including the review process.",
+    body: "We handle App Store and Play Store submission and reviews.",
     img: "/How it works/step5.webp",
     imgAlt: "Store submission step illustration",
   },
   {
     label: "Launch",
     when: "Launch day",
-    body: "Your app, live on the App Store and Play Store.",
+    body: "Your app live on the App Store and Google Play Store.",
     img: "/How it works/step6.webp",
     imgAlt: "Launch step illustration",
   },
@@ -77,7 +77,7 @@ export function HowItWorks() {
               className={styles.step}
               initial={reduceMotion ? false : { opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, margin: "100px 0px" }}
               transition={{
                 duration: 0.5,
                 delay: (i % 3) * 0.1,
@@ -196,19 +196,9 @@ export function HowItWorks() {
           ))}
         </ol>
 
-        <Link href="/services" className={styles.link}>
-          What each stage includes
-          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
-            <path
-              d="M3 9h11m-4-4 4 4-4 4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
+        <div className={styles.ctaWrap}>
+          <BookingCta location="process" variant="button" />
+        </div>
       </div>
     </section>
   );

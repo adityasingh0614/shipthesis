@@ -56,6 +56,36 @@
   transform: translateX(3px);
 }
 
+.underButton {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+}
+
+.seeWorkLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 140ms ease;
+}
+
+.seeWorkLink:hover {
+  color: var(--ink);
+}
+
+.proofLine {
+  margin-top: 14px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
 .trustLine {
   display: flex;
   flex-wrap: wrap;

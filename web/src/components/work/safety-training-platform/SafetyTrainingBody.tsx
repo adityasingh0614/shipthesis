@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getVisibleCaseStudy } from "@/content/case-studies";
 import { BriefFacts } from "../BriefFacts";
 import { Reveal } from "../Reveal";
+import { BookingCta } from "@/components/BookingCta";
 import { GoLive } from "./GoLive";
 import styles from "./SafetyTraining.module.css";
 
@@ -251,14 +252,9 @@ export function SafetyTrainingBody() {
               built like this?
             </h2>
             <p>Start with a free 20-minute call about your idea.</p>
-            <a
-              href="https://cal.com/shipthesis/discovery"
-              data-cal-link="shipthesis/discovery"
-              data-cal-config='{"layout":"month_view"}'
-              className={styles.callBtn}
-            >
-              Book a free 20-minute call
-            </a>
+            <div style={{ marginTop: "16px" }}>
+              <BookingCta location="case-study-mid" variant="text" />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -302,15 +298,24 @@ export function SafetyTrainingBody() {
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
                 <li>
-                  <small>Classes</small>Runs EHS Guru&apos;s paid live classes, in batches of nearly 80.
+                  <small>Saves money</small>No paying for unused features.
                 </li>
                 <li>
-                  <small>Brand</small>On their own domain, under their own name.
+                  <small>Saves time</small>One-click classes, automatic attendance, recordings kept.
                 </li>
                 <li>
-                  <small>After launch</small>Still on our monthly maintenance plan.
+                  <small>Simple and stress-free</small>Each role sees only what it needs.
+                </li>
+                <li>
+                  <small>Built around how they teach</small>Own domain, own brand.
                 </li>
               </ul>
+              {/* TODO(owner): publish only after client approval of the exact wording */}
+              <div className={styles.pullQuoteBlock}>
+                <blockquote>
+                  &ldquo;It saves us money and time. It&apos;s simple, stress-free and built exactly around how we work, with no bloated features.&rdquo;
+                </blockquote>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -421,14 +426,7 @@ export function SafetyTrainingBody() {
             </p>
           </Reveal>
           <div className={styles.finalActions}>
-            <a
-              href="https://cal.com/shipthesis/discovery"
-              data-cal-link="shipthesis/discovery"
-              data-cal-config='{"layout":"month_view"}'
-              className="btn"
-            >
-              Book a free 20-minute call
-            </a>
+            <BookingCta location="case-study-end" variant="text" />
             <Link href="/#process" className={`btn ${styles.secondaryBtn}`}>
               See how it works <Arrow />
             </Link>

@@ -59,20 +59,20 @@
   filter: drop-shadow(0 6px 14px rgba(2, 86, 155, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
 }
 
-/* Swift brand hover */
-.techChip.swift:hover .chipRect,
-.techChip.swift:focus-visible .chipRect {
-  stroke: #F05138;
+/* Next.js brand hover */
+.techChip.nextjs:hover .chipRect,
+.techChip.nextjs:focus-visible .chipRect {
+  stroke: #000000;
   stroke-width: 1.5;
-  filter: drop-shadow(0 6px 14px rgba(240, 81, 56, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
 }
 
-/* Kotlin brand hover */
-.techChip.kotlin:hover .chipRect,
-.techChip.kotlin:focus-visible .chipRect {
-  stroke: #7F52FF;
+/* Supabase brand hover */
+.techChip.supabase:hover .chipRect,
+.techChip.supabase:focus-visible .chipRect {
+  stroke: #3ECF8E;
   stroke-width: 1.5;
-  filter: drop-shadow(0 6px 14px rgba(127, 82, 255, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
+  filter: drop-shadow(0 6px 14px rgba(62, 207, 142, 0.35)) drop-shadow(0 2px 4px rgba(15, 26, 20, 0.12));
 }
 
 /* AWS brand hover */

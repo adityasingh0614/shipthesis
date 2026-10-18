@@ -379,7 +379,7 @@ function TechChip({
   x: number;
   y: number;
   name: string;
-  tech?: "flutter" | "swift" | "kotlin" | "aws";
+  tech?: "flutter" | "nextjs" | "supabase" | "aws";
   children: ReactNode;
 }) {
   return (
@@ -667,11 +667,11 @@ export function HeroVisual() {
           <TechChip x={LABEL_X} y={chipsY} name="Flutter" tech="flutter">
             {logo("/logo/flutter-svgrepo-com.svg", LABEL_X, chipsY)}
           </TechChip>
-          <TechChip x={LABEL_X + 32} y={chipsY} name="Swift" tech="swift">
-            {logo("/logo/swift.svg", LABEL_X + 32, chipsY)}
+          <TechChip x={LABEL_X + 32} y={chipsY} name="Next.js" tech="nextjs">
+            {logo("/logo/next-dot-js-svgrepo-com.svg", LABEL_X + 32, chipsY)}
           </TechChip>
-          <TechChip x={LABEL_X + 64} y={chipsY} name="Kotlin" tech="kotlin">
-            {logo("/logo/kotlin.svg", LABEL_X + 64, chipsY)}
+          <TechChip x={LABEL_X + 64} y={chipsY} name="Supabase" tech="supabase">
+            {logo("/logo/supabase.svg", LABEL_X + 64, chipsY)}
           </TechChip>
           <TechChip x={LABEL_X + 96} y={chipsY} name="AWS" tech="aws">
             {logo("/logo/aws-dark.svg", LABEL_X + 96, chipsY)}

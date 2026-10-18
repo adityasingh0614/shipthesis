@@ -15,10 +15,10 @@ import styles from "./page.module.css";
 // Cards link to a case study only where its page exists (a page with
 // placeholder screens is hidden on production).
 const SLUGS = [
-  "assess-yourself",
   "safety-training-platform",
   "poststeady",
   "chromalayer",
+  "assess-yourself",
 ];
 
 export default function Home() {

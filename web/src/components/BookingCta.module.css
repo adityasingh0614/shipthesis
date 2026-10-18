@@ -1,0 +1,23 @@
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 140ms ease;
+}
+
+.textLink:hover {
+  color: var(--green-hover);
+}
+
+.textLink svg {
+  transition: transform 140ms ease;
+}
+
+.textLink:hover svg {
+  transform: translateX(3px);
+}
