@@ -10,7 +10,7 @@ export function HeroText() {
         <span className={styles.titleLine}>to a live product.</span>
       </h1>
       <p className={styles.sub}>
-        Mobile apps and SaaS for early-stage founders. A working build on your
+        Mobile apps and SaaS with intelligent AI features built in. A working build on your
         phone every week, and code you own.
       </p>
 
@@ -92,13 +92,6 @@ export function HeroText() {
         </div>
       </div>
 
-      {/* TODO(owner): confirm both user counts are real and defined. */}
-      <div className={styles.proofBadge}>
-        <span className={styles.pulseDot} aria-hidden="true" />
-        <span>
-          Two live products with 100+ users each, and a client platform running paid live classes.
-        </span>
-      </div>
     </>
   );
 }

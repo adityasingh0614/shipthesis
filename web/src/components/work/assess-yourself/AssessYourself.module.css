@@ -817,27 +817,45 @@
 }
 
 /* On the green band the button inverts so it still reads as the action. */
-.callBtn {
+.callBand .callBtn,
+.callBand :global(.btn).callBtn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
   min-height: 56px;
-  padding: 0 30px;
+  padding: 0 32px;
   border-radius: var(--radius-control);
-  background: var(--surface);
-  color: var(--ink);
+  background-color: #ffffff !important;
+  color: var(--ink) !important;
   font-size: 1.0625rem;
   font-weight: 700;
+  box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.35);
   transition:
+    background-color 160ms ease-out,
+    color 160ms ease-out,
     transform 160ms ease-out,
     box-shadow 160ms ease-out;
 }
 
-.callBtn:hover {
+.callBand .callBtn:hover,
+.callBand :global(.btn).callBtn:hover {
+  background-color: #ffffff !important;
+  color: var(--green) !important;
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -12px rgb(0 0 0 / 0.45);
+  box-shadow: 0 16px 32px -8px rgb(0 0 0 / 0.5);
 }
 
-.callBtn:focus-visible {
+.callBand .callBtn svg {
+  color: inherit;
+  transition: transform 160ms ease-out;
+}
+
+.callBand .callBtn:hover svg {
+  transform: translateX(3px);
+}
+
+.callBand .callBtn:focus-visible {
   outline: 3px solid #fff;
   outline-offset: 4px;
 }

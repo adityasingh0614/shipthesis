@@ -1,11 +1,23 @@
 import type { ReactNode } from "react";
 import styles from "./WhatWeBuild.module.css";
+import { AiVisual } from "./visuals/AiVisual";
 import { CrossPlatformVisual } from "./visuals/CrossPlatformVisual";
+import { CustomVisual } from "./visuals/CustomVisual";
+import { NativeVisual } from "./visuals/NativeVisual";
 import { SaasVisual } from "./visuals/SaasVisual";
 import { VisualsLoop } from "./visuals/shared";
 import { BookingCta } from "@/components/BookingCta";
 
-const SERVICES: { name: string; line: ReactNode; visual?: ReactNode }[] = [
+/**
+ * All services preserved. Secondary services set to `hidden: true`
+ * for a focused 2-card presentation without deleting any code or visuals.
+ */
+const SERVICES: {
+  name: string;
+  line: ReactNode;
+  visual?: ReactNode;
+  hidden?: boolean;
+}[] = [
   {
     name: "Flutter mobile apps",
     visual: <CrossPlatformVisual />,
@@ -24,9 +36,41 @@ const SERVICES: { name: string; line: ReactNode; visual?: ReactNode }[] = [
       </>
     ),
   },
+  {
+    name: "Applied AI features",
+    visual: <AiVisual />,
+    hidden: true,
+    line: (
+      <>
+        Practical <strong>AI integrations</strong> that solve real problems: automated document parsing, data summaries, and workflow automation without gimmicks.
+      </>
+    ),
+  },
+  {
+    name: "Desktop & custom software",
+    visual: <CustomVisual />,
+    hidden: true,
+    line: (
+      <>
+        Specialized native Windows utilities (.NET / C#) and bespoke software built around your exact business operational needs.
+      </>
+    ),
+  },
+  {
+    name: "Native iOS & Android",
+    visual: <NativeVisual />,
+    hidden: true,
+    line: (
+      <>
+        When your product requires deep device hardware access or platform-exclusive SDKs, native Swift and Kotlin builds are also available.
+      </>
+    ),
+  },
 ];
 
 export function WhatWeBuild() {
+  const visibleServices = SERVICES.filter((s) => !s.hidden);
+
   return (
     <section id="services" className={styles.section} aria-labelledby="build-title">
       <div className={styles.inner}>
@@ -41,7 +85,7 @@ export function WhatWeBuild() {
 
         <VisualsLoop>
           <ul className={styles.grid}>
-            {SERVICES.map((s) => (
+            {visibleServices.map((s) => (
               <li key={s.name} className={styles.cell}>
                 <div className={styles.card}>
                   <div className={styles.visual}>
@@ -58,7 +102,7 @@ export function WhatWeBuild() {
         </VisualsLoop>
 
         <p className={styles.alsoAvailable}>
-          Also available: AI features and custom solutions.
+          Also available: AI features, desktop utilities, and custom software.
         </p>
 
         <div className={styles.bottomCta}>

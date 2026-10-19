@@ -242,6 +242,22 @@ export function SafetyTrainingBody() {
       </section>
 
 
+      {/* Mid-page call: right after the engineering proof. The page's one
+          full-bleed brand-green moment. */}
+      <section className={styles.callBand} aria-labelledby="call-title">
+        <div className={styles.wrap}>
+          <Reveal>
+            <h2 id="call-title">
+              Want a platform
+              <br />
+              built like this?
+            </h2>
+            <p>Start with a free 20-minute call about your idea.</p>
+            <BookingCta location="case-study-mid" variant="button" className={styles.callBtn} />
+          </Reveal>
+        </div>
+      </section>
+
       {/* 05 · Judgement: what we left out, on purpose */}
       <section className={styles.section} aria-labelledby="judgement-title">
         <div className={styles.wrap}>
@@ -281,24 +297,18 @@ export function SafetyTrainingBody() {
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
                 <li>
-                  <small>Saves money</small>No paying for unused features.
+                  <small>Classes</small>Runs EHS Guru&apos;s paid live classes, in batches of nearly 80.
                 </li>
                 <li>
-                  <small>Saves time</small>One-click classes, automatic attendance, recordings kept.
+                  <small>Brand</small>On their own domain, under their own name.
                 </li>
                 <li>
-                  <small>Simple and stress-free</small>Each role sees only what it needs.
+                  <small>After launch</small>Still on our monthly maintenance plan.
                 </li>
                 <li>
-                  <small>Built around how they teach</small>Own domain, own brand.
+                  <small>Efficiency</small>One-click classes, automatic attendance, and all recordings kept.
                 </li>
               </ul>
-              {/* TODO(owner): publish only after client approval of the exact wording */}
-              <div className={styles.pullQuoteBlock}>
-                <blockquote>
-                  &ldquo;It saves us money and time. It&apos;s simple, stress-free and built exactly around how we work, with no bloated features.&rdquo;
-                </blockquote>
-              </div>
             </Reveal>
           </div>
         </div>

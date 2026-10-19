@@ -183,6 +183,21 @@ export function ChromaLayerBody() {
       </section>
 
 
+      {/* Mid-page call: the page's one full-bleed brand-green moment. */}
+      <section className={styles.callBand} aria-labelledby="call-title">
+        <div className={styles.wrap}>
+          <Reveal>
+            <h2 id="call-title">
+              Want an app that
+              <br />
+              just keeps working?
+            </h2>
+            <p>Start with a free 20-minute call about your idea.</p>
+            <BookingCta location="case-study-mid" variant="button" className={styles.callBtn} />
+          </Reveal>
+        </div>
+      </section>
+
       {/* 05 · Judgement */}
       <section className={styles.section} aria-labelledby="judgement-title">
         <div className={styles.wrap}>
@@ -220,7 +235,6 @@ export function ChromaLayerBody() {
           </Reveal>
           <ul className={styles.facts}>
             {[
-              ["Users", "#8f9fe8", "Live · 100+ users"],
               ["Live", "#8f9fe8", <>At{" "}<a className={styles.out} href="https://chromalayer.app" target="_blank" rel="noreferrer">chromalayer.app</a>.</>],
               ["Works on", "#8f9fe8", "Intel, AMD and NVIDIA graphics, tested on each."],
               ["Built in", "#8f9fe8", "A 14-day free trial and licensing."],

@@ -204,6 +204,22 @@ export function PoststeadyBody() {
       </section>
 
 
+      {/* Mid-page call: right after the engineering proof. The page's one
+          full-bleed brand-green moment. */}
+      <section className={styles.callBand} aria-labelledby="call-title">
+        <div className={styles.wrap}>
+          <Reveal>
+            <h2 id="call-title">
+              Want a product
+              <br />
+              built like this?
+            </h2>
+            <p>Start with a free 20-minute call about your idea.</p>
+            <BookingCta location="case-study-mid" variant="button" className={styles.callBtn} />
+          </Reveal>
+        </div>
+      </section>
+
       {/* 05 · Judgement: stories we spiked */}
       <section className={styles.section} aria-labelledby="judgement-title">
         <div className={styles.wrap}>
@@ -245,17 +261,16 @@ export function PoststeadyBody() {
             <Reveal delay={0.14}>
               <ul className={styles.facts}>
                 <li>
-                  <small>Users</small>Live · 100+ users.
-                </li>
-                {/* TODO(owner): confirm */}
-                <li>
-                  <small>Speed</small>First version running in week 1; live product by week 11.
+                  <small>Speed</small>Working first version by week 1.
                 </li>
                 <li>
                   <small>Quality</small>230 automated tests and 2 dated security audits.
                 </li>
                 <li>
                   <small>Business</small>Live product with Free and Pro plans.
+                </li>
+                <li>
+                  <small>Status</small>Live at poststeady.com.
                 </li>
               </ul>
             </Reveal>

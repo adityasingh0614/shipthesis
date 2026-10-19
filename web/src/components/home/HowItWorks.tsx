@@ -96,10 +96,11 @@ export function HowItWorks() {
                       width={1672}
                       height={941}
                       sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 380px"
+                      loading="lazy"
                       className={styles.shot}
                     />
                   </div>
-                  {i % 2 !== 1 && (
+                  {i % 3 !== 2 && (
                     <svg
                       className={styles.arrow}
                       width="24"
@@ -120,7 +121,7 @@ export function HowItWorks() {
                 </div>
               ) : (
                 <div className={styles.visual}>
-                  {i % 2 !== 1 && (
+                  {i % 3 !== 2 && (
                     <svg
                       className={styles.arrow}
                       width="24"

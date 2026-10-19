@@ -1,16 +1,18 @@
 .section {
   background: var(--surface-alt);
+  padding: var(--section-py) 0;
 }
 
 .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(80px, 10vw, 140px) var(--gutter) var(--section-py);
-  border-top: 1px solid var(--line);
+  padding: 0 var(--gutter);
 }
 
-/* Section headings are centred site-wide (CLAUDE.md). */
+/* Centred section heading */
 .head {
+  max-width: 680px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -18,21 +20,20 @@
   font-family: var(--font-display);
   font-size: clamp(2.25rem, 4.6vw, 3.5rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   text-wrap: balance;
 }
 
 .lede {
-  max-width: 54ch;
   margin: 14px auto 0;
   font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
   color: var(--ink-soft);
   text-wrap: pretty;
 }
 
-/* Two main cards */
+/* Two focused flagship cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -41,6 +42,7 @@
   margin: clamp(40px, 5vw, 64px) auto 0;
   list-style: none;
 }
+
 .cell {
   min-width: 0;
 }
@@ -83,11 +85,12 @@
 .line {
   margin-top: 8px;
   color: var(--ink-soft);
+  line-height: 1.55;
 }
 
 .alsoAvailable {
   text-align: center;
-  margin-top: clamp(36px, 5vw, 52px);
+  margin-top: clamp(32px, 4vw, 48px);
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   color: var(--ink-soft);
   font-weight: 500;
@@ -105,4 +108,3 @@
     grid-template-columns: 1fr;
   }
 }
-

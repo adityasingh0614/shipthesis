@@ -235,6 +235,23 @@ export function AssessYourselfBody() {
       </section>
 
 
+      {/* Mid-page call: right after the engineering proof, where a founder
+          decides "they could build mine". The page's one full-bleed colour
+          moment, in the brand's action green. */}
+      <section className={styles.callBand} aria-labelledby="call-title">
+        <div className={styles.wrap}>
+          <Reveal>
+            <h2 id="call-title">
+              Want an app built
+              <br />
+              like this?
+            </h2>
+            <p>Start with a free 20-minute call about your idea.</p>
+            <BookingCta location="case-study-mid" variant="button" className={styles.callBtn} />
+          </Reveal>
+        </div>
+      </section>
+
       {/* 06 · What we chose not to build */}
       <section className={`${styles.section} ${styles.band}`} aria-labelledby="judgement-title">
         <div className={styles.wrap}>
@@ -272,7 +289,6 @@ export function AssessYourselfBody() {
               <p className={styles.bigLine}>to deliver the app to Aptellic.</p>
             </Reveal>
             <Reveal delay={0.14}>
-              {/* TODO(owner): update with the Play Store link and real numbers once live */}
               <ul className={styles.facts}>
                 <li>
                   <small>Content</small>New exams go live from a single Excel upload.
@@ -281,7 +297,7 @@ export function AssessYourselfBody() {
                   <small>Students</small>Exam discovery, timed tests and instant analysis in one app.
                 </li>
                 <li>
-                  <small>Status</small>Delivered, launching soon.
+                  <small>Status</small>Delivered, launching on the Play Store soon.
                 </li>
               </ul>
             </Reveal>

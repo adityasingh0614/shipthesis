@@ -1,15 +1,16 @@
 .footer {
+  background: var(--surface-alt);
+  border-top: 1px solid var(--line);
   padding: var(--section-py) var(--gutter) clamp(32px, 5vw, 64px);
   margin-top: 0;
   width: 100%;
-  max-width: var(--max);
-  margin-left: auto;
-  margin-right: auto;
-  border-top: none;
 }
 
 .box {
   position: relative;
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .topGrid {

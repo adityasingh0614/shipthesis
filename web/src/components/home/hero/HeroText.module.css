@@ -146,58 +146,6 @@
   flex-shrink: 0;
 }
 
-/* Proof Badge: subtle live social proof with animated pulse dot */
-.proofBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 14px;
-  padding: 5px 16px;
-  background: color-mix(in srgb, var(--surface-alt) 65%, transparent);
-  border: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
-  border-radius: 9999px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  letter-spacing: -0.01em;
-  max-width: 90%;
-}
-
-.pulseDot {
-  position: relative;
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  flex-shrink: 0;
-}
-
-.pulseDot::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  border: 1.5px solid var(--green);
-  animation: pulseBeacon 2.2s infinite ease-out;
-}
-
-@keyframes pulseBeacon {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.9;
-  }
-  70% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
-}
-
 @media (max-width: 768px) {
   .trustCapsule {
     flex-wrap: wrap;
@@ -208,12 +156,6 @@
 
   .trustDivider {
     display: none;
-  }
-
-  .proofBadge {
-    border-radius: 14px;
-    padding: 8px 12px;
-    font-size: 0.775rem;
   }
 }
 

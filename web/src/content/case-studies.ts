@@ -123,15 +123,13 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Type", "Our own product"],
         ["Platform", "Web app"],
         ["Stack", "Next.js · Supabase · Gemini"],
-        // TODO(owner): confirm
-        ["Timeline", "First version running in week 1; live product by week 11."],
       ],
       more: [
         ["Industry", "Social media marketing"],
         ["Service", "Product design, build and launch"],
       ],
     },
-    stamp: { status: "Live · 100+ users", variant: "dateline" },
+    stamp: { status: "Live · poststeady.com", variant: "dateline" },
     liveHref: "https://www.poststeady.com",
     hero: {
       src: "/work/poststeady/hero.webp",
@@ -164,7 +162,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Service", "Product design, build and release"],
       ],
     },
-    stamp: { status: "Live · 100+ users", variant: "osd" },
+    stamp: { status: "● LIVE \u00b7 chromalayer.app", variant: "osd" },
     liveHref: "https://chromalayer.app",
     hero: {
       src: "/work/chromalayer/hero.webp",
