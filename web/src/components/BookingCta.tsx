@@ -1,7 +1,12 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { getBookingUrl, trackBookingClick, type BookingLocation } from "@/lib/booking";
+import {
+  getBookingUrl,
+  getCalLinkSlug,
+  trackBookingClick,
+  type BookingLocation,
+} from "@/lib/booking";
 import styles from "./BookingCta.module.css";
 
 interface BookingCtaProps {
@@ -22,6 +27,7 @@ export function BookingCta({
   showArrow = true,
 }: BookingCtaProps) {
   const url = getBookingUrl(location);
+  const calLink = getCalLinkSlug();
 
   const handleClick = () => {
     trackBookingClick(location);
@@ -36,7 +42,7 @@ export function BookingCta({
         <a
           href={url}
           onClick={handleClick}
-          data-cal-link="shipthesis/discovery"
+          data-cal-link={calLink}
           data-cal-config={`{"layout":"month_view","location":"${location}"}`}
           className={styles.textLink}
         >
@@ -62,7 +68,7 @@ export function BookingCta({
     <a
       href={url}
       onClick={handleClick}
-      data-cal-link="shipthesis/discovery"
+      data-cal-link={calLink}
       data-cal-config={`{"layout":"month_view","location":"${location}"}`}
       className={`btn ${className}`}
     >

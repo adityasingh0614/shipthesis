@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { BookingCta } from "@/components/BookingCta";
 import styles from "./LegalPage.module.css";
 
 export interface TocItem {
@@ -206,8 +207,8 @@ export function LegalLayout({
           </p>
         </div>
         <a
-          href="https://cal.com/shipthesis/discovery"
-          data-cal-link="shipthesis/discovery"
+          href="https://cal.com/aditya-kumar-singh/20min"
+          data-cal-link="aditya-kumar-singh/20min"
           data-cal-config='{"layout":"month_view"}'
           className="btn"
         >

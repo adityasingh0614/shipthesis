@@ -3,6 +3,9 @@
  * Reads target booking calendar from NEXT_PUBLIC_BOOKING_URL.
  */
 
+export const DEFAULT_BOOKING_URL = "https://cal.com/aditya-kumar-singh/20min";
+export const DEFAULT_CAL_LINK_SLUG = "aditya-kumar-singh/20min";
+
 export type BookingLocation =
   | "header"
   | "hero"
@@ -15,9 +18,18 @@ export type BookingLocation =
   | "services"
   | "faq";
 
+export function getCalLinkSlug(): string {
+  const raw = process.env.NEXT_PUBLIC_BOOKING_URL || DEFAULT_BOOKING_URL;
+  try {
+    const url = new URL(raw);
+    return url.pathname.replace(/^\/+/, "");
+  } catch {
+    return DEFAULT_CAL_LINK_SLUG;
+  }
+}
+
 export function getBookingUrl(location?: BookingLocation | string): string {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/shipthesis/discovery";
+  const baseUrl = process.env.NEXT_PUBLIC_BOOKING_URL || DEFAULT_BOOKING_URL;
 
   if (!location) return baseUrl;
 
