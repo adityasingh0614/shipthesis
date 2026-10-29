@@ -1,18 +1,15 @@
 .section {
-  background: var(--surface-alt);
-  padding: var(--section-py) 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
 }
 
 .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: var(--section-py) var(--gutter);
 }
 
-/* Centred section heading */
 .head {
-  max-width: 680px;
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -20,26 +17,27 @@
   font-family: var(--font-display);
   font-size: clamp(2.25rem, 4.6vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   text-wrap: balance;
 }
 
 .lede {
+  max-width: 54ch;
   margin: 14px auto 0;
   font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
   color: var(--ink-soft);
   text-wrap: pretty;
 }
 
-/* Two focused flagship cards */
 .grid {
+  --gap: clamp(24px, 3.2vw, 48px);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(24px, 4vw, 40px);
-  max-width: 960px;
-  margin: clamp(40px, 5vw, 64px) auto 0;
+  gap: var(--gap);
+  max-width: 900px;
+  margin: clamp(48px, 6vw, 80px) auto 0;
   list-style: none;
 }
 
@@ -51,8 +49,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: transparent;
-  border: none;
 }
 
 .visual {
@@ -71,6 +67,9 @@
 
 .copy {
   padding: 24px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .name {
@@ -86,6 +85,23 @@
   margin-top: 8px;
   color: var(--ink-soft);
   line-height: 1.55;
+  flex-grow: 1;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--green);
+  transition: gap 140ms ease;
+}
+
+.cardLink:hover {
+  gap: 10px;
+  color: var(--green-hover);
 }
 
 .alsoAvailable {
@@ -94,6 +110,17 @@
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   color: var(--ink-soft);
   font-weight: 500;
+}
+
+.alsoAvailableLink {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.alsoAvailableLink:hover {
+  color: var(--green-hover);
 }
 
 .bottomCta {

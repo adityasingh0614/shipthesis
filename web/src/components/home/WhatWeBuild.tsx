@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import styles from "./WhatWeBuild.module.css";
 import { AiVisual } from "./visuals/AiVisual";
 import { CrossPlatformVisual } from "./visuals/CrossPlatformVisual";
@@ -14,12 +15,14 @@ import { BookingCta } from "@/components/BookingCta";
  */
 const SERVICES: {
   name: string;
+  href: string;
   line: ReactNode;
   visual?: ReactNode;
   hidden?: boolean;
 }[] = [
   {
     name: "Flutter mobile apps",
+    href: "/flutter-app-development",
     visual: <CrossPlatformVisual />,
     line: (
       <>
@@ -29,6 +32,7 @@ const SERVICES: {
   },
   {
     name: "SaaS & web platforms",
+    href: "/saas-development",
     visual: <SaasVisual />,
     line: (
       <>
@@ -38,6 +42,7 @@ const SERVICES: {
   },
   {
     name: "Applied AI features",
+    href: "/ai-product-development",
     visual: <AiVisual />,
     hidden: true,
     line: (
@@ -48,6 +53,7 @@ const SERVICES: {
   },
   {
     name: "Desktop & custom software",
+    href: "/work/chromalayer",
     visual: <CustomVisual />,
     hidden: true,
     line: (
@@ -58,6 +64,7 @@ const SERVICES: {
   },
   {
     name: "Native iOS & Android",
+    href: "/flutter-app-development",
     visual: <NativeVisual />,
     hidden: true,
     line: (
@@ -94,6 +101,9 @@ export function WhatWeBuild() {
                   <div className={styles.copy}>
                     <h3 className={styles.name}>{s.name}</h3>
                     <p className={styles.line}>{s.line}</p>
+                    <Link href={s.href} className={styles.cardLink}>
+                      Explore service &rarr;
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -102,7 +112,15 @@ export function WhatWeBuild() {
         </VisualsLoop>
 
         <p className={styles.alsoAvailable}>
-          Also available: AI features, desktop utilities, and custom software.
+          Also available:{" "}
+          <Link href="/mvp-development" className={styles.alsoAvailableLink}>
+            4-week MVP development
+          </Link>
+          ,{" "}
+          <Link href="/ai-product-development" className={styles.alsoAvailableLink}>
+            applied AI systems
+          </Link>
+          , and custom desktop software.
         </p>
 
         <div className={styles.bottomCta}>

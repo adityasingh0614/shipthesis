@@ -5,10 +5,11 @@
 ## Overview
 Ship Thesis is an app and SaaS development studio specializing in turning startup ideas into production-ready software. We engineer cross-platform Flutter mobile apps, Next.js web platforms, and integrate intelligent AI capabilities.
 
-## Core Capabilities
-- Flutter Mobile Development: Cross-platform iOS and Android apps from a single codebase, offline-first architectures, native performance.
-- Full-Stack SaaS Platforms: Next.js, TypeScript, Supabase, scalable database design, auth, billing, and dashboards.
-- AI Integration: Production AI workflows powered by Google Gemini, OpenAI, Claude, and local embeddings.
+## Dedicated Services
+- [MVP Development for Startups](https://www.shipthesis.com/mvp-development): Fixed 3-4 week MVP delivery with weekly working builds, fixed-price milestones, and 100% IP ownership.
+- [SaaS MVP Development](https://www.shipthesis.com/saas-development): Production-grade Next.js SaaS platforms with multi-tenant PostgreSQL (RLS), Stripe/Razorpay subscriptions, and automated background jobs.
+- [Flutter App Development](https://www.shipthesis.com/flutter-app-development): 60fps iOS and Android mobile apps from a single codebase, offline-first SQLite persistence, and App Store submission.
+- [Applied AI Product Engineering](https://www.shipthesis.com/ai-product-development): Deterministic LLM integrations, structured schema enforcement, hybrid RAG retrieval, and hallucination guardrails.
 
 ## Case Studies
 - [EHS Training Platform](https://www.shipthesis.com/work/safety-training-platform): Live custom training and webinar LMS with Zoom API and Supabase.
@@ -17,12 +18,11 @@ Ship Thesis is an app and SaaS development studio specializing in turning startu
 - [Assess Yourself](https://www.shipthesis.com/work/assess-yourself): Offline-first Flutter mobile test engine with crash-resilient session recovery.
 
 ## Engagement Model
-- Fixed-Scope Milestones: No surprise hourly billing.
-- Weekly Working Builds: Test progress directly on your phone or browser every week.
-- 100% Code Ownership: Clean code, private git repositories, you own all IP from day one.
+- Fixed-Scope Milestones: 30% / 40% / 30% payment schedule tied to verified software delivery. No surprise hourly rates.
+- Weekly Working Builds: Test progress directly on your phone or staging domain every week.
+- 100% Code Ownership: Private git repositories created under your GitHub organization. You own all IP from day one.
 
 ## Contact & Booking
 - Website: https://www.shipthesis.com
 - Email: hello@shipthesis.com
 - Discovery Call: https://cal.com/shipthesis/discovery
-

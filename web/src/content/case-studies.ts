@@ -73,7 +73,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "Assess Yourself: student corner exam list next to the app's splash screen, \"Your Ultimate Exam Preparation Companion\"",
     },
     seo: {
-      title: "Assess Yourself: an offline-first mobile testing app | Ship Thesis case study",
+      title: "Assess Yourself: Offline-First Mobile Exam & Testing App",
       description:
         "How we built Assess Yourself for Aptellic in 3-4 weeks: structured exam discovery, timed tests that survive OS interruptions, and question banks imported from Excel.",
     },
@@ -105,7 +105,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "EHS Training Platform: an admin cohort page, the trainer dashboard and the class calendar",
     },
     seo: {
-      title: "EHS Training Platform: live Zoom classes on their own platform | Ship Thesis case study",
+      title: "EHS Training Platform: Custom Live Learning LMS with Zoom API",
       description:
         "How we built EHS Guru's custom training platform: one-click Zoom classes, automatic attendance, every class recorded, and free webinars that bring in new learners.",
     },
@@ -138,7 +138,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       alt: "Poststeady: Three laptops showing the app UI",
     },
     seo: {
-      title: "Poststeady: client reports from the files freelancers already export | Ship Thesis case study",
+      title: "Poststeady: Automated Client Reporting SaaS from Analytics CSVs",
       description:
         "How we built Poststeady, our own product: 175 column names matched to the right metric, an AI summary that quotes only real figures, and a branded PDF or share link.",
     },
@@ -174,7 +174,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     // Stays hidden on production until the real-hardware before/after photo
     // and a real testimonial exist (case-study-brief \u00a75).
     seo: {
-      title: "ChromaLayer: seven colour controls that stay applied | Ship Thesis case study",
+      title: "ChromaLayer: Native Display Color Control Utility for Windows",
       description:
         "How we built ChromaLayer, our own Windows app: seven colour controls for a laptop\u2019s built-in screen, re-applied after every restart, sleep and sign-in.",
     },

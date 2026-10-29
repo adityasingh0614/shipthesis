@@ -24,13 +24,14 @@ const mono = JetBrains_Mono({
 
 const SITE_URL = "https://www.shipthesis.com";
 const SITE_NAME = "Ship Thesis";
+const HOME_TITLE = "Mobile App & SaaS MVP Development for Startups | Ship Thesis";
 const SITE_DESCRIPTION =
-  "AI-powered mobile apps and SaaS for founders: a new build on your phone every week, and code you own.";
+  "Ship a mobile app or SaaS MVP with a founder-led product studio. Fixed-scope milestones, weekly working builds, and code you own.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: SITE_NAME,
+    default: HOME_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: SITE_NAME,
+    title: HOME_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
+    title: HOME_TITLE,
     description: SITE_DESCRIPTION,
   },
 };

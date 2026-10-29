@@ -26,7 +26,7 @@ export function SiteFooter() {
               <ul className={styles.linkList}>
                 <li><Link href="/" className={styles.link}>Home</Link></li>
                 <li><Link href="/#work" className={styles.link}>Case Studies</Link></li>
-                <li><Link href="/#services" className={styles.link}>Services</Link></li>
+                <li><Link href="/#services" className={styles.link}>Services Overview</Link></li>
                 <li><Link href="/#process" className={styles.link}>How It Works</Link></li>
               </ul>
             </div>
@@ -35,10 +35,10 @@ export function SiteFooter() {
             <div>
               <p className={styles.colTitle}>Services</p>
               <ul className={styles.linkList}>
-                <li><Link href="/#services" className={styles.link}>Mobile Development</Link></li>
-                <li><Link href="/#services" className={styles.link}>SaaS Development</Link></li>
-                <li><Link href="/#services" className={styles.link}>UX / UI Design</Link></li>
-                <li><Link href="/#services" className={styles.link}>AI Integration</Link></li>
+                <li><Link href="/mvp-development" className={styles.link}>MVP Development</Link></li>
+                <li><Link href="/saas-development" className={styles.link}>SaaS Development</Link></li>
+                <li><Link href="/flutter-app-development" className={styles.link}>Flutter Mobile Apps</Link></li>
+                <li><Link href="/ai-product-development" className={styles.link}>Applied AI Systems</Link></li>
               </ul>
             </div>
 

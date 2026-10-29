@@ -129,7 +129,7 @@ const PROJECTS: Project[] = [
 
 /** Pinned scroll-driven carousel only where it fits and motion is welcome. */
 const PIN_QUERY =
-  "(min-width: 861px) and (min-height: 720px) and (prefers-reduced-motion: no-preference)";
+  "(min-width: 861px) and (prefers-reduced-motion: no-preference)";
 
 function usePinned() {
   return useSyncExternalStore(
