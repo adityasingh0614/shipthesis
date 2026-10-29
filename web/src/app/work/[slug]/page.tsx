@@ -33,7 +33,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: study.seo.title,
     description: study.seo.description,
-    openGraph: { images: "src" in study.hero ? [study.hero.src] : [] },
+    alternates: {
+      canonical: `/work/${study.slug}`,
+    },
+    openGraph: {
+      title: study.seo.title,
+      description: study.seo.description,
+      url: `https://www.shipthesis.com/work/${study.slug}`,
+      images: "src" in study.hero ? [study.hero.src] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: study.seo.title,
+      description: study.seo.description,
+    },
   };
 }
 
@@ -42,8 +55,34 @@ export default async function CaseStudyPage({ params }: Props) {
   if (!study) notFound();
   const Body = BODIES[study.slug];
 
+  const studyJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    headline: study.seo.title,
+    description: study.seo.description,
+    image:
+      "src" in study.hero
+        ? `https://www.shipthesis.com${study.hero.src}`
+        : undefined,
+    url: `https://www.shipthesis.com/work/${study.slug}`,
+    author: {
+      "@type": "Organization",
+      name: "Ship Thesis",
+      url: "https://www.shipthesis.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Ship Thesis",
+      url: "https://www.shipthesis.com",
+    },
+  };
+
   return (
     <article style={{ "--accent": study.accent } as CSSProperties}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(studyJsonLd) }}
+      />
       <CaseOpening study={study} />
       {Body && <Body />}
     </article>

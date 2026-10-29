@@ -1,0 +1,28 @@
+# Ship Thesis
+
+> We build AI-powered mobile apps and SaaS products for founders. A working build on your phone every week, fixed-scope milestones, and code you own.
+
+## Overview
+Ship Thesis is an app and SaaS development studio specializing in turning startup ideas into production-ready software. We engineer cross-platform Flutter mobile apps, Next.js web platforms, and integrate intelligent AI capabilities.
+
+## Core Capabilities
+- Flutter Mobile Development: Cross-platform iOS and Android apps from a single codebase, offline-first architectures, native performance.
+- Full-Stack SaaS Platforms: Next.js, TypeScript, Supabase, scalable database design, auth, billing, and dashboards.
+- AI Integration: Production AI workflows powered by Google Gemini, OpenAI, Claude, and local embeddings.
+
+## Case Studies
+- [EHS Training Platform](https://www.shipthesis.com/work/safety-training-platform): Live custom training and webinar LMS with Zoom API and Supabase.
+- [Poststeady](https://www.shipthesis.com/work/poststeady): Automated client reporting SaaS turning analytics CSVs into branded insights.
+- [ChromaLayer](https://www.shipthesis.com/work/chromalayer): Native Windows system utility for advanced screen color and temperature control.
+- [Assess Yourself](https://www.shipthesis.com/work/assess-yourself): Offline-first Flutter mobile test engine with crash-resilient session recovery.
+
+## Engagement Model
+- Fixed-Scope Milestones: No surprise hourly billing.
+- Weekly Working Builds: Test progress directly on your phone or browser every week.
+- 100% Code Ownership: Clean code, private git repositories, you own all IP from day one.
+
+## Contact & Booking
+- Website: https://www.shipthesis.com
+- Email: hello@shipthesis.com
+- Discovery Call: https://cal.com/shipthesis/discovery
+

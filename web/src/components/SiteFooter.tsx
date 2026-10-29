@@ -65,7 +65,7 @@ export function SiteFooter() {
 
         <div className={styles.bottomRow}>
           <p className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Ship Thesis. All rights reserved.
+            &copy; {new Date().getFullYear()} Ship Thesis &middot; Built by Aditya Singh. All rights reserved.
           </p>
           <div className={styles.legalLinks}>
             <Link href="/terms" className={styles.legalLink}>Terms</Link>

@@ -2,13 +2,11 @@ import dynamic from "next/dynamic";
 import { HeroVisual } from "@/components/home/hero/HeroVisual";
 import { HeroText } from "@/components/home/hero/HeroText";
 import { ProofStrip } from "@/components/home/hero/ProofStrip";
+import { OurWork } from "@/components/home/OurWork";
 import { caseStudyHref } from "@/content/case-studies";
 import styles from "./page.module.css";
 
-// Below-the-fold sections dynamically imported for full lazy loading and smaller initial JS bundle
-const OurWork = dynamic(() =>
-  import("@/components/home/OurWork").then((mod) => mod.OurWork)
-);
+// Below-the-fold sections dynamically imported for smaller initial JS bundle
 const HowItWorks = dynamic(() =>
   import("@/components/home/HowItWorks").then((mod) => mod.HowItWorks)
 );

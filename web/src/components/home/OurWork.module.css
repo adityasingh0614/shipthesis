@@ -219,6 +219,7 @@
   border: none;
   background: transparent;
   aspect-ratio: auto;
+  min-height: 260px;
 }
 .visualNote {
   font-size: 0.75rem;

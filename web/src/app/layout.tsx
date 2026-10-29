@@ -6,14 +6,85 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CalInitializer } from "@/components/CalInitializer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 
-const geist = Geist({ variable: "--font-body", subsets: ["latin"] });
-const phudu = Phudu({ variable: "--font-display", subsets: ["latin"] });
-const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"] });
+const geist = Geist({
+  variable: "--font-body",
+  subsets: ["latin"],
+  display: "swap",
+});
+const phudu = Phudu({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const SITE_URL = "https://www.shipthesis.com";
+const SITE_NAME = "Ship Thesis";
+const SITE_DESCRIPTION =
+  "AI-powered mobile apps and SaaS for founders: a new build on your phone every week, and code you own.";
 
 export const metadata: Metadata = {
-  title: "Ship Thesis | AI-powered apps and SaaS for founders",
-  description:
-    "AI-powered mobile apps and SaaS for founders: a new build on your phone every week, and code you own.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon.svg`,
+      description: SITE_DESCRIPTION,
+      email: "hello@shipthesis.com",
+      founder: {
+        "@type": "Person",
+        name: "Aditya Singh",
+      },
+      serviceType: [
+        "Mobile App Development",
+        "SaaS Development",
+        "AI Feature Integration",
+        "UX / UI Design",
+      ],
+      areaServed: "Worldwide",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -22,6 +93,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geist.variable} ${phudu.variable} ${mono.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       {/* Browser extensions (e.g. Grammarly) add attributes to <body>. */}
       <body suppressHydrationWarning>
         <CalInitializer />
