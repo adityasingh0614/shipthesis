@@ -1,0 +1,353 @@
+=== PAGE 1 ===
+Highprime
+©
+F R E E T R A F F I C P L A Y B O O K
+Nine SEO moves
+that still work.
+Pulled from a two hour podcast with an SEO who has been
+doing this for 26 years, then tested on our own site. Includes
+the one we shipped last night: 18 pages, one question each.
+Highprime Co · Thane, Mumbai
+Source: David Kelleher (Primary Position) on The Edward Show, ep. 845
+H
+
+
+=== PAGE 2 ===
+S T A R T H E R E
+One idea sits under all nine
+If you only take one thing from this document, take this.
+Google does not read your page and decide whether it is good. It cannot. Quality is subjective,
+and Google has said as much in its own documentation and under oath. What Google can do is
+count links and count clicks.
+Since Caffeine, Google triages the web. It crawls the important part every 24 hours and leaves
+the rest. A page that gets no clicks stops being re-examined. It does not matter how good that
+page is. It sits frozen.
+T H E C O N S E Q U E N C E
+Most pages that are not ranking are not being judged badly. They are not being judged at
+all. Almost every move in this playbook is a way of getting a page re-examined, or of
+pointing it at a smaller fight it can actually win.
+Once you hold that idea, the nine moves below stop looking like tricks and start looking like the
+same move applied in different places.
+H O W T O R E A D T H I S
+Two labels to watch for
+We do not present everything at the same confidence. Anything marked 
+CONTESTED is one
+practitioner's reading that other credible SEOs dispute. Anything marked 
+SHIPPED we have run
+on our own site and can show you.
+Highprime Co
+02
+
+
+=== PAGE 3 ===
+01
+One question, one page 
+SHIPPED
+The People Also Ask box is a list of pages Google has already told you it
+wants.
+Open Google, search your main keyword, and expand the People Also Ask box. Every question in
+there is a question Google has confirmed people ask. Build each one its own page, with the
+question as the H1 and the answer above the fold.
+Most people do the opposite. They put fifteen questions on one page and add FAQ schema. That
+splits the page's relevance across fifteen keywords that appear in neither the URL nor the title.
+Schema works if you are Cisco. It does not rescue a site with no clicks.
+D O
+One question per URL. Question as H1. Answer
+in the first paragraph, before anything else.
+I N S T E A D O F
+Fifteen questions stacked on one page with
+FAQ schema, competing with each other.
+The objection, answered
+Somebody will tell you these pages are thin content and will be penalised. Read Google's actual
+spam policy. There is no minimum word count, and thin content is named as a problem
+specifically in the context of affiliate pages. A 200 word page that answers one question
+completely is a finished page.
+T H E R U L E T H A T S T O P S Y O U C A N N I B A L I S I N G Y O U R S E L F
+If the page you are targeting already gets clicks, do not build a new page. Open Search
+Console, find the phrases that page ranks on page two for, and add them as H2s on that
+same page.
+New page when clicks are zero. H2s when clicks exist. Same goal, opposite move, and
+getting this backwards is how people end up competing with themselves.
+Move 01 · One question, one page
+03
+
+
+=== PAGE 4 ===
+P R O O F
+What that looks like built
+We ran this on highprimeco.com on 31 August 2026. Every page below is live
+and you can open it right now.
+highprimeco.com · question as H1, answer above the fold, no preamble
+Notice what is not there. No introduction, no history of Amazon advertising, no thousand words
+before the answer. The person searching this has one question, and it is answered in the first
+sentence they see.
+highprimeco.com/what-is-amazon-acos
+highprimeco.com/how-to-calculate-acos-on-amazon
+highprimeco.com/what-is-tacos-on-amazon
+highprimeco.com/how-much-commission-does-flipkart-charge
+Four of eighteen. One question each, and the URL is the question.
+Move 01 · Proof
+04
+
+
+=== PAGE 5 ===
+02
+Do not build all of them
+This is the part nobody teaches, and it is the part that decides whether this
+works or buries you.
+Twelve searches gave us 44 questions. We built 18 pages. Twelve of the rest were not worth a
+page at all, and the other 14 belonged on pages we already had. Every question goes into one of
+four buckets.
+44
+CAPTURED
+12
+REJECTED
+5
+FOLDED
+9
+ABSORBED
+18
+BUILT
+BUCKET
+TEST
+WHAT YOU DO
+Reject
+Is the person asking this
+our buyer?
+Nothing. Questions about the platform's own corporate structure,
+salary questions from job seekers, and listicles you cannot honestly
+appear in all get dropped.
+Fold
+Do we already have a
+page aimed at this
+cluster?
+Add it as an H2 on the existing page. Building against your own
+newest page is the most common self inflicted wound in this method.
+Absorb Is this genuinely the
+same answer?
+Make it an H2 inside the answer page it belongs to. Two URLs for one
+answer means two of your pages compete.
+Build
+Distinct question, distinct
+answer, our buyer.
+Its own URL.
+D E F I N I T I O N A N D H O W - T O A R E T W O P A G E S , N O T O N E
+"What is X" and "How do I do X" look adjacent and are not. One is for somebody who was
+handed a term in a meeting. The other is for somebody who has already decided and wants
+steps. When both appear in the same PAA box, Google is telling you it treats them
+separately. So should you.
+Move 02 · Triage
+05
+
+
+=== PAGE 6 ===
+03
+Republish stuck pages on a new URL
+The single most counterintuitive move in this document, and the one with the
+best story behind it.
+You have a page sitting at Crawled, currently not indexed . You have hit Request Indexing
+more than once. Nothing moves. The usual advice is that your content is not good enough.
+It is more likely that the page has never had a click, so Google stopped looking at it. The crawler
+fetches it, compares the file size and last modified date against the previous version, sees no
+reason to spend indexing budget, and moves on. That can continue for years.
+What to do
+Google treats the new URL as a new page. New pages inherit the site authority you have today,
+not the authority you had when the original went up. If you have published and earned links in
+the months since, the page is now judged against a completely different baseline.
+T H E C A S E
+The podcast host had a page stuck at crawled and not indexed for years, on a term he
+describes as easy. He changed a few words, published at a near identical URL, and 301'd
+the old one. Position one within two weeks. The content was essentially unchanged. What
+changed was the authority it was measured against.
+R E A D T H I S B E F O R E Y O U T R Y I T
+This fixes crawled, not indexed. It does not fix discovered, not indexed. Discovered and
+not indexed means Google has not found a reason to fetch the page at all, and the fix there
+is a link, either an external one or an internal link from a page that already ranks and gets
+traffic.
+You also do not always need a new URL. A page that already ranks and gets traffic can pass
+that on. Link to the stuck page from your best performing page and it will often start moving
+on its own.
+Move 03 · Republish
+06
+Publish the same content at a new URL, ideally a narrower one (see move 04).
+1
+301 the old URL to the new one.
+2
+Submit the redirect in Search Console.
+3
+
+
+=== PAGE 7 ===
+04
+Every slug is an index
+Google's engineers built it around a file system. The slug is the document
+name, and it decides which fight you have entered.
+Publish at /sunscreen and you have entered a ring with every large beauty brand in the country.
+Publish at /best-sunscreen-for-oily-skin-in-india and you are in a much smaller ring, where
+the authority you already have may be enough to win.
+You have not changed your site's authority at all. You have changed the size of the competition it
+is measured against. Adding one qualifying word to a URL is the cheapest ranking move available
+to you.
+T O O B R O A D
+/sunscreen
+Competing with national brands and
+marketplaces. Page 900.
+W I N N A B L E
+/best-sunscreen-for-oily-skin-in-india
+Smaller index, real search volume, matches intent.
+If you want to know how competitive a term is, search it and read the slugs of the top five
+results. The answer is sitting in plain sight in the address bar.
+T H E F A I L U R E M O D E
+You can narrow too far. A slug nobody searches will rank first and bring nothing. Ranking
+number one for a phrase with no volume is not a win, it is a page you wasted an afternoon
+on. Narrow until the fight is winnable, then stop.
+While you are in there: take your brand name out of page titles
+Keep it on pricing, contact and support. Everywhere else it dilutes the title and competes with
+your own homepage for branded clicks. If your brand name contains a generic word, it also
+quietly creates cannibalisation you will struggle to diagnose later.
+Move 04 · Slugs
+07
+
+
+=== PAGE 8 ===
+05
+Keyword domains still work 
+HANDLE WITH CARE
+Exact match domains were devalued. They were not removed.
+The example from the podcast is instructive. To compete against companies ten times their size,
+they bought freeloadbalancer.com for the price of a coffee, put a cheap theme on it, and
+shipped. It produced 600 leads in eight weeks and roughly 160 a month after that. A second site
+built the same way turned into a client worth a quarter of a million dollars a year.
+W H Y I T W O R K E D , A N D T H I S I S T H E W H O L E P O I N T
+That site was a real product. An actual free, throughput limited load balancer that people
+downloaded and used. It had standalone value, its own reason to exist, and its own
+audience.
+What does not work, and what will eventually get you classified as a doorway site, is buying five
+keyword domains, filling them with thin blog posts, and funnelling everything to your main site.
+That pattern is named in Google's spam policy. The distinction is not how many domains you
+own. It is whether each one is a real thing.
+B E F O R E Y O U B U Y T E N D O M A I N S
+Cheap first year pricing is not the cost. Renewals are several times the promotional rate,
+every domain needs its own content and its own maintenance, and the podcast example
+took eight weeks to produce results with a real product behind it. Budget for the second
+year before you buy the first.
+06
+Stop disavowing backlinks
+Spammy looking links are not the same as link spam. Google is looking for unnatural networks
+and link farms, and it now tends to zero those links rather than penalise the site receiving them.
+Appearing on low quality blogs does nothing to you.
+The disavow tool is for one situation: you bought links, you know exactly which ones, and you
+are cleaning up after yourself. If you cannot name the links, you are guessing, and disavowing
+your own good links is a real way to make things worse.
+Negative SEO is also much harder to execute than the panic suggests. Done incorrectly it can
+help the target rather than hurt them.
+Moves 05 and 06
+08
+
+
+=== PAGE 9 ===
+07
+Clicks matter. Dwell time probably does not.
+CONTESTED
+Flagged honestly, because credible people disagree about this one.
+The argument against dwell time as a ranking factor is practical. Blog pages bounce at close to
+100 percent by nature, because people read the answer and leave. That is a satisfied visit, not a
+failed one. Someone may read ten pages, disappear for six months, come back and convert in
+nine seconds. Punishing the site for that pattern would make no sense.
+Click through rate in the results page is different, because that data is entirely inside Google's
+control. If a lower result consistently earns a better than average click through rate, the order
+changes. Pogo sticking, going back and picking a different result, is real for the same reason.
+W H E R E T H E D I S A G R E E M E N T S I T S
+Other respected practitioners point to material from the antitrust trial suggesting Google
+may use this data after all. Treat this section as one experienced reading rather than settled
+fact, and do not rebuild your content strategy around either position.
+08
+Publish first, judge later
+The method that produces volume is uncomfortable if you are a perfectionist. Pick a hundred
+topics with low competition. Publish them. Roughly seventy will land. Now you have a much
+easier job, because the thirty that did not are in the same topic clusters as the seventy that did,
+and a few internal links from the winners will usually pull them up.
+The alternative, reviewing every page before it goes live, produces better individual pages and
+far fewer of them. Nobody can predict which page ranks. The data can, once the page exists.
+T H E M I N D S E T
+Google is not watching every move you make. You can publish a page, see it fail, take it
+down and try again. Reduce the number of things on your checklist until only the ones that
+move the needle remain, then stop adding to it.
+Moves 07 and 08
+09
+
+
+=== PAGE 10 ===
+09
+Clarity beats cleverness
+Two stories about ugly pages that made money.
+A landing page review show once pulled up Salesforce's page. Three bullet points, an
+unattractive form, everything crammed top left. The room wanted to tear it apart. The host
+stopped them, because he knew the team had A/B tested it a thousand times and it converted.
+The second is better. To compete against two competitors charging eight to ten times more, a
+founder spent a weekend building a single page that was nothing but a comparison table. No
+logos, no navigation, no design. Both competitors' full product ranges, listed against theirs, with
+the prices neither competitor published anywhere.
+W H Y I T W O R K E D
+Google surfaced the top of the table directly in the results, so the searcher saw all three
+names and the price gap before clicking. And the page had already done the buyer's
+homework. They needed to walk into a finance meeting with a comparison, and the page
+handed them one.
+What this means for your pages
+Put the answer at the top. One person reported a 33 percent conversion lift from adding a
+summary line above the fold, and the reason is not sophisticated: people were leaving before
+finding the answer. Go deeper further down for whoever wants it.
+Watch a session recording some time. People do not read your carefully constructed argument.
+They scan for the specific thing they came for, and if they cannot find it quickly they leave. The
+most effective ads in one B2B account were little more than lists of acronyms, because the buyer
+was ticking off requirements and nothing else.
+T H E U N C O M F O R T A B L E V E R S I O N
+If your founder says "that should be on the landing page", it usually already is. People are
+not reading it. That is a clarity problem, not a content problem, and adding more words
+makes it worse.
+Move 09 · Clarity
+10
+
+
+=== PAGE 11 ===
+D O T H I S W E E K
+The short version
+Nine moves is a lot to hold. These six are the ones you can start on today, in
+order.
+I F Y O U D O O N L Y O N E
+Do the capture and the triage. It costs an afternoon, it needs no tools and no budget, and it
+produces a build list that is correct rather than merely long.
+Checklist
+11
+Run the capture. Search your five main keywords. Expand every People Also Ask box. Write
+down every question. Expect roughly four per query.
+Triage before you build. Reject anything your buyer would not ask. Fold anything that
+belongs on a page you already have. Absorb genuine duplicates. Build what is left.
+Check Search Console before each new page. Clicks on the target page mean add H2s.
+Zero clicks mean build the new page.
+Find your stuck pages. Filter Search Console for crawled and not indexed. Republish the
+ones that matter at a narrower URL and 301 the old one.
+Narrow one slug. Take your most ambitious page, the one that has never ranked, and add
+two qualifying words to its URL.
+Strip your brand name from every page title except pricing, contact and support.
+
+
+=== PAGE 12 ===
+Highprime
+©
+I F Y O U W O U L D R A T H E R N O T D O I T Y O U R S E L F
+We run this for
+D2C brands.
+We find where your buyers already are, on Google, Meta,
+Amazon, Flipkart and with creators, and we put you there.
+Nine years in business, twelve developers, an office in Thane.
+Our clients average 4.3 ROAS within the first six months. We work on a
+monthly retainer or on revenue share, where we take a smaller fee and a
+percentage of what we generate.
+T A L K T O U S
+highprimeco.com/contact
+Highprime Co · a Team TSB company · Thane, Mumbai
+highprimeco.com
+H
+
+

@@ -1,0 +1,713 @@
+=== PAGE 1 ===
+Ship Thesis Website Audit
+Full audit of shipthesis.com: homepage plus the Flutter, SaaS, MVP and AI service pages.
+November 1, 2026.
+This audit reads each page three ways: as a US founder with a budget who has never
+heard of you, as a senior copywriter, and for conversion and trust.
+Scorecard
+What you're doing right
+Keep these, because most new agencies don't have them:
+Real terms: fixed price, no hourly billing, code in the client's GitHub from day one,
+30/40/30 milestones, 30-day warranty.
+"Who this is not for" sections. They build trust and filter bad leads.
+A working build every Friday. It's your best differentiator.
+Honest tone. "No pitch," "talk to the person who builds it."
+Real, named projects with screenshots.
+Page
+Score
+First impression
+Biggest problem
+Homepage
+7/10
+Clear and credible
+Services section only shows 2 of
+your 4 offers
+MVP page
+7.5/10
+Best page: specific timeline,
+clear terms
+Case study is mobile-only; no scope
+limits or NDA answer
+Flutter
+page
+6.5/10
+Competent but too narrow
+H1 is jargon; proof contradicts the
+homepage
+SaaS page
+6.5/10
+Solid, templated
+Wrong FAQ subtitle; "overseas
+outsourcing" line backfires
+AI page
+5/10
+Risky
+"Zero hallucinations" promise; own
+product shown as client work
+Ship Thesis Website Audit
+Page 1 of 21
+
+
+=== PAGE 2 ===
+Critical problems (fix before sending any outreach)
+1. Your proof contradicts itself across pages
+The homepage says Assess Yourself is "Delivered, launching soon." The MVP page says
+"10,000+ Verified Users" and "approved on both iOS and Android stores within 4
+weeks." The Flutter page says "100% App Store Approval." Those can't all be true.
+The AI page lists Poststeady as "Client: Poststeady," but the homepage says it's "Our
+own product." Showing your own product as client work looks dishonest when
+someone clicks through.
+Fix: use only numbers you can show proof for. Show your own products as your own.
+2. "Zero hallucinations" in the H1, title tag and meta description
+No LLM-based system can promise this. A technical US buyer will read it as a red flag, and
+"100% Verified Data Accuracy" and "zero metric hallucinations" add to it. Your actual
+approach is good: numbers are computed in code, and the model only writes around them.
+Say that instead.
+3. Unprovable numbers
+"Reduce API bills by up to 70%," "sub-100ms response times," "saving ~50% engineering
+overhead," "zero technical debt," "0 ms recovery data loss." Cut them or replace them with
+real numbers from your projects.
+4. Timelines disagree
+The homepage FAQ says MVPs take 6 to 10 weeks. The MVP and SaaS pages and the
+outreach plan say 4 to 6. Assess Yourself took 3 to 4. Pick one headline number and
+explain the range ("4 to 6 weeks for a tightly scoped MVP; larger scopes take longer").
+Cross-site issues
+Templated pages. The three newer pages reuse the same section intros word for word
+("Built for specific founder needs," "Everything you need to launch with confidence").
+On the SaaS and AI pages the FAQ subtitle still says "offline persistence, store
+approval," which doesn't apply. It looks copy-pasted, and near-identical text can hurt
+your search ranking.
+Ship Thesis Website Audit
+Page 2 of 21
+
+
+=== PAGE 3 ===
+Orphan pages. The MVP and AI pages aren't linked from the homepage services
+section or the footer. Visitors and search engines can't find them. Four footer links
+(UX/UI Design, App Maintenance, and two others) point to #services or other pages.
+No face, no testimonial. Still the biggest trust gap. One quote each from EHS Guru and
+Aptellic would help more than any rewrite.
+No pricing signal anywhere. With a $2k floor, add "Projects typically start from $X" on
+the MVP page.
+No Discovery Sprint. Your own plan's entry offer isn't on the site.
+No NDA, payment, or currency answers. US founders ask these in the first call. Put
+them in the FAQs: "Do you sign an NDA?", "How do I pay you (USD, invoice,
+Stripe/wire)?"
+Jargon density. Pydantic, Zod, Impeller, JWT, RLS, React Server Components. Fine in
+the FAQ for technical readers, but the headlines and "What You Get" blocks should use
+plain language first.
+The "Verified Case Study" label. Verified by whom? Remove it or earn it with a client
+quote.
+"Overseas" backfires. "Teams looking for cheap overseas outsourcing mills" (SaaS
+page) makes US founders think about where you're based. Say "Teams looking for the
+lowest hourly rate."
+Tracking. Hero and final CTAs on service pages share one tag (location=services), so
+you can't tell which one works.
+Page by page
+Homepage
+Hero (7/10): "From first idea to a live product" is clear but generic. Test: "Mobile apps
+and SaaS MVPs, live in 4 to 6 weeks. A working build every week, code you own."
+Services section (6/10): add all four offers, each with a timeline and a "best for" line.
+Suggested copy:
+MVP Development: "Your idea as a working product in 4 to 6 weeks. Fixed price,
+weekly builds." Best for: first-time founders.
+Mobile Apps (Flutter): "iOS and Android from one codebase, submitted to the
+stores for you."
+SaaS & Web Platforms: "Logins, billing, dashboards. Built on Next.js and Supabase."
+Ship Thesis Website Audit
+Page 3 of 21
+
+
+=== PAGE 4 ===
+AI Features: "Document parsing and automated reporting, with numbers computed
+in code."
+Add a Discovery Sprint line under the cards and a "projects start from" note.
+MVP page (best page)
+H1: keep "Production MVPs for founders, shipped in 4 to 6 weeks" (specific is good).
+Maybe simplify "Production."
+Strong: the 30/40/30 milestone terms, the "burned by slow agencies" hook, and the
+investor-demo use case.
+Fix: the case study is only Assess Yourself, so SaaS buyers see nothing relevant. Add
+EHS Guru or Poststeady. Add "What's not included in 4 to 6 weeks" so scope is clear.
+Reword "Non-technical founders looking for equity-only co-founders," because it
+reads as excluding non-technical founders; use "equity-only or no-budget
+arrangements." Add FAQs on scope changes, NDA, and payments.
+Flutter page
+H1 and title: "Flutter app development for founders" works better than "Offline-first
+mobile apps." Keep offline as a proof point. Subhead: "One codebase for iOS and
+Android. A working build on your phone every Friday, and code you own."
+"Not for" list: replace 3D games and visionOS (no buyer asks for these) with real
+exclusions: "need it in 1 to 2 weeks," "no weekly decision-maker."
+Label: change "STORE GUARANTEE" to "STORE SUBMISSION." Apple decides
+approval.
+SaaS page
+H1 (6/10): "SaaS products for founders, built and shipped fast." Try "Custom SaaS for
+founders: live in 4 to 6 weeks, code you own."
+CTA copy: "discuss your database architecture" means nothing to most founders. Use
+"tell us the problem you're solving."
+Case study: EHS Guru is a good story. Turn "$0 Monthly Seat Tax" into a real number:
+what did they pay before, and what do they pay now?
+Lead with Stripe, not Razorpay, for US buyers.
+The "replace off-the-shelf software" buyer is a strong niche. Give it its own section.
+Ship Thesis Website Audit
+Page 4 of 21
+
+
+=== PAGE 5 ===
+AI page
+H1 (5/10): "Applied AI products for founders, with zero hallucinations." Try "AI features
+that get the numbers right. Built for products where wrong answers cost you
+customers."
+Title and meta: drop "Zero Hallucinations." Use "Applied AI Product Development for
+Founders."
+Case study: show Poststeady as your own product, and be clear what the AI does and
+what code does.
+Advice: this page has one case study, and it's your own. Don't lead with AI in outreach
+yet. Use MVP and Flutter or SaaS.
+Priority list (in order)
+1. Resolve the AssessYourself and Poststeady claims (today, about 30 minutes).
+2. Remove "zero hallucinations," "up to 70%," and the other unprovable numbers (1 hour).
+3. Unify the timeline: one headline number everywhere (30 minutes).
+4. Add the founder section and ask both clients for a one-sentence testimonial (1 to 2
+hours, plus waiting).
+5. Rewrite the homepage services section with all four offers and add them to the footer
+(2 hours).
+6. Fix the copy-pasted FAQ subtitles and the "overseas" line (30 minutes).
+7. Add Discovery Sprint, a "starts from" price line, and NDA/payment FAQs to the MVP
+page (2 hours).
+8. Rewrite the Flutter, SaaS, and AI H1s and title tags (1 hour).
+9. Give each page a case study that fits its audience (later, once you have more proof).
+What I couldn't check
+I couldn't see the collapsed "Show 5 more questions" on the homepage, the individual
+case study pages under /work/..., or how the pages look on mobile. Those could add more
+issues.
+Ship Thesis Website Audit
+Page 5 of 21
+
+
+=== PAGE 6 ===
+Replacement copy
+Paste-ready copy for the homepage and the four service pages. Anything in [square
+brackets] is something only you can fill in. I haven't invented numbers, quotes or prices.
+Assumptions behind this copy (change them if they're wrong):
+4 to 6 weeks is the headline timeline for a tightly scoped MVP. Larger scopes take 6 to
+10 weeks.
+The Discovery Sprint exists as a paid first step, with the fee credited if the client builds
+with you.
+You're comfortable saying you work remotely from India. I recommend it, because
+hiding it raises more doubt than saying it.
+Assess Yourself is delivered but not yet launched, so it shows no user numbers until it
+is.
+Homepage
+Hero
+H1 (recommended): Your app idea, live in 4 to 6 weeks.
+Other H1s to test:
+Mobile apps and SaaS MVPs, built in weeks. Code you own.
+From idea to a working product, with a new build to test every week.
+Subheadline: We build mobile apps and SaaS MVPs for founders. A working build on your
+phone every week, a fixed price in writing, and code you own from day one.
+Buttons: Book a free 20-minute call | See our work
+Trust line (make this larger and darker than it is now): 20 minutes. No pitch. You leave
+with a clear next step.
+Badges: keep as they are (100% code you own, Weekly working builds, Fixed-scope
+milestones).
+Ship Thesis Website Audit
+Page 6 of 21
+
+
+=== PAGE 7 ===
+Proof strip
+Keep "Built & shipped by Ship Thesis." Label Poststeady and ChromaLayer as "Our own
+product" everywhere, and keep Assess Yourself as "Delivered, launching soon" until it
+launches.
+What we build (services section)
+Heading: What we build
+Subheading: Four ways we help founders get to launch.
+Card 1: MVP development
+Tag line: Fixed price · Weekly builds · 4 to 6 weeks
+Description: Your idea as a working product in 4 to 6 weeks. A strict written scope, a
+build to test every week, and code in your GitHub from day one.
+Link: Explore MVP development →
+Card 2: Mobile apps
+Tag line: Flutter · iOS · Android
+Description: One app for iPhone and Android, built from a single codebase. We also
+handle App Store and Play Store submission.
+Link: Explore mobile apps →
+Card 3: SaaS and web platforms
+Tag line: Next.js · Supabase · Billing
+Description: Logins, payments and dashboards, built around how your business works.
+A good fit if off-the-shelf software no longer does.
+Link: Explore SaaS and web platforms →
+Card 4: AI features
+Tag line: Documents · Reports · Automation
+Description: Turn messy PDFs and spreadsheets into structured data and reports.
+Numbers are calculated in code, so the AI never makes them up.
+Link: Explore AI features →
+Strip under the cards (Discovery Sprint): Not sure what to build first? Start with a 1-week
+Discovery Sprint: a scoped plan, approved screens and a fixed quote for the build, for
+[$X]. The fee is credited if you build with us. [Link: Ask about the Discovery Sprint →]
+Ship Thesis Website Audit
+Page 7 of 21
+
+
+=== PAGE 8 ===
+Line at the bottom: Need something else, like desktop software or internal tools? Tell us
+what you're building on a free 20-minute call →
+Layout fixes from the screenshot: keep each tag line to one line so the cards align, and
+use a populated dashboard image (for example the EHS Training Platform) instead of the
+empty one.
+Who you'll work with (new section, place after the case studies)
+Heading: You'll work with the person who builds it.
+Body: I'm [Your name], founder and lead engineer at Ship Thesis. [One sentence about
+your background that you can back up.] I built [EHS Training Platform for EHS Guru],
+[Poststeady] and [ChromaLayer], and delivered [Assess Yourself] for Aptellic. No account
+managers and no handoffs: you talk to me, and I write the code.
+Detail line: Ship Thesis works remotely from India. Calls are scheduled in your time zone,
+and we use a private Slack Connect channel and a weekly video demo.
+Button: Book a free 20-minute call
+Add: a clear photo of you, and one client quote beside it (see the testimonial request in
+the shared blocks).
+Homepage FAQ: replace these answers
+How long does it take to build an MVP?
+A tightly scoped MVP usually takes 4 to 6 weeks. Larger scopes, with several user roles or
+many integrations, take 6 to 10. Assess Yourself was delivered in 3 to 4. In every case, you
+test a working build every week.
+How much does it cost?
+Every project gets a fixed price in writing after the free call. We never bill hourly. MVP
+projects typically start from [$X], and the price depends on the number of screens,
+integrations and platforms.
+Do you sign an NDA?
+Yes. We can sign yours before you share your idea in detail, or send ours.
+How do I pay you?
+In US dollars, by invoice, in milestones tied to working builds. [Add the payment methods
+you accept.]
+Ship Thesis Website Audit
+Page 8 of 21
+
+
+=== PAGE 9 ===
+Homepage title and meta
+Title: Ship Thesis | MVP, Mobile App and SaaS Development for Founders
+Meta description: We build mobile apps and SaaS MVPs for founders in 4 to 6 weeks. A
+working build every week, a fixed price, and code you own.
+MVP development page
+Title tag: MVP Development for Startups | Fixed Price, 4 to 6 Weeks | Ship Thesis
+Meta description: We build your MVP in 4 to 6 weeks for a fixed price. Weekly working
+builds, milestone payments, and code in your GitHub from day one.
+Hero
+H1: Your MVP, live in 4 to 6 weeks. Fixed price, weekly builds.
+Subheadline: Turn your product idea into software real customers can use. Test a working
+build every Friday, pay by milestone, and own the code from day one.
+Buttons: Book a free 20-minute call | See how it works ↓
+Trust line: 20 minutes · No pitch · You speak directly with the person who builds it.
+Who this is for
+Heading: Built for founders who want to launch, not just plan.
+Founders testing a real idea. You've talked to customers, have pre-orders or a pilot
+lined up, and need working software in front of them soon, without spending months of
+runway.
+Founders burned by slow agencies. You want to talk to the person writing your code,
+agree the scope in writing, and see a working build every Friday instead of status
+reports.
+Startups heading into a demo or pilot. You need real logins, payments and a secure
+database, so the product holds up in an investor demo or a customer's technical
+review.
+Who this is not for
+Heading: When we're not the right fit.
+Ship Thesis Website Audit
+Page 9 of 21
+
+
+=== PAGE 10 ===
+Hourly or open-ended work. We work on a fixed scope and a fixed price, agreed in
+writing before we start.
+Everything in version one. We'll help you cut features until the first version can launch
+in weeks, not quarters.
+Equity-only or no-budget deals. Our projects are paid by milestone, and you own 100%
+of the code.
+Projects with no one to make weekly decisions. A weekly build only works if someone
+can review it and decide quickly.
+How a 4 to 6 week MVP works (new section)
+[Confirm whether the Discovery week is inside the 4 to 6 weeks, and edit the timing.]
+1. Week 1, Discovery. We agree what goes into version one, design the key screens for
+your approval, and give you a fixed quote.
+2. Weeks 2 to 5, Build. Every Friday you get a working build on your phone or a staging
+link. You test it and tell us what to change.
+3. Final week, Test and launch. We test everything, then submit to the stores or deploy to
+production.
+4. After launch, 30-day warranty. We fix bugs and unexpected problems at no charge.
+What's included (new section)
+Included: product scope and plan, approved screen designs, the app or web product
+itself (Flutter or Next.js), a backend with logins, payment setup (Stripe or Razorpay), and
+store submission or web deployment.
+Usually not included in 4 to 6 weeks (edit to match what you really do): a mobile app
+plus a web app plus an admin system all at once, custom-trained AI models, content
+writing, and marketing.
+Case studies
+Show two, so mobile and web buyers both see themselves.
+Assess Yourself, a mobile MVP for Aptellic. An exam-prep app. Students need practice
+tests to keep working with a weak signal or a dead battery, so the app saves progress on
+the phone and restores a timed test exactly where it stopped. Delivered in 3 to 4 weeks.
+Stats: 3 to 4 weeks from idea to delivery · iOS and Android from one codebase · 100% of
+the code owned by the client
+Ship Thesis Website Audit
+Page 10 of 21
+
+
+=== PAGE 11 ===
+[Add "Live on both stores" and real user numbers only once they're true.]
+EHS Training Platform, a web platform for EHS Guru. EHS Guru was paying for a bloated
+off-the-shelf learning system. We built a simple platform with only what they use: one-
+click Zoom classes, automatic attendance tracking, and recordings in the student
+dashboard. Built in 4 weeks, live since May 2026.
+Stats: 4 weeks to build · Live since May 2026 · No per-seat software fees [add what
+they paid before]
+[Add a one-sentence quote from EHS Guru.]
+Remove the "Verified" label on case studies unless you can show how they're verified.
+What you get
+Heading: What you get when you work with us.
+A fixed price in writing. Payments in three milestones: 30% at kickoff, 40% when the
+halfway build works, 30% at final release. No hourly billing.
+A working build every Friday. Test real software on your phone or in your browser, not
+slides.
+Your code from day one. A private repository in your company's GitHub. All the
+intellectual property belongs to you.
+Ready for real customers. Secure logins, payments, a protected database and
+automatic backups, set up for launch.
+FAQ (replace the four with these)
+What's included in a 4 to 6 week MVP?
+Everything needed to put a first version in front of customers: the plan and scope,
+approved screens, the app or web product, a backend with logins, payment setup, and
+store submission or deployment.
+How much does it cost?
+Every project gets a fixed price in writing after the free call. MVP projects typically start
+from [$X]. The price depends on screens, integrations and platforms.
+How does the fixed-price milestone model work?
+Ship Thesis Website Audit
+Page 11 of 21
+
+
+=== PAGE 12 ===
+We agree a written scope before any work starts. You pay in three milestones, 30% at
+kickoff, 40% when the halfway build works, and 30% at final release, and you only release
+each payment after testing working software.
+What if my scope changes?
+Small adjustments within a milestone are fine. If a change adds work, we tell you what it
+does to the time and price in writing before we do it, and you decide.
+Do I own all the code and IP?
+Yes, 100%. We build in your company's GitHub from day one, and our contract assigns all
+intellectual property to you.
+Do you sign an NDA?
+Yes. We can sign yours before you share your idea in detail, or send ours.
+How do I pay you?
+In US dollars, by invoice, in milestones. [Add the payment methods you accept.]
+Can you build from my designer's Figma?
+Yes. We build to your design and flag anything that won't work on a phone before we start.
+Where are you based, and how do we communicate?
+We work remotely from India. Calls are scheduled in your time zone, with a private Slack
+Connect channel and a weekly video demo.
+What happens after launch?
+Every MVP includes a 30-day warranty for bugs and unexpected problems, at no cost.
+After that you can keep us on a maintenance plan for new features, or hand the
+documented codebase to your own team.
+Final call to action
+Heading: Ready to get your MVP built?
+Body: Book a free 20-minute call. Tell us what you want to build, and we'll tell you honestly
+whether it fits a 4 to 6 week MVP. After the call you get a written scope, timeline and
+milestones.
+Button: Book a free 20-minute call
+Ship Thesis Website Audit
+Page 12 of 21
+
+
+=== PAGE 13 ===
+Under the button: Not ready for a call? Email your idea to info@shipthesis.com and we'll
+reply with a first read within [one business day].
+Flutter mobile app page
+Title tag: Flutter App Development for Startups and MVPs | Ship Thesis
+Meta description: Flutter apps for iOS and Android from one codebase. A working build
+on your phone every Friday, store submission handled, and code you own.
+Hero
+H1: Flutter app development for founders
+Subheadline: One codebase for iOS and Android. A working build on your phone every
+Friday, and code you own from day one.
+Buttons: Book a free 20-minute call | See the case study ↓
+Trust line: 20 minutes · No pitch · You speak directly with the person who builds it.
+Who this is for
+Founders launching on iOS and Android together. Reach App Store and Google Play
+users from day one without paying for two separate apps.
+Apps that must work with a weak signal. Exam tools, field checklists, inventory and
+notes apps keep working offline and sync when the connection returns.
+Founders who want to test on a real phone. Every Friday a new build lands on your
+phone through TestFlight (iPhone) or a download link (Android), so you judge real
+software, not mockups.
+First-time founders who want clear next steps. We explain choices in plain language
+and agree each milestone in writing.
+Who this is not for
+Heavy 3D games. Games with custom graphics engines are better built in Unity or
+Unreal.
+Apps for Apple devices only. If you only need iPhone or Apple Vision Pro, native Swift
+may be the better fit.
+A website in an app wrapper. We build real Flutter apps, not a website packed into a
+shell.
+Ship Thesis Website Audit
+Page 13 of 21
+
+
+=== PAGE 14 ===
+Projects without budget for a fixed-price build. We price by scope, so we're not the
+cheapest option.
+Case study
+Use the same Assess Yourself text as on the MVP page. Show the three real app screens,
+and use these stats only: 3 to 4 weeks from idea to delivery · iOS and Android from one
+codebase · timed tests that restore after a crash or dead battery. Replace "0 ms recovery
+data loss" and "10,000+ verified students" until you can prove them.
+What you get
+Heading: What you get with every mobile app.
+A build every Friday. A fresh version on your phone through TestFlight and a download
+link for Android.
+Store submission handled. We set up your developer accounts, signing and store
+listing, submit the app, and fix review issues until it's approved.
+Your code from day one. A clean, documented project in your company's GitHub, with
+all the intellectual property assigned to you.
+Works offline. Data is saved on the phone first and syncs when the signal returns.
+FAQ
+Why Flutter instead of separate iPhone and Android apps?
+Native apps need two codebases and two rounds of testing. Flutter lets us build one app
+for both platforms, which usually means lower cost and faster delivery, with a smooth,
+native feel. [Add a real cost comparison only if you can back it up.]
+How much does a Flutter app cost?
+Every project gets a fixed price in writing after the free call. Mobile MVPs typically start
+from [$X], depending on screens, integrations and whether the app must work offline.
+How long does it take?
+A tightly scoped mobile MVP takes 4 to 6 weeks. Assess Yourself was delivered in 3 to 4.
+You test a working build every Friday.
+Will it work offline?
+Ship Thesis Website Audit
+Page 14 of 21
+
+
+=== PAGE 15 ===
+Yes, if your product needs it. The app saves your data on the phone first, keeps working
+without internet, and syncs automatically when the connection comes back.
+How does App Store and Play Store approval work?
+We handle the whole submission: developer accounts, signing keys, privacy details,
+screenshots and the review itself. If Apple or Google ask for changes, we make them.
+Can you build from my designer's Figma?
+Yes. We build to your design and flag anything that won't work on a phone before we start.
+What happens after launch?
+Every project includes a 30-day warranty for bugs and unexpected problems, at no cost.
+After that you can keep us on a maintenance plan for new features, or take the
+documented codebase in-house.
+Final call to action
+Heading: Ready to build your mobile app?
+Body: Book a free 20-minute call to talk through your app idea, whether it needs to work
+offline, and what a first version should include.
+Button: Book a free 20-minute call
+Use a different tracking tag for the hero button and this one so you can see which
+converts.
+SaaS and web platforms page
+Title tag: SaaS MVP Development for Founders | Ship Thesis
+Meta description: We build SaaS products with logins, billing and dashboards in 4 to 6
+weeks. Weekly working builds, a fixed price, and code in your GitHub.
+Hero
+H1: Custom SaaS for founders, live in 4 to 6 weeks
+Subheadline: Web apps with logins, billing and dashboards, built around how your
+business actually works. A working build in your browser every week, and code you own.
+Buttons: Book a free 20-minute call | See the case study ↓
+Ship Thesis Website Audit
+Page 15 of 21
+
+
+=== PAGE 16 ===
+Trust line: 20 minutes · No pitch · You speak directly with the person who builds it.
+Who this is for
+Founders building a web product. You need user accounts, roles, workflows,
+payments and connections to other tools, built properly the first time.
+Businesses replacing software that doesn't fit. You pay per-seat fees for software
+that doesn't match how you work. We build only what you use, and you own it, with no
+per-seat fees.
+Teams that want a solid base, not a patchwork. A properly built codebase with
+database migrations, so you aren't forced to rebuild when you grow.
+Who this is not for
+A simple brochure website. If you only need a landing page or blog, a website builder is
+cheaper and faster.
+Multi-year projects with no early customers. We build focused products meant to
+reach real paying users in weeks, not committee projects.
+The lowest hourly rate. You'll find cheaper hourly developers. We offer a fixed price, a
+build every week, and code you own.
+Case study
+EHS Training Platform for EHS Guru. EHS Guru was paying for a bloated off-the-shelf
+learning system. We built a simple platform with only what they use: one-click Zoom
+classes, automatic attendance tracking, and recordings in the student dashboard. Built in
+4 weeks, live since May 2026, and now on our maintenance plan.
+Stats: 4 weeks to build · Live since May 2026 · No per-seat software fees [add what
+they paid before]
+Replace the "$0 Monthly Seat Tax" box with a real before-and-after figure, and add a
+one-sentence quote from EHS Guru.
+What you get
+Heading: What you get with every web platform.
+Logins and permissions. Sign in with an email link or Google. Roles such as Admin,
+Member and Viewer decide who sees what.
+Ship Thesis Website Audit
+Page 16 of 21
+
+
+=== PAGE 17 ===
+Billing and integrations. Stripe subscriptions and invoices (or Razorpay for India), plus
+tools like Zoom and email. Failed or changed payments update accounts automatically.
+Dashboards and exports. Clear tables and key numbers that work on a phone, with
+PDF and CSV downloads.
+Your code from day one. A private repository in your company's GitHub, with all the
+intellectual property assigned to you.
+FAQ
+How much does it cost, and how long does it take?
+Web platforms typically take 4 to 6 weeks for a tightly scoped first version, and start from
+[$X]. Every project gets a fixed price in writing after the free call.
+How do payments and billing work?
+We set up Stripe so customers can pick a plan, update their card, download invoices and
+cancel on their own. When a payment succeeds or a subscription changes, their account
+permissions update automatically.
+How do users sign in?
+With a passwordless email link or Google or GitHub sign-in. Each customer's data is
+separated at the database level, so one customer can never see another's.
+Can it handle many customers?
+Yes. We build on managed services that handle thousands of users, size the setup for your
+launch, and tell you honestly when it needs more. [Add real numbers from a project you've
+run, or leave this general.]
+What happens after launch?
+Every project includes a 30-day warranty for bugs and unexpected problems, at no cost.
+After that you can keep us on a maintenance plan for new features, or hand the
+documented codebase to your own team.
+Final call to action
+Heading: Ready to build your web platform?
+Body: Book a free 20-minute call and tell us the problem you're solving. We'll tell you what
+a first version should include and how long it would take.
+Button: Book a free 20-minute call
+Ship Thesis Website Audit
+Page 17 of 21
+
+
+=== PAGE 18 ===
+AI product page
+This page has one case study, and it's your own product. I wouldn't lead with it in outreach
+yet. The copy below is written to be accurate, because a technical buyer will test the
+claims.
+Title tag: AI Product Development for Founders | Ship Thesis
+Meta description: We build AI features for documents and reporting, where the numbers
+are calculated in code and checked before they reach your customer.
+Hero
+H1: AI features that get the numbers right
+Subheadline: We build products that turn messy PDFs, spreadsheets and text into
+structured data and reports, for founders who can't afford wrong answers.
+Line under the subheadline: Numbers are calculated in code and checked before they
+reach your customer. The AI writes the explanation around them.
+Buttons: Book a free 20-minute call | See the case study ↓
+Who this is for
+Products where accuracy matters. Reporting, finance, legal and compliance work,
+where one wrong figure loses a customer. We keep the numbers out of the model's
+hands.
+Teams automating manual document work. You process multi-page PDFs, messy
+spreadsheets or free text, and want clean, structured data in your database.
+Founders who want AI without a huge API bill. We use smaller, cheaper models for
+simple steps and save larger ones for the hard parts.
+Who this is not for
+A generic chatbot. If you only want a chat window with no data or business rules
+behind it, an open-source template is cheaper.
+Training your own model from scratch. We build products on commercial models from
+providers like Anthropic, OpenAI and Google.
+Experiments with no testing. We build checked, tested software, not prompts that
+break when a model updates.
+Ship Thesis Website Audit
+Page 18 of 21
+
+
+=== PAGE 19 ===
+Case study
+Poststeady, our own product. Agencies spend hours turning analytics exports into client
+reports. Poststeady turns messy CSV exports into a branded PDF report with the analysis
+written out. We built it in 4 weeks and run it ourselves, and it has 100+ users.
+Label it "Our own product," not "Client."
+Stats: 100+ users · Built in 4 weeks · [add time saved per report, and the PDF build time
+only if you've measured it]
+Remove "100% Verified Data Accuracy" and "zero metric hallucinations."
+What you get
+Heading: What you get with every AI build.
+Checked outputs. Every AI answer is checked against a strict format. If it doesn't fit,
+it's rejected and retried.
+Your data stays yours. We use business plans from providers whose terms say
+customer data isn't used to train their models. [Confirm each provider's current terms
+before publishing.]
+Costs kept in check. Simple steps run on small models and saved results. Once it's live,
+we show you what each task costs.
+Your code from day one. A private repository in your company's GitHub, with all the
+intellectual property assigned to you.
+FAQ
+How do you stop the AI from making things up?
+No model can promise it will never be wrong, so we design around that. Numbers are
+calculated in regular code first. The model only writes the explanation around those exact
+figures, and we check its output against a strict format and test it before release.
+Will our data be used to train AI models?
+Not on the business plans we use. [Confirm with each provider's current terms before
+publishing.]
+How do you manage API costs?
+We use small, cheap models for simple steps, reuse saved results where we can, and save
+larger models for complex work.
+Ship Thesis Website Audit
+Page 19 of 21
+
+
+=== PAGE 20 ===
+How will we know it's accurate enough?
+We test it on your real documents and agree what "good enough" means in writing before
+launch. [Only keep this if you offer it.]
+What happens after launch?
+Every project includes a 30-day warranty for bugs and unexpected problems, at no cost.
+After that you can keep us on a maintenance plan, or take the documented codebase in-
+house.
+Final call to action
+Heading: Ready to build your AI product?
+Body: Book a free 20-minute call and tell us what documents or data you're working with.
+We'll tell you what's realistic for a first version.
+Button: Book a free 20-minute call
+Shared blocks
+Footer links
+Services: MVP Development · Mobile Apps (Flutter) · SaaS and Web Platforms · AI Product
+Development
+Product: Home · Work · How it works · FAQ · Contact
+Remove "UX / UI Design," "App Maintenance," "Backend Development" and "App Store
+Submission" until each has its own page or section, because they currently lead back to
+the same places.
+Message to ask clients for a testimonial
+Hi [Name], thanks again for working with me on [project]. I'm updating my website and
+would love a short quote from you. Could you reply with two or three sentences on what
+problem you had, what it was like working with me, and the result? I'll send you the final
+wording to approve before anything goes live. You can be named with your role and
+company, or just a first name, whichever you prefer.
+Send it to EHS Guru and Aptellic first.
+Ship Thesis Website Audit
+Page 20 of 21
+
+
+=== PAGE 21 ===
+Your decisions and facts checklist
+These are the blanks in the copy above that only you can fill in:
+1. The starting price for MVPs, and for each service page.
+2. The Discovery Sprint price, and whether the fee is credited against the build.
+3. Whether the Discovery week is inside the 4 to 6 weeks.
+4. The real status and numbers for Assess Yourself, including whether it's live on both
+stores.
+5. What EHS Guru paid per seat before, so the "no seat fees" claim becomes a real
+number.
+6. One client quote each from EHS Guru and Aptellic.
+7. Your name, photo, and one sentence of background that you can back up.
+8. The payment methods you accept.
+9. A response time for the email option.
+10. Each AI provider's current data terms, before you publish the "your data stays yours"
+claim.
+11. Whether Poststeady's PDF build time and report time-saved figures have been
+measured.
+12. Whether you're happy to say you work from India.
+Ship Thesis Website Audit
+Page 21 of 21
+
+

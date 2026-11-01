@@ -132,9 +132,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     stamp: { status: "Live · poststeady.com", variant: "dateline" },
     liveHref: "https://www.poststeady.com",
     hero: {
-      src: "/work/poststeady/hero.webp",
-      width: 1780,
-      height: 883,
+      src: "/work/poststeady/poststeady_hero_image.webp",
+      width: 779,
+      height: 320,
       alt: "Poststeady: Three laptops showing the app UI",
     },
     seo: {

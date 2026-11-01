@@ -2,23 +2,34 @@ import type { Metadata } from "next";
 import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "MVP Development for Startups · Fixed 4–6 Week Scope",
+  title: "MVP Development for Startups | Shipped in Weeks",
   description:
-    "Ship a production-ready mobile or SaaS MVP in 4 to 6 weeks. Weekly working builds on your phone or web, fixed-price milestones, and 100% code ownership.",
+    "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
   alternates: {
     canonical: "/mvp-development",
   },
   openGraph: {
-    title: "MVP Development for Startups · Fixed 4–6 Week Scope",
+    title: "MVP Development for Startups | Shipped in Weeks · Ship Thesis",
     description:
-      "Ship a production-ready mobile or SaaS MVP in 4 to 6 weeks. Weekly working builds on your phone or web, fixed-price milestones, and 100% code ownership.",
+      "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
     url: "https://www.shipthesis.com/mvp-development",
+    siteName: "Ship Thesis",
+    type: "website",
+    images: [
+      {
+        url: "https://www.shipthesis.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ship Thesis - MVP Development for Startups",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MVP Development for Startups · Fixed 4–6 Week Scope",
+    title: "MVP Development for Startups | Shipped in Weeks · Ship Thesis",
     description:
-      "Ship a production-ready mobile or SaaS MVP in 4 to 6 weeks. Weekly working builds on your phone or web, fixed-price milestones, and 100% code ownership.",
+      "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
+    images: ["https://www.shipthesis.com/opengraph-image.png"],
   },
 };
 
@@ -36,7 +47,7 @@ const jsonLd = {
       },
       serviceType: "Software Engineering & MVP Development",
       description:
-        "Fixed-scope MVP delivery for startup founders in 4 to 6 weeks with weekly working builds, milestone billing, and complete code ownership.",
+        "Fixed-scope MVP delivery for startup founders in weeks with upfront planning, weekly working builds, milestone billing, and complete code ownership.",
       areaServed: "Worldwide",
     },
   ],
@@ -47,8 +58,10 @@ export default function MvpDevelopmentPage() {
     <ServicePageLayout
       breadcrumbTitle="MVP Development"
       badgeText="Status: 1 Sprint Slot Open"
-      title="Production MVPs for founders, shipped in 4 to 6 weeks"
-      lede="Turn your product idea into real, usable software. Weekly working builds on your phone or web, fixed-price milestone billing, and code you own from day one."
+      title="Your MVP, live in weeks. Fixed price, weekly builds."
+      lede="Turn your product idea into software real customers can use. Test a working build every Friday, pay by milestone, and own the code from day one."
+      ctaPrefix="mvp"
+      faqLede="Direct, honest answers on scope, weekly builds, intellectual property, and warranties."
       heroImage={{
         src: "/work/assess-yourself/hero.webp",
         alt: "AssessYourself production MVP preview",
@@ -59,42 +72,50 @@ export default function MvpDevelopmentPage() {
       who={{
         for: [
           {
-            title: "Early-stage founders validating real market demand",
-            desc: "You have customer interviews, pre-orders, or domain insights, and you need a working software build in market fast without burning months of runway.",
+            title: "Founders testing a real idea",
+            desc: "You've talked to customers, have pre-orders or a pilot lined up, and need working software in front of them soon, without spending months of runway.",
           },
           {
-            title: "Founders burned by slow agencies or junior dev shops",
-            desc: "You want to talk directly to the senior engineer writing your code, with a strict milestone scope and a physical working build delivered every Friday.",
+            title: "Founders burned by slow agencies",
+            desc: "You want to talk to the person writing your code, agree the scope in writing, and see a working build every Friday instead of status reports.",
           },
           {
-            title: "Startups preparing for investor demos or commercial pilots",
-            desc: "You need rock-solid production infrastructure (authentication, billing, database security) that looks expensive and passes technical due diligence.",
+            title: "Startups heading into a demo or pilot",
+            desc: "You need real logins, payments and a secure database, so the product holds up in an investor demo or a customer's technical review.",
           },
         ],
         notFor: [
           {
-            title: "Indefinite open-ended hourly consulting",
-            desc: "We work strictly on fixed-scope, fixed-price milestone sprints where deliverables and acceptance criteria are locked upfront.",
+            title: "Hourly or open-ended work",
+            desc: "We work on a fixed scope and a fixed price, agreed in writing before we start.",
           },
           {
-            title: "Unvalidated feature-stuffed multi-year scopes",
-            desc: "We help founders ruthlessly cut non-essential features so you ship a lean, high-leverage product in weeks rather than quarters.",
+            title: "Everything in version one",
+            desc: "We'll help you cut features until the first version can launch in weeks, not quarters.",
           },
           {
-            title: "Non-technical founders looking for equity-only co-founders",
-            desc: "We operate as an elite engineering partner with transparent milestone payment schedules and 100% intellectual property assignment to your company.",
+            title: "Equity-only or no-budget deals",
+            desc: "Our projects are paid by milestone, and you own 100% of the code.",
+          },
+          {
+            title: "Projects with no one to make weekly decisions",
+            desc: "A weekly build only works if someone can review it and decide quickly.",
+          },
+          {
+            title: "The lowest hourly rate",
+            desc: "You'll find cheaper hourly developers. We offer a fixed price, a build every week, and code you own.",
           },
         ],
       }}
       caseStudy={{
         client: "Aptellic",
-        title: "AssessYourself: Production Mobile MVP Delivered in 3-4 Weeks",
-        lede: "An offline-first mobile testing app for competitive exams, engineered from scratch and approved on both iOS and Android stores within 4 weeks.",
+        title: "Assess Yourself: A Mobile MVP for Aptellic",
+        lede: "An exam-prep app. Students need practice tests to keep working with a weak signal or a dead battery, so the app saves progress on the phone and restores a timed test exactly where it stopped. Delivered in 3 to 4 weeks.",
         timeline: "3–4 Weeks",
         stack: ["Flutter", "Node.js", "Firebase", "Offline SQLite"],
         metrics: [
-          { num: "3-4 Wks", label: "Idea to Store" },
-          { num: "10,000+", label: "Verified Users" },
+          { num: "3 to 4 wks", label: "Idea to Delivery" },
+          { num: "iOS & Android", label: "One Codebase" },
           { num: "100%", label: "Code Owned by Client" },
         ],
         screenshots: [
@@ -123,54 +144,77 @@ export default function MvpDevelopmentPage() {
         whatShipped: [
           "1-week discovery architecture, schema design, and interactive prototype",
           "Production mobile build with crash-proof offline SQLite database layer",
-          "Dual submission to Apple App Store and Google Play Store with full approval",
+          "Dual submission setup for Apple App Store and Google Play Store",
         ],
         caseStudyHref: "/work/assess-yourself",
       }}
       deliverables={[
         {
           tag: "SCOPE DISCIPLINE",
-          title: "Fixed-price milestone contracts",
-          desc: "Clear upfront statement of work with milestone billing (30% kickoff / 40% halfway working build / 30% final release). Zero hourly billing surprises.",
+          title: "A fixed price in writing",
+          desc: "Payments in three milestones: 30% at kickoff, 40% when the halfway build works, 30% at final release. No hourly billing.",
         },
         {
           tag: "WEEKLY BUILDS",
-          title: "Working builds on your device every Friday",
-          desc: "Every Friday, you test real running software via TestFlight, Android APK, or staging URL. You judge progress by using the software, not reading slide decks.",
+          title: "A working build every Friday",
+          desc: "Test real software on your phone or in your browser every Friday, not static slides.",
         },
         {
           tag: "FULL OWNERSHIP",
-          title: "100% Code in your GitHub from Day 1",
-          desc: "Private repository created in your GitHub organization. All intellectual property, assets, and database migrations belong unconditionally to your company.",
+          title: "Your code from day one",
+          desc: "A private repository in your company's GitHub. All the intellectual property belongs unconditionally to you.",
         },
         {
           tag: "PRODUCTION READY",
-          title: "Hardened auth, payments & cloud deployment",
-          desc: "Production-grade authentication, database Row-Level Security, automated backups, and billing engine pre-configured for immediate commercial launch.",
+          title: "Ready for real customers",
+          desc: "Secure logins, payments, a protected database and automatic backups, set up for launch.",
         },
       ]}
       faqs={[
         {
-          q: "What is included in the 4 to 6 week MVP build?",
-          a: "Everything needed to launch and collect revenue: product architecture, responsive UI design, frontend application (Flutter or Next.js), backend database with authentication, payment integration (Stripe/Razorpay), and store submission or production deployment.",
+          q: "What's included in an MVP build?",
+          a: "Everything needed to put a first version in front of customers: upfront planning, technical architecture, approved screens, the app or web product (Flutter or Next.js), a backend with logins, payment setup, and store submission or deployment.",
+        },
+        {
+          q: "How long does it take?",
+          a: "4 to 6 weeks for a tightly scoped first version; larger scopes take longer. We start with an upfront planning sprint to lock the scope, and you test a working build on your phone or web every week.",
         },
         {
           q: "How does the fixed-price milestone model work?",
-          a: "We agree on a strict written scope before any work begins. Payments are split across verified delivery milestones (typically 30% kickoff, 40% midway working build, 30% launch). You only release milestone payments after testing real working software.",
+          a: "We agree a written scope before any work starts. You pay in three milestones, 30% at kickoff, 40% when the halfway build works, and 30% at final release, and you only release each payment after testing working software.",
         },
         {
-          q: "Do I own all the intellectual property and code?",
-          a: "Yes, 100%. We create the private repository directly in your company GitHub organization from day one. Our contract includes explicit work-for-hire and statutory IP assignment clauses. Zero proprietary studio lock-in.",
+          q: "What if my scope changes?",
+          a: "Small adjustments within a milestone are fine. If a change adds work, we tell you what it does to the time and price in writing before we do it, and you decide.",
         },
         {
-          q: "What happens after the MVP is launched?",
-          a: "Every MVP includes a 30-day post-launch warranty covering any bugs or unexpected edge cases at zero cost. After launch, you can keep us on a flexible maintenance retainer for ongoing sprints, or hand the clean, documented codebase over to your in-house team.",
+          q: "Do I own all the code and IP?",
+          a: "Yes, 100%. We build in your company's GitHub from day one, and our contract assigns all intellectual property to you.",
+        },
+        {
+          q: "Do you sign an NDA?",
+          a: "Yes. We can sign yours before you share your idea in detail, or send ours.",
+        },
+        {
+          q: "How do I pay you?",
+          a: "In US dollars, by invoice, in milestones tied to working builds.",
+        },
+        {
+          q: "Can you build from my designer's Figma?",
+          a: "Yes. We build to your design and flag anything that won't work on mobile or web before we start.",
+        },
+        {
+          q: "Where are you based, and how do we communicate?",
+          a: "We work remotely from India. Calls are scheduled in your time zone, with a private Slack Connect channel and a weekly video demo.",
+        },
+        {
+          q: "What happens after launch?",
+          a: "Every MVP includes a 30-day warranty for bugs and unexpected problems, at no cost. After that you can keep us on a maintenance plan for new features, or hand the documented codebase to your own team.",
         },
       ]}
-      ctaTitle="Ready to ship your MVP?"
-      ctaLede="Book a free 20-minute call to discuss your product idea, target timeline, and scope boundaries."
+      ctaTitle="Ready to get your MVP built?"
+      ctaLede="Book a free 20-minute call. Tell us what you want to build, and we'll tell you honestly what fits a first version. After the call you get a written scope, planning breakdown, and milestones."
       jsonLd={jsonLd}
     />
   );
 }
-

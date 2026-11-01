@@ -2,23 +2,34 @@ import type { Metadata } from "next";
 import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "SaaS MVP Development for Founders · Full-Stack Web Apps",
+  title: "SaaS MVP Development for Founders",
   description:
-    "Launch your SaaS product in 4 to 6 weeks. Complete with user authentication, custom workflow engines, PostgreSQL with Row-Level Security, and responsive web dashboards.",
+    "We build SaaS products with logins, billing and dashboards in weeks. Upfront planning, weekly working builds, and code in your GitHub.",
   alternates: {
     canonical: "/saas-development",
   },
   openGraph: {
-    title: "SaaS MVP Development for Founders · Full-Stack Web Apps",
+    title: "SaaS MVP Development for Founders · Ship Thesis",
     description:
-      "Launch your SaaS product in 4 to 6 weeks. Complete with user authentication, custom workflow engines, PostgreSQL with Row-Level Security, and responsive web dashboards.",
+      "We build SaaS products with logins, billing and dashboards in weeks. Upfront planning, weekly working builds, and code in your GitHub.",
     url: "https://www.shipthesis.com/saas-development",
+    siteName: "Ship Thesis",
+    type: "website",
+    images: [
+      {
+        url: "https://www.shipthesis.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ship Thesis - SaaS MVP Development for Founders",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaaS MVP Development for Founders · Full-Stack Web Apps",
+    title: "SaaS MVP Development for Founders · Ship Thesis",
     description:
-      "Launch your SaaS product in 4 to 6 weeks. Complete with user authentication, custom workflow engines, PostgreSQL with Row-Level Security, and responsive web dashboards.",
+      "We build SaaS products with logins, billing and dashboards in weeks. Upfront planning, weekly working builds, and code in your GitHub.",
+    images: ["https://www.shipthesis.com/opengraph-image.png"],
   },
 };
 
@@ -47,64 +58,66 @@ export default function SaasDevelopmentPage() {
     <ServicePageLayout
       breadcrumbTitle="SaaS & Web Platforms"
       badgeText="Status: 1 Sprint Slot Open"
-      title="SaaS products for founders, built and shipped fast"
-      lede="Full-stack web applications with authentication, custom workflow engines, multi-tenant databases, and responsive dashboards. A working build in your browser every week."
+      title="Custom SaaS for founders, live in weeks"
+      lede="Web apps with logins, billing and dashboards, built around how your business actually works. A working build in your browser every week, and code you own."
+      ctaPrefix="saas"
+      faqLede="Direct, honest answers on tech stack, billing architecture, permissions, and scaling."
       heroImage={{
-        src: "/work/safety-training-platform/trainer1.webp",
-        alt: "EHS Guru LMS custom training dashboard with Zoom API integration",
-        width: 1671,
-        height: 941,
+        src: "/work/safety-training-platform/sessions.webp",
+        alt: "EHS Guru LMS custom training dashboard with live sessions and attendance",
+        width: 1400,
+        height: 824,
         deviceType: "browser",
-        browserUrl: "https://app.ehsguru.com/dashboard",
+        browserUrl: "https://app.ehsguru.com/sessions",
       }}
       who={{
         for: [
           {
-            title: "Founders building a web product with logins and workflows",
-            desc: "You need a modern full-stack web application with user authentication, role-based dashboards, third-party API integrations, and tenant data isolation.",
+            title: "Founders building a web product",
+            desc: "You need user accounts, roles, workflows, payments and connections to other tools, built properly the first time.",
           },
           {
-            title: "Businesses replacing off-the-shelf software and high seat fees",
-            desc: "You currently pay exorbitant monthly SaaS seat fees for rigid software that does not fit your operational workflow, and you want a custom platform you own forever.",
+            title: "Businesses replacing software that doesn't fit",
+            desc: "You pay per-seat fees for software that doesn't match how you work. We build only what you use, and you own it, with no per-seat fees.",
           },
           {
-            title: "Teams avoiding no-code dead ends and fragile spaghetti code",
-            desc: "You want production software engineered on Next.js, TypeScript, and PostgreSQL with proper database migrations so you never have to rebuild when you scale.",
+            title: "Teams that want a solid base, not a patchwork",
+            desc: "A properly built codebase with database migrations and typed schemas, so you aren't forced to rebuild when you grow.",
           },
         ],
         notFor: [
           {
-            title: "Simple static brochure marketing websites",
-            desc: "If you only need a basic landing page or blog without logins, databases, or user dashboards, a lightweight site generator or CMS is more cost-effective.",
+            title: "A simple brochure website",
+            desc: "If you only need a basic landing page or blog without logins or dashboards, a website builder is cheaper and faster.",
           },
           {
-            title: "Speculative multi-year enterprise projects with no validation",
-            desc: "We build focused, high-leverage products designed to onboard real paying customers in 4 to 6 weeks, not bloated 18-month committee projects.",
+            title: "Multi-year projects with no early customers",
+            desc: "We build focused products meant to reach real paying users in weeks, not committee projects.",
           },
           {
-            title: "Teams looking for cheap overseas outsourcing mills",
-            desc: "We write clean, typed, modular code with senior founder-led engineering, zero technical debt, and 100% intellectual property ownership from day one.",
+            title: "The lowest hourly rate",
+            desc: "You'll find cheaper hourly developers. We offer a fixed scope, a build every week, and code you own.",
           },
         ],
       }}
       caseStudy={{
         client: "EHS Guru",
-        title: "EHS Training Platform: Custom Live Learning LMS with Zoom API",
-        lede: "A bespoke live learning platform that replaced a bloated off-the-shelf LMS. Built to run one-click Zoom classes, auto-track attendance, and ingest recordings without per-seat software fees.",
+        title: "EHS Training Platform: Custom Web Platform for EHS Guru",
+        lede: "EHS Guru was paying for a bloated off-the-shelf learning system. We built a simple platform with only what they use: one-click Zoom classes, automatic attendance tracking, and recordings in the student dashboard. Built in 4 weeks, live since May 2026, and now on our maintenance plan.",
         timeline: "4 Weeks",
-        stack: ["Next.js 16", "Supabase (PostgreSQL RLS)", "Zoom API", "Tailwind CSS"],
+        stack: ["Next.js", "Supabase (PostgreSQL RLS)", "Zoom API", "Tailwind CSS"],
         metrics: [
-          { num: "1-Click", label: "Live Zoom Classes" },
-          { num: "100%", label: "Attendance Automated" },
-          { num: "$0", label: "Monthly Seat Tax" },
+          { num: "4 Weeks", label: "Idea to Delivery" },
+          { num: "Live May '26", label: "In Active Production" },
+          { num: "Zero Seat Fees", label: "Owned Infrastructure" },
         ],
         screenshots: [
           {
-            src: "/work/safety-training-platform/trainer1.webp",
-            alt: "Trainer dashboard with active class schedules",
-            caption: "Trainer command center with 1-click Zoom launcher",
-            width: 1671,
-            height: 941,
+            src: "/work/safety-training-platform/sessions.webp",
+            alt: "Class session attendance logs and rosters",
+            caption: "Automated Zoom attendance sync & student verification",
+            width: 1400,
+            height: 824,
           },
           {
             src: "/work/safety-training-platform/webinars.webp",
@@ -114,9 +127,9 @@ export default function SaasDevelopmentPage() {
             height: 824,
           },
           {
-            src: "/work/safety-training-platform/sessions.webp",
-            alt: "Class session attendance logs and rosters",
-            caption: "Automated Zoom attendance sync & student verification",
+            src: "/work/safety-training-platform/users.webp",
+            alt: "User management and roles",
+            caption: "Role-based user management for admins, trainers, and learners",
             width: 1400,
             height: 824,
           },
@@ -131,45 +144,69 @@ export default function SaasDevelopmentPage() {
       deliverables={[
         {
           tag: "AUTH & ACCESS",
-          title: "User logins & enterprise security",
-          desc: "Secure authentication with passwordless magic links, Google OAuth, session management, and organization role-based access control (Admin, Member, Viewer).",
+          title: "Logins and permissions",
+          desc: "Sign in with an email link or Google. Roles such as Admin, Member and Viewer decide who sees what.",
         },
         {
           tag: "BILLING & APIS",
-          title: "Payment engines & 3rd-party integrations",
-          desc: "Seamless integration with Stripe/Razorpay billing, Zoom APIs, Resend email workflows, and resilient webhook handlers to manage external system lifecycles.",
+          title: "Billing and integrations",
+          desc: "Stripe subscriptions and invoices, plus tools like Zoom and email. Failed or changed payments update accounts automatically.",
         },
         {
           tag: "DASHBOARD & DB",
-          title: "Responsive dashboard & Postgres RLS",
-          desc: "Fast, mobile-friendly interface with interactive data tables, KPI metric cards, and downloadable PDF/CSV exports built on PostgreSQL with Row-Level Security.",
+          title: "Dashboards and exports",
+          desc: "Clear tables and key numbers that work on a phone, with PDF and CSV downloads. Built on PostgreSQL with Row-Level Security.",
         },
         {
           tag: "FULL OWNERSHIP",
-          title: "100% Code in your GitHub from Day 1",
-          desc: "Clean React Server Components and TypeScript types. Private repository created directly in your company GitHub with full IP assignment and no agency lock-in.",
+          title: "Your code from day one",
+          desc: "A private repository in your company's GitHub, with all the intellectual property assigned to you.",
         },
       ]}
       faqs={[
         {
+          q: "What tech stack do you use for SaaS builds?",
+          a: "We build SaaS applications primarily with Next.js (React), TypeScript, and PostgreSQL (via Supabase or Neon) with Row-Level Security (RLS) for multi-tenant data isolation. For styling we use CSS modules or Tailwind, and integrate Stripe for recurring subscriptions and automated invoicing.",
+        },
+        {
+          q: "How long does it take?",
+          a: "4 to 6 weeks for a focused first version; larger scopes take longer. We start with upfront planning to lock the database models and workflows, and you test a working build in your browser every week.",
+        },
+        {
+          q: "How does the fixed-price milestone payment model work?",
+          a: "We agree on a clear, written scope and architecture specification before any development begins. Payments are split into three milestones: 30% at kickoff, 40% when the halfway build is working in staging, and 30% upon final release. You only release payment after testing working software.",
+        },
+        {
           q: "How do payments and billing work?",
-          a: "We integrate official Stripe Checkout and Customer Portal (or Razorpay for Indian/global currency support). Customers can self-serve their subscription tier, update payment methods, download PDF invoices, and cancel accounts. When payments succeed or subscriptions change, background webhooks automatically update user permissions in your database.",
+          a: "We set up Stripe so customers can pick a plan, update their card, download invoices and cancel on their own. When a payment succeeds or a subscription changes, their account permissions update automatically.",
         },
         {
           q: "How do users sign in?",
-          a: "We implement secure modern authentication (Supabase Auth, Auth0, or NextAuth). Users can sign in with passwordless email magic links or Google/GitHub OAuth. All user data is guarded by JSON Web Tokens (JWT) with strict Row-Level Security so one customer can never view another organization's data.",
+          a: "With a passwordless email link or Google or GitHub sign-in. Each customer's data is separated at the database level with Row-Level Security, so one customer can never see another's.",
         },
         {
-          q: "Can it support many customers / how does it scale?",
-          a: "Yes. We build on serverless Next.js edge runtimes and managed PostgreSQL with connection pooling (e.g. Supabase, Neon, or AWS RDS). This architecture easily supports thousands of active users and hundreds of thousands of monthly requests with sub-100ms response times without managing virtual servers.",
+          q: "Do I own 100% of the SaaS code and intellectual property?",
+          a: "Yes, unconditionally. All code is committed directly to your company's private GitHub repository from day one. Our contract legally assigns all intellectual property, database schemas, and documentation to you.",
+        },
+        {
+          q: "Do you sign an NDA before we discuss our product?",
+          a: "Yes. We regularly sign mutual NDAs before reviewing proprietary workflows, customer data, or product specifications. We can sign your company NDA or provide our standard mutual agreement.",
+        },
+        {
+          q: "Can it handle many customers?",
+          a: "Yes. We build on managed services that handle thousands of users, size the setup for your launch, and tell you honestly when it needs more.",
+        },
+        {
+          q: "Where are you based, and how do we communicate?",
+          a: "We work remotely from India. Calls are scheduled in your time zone, with a dedicated Slack Connect channel, GitHub pull requests, and a weekly live video demo every Friday.",
         },
         {
           q: "What happens after launch?",
-          a: "Every engagement comes with a 30-day post-launch warranty where we fix any unexpected bugs or edge cases at zero additional charge. When you want to iterate or ship new roadmap features, you can retain us for ongoing engineering sprints, or hand the clean, typed codebase over to your in-house hires.",
+          a: "Every project includes a 30-day warranty for bugs and unexpected problems, at no cost. After that you can keep us on a maintenance plan for new features, or hand the documented codebase to your own team.",
         },
       ]}
-      ctaTitle="Ready to ship your web platform?"
-      ctaLede="Book a free 20-minute call to discuss your SaaS feature scope, database architecture, and timeline."
+      ctaTitle="Ready to build your web platform?"
+      ctaLede="Book a free 20-minute call and tell us the problem you're solving. We'll tell you what a first version should include and how long it would take."
       jsonLd={jsonLd}
     />
   );

@@ -16,7 +16,18 @@ export type BookingLocation =
   | "case-study-mid"
   | "case-study-end"
   | "services"
-  | "faq";
+  | "services-hero"
+  | "services-callband"
+  | "flutter-hero"
+  | "flutter-callband"
+  | "saas-hero"
+  | "saas-callband"
+  | "mvp-hero"
+  | "mvp-callband"
+  | "ai-hero"
+  | "ai-callband"
+  | "faq"
+  | (string & {});
 
 export function getCalLinkSlug(): string {
   const raw = process.env.NEXT_PUBLIC_BOOKING_URL || DEFAULT_BOOKING_URL;

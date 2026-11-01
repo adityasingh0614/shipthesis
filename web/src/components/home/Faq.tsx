@@ -39,7 +39,7 @@ const ITEMS = [
   {
     icon: Clock,
     q: "How long does it take to build an MVP app?",
-    a: "MVPs typically take 6-10 weeks; a tightly scoped build (Assess Yourself) shipped in 3-4. In all cases, you test a working build on your phone every week.",
+    a: "4 to 6 weeks for a tightly scoped first version; larger scopes take longer. Assess Yourself was delivered in 3 to 4. In all cases, we agree on a written plan and scope first, and you test a working build on your phone every week.",
   },
   {
     icon: CurrencyDollar,

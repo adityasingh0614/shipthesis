@@ -19,7 +19,7 @@ const SERVICES = [
     image: "/work/safety-training-platform/card.webp",
     alt: "EHS Guru training platform dashboard preview on laptop",
     text: "Full-stack web products with accounts, billing and dashboards. Built on Next.js and Supabase.",
-    tags: "Next.js · Supabase · Payments · Admin dashboards",
+    tags: "Next.js · Supabase · Billing",
     linkText: "Explore SaaS & web platforms",
   },
 ];
@@ -45,8 +45,8 @@ export function WhatWeBuild() {
                   <Image
                     src={s.image}
                     alt={s.alt}
-                    width={1200}
-                    height={675}
+                    width={1920}
+                    height={1080}
                     className={styles.cardImage}
                     priority
                     unoptimized
@@ -74,9 +74,21 @@ export function WhatWeBuild() {
           ))}
         </ul>
 
+        {/* Visible row directly under the cards for MVP & AI */}
+        <div className={styles.subServicesRow}>
+          <span className={styles.subServicesLabel}>Also:</span>
+          <Link href="/mvp-development" className={styles.subServiceLink}>
+            Launch an MVP in weeks <span aria-hidden="true">&rarr;</span>
+          </Link>
+          <span className={styles.subServiceDot} aria-hidden="true">&middot;</span>
+          <Link href="/ai-product-development" className={styles.subServiceLink}>
+            AI features for documents and reports <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+
         <div className={styles.bottomNote}>
           <span className={styles.notePrefix}>
-            Need something else, like desktop software, internal tools or AI features?{" "}
+            Need something else, like desktop software or internal tools?{" "}
           </span>
           <BookingCta
             location="services"
@@ -84,7 +96,7 @@ export function WhatWeBuild() {
             showArrow={false}
             className={styles.noteLink}
           >
-            Tell us what you’re building on a free 20-minute call &rarr;
+            Tell us what you&apos;re building on a free 20-minute call &rarr;
           </BookingCta>
         </div>
       </div>

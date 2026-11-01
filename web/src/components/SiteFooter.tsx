@@ -36,8 +36,10 @@ export function SiteFooter() {
             <div>
               <p className={styles.colTitle}>Services</p>
               <ul className={styles.linkList}>
+                <li><Link href="/mvp-development" className={styles.link}>MVP Development</Link></li>
                 <li><Link href="/flutter-app-development" className={styles.link}>Flutter Development</Link></li>
                 <li><Link href="/saas-development" className={styles.link}>SaaS Development</Link></li>
+                <li><Link href="/ai-product-development" className={styles.link}>AI Product Development</Link></li>
                 <li><Link href="/#services" className={styles.link}>UX / UI Design</Link></li>
                 <li><Link href="/#services" className={styles.link}>App Maintenance</Link></li>
                 <li><Link href="/saas-development" className={styles.link}>Backend Development</Link></li>

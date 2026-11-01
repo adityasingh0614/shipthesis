@@ -1,0 +1,479 @@
+=== PAGE 1 ===
+Highprime
+©
+C H A T G P T V I S I B I L I T Y
+How to get
+recommended
+by ChatGPT.
+Eleven days of experiments on our own website, logged out,
+one variable at a time, with the server logs open. Three things
+worked. Two things we were sure about were wrong. Every
+number from our experiments is sourced on page 15.
+W A N T T O I M P R O V E Y O U R B U S I N E S S ?
+We run Meta ads, Amazon ads and Google Ads, and we do Google SEO.
+We also build a custom website for ₹30,000. Email us, the message is pre-filled.
+Highprime Co · Thane, Mumbai
+Tested 11 to 22 September 2026 · on our own site
+H
+
+
+=== PAGE 2 ===
+S T A R T H E R E
+It repeats what it reads.
+Nobody is judging your business. Your page is skimmed for an answer,
+and the answer is repeated.
+YOUR PAGE
+RTO is missing from your maths.
+ONE COPY
+NO CLICKS
+THE COPY
+IT ACTUALLY
+READS
+THE ANSWER
+“RTO is missing from your maths”
+The sentence on the left is real, and so is the quote on the right. Page 5 has the screenshot.
+T H E C O N S E Q U E N C E
+You are not scored on authority. You are read for an answer. Everything in here is a way of
+putting a plain answer where a skimmer will find it.
+TESTED  we ran it on our own site and watched.   
+WE WERE WRONG  we believed it, checked it, dropped it.
+  All of it measured on one site, one category, eleven days, logged out.
+Highprime Co
+02
+
+
+=== PAGE 3 ===
+01
+Say what you do.
+TESTED
+Your first line is the one that gets skimmed. Spend it on the answer, not on
+being memorable.
+Our Flipkart page opened with “Flipkart is not Amazon with a different logo.” We liked that line. It
+lost.
+Then we wrote a page that opens by saying, plainly, that we take a share of revenue instead of a
+retainer. Here is what came back:
+Logged out, fresh chat, 16 September 2026. Named first, out of five.1
+D O
+Write the headline as the answer to the
+question your buyer types. Move the clever line
+to the subhead, where it still works on humans.
+D O N O T
+Open with a joke or a metaphor. It reads well to
+someone who already decided to read. A
+skimmer gets nothing from it.
+The business that beats us on one of our own questions has a thousand words, no reviews, no
+press and no Google ranking.2 Its headline says what it does. Ours told a joke.
+Move 01 · The headline
+03
+
+
+=== PAGE 4 ===
+02
+Say what others don't.
+TESTED
+If everyone in your category says it, putting it on your homepage does not
+make it yours.
+We tested five claims we make plainly on our own site.3
+WHAT WE CLAIM
+RESULT
+A share of revenue, not a retainer
+Named first
+Returns counted in break-even
+Named first, only one listed
+Sale events planned months ahead
+Named second
+No percentage of ad spend
+Nothing. Everyone says this
+Tracking fixed before budget
+Nothing. Everyone says this
+Row three is the interesting one. Planning for sale events is a crowded claim. We still won,
+because what was scarce was not the topic, it was the argument. We had put the reasoning in
+writing and nobody else had.
+T H E T E S T T O A P P L Y
+Open five competitors. If your differentiator is on three of them, it is not a differentiator, it is
+wallpaper. Find the thing you believe that they would argue with.
+Move 02 · Scarcity
+04
+
+
+=== PAGE 5 ===
+03
+Write a line worth quoting.
+TESTED
+It repeats your sentences. So write the sentence you would like repeated.
+One section of our Amazon page is headed “RTO is missing from your maths.” Short, specific,
+slightly rude. It came back word for word:
+Logged out, fresh chat, 16 September 2026. Quoted verbatim, only agency named.1
+G E T S Q U O T E D
+“RTO is missing from your maths.”
+“Your ads are probably fine. Your signal is not.”
+N E V E R G E T S Q U O T E D
+“Listing and catalogue work”
+“Our approach”
+“Why choose us”
+Where it sits matters too. Every claim we won was a headline or a section heading. Every claim
+we lost was buried in an FAQ or a hook line.
+If a heading reads like a folder name, rewrite it as a sentence you would be happy to see quoted
+back at you.
+Move 03 · Quotable and high up
+05
+
+
+=== PAGE 6 ===
+04
+Your FAQ may be invisible.
+TESTED
+Your FAQ is real questions and real answers, which is exactly what
+ChatGPT is looking for. On many sites it has never seen a word of it.
+The copy is taken before anyone clicks anything. If your answers only appear after a click, they
+are not in the copy.
+PAGE SOURCE · SAFE
+<div class="faq">
+<h3>Do you lock clients in?</h3>
+<p>No. Month to month.</p>
+</div>
+The answer is in the page.
+The drawer is shut, the paper is inside it.
+PAGE SOURCE · INVISIBLE
+<div id="faq"></div>
+<script src="faq.js"></script>
+(nothing here until a click)
+The answer is not in the page.
+Nobody fetches the paper for ChatGPT.
+Both look identical on your screen. Both open and close the same way.
+T H E T E N S E C O N D T E S T
+Copy one sentence from one of your FAQ answers. Press Ctrl + U , or Cmd + Option + U
+on a Mac. Code opens. Do not read it. Press Ctrl + F and paste.
+Found it? You are fine. Not there? ChatGPT has never seen a single one of your answers.
+Google will not warn you. Google reads pages that build themselves in the browser. This crawler
+does not.4 Your FAQ can rank perfectly well and be invisible in ChatGPT at the same time.
+Move 04 · The FAQ trap
+06
+
+
+=== PAGE 7 ===
+E V I D E N C E B E H I N D M O V E 0 4
+Thirty days of crawler log.
+Not an opinion. This is our own server writing down every visit.4
+83
+PAGE FETCHES
+0
+JAVASCRIPT FILES
+0
+STYLESHEETS
+30
+DAYS WATCHED
+GET /revenue-share-marketing-agency   200   OAI-SearchBot
+GET /amazon-marketing-agency            200   OAI-SearchBot
+GET /blog/best-flipkart-agencies-india  200   OAI-SearchBot
+GET /static/img/logo.svg                200   OAI-SearchBot
+  no .js  ·  no .css  ·  30 days  ·  83 requests
+Eighty three visits. Not one JavaScript file in the whole month. The only thing it fetched that was
+not a page was our logo, twice.
+The same thing from the other side
+A competitor publishes 53 pages on the terms we care about, against our one. We fetched a
+sample the way the crawler sees them. Most came back as “Loading…” and about forty words,
+no headline.5
+PAGES PUBLISHED
+53
+PAGES THE CRAWLER CAN ACTUALLY READ
+~5
+T H E P A R T T H A T S T I N G S
+They look like they are winning. Any tool that counts pages says they are winning. Before
+you copy anyone's volume, check whether the volume exists.
+Evidence · The crawler log
+07
+
+
+=== PAGE 8 ===
+M O V E 0 5
+Local answers come from Maps.
+Put a city in the question and the shortlist changes. It is built from map
+listings, ordered by stars and number of reviews. Your website pages do
+not take part.
+SEEN ON OUR OWN QUESTIONS
+5 of 5
+Mumbai questions in our 28
+September check opened with map
+listings that carried a star rating
+3
+map listings sat above every
+agency, including us, on one Big
+Billion Days question
+4.7
+stars and 182 reviews on the
+Google profile of the agency
+named most often in our panel
+A CHATGPT ANSWER, SIMPLIFIED
+SW Cybernetics
+★ 4.7 · 182 reviews · address · directions
+clickable: it is a map entry
+★ rating · reviews · address · directions
+clickable: another map entry
+Highprime Co
+plain text: no map listing was matched to us
+Why the names are clickable
+We opened the page code on 28 September. Each clickable name is a button that carries a local
+business record. Click it and you get a card with rating, address and directions. A name written
+as plain text was never matched to a record, so it gets no card and no stars.
+D O
+Create your Google Business Profile with your
+real business name and get it verified. Ask real
+clients for reviews and send them the review
+link. Add a reviewed profile where your buyers
+look, such as Clutch for agencies.
+D O N O T
+Stuff keywords into the name, even though
+some listings that rank do. Google's rules say
+the name is your real one, and a suspended
+profile helps nobody.
+W H A T W E D O N O T K N O W Y E T
+We submitted our own profile on 26 September and it is now verified. Whether it moves us
+from being cited as a source to being named is an open test, and reviews build slowly. A
+Clutch profile with reviews showed up as a source on our Amazon and Mumbai questions,
+but we have not tested whether adding one changes the answer.
+Move 05 · Maps and reviews
+08
+
+
+=== PAGE 9 ===
+P R O O F
+What a mention looks like.
+Three questions, logged out, one fresh chat each, captured on 28
+September 2026. We outlined Highprime Co in red.
+The revenue share question, prompt shown. Named first.
+Amazon agencies question. Named in the list.
+Flipkart agencies question. Named, with both
+fee models.
+One run each. Answers vary between runs, so read these as snapshots, not promises.
+W O R K W I T H U S
+One of the brands we work with gets about ₹1.5 to 2 lakh of
+business every month organically.
+We can do that for you too.
+We also build a custom website for ₹30,000. 
+Email us about it
+Proof · 28 September
+09
+
+
+=== PAGE 10 ===
+05
+Google rank does not carry over.
+WE WERE WRONG
+We believed AI visibility was a reward for good SEO. We tested it properly.
+It is not.
+We took the agencies ChatGPT names, then searched the same question on Google to see
+where those agencies actually rank.6
+5
+agencies ChatGPT
+named
+40
+results Google
+returned
+0
+IN COMMON
+Same question, same day, two completely different sets of businesses.
+Google returned Reddit, Quora, Justdial and an entirely different set of agencies. The second
+question we checked came back the same way: zero of five.
+A N D T H E C A S E T H A T S E T T L E S I T
+One of our own pages sits on Google page one for “best flipkart marketing agency in india”.
+On that exact phrase, the same day, ChatGPT would not name us at all.
+Two separate jobs, two separate budgets. Improving your Google position is worth doing, and it
+will not buy you a mention.
+What we got wrong · 01
+10
+
+
+=== PAGE 11 ===
+06
+LinkedIn does not help.
+WE WERE WRONG
+Our own recommendation, written on a Sunday, killed on the Monday.
+An agency ChatGPT names has a LinkedIn company page and we have nothing. Obvious
+conclusion: build the page. Before doing it we checked the losers too, which is the part nobody
+checks.7
+NAMED BY CHATGPT (n=49)
+69%
+IGNORED BY CHATGPT (n=20)
+100%
+Has a LinkedIn company page. The gap runs backwards, by 31 points.
+Every agency ChatGPT ignored has a LinkedIn page. Eight of the ones it recommends have
+none at all. That includes the one it puts at number one on a question we care about, above us.
+Across twenty three questions of checking where answers came from, not one has ever cited a
+LinkedIn page as a source.
+T H E L E S S O N W O R T H K E E P I N G
+Anything you can see on the winners, check on the losers before you spend a rupee. Most
+AI visibility advice is a list of things winners have, written by someone who never looked at
+the losers.
+What we got wrong · 02
+11
+
+
+=== PAGE 12 ===
+S A V E Y O U R M O N E Y
+Six things that did nothing.
+Each one was either sold to us as the answer, or something we already
+had and assumed was helping.
+WHAT
+WHAT WE FOUND
+Domain authority
+Ours has effectively none. We are named first on several questions
+Schema markup
+We carry the most in our set. An agency cited beside us has none
+Page speed
+We are the fastest and lightest in the set. It buys nothing
+Word count
+The site beating us has about a thousand words
+Blocking or allowing AI bots
+Named agencies do both
+Publishing more pages
+Only counts if the crawler can read them. See page 07
+One good surprise
+We were nervous about editing a page ChatGPT already recommends. We changed a number
+and watched.8
+T W O D A Y S , N O T T W O M O N T H S
+The new number carried through within two days and we held our position. When we
+added internal links, the crawler walked them in the order we added them and re-read six
+of our seven changed pages inside two days.
+Editing a winning page is safer than we expected, at least when you are changing a fact rather
+than rebuilding the page.
+What does nothing
+12
+
+
+=== PAGE 13 ===
+D O T H I S F I R S T
+Find where you stand.
+An hour, no tools, no budget. Do this before you change anything.
+W H A T Y O U W I L L P R O B A B L Y F I N D
+You are not being judged, you are being assembled. In our own check, six of seven
+category answers were built out of other people's “top 10” lists, most written by a
+business that had put itself at number one.9
+It happened to us too. Our own comparison articles were used as a source on four questions,
+and on all four we were not named. Twice it quoted our own pricing while calling us “one current
+Mumbai agency”.
+Being the source is not the same as being the recommendation.
+The check
+13
+Write down ten questions a real buyer would type. Not keywords. Questions, in their words,
+including the awkward ones about price.
+1
+Ask each one logged out, in a fresh chat. Logged out matters. Your own history will flatter
+you.
+2
+Write down every business it names, and in what order. Including the ones you have never
+heard of. Especially those.
+3
+Click “Sources” and read where the answer came from. Everybody skips this. It teaches
+more than the other four together.
+4
+Run your winners twice. Answers vary between runs. One run is an anecdote.
+5
+
+
+=== PAGE 14 ===
+D O T H I S W E E K
+Six things, in order.
+Only the last one needs a developer.
+I F Y O U D O O N L Y O N E
+Do the FAQ test. Ten seconds, nobody's permission needed, and on a good number of sites
+it explains the whole problem by itself.
+One experiment is still running as you read this. We changed a single headline on a single page and we are
+waiting to see whether the recommendation follows. We will publish the result either way, at
+highprimeco.com.
+Want us to run the ten questions on your site and send back what we find? Email us here. Edit
+only your brand name.
+Checklist
+14
+Run the ten questions. Logged out, fresh chat. Write down who gets named, then read the
+Sources.
+Do the ten second FAQ test. Ctrl+U, Ctrl+F, paste a sentence from one of your answers.
+Rewrite one headline. Your most important page. Say what you do in the words a buyer
+would type.
+Find your uncommon claim. Open five competitors. Whatever three of them also say, stop
+leading with it.
+Rewrite your section headings as sentences. Anything that reads like a folder name gets
+replaced.
+Send one line to your developer: our FAQ answers need to be in the page itself, not loaded in
+on a click.
+
+
+=== PAGE 15 ===
+S H O W Y O U R W O R K I N G
+Where these numbers came from.
+Every figure in this document, with the method and the date. All of it run on
+highprimeco.com between 11 and 22 September 2026.
+1
+Screenshots on pages 3 and 5
+Logged-out ChatGPT, one fresh chat per question, captured 16 Sep 2026. Screen recordings of both runs held alongside
+the stills.
+2
+The thousand-word competitor
+Teardown of the agency named above us on the Meta tracking question, 21 Sep. Word count, image count, reviews,
+press and Google position checked by hand.
+3
+Five claims, three wins
+A 16-question panel run logged out on 11, 13, 15 and 21 Sep. Same questions each time, named or not named recorded
+per run.
+4
+83 fetches, 0 JavaScript
+Our own server access logs, 30 days to 21 Sep, filtered to OpenAI's search crawler by user agent. Counted by file type.
+5
+53 pages, about 5 readable
+A sample of that competitor's pages fetched without JavaScript, the way the crawler fetches them, and word-counted.
+21 Sep.
+6
+Zero overlap with Google
+Every agency ChatGPT named on two questions, then the same question run on Google logged out, India,
+personalisation off, checked to result 40 and result 20. 21 Sep.
+7
+69% against 100%
+49 agencies ChatGPT named across 17 questions, against a control of 20 agencies that rank on Google for the same
+questions and are never named. Two LinkedIn lookups each; a hit counts only when the page name matches. 22 Sep.
+8
+Carried through in two days
+A single number changed on one page, then the crawler log and the answers watched daily afterwards. 12 to 15 Sep.
+9
+Six of seven answers assembled from lists
+The Sources panel opened and read on every answer in the panel, and each cited URL classified by what kind of page it
+was. 11 and 21 Sep.
+10
+Maps and reviews, page 8
+28 Sep panel: five Mumbai questions, each opened with rated map listings. 21 Sep: three local listings above every
+agency on a Big Billion Days question, and the most-cited agency's Google profile read at 4.7 stars, 182 reviews.
+Clickable names inspected in the page code, 28 Sep. Our profile submitted 26 Sep, verified by 9 Oct.
+11
+Screenshots on page 9
+Logged-out ChatGPT, one fresh chat per question, captured 28 September 2026. One run each.
+T H E H O N E S T L I M I T
+One website, one category, eleven days, logged out. Hold that against everything here. It is
+also eleven days more testing than most of the advice you will read on this.
+Sources & method
+15
+
+
+=== PAGE 16 ===
+Highprime
+©
+I F Y O U W O U L D R A T H E R N O T D O I T Y O U R S E L F
+We run this for
+D2C brands.
+We find where your buyers already are, on Google, Meta,
+Amazon, Flipkart, in AI answers and with creators, and we put
+you there. Nine years in business, twelve developers, an
+office in Thane.
+Our clients average 4.3 ROAS within the first six months. We
+work on a monthly retainer or on revenue share, where we
+take a smaller fee and a percentage of what we generate.
+O U R M A I N S E R V I C E S
+Meta ads · Amazon ads · Google Ads, and Google SEO.
+A custom website is ₹30,000: 5 core pages, up to 8 product pages and an admin panel,
+delivered in 4 days, with one free week of Google Ads.
+Send us an email, click here
+The email is pre-filled. Change only your brand name and website, send it, and we will set up a free
+consultation. Or write to siddhant@highprimeco.com.
+Highprime Co · a Team TSB company · Thane, Mumbai
+highprimeco.com/contact
+H
+
+

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function ExamplePost() {
@@ -5,7 +6,7 @@ export default function ExamplePost() {
     <div className={styles.pageWrapper} style={{ paddingLeft: "clamp(24px, 5vw, 64px)", paddingRight: "clamp(24px, 5vw, 64px)" }}>
       
       <div className={styles.breadcrumbs}>
-        <a href="/">Home</a> &gt; <a href="/blog">Blog</a> &gt; <span>Why Choose a Flutter Agency...</span>
+        <Link href="/">Home</Link> &gt; <Link href="/blog">Blog</Link> &gt; <span>Why Choose a Flutter Agency...</span>
       </div>
 
       <span className={styles.tag}>Development</span>
@@ -42,7 +43,7 @@ export default function ExamplePost() {
           Building a robust app requires more than just writing code. It involves strategy, UI/UX design, QA testing, backend architecture, and ongoing maintenance. An agency provides a dedicated team covering all these essential roles out of the box.
         </p>
         <p>
-          A single freelancer rarely possesses expert-level skills in all these domains simultaneously. Relying on one person can create bottlenecks and risk the project's timeline if they become unavailable or hit a technical wall outside their core expertise.
+          A single freelancer rarely possesses expert-level skills in all these domains simultaneously. Relying on one person can create bottlenecks and risk the project&apos;s timeline if they become unavailable or hit a technical wall outside their core expertise.
         </p>
 
         <div className={styles.inlineImage}>

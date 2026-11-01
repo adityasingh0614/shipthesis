@@ -19,7 +19,7 @@ export function Contact() {
             <div className={styles.timeline}>
               <div className={styles.step}>
                 <div className={styles.stepNum}>01</div>
-                <span className={styles.stepText}>Tell us what you're building</span>
+                <span className={styles.stepText}>Tell us what you&apos;re building</span>
               </div>
               <div className={styles.step}>
                 <div className={styles.stepNum}>02</div>

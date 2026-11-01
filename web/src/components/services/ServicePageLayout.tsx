@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { BookingCta } from "@/components/BookingCta";
 import styles from "./ServicePage.module.css";
 
@@ -32,6 +33,8 @@ export interface ServiceScreenshot {
 
 export interface ServiceCaseStudy {
   client: string;
+  clientLabel?: string;
+  eyebrow?: string;
   title: string;
   lede: string;
   timeline: string;
@@ -56,13 +59,15 @@ export interface ServiceFaq {
 export interface ServicePageProps {
   breadcrumbTitle: string;
   badgeText?: string;
-  title: string;
+  title: ReactNode;
   lede: string;
   heroImage: ServiceHeroImage;
   who: ServiceWhoBlock;
   caseStudy: ServiceCaseStudy;
   deliverables: ServiceDeliverable[];
   faqs: ServiceFaq[];
+  faqLede?: string;
+  ctaPrefix?: string;
   ctaTitle?: string;
   ctaLede?: string;
   jsonLd: Record<string, unknown>;
@@ -78,15 +83,125 @@ export function ServicePageLayout({
   caseStudy,
   deliverables,
   faqs,
+  faqLede = "Direct, honest answers on tech choices, scope, timelines, and post-launch maintenance.",
+  ctaPrefix = "services",
   ctaTitle = "Ready to ship your next product?",
   ctaLede = "Book a free 20-minute call to get an honest technical assessment of your idea and a timeline for your first build.",
   jsonLd,
 }: ServicePageProps) {
+  // Assemble comprehensive Schema.org graph for SEO, AEO, and GEO
+  const existingGraph = Array.isArray(jsonLd?.["@graph"])
+    ? (jsonLd["@graph"] as Record<string, unknown>[])
+    : [];
+  const serviceEntity = existingGraph.find((item) => item["@type"] === "Service");
+  const rawId = (serviceEntity?.["@id"] as string) || "";
+  const pageUrl = rawId ? rawId.replace(/#.*$/, "") : `https://www.shipthesis.com/${ctaPrefix}-development`;
+
+  const webPageEntity = {
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: typeof title === "string" ? title : breadcrumbTitle,
+    description: lede,
+    isPartOf: {
+      "@id": "https://www.shipthesis.com/#website",
+    },
+    breadcrumb: {
+      "@id": `${pageUrl}#breadcrumb`,
+    },
+  };
+
+  const breadcrumbEntity = {
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.shipthesis.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.shipthesis.com/#services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: breadcrumbTitle,
+        item: pageUrl,
+      },
+    ],
+  };
+
+  const faqEntity = {
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    isPartOf: {
+      "@id": `${pageUrl}#webpage`,
+    },
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  const enrichedService = serviceEntity
+    ? {
+        ...serviceEntity,
+        provider: {
+          "@type": "Organization",
+          "@id": "https://www.shipthesis.com/#organization",
+          name: "Ship Thesis",
+          url: "https://www.shipthesis.com",
+        },
+        termsOfService: "https://www.shipthesis.com/terms",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: `${breadcrumbTitle} Deliverables`,
+          itemListElement: deliverables.map((d, idx) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: d.title,
+              description: d.desc,
+            },
+            position: idx + 1,
+          })),
+        },
+      }
+    : null;
+
+  const otherEntities = existingGraph.filter(
+    (item) =>
+      item["@type"] !== "Service" &&
+      item["@type"] !== "FAQPage" &&
+      item["@type"] !== "BreadcrumbList" &&
+      item["@type"] !== "WebPage"
+  );
+
+  const fullSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      webPageEntity,
+      breadcrumbEntity,
+      ...(enrichedService ? [enrichedService] : []),
+      faqEntity,
+      ...otherEntities,
+    ],
+  };
+
   return (
     <article className={styles.page}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(fullSchema) }}
       />
 
       {/* 01. Hero Section (Zero background box around phone, matches home design) */}
@@ -107,7 +222,12 @@ export function ServicePageLayout({
               </span>
             </nav>
 
-
+            {badgeText && (
+              <div className={styles.statusBadge}>
+                <span className={styles.statusDot} aria-hidden="true" />
+                <span>{badgeText}</span>
+              </div>
+            )}
           </div>
 
           <div className={styles.heroGrid}>
@@ -116,7 +236,7 @@ export function ServicePageLayout({
               <p className={styles.heroLede}>{lede}</p>
 
               <div className={styles.heroActions}>
-                <BookingCta location="services">
+                <BookingCta location={`${ctaPrefix}-hero`}>
                   Book a free 20-minute call
                 </BookingCta>
                 <a href="#case-study" className={styles.secondaryAction}>
@@ -236,7 +356,7 @@ export function ServicePageLayout({
       <section className={`${styles.section} ${styles.sectionAlt}`} id="case-study">
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
-            <span className={styles.sectionEyebrow}>Verified Case Study</span>
+            <span className={styles.sectionEyebrow}>{caseStudy.eyebrow || "Case Study"}</span>
             <h2 className={styles.sectionTitle}>{caseStudy.title}</h2>
             <p className={styles.sectionLede}>{caseStudy.lede}</p>
           </div>
@@ -245,7 +365,7 @@ export function ServicePageLayout({
             {/* Meta Row */}
             <div className={styles.caseMetaBar}>
               <div className={styles.caseMetaGroup}>
-                <span className={styles.caseMetaLabel}>Client:</span>
+                <span className={styles.caseMetaLabel}>{caseStudy.clientLabel || "Client"}:</span>
                 <span className={styles.caseMetaValue}>{caseStudy.client}</span>
               </div>
               <div className={styles.caseMetaGroup}>
@@ -350,7 +470,7 @@ export function ServicePageLayout({
             <span className={styles.sectionEyebrow}>Transparency</span>
             <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
             <p className={styles.sectionLede}>
-              Direct, honest answers on tech choices, offline persistence, store approval, and post-launch maintenance.
+              {faqLede}
             </p>
           </div>
 
@@ -380,7 +500,7 @@ export function ServicePageLayout({
           </h2>
           <p className={styles.callLede}>{ctaLede}</p>
           <div className={styles.callActions}>
-            <BookingCta location="services" variant="button" className={styles.callBtn} />
+            <BookingCta location={`${ctaPrefix}-callband`} variant="button" className={styles.callBtn} />
           </div>
         </div>
       </section>
