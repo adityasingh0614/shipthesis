@@ -142,7 +142,7 @@ export default function MvpDevelopmentPage() {
           },
         ],
         whatShipped: [
-          "1-week discovery architecture, schema design, and interactive prototype",
+          "System architecture, database schema design, and interactive prototype",
           "Production mobile build with crash-proof offline SQLite database layer",
           "Dual submission setup for Apple App Store and Google Play Store",
         ],

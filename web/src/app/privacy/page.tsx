@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             <strong>Inquiries &amp; Scoping Questionnaires:</strong> When reaching out via our contact form or direct email, we collect your name, email, company entity, and written project parameters.
           </li>
           <li className={styles.listItem}>
-            <strong>Project &amp; Technical Assets:</strong> During active Discovery Sprints and MVP builds, Client may provide access to user journey wireframes, Figma designs, technical requirement documents, API documentation, and staging credentials.
+            <strong>Project &amp; Technical Assets:</strong> During active MVP builds, Client may provide access to user journey wireframes, Figma designs, technical requirement documents, API documentation, and staging credentials.
           </li>
           <li className={styles.listItem}>
             <strong>Invoicing &amp; Billing Records:</strong> For statutory accounting and contract execution, we collect legal entity names, billing addresses, tax registration identifiers (e.g., GSTIN or VAT numbers where applicable), and payment contact details. Payment card credentials are tokenized directly by our PCI-compliant payment gateways and are never accessible to our servers.
@@ -116,7 +116,7 @@ export default function PrivacyPage() {
         </p>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Contract Performance:</strong> Delivering Discovery Sprints, designing user interfaces, writing clean source code, conducting automated testing, and deploying mobile builds to Client accounts.
+            <strong>Contract Performance:</strong> Designing user interfaces, writing clean source code, conducting automated testing, and deploying builds to Client accounts.
           </li>
           <li className={styles.listItem}>
             <strong>Direct Communication:</strong> Conducting scheduled video discovery calls, delivering weekly interactive sprint builds, and providing ongoing engineering updates via email or Slack.

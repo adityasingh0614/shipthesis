@@ -123,7 +123,7 @@ const PROJECTS: Project[] = [
       { src: "/logo/razorpay-icon.svg", label: "Razorpay" },
     ],
     time: "3-4 weeks",
-    status: "Delivered, launching soon",
+    status: "Delivered",
     slug: "assess-yourself",
   },
 ];

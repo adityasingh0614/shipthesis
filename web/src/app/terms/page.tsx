@@ -48,12 +48,9 @@ export default function TermsPage() {
           These Terms of Service (&ldquo;Terms&rdquo;) govern all design, architecture, engineering, and consulting services provided by <strong>Ship Thesis Studio</strong> (&ldquo;Ship Thesis&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;Studio&rdquo;) to the startup founder, company, or legal entity entering into an engagement (&ldquo;Client&rdquo; or &ldquo;you&rdquo;).
         </p>
         <p className={styles.bodyText}>
-          We deliver services strictly under written, mutually approved Statements of Work (SOWs) or sprint agreements across three standardized models:
+          We deliver services strictly under written, mutually approved Statements of Work (SOWs) or sprint agreements across two standardized models:
         </p>
         <ul className={styles.list}>
-          <li className={styles.listItem}>
-            <strong>Discovery Sprint (1 week):</strong> An intensive exploratory sprint delivering a written product specification, feature taxonomy (&ldquo;version one&rdquo; vs. &ldquo;future roadmap&rdquo;), user journey wireframes, system architecture plan, and a fixed quote with milestone timelines.
-          </li>
           <li className={styles.listItem}>
             <strong>MVP Build (shipped in weeks):</strong> End-to-end design, database modeling, and production-grade software development with weekly testable builds delivered directly to Client devices for verification.
           </li>
@@ -105,13 +102,7 @@ export default function TermsPage() {
           <li className={styles.numItem}>
             <span className={styles.numBadge}>1</span>
             <div>
-              <strong>Discovery Sprint:</strong> Fixed advance fee agreed prior to sprint kickoff. If Client commissions the full MVP Build within thirty (30) days of sprint completion, the Discovery Sprint fee is credited directly toward the build cost. If Client elects not to continue, Client retains all Discovery deliverables unconditionally.
-            </div>
-          </li>
-          <li className={styles.numItem}>
-            <span className={styles.numBadge}>2</span>
-            <div>
-              <strong>MVP Build Milestone Schedule:</strong>
+              <strong>MVP Build Milestone Schedule (30% / 40% / 30%):</strong>
               <ul className={styles.list}>
                 <li className={styles.listItem}><strong>30% Kickoff Deposit:</strong> Due prior to sprint scheduling, design system initialization, and repository setup.</li>
                 <li className={styles.listItem}><strong>40% Mid-Build Milestone:</strong> Invoiced upon delivery of the interactive mid-stage test build demonstrating core user authentication and primary feature flows.</li>
@@ -120,7 +111,7 @@ export default function TermsPage() {
             </div>
           </li>
           <li className={styles.numItem}>
-            <span className={styles.numBadge}>3</span>
+            <span className={styles.numBadge}>2</span>
             <div>
               <strong>Payment Terms &amp; Sprint Continuity:</strong> Invoices are payable within seven (7) business days of issuance. If an invoice remains unpaid past fourteen (14) days, Ship Thesis reserves the right to pause active development sprints without incurring project delay penalties until the account is brought current.
             </div>

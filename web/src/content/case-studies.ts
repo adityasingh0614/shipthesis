@@ -64,8 +64,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         ["Service", "Mobile app design and development"],
       ],
     },
-    // TODO(owner): update with the Play Store link and real numbers once live
-    stamp: { status: "Delivered · launching soon", variant: "admit" },
+    stamp: { status: "Delivered", variant: "admit" },
     hero: {
       src: "/work/assess-yourself/hero.webp",
       width: 1400,

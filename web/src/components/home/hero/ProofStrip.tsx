@@ -39,7 +39,7 @@ const APPS = [
     mark: "AY",
     color: "#283593",
     type: "Mobile app",
-    status: "Delivered, launching soon",
+    status: "Delivered",
     slug: "assess-yourself",
     iconSrc: "/logo/ay_logo.webp",
   },

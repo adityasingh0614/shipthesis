@@ -297,7 +297,7 @@ export function AssessYourselfBody() {
                   <small>Students</small>Exam discovery, timed tests and instant analysis in one app.
                 </li>
                 <li>
-                  <small>Status</small>Delivered, launching on the Play Store soon.
+                  <small>Status</small>Delivered to client.
                 </li>
               </ul>
             </Reveal>
