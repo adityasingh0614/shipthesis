@@ -86,6 +86,10 @@ export function WhatWeBuild() {
           </Link>
         </div>
 
+        <p className={styles.includedNote}>
+          UX/UI design and App Store submission come with every build. After launch, maintenance is available as a plan.
+        </p>
+
         <div className={styles.bottomNote}>
           <span className={styles.notePrefix}>
             Need something else, like desktop software or internal tools?{" "}

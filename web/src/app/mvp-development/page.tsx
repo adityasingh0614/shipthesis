@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "MVP Development for Startups | Shipped in Weeks",
+  title: "MVP Development for Startups | Fixed Scope, Built in Weeks",
   description:
     "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
   alternates: {
     canonical: "/mvp-development",
   },
   openGraph: {
-    title: "MVP Development for Startups | Shipped in Weeks · Ship Thesis",
+    title: "MVP Development for Startups | Fixed Scope, Built in Weeks · Ship Thesis",
     description:
       "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
     url: "https://www.shipthesis.com/mvp-development",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MVP Development for Startups | Shipped in Weeks · Ship Thesis",
+    title: "MVP Development for Startups | Fixed Scope, Built in Weeks · Ship Thesis",
     description:
       "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
     images: ["https://www.shipthesis.com/opengraph-image.png"],
@@ -58,7 +58,7 @@ export default function MvpDevelopmentPage() {
     <ServicePageLayout
       breadcrumbTitle="MVP Development"
       badgeText="Status: 1 Sprint Slot Open"
-      title="Your MVP, live in weeks. Fixed price, weekly builds."
+      title="Production MVPs for founders, shipped in weeks"
       lede="Turn your product idea into software real customers can use. Test a working build every Friday, pay by milestone, and own the code from day one."
       ctaPrefix="mvp"
       faqLede="Direct, honest answers on scope, weekly builds, intellectual property, and warranties."
@@ -172,12 +172,12 @@ export default function MvpDevelopmentPage() {
       ]}
       faqs={[
         {
-          q: "What's included in an MVP build?",
+          q: "What's included in the MVP build?",
           a: "Everything needed to put a first version in front of customers: upfront planning, technical architecture, approved screens, the app or web product (Flutter or Next.js), a backend with logins, payment setup, and store submission or deployment.",
         },
         {
           q: "How long does it take?",
-          a: "4 to 6 weeks for a tightly scoped first version; larger scopes take longer. We start with an upfront planning sprint to lock the scope, and you test a working build on your phone or web every week.",
+          a: "In weeks, not months. Every project is scoped first, and you test a working build on your phone or web every week.",
         },
         {
           q: "How does the fixed-price milestone model work?",

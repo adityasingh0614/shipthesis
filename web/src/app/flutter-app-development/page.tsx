@@ -183,7 +183,7 @@ export default function FlutterAppDevelopmentPage() {
         },
         {
           q: "How long does it take?",
-          a: "4 to 6 weeks for a focused mobile MVP; larger scopes take longer. Assess Yourself was delivered in 3 to 4 weeks. In every case, we start with an upfront planning sprint to lock the screens and offline sync rules, and you test a working build on your phone every Friday.",
+          a: "In weeks, not months. In every case, we start with an upfront planning sprint to lock the screens and offline sync rules, and you test a working build on your phone every Friday.",
         },
         {
           q: "How does the fixed-price milestone model work?",

@@ -122,7 +122,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       fields: [
         ["Type", "Our own product"],
         ["Platform", "Web app"],
-        ["Stack", "Next.js · Supabase · Gemini"],
+        ["Stack", "Next.js · Supabase · Stripe"],
+        ["Timeline", "4 weeks"],
       ],
       more: [
         ["Industry", "Social media marketing"],

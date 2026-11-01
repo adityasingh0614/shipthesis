@@ -219,3 +219,13 @@
     display: none;
   }
 }
+
+
+.includedNote {
+  margin: 14px auto 0;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  max-width: 640px;
+}

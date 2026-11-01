@@ -24,9 +24,9 @@ const mono = JetBrains_Mono({
 
 const SITE_URL = "https://www.shipthesis.com";
 const SITE_NAME = "Ship Thesis";
-const HOME_TITLE = "Ship Thesis";
+const HOME_TITLE = "Ship Thesis | Mobile Apps and SaaS for US Founders";
 const SITE_DESCRIPTION =
-  "We build mobile apps and SaaS MVPs for founders. A working build on your phone every week, fixed-scope milestones, and code you own.";
+  "Mobile apps and SaaS for US founders. Simple, well-built software, a working build every week, and code you own. Nothing flashy.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -55,7 +55,7 @@ export default function TermsPage() {
             <strong>Discovery Sprint (1 week):</strong> An intensive exploratory sprint delivering a written product specification, feature taxonomy (&ldquo;version one&rdquo; vs. &ldquo;future roadmap&rdquo;), user journey wireframes, system architecture plan, and a fixed quote with milestone timelines.
           </li>
           <li className={styles.listItem}>
-            <strong>MVP Build (typically 6–10 weeks):</strong> End-to-end design, database modeling, and production-grade software development with weekly testable builds delivered directly to Client devices for verification.
+            <strong>MVP Build (shipped in weeks):</strong> End-to-end design, database modeling, and production-grade software development with weekly testable builds delivered directly to Client devices for verification.
           </li>
           <li className={styles.listItem}>
             <strong>Product &amp; App Care:</strong> Recurring monthly retainers providing proactive dependency upgrades, operating system target compliance (iOS/Android), vulnerability patching, uptime monitoring, and continuous minor feature iterations.

@@ -203,7 +203,7 @@ export default function AiProductDevelopmentPage() {
         },
         {
           q: "How long does it take?",
-          a: "4 to 6 weeks for a focused first version; larger scopes take longer. We start with upfront planning to map schemas and evaluate test documents, and you test working software every week.",
+          a: "In weeks, not months. We start with upfront planning to map schemas and evaluate test documents, and you test working software every week.",
         },
         {
           q: "What happens after launch?",

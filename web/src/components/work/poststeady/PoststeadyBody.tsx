@@ -99,7 +99,7 @@ export function PoststeadyBody() {
                 Built by<b>Ship Thesis</b>
               </div>
               <div>
-                Timeline<b>11 weeks</b>
+                Timeline<b>4 weeks</b>
               </div>
             </div>
             {[

@@ -170,7 +170,7 @@ export default function SaasDevelopmentPage() {
         },
         {
           q: "How long does it take?",
-          a: "4 to 6 weeks for a focused first version; larger scopes take longer. We start with upfront planning to lock the database models and workflows, and you test a working build in your browser every week.",
+          a: "In weeks, not months. We start with upfront planning to lock the database models and workflows, and you test a working build in your browser every week.",
         },
         {
           q: "How does the fixed-price milestone payment model work?",
