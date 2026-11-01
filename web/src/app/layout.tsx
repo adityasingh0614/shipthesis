@@ -89,12 +89,23 @@ const jsonLd = {
         "UX / UI Design",
       ],
       areaServed: "Worldwide",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "info@shipthesis.com",
+        url: "https://cal.com/aditya-kumar-singh/20min",
+      },
+      sameAs: [
+        "https://github.com/adityasingh0614",
+        "https://cal.com/aditya-kumar-singh/20min",
+      ],
     },
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: SITE_NAME,
+      description: SITE_DESCRIPTION,
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },

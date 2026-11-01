@@ -9,7 +9,7 @@ export function Contact() {
           
           {/* Left Column: CTA & Timeline */}
           <div className={styles.leftCol}>
-            <h2 className={styles.title}>Ready to ship your next product?</h2>
+            <h2 id="contact-title" className={styles.title}>Ready to ship your next product?</h2>
             <p className={styles.lede}>
               Book a free 20-minute call to get an honest technical assessment of your idea and a timeline for your first build.
             </p>
@@ -34,7 +34,7 @@ export function Contact() {
 
           {/* Right Column: Partnership & Comms Card */}
           <div className={styles.card}>
-            <h4 className={styles.cardTitle}>Direct Partnership &amp; Comms</h4>
+            <h3 className={styles.cardTitle}>Direct Partnership &amp; Comms</h3>
             
             <ul className={styles.methods}>
               <li className={styles.method}>
