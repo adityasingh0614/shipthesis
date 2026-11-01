@@ -28,6 +28,7 @@ export function SiteFooter() {
                 <li><Link href="/#work" className={styles.link}>Case Studies</Link></li>
                 <li><Link href="/#services" className={styles.link}>Services Overview</Link></li>
                 <li><Link href="/#process" className={styles.link}>How It Works</Link></li>
+                <li><Link href="/#contact" className={styles.link}>Contact Us</Link></li>
               </ul>
             </div>
 
