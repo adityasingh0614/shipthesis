@@ -1,0 +1,322 @@
+SAGE SEO/AEO/GEO REPORT
+══════════════════════════════════════════════════
+URL: https://www.shipthesis.com/saas-development
+Date: 11/2/2026, 12:53:42 AM
+Overall Score: 71/100
+══════════════════════════════════════════════════
+
+Structured Data & Schema - Score: 76/100
+----------------------------------------
+  ✓ JSON-LD blocks found: 2
+  ✓ Schema types: Organization, ProfessionalService, WebSite, WebPage, BreadcrumbList, Service, FAQPage
+  ✓ GEO-critical schema types present (5)
+    → FAQPage, Organization, BreadcrumbList, WebPage, WebSite
+  ✓ Schema structure validated
+    → All detected types have required properties
+  ⚠ Schema completeness: 15 recommendation(s)
+    → Several recommended properties are missing
+    Found:
+      • Organization: consider adding address
+      • WebSite: consider adding potentialAction
+      • WebPage: consider adding datePublished, dateModified
+      • Organization: consider adding logo, description, sameAs, contactPoint, address
+      • FAQPage: consider adding description
+      • Question: consider adding text, suggestedAnswer, upvoteCount, dateCreated
+      • Question: consider adding text, suggestedAnswer, upvoteCount, dateCreated
+      • Question: consider adding text, suggestedAnswer, upvoteCount, dateCreated
+  ✓ Rich nested schema (depth: 4)
+    → Nested entities improve LLM understanding of relationships
+  ℹ No Speakable schema
+    → Consider adding speakable property for voice/LLM readiness
+  ✓ sameAs links found
+    → Helps LLMs disambiguate entities
+  ℹ RDFa markup detected
+    → JSON-LD is preferred for LLM consumption
+
+Semantic HTML - Score: 73/100
+----------------------------------------
+  ✓ Single H1 tag found
+    → "Custom SaaS for founders, live in weeks"
+  ⚠ Heading hierarchy has skipped levels
+    → Don't jump from H2 to H4 - maintain logical nesting
+    Found:
+      • H2 → H4 (missing: H3)
+  ✓ Rich semantic HTML (6 tag types)
+    → : 1, : 1, : 6, : 3, : 1, : 1
+  ✓ Single  element found
+    → Agents can identify primary content area
+  ℹ No  elements
+    → Use  for publish/update dates
+  ✕ Text-to-HTML ratio: 5%
+    → Very low - content may be JS-rendered or buried in markup
+  ✓ Word count: 714
+    → Sufficient content depth for LLM extraction
+  ℹ Reading level: moderate (Flesch: 58)
+    → Content may be complex - consider simplifying for broader LLM coverage
+
+Accessibility for Agents - Score: 98/100
+----------------------------------------
+  ✓ Language declared: "en"
+    → Agents know what language to expect
+  ✓ Skip-to-content link found
+    → Helps keyboard users and agents navigate directly to main content
+  ✓ All 6 images have alt attributes
+    → 5 descriptive, 1 decorative (empty alt)
+  ✓ Implicit landmarks via semantic HTML
+    → Semantic elements provide landmark equivalents
+  ✓ All links have descriptive text
+    → Agents can understand link purpose from anchor text
+  ℹ No form inputs on page
+  ✓ Interactive elements are keyboard-accessible
+    → No tabindex="-1" on interactive elements, no non-focusable click handlers
+
+Internal Linking - Score: 94/100
+----------------------------------------
+  ✓ Internal links: 29
+    → Good internal link density for crawling
+  ✓ Navigation elements: 3
+    → Agents can identify site navigation
+  ✓ Breadcrumb navigation detected
+    → Helps agents understand site hierarchy and page context
+  ℹ In-page anchor links: 2
+    → Consider adding a table of contents with anchor links
+  ℹ External links: 6
+    → External links to authoritative sources build credibility
+  ✓ Internal link anchor texts are descriptive
+    → Descriptive anchors help agents understand link context
+  ℹ Breadcrumb depth: 2 levels
+    → Good hierarchical depth
+  ✓ Page has navigation and footer links
+    → Page is well-connected to site structure
+
+Meta & Discoverability - Score: 100/100
+----------------------------------------
+  ✓ Title tag: 47 chars
+    → "SaaS MVP Development for Founders · Ship Thesis"
+  ✓ Meta description: 134 chars
+    → "We build SaaS products with logins, billing and dashboards in weeks. Upfront pla..."
+  ✓ Canonical URL set
+    → https://www.shipthesis.com/saas-development
+  ✓ Open Graph tags: 9
+    → og:title, og:description, og:url, og:site_name, og:image, og:image:width, og:image:height, og:image:alt, og:type
+  ✓ Twitter Card tags: 4
+  ℹ No hreflang tags
+    → Add if content is available in multiple languages/regions
+  ✓ Viewport meta tag set
+
+Machine Readability - Score: 85/100
+----------------------------------------
+  ✓ Substantial content in DOM (4411 chars)
+    → Content appears server-rendered or hydrated
+  ✓ No restrictive robots meta
+    → Page is open for indexing
+  ✓ No AI bot restrictions in meta
+    → No specific bot blocking detected in page HTML
+  ℹ robots.txt check skipped
+    → Host permission not granted
+  ℹ X-Robots-Tag check skipped
+    → Host permission not granted
+  ℹ llms.txt check skipped
+    → Host permission not granted
+
+Entity & Authority - Score: 10/100
+----------------------------------------
+  ℹ No author information detected
+    → Author data helps LLMs assess content credibility (E-E-A-T)
+  ⚠ No publication date detected
+    → LLMs prefer content with clear recency signals
+  ℹ No About/Contact page links detected
+    → Link to organizational info for E-E-A-T
+  ✓ Legal pages linked
+    → Privacy: yes, Terms: yes
+
+Citability & Answer-Readiness - Score: 64/100
+----------------------------------------
+  ✓ FAQ/Q&A content detected
+    → 22 details/summary, 42 FAQ-like elements
+  ℹ No definition lists
+    → Use  /  /  for term definitions - highly extractable
+  ℹ No data tables
+    → Tables with headers are excellent for structured data extraction
+  ✓ Content lists: 4
+    → Lists are easy for LLMs to cite and restructure
+  ✓ Lead paragraph is answer-sized
+    → 154 chars - ideal length for LLM extraction as a direct answer
+  ⚠ Only 1/13 headings have IDs
+    → Add IDs to all headings for deep linking and section references
+
+Performance & Crawlability - Score: 78/100
+----------------------------------------
+  ✓ All images have width/height attributes
+    → Prevents layout shift (CLS) during loading
+  ⚠ 2 image(s) without loading="lazy"
+    → Add loading="lazy" to below-the-fold images
+  ⚠ 4 render-blocking script(s)
+    → Add defer or async to scripts for faster page load
+    Found:
+      • /_next/static/immutable/chunks/0c0hxoamwjsbw.js
+      • https://app.cal.com/embed/embed.js
+      • /_next/static/immutable/chunks/2fe9pzc_iciis.js
+      • /_next/static/immutable/chunks/036wdlq3cjlnn.js
+  ℹ Could not verify font-display in external stylesheets
+    → Use font-display: swap in @font-face for faster text rendering
+  ✓ DOM size: 442 elements
+    → Reasonable DOM size for fast parsing
+  ✓ All images are under 200KB
+    → 60 image(s) checked via Resource Timing
+  ✓ Total image weight: 0.0MB
+    → 60 image(s) totaling under 1MB
+
+Agent Interactivity (WebMCP) - Score: 18/100
+----------------------------------------
+  ℹ No WebMCP declarative tools detected
+    → Add toolname, tooldescription, and toolparamdescription attributes to forms to enable AI agent interaction
+  ℹ No WebMCP imperative API usage detected
+    → Use navigator.modelContext.registerTool() for complex, multi-step tool workflows beyond simple form submissions
+  ℹ No WebMCP SDK/polyfill detected
+    → Consider @mcp-b/global polyfill or @mcp-b/react-webmcp for early WebMCP adoption
+  ℹ No forms found on page
+    → Forms with WebMCP attributes are the easiest way to expose actions to AI agents
+  ℹ No forms to check for dynamic IDs
+  ℹ FAQ page: consider adding WebMCP tools
+    → Recommended tools for this page type: searchFAQ, submitQuestion
+
+URL & Technical SEO - Score: 71/100
+----------------------------------------
+  ✓ URL slug is clean and well-structured
+    → Path: /saas-development
+  ✓ URL depth is 1 (ideal: 1-3)
+  ✓ No URL query parameters
+    → Clean URL without query strings
+  ✓ Viewport meta tag with width=device-width
+  ✕ Only 0% of images use modern formats
+    → 0/6 images. Use WebP or AVIF for faster loading and better SEO
+  ℹ No  in HTML head
+    → Consider adding a sitemap link for discoverability
+
+Answer Targeting & Snippets - Score: 13/100
+----------------------------------------
+  ⚠ 2 question-based headings found
+    → Add more question headings (5+) to target featured snippets
+    Found:
+      • When we recommend alternatives
+      • Ready to build your web platform?
+  ✕ Few question headings followed by ideal-length paragraphs
+    → Follow question headings with 40-60 word paragraphs to target featured snippets
+  ✕ No direct definition patterns found
+    → Start paragraphs with patterns like "X is a...", "X refers to..." for answer engines
+  ℹ No "how to" headings with ordered lists detected
+    → Use  after "How to" headings to target step snippets
+  ℹ No comparison tables detected
+    → Add tables with 3+ columns and rows for table featured snippets
+  ℹ No PAA-style Q&A sequences detected
+    → Group related questions with concise answers to target People Also Ask boxes
+
+Voice & Conversational Readiness - Score: 60/100
+----------------------------------------
+  ✕ No speakable schema property found
+    → Add "speakable" to your JSON-LD to indicate voice-friendly content sections
+  ⚠ Reading ease score: 59 (moderately complex)
+    → Avg sentence: 13 words. Shorten sentences for voice readiness
+  ✓ 63% of paragraphs are voice-friendly length (20-50 words)
+    → 17/27 paragraphs in the ideal range
+  ✓ FAQPage schema found
+    → Enables Google voice answers from FAQ content
+  ⚠ Avg word complexity: 1.6 syllables/word (moderate)
+    → Consider using simpler words for better voice comprehension
+
+Redirect & Protocol - Score: 100/100
+----------------------------------------
+  ✓ No redirects detected
+    → Page loaded without any redirects
+  ✓ No redirect latency
+    → Zero redirect overhead
+  ✓ Current URL matches canonical
+    → No canonical mismatch after redirects
+  ✓ Page served over HTTPS
+    → Secure connection confirmed
+
+Keyword Density - Score: 88/100
+----------------------------------------
+  ℹ Top keywords: built, build, saas, web, weeks
+    → "built" (7× / 0.98%), "build" (7× / 0.98%), "saas" (5× / 0.7%), "web" (5× / 0.7%), "weeks" (5× / 0.7%)
+  ℹ Top 2-word phrases: free 20-minute, 20-minute call, ehs guru
+    → "free 20-minute" (3× / 0.42%), "20-minute call" (3× / 0.42%), "ehs guru" (3× / 0.42%)
+  ℹ Top 3-word phrases: free 20-minute call
+    → "free 20-minute call" (3× / 0.42%)
+  ⚠ 1 top keyword found in title
+    → "saas" - consider adding more relevant keywords
+  ✓ 2 top keywords found in H1
+    → "saas", "weeks"
+  ✓ 3 top keywords found in meta description
+    → "build", "saas", "weeks"
+  ✓ Keyword density is natural (top: 0.98%)
+    → No keyword stuffing detected
+
+AI VIEW
+----------------------------------------
+Score: 100/100
+Verdict: Strong machine understanding
+Topic: Custom SaaS for founders, live in weeks
+Summary: We build SaaS products with logins, billing and dashboards in weeks. Upfront planning, weekly working builds, and code in your GitHub.
+First visible text: Web apps with logins, billing and dashboards, built around how your business actually works. A working build in your browser every week, and code you own. 20 minutes · No pitch · You speak directly with our engineering team.
+
+What AI Sees First:
+  - Title: SaaS MVP Development for Founders · Ship Thesis (good)
+  - Meta description: We build SaaS products with logins, billing and dashboards in weeks. Upfront planning, weekly working builds, and code in your GitHub. (good)
+  - H1: Custom SaaS for founders, live in weeks (good)
+  - First useful text: Web apps with logins, billing and dashboards, built around how your business actually works. A working build in your browser every week, and code you own. 20 minutes · No pitch · You speak directly with our engineering team. (good)
+  - Schema: Organization, ProfessionalService, WebSite (good)
+  - Top entities: MVP, EHS, FAQ, SHIP, THESIS, SERVICES (good)
+
+Score Breakdown:
+  - Identity: 100/100 - Title, description, canonical, and language signals.
+  - Structure: 100/100 - H1, heading outline, and clear section hierarchy.
+  - Schema: 100/100 - JSON-LD type coverage and useful schema fields.
+  - Content clarity: 100/100 - Visible text, concise summary, and entity clarity.
+  - Links, media & crawl: 100/100 - Readable links, image labels, and robots directives.
+
+Missing Signals:
+  - No missing AI View signals found.
+
+Identity:
+  Title: SaaS MVP Development for Founders · Ship Thesis
+  Description: We build SaaS products with logins, billing and dashboards in weeks. Upfront planning, weekly working builds, and code in your GitHub.
+  Canonical: https://www.shipthesis.com/saas-development
+  Language: en
+  Page type: faq
+  Entities: MVP, EHS, FAQ, SHIP, THESIS, SERVICES, SAAS, WEB, PLATFORMS, STATUS, SPRINT, SLOT
+  Words: 794; Links: 37; Images missing alt: 0
+
+KEYWORD DENSITY (1-WORD)
+----------------------------------------
+  "built" — 7× (0.98%)
+  "build" — 7× (0.98%)
+  "saas" — 5× (0.7%)
+  "web" — 5× (0.7%)
+  "weeks" — 5× (0.7%)
+  "billing" — 5× (0.7%)
+  "zoom" — 5× (0.7%)
+  "code" — 4× (0.56%)
+  "ehs" — 4× (0.56%)
+  "platform" — 4× (0.56%)
+
+KEYWORD DENSITY (2-WORD PHRASES)
+----------------------------------------
+  "free 20-minute" — 3× (0.42%)
+  "20-minute call" — 3× (0.42%)
+  "ehs guru" — 3× (0.42%)
+  "intellectual property" — 3× (0.42%)
+  "case study" — 2× (0.28%)
+  "per-seat fees" — 2× (0.28%)
+  "web platform" — 2× (0.28%)
+  "student dashboard" — 2× (0.28%)
+  "automated zoom" — 2× (0.28%)
+  "admins trainers" — 2× (0.28%)
+
+KEYWORD DENSITY (3-WORD PHRASES)
+----------------------------------------
+  "free 20-minute call" — 3× (0.42%)
+
+
+Generated by SAGE - SEO, AEO & GEO Engine

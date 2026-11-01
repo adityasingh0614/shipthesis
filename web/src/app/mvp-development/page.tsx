@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "MVP Development for Startups | Fixed Scope, Built in Weeks",
+  title: "MVP Development for Startups | Fixed Scope",
   description:
     "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
   alternates: {
     canonical: "/mvp-development",
   },
   openGraph: {
-    title: "MVP Development for Startups | Fixed Scope, Built in Weeks · Ship Thesis",
+    title: "MVP Development for Startups | Fixed Scope · Ship Thesis",
     description:
       "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
     url: "https://www.shipthesis.com/mvp-development",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MVP Development for Startups | Fixed Scope, Built in Weeks · Ship Thesis",
+    title: "MVP Development for Startups | Fixed Scope · Ship Thesis",
     description:
       "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
     images: ["https://www.shipthesis.com/opengraph-image.png"],
@@ -57,7 +57,6 @@ export default function MvpDevelopmentPage() {
   return (
     <ServicePageLayout
       breadcrumbTitle="MVP Development"
-      badgeText="Status: 1 Sprint Slot Open"
       title="Production MVPs for founders, shipped in weeks"
       lede="Turn your product idea into software real customers can use. Test a working build every Friday, pay by milestone, and own the code from day one."
       ctaPrefix="mvp"

@@ -57,7 +57,6 @@ export default function SaasDevelopmentPage() {
   return (
     <ServicePageLayout
       breadcrumbTitle="SaaS & Web Platforms"
-      badgeText="Status: 1 Sprint Slot Open"
       title="Custom SaaS for founders, live in weeks"
       lede="Web apps with logins, billing and dashboards, built around how your business actually works. A working build in your browser every week, and code you own."
       ctaPrefix="saas"

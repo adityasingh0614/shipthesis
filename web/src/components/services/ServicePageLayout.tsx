@@ -75,7 +75,7 @@ export interface ServicePageProps {
 
 export function ServicePageLayout({
   breadcrumbTitle,
-  badgeText = "Status: 1 Sprint Slot Open for Q4",
+  badgeText,
   title,
   lede,
   heroImage,
@@ -103,6 +103,8 @@ export function ServicePageLayout({
     url: pageUrl,
     name: typeof title === "string" ? title : breadcrumbTitle,
     description: lede,
+    inLanguage: "en-US",
+    dateModified: "2026-11-01",
     isPartOf: {
       "@id": "https://www.shipthesis.com/#website",
     },
@@ -139,6 +141,7 @@ export function ServicePageLayout({
   const faqEntity = {
     "@type": "FAQPage",
     "@id": `${pageUrl}#faq`,
+    description: faqLede,
     isPartOf: {
       "@id": `${pageUrl}#webpage`,
     },
@@ -415,7 +418,7 @@ export function ServicePageLayout({
 
             {/* What Shipped Deliverables */}
             <div className={styles.whatShippedBlock}>
-              <h4 className={styles.whatShippedTitle}>Delivered in this build:</h4>
+              <h3 className={styles.whatShippedTitle}>Delivered in this build:</h3>
               <ul className={styles.whatShippedList}>
                 {caseStudy.whatShipped.map((item) => (
                   <li key={item} className={styles.whatShippedItem}>

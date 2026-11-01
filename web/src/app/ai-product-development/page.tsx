@@ -57,7 +57,6 @@ export default function AiProductDevelopmentPage() {
   return (
     <ServicePageLayout
       breadcrumbTitle="Applied AI Systems"
-      badgeText="Status: 1 Sprint Slot Open"
       title="AI features that get the numbers right"
       lede="We build products that turn messy PDFs, spreadsheets and text into structured data and reports, for founders who can't afford wrong answers. Numbers are calculated in code and checked before they reach your customer; the AI writes the explanation around them."
       ctaPrefix="ai"

@@ -57,10 +57,9 @@ export default function FlutterAppDevelopmentPage() {
   return (
     <ServicePageLayout
       breadcrumbTitle="Flutter Mobile Apps"
-      badgeText="Status: 1 Sprint Slot Open"
       title={
         <>
-          <span style={{ whiteSpace: "nowrap" }}>Flutter app development</span>
+          <span style={{ whiteSpace: "nowrap" }}>Flutter app development </span>
           <br />
           for founders
         </>
