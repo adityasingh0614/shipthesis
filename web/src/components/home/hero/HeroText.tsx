@@ -10,8 +10,7 @@ export function HeroText() {
         <span className={styles.titleLine}>to a live product.</span>
       </h1>
       <p className={styles.sub}>
-        Mobile apps and SaaS with intelligent AI features built in. A working build on your
-        phone every week, and code you own.
+        We build mobile apps and SaaS MVPs for founders. A working build on your phone every week, fixed-scope milestones, and code you own.
       </p>
 
       <div className={styles.actions}>

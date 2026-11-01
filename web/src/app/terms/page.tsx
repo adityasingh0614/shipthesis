@@ -3,7 +3,7 @@ import { LegalLayout, type TocItem } from "@/components/legal/LegalLayout";
 import styles from "@/components/legal/LegalPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Ship Thesis",
+  title: "Terms of Service",
   description:
     "Standard terms of service, intellectual property assignment, payment milestones, and warranty terms for Ship Thesis software engineering engagements.",
   robots: {
@@ -316,7 +316,7 @@ export default function TermsPage() {
         </p>
         <p className={styles.bodyText}>
           <strong>Ship Thesis Studio</strong><br />
-          Email: <a href="mailto:hello@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>hello@shipthesis.com</a><br />
+          Email: <a href="mailto:info@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>info@shipthesis.com</a><br />
           Web: <a href="https://shipthesis.com" style={{ color: "var(--ink)", textDecoration: "underline" }}>shipthesis.com</a>
         </p>
       </section>

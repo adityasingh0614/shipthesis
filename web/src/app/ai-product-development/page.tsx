@@ -2,178 +2,175 @@ import type { Metadata } from "next";
 import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "AI Product Development Company | Practical LLM Apps | Ship Thesis",
+  title: "Applied AI Product Development for Founders · Zero Hallucinations",
   description:
-    "Applied AI and LLM product engineering for startup founders. Structured data extraction, semantic search (RAG), and deterministic workflows with zero hallucinations.",
+    "Applied AI and automated workflows for startup founders. Structured data extraction, semantic search, and deterministic workflows with zero hallucinations.",
   alternates: {
     canonical: "/ai-product-development",
   },
   openGraph: {
-    title: "AI Product Development Company | Practical LLM Apps | Ship Thesis",
+    title: "Applied AI Product Development for Founders · Zero Hallucinations",
     description:
-      "Applied AI and LLM product engineering for startup founders. Structured data extraction, semantic search (RAG), and deterministic workflows with zero hallucinations.",
+      "Applied AI and automated workflows for startup founders. Structured data extraction, semantic search, and deterministic workflows with zero hallucinations.",
     url: "https://www.shipthesis.com/ai-product-development",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Product Development Company | Practical LLM Apps | Ship Thesis",
+    title: "Applied AI Product Development for Founders · Zero Hallucinations",
     description:
-      "Applied AI and LLM product engineering for startup founders. Structured data extraction, semantic search (RAG), and deterministic workflows with zero hallucinations.",
+      "Applied AI and automated workflows for startup founders. Structured data extraction, semantic search, and deterministic workflows with zero hallucinations.",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "AI Product Development & Integration",
-  serviceType: "AI Software Engineering",
-  provider: {
-    "@type": "Organization",
-    name: "Ship Thesis",
-    url: "https://www.shipthesis.com",
-  },
-  areaServed: "Worldwide",
-  description:
-    "Applied AI product engineering for founders. Build production-grade LLM workflows, structured document extraction, semantic RAG systems, and hallucination guardrails.",
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "USD",
-    description: "Fixed-price Applied AI software milestone development",
-  },
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.shipthesis.com/ai-product-development/#service",
+      name: "Applied AI Product Development",
+      provider: {
+        "@type": "Organization",
+        name: "Ship Thesis",
+        url: "https://www.shipthesis.com",
+      },
+      serviceType: "AI Software Engineering",
+      description:
+        "Deterministic applied AI engineering for founders: strict schema extraction, automated report generation, and verified data synthesis without hallucinations.",
+      areaServed: "Worldwide",
+    },
+  ],
 };
 
 export default function AiProductDevelopmentPage() {
   return (
     <ServicePageLayout
-      badge="Applied AI & LLM Systems"
-      title="Practical AI Features. Zero Gimmicks. Real ROI."
-      lede="Move beyond superficial chatbot wrappers. We engineer high-reliability AI products: structured document parsing, semantic search (RAG), automated data synthesis, and rigorous verification pipelines that never invent facts."
-      bookingLocation="services"
+      breadcrumbTitle="Applied AI Systems"
+      badgeText="Status: 1 Sprint Slot Open"
+      title="Applied AI products for founders, with zero hallucinations"
+      lede="Practical AI features that solve real business problems: structured document parsing, automated reporting workflows, and verified data synthesis without gimmicks."
+      heroImage={{
+        src: "/work/poststeady/hero.webp",
+        alt: "Poststeady automated client reporting SaaS dashboard preview",
+        width: 1780,
+        height: 883,
+        deviceType: "browser",
+        browserUrl: "https://app.poststeady.com/reports",
+      }}
+      who={{
+        for: [
+          {
+            title: "Founders building AI products where accuracy is non-negotiable",
+            desc: "Legal, financial, medical, or executive client reporting where a single hallucinated figure destroys trust immediately. You need strict deterministic schemas.",
+          },
+          {
+            title: "Teams automating complex manual parsing workflows",
+            desc: "You process multi-page PDFs, messy spreadsheets, or unstructured text, and want automated data extraction piped directly into a structured PostgreSQL database.",
+          },
+          {
+            title: "Founders looking for lean, production-grade AI architecture",
+            desc: "You want smart model cascading (using fast, cheap models for extraction and larger reasoning models only where necessary) to keep operating margins high.",
+          },
+        ],
+        notFor: [
+          {
+            title: "Generic conversational chatbot wrappers",
+            desc: "If you only want a generic chat interface with no underlying database, workflow engine, or business logic, open-source templates are cheaper.",
+          },
+          {
+            title: "Speculative foundational model pre-training",
+            desc: "We do not train foundation models from scratch on GPU clusters. We engineer high-leverage applied software on commercial APIs (Claude, OpenAI, Gemini).",
+          },
+          {
+            title: "Fragile prompt-only experiments with no test suite",
+            desc: "We build typed, schema-validated software with automated regression evaluation suites, not fragile prompts that break when an LLM updates.",
+          },
+        ],
+      }}
+      caseStudy={{
+        client: "Poststeady",
+        title: "Poststeady: Automated Client Reporting from Analytics CSVs",
+        lede: "An automated reporting SaaS that ingests raw analytics exports and synthesizes executive performance narratives into branded client PDFs with zero metric hallucinations.",
+        timeline: "4 Weeks",
+        stack: ["Next.js 16", "PostgreSQL (RLS)", "Puppeteer", "Tailwind CSS", "Stripe"],
+        metrics: [
+          { num: "100%", label: "Verified Data Accuracy" },
+          { num: "100+", label: "Active Agency Users" },
+          { num: "< 3s", label: "Executive PDF Build" },
+        ],
+        screenshots: [
+          {
+            src: "/work/poststeady/step1.webp",
+            alt: "CSV upload and data schema mapping",
+            caption: "Multi-format CSV file parser & schema validator",
+            width: 1670,
+            height: 941,
+          },
+          {
+            src: "/work/poststeady/step2.webp",
+            alt: "Metric aggregation and dashboard summary",
+            caption: "Automated metric aggregation & KPI computation",
+            width: 1670,
+            height: 942,
+          },
+          {
+            src: "/work/poststeady/step5.webp",
+            alt: "Executive PDF report generation preview",
+            caption: "Pixel-perfect client PDF report generator",
+            width: 1670,
+            height: 941,
+          },
+        ],
+        whatShipped: [
+          "Robust multi-source CSV parser with schema validation and sanitization",
+          "Headless browser PDF rendering pipeline running in serverless cloud functions",
+          "Automated weekly email dispatch engine with tracking and delivery logging",
+        ],
+        caseStudyHref: "/work/poststeady",
+      }}
+      deliverables={[
+        {
+          tag: "STRICT SCHEMAS",
+          title: "Deterministic structured output engines",
+          desc: "Every AI output is validated against strict Pydantic / Zod schemas. If the model output deviates by even a single character, it is rejected and re-prompted automatically.",
+        },
+        {
+          tag: "DATA PRIVACY",
+          title: "Zero-retention commercial API architecture",
+          desc: "We route calls exclusively through zero-data-retention commercial enterprise endpoints. Your proprietary client data is never used to train third-party public models.",
+        },
+        {
+          tag: "SMART CASCADING",
+          title: "Model cascading & cost-efficient caching",
+          desc: "We route high-volume tasks through lightweight models and reserve reasoning models for complex synthesis, drastically reducing API bills by up to 70%.",
+        },
+        {
+          tag: "FULL OWNERSHIP",
+          title: "100% Code in your GitHub from Day 1",
+          desc: "Clean, documented TypeScript and Python pipelines. Private repository created directly in your company GitHub organization with zero agency lock-in.",
+        },
+      ]}
+      faqs={[
+        {
+          q: "How do you prevent AI hallucinations?",
+          a: "We engineer strict deterministic pipelines. We never allow the language model to invent facts or numbers. Instead, our software computes statistical deltas and metrics deterministically in code first, and provides those exact figures to the model with strict schema boundaries.",
+        },
+        {
+          q: "Will our data be used to train AI models?",
+          a: "No. We integrate exclusively with commercial enterprise endpoints (OpenAI, Anthropic, Google Cloud) that have signed data privacy terms prohibiting training on customer API inputs.",
+        },
+        {
+          q: "How do you manage ongoing API token costs?",
+          a: "We engineer aggressive prompt optimization, semantic embedding caches, and model cascading. Lightweight tasks run on fast, sub-cent models, and only complex synthesis hits larger reasoning models.",
+        },
+        {
+          q: "What happens after launch?",
+          a: "Every engagement includes a 30-day post-launch warranty covering any functional regressions at zero cost. After launch, you can retain us for ongoing feature sprints or manage the clean, typed codebase with your own team.",
+        },
+      ]}
+      ctaTitle="Ready to ship your AI product?"
+      ctaLede="Book a free 20-minute call to discuss your AI product concept, evaluation metrics, and technical architecture."
       jsonLd={jsonLd}
-      metrics={[
-        { value: "Strict Schemas", label: "Typed JSON output guarantees" },
-        { value: "0% Leak", label: "Customer data never trains models" },
-        { value: "Hybrid RAG", label: "Semantic + keyword search" },
-        { value: "Deterministic", label: "Verification against hallucination" },
-      ]}
-      featuresPre="Engineering Pillars"
-      featuresTitle="Production AI That Users Can Actually Trust"
-      featuresLede="Anyone can call an API endpoint. Making large language models deterministic, cost-efficient, and fast in customer-facing software requires rigorous systems engineering."
-      features={[
-        {
-          title: "Structured Output & Schema Enforcement",
-          desc: "We enforce strict Zod / Pydantic schema validation on all LLM responses. If a model generates malformed keys or unexpected fields, automated retry loops heal the output before it hits your database.",
-        },
-        {
-          title: "Hybrid Semantic Retrieval (RAG)",
-          desc: "Combine vector embeddings (pgvector) with full-text lexical search and re-ranking models. Retrieve the exact context chunks needed to answer complex domain queries with source citations.",
-        },
-        {
-          title: "Hallucination Defense & Fact Verification",
-          desc: "In analytical products, models are forbidden from making ungrounded calculations. All numbers and claims are cross-checked deterministically against raw input records before presentation.",
-        },
-        {
-          title: "Token Optimization & Latency Caching",
-          desc: "Semantic prompt caching, intelligent model cascading (routing simple tasks to fast 8B models and complex synthesis to flagship frontiers), reducing API costs by up to 70%.",
-        },
-        {
-          title: "Document Parsing & Unstructured Ingestion",
-          desc: "Extract clean tabular data and structured JSON from chaotic real-world inputs: multi-page PDFs, spreadsheets with non-standard column headers, scanned receipts, and audio transcripts.",
-        },
-        {
-          title: "Evaluation Suites & Regression Checks",
-          desc: "Automated regression tests ensure that future prompt updates or new model versions don't quietly degrade accuracy or break production customer workflows.",
-        },
-      ]}
-      timelinePre="Milestones"
-      timelineTitle="How We Build & Ship AI Products"
-      timelineLede="From ground-truth data validation to production guardrails in 4 weeks."
-      timeline={[
-        {
-          step: "Week 01",
-          title: "Data Ground Truth & Architecture",
-          desc: "Assemble representative test datasets, design system schemas, establish baseline evaluation metrics, and select model providers.",
-          deliverable: "Evaluation benchmark suite + architecture specification",
-        },
-        {
-          step: "Week 02",
-          title: "Ingestion Pipeline & Retrieval Engine",
-          desc: "Build embedding pipelines, chunking strategies, vector database storage, and structured extraction workers.",
-          deliverable: "Working extraction pipeline scoring 95%+ on benchmarks",
-        },
-        {
-          step: "Week 03",
-          title: "Application Layer & Frontend UX",
-          desc: "Streaming responses, optimistic UI updates, source citation popovers, and administrative cost/token tracking dashboard.",
-          deliverable: "Full interactive user workflow deployed on staging",
-        },
-        {
-          step: "Week 04",
-          title: "Latency Optimization & Guardrails",
-          desc: "Setup fallback providers, token rate limiters, automated error handling, and production sign-off.",
-          deliverable: "Production release with full telemetry monitoring",
-        },
-      ]}
-      proofPre="Case Study"
-      proofTitle="Poststeady: AI Summaries That Never Hallucinate"
-      proofLede="How we built an AI reporting engine that quotes only verified figures from messy analytics exports."
-      caseStudies={[
-        {
-          badge: "Applied AI Case Study",
-          title: "Poststeady",
-          desc: "Our client reporting SaaS needed an AI narrative generator that freelancers could trust in front of clients. We engineered an engine that ingests 175+ column variations, calculates statistical deltas deterministically, and forces the LLM to cite only computed values.",
-          href: "/work/poststeady",
-          stats: [
-            { value: "100%", label: "Fact Grounding" },
-            { value: "175+", label: "Dirty Formats Mapped" },
-            { value: "< 3s", label: "Report Generation" },
-          ],
-        },
-        {
-          badge: "Custom LMS Integration",
-          title: "EHS Training Platform",
-          desc: "Automated Zoom webinar recording ingestion, transcript indexing, and automated attendance logging for industrial compliance cohorts.",
-          href: "/work/ehs-training-platform",
-          stats: [
-            { value: "Webhook", label: "Event Ingestion" },
-            { value: "Zero", label: "Manual Attendance" },
-            { value: "Full", label: "Cohort Audits" },
-          ],
-        },
-      ]}
-      stackTitle="Modern AI & Data Stack"
-      stack={[
-        "OpenAI & Anthropic APIs",
-        "Google Gemini Models",
-        "pgvector (PostgreSQL)",
-        "LangChain / LlamaIndex",
-        "Zod Schema Enforcement",
-        "Next.js Streaming UI",
-        "Python / Node.js Backends",
-        "Helicone / Langfuse Telemetry",
-        "Supabase Edge Functions",
-      ]}
-      faqTitle="Founder FAQs About AI Product Development"
-      faqItems={[
-        {
-          q: "Will our proprietary business data be used to train external AI models?",
-          a: "No, never. We exclusively use commercial enterprise API tiers with explicit zero-data-retention agreements where provider terms prohibit using client prompts or completions for model training. Furthermore, your sensitive data is stored securely in your own dedicated database.",
-        },
-        {
-          q: "How do you prevent the AI from making up false numbers (hallucinations)?",
-          a: "We decouple arithmetic and data aggregation from the language model. All mathematical calculations, aggregations, and data joins are executed in deterministic code (SQL/TypeScript). The LLM is only provided the pre-verified values and constrained by strict system prompts and validation schemas.",
-        },
-        {
-          q: "What happens if OpenAI or Anthropic suffers an API outage?",
-          a: "We engineer multi-provider fallbacks. If your primary provider experiences downtime or elevated error rates, our routing middleware seamlessly shifts traffic to a fallback provider (e.g. falling back from Claude to Gemini or GPT) with zero downtime for your end users.",
-        },
-        {
-          q: "How do you prevent runway burnout on expensive API tokens?",
-          a: "We implement semantic caching, strict maximum token limits, and intelligent routing. Routine text processing is delegated to ultra-fast, low-cost models, reserving expensive reasoning models only for high-value synthesis.",
-        },
-      ]}
-      ctaTitle="Ready to build an AI product that actually delivers value?"
-      ctaLede="Schedule a free 20-minute AI architecture call. We'll examine your data inputs, design the verification architecture, and provide a fixed milestone roadmap."
     />
   );
 }

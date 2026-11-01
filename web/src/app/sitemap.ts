@@ -7,28 +7,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/mvp-development`,
+      url: `${baseUrl}/flutter-app-development`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: 0.95,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/saas-development`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: 0.95,
+      priority: 0.9,
     },
     {
-      url: `${baseUrl}/flutter-app-development`,
+      url: `${baseUrl}/mvp-development`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: 0.95,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/ai-product-development`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: 0.95,
+      priority: 0.9,
     },
   ];
 
@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/work/${study.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.9,
+    priority: 0.85,
   }));
 
   return [

@@ -46,8 +46,8 @@ export function Contact() {
                 </span>
                 <div className={styles.methodContent}>
                   <span className={styles.methodLabel}>Direct Email</span>
-                  <a href="mailto:hello@shipthesis.com" className={styles.methodValue}>
-                    hello@shipthesis.com
+                  <a href="mailto:info@shipthesis.com" className={styles.methodValue}>
+                    info@shipthesis.com
                   </a>
                 </div>
               </li>

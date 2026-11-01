@@ -1,83 +1,30 @@
-import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./WhatWeBuild.module.css";
-import { AiVisual } from "./visuals/AiVisual";
-import { CrossPlatformVisual } from "./visuals/CrossPlatformVisual";
-import { CustomVisual } from "./visuals/CustomVisual";
-import { NativeVisual } from "./visuals/NativeVisual";
-import { SaasVisual } from "./visuals/SaasVisual";
-import { VisualsLoop } from "./visuals/shared";
 import { BookingCta } from "@/components/BookingCta";
 
-/**
- * All services preserved. Secondary services set to `hidden: true`
- * for a focused 2-card presentation without deleting any code or visuals.
- */
-const SERVICES: {
-  name: string;
-  href: string;
-  line: ReactNode;
-  visual?: ReactNode;
-  hidden?: boolean;
-}[] = [
+const SERVICES = [
   {
-    name: "Flutter mobile apps",
+    title: "Mobile apps and MVPs",
     href: "/flutter-app-development",
-    visual: <CrossPlatformVisual />,
-    line: (
-      <>
-        Built in Flutter, live on both iOS and Android with one codebase. Offline-first, fast, and our primary recommendation for <strong>mobile MVPs</strong>.
-      </>
-    ),
+    image: "/work/assess-yourself/card.webp",
+    alt: "AssessYourself offline-first mobile app preview on phone",
+    text: "iOS and Android from one Flutter codebase. A working build on your phone every week, and code you own.",
+    tags: "Flutter · iOS · Android · Offline-first",
+    linkText: "Explore mobile apps & MVPs",
   },
   {
-    name: "SaaS & web platforms",
+    title: "SaaS and web platforms",
     href: "/saas-development",
-    visual: <SaasVisual />,
-    line: (
-      <>
-        Full-stack Next.js &amp; Supabase web applications with accounts, billing, dashboards, and database design. Proven by the live platforms we run.
-      </>
-    ),
-  },
-  {
-    name: "Applied AI features",
-    href: "/ai-product-development",
-    visual: <AiVisual />,
-    hidden: true,
-    line: (
-      <>
-        Practical <strong>AI integrations</strong> that solve real problems: automated document parsing, data summaries, and workflow automation without gimmicks.
-      </>
-    ),
-  },
-  {
-    name: "Desktop & custom software",
-    href: "/work/chromalayer",
-    visual: <CustomVisual />,
-    hidden: true,
-    line: (
-      <>
-        Specialized native Windows utilities (.NET / C#) and bespoke software built around your exact business operational needs.
-      </>
-    ),
-  },
-  {
-    name: "Native iOS & Android",
-    href: "/flutter-app-development",
-    visual: <NativeVisual />,
-    hidden: true,
-    line: (
-      <>
-        When your product requires deep device hardware access or platform-exclusive SDKs, native Swift and Kotlin builds are also available.
-      </>
-    ),
+    image: "/work/safety-training-platform/card.webp",
+    alt: "EHS Guru training platform dashboard preview on laptop",
+    text: "Full-stack web products with accounts, billing and dashboards. Built on Next.js and Supabase.",
+    tags: "Next.js · Supabase · Payments · Admin dashboards",
+    linkText: "Explore SaaS & web platforms",
   },
 ];
 
 export function WhatWeBuild() {
-  const visibleServices = SERVICES.filter((s) => !s.hidden);
-
   return (
     <section id="services" className={styles.section} aria-labelledby="build-title">
       <div className={styles.inner}>
@@ -90,45 +37,55 @@ export function WhatWeBuild() {
           </p>
         </div>
 
-        <VisualsLoop>
-          <ul className={styles.grid}>
-            {visibleServices.map((s) => (
-              <li key={s.name} className={styles.cell}>
-                <div className={styles.card}>
-                  <div className={styles.visual}>
-                    {s.visual ?? <span>{s.name} visual</span>}
-                  </div>
-                  <div className={styles.copy}>
-                    <h3 className={styles.name}>{s.name}</h3>
-                    <p className={styles.line}>{s.line}</p>
-                    <Link href={s.href} className={styles.cardLink}>
-                      Explore service &rarr;
-                    </Link>
-                  </div>
+        <ul className={styles.grid}>
+          {SERVICES.map((s) => (
+            <li key={s.title} className={styles.cell}>
+              <div className={styles.card}>
+                <div className={styles.visual}>
+                  <Image
+                    src={s.image}
+                    alt={s.alt}
+                    width={1200}
+                    height={675}
+                    className={styles.cardImage}
+                    priority
+                    unoptimized
+                  />
                 </div>
-              </li>
-            ))}
-          </ul>
-        </VisualsLoop>
+                <div className={styles.copy}>
+                  <div className={styles.tags}>{s.tags}</div>
+                  <h3 className={styles.name}>{s.title}</h3>
+                  <p className={styles.line}>{s.text}</p>
+                  <Link href={s.href} className={styles.cardLink}>
+                    <span>{s.linkText}</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 8h10m-4-4 4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
 
-        <p className={styles.alsoAvailable}>
-          Also available:{" "}
-          <Link href="/mvp-development" className={styles.alsoAvailableLink}>
-            4-week MVP development
-          </Link>
-          ,{" "}
-          <Link href="/ai-product-development" className={styles.alsoAvailableLink}>
-            applied AI systems
-          </Link>
-          , and custom desktop software.
-        </p>
-
-        <div className={styles.bottomCta}>
+        <div className={styles.bottomNote}>
+          <span className={styles.notePrefix}>
+            Need something else, like desktop software, internal tools or AI features?{" "}
+          </span>
           <BookingCta
             location="services"
             variant="text"
-            prefix="Not sure what you need? "
-          />
+            showArrow={false}
+            className={styles.noteLink}
+          >
+            Tell us what you’re building on a free 20-minute call &rarr;
+          </BookingCta>
         </div>
       </div>
     </section>

@@ -35,10 +35,12 @@ export function SiteFooter() {
             <div>
               <p className={styles.colTitle}>Services</p>
               <ul className={styles.linkList}>
-                <li><Link href="/mvp-development" className={styles.link}>MVP Development</Link></li>
+                <li><Link href="/flutter-app-development" className={styles.link}>Flutter Development</Link></li>
                 <li><Link href="/saas-development" className={styles.link}>SaaS Development</Link></li>
-                <li><Link href="/flutter-app-development" className={styles.link}>Flutter Mobile Apps</Link></li>
-                <li><Link href="/ai-product-development" className={styles.link}>Applied AI Systems</Link></li>
+                <li><Link href="/#services" className={styles.link}>UX / UI Design</Link></li>
+                <li><Link href="/#services" className={styles.link}>App Maintenance</Link></li>
+                <li><Link href="/saas-development" className={styles.link}>Backend Development</Link></li>
+                <li><Link href="/flutter-app-development" className={styles.link}>App Store Submission</Link></li>
               </ul>
             </div>
 
@@ -47,9 +49,9 @@ export function SiteFooter() {
               <p className={styles.colTitle}>Contact Info</p>
               <ul className={styles.linkList}>
                 <li>
-                  <a href="mailto:hello@shipthesis.com" className={styles.link}>
+                  <a href="mailto:info@shipthesis.com" className={styles.link}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                    hello@shipthesis.com
+                    info@shipthesis.com
                   </a>
                 </li>
                 <li>
@@ -65,7 +67,7 @@ export function SiteFooter() {
 
         <div className={styles.bottomRow}>
           <p className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Ship Thesis &middot; Built by Aditya Singh. All rights reserved.
+            &copy; {new Date().getFullYear()} Ship Thesis . All rights reserved.
           </p>
           <div className={styles.legalLinks}>
             <Link href="/terms" className={styles.legalLink}>Terms</Link>

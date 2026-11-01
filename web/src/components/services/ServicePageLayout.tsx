@@ -1,32 +1,51 @@
-import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { BookingCta } from "@/components/BookingCta";
 import styles from "./ServicePage.module.css";
 
-export interface ServiceMetric {
-  value: string;
-  label: string;
+export interface ServiceHeroImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  deviceType: "phone" | "browser";
+  browserUrl?: string;
 }
 
-export interface ServiceFeature {
-  icon?: ReactNode;
+export interface ServiceWhoItem {
   title: string;
   desc: string;
 }
 
-export interface ServiceTimelineStep {
-  step: string;
-  title: string;
-  desc: string;
-  deliverable: string;
+export interface ServiceWhoBlock {
+  for: ServiceWhoItem[];
+  notFor: ServiceWhoItem[];
+}
+
+export interface ServiceScreenshot {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
 }
 
 export interface ServiceCaseStudy {
-  badge: string;
+  client: string;
+  title: string;
+  lede: string;
+  timeline: string;
+  stack: string[];
+  metrics: { num: string; label: string }[];
+  screenshots: ServiceScreenshot[];
+  whatShipped: string[];
+  caseStudyHref: string;
+}
+
+export interface ServiceDeliverable {
+  tag: string;
   title: string;
   desc: string;
-  href: string;
-  stats: { label: string; value: string }[];
 }
 
 export interface ServiceFaq {
@@ -35,64 +54,32 @@ export interface ServiceFaq {
 }
 
 export interface ServicePageProps {
-  badge: string;
+  breadcrumbTitle: string;
+  badgeText?: string;
   title: string;
   lede: string;
-  metrics: ServiceMetric[];
-  // Features / Pillars
-  featuresPre?: string;
-  featuresTitle: string;
-  featuresLede: string;
-  features: ServiceFeature[];
-  // Timeline
-  timelinePre?: string;
-  timelineTitle: string;
-  timelineLede: string;
-  timeline: ServiceTimelineStep[];
-  // Proof
-  proofPre?: string;
-  proofTitle: string;
-  proofLede: string;
-  caseStudies: ServiceCaseStudy[];
-  // Tech stack
-  stackPre?: string;
-  stackTitle: string;
-  stack: string[];
-  // FAQ
-  faqTitle: string;
-  faqItems: ServiceFaq[];
-  // CTA
-  ctaTitle: string;
-  ctaLede: string;
-  bookingLocation: "services";
+  heroImage: ServiceHeroImage;
+  who: ServiceWhoBlock;
+  caseStudy: ServiceCaseStudy;
+  deliverables: ServiceDeliverable[];
+  faqs: ServiceFaq[];
+  ctaTitle?: string;
+  ctaLede?: string;
   jsonLd: Record<string, unknown>;
 }
 
 export function ServicePageLayout({
-  badge,
+  breadcrumbTitle,
+  badgeText = "Status: 1 Sprint Slot Open for Q4",
   title,
   lede,
-  metrics,
-  featuresPre = "Deliverables",
-  featuresTitle,
-  featuresLede,
-  features,
-  timelinePre = "Process",
-  timelineTitle,
-  timelineLede,
-  timeline,
-  proofPre = "Real Proof",
-  proofTitle,
-  proofLede,
-  caseStudies,
-  stackPre = "Tech Stack",
-  stackTitle,
-  stack,
-  faqTitle,
-  faqItems,
-  ctaTitle,
-  ctaLede,
-  bookingLocation,
+  heroImage,
+  who,
+  caseStudy,
+  deliverables,
+  faqs,
+  ctaTitle = "Ready to ship your next product?",
+  ctaLede = "Book a free 20-minute call to get an honest technical assessment of your idea and a timeline for your first build.",
   jsonLd,
 }: ServicePageProps) {
   return (
@@ -102,182 +89,301 @@ export function ServicePageLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section */}
+      {/* 01. Hero Section (Zero background box around phone, matches home design) */}
       <section className={styles.hero}>
         <div className={styles.inner}>
-          <div className={styles.heroContent}>
-            <div className={styles.badge}>
-              <span className={styles.badgeDot} />
-              {badge}
-            </div>
-            <h1 className={styles.heroTitle}>{title}</h1>
-            <p className={styles.heroLede}>{lede}</p>
+          <div className={styles.breadcrumbRow}>
+            <nav aria-label="Breadcrumb" className={styles.breadcrumbs}>
+              <Link href="/" className={styles.breadcrumbLink}>
+                Ship Thesis
+              </Link>
+              <span className={styles.breadcrumbSep} aria-hidden="true">/</span>
+              <Link href="/#services" className={styles.breadcrumbLink}>
+                Services
+              </Link>
+              <span className={styles.breadcrumbSep} aria-hidden="true">/</span>
+              <span className={styles.breadcrumbCurrent} aria-current="page">
+                {breadcrumbTitle}
+              </span>
+            </nav>
 
-            <div className={styles.heroActions}>
-              <BookingCta location={bookingLocation}>
-                Book a free 20-minute call
-              </BookingCta>
-              <a href="#milestones" className={styles.secondaryLink}>
-                See 4-week timeline &#x2193;
-              </a>
+
+          </div>
+
+          <div className={styles.heroGrid}>
+            <div className={styles.heroCopy}>
+              <h1 className={styles.heroTitle}>{title}</h1>
+              <p className={styles.heroLede}>{lede}</p>
+
+              <div className={styles.heroActions}>
+                <BookingCta location="services">
+                  Book a free 20-minute call
+                </BookingCta>
+                <a href="#case-study" className={styles.secondaryAction}>
+                  <span>See real case study</span>
+                  <span aria-hidden="true">&darr;</span>
+                </a>
+              </div>
+
+              <p className={styles.heroReassurance}>
+                20 minutes &middot; No pitch &middot; You speak directly with our engineering team.
+              </p>
+
+
             </div>
 
-            <ul className={styles.trustStrip}>
-              {metrics.map((m) => (
-                <li key={m.label} className={styles.trustItem}>
-                  <span className={styles.trustValue}>{m.value}</span>
-                  <span className={styles.trustLabel}>{m.label}</span>
-                </li>
-              ))}
-            </ul>
+            <div className={styles.heroVisualWrap}>
+              {heroImage.deviceType === "phone" ? (
+                <div className={styles.phoneHeroWrap}>
+                  <Image
+                    src={heroImage.src}
+                    alt={heroImage.alt}
+                    width={heroImage.width}
+                    height={heroImage.height}
+                    priority
+                    className={styles.phoneHeroImg}
+                  />
+                </div>
+              ) : (
+                <div className={styles.laptopHeroWrap}>
+                  <Image
+                    src={heroImage.src}
+                    alt={heroImage.alt}
+                    width={heroImage.width}
+                    height={heroImage.height}
+                    priority
+                    className={styles.laptopHeroImg}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features & Deliverables */}
+      {/* 02. Target Fit: Who It's For & NOT For */}
+      <section className={styles.section} id="who">
+        <div className={styles.inner}>
+          <div className={styles.sectionHead}>
+            <span className={styles.sectionEyebrow}>Target Fit</span>
+            <h2 className={styles.sectionTitle}>Built for specific founder needs</h2>
+            <p className={styles.sectionLede}>
+              We do not try to be everything for everyone. We do our best work when project requirements match our exact architectural focus.
+            </p>
+          </div>
+
+          <div className={styles.whoGrid}>
+            {/* Who It's For */}
+            <div className={`${styles.whoCard} ${styles.whoForCard}`}>
+              <div className={styles.whoHeader}>
+                <div className={styles.whoBadgeFor}>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-6" />
+                  </svg>
+                  <span>Who this is for</span>
+                </div>
+                <h3 className={styles.whoTitle}>Ideal fit for your project</h3>
+              </div>
+              <ul className={styles.whoList}>
+                {who.for.map((item) => (
+                  <li key={item.title} className={styles.whoItem}>
+                    <span className={styles.whoIconCheck} aria-hidden="true">
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3.5 8.5l3 3 6-6" />
+                      </svg>
+                    </span>
+                    <div>
+                      <strong className={styles.whoItemTitle}>{item.title}</strong>
+                      <p className={styles.whoItemDesc}>{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Who It's NOT For */}
+            <div className={`${styles.whoCard} ${styles.whoNotForCard}`}>
+              <div className={styles.whoHeader}>
+                <div className={styles.whoBadgeNotFor}>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M4 4l8 8m0-8l-8 8" />
+                  </svg>
+                  <span>Who this is not for</span>
+                </div>
+                <h3 className={styles.whoTitle}>When we recommend alternatives</h3>
+              </div>
+              <ul className={styles.whoList}>
+                {who.notFor.map((item) => (
+                  <li key={item.title} className={styles.whoItem}>
+                    <span className={styles.whoIconCross} aria-hidden="true">
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 4l8 8m0-8l-8 8" />
+                      </svg>
+                    </span>
+                    <div>
+                      <strong className={styles.whoItemTitle}>{item.title}</strong>
+                      <p className={styles.whoItemDesc}>{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 03. Production Case Study (No hover jump on screenshots) */}
+      <section className={`${styles.section} ${styles.sectionAlt}`} id="case-study">
+        <div className={styles.inner}>
+          <div className={styles.sectionHead}>
+            <span className={styles.sectionEyebrow}>Verified Case Study</span>
+            <h2 className={styles.sectionTitle}>{caseStudy.title}</h2>
+            <p className={styles.sectionLede}>{caseStudy.lede}</p>
+          </div>
+
+          <div className={styles.caseStudyCard}>
+            {/* Meta Row */}
+            <div className={styles.caseMetaBar}>
+              <div className={styles.caseMetaGroup}>
+                <span className={styles.caseMetaLabel}>Client:</span>
+                <span className={styles.caseMetaValue}>{caseStudy.client}</span>
+              </div>
+              <div className={styles.caseMetaGroup}>
+                <span className={styles.caseMetaLabel}>Timeline:</span>
+                <span className={styles.caseMetaValue}>{caseStudy.timeline}</span>
+              </div>
+              <div className={styles.caseMetaGroup}>
+                <span className={styles.caseMetaLabel}>Stack:</span>
+                <div className={styles.caseStackPills}>
+                  {caseStudy.stack.map((tech) => (
+                    <span key={tech} className={styles.caseStackPill}>{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Metrics Row */}
+            <div className={styles.caseMetricsRow}>
+              {caseStudy.metrics.map((m) => (
+                <div key={m.label} className={styles.caseMetricBox}>
+                  <span className={styles.caseMetricNum}>{m.num}</span>
+                  <span className={styles.caseMetricLabel}>{m.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Real Screenshots Gallery (Static, clean, no hover effect) */}
+            <div className={styles.screenshotsGrid}>
+              {caseStudy.screenshots.map((s, idx) => (
+                <div key={s.caption} className={styles.screenshotItem}>
+                  <div className={styles.screenshotFrame}>
+                    <Image
+                      src={s.src}
+                      alt={s.alt}
+                      width={s.width}
+                      height={s.height}
+                      className={styles.screenshotImg}
+                    />
+                  </div>
+                  <div className={styles.screenshotCaption}>
+                    <span className={styles.screenshotIndex}>0{idx + 1}</span>
+                    <span>{s.caption}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* What Shipped Deliverables */}
+            <div className={styles.whatShippedBlock}>
+              <h4 className={styles.whatShippedTitle}>Delivered in this build:</h4>
+              <ul className={styles.whatShippedList}>
+                {caseStudy.whatShipped.map((item) => (
+                  <li key={item} className={styles.whatShippedItem}>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M3.5 8.5l3 3 6-6" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.caseStudyFooter}>
+              <Link href={caseStudy.caseStudyHref} className={styles.caseStudyLink}>
+                <span>Read the technical case paper</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M3 8h10m-4-4 4 4-4 4" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 04. What You Get (Deliverables) */}
       <section className={styles.section} id="deliverables">
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
-            <p className={styles.sectionPre}>{featuresPre}</p>
-            <h2 className={styles.sectionTitle}>{featuresTitle}</h2>
-            <p className={styles.sectionLede}>{featuresLede}</p>
-          </div>
-
-          <ul className={styles.featureGrid}>
-            {features.map((f) => (
-              <li key={f.title} className={styles.featureCard}>
-                {f.icon && <div className={styles.cardIcon}>{f.icon}</div>}
-                <h3 className={styles.cardTitle}>{f.title}</h3>
-                <p className={styles.cardDesc}>{f.desc}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 4-Week Milestone Timeline */}
-      <section className={`${styles.section} ${styles.sectionAlt}`} id="milestones">
-        <div className={styles.inner}>
-          <div className={styles.sectionHead}>
-            <p className={styles.sectionPre}>{timelinePre}</p>
-            <h2 className={styles.sectionTitle}>{timelineTitle}</h2>
-            <p className={styles.sectionLede}>{timelineLede}</p>
-          </div>
-
-          <ul className={styles.timelineGrid}>
-            {timeline.map((t) => (
-              <li key={t.step} className={styles.timelineCard}>
-                <span className={styles.timelineStep}>{t.step}</span>
-                <h3 className={styles.timelineTitle}>{t.title}</h3>
-                <p className={styles.timelineDesc}>{t.desc}</p>
-                <div className={styles.timelineDeliverable}>
-                  <strong>Deliverable:</strong> {t.deliverable}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Case Study Proof */}
-      <section className={styles.section} id="proof">
-        <div className={styles.inner}>
-          <div className={styles.sectionHead}>
-            <p className={styles.sectionPre}>{proofPre}</p>
-            <h2 className={styles.sectionTitle}>{proofTitle}</h2>
-            <p className={styles.sectionLede}>{proofLede}</p>
-          </div>
-
-          <ul className={styles.proofGrid}>
-            {caseStudies.map((c) => (
-              <li key={c.title} className={styles.proofCard}>
-                <span className={styles.proofBadge}>{c.badge}</span>
-                <h3 className={styles.proofTitle}>{c.title}</h3>
-                <p className={styles.proofDesc}>{c.desc}</p>
-                <div className={styles.proofStats}>
-                  {c.stats.map((s) => (
-                    <div key={s.label}>
-                      <div className={styles.proofStatVal}>{s.value}</div>
-                      <div className={styles.proofStatLabel}>{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-                <Link href={c.href} className={styles.proofLink}>
-                  Read detailed case study &#x2192;
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Tech Stack */}
-      <section className={`${styles.section} ${styles.sectionAlt}`} id="stack">
-        <div className={styles.inner}>
-          <div className={styles.sectionHead}>
-            <p className={styles.sectionPre}>{stackPre}</p>
-            <h2 className={styles.sectionTitle}>{stackTitle}</h2>
+            <span className={styles.sectionEyebrow}>What You Get</span>
+            <h2 className={styles.sectionTitle}>Everything you need to launch with confidence</h2>
             <p className={styles.sectionLede}>
-              No fragile no-code lock-in. Clean, typed, industry-standard stacks you can recruit for or scale indefinitely.
+              No endless slide decks or vague wireframes. You receive tested, production-grade software and full intellectual property ownership.
             </p>
           </div>
 
-          <div className={styles.stackTags}>
-            {stack.map((item) => (
-              <span key={item} className={styles.stackTag}>
-                {item}
-              </span>
+          <div className={styles.deliverablesGrid}>
+            {deliverables.map((d) => (
+              <div key={d.title} className={styles.deliverableCard}>
+                <span className={styles.deliverableTag}>{d.tag}</span>
+                <h3 className={styles.deliverableTitle}>{d.title}</h3>
+                <p className={styles.deliverableDesc}>{d.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Founder FAQs */}
-      <section className={styles.section} id="faq">
+      {/* 05. Frequently Asked Questions */}
+      <section className={`${styles.section} ${styles.sectionAlt}`} id="faq">
         <div className={styles.inner}>
           <div className={styles.sectionHead}>
-            <p className={styles.sectionPre}>Transparency</p>
-            <h2 className={styles.sectionTitle}>{faqTitle}</h2>
+            <span className={styles.sectionEyebrow}>Transparency</span>
+            <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
             <p className={styles.sectionLede}>
-              Straight answers to the technical and commercial questions founders ask us every week.
+              Direct, honest answers on tech choices, offline persistence, store approval, and post-launch maintenance.
             </p>
           </div>
 
-          <div className={styles.faqList}>
-            {faqItems.map((item, idx) => (
-              <details key={item.q} className={styles.faqItem} open={idx === 0}>
-                <summary className={styles.faqSummary}>
-                  {item.q}
-                  <span aria-hidden="true">&#x2193;</span>
-                </summary>
-                <div className={styles.faqAnswer}>
-                  <p>{item.a}</p>
-                </div>
-              </details>
+          <ul className={styles.faqList}>
+            {faqs.map((faq, idx) => (
+              <li key={faq.q}>
+                <details className={styles.faqItem} open={idx === 0}>
+                  <summary className={styles.faqSummary}>
+                    <span>{faq.q}</span>
+                    <span className={styles.faqChevron} aria-hidden="true">&darr;</span>
+                  </summary>
+                  <div className={styles.faqAnswer}>
+                    <p>{faq.a}</p>
+                  </div>
+                </details>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* Final Conversion Banner */}
-      <section className={styles.ctaSection}>
-        <div className={styles.inner}>
-          <div className={styles.ctaInner}>
-            <h2 className={styles.ctaTitle}>{ctaTitle}</h2>
-            <p className={styles.ctaLede}>{ctaLede}</p>
-            <div className={styles.ctaActions}>
-              <BookingCta location={bookingLocation}>
-                Book a free 20-minute call
-              </BookingCta>
-            </div>
-            <p className={styles.emailDirect}>
-              Prefer email? Reach the founder directly at{" "}
-              <a href="mailto:hello@shipthesis.com">hello@shipthesis.com</a>
-            </p>
+      {/* 06. Call Band: High-converting action-green moment from the case studies */}
+      <section id="contact" className={styles.callBand} aria-labelledby="call-title">
+        <div className={styles.callWrap}>
+          <h2 id="call-title" className={styles.callTitle}>
+            {ctaTitle}
+          </h2>
+          <p className={styles.callLede}>{ctaLede}</p>
+          <div className={styles.callActions}>
+            <BookingCta location="services" variant="button" className={styles.callBtn} />
           </div>
         </div>
       </section>
     </article>
   );
 }
-

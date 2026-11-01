@@ -2,6 +2,11 @@
 
 # Scratch artifacts, not project source
 .artifact-tmp/
+scratch/
+demo/
+web/scratch/
+web/demo/
+.agents/
 
 # Editor/OS
 .DS_Store

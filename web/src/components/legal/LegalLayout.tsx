@@ -175,7 +175,7 @@ export function LegalLayout({
             <p className={styles.helpDesc}>
               We aim for plain English, transparent partnerships, and zero hidden clauses.
             </p>
-            <a href="mailto:hello@shipthesis.com" className={styles.helpEmail}>
+            <a href="mailto:info@shipthesis.com" className={styles.helpEmail}>
               <svg
                 width="14"
                 height="14"
@@ -189,7 +189,7 @@ export function LegalLayout({
                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </svg>
-              hello@shipthesis.com
+              info@shipthesis.com
             </a>
           </div>
         </aside>

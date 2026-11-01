@@ -3,7 +3,7 @@ import { LegalLayout, type TocItem } from "@/components/legal/LegalLayout";
 import styles from "@/components/legal/LegalPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Ship Thesis",
+  title: "Privacy Policy",
   description:
     "Privacy policy, CCPA/GDPR compliance disclosures, subprocessor list, and data security standards for Ship Thesis software engineering services.",
   robots: {
@@ -263,7 +263,7 @@ export default function PrivacyPage() {
           </li>
         </ul>
         <p className={styles.bodyText}>
-          To exercise your California or US privacy rights, email <a href="mailto:hello@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>hello@shipthesis.com</a> with the subject &ldquo;CCPA Data Request.&rdquo;
+          To exercise your California or US privacy rights, email <a href="mailto:info@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>info@shipthesis.com</a> with the subject &ldquo;CCPA Data Request.&rdquo;
         </p>
       </section>
 
@@ -329,7 +329,7 @@ export default function PrivacyPage() {
         <p className={styles.bodyText}>
           <strong>Ship Thesis Studio</strong><br />
           Data Governance &amp; Privacy Officer<br />
-          Email: <a href="mailto:hello@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>hello@shipthesis.com</a><br />
+          Email: <a href="mailto:info@shipthesis.com" style={{ color: "var(--green)", fontWeight: 600 }}>info@shipthesis.com</a><br />
           Web: <a href="https://shipthesis.com" style={{ color: "var(--ink)", textDecoration: "underline" }}>shipthesis.com</a>
         </p>
         <p className={styles.bodyText}>

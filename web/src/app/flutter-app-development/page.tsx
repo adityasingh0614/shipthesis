@@ -2,179 +2,174 @@ import type { Metadata } from "next";
 import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Flutter App Development Agency | iOS & Android Apps | Ship Thesis",
+  title: "Offline-First Flutter Mobile App Development for Founders",
   description:
-    "Cross-platform Flutter app development for founders. Ship high-performance iOS and Android apps from a single codebase in 4-8 weeks with offline persistence.",
+    "Cross-platform Flutter mobile apps for founders. Built with offline-first SQLite persistence, 60fps native feel, weekly builds on your phone, and App Store approval guarantee.",
   alternates: {
     canonical: "/flutter-app-development",
   },
   openGraph: {
-    title: "Flutter App Development Agency | iOS & Android Apps | Ship Thesis",
+    title: "Offline-First Flutter Mobile App Development for Founders",
     description:
-      "Cross-platform Flutter app development for founders. Ship high-performance iOS and Android apps from a single codebase in 4-8 weeks with offline persistence.",
+      "Cross-platform Flutter mobile apps for founders. Built with offline-first SQLite persistence, 60fps native feel, weekly builds on your phone, and App Store approval guarantee.",
     url: "https://www.shipthesis.com/flutter-app-development",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flutter App Development Agency | iOS & Android Apps | Ship Thesis",
+    title: "Offline-First Flutter Mobile App Development for Founders",
     description:
-      "Cross-platform Flutter app development for founders. Ship high-performance iOS and Android apps from a single codebase in 4-8 weeks with offline persistence.",
+      "Cross-platform Flutter mobile apps for founders. Built with offline-first SQLite persistence, 60fps native feel, weekly builds on your phone, and App Store approval guarantee.",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Flutter App Development Agency",
-  serviceType: "Mobile App Development",
-  provider: {
-    "@type": "Organization",
-    name: "Ship Thesis",
-    url: "https://www.shipthesis.com",
-  },
-  areaServed: "Worldwide",
-  description:
-    "High-performance cross-platform Flutter mobile app development for iOS and Android. Single codebase, offline-first data caching, and app-store delivery.",
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "USD",
-    description: "Fixed-price Flutter mobile app milestone development",
-  },
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.shipthesis.com/flutter-app-development/#service",
+      name: "Flutter Mobile App Development",
+      provider: {
+        "@type": "Organization",
+        name: "Ship Thesis",
+        url: "https://www.shipthesis.com",
+      },
+      serviceType: "Mobile Application Development",
+      description:
+        "High-performance cross-platform iOS and Android mobile apps engineered with Flutter, offline-first SQLite persistence, and guaranteed App Store submission.",
+      areaServed: "Worldwide",
+    },
+  ],
 };
 
 export default function FlutterAppDevelopmentPage() {
   return (
     <ServicePageLayout
-      badge="Cross-Platform Mobile Engineering"
-      title="One Codebase. Two Native Stores. Zero Compromise."
-      lede="Stop paying two separate engineering teams for iOS and Android. We build fluid 60fps mobile applications using Flutter and Dart that look, feel, and perform like native code across both platforms."
-      bookingLocation="services"
+      breadcrumbTitle="Flutter Mobile Apps"
+      badgeText="Status: 1 Sprint Slot Open"
+      title="Offline-first mobile apps for founders"
+      lede="High-performance iOS and Android apps from a single codebase. A working build on your phone every Friday, 60fps native feel, and zero data loss offline."
+      heroImage={{
+        src: "/work/assess-yourself/hero.webp",
+        alt: "AssessYourself offline-first Flutter mobile app preview on phone",
+        width: 1400,
+        height: 1496,
+        deviceType: "phone",
+      }}
+      who={{
+        for: [
+          {
+            title: "Founders shipping to both iOS and Android simultaneously",
+            desc: "You need to reach both App Store and Google Play users from day one without hiring two separate engineering teams or doubling your budget.",
+          },
+          {
+            title: "Products where offline reliability is mission-critical",
+            desc: "Exam engines, field assessment tools, inventory trackers, or notes apps where poor cell connectivity, subway tunnels, or sudden device reboots cannot cause data loss.",
+          },
+          {
+            title: "Founders who test progress on their actual phones",
+            desc: "You want a working build installed on your physical device via TestFlight and Android APK every Friday, so you evaluate real software instead of mockups.",
+          },
+        ],
+        notFor: [
+          {
+            title: "Heavy 3D games or spatial physics engines",
+            desc: "If your core product requires custom shaders, physics engines, or 3D world rendering, you should build directly in Unity, Unreal Engine, or native C++.",
+          },
+          {
+            title: "Single-platform niche hardware hacks",
+            desc: "If your app relies exclusively on proprietary Apple-only visionOS spatial computing or low-level kernel extensions, native Swift is the right choice.",
+          },
+          {
+            title: "Low-budget throwaway WebView wrappers",
+            desc: "We engineer genuine native Flutter applications with offline SQLite databases and 60fps animations, not packaged website frames.",
+          },
+        ],
+      }}
+      caseStudy={{
+        client: "Aptellic",
+        title: "AssessYourself: 10,000+ Students, Zero Exam Data Loss",
+        lede: "An offline-first mobile testing app for competitive government exams. Even if an incoming phone call interrupts a student or their battery dies mid-test, the timer and answer state recover down to the exact second upon reboot.",
+        timeline: "3–4 Weeks",
+        stack: ["Flutter", "Node.js", "Firebase", "Offline SQLite"],
+        metrics: [
+          { num: "10,000+", label: "Verified Students" },
+          { num: "0 ms", label: "Recovery Data Loss" },
+          { num: "100%", label: "App Store Approval" },
+        ],
+        screenshots: [
+          {
+            src: "/work/assess-yourself/exam-categories.webp",
+            alt: "Exam categories and discovery interface",
+            caption: "Curated exam discovery and syllabus indexing",
+            width: 1000,
+            height: 2068,
+          },
+          {
+            src: "/work/assess-yourself/exam-list.webp",
+            alt: "Full paper examination catalogue",
+            caption: "Full exam catalogue and offline question papers",
+            width: 1000,
+            height: 2064,
+          },
+          {
+            src: "/work/assess-yourself/analytics.webp",
+            alt: "Student performance analytics and score breakdown",
+            caption: "Instant student analytics & performance breakdown",
+            width: 964,
+            height: 1990,
+          },
+        ],
+        whatShipped: [
+          "Crash-resilient offline SQLite engine that preserves all exam state locally",
+          "Millisecond-accurate countdown timer with background synchronization",
+          "Dual submission to Apple App Store and Google Play with zero rejection cycles",
+        ],
+        caseStudyHref: "/work/assess-yourself",
+      }}
+      deliverables={[
+        {
+          tag: "FRIDAY RELEASES",
+          title: "Weekly working build on your phone",
+          desc: "Every Friday afternoon, a fresh build is pushed to your phone via TestFlight (iOS) and downloadable APK (Android). You touch, test, and validate progress on physical hardware.",
+        },
+        {
+          tag: "STORE GUARANTEE",
+          title: "App Store & Play Store submission",
+          desc: "We manage the entire release pipeline: developer accounts, signing certificates, privacy manifests, store screenshots, and compliance review guidelines until approved.",
+        },
+        {
+          tag: "FULL OWNERSHIP",
+          title: "100% Code in your GitHub from Day 1",
+          desc: "Clean, documented Flutter architecture created directly in your company GitHub organization. Complete intellectual property assignment with zero agency lock-in.",
+        },
+        {
+          tag: "OFFLINE ARCHITECTURE",
+          title: "Production SQLite & state persistence",
+          desc: "Local SQLite database caching, optimistic UI updates, and an automated background synchronization queue that handles unreliable networks gracefully.",
+        },
+      ]}
+      faqs={[
+        {
+          q: "Flutter vs native: Why Flutter instead of native Swift and Kotlin?",
+          a: "Building separate native apps in Swift and Kotlin requires two distinct codebases, two engineering skill sets, and twice the QA effort. Flutter compiles directly to ARM machine code using Google's Impeller rendering engine, delivering genuine 60fps native performance, platform-native gestures, and full hardware access while saving ~50% in engineering overhead.",
+        },
+        {
+          q: "Does it really work offline?",
+          a: "Yes. We design mobile applications with an offline-first architecture. All app state, question banks, drafts, and user actions are written directly to a local SQLite database on the device first. The app functions seamlessly without internet, queues operations locally, and synchronizes to your backend automatically when connectivity resumes.",
+        },
+        {
+          q: "How does App Store and Play Store approval work?",
+          a: "We manage the entire submission lifecycle. This includes generating Apple Developer certificates and provisioning profiles, setting up Android signing keys, completing privacy manifests and age ratings, taking compliant App Store screenshots, and submitting the app for review. If Apple or Google requests adjustments, we resolve them until approved.",
+        },
+        {
+          q: "What happens after launch?",
+          a: "Every project includes a 30-day post-launch warranty where we fix any functional bugs or unexpected platform regressions at zero cost. After launch, you can keep us on a flexible maintenance retainer for new feature iterations, or take the codebase entirely in-house with our thorough architecture and onboarding documentation.",
+        },
+      ]}
+      ctaTitle="Ready to ship your mobile app?"
+      ctaLede="Book a free 20-minute call to discuss your mobile app concept, offline requirements, and project scope."
       jsonLd={jsonLd}
-      metrics={[
-        { value: "1 Codebase", label: "iOS & Android parity" },
-        { value: "60 FPS", label: "Smooth rendering engine" },
-        { value: "Offline-First", label: "SQLite / Hive persistence" },
-        { value: "Weekly", label: "TestFlight & APK drops" },
-      ]}
-      featuresPre="Mobile Architecture"
-      featuresTitle="Engineered for Real-World Mobile Edge Cases"
-      featuresLede="Mobile apps run in the wild: spotty cellular connections, unexpected OS process terminations, and varying screen ratios. We engineer resilient systems that never lose user state."
-      features={[
-        {
-          title: "Offline-First Data Architecture",
-          desc: "Local SQLite or Hive caching enables uninterrupted user workflows even when airplane mode or flaky subway tunnels strike. Changes queue and sync automatically upon reconnection.",
-        },
-        {
-          title: "Crash & Interruption Resilience",
-          desc: "Timed workflows, active exam sessions, and form entries persist instantly to non-volatile device storage, recovering seamlessly even if the OS terminates the app in the background.",
-        },
-        {
-          title: "Pixel-Perfect Custom UI Systems",
-          desc: "Bespoke animations and brand design tokens built with Flutter's Skia/Impeller rendering pipeline. Flawless responsive scaling across hundreds of Android screen sizes and modern iOS notches.",
-        },
-        {
-          title: "Native Device Hardware Integration",
-          desc: "Deep integration with native hardware APIs: camera capture, biometric authentication (FaceID / Fingerprint), accelerometer, local push notifications, and background location services.",
-        },
-        {
-          title: "In-App Purchases & Monetization",
-          desc: "Unified payment integrations: Apple StoreKit 2, Google Play Billing, and in-app checkout gateways like Razorpay or Stripe for physical/digital goods.",
-        },
-        {
-          title: "App Store & Play Store Approval",
-          desc: "We manage the entire submission pipeline: privacy manifest compliance, metadata generation, screenshot assets, TestFlight deployment, and Apple/Google review resolution.",
-        },
-      ]}
-      timelinePre="Milestones"
-      timelineTitle="From Design to App Store Submission"
-      timelineLede="Weekly TestFlight builds on your physical device ensure you test real interactions before launch day."
-      timeline={[
-        {
-          step: "Week 01",
-          title: "Mobile Architecture & App Shell",
-          desc: "Setup state management (Bloc / Riverpod), repository layer, theme definitions, and navigation graph.",
-          deliverable: "Initial runnable build installed on your physical smartphone",
-        },
-        {
-          step: "Week 02",
-          title: "Offline Engine & Core Screens",
-          desc: "Implementation of SQLite database tables, local caching policies, user onboarding, and core functional flows.",
-          deliverable: "Functional prototype operating fully offline on TestFlight",
-        },
-        {
-          step: "Week 03",
-          title: "API Sync, Auth & In-App Purchases",
-          desc: "Secure token management, backend API endpoints integration, biometric locks, and store billing hooks.",
-          deliverable: "Complete end-to-end user loop with payment capability",
-        },
-        {
-          step: "Week 04",
-          title: "Store Submission & Launch Polish",
-          desc: "Performance profiling, memory leak audits, crash reporting (Sentry/Firebase), and submission for store review.",
-          deliverable: "Live listing submitted to Apple App Store and Google Play",
-        },
-      ]}
-      proofPre="Case Study"
-      proofTitle="Assess Yourself: Built in Flutter in 3-4 Weeks"
-      proofLede="A live demonstration of our offline-first Flutter architecture surviving extreme edge cases in production."
-      caseStudies={[
-        {
-          badge: "Mobile Case Study",
-          title: "Assess Yourself",
-          desc: "Built for Aptellic in 3-4 weeks. An offline-first mobile testing app where students take timed 2-hour exams. Even if a phone call interrupts or battery dies, the timer and answer state recover down to the exact second upon reboot.",
-          href: "/work/assess-yourself",
-          stats: [
-            { value: "3-4 Wks", label: "Turnaround Time" },
-            { value: "0%", label: "Data Loss on Crash" },
-            { value: "Flutter + SQLite", label: "Offline Tech" },
-          ],
-        },
-        {
-          badge: "Desktop Utility",
-          title: "ChromaLayer",
-          desc: "A native Windows display calibration and color tuning utility built with high-performance C# and native APIs, demonstrating our deep expertise across operating system boundaries.",
-          href: "/work/chromalayer",
-          stats: [
-            { value: "Native C#", label: "Performance" },
-            { value: "7 Controls", label: "Calibration" },
-            { value: "Zero Delay", label: "OS Startup" },
-          ],
-        },
-      ]}
-      stackTitle="Mobile Engineering Ecosystem"
-      stack={[
-        "Flutter 3.x",
-        "Dart",
-        "SQLite (sqflite)",
-        "Hive Local Storage",
-        "Riverpod / Bloc State Management",
-        "Firebase Cloud Messaging",
-        "Apple StoreKit & Google Play Billing",
-        "Fastlane CI/CD",
-        "TestFlight & Google Play Console",
-      ]}
-      faqTitle="Founder FAQs About Flutter App Development"
-      faqItems={[
-        {
-          q: "Why choose Flutter over native Swift/Kotlin or React Native?",
-          a: "Flutter compiles directly to native ARM machine code and renders its own canvas without relying on an interpreted JavaScript bridge. This guarantees true 60fps animations, eliminates platform-specific UI bugs, and reduces initial development and ongoing maintenance budgets by nearly 50% compared to dual native teams.",
-        },
-        {
-          q: "Will Apple or Google reject apps built in Flutter?",
-          a: "No. Thousands of top apps in both stores—including Google Ads, Nubank, BMW, and Alibaba—are built on Flutter. We adhere strictly to Apple Human Interface Guidelines and Android Material Design, as well as current iOS privacy manifests and permission requirements.",
-        },
-        {
-          q: "Can Flutter apps communicate with native SDKs and hardware?",
-          a: "Yes. Flutter uses Platform Channels to communicate directly with native Swift, Objective-C, Kotlin, and Java APIs. If your app requires a custom Bluetooth protocol, camera hardware, or specialized hardware accessory, we bridge it seamlessly.",
-        },
-        {
-          q: "How will I test the app during the build?",
-          a: "Every week, you receive an automated TestFlight invitation for iOS devices and an APK or Google Play Internal Testing link for Android. You test real builds on your physical handset from Week 1.",
-        },
-      ]}
-      ctaTitle="Ready to launch on iOS and Android simultaneously?"
-      ctaLede="Book a free 20-minute mobile architecture call. We'll evaluate your concept, identify hardware or API requirements, and give you a clear fixed milestone quote."
     />
   );
 }
-

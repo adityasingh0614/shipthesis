@@ -6,9 +6,9 @@
 Ship Thesis is an app and SaaS development studio specializing in turning startup ideas into production-ready software. We engineer cross-platform Flutter mobile apps, Next.js web platforms, and integrate intelligent AI capabilities.
 
 ## Dedicated Services
-- [MVP Development for Startups](https://www.shipthesis.com/mvp-development): Fixed 3-4 week MVP delivery with weekly working builds, fixed-price milestones, and 100% IP ownership.
-- [SaaS MVP Development](https://www.shipthesis.com/saas-development): Production-grade Next.js SaaS platforms with multi-tenant PostgreSQL (RLS), Stripe/Razorpay subscriptions, and automated background jobs.
 - [Flutter App Development](https://www.shipthesis.com/flutter-app-development): 60fps iOS and Android mobile apps from a single codebase, offline-first SQLite persistence, and App Store submission.
+- [SaaS & Web Platforms](https://www.shipthesis.com/saas-development): Production-grade Next.js SaaS platforms with multi-tenant PostgreSQL (RLS), Stripe/Razorpay subscriptions, and automated background jobs.
+- [MVP Development for Startups](https://www.shipthesis.com/mvp-development): Fixed 4-6 week MVP delivery with weekly working builds, milestone billing, and 100% IP ownership.
 - [Applied AI Product Engineering](https://www.shipthesis.com/ai-product-development): Deterministic LLM integrations, structured schema enforcement, hybrid RAG retrieval, and hallucination guardrails.
 
 ## Case Studies
@@ -24,5 +24,5 @@ Ship Thesis is an app and SaaS development studio specializing in turning startu
 
 ## Contact & Booking
 - Website: https://www.shipthesis.com
-- Email: hello@shipthesis.com
+- Email: info@shipthesis.com
 - Discovery Call: https://cal.com/aditya-kumar-singh/20min

@@ -24,19 +24,31 @@ const mono = JetBrains_Mono({
 
 const SITE_URL = "https://www.shipthesis.com";
 const SITE_NAME = "Ship Thesis";
-const HOME_TITLE = "Mobile App & SaaS MVP Development for Startups | Ship Thesis";
+const HOME_TITLE = "Ship Thesis";
 const SITE_DESCRIPTION =
-  "Ship a mobile app or SaaS MVP with a founder-led product studio. Fixed-scope milestones, weekly working builds, and code you own.";
+  "We build mobile apps and SaaS MVPs for founders. A working build on your phone every week, fixed-scope milestones, and code you own.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: HOME_TITLE,
-    template: `%s | ${SITE_NAME}`,
+    template: `%s · ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     title: HOME_TITLE,
@@ -61,13 +73,15 @@ const jsonLd = {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
-      logo: `${SITE_URL}/icon.svg`,
-      description: SITE_DESCRIPTION,
-      email: "hello@shipthesis.com",
-      founder: {
-        "@type": "Person",
-        name: "Aditya Singh",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon-512.png`,
+        width: 512,
+        height: 512,
       },
+      image: `${SITE_URL}/icon-512.png`,
+      description: SITE_DESCRIPTION,
+      email: "info@shipthesis.com",
       serviceType: [
         "Mobile App Development",
         "SaaS Development",

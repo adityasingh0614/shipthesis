@@ -2,180 +2,175 @@ import type { Metadata } from "next";
 import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "SaaS MVP Development Company | Full-Stack Web Apps | Ship Thesis",
+  title: "SaaS MVP Development for Founders · Full-Stack Web Apps",
   description:
-    "Full-stack SaaS MVP development for modern founders. Next.js, Supabase, multi-tenant architecture, Stripe billing, and automated background jobs shipped in weeks.",
+    "Launch your SaaS product in 4 to 6 weeks. Complete with user authentication, custom workflow engines, PostgreSQL with Row-Level Security, and responsive web dashboards.",
   alternates: {
     canonical: "/saas-development",
   },
   openGraph: {
-    title: "SaaS MVP Development Company | Full-Stack Web Apps | Ship Thesis",
+    title: "SaaS MVP Development for Founders · Full-Stack Web Apps",
     description:
-      "Full-stack SaaS MVP development for modern founders. Next.js, Supabase, multi-tenant architecture, Stripe billing, and automated background jobs shipped in weeks.",
+      "Launch your SaaS product in 4 to 6 weeks. Complete with user authentication, custom workflow engines, PostgreSQL with Row-Level Security, and responsive web dashboards.",
     url: "https://www.shipthesis.com/saas-development",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaaS MVP Development Company | Full-Stack Web Apps | Ship Thesis",
+    title: "SaaS MVP Development for Founders · Full-Stack Web Apps",
     description:
-      "Full-stack SaaS MVP development for modern founders. Next.js, Supabase, multi-tenant architecture, Stripe billing, and automated background jobs shipped in weeks.",
+      "Launch your SaaS product in 4 to 6 weeks. Complete with user authentication, custom workflow engines, PostgreSQL with Row-Level Security, and responsive web dashboards.",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "SaaS MVP Development Company",
-  serviceType: "SaaS Development",
-  provider: {
-    "@type": "Organization",
-    name: "Ship Thesis",
-    url: "https://www.shipthesis.com",
-  },
-  areaServed: "Worldwide",
-  description:
-    "Production-grade SaaS application development for B2B and consumer founders. Multi-tenant database architecture, billing webhooks, auth, and automated background jobs.",
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "USD",
-    description: "Fixed-scope SaaS MVP milestone development",
-  },
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.shipthesis.com/saas-development/#service",
+      name: "SaaS MVP Development",
+      provider: {
+        "@type": "Organization",
+        name: "Ship Thesis",
+        url: "https://www.shipthesis.com",
+      },
+      serviceType: "SaaS Software Engineering",
+      description:
+        "Full-stack SaaS application development for startup founders. Includes authentication, third-party API integration, multi-tenant databases, background jobs, and responsive dashboards.",
+      areaServed: "Worldwide",
+    },
+  ],
 };
 
 export default function SaasDevelopmentPage() {
   return (
     <ServicePageLayout
-      badge="Full-Stack SaaS Engineering"
-      title="Production-Ready SaaS MVPs Built for Scale."
-      lede="Build a B2B or consumer SaaS that actually turns visitors into paying subscribers. We engineer high-performance web applications with Next.js, robust multi-tenant PostgreSQL, automated billing, and zero architectural debt."
-      bookingLocation="services"
+      breadcrumbTitle="SaaS & Web Platforms"
+      badgeText="Status: 1 Sprint Slot Open"
+      title="SaaS products for founders, built and shipped fast"
+      lede="Full-stack web applications with authentication, custom workflow engines, multi-tenant databases, and responsive dashboards. A working build in your browser every week."
+      heroImage={{
+        src: "/work/safety-training-platform/trainer1.webp",
+        alt: "EHS Guru LMS custom training dashboard with Zoom API integration",
+        width: 1671,
+        height: 941,
+        deviceType: "browser",
+        browserUrl: "https://app.ehsguru.com/dashboard",
+      }}
+      who={{
+        for: [
+          {
+            title: "Founders building a web product with logins and workflows",
+            desc: "You need a modern full-stack web application with user authentication, role-based dashboards, third-party API integrations, and tenant data isolation.",
+          },
+          {
+            title: "Businesses replacing off-the-shelf software and high seat fees",
+            desc: "You currently pay exorbitant monthly SaaS seat fees for rigid software that does not fit your operational workflow, and you want a custom platform you own forever.",
+          },
+          {
+            title: "Teams avoiding no-code dead ends and fragile spaghetti code",
+            desc: "You want production software engineered on Next.js, TypeScript, and PostgreSQL with proper database migrations so you never have to rebuild when you scale.",
+          },
+        ],
+        notFor: [
+          {
+            title: "Simple static brochure marketing websites",
+            desc: "If you only need a basic landing page or blog without logins, databases, or user dashboards, a lightweight site generator or CMS is more cost-effective.",
+          },
+          {
+            title: "Speculative multi-year enterprise projects with no validation",
+            desc: "We build focused, high-leverage products designed to onboard real paying customers in 4 to 6 weeks, not bloated 18-month committee projects.",
+          },
+          {
+            title: "Teams looking for cheap overseas outsourcing mills",
+            desc: "We write clean, typed, modular code with senior founder-led engineering, zero technical debt, and 100% intellectual property ownership from day one.",
+          },
+        ],
+      }}
+      caseStudy={{
+        client: "EHS Guru",
+        title: "EHS Training Platform: Custom Live Learning LMS with Zoom API",
+        lede: "A bespoke live learning platform that replaced a bloated off-the-shelf LMS. Built to run one-click Zoom classes, auto-track attendance, and ingest recordings without per-seat software fees.",
+        timeline: "4 Weeks",
+        stack: ["Next.js 16", "Supabase (PostgreSQL RLS)", "Zoom API", "Tailwind CSS"],
+        metrics: [
+          { num: "1-Click", label: "Live Zoom Classes" },
+          { num: "100%", label: "Attendance Automated" },
+          { num: "$0", label: "Monthly Seat Tax" },
+        ],
+        screenshots: [
+          {
+            src: "/work/safety-training-platform/trainer1.webp",
+            alt: "Trainer dashboard with active class schedules",
+            caption: "Trainer command center with 1-click Zoom launcher",
+            width: 1671,
+            height: 941,
+          },
+          {
+            src: "/work/safety-training-platform/webinars.webp",
+            alt: "Webinars and class schedule calendar",
+            caption: "Automated webinar calendar and public lead registration",
+            width: 1400,
+            height: 824,
+          },
+          {
+            src: "/work/safety-training-platform/sessions.webp",
+            alt: "Class session attendance logs and rosters",
+            caption: "Automated Zoom attendance sync & student verification",
+            width: 1400,
+            height: 824,
+          },
+        ],
+        whatShipped: [
+          "Automated Zoom meeting generation with attendance webhook synchronization",
+          "Role-based permissions for Admins, Trainers, Learners, and Corporate Guests",
+          "Cloud class recording ingestion with instant student dashboard playback",
+        ],
+        caseStudyHref: "/work/safety-training-platform",
+      }}
+      deliverables={[
+        {
+          tag: "AUTH & ACCESS",
+          title: "User logins & enterprise security",
+          desc: "Secure authentication with passwordless magic links, Google OAuth, session management, and organization role-based access control (Admin, Member, Viewer).",
+        },
+        {
+          tag: "BILLING & APIS",
+          title: "Payment engines & 3rd-party integrations",
+          desc: "Seamless integration with Stripe/Razorpay billing, Zoom APIs, Resend email workflows, and resilient webhook handlers to manage external system lifecycles.",
+        },
+        {
+          tag: "DASHBOARD & DB",
+          title: "Responsive dashboard & Postgres RLS",
+          desc: "Fast, mobile-friendly interface with interactive data tables, KPI metric cards, and downloadable PDF/CSV exports built on PostgreSQL with Row-Level Security.",
+        },
+        {
+          tag: "FULL OWNERSHIP",
+          title: "100% Code in your GitHub from Day 1",
+          desc: "Clean React Server Components and TypeScript types. Private repository created directly in your company GitHub with full IP assignment and no agency lock-in.",
+        },
+      ]}
+      faqs={[
+        {
+          q: "How do payments and billing work?",
+          a: "We integrate official Stripe Checkout and Customer Portal (or Razorpay for Indian/global currency support). Customers can self-serve their subscription tier, update payment methods, download PDF invoices, and cancel accounts. When payments succeed or subscriptions change, background webhooks automatically update user permissions in your database.",
+        },
+        {
+          q: "How do users sign in?",
+          a: "We implement secure modern authentication (Supabase Auth, Auth0, or NextAuth). Users can sign in with passwordless email magic links or Google/GitHub OAuth. All user data is guarded by JSON Web Tokens (JWT) with strict Row-Level Security so one customer can never view another organization's data.",
+        },
+        {
+          q: "Can it support many customers / how does it scale?",
+          a: "Yes. We build on serverless Next.js edge runtimes and managed PostgreSQL with connection pooling (e.g. Supabase, Neon, or AWS RDS). This architecture easily supports thousands of active users and hundreds of thousands of monthly requests with sub-100ms response times without managing virtual servers.",
+        },
+        {
+          q: "What happens after launch?",
+          a: "Every engagement comes with a 30-day post-launch warranty where we fix any unexpected bugs or edge cases at zero additional charge. When you want to iterate or ship new roadmap features, you can retain us for ongoing engineering sprints, or hand the clean, typed codebase over to your in-house hires.",
+        },
+      ]}
+      ctaTitle="Ready to ship your web platform?"
+      ctaLede="Book a free 20-minute call to discuss your SaaS feature scope, database architecture, and timeline."
       jsonLd={jsonLd}
-      metrics={[
-        { value: "Next.js 16", label: "App Router & React Server" },
-        { value: "Multi-Tenant", label: "Row-Level Security (RLS)" },
-        { value: "Automated", label: "Stripe & Razorpay Billing" },
-        { value: "Weekly", label: "Staging environments updated" },
-      ]}
-      featuresPre="SaaS Architecture"
-      featuresTitle="Everything Your Software Needs to Charge Customers"
-      featuresLede="We don't just build pretty UI wrappers. We engineer the mission-critical plumbing required to operate a reliable subscription business."
-      features={[
-        {
-          title: "Multi-Tenant Database Architecture",
-          desc: "Strict tenant isolation using PostgreSQL Row-Level Security (RLS). Ensure user data cannot leak between organizations, even during complex queries.",
-        },
-        {
-          title: "Enterprise Auth & Role-Based Access",
-          desc: "Social logins, magic link authentication, session management, organization team invites, and granular role permissions (Admin, Editor, Viewer).",
-        },
-        {
-          title: "Recurring Billing & Webhook Engines",
-          desc: "Full Stripe or Razorpay subscription lifecycle management: customer portals, usage tiers, trial periods, prorated upgrades, and failed-payment retries.",
-        },
-        {
-          title: "Automated Background Workers & Cron",
-          desc: "Reliable async queue processing for batch emails, heavy data transformations, document generation, and periodic metric rollups.",
-        },
-        {
-          title: "Analytics & Executive Dashboards",
-          desc: "Responsive, high-density data tables, real-time KPI charting, CSV/PDF data exports, and audit logging built for decision makers.",
-        },
-        {
-          title: "Hardened Security & Edge Routing",
-          desc: "Strict Content Security Policies, rate limiting, automated database backups, secret rotation via environment variables, and zero client token leaks.",
-        },
-      ]}
-      timelinePre="Delivery Roadmap"
-      timelineTitle="From Architecture to First Customer Charge"
-      timelineLede="Our 4 to 6-week SaaS development sequence guarantees rock-solid stability before public traffic arrives."
-      timeline={[
-        {
-          step: "Phase 01",
-          title: "Data Modeling & Tenant Architecture",
-          desc: "Entity-relationship diagrams, database migration scripts, auth policies, and component design systems.",
-          deliverable: "PostgreSQL schema + RLS policies + UI layout system",
-        },
-        {
-          step: "Phase 02",
-          title: "Core SaaS Workflows & Dashboard",
-          desc: "Authenticated team workspaces, primary workflow CRUD, file uploads, and state management.",
-          deliverable: "Interactive staging deployment with real database state",
-        },
-        {
-          step: "Phase 03",
-          title: "Monetization & Webhook Hardening",
-          desc: "Stripe/Razorpay billing portal, subscription webhook event listeners, invoice history, and email triggers.",
-          deliverable: "End-to-end sandbox checkout and billing entitlement loop",
-        },
-        {
-          step: "Phase 04",
-          title: "Performance & Production Launch",
-          desc: "Edge caching, database query indexing, Core Web Vitals optimization, custom domain DNS, and production sign-off.",
-          deliverable: "Live production SaaS application on custom domain",
-        },
-      ]}
-      proofPre="Proven Track Record"
-      proofTitle="SaaS Platforms We've Engineered & Run"
-      proofLede="We build and operate our own software products, giving us first-hand empathy for billing churn, uptime, and database performance."
-      caseStudies={[
-        {
-          badge: "Analytics SaaS",
-          title: "Poststeady",
-          desc: "An automated reporting SaaS designed for marketing agencies and freelancers. Ingests raw CSV exports from Google, Meta, and LinkedIn, matches 175+ dirty columns, and generates branded PDF summaries.",
-          href: "/work/poststeady",
-          stats: [
-            { value: "175+", label: "CSV Columns Parsed" },
-            { value: "Zero", label: "Manual Data Entry" },
-            { value: "PDF & Web", label: "Automated Reports" },
-          ],
-        },
-        {
-          badge: "Education LMS SaaS",
-          title: "EHS Training Platform",
-          desc: "A custom live learning management SaaS for occupational health and safety professionals. Integrates Zoom API webhooks for automated attendance tracking, cohorts, and certification workflows.",
-          href: "/work/ehs-training-platform",
-          stats: [
-            { value: "Zoom API", label: "Direct Integration" },
-            { value: "100%", label: "Automated Attendance" },
-            { value: "Multi-Cohort", label: "LMS Engine" },
-          ],
-        },
-      ]}
-      stackTitle="Production-Ready SaaS Stack"
-      stack={[
-        "Next.js App Router",
-        "React Server Components",
-        "TypeScript",
-        "Supabase (PostgreSQL)",
-        "Prisma / Drizzle ORM",
-        "Stripe Billing & Webhooks",
-        "Razorpay Payments",
-        "Tailwind CSS",
-        "Resend Transactional Email",
-        "Vercel Edge Network",
-      ]}
-      faqTitle="Founder FAQs About SaaS Development"
-      faqItems={[
-        {
-          q: "Why choose Next.js and Supabase for a new SaaS MVP?",
-          a: "This stack provides the fastest time-to-market without locking you into expensive proprietary platforms. Next.js offers server-side rendering and edge routing for instant load times and perfect SEO, while Supabase delivers an enterprise-grade PostgreSQL database with built-in row-level security and authentication.",
-        },
-        {
-          q: "How do you handle multi-tenancy and data isolation?",
-          a: "We implement PostgreSQL Row-Level Security (RLS) directly at the database layer. Every single database query is automatically scoped to the authenticated organization ID, ensuring that customers can never see or modify another account's records.",
-        },
-        {
-          q: "What payment gateways do you support?",
-          a: "We support both Stripe and Razorpay, including recurring subscriptions, seat-based billing, usage meters, one-time fees, multi-currency support, and dunning workflows for failed payment cards.",
-        },
-        {
-          q: "Can our future internal team take over the codebase easily?",
-          a: "Absolutely. Everything is written in clean, strictly-typed TypeScript with comprehensive linting rules, structured database migration files, and modular component directories. We also provide architecture documentation and conduct a walkthrough session before sign-off.",
-        },
-      ]}
-      ctaTitle="Ready to build a SaaS that customers pay for?"
-      ctaLede="Schedule a free 20-minute architecture review. We will inspect your requirements, recommend the most cost-effective stack, and outline a fixed milestone plan."
     />
   );
 }
-
