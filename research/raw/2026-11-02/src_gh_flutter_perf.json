@@ -1,0 +1,16 @@
+{
+  "name": "src_gh_flutter_perf",
+  "url": "https://github.com/flutter/flutter/issues/194196",
+  "fetch_time": "2026-11-02T21:20:14.535359",
+  "http_status": 200,
+  "page_title": "Performance Flutter Web Build Lags on Mobile Devices While Android and iOS Builds Perform Smoothly \u00b7 Issue #194196 \u00b7 flutter/flutter \u00b7 GitHub",
+  "post_date": "2026-10-12T05:46:52Z",
+  "match_reason": "Technical benchmarks evaluating Flutter mobile native compilation smoothness vs hybrid web performance.",
+  "theme": "flutter_vs_rn",
+  "project_id": "flutter_mobile_vs_web_perf",
+  "source_category": "demand_technical",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

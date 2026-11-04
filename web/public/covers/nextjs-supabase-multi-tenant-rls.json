@@ -1,0 +1,33 @@
+{
+  "slug": "nextjs-supabase-multi-tenant-rls",
+  "template_version": "template-v1",
+  "headline": "Next.js Supabase Multi-Tenant Auth with RLS",
+  "headline_word_count": 6,
+  "category": "BLOCK",
+  "scene": "Clean diagram panel on soft gradient with BLOCK tag, no people",
+  "alt_text": "Technical architecture diagram of multi-tenant auth and row-level security for Next.js Supabase Multi-Tenant Auth with RLS.",
+  "prompt": "Flat vector technical architectural diagram representing cloud database multi-tenancy and row-level security. In the center, a stylized security shield and geometric data vault protect cleanly stacked modular database blocks. Symmetrical data streams and glowing abstract circuit pipelines flow into separate, isolated tenant compartments in vibrant mint green (#24B47E) and rich emerald green (#0A7F55). Floating abstract geometric security keys and protective barrier rings surround the core. Palette of dark navy (#1B2A4E), brand emerald green (#0A7F55), mint (#24B47E), periwinkle, and white. 16:9, generous empty space around edges, no people, no text, no logos, no watermark.",
+  "negative_prompt": "text, letters, words, numbers, code, typography, logos, brand marks, watermark, people, faces, characters, harsh black outlines, 3D render, photorealistic, cluttered noise.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/nextjs-supabase-multi-tenant-rls-illustration.png",
+    "illustration_webp": "/covers/nextjs-supabase-multi-tenant-rls-illustration.webp",
+    "link_preview_og": "/covers/nextjs-supabase-multi-tenant-rls-og.png",
+    "square_social": "/covers/nextjs-supabase-multi-tenant-rls-square.png",
+    "linkedin_landscape": "/covers/nextjs-supabase-multi-tenant-rls-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1234115,
+    "og_png": 185496,
+    "square_png": 99573,
+    "linkedin_png": 185496
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

@@ -1,0 +1,959 @@
+/* InlineDiagram.module.css - Refined Swiss Technical Publication Graphics (Zero Red, Perfect Alignment) */
+
+/* Common Figure Container */
+.figure {
+  margin: 48px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caption {
+  margin-top: 14px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  text-align: center;
+  max-width: 680px;
+}
+
+.figureNum {
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Common Graphic Container Card */
+.graphicCard {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: clamp(20px, 3.5vw, 32px);
+  box-shadow: 0 1px 3px rgba(15, 26, 20, 0.03);
+}
+
+.graphicHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tagMono {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.graphicTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  margin-top: 4px;
+}
+
+.graphicBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: var(--radius-control);
+}
+
+.footerQuote {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.footerQuote strong {
+  color: var(--green);
+}
+
+/* =============================================================================
+   1. POST 1: 30/40/30 MILESTONE CAPITAL PIPELINE (Dual-Lane Exposure Architecture)
+   ============================================================================= */
+.tradLane {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.laneMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tradBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+
+.tradMetaLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+}
+
+.tradTimelineBar {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.tradDepositBlock {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.tradBlockNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tradBlockLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+.tradOpaqueBlock {
+  background: #eef2ef;
+  border: 1px dashed #b8c9bf;
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.opaqueTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.opaqueStripe {
+  flex: 1;
+  max-width: 40px;
+  height: 1px;
+  background: #a4b8ac;
+}
+
+.opaqueText {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+}
+
+.opaqueSubtext {
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  line-height: 1.35;
+}
+
+.tradCliffBlock {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.cliffTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cliffSubtext {
+  font-size: 0.625rem;
+  color: var(--ink-muted);
+}
+
+.tradFootnote {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* Versus Divider */
+.vsSeparator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.vsLine {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.vsText {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green);
+}
+
+/* Lane 2: Milestone Governance */
+.milestoneLane {
+  background: #f4f8f5;
+  border: 1px solid #c8ded1;
+  border-radius: 8px;
+  padding: 18px 16px;
+}
+
+.milestoneBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--green);
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+
+.milestoneMetaLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.milestoneStepperTrack {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr 24px 1fr;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.stepperBlock {
+  background: #ffffff;
+  border: 1px solid #b7dfca;
+  border-radius: 6px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 175px;
+}
+
+.stepperTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepperIndex {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.stepperTranche {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.stepperTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.stepperGate {
+  font-size: 0.71875rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.stepperGate strong {
+  color: var(--ink);
+}
+
+.stepperRetention {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  color: var(--ink-muted);
+  background: #f4f8f5;
+  padding: 3px 6px;
+  border-radius: 3px;
+  border: 1px solid #d4e8dd;
+}
+
+.stepperRetention strong {
+  color: var(--green);
+}
+
+.stepperArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+}
+
+.milestoneFootnote {
+  font-size: 0.75rem;
+  color: var(--green);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 12px;
+}
+
+/* Invariant Metric Strip */
+.invariantStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.invariantItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.invariantLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.invariantValue {
+  font-size: 0.78125rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* =============================================================================
+   2. POST 2: THREE-SCREEN MVP WIREFRAME ARCHITECTURE (Aligned Rows)
+   ============================================================================= */
+.wireframeGrid {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr 32px 1fr;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 16px;
+}
+
+.phoneCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.phoneDevice {
+  width: 100%;
+  max-width: 210px;
+  aspect-ratio: 9 / 17.5;
+  background: #ffffff;
+  border: 3.5px solid var(--ink);
+  border-radius: 26px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(15, 26, 20, 0.08);
+  position: relative;
+  transition: transform 140ms ease;
+}
+
+.phoneDevice:hover {
+  transform: translateY(-2px);
+}
+
+.phoneTopNotch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px 6px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.phoneDynamicIsland {
+  width: 38px;
+  height: 6px;
+  background: var(--ink);
+  border-radius: 3px;
+}
+
+.screenContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-alt);
+  border-radius: 14px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.screenHeaderTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.uiGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.uiInputItem {
+  height: 20px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5625rem;
+  color: var(--ink-muted);
+}
+
+.uiInputActive {
+  border-color: var(--green);
+  color: var(--ink);
+}
+
+.uiPrimaryBtn {
+  height: 22px;
+  background: var(--green);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.uiStateCard {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.statusLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5625rem;
+  color: var(--green);
+  font-weight: 700;
+  text-align: center;
+}
+
+.progressBar {
+  height: 5px;
+  background: var(--surface-alt);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.progressFill {
+  width: 75%;
+  height: 100%;
+  background: var(--green);
+}
+
+.artifactBox {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.checkCircle {
+  width: 18px;
+  height: 18px;
+  color: var(--green);
+}
+
+.arrowCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--green);
+  justify-content: center;
+}
+
+.arrowLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+/* Aligned Scope Spec Row (Equal Heights Across Phones) */
+.scopeSpecRow {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr 32px 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.scopeSpecCard {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 108px;
+  width: 100%;
+}
+
+.specSpacer {
+  width: 32px;
+}
+
+.scopeSpecTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.specKeep {
+  font-size: 0.75rem;
+  color: var(--green);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.specCut {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.35;
+}
+
+/* =============================================================================
+   3. POST 3: CODE OWNERSHIP ARCHITECTURE (Perimeter Blueprint & Zero Red)
+   ============================================================================= */
+.topologyPerimeter {
+  border: 2px dashed var(--green);
+  border-radius: var(--radius-card);
+  background: #fbfdfc;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.perimeterBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dce4de;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.perimeterTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.perimeterTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  background: #eaf7f1;
+  color: var(--green);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.nodesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.nodeCard {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 200px;
+  transition: transform 140ms ease, border-color 140ms ease;
+}
+
+.nodeCard:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+.nodeTop {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nodeHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nodeBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.nodeTypeTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  background: var(--surface-alt);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.nodeTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.nodeCode {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  background: var(--surface-alt);
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nodeRule {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.nodeRule strong {
+  color: var(--ink);
+}
+
+/* Neutral Anti-Pattern Callout (No Red) */
+.antiPatternCalloutNeutral {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ink-soft);
+  border-radius: 0 var(--radius-control) var(--radius-control) 0;
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.calloutIcon {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.calloutTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.calloutText {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+/* =============================================================================
+   4. POST 4: 5-DAY RHYTHM (Equalized Heights, Zero Red)
+   ============================================================================= */
+.rhythmGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.rhythmStageCard {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  transition: transform 140ms ease, border-color 140ms ease;
+}
+
+.rhythmStageCard:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+.rhythmStageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dayBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--green);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.phaseNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.rhythmStageTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.rhythmActionBox {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.78125rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.ciPassBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  color: var(--green);
+  font-weight: 700;
+  background: #eaf7f1;
+  padding: 3px 6px;
+  border-radius: 3px;
+  margin-top: 8px;
+}
+
+.phoneNoticeBox {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--green);
+  border-radius: 0 6px 6px 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.noticeAppTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.noticeBody {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+/* Rhythm Comparison Row (Zero Red) */
+.rhythmComparisonRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.compareCellNeutral {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  padding: 14px 16px;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.compareCellNeutral strong {
+  display: block;
+  font-family: var(--font-display), system-ui, sans-serif;
+  color: var(--ink);
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.compareCellAccent {
+  background: #f2f7f4;
+  border: 1px solid #b7dfca;
+  border-radius: var(--radius-control);
+  padding: 14px 16px;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.compareCellAccent strong {
+  display: block;
+  font-family: var(--font-display), system-ui, sans-serif;
+  color: var(--green);
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .tradTimelineBar,
+  .milestoneStepperTrack,
+  .invariantStrip,
+  .nodesGrid,
+  .rhythmGrid,
+  .rhythmComparisonRow {
+    grid-template-columns: 1fr;
+  }
+
+  .wireframeGrid,
+  .scopeSpecRow {
+    grid-template-columns: 1fr;
+  }
+
+  .arrowCol,
+  .specSpacer,
+  .stepperArrow {
+    display: none;
+  }
+}

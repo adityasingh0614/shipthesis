@@ -1,0 +1,12 @@
+{
+  "name": "topic2_hn",
+  "url": "https://news.ycombinator.com/item?id=50330601",
+  "fetch_time": "2026-11-02T19:17:48.241875",
+  "http_status": 200,
+  "page_title": "Show HN: CheckOwners to find your repo&#x27;s hidden single points of failure | Hacker News",
+  "post_date": "2026-11-01T22:29:45",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

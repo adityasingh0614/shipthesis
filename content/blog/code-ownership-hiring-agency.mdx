@@ -1,0 +1,98 @@
+# How Do You Ensure 100% Code Ownership When Hiring an Agency?
+
+Ensuring complete code ownership requires the development agency to commit all source code directly into your own GitHub organization from day one, with cloud accounts (Supabase, Vercel, Apple Developer) created in your name. Avoid contracts where code handoff is promised at the end, as this creates vendor lock-in.
+
+### The Short Version
+* **Commit to your GitHub from day one**: Source code, pull requests, and commit histories must reside inside a repository owned by your company account, not a private agency repository.
+* **Direct ownership of cloud infrastructure**: Your database, hosting, authentication, and DNS must be registered under your company credit card and email, granting the agency only invited developer access.
+* **Avoid proprietary agency wrappers**: Contracts must ensure the product is built with standard, open-source frameworks rather than closed-source agency starter kits that require their engineers to maintain.
+
+---
+
+## The Agency Hostage Trap: Why "Code Transfer at the End" is Risky
+
+A frequent trap in agency contracting is the delayed transfer clause: *"Development happens in our internal environment and code is delivered only after final invoices are settled."*
+
+When an agency controls the repository, founders have minimal visibility into real progress. You cannot verify whether commits occur consistently or whether code quality is maintained. 
+
+If disagreements arise over missed deliverables, the agency holds all leverage. Withholding source code puts invested capital at risk. Code ownership must be an architectural state established on day one, not a concluding contract event.
+
+---
+
+## The Three Technical Pillars of Day-One Code Ownership
+
+To protect your startup, establish technical ownership across three distinct layers before development begins:
+
+| Ownership Layer | Where the Asset Must Reside | Permission Given to Agency | Warning Sign to Reject |
+|---|---|---|---|
+| **Source Code & Version Control** | Client’s GitHub Organization | Collaborator / Maintainer access to specific repository | Code hosted in agency’s private GitHub or GitLab |
+| **Cloud Infrastructure & Database** | Client’s Supabase or Vercel account | Developer / Member role via team invite | Database running on agency-managed shared server |
+| **App Stores & Domain DNS** | Client’s Apple Developer & Google Play Console, Cloudflare | App Manager / Developer role | App submitted under agency’s developer account |
+
+### 1. The GitHub Repository Pillar
+Create your organization on GitHub, initialize a private repository, and invite agency engineers as contributors. All branches and commits must be pushed directly to your repository. If the contract terminates, you revoke access while retaining all committed source code and git history.
+
+### 2. The Cloud Infrastructure Pillar
+Avoid running your database on an agency-managed shared server. Register your own account on Supabase, Vercel, or AWS, add your payment card, and invite the studio via email. You own the underlying database schemas, environment variables, and authentication records.
+
+### 3. The App Store & Distribution Pillar
+For mobile applications, register direct accounts with the Apple Developer Program and Google Play Console under your legal entity, granting invited access via App Store Connect. Publishing under your direct account prevents painful transfer delays post-launch.
+
+---
+
+## Proprietary Wrappers and Licensing Traps That Create Vendor Lock-In
+
+Even when an agency commits code to your GitHub, proprietary architecture can still create lock-in:
+
+1. **Restricted Licensing**: Studios may retain copyright over proprietary starter kits, encumbering future fundraising or company sale.
+2. **Maintenance Monopoly**: If only that studio understands their closed wrapper, you cannot hire internal engineers to extend the product.
+3. **Black-Box Dependencies**: If an internal library breaks during platform updates, you cannot patch it independently.
+
+Insist on industry-standard open-source stacks. Next.js, React, Tailwind CSS, TypeScript, and Supabase can be audited and maintained by incoming engineering teams without proprietary hurdles.
+
+---
+
+## The Code Ownership Checklist for Startup Contracts
+
+Before signing any software development agreement, ensure the contract contains these explicit clauses:
+
+* **Written Assignment of All IP to the Client**: The contract must provide a written assignment of all IP to the client for completed deliverables, ensuring ownership belongs to your company rather than being encumbered by ongoing licensing claims.
+* **Direct Repository Ownership**: The contract must state that development occurs in the client's designated GitHub repository, with all code pushed on an active schedule.
+* **No Encumbered Components**: The studio warrants that no closed-source, proprietary, or encumbered third-party code is included without prior written consent and clear licensing terms.
+* **Termination Off-Ramp**: In the event of contract termination, the contract must state that all completed deliverables, source code, and credentials paid for are promptly delivered to the client.
+
+*This is general information, not legal advice. Have a lawyer review your contract.*
+
+---
+
+## How Ship Thesis Builds in Your Repository from Commit One
+
+At Ship Thesis, the code repository lives in the client's own GitHub account from the very first commit {{c:OWN-1}}. Cloud hosting (Supabase, Firebase, Vercel) and API providers are billed directly to the client's corporate payment card {{c:OWN-2}}, and the client holds direct developer accounts with the Apple Developer Program and Google Play Console {{c:OWN-3}}.
+
+We push all branches, pull requests, and commits directly into your repository {{c:OWN-1}}. We build web applications, mobile apps, and SaaS platforms using open-source tools: Next.js, TypeScript, Tailwind CSS, Supabase, and Flutter {{c:SVC-1}} {{c:STACK-1}} {{c:STACK-2}} {{c:STACK-3}}.
+
+All bespoke deliverables created for your project are assigned to you upon receipt of payment for that milestone, and upon any termination, all deliverables and source code paid for are delivered promptly, as set out in our [Terms of Service](/terms) {{c:TERMS-IP-1}} {{c:TERMS-IP-2}} {{c:TERMS-TERM-1}}.
+
+---
+
+## Frequently Asked Questions
+
+### Can an agency hold my code if there is a payment dispute?
+If code is pushed to your GitHub repository, you retain direct inspection access. However, under standard milestone contracts, full intellectual property assignment is conditioned upon payment of the milestone, and deliverables paid for are delivered upon settlement.
+
+### How do I verify that the agency is actually pushing code?
+Check your GitHub repository's commit graph and pull request history weekly. You should see active commits, descriptive commit messages, and passing automated test runs corresponding to sprint milestones.
+
+### Do I need to be technical to set up a GitHub organization?
+No. Setting up a GitHub organization requires only an account and a few clicks to establish an organization and repository.
+
+---
+
+## Protect Your Startup's Intellectual Property
+
+We will review your technical contract terms, inspect your repository structure, and ensure your software is built on clean open-source foundations {{c:CTA-1}}.
+
+[Book a Free 20-Minute Assessment Call]({{BOOKING_URL}})
+
+---
+*Author: Ship Thesis · Last Updated: November 3, 2026*

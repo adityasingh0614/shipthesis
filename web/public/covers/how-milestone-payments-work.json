@@ -1,0 +1,33 @@
+{
+  "slug": "how-milestone-payments-work",
+  "template_version": "template-v1",
+  "headline": "How Milestone Payments Protect MVP Founders",
+  "headline_word_count": 6,
+  "category": "CONTRACTS",
+  "scene": "Three-step checklist with three simple milestone icons (kickoff flag, build gear, launch star)",
+  "alt_text": "Illustration of three milestone checkpoints for How Milestone Payments Protect MVP Founders.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators (founder and developer) in navy and periwinkle clothing reviewing a widescreen display showing an abstract 3-step milestone roadmap with three circular checkpoints connected by a smooth progress line highlighted in crisp brand green (#0A7F55) and mint (#24B47E), clean shapes, subtle shading, no outlines, limited palette of navy (#1B2A4E), brand emerald green (#0A7F55), mint (#24B47E), periwinkle, lavender, and white, 16:9, generous empty space around edges, no text, no logos, no watermark.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature, cut-off bodies, cut-off heads, cut-off feet, limbs touching edge of canvas, harsh black outlines, 3D render, photorealistic, cluttered background, distorted hands, extra fingers.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/how-milestone-payments-work-illustration.png",
+    "illustration_webp": "/covers/how-milestone-payments-work-illustration.webp",
+    "link_preview_og": "/covers/how-milestone-payments-work-og.png",
+    "square_social": "/covers/how-milestone-payments-work-square.png",
+    "linkedin_landscape": "/covers/how-milestone-payments-work-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 887497,
+    "og_png": 153784,
+    "square_png": 100186,
+    "linkedin_png": 153784
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

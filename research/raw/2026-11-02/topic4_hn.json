@@ -1,0 +1,12 @@
+{
+  "name": "topic4_hn",
+  "url": "https://news.ycombinator.com/item?id=16268672",
+  "fetch_time": "2026-11-02T19:17:53.222277",
+  "http_status": 200,
+  "page_title": "Ask HN: Did YC accept a mere idea anymore? | Hacker News",
+  "post_date": "2018-01-30T20:23:22",
+  "verified_opened": true,
+  "within_30_days": false,
+  "status_label": "EXPIRED_STALE (Date: 2018-01-30)",
+  "raw_notes": ""
+}

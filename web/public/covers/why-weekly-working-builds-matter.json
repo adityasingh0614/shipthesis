@@ -1,0 +1,33 @@
+{
+  "slug": "why-weekly-working-builds-matter",
+  "template_version": "template-v1",
+  "headline": "Why Weekly Working Builds Matter for Founders",
+  "headline_word_count": 7,
+  "category": "MVP",
+  "scene": "A person holding a phone with a working app and a week calendar",
+  "alt_text": "Illustration of weekly working app release calendar for Why Weekly Working Builds Matter for Founders.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators (developer in blue hoodie and founder in dark navy) reviewing weekly delivery progress, one holding a smartphone with live working interface highlighted in mint green (#24B47E), beside a large display showing an abstract weekly timeline schedule with four milestone checkpoints verified with check badges in crisp brand green (#0A7F55), clean flat vector shapes, subtle shading, no outlines, palette of dark navy, brand green, mint, periwinkle, and white, 16:9, generous empty space around edges, no text, no logos, no watermark.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature, cut-off bodies, cut-off heads, cut-off feet, limbs touching edge of canvas, harsh black outlines, 3D render, photorealistic, cluttered background, distorted hands, extra fingers.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/why-weekly-working-builds-matter-illustration.png",
+    "illustration_webp": "/covers/why-weekly-working-builds-matter-illustration.webp",
+    "link_preview_og": "/covers/why-weekly-working-builds-matter-og.png",
+    "square_social": "/covers/why-weekly-working-builds-matter-square.png",
+    "linkedin_landscape": "/covers/why-weekly-working-builds-matter-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1096337,
+    "og_png": 174523,
+    "square_png": 87535,
+    "linkedin_png": 174523
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

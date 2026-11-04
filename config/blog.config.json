@@ -1,0 +1,14 @@
+{
+  "blog": {
+    "max_per_day": 1,
+    "days": ["Mon", "Wed", "Fri"]
+  },
+  "block": {
+    "max_per_week": 2
+  },
+  "global_cap_per_day": 2,
+  "min_score": 70,
+  "max_review_queue": 3,
+  "never_fill_quota_with_weak_topics": true
+}
+

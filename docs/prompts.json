@@ -1,0 +1,213 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-11-03T23:30:00+05:30",
+  "pipeline_step": "blog:track_baseline",
+  "schedule": {
+    "baseline_t0": "2026-11-03",
+    "test_t7": "2026-11-10",
+    "test_t14": "2026-11-17",
+    "test_t30": "2026-12-03"
+  },
+  "models_probed": [
+    "Google Search / SGE / Gemini Grounding",
+    "ChatGPT Search (GPT-4o)",
+    "Perplexity AI (Sonar)",
+    "Claude Web Search"
+  ],
+  "prompts": [
+    {
+      "id": 1,
+      "slug": "how-milestone-payments-work",
+      "canonical_number": 1,
+      "target_query": "How do milestone payments work when hiring an MVP agency?",
+      "intent": "Founder contracts & payment tranches",
+      "status": "ready_to_deploy",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "innopalm.com",
+          "smartdev.com",
+          "xflowpay.com",
+          "squadprime.com",
+          "jobbers.io",
+          "skydo.com"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "slug": "what-to-cut-from-v1-mvp",
+      "canonical_number": 2,
+      "target_query": "How do you decide what features to cut from a startup MVP?",
+      "intent": "Product scoping & MVP trimming",
+      "status": "ready_to_deploy",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "reddit.com/r/startups",
+          "forasoft.com",
+          "medium.com",
+          "greensighter.com",
+          "btrsw.com",
+          "curiosum.com"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "slug": "code-ownership-hiring-agency",
+      "canonical_number": 3,
+      "target_query": "How to make sure you own all source code and IP when hiring an MVP developer",
+      "intent": "Technical ownership & contractor IP assignment",
+      "status": "ready_to_deploy",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "wipo.int",
+          "codenicelystudio.com",
+          "zulbera.com",
+          "jobbers.io",
+          "quwalabs.com",
+          "kayserlegal.com"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "slug": "why-weekly-working-builds-matter",
+      "canonical_number": 4,
+      "target_query": "What should you expect from weekly sprint deliverables with an MVP agency?",
+      "intent": "Delivery velocity & hardware testing",
+      "status": "ready_to_deploy",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "deliverable.agency",
+          "sprout.build",
+          "flatlogic.com",
+          "mvp-development.io",
+          "f22labs.com",
+          "horizon-labs.co"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "slug": "fixed-scope-vs-hourly-billing",
+      "canonical_number": 5,
+      "target_query": "Fixed scope milestones vs hourly billing for startup MVPs: which is better?",
+      "intent": "Commercial pricing model comparison",
+      "status": "backlog",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "jealous.dev",
+          "techaventure.com",
+          "nitinkkhatri.com",
+          "137.studio",
+          "apptly.ltd",
+          "planexhq.com"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "slug": "flutter-vs-react-native-mvp",
+      "canonical_number": 6,
+      "target_query": "Should I build my mobile MVP in Flutter or React Native?",
+      "intent": "Cross-platform mobile tech stack selection",
+      "status": "backlog",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "coderacle.com",
+          "propelius.tech",
+          "panthsoftech.com",
+          "gomilestone.com",
+          "bovo-digital.tech"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "slug": "deterministic-ai-engineering",
+      "canonical_number": 7,
+      "target_query": "How to build deterministic AI features with structured outputs for an MVP",
+      "intent": "AI architecture & structured generation",
+      "status": "backlog",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "platform.openai.com/docs",
+          "medium.com",
+          "towardsdatascience.com",
+          "github.com"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "slug": "figma-to-production-mvp",
+      "canonical_number": 8,
+      "target_query": "How to turn Figma designs into production code without rebuilding twice",
+      "intent": "Design to engineering handoff",
+      "status": "backlog",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "anagolabs.com",
+          "uxdesign.cc",
+          "figma.com/blog",
+          "builder.io"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "slug": "saas-architecture-stack",
+      "canonical_number": 9,
+      "target_query": "What is the best modern tech stack for a B2B SaaS MVP?",
+      "intent": "SaaS infrastructure & backend stack",
+      "status": "backlog",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "supabase.com/blog",
+          "vercel.com/blog",
+          "ycombinator.com/library",
+          "reddit.com/r/SaaS"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "slug": "how-to-vet-software-studios",
+      "canonical_number": 10,
+      "target_query": "How to vet a software development studio before signing a contract",
+      "intent": "Founder vendor vetting & risk mitigation",
+      "status": "backlog",
+      "baseline_t0": {
+        "ship_thesis_mentioned": false,
+        "ship_thesis_cited": false,
+        "cited_competitors": [
+          "speqto.com",
+          "codeqlik.com",
+          "rightfirms.co",
+          "bitzstudio.com",
+          "ashutec.com",
+          "codeandpepper.com"
+        ]
+      }
+    }
+  ]
+}
+

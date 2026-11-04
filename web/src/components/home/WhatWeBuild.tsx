@@ -45,11 +45,11 @@ export function WhatWeBuild() {
                   <Image
                     src={s.image}
                     alt={s.alt}
-                    width={1920}
-                    height={1080}
+                    width={1200}
+                    height={675}
                     className={styles.cardImage}
+                    sizes="(max-width: 768px) 100vw, 420px"
                     priority
-                    unoptimized
                   />
                 </div>
                 <div className={styles.copy}>

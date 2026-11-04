@@ -1,0 +1,16 @@
+{
+  "name": "src_gh_flutter_impeller",
+  "url": "https://github.com/flutter/flutter/issues/194832",
+  "fetch_time": "2026-11-02T21:20:11.844429",
+  "http_status": 200,
+  "page_title": "Impeller: Severe Performance Regression in ImageFilter.compose with Shared Backdrops: Re-rasterization Ignores Clip Bounds (#181743) \u00b7 Issue #194832 \u00b7 flutter/flutter \u00b7 GitHub",
+  "post_date": "2026-10-20T01:46:39Z",
+  "match_reason": "Official Flutter issue investigating graphics rendering pipeline and mobile runtime performance.",
+  "theme": "flutter_vs_rn",
+  "project_id": "flutter_impeller_issue",
+  "source_category": "demand_technical",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

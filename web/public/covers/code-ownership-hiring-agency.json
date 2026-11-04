@@ -1,0 +1,33 @@
+{
+  "slug": "code-ownership-hiring-agency",
+  "template_version": "template-v1",
+  "headline": "Code Ownership When Hiring an Agency",
+  "headline_word_count": 6,
+  "category": "CONTRACTS",
+  "scene": "A repository icon next to a lock and shield",
+  "alt_text": "Illustration of repository ownership and security shield for Code Ownership When Hiring an Agency.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators reviewing code repository ownership on a large screen displaying a git repository tree next to a secure lock and shield symbol highlighted in brand emerald green (#0A7F55) and mint (#24B47E), clean shapes, subtle shading, no outlines, limited palette of navy (#1B2A4E), brand green, mint, periwinkle, lavender, and white, 16:9, generous empty space around edges, no text, no logos, no watermark.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature, cut-off bodies, cut-off heads, cut-off feet, limbs touching edge of canvas, harsh black outlines, 3D render, photorealistic, cluttered background, distorted hands, extra fingers.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/code-ownership-hiring-agency-illustration.png",
+    "illustration_webp": "/covers/code-ownership-hiring-agency-illustration.webp",
+    "link_preview_og": "/covers/code-ownership-hiring-agency-og.png",
+    "square_social": "/covers/code-ownership-hiring-agency-square.png",
+    "linkedin_landscape": "/covers/code-ownership-hiring-agency-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 773100,
+    "og_png": 177666,
+    "square_png": 101712,
+    "linkedin_png": 177666
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

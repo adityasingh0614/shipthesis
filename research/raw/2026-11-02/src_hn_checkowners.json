@@ -1,0 +1,16 @@
+{
+  "name": "src_hn_checkowners",
+  "url": "https://news.ycombinator.com/item?id=50330601",
+  "fetch_time": "2026-11-02T21:19:53.684022",
+  "http_status": 200,
+  "page_title": "Show HN: CheckOwners to find your repo&#x27;s hidden single points of failure | Hacker News",
+  "post_date": "2026-11-01T22:29:45",
+  "match_reason": "Discussion analyzing repository maintainer bottlenecks, code governance, and ownership risks in client codebases.",
+  "theme": "code_ownership",
+  "project_id": "checkowners_project",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

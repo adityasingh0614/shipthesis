@@ -56,7 +56,9 @@
   border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(20, 32, 26, 0.04);
-  /* Keep image locked to 1:1 pixel grid without translation jitter on hover */
+  /* Lock hardware layer to prevent GPU texture shimmering on hover */
+  transform: translateZ(0);
+  backface-visibility: hidden;
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -72,6 +74,7 @@
   aspect-ratio: 16 / 9;
   background: #F6F8F7;
   border-bottom: 1px solid var(--line);
+  transform: translateZ(0);
 }
 
 .cardImage {
@@ -79,6 +82,8 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
 }
 
 .copy {

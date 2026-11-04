@@ -1,0 +1,16 @@
+{
+  "name": "src_hn_milestone_liability",
+  "url": "https://news.ycombinator.com/item?id=50334908",
+  "fetch_time": "2026-11-02T21:19:51.834452",
+  "http_status": 200,
+  "page_title": "&gt; The whole reason to pay for software is to offload the liability to a 3rd-part... | Hacker News",
+  "post_date": "2026-11-02T10:01:31",
+  "match_reason": "HN community discussion on risk distribution, milestone acceptance gates, and contract payment liability.",
+  "theme": "milestones",
+  "project_id": "hn_thread_50331402",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

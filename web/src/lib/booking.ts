@@ -3,8 +3,9 @@
  * Reads target booking calendar from NEXT_PUBLIC_BOOKING_URL.
  */
 
-export const DEFAULT_BOOKING_URL = "https://cal.com/aditya-kumar-singh/20min";
-export const DEFAULT_CAL_LINK_SLUG = "aditya-kumar-singh/20min";
+export const DEFAULT_BOOKING_URL = "https://cal.com/shipthesis/20min";
+export const DEFAULT_CAL_LINK_SLUG = "shipthesis/20min";
+export const BOOKING_URL = DEFAULT_BOOKING_URL;
 
 export type BookingLocation =
   | "header"

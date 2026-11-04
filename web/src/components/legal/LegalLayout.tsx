@@ -207,8 +207,8 @@ export function LegalLayout({
           </p>
         </div>
         <a
-          href="https://cal.com/aditya-kumar-singh/20min"
-          data-cal-link="aditya-kumar-singh/20min"
+          href="https://cal.com/shipthesis/20min"
+          data-cal-link="shipthesis/20min"
           data-cal-config='{"layout":"month_view"}'
           className="btn"
         >

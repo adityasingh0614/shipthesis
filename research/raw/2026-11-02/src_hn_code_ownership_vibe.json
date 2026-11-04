@@ -1,0 +1,16 @@
+{
+  "name": "src_hn_code_ownership_vibe",
+  "url": "https://news.ycombinator.com/item?id=50219324",
+  "fetch_time": "2026-11-02T21:19:59.144597",
+  "http_status": 200,
+  "page_title": "Vibe coding is changing how entrepreneurs turn ideas into software. Today, AI ap... | Hacker News",
+  "post_date": "2026-10-24T08:40:49",
+  "match_reason": "HN community debate on who owns the IP and source code when external builders generate application logic.",
+  "theme": "code_ownership",
+  "project_id": "hn_thread_50219323",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

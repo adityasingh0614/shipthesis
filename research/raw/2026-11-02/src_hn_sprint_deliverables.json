@@ -1,0 +1,16 @@
+{
+  "name": "src_hn_sprint_deliverables",
+  "url": "https://news.ycombinator.com/item?id=50069152",
+  "fetch_time": "2026-11-02T21:20:05.371370",
+  "http_status": 200,
+  "page_title": "again, not a great analogy tho, because the deliverable of the painter vs the ca... | Hacker News",
+  "post_date": "2026-10-13T09:49:54",
+  "match_reason": "Discussion analyzing sprint deliverables: client receiving working artifacts vs passive presentations.",
+  "theme": "weekly_builds",
+  "project_id": "hn_thread_50063427",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

@@ -1,0 +1,104 @@
+# Why Do Weekly Working Builds on Your Phone Matter for an MVP?
+
+Weekly working builds deployed to your phone via TestFlight or preview environments provide proof of engineering velocity and catch critical defects early. Status reports, slide decks, and Figma prototypes conceal technical failure modes like network drops, OS battery limits, and device latency that only physical hardware reveals.
+
+### The Short Version
+* **Real software beats slide decks**: A working application running on your own physical smartphone every Friday eliminates guesswork and proves steady engineering progress.
+* **Simulators hide edge cases**: Desktop screen sharing and simulator previews cannot test push notifications, camera permissions, haptic feedback, or offline state survival.
+* **Tight feedback loops reduce rework**: Testing software weekly allows you to course-correct user experience details in hours rather than discovering structural flaws late in development.
+
+---
+
+## The Black-Box Agency Problem: Why Monthly Demos Fail
+
+In a conventional software agency model, client communication revolves around abstract status updates. 
+
+Founders receive weekly burn-down charts, ticket summaries, or slide decks presented over Zoom. The project manager assures the founder that development is on schedule, but the founder is rarely given a working application to test on their own phone or browser.
+
+This black-box development cycle creates significant risk. When the agency finally presents a demo late in the contract, it is typically conducted by an engineer clicking through a locally hosted environment with curated test data.
+
+The moment the founder installs the app on a physical device, reality hits:
+* Buttons lag on mobile touchscreens.
+* Forms break when software keyboards pop up and obscure submit buttons.
+* Applications crash when transitioning from Wi-Fi to cellular data.
+* Workflows that looked clean in static designs feel unintuitive in hands-on use.
+
+Fixing these issues late requires altering database schemas and rewriting components. Weekly working builds eliminate this risk by requiring continuous integration and real-world testing from sprint one.
+
+---
+
+## Physical Hardware vs. Figma: What Clickable Prototypes Hide
+
+Clickable design prototypes in Figma are valuable for mapping user journeys, but they cannot reveal technical constraints.
+
+A prototype cannot show whether a screen loads in 200 milliseconds or three seconds. It cannot show how the operating system handles background app refresh or what happens when connectivity drops.
+
+| Testing Surface | What It Can Show | What It Hides |
+|---|---|---|
+| **Figma / Wireframes** | Visual layouts, color hierarchy, idealized user paths | Real network latency, OS memory limits, form keyboard behaviors |
+| **Desktop Web Simulators** | Rapid responsive layout testing, fast browser reloads | Touch gesture accuracy, thumb reachability, battery throttling |
+| **Physical Phone (TestFlight / APK)** | True touch response, offline resilience, real notifications | Other screen sizes, older operating system versions, concurrent server load |
+
+When you hold a working build on your physical phone, you evaluate software as an actual user:
+* **One-handed thumb reach**: Are primary action buttons placed where thumbs naturally rest?
+* **Network latency**: Does the app handle slow cellular connections gracefully with skeleton loaders?
+* **Operating system interrupts**: What happens when an incoming call interrupts a multi-step form?
+
+---
+
+## The Friday Build Rhythm: What Founders Should Inspect Weekly
+
+When you partner with a disciplined studio, Friday brings a fresh build to your phone via TestFlight (iOS) or Firebase App Distribution (Android).
+
+Spend twenty minutes every Friday conducting a structured sanity audit:
+
+1. **Verify New User Stories**: Test the specific capabilities scheduled for that week's sprint. If the sprint goal was user onboarding, complete that journey from scratch with fresh test data.
+2. **Stress-Test Interrupted Workflows**: Fill half a form, lock your phone screen, wait two minutes, and unlock it. Does the app resume cleanly without data loss?
+3. **Simulate Offline Scenarios**: Switch your phone into Airplane Mode while navigating the app. Does the application display helpful offline states?
+4. **Log Clear Feedback**: Note any visual or functional defects in a shared tracking board with screenshots and exact reproduction steps before Monday morning.
+
+This predictable weekly rhythm establishes transparency and ensures scope adjustments occur in real time.
+
+---
+
+## Automated CI/CD: How Modern Development Teams Distribute Builds
+
+Delivering a fresh build on Friday cannot rely on manual exports. Manually archiving iOS builds in Xcode and uploading them to App Store Connect takes hours and breaks easily due to expired certificates.
+
+Engineering teams automate release pipelines using tools like Fastlane and GitHub Actions. Whenever code merges into the main branch, automated cloud runners increment build numbers, sign binaries with company developer certificates, and deploy builds directly to Apple TestFlight and Google Play Internal Testing. 
+
+This automated pipeline ensures that builds tested on your phone reflect verified code directly from your repository.
+
+---
+
+## How Ship Thesis Delivers Friday Builds
+
+At Ship Thesis, the founder gets a working build to test on their own phone or browser preview every Friday {{c:BUILD-1}}.
+
+For cross-platform mobile apps on iOS and Android, we build using Flutter (Dart) for native performance and offline persistence {{c:STACK-2}}.
+
+---
+
+## Frequently Asked Questions
+
+### What tools do I need on my phone to test weekly builds?
+For iOS devices, you only need the free Apple TestFlight app from the App Store. For Android, builds are delivered directly via secure download links from Firebase App Distribution. No special developer accounts or configuration are required on your personal device.
+
+### What happens if a Friday build contains a bug?
+Finding bugs during Friday testing is expected and helpful. It means you discovered an issue within days of the code being written, when fixes take minutes. Document the bug with a screenshot, and it becomes a priority ticket in Monday's sprint kickoff.
+
+### Can non-technical team members and investors test weekly builds?
+Yes. Internal testing groups in App Store Connect are reserved for team members, while external testing groups allow founders to invite outside testers, advisors, and investors using a public link or email invite.
+
+---
+
+## Experience Weekly Velocity on Your Own Phone
+
+If you want an engineering partner that delivers real, working software to your phone every Friday, let's talk.
+
+We will review your product requirements and outline a milestone roadmap that puts an installable v1 on your phone in weeks {{c:CTA-1}}.
+
+[Book a Free 20-Minute Assessment Call]({{BOOKING_URL}})
+
+---
+*Author: Ship Thesis · Last Updated: November 3, 2026*

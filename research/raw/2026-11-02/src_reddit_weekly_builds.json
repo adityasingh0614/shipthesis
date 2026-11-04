@@ -1,0 +1,16 @@
+{
+  "name": "src_reddit_weekly_builds",
+  "url": "https://www.reddit.com/r/FlutterDev/comments/1d3f9b2/client_weekly_builds/",
+  "fetch_time": "2026-11-02T21:18:35.158038",
+  "http_status": 200,
+  "page_title": "Reddit",
+  "post_date": null,
+  "match_reason": "Community thread on pushing weekly test builds to client physical phones via TestFlight / APK links.",
+  "theme": "weekly_builds",
+  "project_id": "reddit_weekly_builds",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": false,
+  "status_label": "OPENED_NO_DATE",
+  "raw_notes": ""
+}

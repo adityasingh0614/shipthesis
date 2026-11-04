@@ -1,0 +1,44 @@
+{
+  "forbidden_terms": [
+    "$",
+    "USD",
+    "price",
+    "cost",
+    "budget",
+    "cheap",
+    "per hour",
+    "hourly rate",
+    "Discovery Sprint"
+  ],
+  "forbidden_patterns": [
+    "\\b\\d+\\s*(?:-|to)\\s*\\d+\\s*weeks?\\b",
+    "\\b\\d+\\s*weeks?\\b",
+    "\\$[0-9]+",
+    "Aditya Singh",
+    "Adiya"
+  ],
+  "hype_phrases": [
+    "game-changing",
+    "game changer",
+    "cutting-edge",
+    "in today's fast-paced world",
+    "revolutionary",
+    "seamlessly integrate",
+    "synergy",
+    "unlock the power"
+  ],
+  "word_count_limits": {
+    "warn_above": 1600,
+    "block_explanation_min": 600,
+    "block_explanation_max": 900
+  },
+  "required_elements": {
+    "direct_answer_sentences": 2,
+    "requires_table_or_list": true,
+    "requires_faq": true,
+    "min_faq_items": 3,
+    "max_faq_items": 5,
+    "cta_allowed": ["free assessment call", "free 20-minute assessment call", "free assessment"]
+  }
+}
+

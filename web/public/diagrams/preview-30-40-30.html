@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30/40/30 Milestone Payment Timeline Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #F8FAF9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #0F1A14;
+    padding: 48px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  /* Figure Container */
+  .figure {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid rgba(10, 127, 85, 0.16);
+    border-radius: 18px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(15, 26, 20, 0.04);
+  }
+
+  .caption {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6B766F;
+    text-align: center;
+    max-width: 760px;
+    font-weight: 500;
+  }
+
+  .caption strong {
+    color: #0F1A14;
+    font-weight: 700;
+  }
+
+  /* Timeline Header */
+  .timelineHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EEF2EE;
+  }
+
+  .timelineTitle {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F1A14;
+    letter-spacing: -0.01em;
+  }
+
+  .timelineBadge {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    background: #EBF4EE;
+    color: #0A7F55;
+    border-radius: 9999px;
+    border: 1px solid rgba(10, 127, 85, 0.2);
+  }
+
+  /* Segmented Progress Track */
+  .trackContainer {
+    margin-bottom: 28px;
+  }
+
+  .trackLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2F3E35;
+  }
+
+  .trackBar {
+    display: flex;
+    height: 12px;
+    width: 100%;
+    border-radius: 9999px;
+    overflow: hidden;
+    background: #EBF4EE;
+    gap: 3px;
+  }
+
+  .segment30a {
+    width: 30%;
+    background: #0A7F55;
+    border-radius: 9999px 0 0 9999px;
+  }
+
+  .segment40 {
+    width: 40%;
+    background: #24B47E;
+  }
+
+  .segment30b {
+    width: 30%;
+    background: #0F1A14;
+    border-radius: 0 9999px 9999px 0;
+  }
+
+  /* Grid of 3 Milestones */
+  .milestonesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 720px) {
+    .milestonesGrid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  .milestoneCard {
+    background: #F9FBF9;
+    border: 1px solid #E5ECE7;
+    border-radius: 14px;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .milestoneCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 127, 85, 0.08);
+    border-color: rgba(10, 127, 85, 0.3);
+  }
+
+  .milestoneTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .phaseTag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 9999px;
+  }
+
+  .tagGreen {
+    background: #0A7F55;
+    color: #FFFFFF;
+  }
+
+  .tagMint {
+    background: #24B47E;
+    color: #FFFFFF;
+  }
+
+  .tagNavy {
+    background: #0F1A14;
+    color: #FFFFFF;
+  }
+
+  .iconSvg {
+    width: 22px;
+    height: 22px;
+    color: #0A7F55;
+  }
+
+  .milestoneHeading {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F1A14;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .gateBox {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-left: 3px solid #0A7F55;
+    padding: 8px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2F3E35;
+    line-height: 1.4;
+  }
+
+  .gateBox strong {
+    color: #0A7F55;
+  }
+
+  .deliverablesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #55625B;
+  }
+
+  .deliverablesList li {
+    position: relative;
+    padding-left: 16px;
+  }
+
+  .deliverablesList li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0A7F55;
+    font-weight: 800;
+    font-size: 11px;
+  }
+
+  /* Rule Banner */
+  .ruleBanner {
+    margin-top: 24px;
+    padding: 12px 16px;
+    background: #EBF4EE;
+    border: 1px dashed rgba(10, 127, 85, 0.35);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F1A14;
+  }
+
+  .ruleBanner svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: #0A7F55;
+  }
+</style>
+</head>
+<body>
+
+  <figure class="figure" role="region" aria-label="30/40/30 Milestone Payment Framework Diagram">
+    <div class="card">
+      <div class="timelineHeader">
+        <div class="timelineTitle">30/40/30 Milestone Payment Framework</div>
+        <span class="timelineBadge">Fixed Scope · Tranche Releases</span>
+      </div>
+
+      <div class="trackContainer">
+        <div class="trackLabels">
+          <span>30% Deposit</span>
+          <span>40% Midpoint Build</span>
+          <span>30% Production</span>
+        </div>
+        <div class="trackBar" aria-hidden="true">
+          <div class="segment30a" title="30% Deposit"></div>
+          <div class="segment40" title="40% Midpoint Build"></div>
+          <div class="segment30b" title="30% Production Handover"></div>
+        </div>
+      </div>
+
+      <div class="milestonesGrid">
+        <!-- Milestone 1 -->
+        <div class="milestoneCard">
+          <div class="milestoneTop">
+            <span class="phaseTag tagGreen">30% Deposit</span>
+            <svg class="iconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" stroke-width="2"/>
+              <path d="M14 2v4a2 2 0 0 0 2 2h4" stroke-width="2"/>
+              <path d="M10 9H8" stroke-width="2"/>
+              <path d="M16 13H8" stroke-width="2"/>
+              <path d="M16 17H8" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="milestoneHeading">1. Kickoff & Infrastructure</div>
+          <div class="gateBox"><strong>Gate:</strong> Repository setup & cloud provisioned</div>
+          <ul class="deliverablesList">
+            <li>Initial codebase committed to client GitHub</li>
+            <li>Staging environments and CI/CD configured</li>
+            <li>Approved architecture and design system initialization</li>
+          </ul>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="milestoneCard">
+          <div class="milestoneTop">
+            <span class="phaseTag tagMint">40% Midpoint</span>
+            <svg class="iconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect width="14" height="20" x="5" y="2" rx="2" ry="2" stroke-width="2"/>
+              <path d="M12 18h.01" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="milestoneHeading">2. Core Working Build</div>
+          <div class="gateBox"><strong>Gate:</strong> Interactive test build in staging</div>
+          <ul class="deliverablesList">
+            <li>Core user authentication & primary feature flows</li>
+            <li>Interactive test build delivered directly to client devices</li>
+            <li>Seven (7) business days milestone inspection window</li>
+          </ul>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="milestoneCard">
+          <div class="milestoneTop">
+            <span class="phaseTag tagNavy">30% Final</span>
+            <svg class="iconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m12 15 2 2 4-4" stroke-width="2"/>
+              <rect width="18" height="18" x="3" y="3" rx="2" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="milestoneHeading">3. Handover & Submission</div>
+          <div class="gateBox"><strong>Gate:</strong> Store submission or production web release</div>
+          <ul class="deliverablesList">
+            <li>Submission to Apple App Store / Google Play Console or production web release</li>
+            <li>Thirty (30) day complimentary launch bug warranty</li>
+            <li>Full delivery of source code, credentials, and paid deliverables</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ruleBanner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" stroke-width="2"/>
+          <path d="m9 12 2 2 4-4" stroke-width="2"/>
+        </svg>
+        <span><strong>Client Protection Gate:</strong> Each payment is released at a checkpoint you can inspect.</span>
+      </div>
+    </div>
+
+    <figcaption class="caption">
+      <strong>Figure 1:</strong> The 30/40/30 milestone payment timeline. Tranches release only when observable, inspectable engineering gates pass client review in staging and production.
+    </figcaption>
+  </figure>
+
+</body>
+</html>

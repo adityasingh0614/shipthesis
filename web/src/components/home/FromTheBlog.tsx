@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
+import { BLOG_POSTS_METADATA } from "@/lib/blog-data";
 import styles from "./FromTheBlog.module.css";
-
-// Placeholders only (docs/design/home-brief.md §7): no posts yet.
-// page.tsx keeps this section off the live site until a blog automation
-// fills three real posts: title, excerpt, date, cover image, link.
-const POSTS = [1, 2, 3];
 
 export function FromTheBlog() {
   const reduceMotion = useReducedMotion();
+  // Exactly three boxes, three blocks on the home page
+  const posts = BLOG_POSTS_METADATA.slice(0, 3);
 
   return (
     <section className={styles.section} aria-labelledby="blog-title">
@@ -26,42 +24,55 @@ export function FromTheBlog() {
         </div>
 
         <ul className={styles.grid}>
-          {POSTS.map((n, i) => (
-            <motion.li
-              key={n}
-              className={styles.card}
-              initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              <div className={styles.cover}>
-                <span>Cover image</span>
-              </div>
-              <div className={styles.body}>
-                <span className={styles.date}>Month DD, YYYY</span>
-                <h3 className={styles.postTitle}>Post title placeholder</h3>
-                <p className={styles.excerpt}>
-                  A one or two line excerpt summarising the post goes here
-                  once it&apos;s written.
-                </p>
-              </div>
-            </motion.li>
-          ))}
+          {posts.map((post, i) => {
+            const formattedDate = new Date(post.datePublished).toLocaleDateString(
+              "en-US",
+              { month: "short", day: "numeric", year: "numeric" }
+            );
+
+            return (
+              <motion.li
+                key={post.slug}
+                className={styles.card}
+                initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <Link href={`/blog/${post.slug}`} className={styles.cardLink}>
+                  <div className={styles.cover}>
+                    <img
+                      src={post.heroImage}
+                      alt={post.title}
+                      className={styles.coverImage}
+                      width={1600}
+                      height={900}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className={styles.body}>
+                    <span className={styles.date}>{formattedDate}</span>
+                    <h3 className={styles.postTitle}>{post.title}</h3>
+                    <p className={styles.excerpt}>{post.description}</p>
+                  </div>
+                </Link>
+              </motion.li>
+            );
+          })}
         </ul>
 
         <Link href="/blog" className={styles.link}>
           See all posts
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
-              d="M3 9h11m-4-4 4 4-4 4"
+              d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />

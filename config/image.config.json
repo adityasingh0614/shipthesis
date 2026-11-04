@@ -1,0 +1,29 @@
+{
+  "version": "template-v1",
+  "locked_date": "2026-11-02",
+  "style": "pure_flat_vector_editorial",
+  "aspect_ratio": "16:9",
+  "resolution": {
+    "width": 1600,
+    "height": 900
+  },
+  "brand_palette": {
+    "brand_green_primary": "#0A7F55",
+    "brand_mint_accent": "#24B47E",
+    "ink_navy_dark": "#0F1A14",
+    "navy_secondary": "#1B2A4E",
+    "surface_white": "#FFFFFF",
+    "surface_soft_tint": "#EEF4F0"
+  },
+  "rules": [
+    "PURE ILLUSTRATION ONLY: absolutely no text, numbers, words, code snippets, typography, logos, brand names, or watermarks.",
+    "Completely framed within canvas: comfortable margins on all 4 sides; heads, full bodies, feet, chair wheels, and desk legs must never touch or clip the edges.",
+    "Light/white theme only: clean modern tech studio or isometric diagram background.",
+    "Incorporate Ship Thesis brand colors (emerald green #0A7F55 and mint green #24B47E) into focal elements.",
+    "For blogs: two collaborators (founder & developer) around a focal widescreen display.",
+    "For blocks: pure technical architectural diagrams without people."
+  ],
+  "base_prompt_template_blog": "Pure flat vector illustration in a refined modern tech editorial style. Wide shot composition fully framed with generous breathing margins on all 4 sides; both characters are entirely visible from head to toe (full bodies, heads, arms, legs, shoes completely inside the canvas with no edges clipped). A modern minimalist tech studio with a sleek desk on clean legs, ergonomic chair fully visible with its base. Two tech startup collaborators (a founder standing and an engineer sitting comfortably holding a slim laptop) reviewing {SCENE} on a sleek curved desktop monitor. Highlighted in vibrant mint green (#24B47E) and rich emerald forest green (#0A7F55) brand accents, paired with dark ink navy (#1B2A4E, #0F1A14), warm neutral grays, and crisp white. In the background, a minimalist potted indoor plant with green leaves and subtle soft architectural geometric shapes on a light clean background. Absolutely no text, no numbers, no letters, no words, no logos, no watermarks. Clean flat aesthetic, elegant vector art, no harsh black outlines, no 3D render, no photorealism.",
+  "base_prompt_template_block": "Pure flat vector illustration for a technical SaaS architecture diagram, depicting {SCENE}. Completely framed within canvas with generous outer margins. Stylized geometric security vault/shield protecting modular stacked database blocks, with symmetrical circuit data conduits and pipelines in vibrant mint green (#24B47E) and rich emerald forest green (#0A7F55) branching into isolated compartments. Floating abstract geometric security keys and protective barrier nodes on a crisp light background. Pristine vector graphics, smooth gradients, clean lines, no harsh black outlines. Absolutely NO text, NO letters, NO numbers, NO words, NO code snippets, NO logos, NO watermarks, NO people.",
+  "negative_prompt": "text, letters, words, numbers, code, typography, logos, brand marks, watermark, signature, cut-off bodies, cut-off heads, cut-off feet, limbs touching edge of canvas, harsh black outlines, 3D render, photorealistic, cluttered background, distorted hands, extra fingers."
+}

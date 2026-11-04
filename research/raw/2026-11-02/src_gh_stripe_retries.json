@@ -1,0 +1,15 @@
+{
+  "name": "src_gh_stripe_retries",
+  "url": "https://github.com/stripe/stripe-node/issues/2908",
+  "fetch_time": "2026-11-02T20:30:52.042266",
+  "http_status": 200,
+  "page_title": "FetchHttpClient: a retried request leaves the failed attempt&#39;s timeout armed \u00b7 Issue #2908 \u00b7 stripe/stripe-node \u00b7 GitHub",
+  "post_date": "2026-10-21T19:05:23Z",
+  "relation": "Official Stripe Node SDK issue on retried requests, client timeouts, and idempotent event delivery.",
+  "theme": "webhooks",
+  "verified_opened": true,
+  "within_30_days": true,
+  "is_on_topic": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

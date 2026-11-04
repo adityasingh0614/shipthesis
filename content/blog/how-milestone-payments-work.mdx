@@ -1,0 +1,94 @@
+# How Do Milestone Payments Work When Hiring an MVP Agency?
+
+Milestone payments divide an MVP development contract into verifiable deliverable stages where capital is released only after working software is inspected and approved. Rather than paying 100% upfront or open-ended hourly retainers, founders typically use a 30/40/30 structure (deposit, core working architecture, and final production cutover) to reduce delivery risk.
+
+### The Short Version
+* **Capital follows working code**: Capital is tied to deployed software rather than developer promises or elapsed time; payment triggers only when functional software is deployed and tested.
+* **Balanced risk distribution**: A 30% deposit initiates the project, 40% releases upon delivery of the core architecture, and the final 30% releases upon production launch and handover.
+* **Objective acceptance criteria**: Milestones define exact verification conditions—such as database migrations running in staging or API endpoints returning expected payloads—preventing subjective payment disputes.
+
+---
+
+## Why Upfront Full Payments and Hourly Billing Burn Founders
+
+Traditional software procurement models consistently misalign incentives between early-stage founders and dev agencies. 
+
+When an agency demands a massive lump sum upfront (such as 50% or 100% before work starts), the financial risk transfers to the founder. If the agency stalls, encounters architectural roadblocks, or assigns junior engineers behind the scenes, the founder has already surrendered their leverage. The agency has already collected its revenue, removing the urgency to ship.
+
+Conversely, open-ended hourly billing (time-and-materials) rewards inefficiency. Under an hourly contract, technical mistakes, architectural redesigns, or scope misunderstandings inflate the agency’s invoice while consuming the founder's runway. The agency profits from taking longer, while the founder needs to launch in weeks.
+
+Milestone payments address this misalignment by converting the relationship into deliverable-driven tranches. The agency is incentivized to maintain momentum and hit milestones promptly to unlock billing, while the founder retains capital until concrete progress is proven in staging.
+
+---
+
+## The 3:4:3 Milestone Structure Explained
+
+A reliable framework for scoping and delivering an MVP in weeks is the 3:4:3 payment schedule. This model splits the project into three distinct phases:
+
+| Milestone Phase | Percentage Tranche | Trigger Event | Deliverable & Acceptance Gate |
+|---|:---:|---|---|
+| **Milestone 1: Kickoff & Infrastructure** | **30% Deposit** | Contract signing and repository setup | Initial codebase committed to client's GitHub, cloud accounts provisioned, UI/UX flows approved. |
+| **Milestone 2: Core Architecture** | **40% Midpoint** | Verified working core user loop in staging | Authentication, database schema, and primary value feature functioning and testable on real devices. |
+| **Milestone 3: Production Cutover** | **30% Final** | Submission to app stores or production web release | App store submission or production cutover, third-party billing live, final source code handover. |
+
+### 1. Milestone 1: The 30% Commitment Deposit
+The initial 30% deposit secures dedicated engineering time and funds foundational setup. During this phase, teams establish your development environment, configure cloud infrastructure, and set up the repository. 
+
+This deposit typically does not exceed 30%.
+
+### 2. Milestone 2: The 40% Core Working Build
+The 40% midpoint tranche represents the heavy engineering lift. This milestone triggers only when the core hypothesis of your software is functional and testable in a staging environment. 
+
+For a SaaS platform, this means the database migrations run, authentication functions, and the primary data workflow executes end-to-end. For a mobile app, this means an installable build is pushed to your phone where you can tap through real user journeys without simulated mockups.
+
+### 3. Milestone 3: The 30% Final Cutover
+The remaining 30% is invoiced when the product is deployed to production, third-party integrations (like payment gateways and analytics) are verified live, and administrative ownership is handed over. Holding back the final 30% ensures the agency stays engaged through edge cases, bug fixes, and store review approvals.
+
+---
+
+## What Acceptance Criteria Must Be Verified Before Releasing Payment?
+
+A milestone contract is only as good as its acceptance criteria. Vague terms like "frontend work completed" or "progress on backend" create subjective disputes. Milestone acceptance is tied to observable gates:
+
+1. **Working deployment in a test environment**: You can log in, interact with data, and execute the primary user workflow on a live preview URL or physical phone.
+2. **Automated build passes**: Unit tests, TypeScript type checks, and linting rules pass in CI/CD without fatal errors.
+3. **Clean code committed to your GitHub**: Code for that sprint is pushed directly to your organization's repository, not held on local machines or private agency forks.
+4. **Defined review window**: The contract provides a fixed window to test the build and report blocking bugs before the invoice is finalized.
+
+---
+
+## How Ship Thesis Structures Milestone Agreements
+
+At Ship Thesis, we build web applications, SaaS platforms, and mobile apps for founders using 3:4:3 milestone splits {{c:SVC-1}} {{c:BILL-1}} {{c:BILL-2}} {{c:BILL-3}}.
+
+Under our structure, a 30% kickoff deposit is due prior to sprint scheduling, design system initialization, and repository setup {{c:BILL-1}}. The 40% midpoint milestone is invoiced upon delivery of the interactive mid-stage test build demonstrating core user authentication and primary feature flows {{c:BILL-2}}. The final 30% handover milestone is invoiced upon submission to the Apple App Store / Google Play Console or production web release {{c:BILL-3}}.
+
+The code repository lives in the client's own GitHub account from the very first commit {{c:OWN-1}}.
+
+All custom deliverables created for your project are assigned to you upon receipt of payment for that milestone, as outlined in our [Terms of Service](/terms) {{c:TERMS-IP-1}} {{c:TERMS-IP-2}}.
+
+---
+
+## Frequently Asked Questions
+
+### What happens if an agency fails to deliver a milestone?
+If a deliverable contains functional defects or deviations from agreed scope, the client submits a written defect report before the review window closes, and the agency remediates verified defects. Under our Terms (§12), if an engagement is terminated, the client pays for milestone work performed up to the termination date, and Ship Thesis promptly delivers all completed deliverables, source code, and credentials paid for {{c:TERMS-TERM-1}}.
+
+### Can milestone deliverables change during development?
+Yes, but requirement changes must be handled through explicit scope adjustments rather than informal feature additions. If a founder wants to add a new workflow midway through development, both parties agree on what secondary feature to swap out to keep the milestone and timeline intact.
+
+### How long should you take to review and approve a milestone?
+Under disciplined milestone terms, founders typically have a defined review window—such as seven (7) business days following delivery—to test and inspect the deliverable against written scope specifications before acceptance is finalized.
+
+---
+
+## Ready to Scope Your MVP?
+
+If you are planning to build an MVP and want a transparent milestone roadmap with verifiable deliverables, book an assessment call with our team {{c:CTA-1}}.
+
+We will review your user flow, database requirements, and core screen architecture, and show you how to split your project into predictable 3:4:3 milestones {{c:CTA-1}}.
+
+[Book a Free 20-Minute Assessment Call]({{BOOKING_URL}})
+
+---
+*Author: Ship Thesis · Last Updated: November 3, 2026*

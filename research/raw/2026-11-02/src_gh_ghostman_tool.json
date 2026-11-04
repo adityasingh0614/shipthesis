@@ -1,0 +1,15 @@
+{
+  "name": "src_gh_ghostman_tool",
+  "url": "https://github.com/4yk5/Ghostman",
+  "fetch_time": "2026-11-02T20:30:53.387158",
+  "http_status": 200,
+  "page_title": "GitHub - 4yk5/Ghostman: A fast, keyboard-driven TUI API client &amp; webhook inspector. No cloud, no Electron, 100% local-first. \u00b7 GitHub",
+  "post_date": "2026-10-31T21:34:02Z",
+  "relation": "Utility for inspecting webhook retry headers and payload validation.",
+  "theme": "webhooks",
+  "verified_opened": true,
+  "within_30_days": true,
+  "is_on_topic": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

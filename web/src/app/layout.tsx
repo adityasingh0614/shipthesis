@@ -63,6 +63,13 @@ export const metadata: Metadata = {
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
   },
+  verification: {
+    other: {
+      ...(process.env.BING_SITE_VERIFICATION || process.env.NEXT_PUBLIC_BING_VERIFICATION
+        ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION || process.env.NEXT_PUBLIC_BING_VERIFICATION }
+        : {}),
+    },
+  },
 };
 
 const jsonLd = {
@@ -93,11 +100,11 @@ const jsonLd = {
         "@type": "ContactPoint",
         contactType: "customer service",
         email: "info@shipthesis.com",
-        url: "https://cal.com/aditya-kumar-singh/20min",
+        url: "https://cal.com/shipthesis/20min",
       },
       sameAs: [
         "https://github.com/adityasingh0614",
-        "https://cal.com/aditya-kumar-singh/20min",
+        "https://cal.com/shipthesis/20min",
       ],
     },
     {

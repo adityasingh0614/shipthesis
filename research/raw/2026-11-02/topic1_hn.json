@@ -1,0 +1,12 @@
+{
+  "name": "topic1_hn",
+  "url": "https://news.ycombinator.com/item?id=19948695",
+  "fetch_time": "2026-11-02T19:17:45.452064",
+  "http_status": 200,
+  "page_title": "Why Milestone-Based Payments Are Never a Good Idea for Custom Software | Hacker News",
+  "post_date": "2019-05-18T17:50:19",
+  "verified_opened": true,
+  "within_30_days": false,
+  "status_label": "EXPIRED_STALE (Date: 2019-05-18)",
+  "raw_notes": ""
+}

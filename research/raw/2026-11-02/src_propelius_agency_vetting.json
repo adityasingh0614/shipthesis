@@ -1,0 +1,16 @@
+{
+  "name": "src_propelius_agency_vetting",
+  "url": "https://propelius.tech/feeds/blog/mvp-development-company/",
+  "fetch_time": "2026-11-02T21:19:47.414956",
+  "http_status": 200,
+  "page_title": "How to Choose an MVP Development Company: A Scorecard for Teams With No In-House Engineers",
+  "post_date": "2026-10-04T13:49:21.000Z",
+  "match_reason": "Agency scorecard arguing for milestone release contracts and avoiding lump-sum deposits when hiring an MVP studio.",
+  "theme": "milestones",
+  "project_id": "propelius_agency_post",
+  "source_category": "competitor_content",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

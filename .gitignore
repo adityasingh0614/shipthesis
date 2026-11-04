@@ -8,6 +8,12 @@ web/scratch/
 web/demo/
 .agents/
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
 # Editor/OS
 .DS_Store
 Thumbs.db

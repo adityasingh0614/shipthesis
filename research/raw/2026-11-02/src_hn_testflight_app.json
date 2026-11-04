@@ -1,0 +1,16 @@
+{
+  "name": "src_hn_testflight_app",
+  "url": "https://news.ycombinator.com/item?id=50312485",
+  "fetch_time": "2026-11-02T21:20:09.487287",
+  "http_status": 200,
+  "page_title": "Hi, everyone! It has been two - three months that we work on the idea of the app... | Hacker News",
+  "post_date": "2026-10-31T01:51:38",
+  "match_reason": "Founder discussion on distributing working TestFlight builds for user testing during active development.",
+  "theme": "weekly_builds",
+  "project_id": "hn_testflight_feedback",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

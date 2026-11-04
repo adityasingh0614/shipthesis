@@ -50,30 +50,57 @@
   background: transparent;
   border: none;
   border-radius: var(--radius-card);
-  overflow: hidden;
-  transition:
-    transform 200ms ease-out;
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
 .card:hover {
   transform: translateY(-4px);
 }
 
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+
 .cover {
-  display: grid;
-  place-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
   aspect-ratio: 16 / 10;
-  border: none;
+  border: 1px solid var(--line);
   background: color-mix(in srgb, var(--green) 7%, var(--surface));
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--ink-soft);
+  box-shadow: 0 1px 3px rgba(20, 32, 26, 0.04);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card:hover .cover {
+  border-color: color-mix(in srgb, var(--green) 45%, var(--line));
+  box-shadow: 0 10px 28px -6px rgba(10, 127, 85, 0.14);
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover .coverImage {
+  transform: scale(1.03);
 }
 
 .body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 .date {
@@ -90,11 +117,18 @@
   line-height: 1.15;
   letter-spacing: -0.01em;
   text-transform: uppercase;
+  color: var(--ink);
+  transition: color 180ms ease;
+}
+
+.card:hover .postTitle {
+  color: var(--green);
 }
 
 .excerpt {
   margin-top: 10px;
   color: var(--ink-soft);
+  line-height: 1.5;
 }
 
 .link {

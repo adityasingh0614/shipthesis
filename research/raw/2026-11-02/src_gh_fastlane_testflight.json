@@ -1,0 +1,16 @@
+{
+  "name": "src_gh_fastlane_testflight",
+  "url": "https://github.com/fastlane/fastlane/pull/30470",
+  "fetch_time": "2026-11-02T21:20:06.609287",
+  "http_status": 200,
+  "page_title": "[pilot] Add testers with an App Store Connect API key by mrtnrst \u00b7 Pull Request #30470 \u00b7 fastlane/fastlane \u00b7 GitHub",
+  "post_date": "2026-10-22T20:26:26Z",
+  "match_reason": "Fastlane CI/CD PR automating App Store Connect API keys to push weekly TestFlight builds to client testers.",
+  "theme": "weekly_builds",
+  "project_id": "fastlane_testflight_ci",
+  "source_category": "demand_technical",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

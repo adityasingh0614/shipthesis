@@ -1,0 +1,16 @@
+{
+  "name": "src_hn_agency_vetting",
+  "url": "https://news.ycombinator.com/item?id=50059941",
+  "fetch_time": "2026-11-02T21:20:16.752082",
+  "http_status": 200,
+  "page_title": "if it was the case that there are like 5k people with access to gated models, wh... | Hacker News",
+  "post_date": "2026-10-12T17:40:32",
+  "match_reason": "HN debate on vetting external developer agencies, checking technical depth, and avoiding resold offshore labor.",
+  "theme": "vetting_studios",
+  "project_id": "hn_agency_vetting",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

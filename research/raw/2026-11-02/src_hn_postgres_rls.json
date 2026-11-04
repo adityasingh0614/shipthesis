@@ -1,0 +1,15 @@
+{
+  "name": "src_hn_postgres_rls",
+  "url": "https://news.ycombinator.com/item?id=49949946",
+  "fetch_time": "2026-11-02T20:30:46.278604",
+  "http_status": 200,
+  "page_title": "Row-level security performance in PostgreSQL, measured | Hacker News",
+  "post_date": "2026-10-04T02:12:52",
+  "relation": "Technical discussion and performance benchmarks for PostgreSQL Row Level Security (RLS) under high concurrency.",
+  "theme": "supabase_rls",
+  "verified_opened": true,
+  "within_30_days": true,
+  "is_on_topic": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

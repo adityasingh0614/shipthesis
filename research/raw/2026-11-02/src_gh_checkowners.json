@@ -1,0 +1,16 @@
+{
+  "name": "src_gh_checkowners",
+  "url": "https://github.com/smusali/checkOwners",
+  "fetch_time": "2026-11-02T21:19:55.699308",
+  "http_status": 200,
+  "page_title": "GitHub - smusali/checkOwners: Code Ownership Analytics \u00b7 GitHub",
+  "post_date": "2026-11-02T00:23:19Z",
+  "match_reason": "Open-source developer utility auditing CODEOWNERS rules and tracking ownership drift.",
+  "theme": "code_ownership",
+  "project_id": "checkowners_project",
+  "source_category": "demand_technical",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

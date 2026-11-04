@@ -1,0 +1,12 @@
+{
+  "name": "topic5_reddit2",
+  "url": "https://www.reddit.com/r/SaaS/comments/1g91m9y/avoiding_agency_lock_in/",
+  "fetch_time": "2026-11-02T19:17:58.807719",
+  "http_status": 200,
+  "page_title": "Reddit",
+  "post_date": null,
+  "verified_opened": true,
+  "within_30_days": false,
+  "status_label": "OPENED_NO_DATE",
+  "raw_notes": ""
+}

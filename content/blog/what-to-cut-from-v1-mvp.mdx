@@ -1,0 +1,104 @@
+# What Should You Cut from Your First MVP?
+
+To cut scope from a first MVP without reducing core utility, reduce the entire product to a single primary loop across three essential screens: input, core processing, and output. Stripping secondary features like social login, chat rooms, settings toggles, and complex notification systems preserves capital and cuts development time to weeks.
+
+### The Short Version
+* **The three-screen rule**: If your user cannot complete the primary value hypothesis using only an input screen, a processing screen, and a result screen, your product contains unnecessary scope.
+* **Cut secondary features before launch**: User profile customization, team permissions, dark mode, social sharing, and real-time chat must wait until users prove they want the core utility.
+* **Validate the workflow, not the bells and whistles**: Unverified features added before initial user traction dilute engineering focus and delay your launch by weeks.
+
+---
+
+## Why First-Time Founders Build Twice as Much Software as They Need
+
+The most common failure mode in early-stage software startups is not poor engineering; it is building software nobody asked for.
+
+First-time founders frequently conflate an MVP (Minimum Viable Product) with a feature-complete product. They look at established competitors that have iterated over ten years and attempt to clone their secondary feature matrix: user avatars, billing dashboards, granular role-based permissions, multi-channel notification centers, and settings menus. 
+
+Each secondary feature requires database tables, UI components, API endpoints, edge-case testing, and ongoing maintenance. As a result, the development timeline expands from weeks into months, and development capital is exhausted before a single real user tests the core workflow.
+
+A true MVP does not try to impress everyone with depth. It validates a single, high-stakes hypothesis: *Does this specific workflow solve a painful enough problem that users will adopt it?* Scope outside that hypothesis is a distraction that should be cut.
+
+---
+
+## The Three-Screen Rule: Identifying Your Primary Value Loop
+
+To maintain focus and ship within weeks, we use a simple architectural constraint: **the three-screen rule**. 
+
+When analyzing focused software utilities, products often center on three stages:
+
+1. **Screen 1: The Input Screen**: Where the user provides the initial data, trigger, or file (e.g., an upload box, a search bar, or a short questionnaire).
+2. **Screen 2: The Core Action / Processing Screen**: Where the core engine operates and the user interacts with the primary utility (e.g., a live test interface, a workspace canvas, or an analytics generator).
+3. **Screen 3: The Output / Result Screen**: Where the user receives the payoff or artifact (e.g., an exportable PDF, a summary report, or a confirmation of completed action).
+
+If your product requires seven screens before a user experiences value, your architecture is over-engineered. By constraining v1 to three core screens, you force yourself to clarify the exact transaction between the user and the application.
+
+---
+
+## What to Cut vs. What to Keep in v1
+
+When deciding what survives the v1 cut, categorize features into either core engine mechanics or secondary infrastructure:
+
+| Feature Category | Cut from v1 (Defer Until Post-Launch) | Keep in v1 (Essential for Core Loop) |
+|---|---|---|
+| **Authentication** | Social logins (Google, Apple, GitHub), magic links, two-factor auth (2FA) | Simple email and password authentication via Supabase Auth |
+| **User Management** | Profile pictures, custom avatars, bio pages, team invite links | Single-user session mapped to user ID |
+| **Communication** | In-app live chat, SMS alerts, email notification preferences | Single transactional email on completion via Resend or Postmark |
+| **Data Ingestion** | Direct third-party API syncing, Google Drive connectors | Bulk CSV or Excel upload with standard column mapping |
+| **Analytics & UI** | Custom analytics charts, dark mode toggles, theme builders | Plain, clean data display that delivers the core result |
+| **Settings** | Granular notification toggles, workspace customization | Sensible hardcoded defaults |
+
+### 1. Cut Multi-Provider Social Login
+Founders often spend days configuring Google, Apple, and GitHub OAuth credentials, handling redirect URIs across staging and production, and writing edge cases for merged accounts. For v1, simple email and password authentication is sufficient. Serious users who need your tool will readily create an account with email.
+
+### 2. Cut In-App Messaging and Community Feeds
+Unless your entire startup concept is a communication tool, chatrooms and activity feeds are engagement traps. They require WebSockets, real-time presence indicators, message persistence, and moderation tools. Cut them from v1.
+
+### 3. Cut Granular Permission Systems
+Avoid building multi-tiered permission systems (Owner, Admin, Manager, Editor, Viewer) on day one unless you are selling directly to enterprise compliance teams. For an MVP, a binary role system (Admin vs User) covers all essential workflows.
+
+---
+
+## Build vs. Buy: Using Off-the-Shelf Tools for Secondary Workflows
+
+Cutting features does not mean leaving your product broken; it means delegating secondary functionality to existing third-party infrastructure.
+
+Instead of writing custom backend modules for secondary services:
+* **Billing**: Use hosted Stripe Checkout instead of building custom credit card input forms and subscription management logic.
+* **Database & Auth**: Use Supabase with PostgreSQL and Row Level Security rather than hand-rolling authentication servers and token refresh pipelines.
+* **Transactional Email**: Use simple API calls to Resend or Postmark rather than managing SMTP queues.
+* **Error Logging**: Plug in Sentry with a single configuration file rather than writing custom server log parsers.
+
+Adopting standard off-the-shelf services allows engineering teams to focus on the core loop that differentiates the business.
+
+---
+
+## How Ship Thesis Applies Scope Trimming
+
+At Ship Thesis, our rule of thumb is that a first MVP is scoped down to about three core screens or workflows to test the primary value hypothesis before adding secondary features {{c:SCOPE-1}}.
+
+---
+
+## Frequently Asked Questions
+
+### Won't users complain if our MVP lacks secondary features?
+Users complain when the core feature fails or is difficult to use, not because you lack dark mode or an avatar uploader. If your core engine solves an urgent problem, users will adopt it despite simple secondary features.
+
+### How do we decide which features to build in v2?
+Build features only in response to real user behavior and direct support requests. Once live users ask for a specific capability multiple times, prioritize that feature in your next sprint.
+
+### What if a competitor already has all these features?
+You cannot out-feature an established incumbent with years of funding on day one. Your competitive advantage is speed, focus, and doing one specific workflow significantly better, simpler, or faster than bloated enterprise tools.
+
+---
+
+## Strip Down Your Roadmap and Ship in Weeks
+
+If you have a product idea or an oversized feature spec and want to identify your three-screen core loop, let's talk.
+
+We will review your wireframes, audit your user flows, and show you what to cut so you can launch a solid MVP in weeks {{c:CTA-1}}.
+
+[Book a Free 20-Minute Assessment Call]({{BOOKING_URL}})
+
+---
+*Author: Ship Thesis · Last Updated: November 3, 2026*

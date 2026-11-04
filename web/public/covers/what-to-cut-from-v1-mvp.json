@@ -1,0 +1,33 @@
+{
+  "slug": "what-to-cut-from-v1-mvp",
+  "template_version": "template-v1",
+  "headline": "What to Cut From Your V1 MVP",
+  "headline_word_count": 7,
+  "category": "MVP",
+  "scene": "A phone wireframe with items being crossed out",
+  "alt_text": "Illustration of wireframe scope trimming for What to Cut From Your V1 MVP.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators (founder in dark navy blazer and designer in lavender sweater) discussing product scope in front of a large monitor showing an abstract wireframe of a mobile interface where secondary non-essential features are cleanly crossed out, while the core flow is highlighted in rich brand emerald green (#0A7F55) and mint (#24B47E), clean shapes, subtle shading, no outlines, limited palette of navy, brand green, mint, periwinkle, and white, 16:9, generous empty space around edges, no text, no logos, no watermark.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature, cut-off bodies, cut-off heads, cut-off feet, limbs touching edge of canvas, harsh black outlines, 3D render, photorealistic, cluttered background, distorted hands, extra fingers.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/what-to-cut-from-v1-mvp-illustration.png",
+    "illustration_webp": "/covers/what-to-cut-from-v1-mvp-illustration.webp",
+    "link_preview_og": "/covers/what-to-cut-from-v1-mvp-og.png",
+    "square_social": "/covers/what-to-cut-from-v1-mvp-square.png",
+    "linkedin_landscape": "/covers/what-to-cut-from-v1-mvp-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1109850,
+    "og_png": 169685,
+    "square_png": 88025,
+    "linkedin_png": 169685
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

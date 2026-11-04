@@ -1,0 +1,16 @@
+{
+  "name": "src_hn_build_vs_buy",
+  "url": "https://news.ycombinator.com/item?id=50059461",
+  "fetch_time": "2026-11-02T21:20:01.997164",
+  "http_status": 200,
+  "page_title": "Ask HN: How does your organization make build vs. buy decisions now? | Hacker News",
+  "post_date": "2026-10-12T17:09:45",
+  "match_reason": "Ask HN discussion on deciding what features to strip from v1 vs what minimal workflows to custom-build.",
+  "theme": "what_to_cut",
+  "project_id": "hn_ask_build_vs_buy",
+  "source_category": "demand_community",
+  "verified_opened": true,
+  "within_30_days": true,
+  "status_label": "VERIFIED_ACTIVE",
+  "raw_notes": ""
+}

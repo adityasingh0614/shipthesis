@@ -125,8 +125,7 @@ export default function Home() {
       <WhatWeBuild />
       {/* Placeholders: hidden on the live site until real, approved quotes exist. */}
       {process.env.VERCEL_ENV !== "production" && <Testimonials />}
-      {/* Placeholders: hidden on the live site until 3 real posts exist. */}
-      {process.env.VERCEL_ENV !== "production" && <FromTheBlog />}
+      <FromTheBlog />
       <Faq />
       <Contact />
     </>
