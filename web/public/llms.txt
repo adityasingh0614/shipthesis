@@ -18,6 +18,11 @@ Ship Thesis is an app and SaaS development studio specializing in turning startu
 - [MVP Development for Startups](https://www.shipthesis.com/mvp-development): Fixed-scope MVP delivery in weeks with upfront planning, weekly working builds, milestone billing, and 100% IP ownership.
 - [Applied AI Product Engineering](https://www.shipthesis.com/ai-product-development): Document parsing, structured schema enforcement, deterministic workflows, and data accuracy guardrails.
 
+## Engineering Blog & Guides
+- [How Milestone Payments Work](https://www.shipthesis.com/blog/how-milestone-payments-work): Detailed breakdown of the 30/40/30 milestone model for software agencies.
+- [What to Cut from Your V1 MVP](https://www.shipthesis.com/blog/what-to-cut-from-v1-mvp): Scope discipline and the Three-Screen rule for launching startups fast.
+- [Ensuring 100% Code Ownership](https://www.shipthesis.com/blog/code-ownership-hiring-agency): Guide to direct GitHub commits, repository transfer, and IP protection when hiring an agency.
+
 ## Case Studies
 - [EHS Training Platform](https://www.shipthesis.com/work/safety-training-platform): Live custom training and webinar LMS with Zoom API and Supabase.
 - [Poststeady](https://www.shipthesis.com/work/poststeady): Automated client reporting SaaS turning analytics CSVs into branded insights.

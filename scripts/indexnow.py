@@ -24,6 +24,10 @@ DEFAULT_URLS = [
     f"https://{HOST}/work/safety-training-platform",
     f"https://{HOST}/work/poststeady",
     f"https://{HOST}/work/chromalayer",
+    f"https://{HOST}/blog",
+    f"https://{HOST}/blog/how-milestone-payments-work",
+    f"https://{HOST}/blog/what-to-cut-from-v1-mvp",
+    f"https://{HOST}/blog/code-ownership-hiring-agency",
 ]
 
 ENDPOINTS = [
