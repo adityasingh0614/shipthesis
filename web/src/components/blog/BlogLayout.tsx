@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { BookingCta } from "@/components/BookingCta";
 import type { TocItem } from "@/lib/blog-data";
@@ -167,12 +168,13 @@ export function BlogLayout({
         <article className={styles.contentColumn}>
           {heroImage && (
             <div className={styles.heroImage}>
-              <img
+              <Image
                 src={heroImage}
                 alt={title}
-                width={1600}
-                height={900}
-                fetchPriority="high"
+                width={1200}
+                height={675}
+                priority
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
           )}

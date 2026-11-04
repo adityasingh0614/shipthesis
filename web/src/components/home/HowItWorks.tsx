@@ -75,12 +75,12 @@ export function HowItWorks() {
             <motion.li
               key={step.label}
               className={styles.step}
-              initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "100px 0px" }}
+              viewport={{ once: true, margin: "250px 0px" }}
               transition={{
-                duration: 0.5,
-                delay: (i % 3) * 0.1,
+                duration: 0.4,
+                delay: (i % 3) * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
             >

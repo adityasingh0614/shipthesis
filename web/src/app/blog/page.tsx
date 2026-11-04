@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import styles from "./page.module.css";
@@ -44,7 +45,7 @@ export default function BlogIndexPage() {
         </header>
 
         <div className={styles.grid}>
-          {posts.map((post) => {
+          {posts.map((post, idx) => {
             const formattedDate = new Date(post.datePublished).toLocaleDateString(
               "en-US",
               { month: "short", day: "numeric", year: "numeric" }
@@ -54,12 +55,13 @@ export default function BlogIndexPage() {
               <article key={post.slug} className={styles.card}>
                 <Link href={`/blog/${post.slug}`} className={styles.cardLink}>
                   <div className={styles.cardCover}>
-                    <img
+                    <Image
                       src={post.heroImage}
                       alt={post.title}
-                      width={1600}
-                      height={900}
-                      loading="lazy"
+                      width={1200}
+                      height={675}
+                      priority={idx === 0}
+                      sizes="(max-width: 768px) 100vw, 720px"
                     />
                   </div>
                   <div className={styles.cardBody}>

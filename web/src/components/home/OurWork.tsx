@@ -255,7 +255,7 @@ function ProjectCard({
               alt={shot.alt || `${project.name} screens`}
               width={shot.width}
               height={shot.height}
-              priority
+              priority={i === 0}
               sizes="(max-width: 860px) 90vw, 420px"
               style={{ width: "100%", height: "auto", objectFit: "contain", padding: "24px", maxHeight: "280px" }}
             />
@@ -414,15 +414,6 @@ function SwipeCarousel({ hrefs }: { hrefs: Hrefs }) {
 export function OurWork({ hrefs }: { hrefs: Hrefs }) {
   const pinned = usePinned();
 
-  useEffect(() => {
-    PROJECTS.forEach((p) => {
-      const study = CASE_STUDIES.find((c) => c.slug === p.slug);
-      if (study?.hero && "src" in study.hero) {
-        const img = new window.Image();
-        img.src = study.hero.src;
-      }
-    });
-  }, []);
   return (
     <section id="work" className={styles.section} aria-labelledby="work-title">
       {pinned ? (

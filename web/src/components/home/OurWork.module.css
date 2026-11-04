@@ -1,5 +1,7 @@
 .section {
   background: var(--surface-alt);
+  overflow: hidden;
+  max-width: 100vw;
 }
 
 /* ---- Shared ---- */
@@ -290,12 +292,14 @@
 
 .flow {
   padding: 0 var(--gutter) var(--section-py);
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .row {
   display: flex;
   gap: 16px;
-  max-width: var(--max);
+  max-width: 100%;
   margin: 28px auto 0;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -314,9 +318,14 @@
 @media (max-width: 860px) {
   .card {
     grid-template-columns: 1fr;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: clamp(16px, 4vw, 24px);
   }
   .visual {
     max-width: none;
+    width: 100%;
     aspect-ratio: 16 / 10;
     order: -1;
   }

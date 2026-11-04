@@ -406,6 +406,7 @@ export function ServicePageLayout({
                       width={s.width}
                       height={s.height}
                       className={styles.screenshotImg}
+                      sizes="(max-width: 768px) 100vw, 360px"
                     />
                   </div>
                   <div className={styles.screenshotCaption}>

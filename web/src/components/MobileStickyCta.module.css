@@ -10,12 +10,24 @@
     left: 0;
     right: 0;
     z-index: 90;
-    padding: 12px 16px env(safe-area-inset-bottom, 12px);
-    background: rgba(255, 255, 255, 0.92);
+    padding: 10px 16px env(safe-area-inset-bottom, 10px);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid var(--line);
     box-shadow: 0 -4px 16px rgba(15, 26, 20, 0.06);
+    animation: slideUp 180ms ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   .btn {

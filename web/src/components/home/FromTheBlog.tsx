@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { BLOG_POSTS_METADATA } from "@/lib/blog-data";
@@ -34,24 +35,25 @@ export function FromTheBlog() {
               <motion.li
                 key={post.slug}
                 className={styles.card}
-                initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, margin: "150px 0px" }}
                 transition={{
-                  duration: 0.5,
-                  delay: i * 0.1,
+                  duration: 0.4,
+                  delay: i * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
                 <Link href={`/blog/${post.slug}`} className={styles.cardLink}>
                   <div className={styles.cover}>
-                    <img
+                    <Image
                       src={post.heroImage}
                       alt={post.title}
                       className={styles.coverImage}
-                      width={1600}
-                      height={900}
-                      loading="lazy"
+                      width={1200}
+                      height={675}
+                      priority={i === 0}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 380px"
                     />
                   </div>
                   <div className={styles.body}>
