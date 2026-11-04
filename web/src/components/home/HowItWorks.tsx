@@ -93,8 +93,8 @@ export function HowItWorks() {
                     <Image
                       src={step.img}
                       alt={step.imgAlt ?? ""}
-                      width={1672}
-                      height={941}
+                      width={1536}
+                      height={1024}
                       sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 380px"
                       loading="lazy"
                       className={styles.shot}
