@@ -8,6 +8,7 @@
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--gutter);
+  box-sizing: border-box;
 }
 
 .head {
@@ -43,6 +44,7 @@
   max-width: 1140px;
   margin: clamp(36px, 4.5vw, 56px) auto 0;
   list-style: none;
+  min-width: 0;
 }
 
 .quote {
@@ -58,6 +60,8 @@
   height: 100%;
   box-sizing: border-box;
   margin: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .quote:hover {
@@ -107,9 +111,7 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--ink-soft);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.4;
 }
 
 .body {

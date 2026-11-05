@@ -101,7 +101,7 @@
 
 @media (max-width: 900px) {
   .cluster {
-    display: none;
+    display: none !important;
   }
   .menu {
     display: block;
