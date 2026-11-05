@@ -343,15 +343,110 @@
 /* ---- 07 · testimonial (placeholder, hidden live) ---- */
 .panel {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 280px 1fr;
   align-items: center;
-  gap: clamp(32px, 6vw, 88px);
+  gap: clamp(32px, 5vw, 64px);
   max-width: 1040px;
   margin: 56px auto 0;
-  padding: clamp(20px, 3vw, 40px);
+  padding: clamp(28px, 4vw, 44px);
   background: var(--surface);
-  border: 2px solid var(--line);
+  border: 1.5px solid var(--line);
   border-radius: 24px;
+  box-shadow: 0 4px 24px -4px rgb(0 0 0 / 0.04);
+}
+
+.clientProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: clamp(16px, 3vw, 32px);
+  border-right: 1px solid var(--line);
+}
+
+.clientAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface-alt));
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 700;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.clientMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.clientName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.clientRole {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.clientOrg {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.clientBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--green) 10%, var(--surface));
+  color: var(--green);
+  border: 1px solid color-mix(in srgb, var(--green) 25%, transparent);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.clientStat {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
 }
 .mark {
   display: block;

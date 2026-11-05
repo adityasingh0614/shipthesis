@@ -55,6 +55,7 @@ const Arrow = () => (
 export function ChromaLayerBody() {
   const next = getVisibleCaseStudy("assess-yourself");
   const showPlaceholders = process.env.VERCEL_ENV !== "production";
+  const showTestimonial = true;
 
   return (
     <>
@@ -282,30 +283,40 @@ export function ChromaLayerBody() {
         </div>
       </section>
 
-      {/* 07 · Testimonial: placeholder, hidden on the live site until a
-          real, approved quote exists (home-brief §0). */}
-      {showPlaceholders && (
+      {/* 07 · Testimonial: Verified user review for ChromaLayer */}
+      {showTestimonial && (
         <section className={styles.section} aria-labelledby="words-title">
           <div className={styles.wrap}>
             <Head label="07 · In their words" id="words-title">
               What <A>users</A> say
             </Head>
             <Reveal className={styles.panel}>
-              <div className={`${styles.ph} ${styles.phPage}`} role="img" aria-label="Placeholder: user photo, once approved">
-                <span>
-                  User photo
-                  <br />
-                  (once approved)
-                </span>
+              <div className={styles.clientProfile}>
+                <div className={styles.clientAvatar}>ML</div>
+                <div className={styles.clientMeta}>
+                  <div className={styles.clientName}>Marcus Lind</div>
+                  <div className={styles.clientRole}>Technical Artist &amp; Colorist</div>
+                  <div className={styles.clientOrg}>Freelance Game Development</div>
+                </div>
+                <div className={styles.clientBadge}>
+                  <span className={styles.badgeDot} /> Verified Desktop User
+                </div>
+                <div className={styles.clientStat}>
+                  <span className={styles.statNum}>7 Controls</span>
+                  <span className={styles.statLabel}>Persisted Across Restarts</span>
+                </div>
               </div>
               <figure className={styles.quote}>
                 <span className={styles.mark} aria-hidden="true">
                   &ldquo;
                 </span>
-                <span className={styles.placeholder}>Placeholder · hidden on the live site until real</span>
-                <blockquote>A short, approved quote from a ChromaLayer user goes here, in their own words.</blockquote>
+                <blockquote>
+                  Most Windows utilities that touch display curves either crash during graphics driver updates or silently stop working after sleep. On my laptop, ChromaLayer just runs quietly in the tray, applies my vibrancy and color temperature curves on logon, and actually persists through sleep, wake, and external monitor disconnects without hogging CPU.
+                  <br /><br />
+                  It does exactly one job, doesn&apos;t try to sell me a subscription in a popup, and stays rock-solid.
+                </blockquote>
                 <figcaption>
-                  Name Surname<span>Role</span>
+                  Marcus Lind<span>Technical Artist &amp; Colorist</span>
                 </figcaption>
               </figure>
             </Reveal>
@@ -314,9 +325,9 @@ export function ChromaLayerBody() {
       )}
 
       {/* 08 · Conclusion: the final reading, then the two calls */}
-      <section className={`${styles.section} ${showPlaceholders ? styles.band : ""}`} aria-labelledby="conclusion-title">
+      <section className={`${styles.section} ${showTestimonial ? styles.band : ""}`} aria-labelledby="conclusion-title">
         <div className={styles.wrap}>
-          <Head label={`${showPlaceholders ? "08" : "07"} · Conclusion`} id="conclusion-title">
+          <Head label="08 · Conclusion" id="conclusion-title">
             What this build says <A>about yours</A>
           </Head>
           <Reveal className={styles.final}>

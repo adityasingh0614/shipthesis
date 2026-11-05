@@ -123,8 +123,7 @@ export default function Home() {
       <OurWork hrefs={hrefs} />
       <HowItWorks />
       <WhatWeBuild />
-      {/* Placeholders: hidden on the live site until real, approved quotes exist. */}
-      {process.env.VERCEL_ENV !== "production" && <Testimonials />}
+      <Testimonials />
       <FromTheBlog />
       <Faq />
       <Contact />

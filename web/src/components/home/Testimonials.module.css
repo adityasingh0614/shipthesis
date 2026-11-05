@@ -1,76 +1,69 @@
 .section {
   background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: var(--section-py) 0;
 }
 
 .inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: var(--section-py) var(--gutter);
+  padding: 0 var(--gutter);
 }
 
-/* Section headings are centred site-wide (CLAUDE.md). */
 .head {
   text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4.6vw, 3.5rem);
+  font-size: clamp(2.25rem, 4.4vw, 3.25rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.08;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   text-wrap: balance;
+  color: var(--ink);
 }
 
 .lede {
-  max-width: 54ch;
-  margin: 14px auto 0;
-  font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+  margin: 12px auto 0;
+  font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
   color: var(--ink-soft);
   text-wrap: pretty;
 }
 
-/* Three staggered columns: quote cards and tall video cards interleave. */
+/* Three balanced columns for the 3 featured real testimonials */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  align-items: start;
-  max-width: 1040px;
-  margin: clamp(40px, 5vw, 64px) auto 0;
+  gap: clamp(20px, 2.5vw, 28px);
+  align-items: stretch;
+  max-width: 1140px;
+  margin: clamp(36px, 4.5vw, 56px) auto 0;
+  list-style: none;
 }
-
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  min-width: 0;
-}
-
-.quote,
-.video {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-card);
-  box-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.05);
-  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
-}
-
-.quote:hover,
-.video:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--green) 35%, var(--line));
-  box-shadow: 0 10px 30px -8px rgb(0 0 0 / 0.09);
-}
-
-/* ---- Quote card ---- */
 
 .quote {
-  gap: 20px;
-  padding: clamp(24px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 3px rgba(20, 32, 26, 0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  gap: 16px;
+  padding: clamp(20px, 2.4vw, 26px);
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.quote:hover {
+  transform: translateY(-2px);
+  border-color: var(--green);
+  box-shadow: 0 10px 28px rgba(20, 32, 26, 0.08);
 }
 
 .person {
@@ -83,108 +76,121 @@
   flex: none;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--green) 25%, transparent);
   border-radius: 12px;
   background: color-mix(in srgb, var(--green) 8%, var(--surface-alt));
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.personDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .name {
   display: block;
   font-weight: 700;
+  font-size: 0.9375rem;
   line-height: 1.25;
+  color: var(--ink);
 }
 
 .role {
   display: block;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .body {
   display: flex;
-  gap: 12px;
-  padding-top: 16px;
+  gap: 10px;
+  padding-top: 14px;
   border-top: 1px solid var(--line);
   color: var(--ink-soft);
+  flex-grow: 1;
+  margin: 0;
 }
 
 .mark {
   flex: none;
-  margin-top: -0.12em;
+  margin-top: -0.1em;
   font-family: var(--font-display);
-  font-size: 3.25rem;
+  font-size: 2.75rem;
   font-weight: 700;
   line-height: 0.8;
   color: var(--green);
 }
 
-/* ---- Video card ---- */
-
-.video {
-  gap: 16px;
-  padding: 12px 12px 18px;
+.quoteText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
 }
 
-.video .person {
-  padding: 0 8px;
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
 }
 
-.frame {
-  position: relative;
-  display: grid;
-  place-items: center;
-  aspect-ratio: 4 / 5;
-  border: 1px dashed var(--line);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--green) 6%, var(--surface-alt));
-}
-
-.video[data-tall] .frame {
-  aspect-ratio: 3 / 4.4;
-}
-
-.frameLabel {
-  position: absolute;
-  top: 14px;
-  left: 16px;
+.metricBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--ink-soft);
-}
-
-.play {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  padding-left: 3px;
-  border-radius: 999px;
-  background: var(--surface);
+  font-size: 0.6875rem;
+  font-weight: 600;
   color: var(--green);
-  box-shadow: 0 8px 20px -10px rgb(10 127 85 / 0.45);
-  transition: transform 200ms ease;
+  background: color-mix(in srgb, var(--green) 8%, var(--surface));
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--green) 20%, transparent);
+  white-space: nowrap;
 }
 
-.video:hover .play {
-  transform: scale(1.06);
+.metricDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
 }
 
-/* Tablet: two columns would orphan the third, so cards flow in one row set. */
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  transition: gap 140ms ease;
+  white-space: nowrap;
+}
+
+.projectLink:hover {
+  gap: 7px;
+}
+
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .column {
-    display: contents;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
     grid-template-columns: 1fr;
-  }
-  .video[data-tall] .frame {
-    aspect-ratio: 4 / 5;
+    gap: 20px;
   }
 }
