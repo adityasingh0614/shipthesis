@@ -343,18 +343,15 @@ export function AssessYourselfBody() {
             </Head>
             <Reveal className={styles.panel}>
               <div className={styles.clientProfile}>
-                <div className={styles.clientAvatar}>RN</div>
+                <div className={styles.clientAvatar}>V</div>
                 <div className={styles.clientMeta}>
-                  <div className={styles.clientName}>Rohit Nair</div>
-                  <div className={styles.clientRole}>Co-Founder &amp; Head of Product</div>
+                  <div className={styles.clientName}>Valmik</div>
+                  <div className={styles.clientRole}>Founder</div>
                   <div className={styles.clientOrg}>Aptellic · Assess Yourself</div>
                 </div>
-                <div className={styles.clientBadge}>
-                  <span className={styles.badgeDot} /> Verified Client Review
-                </div>
-                <div className={styles.clientStat}>
-                  <span className={styles.statNum}>4,000+</span>
-                  <span className={styles.statLabel}>Papers Submitted in Beta</span>
+                <div className={styles.clientRating} aria-label="Rated 5.0 out of 5 stars">
+                  <span className={styles.ratingScore}>5.0</span>
+                  <span className={styles.stars} aria-hidden="true">★★★★★</span>
                 </div>
               </div>
               <figure className={styles.quote}>
@@ -362,12 +359,10 @@ export function AssessYourselfBody() {
                   &ldquo;
                 </span>
                 <blockquote>
-                  Our biggest worry going in was test integrity on cheap Android phones. If a student is 45 minutes into a mock exam and takes a phone call or the OS kills the process in low-power mode, losing that test session means an instant 1-star review.
-                  <br /><br />
-                  Ship Thesis built the local SQLite state engine so the timer, question state, and flagged answers survive app kills, restarts, and zero connectivity. When we opened our beta, over 4,000 papers were submitted in the first three weeks with zero dropped sessions. That engineering discipline saved our launch.
+                  Ship Thesis built our Flutter app from scratch in about four weeks. The biggest thing for us was test reliability — students take mock exams on budget Android phones and other apps would wipe their progress if a call came in. The offline sync they built meant zero dropped tests even if the battery died mid-session. Delivered exactly what was promised.
                 </blockquote>
                 <figcaption>
-                  Rohit Nair<span>Co-Founder &amp; Head of Product · Aptellic</span>
+                  Valmik<span>Founder · Aptellic</span>
                 </figcaption>
               </figure>
             </Reveal>

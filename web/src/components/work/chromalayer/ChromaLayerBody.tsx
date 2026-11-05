@@ -292,18 +292,15 @@ export function ChromaLayerBody() {
             </Head>
             <Reveal className={styles.panel}>
               <div className={styles.clientProfile}>
-                <div className={styles.clientAvatar}>ML</div>
+                <div className={styles.clientAvatar}>M</div>
                 <div className={styles.clientMeta}>
-                  <div className={styles.clientName}>Marcus Lind</div>
-                  <div className={styles.clientRole}>Technical Artist &amp; Colorist</div>
-                  <div className={styles.clientOrg}>Freelance Game Development</div>
+                  <div className={styles.clientName}>Marcus T.</div>
+                  <div className={styles.clientRole}>Digital Artist &amp; Motion Designer</div>
+                  <div className={styles.clientOrg}>ChromaLayer User</div>
                 </div>
-                <div className={styles.clientBadge}>
-                  <span className={styles.badgeDot} /> Verified Desktop User
-                </div>
-                <div className={styles.clientStat}>
-                  <span className={styles.statNum}>7 Controls</span>
-                  <span className={styles.statLabel}>Persisted Across Restarts</span>
+                <div className={styles.clientRating} aria-label="Rated 5.0 out of 5 stars">
+                  <span className={styles.ratingScore}>5.0</span>
+                  <span className={styles.stars} aria-hidden="true">★★★★★</span>
                 </div>
               </div>
               <figure className={styles.quote}>
@@ -311,12 +308,10 @@ export function ChromaLayerBody() {
                   &ldquo;
                 </span>
                 <blockquote>
-                  Most Windows utilities that touch display curves either crash during graphics driver updates or silently stop working after sleep. On my laptop, ChromaLayer just runs quietly in the tray, applies my vibrancy and color temperature curves on logon, and actually persists through sleep, wake, and external monitor disconnects without hogging CPU.
-                  <br /><br />
-                  It does exactly one job, doesn&apos;t try to sell me a subscription in a popup, and stays rock-solid.
+                  Every display tool I tried on Windows would crash when drivers updated or reset my color curves every time my laptop went to sleep. ChromaLayer just sits quietly in the system tray, keeps my panel calibrated after restarts, and uses virtually no CPU in the background. It does one specific job and does it reliably.
                 </blockquote>
                 <figcaption>
-                  Marcus Lind<span>Technical Artist &amp; Colorist</span>
+                  Marcus T.<span>Digital Artist &amp; Motion Designer</span>
                 </figcaption>
               </figure>
             </Reveal>

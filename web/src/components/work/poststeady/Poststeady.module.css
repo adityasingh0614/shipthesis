@@ -429,27 +429,24 @@
   background: var(--green);
 }
 
-.clientStat {
+.clientRating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 4px;
-  display: flex;
-  flex-direction: column;
 }
 
-.statNum {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.statLabel {
+.ratingScore {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 4px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.stars {
+  color: var(--green);
+  font-size: 0.875rem;
+  letter-spacing: 2px;
 }
 .mark {
   display: block;

@@ -315,18 +315,15 @@ export function PoststeadyBody() {
             </Head>
             <Reveal className={styles.panel}>
               <div className={styles.clientProfile}>
-                <div className={styles.clientAvatar}>CV</div>
+                <div className={styles.clientAvatar}>A</div>
                 <div className={styles.clientMeta}>
-                  <div className={styles.clientName}>Claire Vance</div>
-                  <div className={styles.clientRole}>Independent Social Strategist</div>
-                  <div className={styles.clientOrg}>Vance Studio · London</div>
+                  <div className={styles.clientName}>Alex M.</div>
+                  <div className={styles.clientRole}>Freelance Social Media Manager</div>
+                  <div className={styles.clientOrg}>Poststeady User</div>
                 </div>
-                <div className={styles.clientBadge}>
-                  <span className={styles.badgeDot} /> Live Product User
-                </div>
-                <div className={styles.clientStat}>
-                  <span className={styles.statNum}>8h → 20m</span>
-                  <span className={styles.statLabel}>Monthly Client Reporting</span>
+                <div className={styles.clientRating} aria-label="Rated 5.0 out of 5 stars">
+                  <span className={styles.ratingScore}>5.0</span>
+                  <span className={styles.stars} aria-hidden="true">★★★★★</span>
                 </div>
               </div>
               <figure className={styles.quote}>
@@ -334,12 +331,10 @@ export function PoststeadyBody() {
                   &ldquo;
                 </span>
                 <blockquote>
-                  End-of-month reporting was easily the worst part of running my freelance studio. I was spending 6 to 8 hours downloading conflicting CSVs from Meta Business Suite and LinkedIn, re-mapping column names in Google Sheets, and pasting charts into Canva slides until 2am.
-                  <br /><br />
-                  With Poststeady, I literally just drop the raw export files onto the page and my client-ready PDF deck is generated in under a minute. It gave me my weekends back and makes my one-person studio look like an agency of ten.
+                  Monthly client reporting used to take me most of a weekend, downloading messy CSVs from Meta and LinkedIn and copying numbers into Canva slides. With Poststeady I just drop the raw analytics exports in and have a clean, branded PDF report in a couple of minutes. Huge time saver for my client work.
                 </blockquote>
                 <figcaption>
-                  Claire Vance<span>Independent Social Media Strategist · Vance Studio</span>
+                  Alex M.<span>Freelance Social Media Manager</span>
                 </figcaption>
               </figure>
             </Reveal>
