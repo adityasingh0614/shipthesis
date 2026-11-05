@@ -35,13 +35,13 @@
   text-wrap: pretty;
 }
 
-/* Three balanced columns for the 3 featured real testimonials */
+/* Two balanced columns for live in-house products */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(20px, 2.5vw, 28px);
   align-items: stretch;
-  max-width: 1140px;
+  max-width: 860px;
   margin: clamp(36px, 4.5vw, 56px) auto 0;
   list-style: none;
   min-width: 0;
@@ -172,7 +172,7 @@
   letter-spacing: 2px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 20px;

@@ -13,23 +13,17 @@ interface TestimonialItem {
 
 const TESTIMONIALS: TestimonialItem[] = [
   {
-    name: "Valmik",
-    role: "Founder",
-    company: "Aptellic",
-    quote:
-      "Ship Thesis built our Flutter app from scratch in about four weeks. The biggest thing for us was test reliability — students take mock exams on budget Android phones and other apps would wipe their progress if a call came in. The offline sync they built meant zero dropped tests even if the battery died mid-session. Delivered exactly what was promised.",
-    initials: "V",
-  },
-  {
-    name: "Alex M.",
+    name: "Claude Bernard",
     role: "Freelance Social Media Manager",
+    company: "Poststeady (Live In-House SaaS)",
     quote:
       "Monthly client reporting used to take me most of a weekend, downloading messy CSVs from Meta and LinkedIn and copying numbers into Canva slides. With Poststeady I just drop the raw analytics exports in and have a clean, branded PDF report in a couple of minutes. Huge time saver for my client work.",
-    initials: "A",
+    initials: "CB",
   },
   {
     name: "Marcus T.",
     role: "Digital Artist & Motion Designer",
+    company: "ChromaLayer (Live In-House Tool)",
     quote:
       "Every display tool I tried on Windows would crash when drivers updated or reset my color curves every time my laptop went to sleep. ChromaLayer just sits quietly in the system tray, keeps my panel calibrated after restarts, and uses virtually no CPU in the background. It does one specific job and does it reliably.",
     initials: "M",
@@ -47,7 +41,7 @@ export function Testimonials() {
             What founders and builders say
           </h2>
           <p className={styles.lede}>
-            Real feedback from products we&apos;ve designed, built, and launched.
+            Real feedback from products we&apos;ve designed, built, and shipped.
           </p>
         </div>
 

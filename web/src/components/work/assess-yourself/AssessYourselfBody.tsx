@@ -52,7 +52,7 @@ const A = ({ children }: { children: ReactNode }) => (
 
 export function AssessYourselfBody() {
   const next = getCaseStudy("safety-training-platform");
-  const showTestimonial = true;
+  const showTestimonial = false; // Hidden until approved wording is provided by client
 
   return (
     <>

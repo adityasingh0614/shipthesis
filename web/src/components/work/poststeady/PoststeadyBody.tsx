@@ -315,11 +315,11 @@ export function PoststeadyBody() {
             </Head>
             <Reveal className={styles.panel}>
               <div className={styles.clientProfile}>
-                <div className={styles.clientAvatar}>A</div>
+                <div className={styles.clientAvatar}>CB</div>
                 <div className={styles.clientMeta}>
-                  <div className={styles.clientName}>Alex M.</div>
+                  <div className={styles.clientName}>Claude Bernard</div>
                   <div className={styles.clientRole}>Freelance Social Media Manager</div>
-                  <div className={styles.clientOrg}>Poststeady User</div>
+                  <div className={styles.clientOrg}>Poststeady · Live In-House SaaS</div>
                 </div>
                 <div className={styles.clientRating} aria-label="Rated 5.0 out of 5 stars">
                   <span className={styles.ratingScore}>5.0</span>
@@ -334,7 +334,7 @@ export function PoststeadyBody() {
                   Monthly client reporting used to take me most of a weekend, downloading messy CSVs from Meta and LinkedIn and copying numbers into Canva slides. With Poststeady I just drop the raw analytics exports in and have a clean, branded PDF report in a couple of minutes. Huge time saver for my client work.
                 </blockquote>
                 <figcaption>
-                  Alex M.<span>Freelance Social Media Manager</span>
+                  Claude Bernard<span>Freelance Social Media Manager</span>
                 </figcaption>
               </figure>
             </Reveal>

@@ -1,6 +1,6 @@
 # Ship Thesis Claims Ledger
-Version: 2.2 · Verified for Automation Pipeline
-Last Updated: November 3, 2026
+Version: 2.3 · Verified for Automation Pipeline
+Last Updated: November 5, 2026
 
 The generator and blog automation system may state facts about Ship Thesis ONLY from this ledger. Every sentence about Ship Thesis, its process, stack, projects, or numbers MUST end with a tag matching an ID below, e.g. `{{c:BILL-1}}`. A tag is not proof: a tagged sentence may contain only facts that appear in the cited ledger entry (Rule 13). Any statement without a verified ID or any unverified claim outside this ledger is strictly blocked by `blog:lint`.
 
@@ -38,19 +38,20 @@ The generator and blog automation system may state facts about Ship Thesis ONLY 
 * `[CTA-2]` **Discovery Sprint**: Not offered on the site yet. No prices or paid discovery packages mentioned.
 
 ## 6. Verified Proof & Case Studies (One Fact Per Entry)
-* `[AY-1]` **Assess Yourself App**: Offline-first mobile examination and test-taking app for Android and iOS.
-* `[AY-2]` **Assess Yourself Timed State**: Timed test state survives operating system kills, phone calls, and battery savers.
-* `[AY-3]` **Assess Yourself Importer**: Excel question bank bulk importer with row-level error validation.
+* `[AY-1]` **Assess Yourself App**: Mobile examination and test-taking app built with Flutter for Android and iOS. *(Note: Capability fact only. App is not live; no user counts, no live or launch claims).*
+* `[AY-2]` **Assess Yourself Timed State**: Built so timed test state survives operating system kills, phone calls, and battery savers via a local SQLite state engine.
+* `[AY-3]` **Assess Yourself Importer**: Built with an Excel question bank bulk importer with row-level error validation.
 * `[EHS-1]` **EHS Platform**: Custom live training web platform built for EHS Guru, replacing a commercial LMS.
 * `[EHS-2]` **EHS Zoom Integration**: 1-click Zoom meeting integration with automated attendee tracking.
 * `[EHS-3]` **EHS RBAC**: Role-based access for Admins, Trainers, Learners, and Guests.
-* `[POST-1]` **Poststeady**: In-house SaaS reporting tool that transforms raw CSV exports into branded client reports with automated written analysis at `poststeady.com`. *(Note: In-house utility; has no clients and no milestone payments).*
-* `[CHROMA-1]` **ChromaLayer**: In-house Windows desktop display utility with 7 screen color controls that persist through restarts, sleep cycles, and logouts at `chromalayer.app`. *(Note: In-house utility; has no clients and no milestone payments).*
+* `[POST-1]` **Poststeady**: Live in-house SaaS reporting tool that transforms raw CSV exports into branded client reports with automated written analysis at `poststeady.com`. Live in-house product, never client work; has no clients and no milestone payments.
+* `[CHROMA-1]` **ChromaLayer**: Live in-house Windows desktop display utility with 7 screen color controls that persist through restarts, sleep cycles, and logouts at `chromalayer.app`. Live in-house product, never client work; has no clients and no milestone payments.
 
 ## 7. Strict Negatives (Hard Block Rules)
 * ❌ NO pricing, price ranges, dollar signs (`$`), `USD`, `budget`, `cheap`, or `per hour` (except allowed statement in BILL-4).
-* ❌ NO student or user counts for Assess Yourself. (The claim of "10,000+ students" is strictly false).
-* ❌ NO claims about whether Assess Yourself is live or unlaunched.
+* ❌ NO describing Assess Yourself with "live", "launched", "serves", "users", "students use", "in production", "battle-tested", or any user or student counts. Assess Yourself entries may ONLY describe what it is built to do (capability facts).
+* ❌ NO adding testimonials to the ledger or pages until approved wording is explicitly provided by the founder. EHS Guru testimonial is pending and has none yet. Aptellic app is not live.
+* ❌ NEVER describe Poststeady or ChromaLayer as client work — they are live in-house products.
 * ❌ NO numeric week counts (e.g. `4 weeks`, `6-8 weeks`). Timelines must only be described generally as "in weeks".
 * ❌ NO individual team member names. Everything is attributed to the brand "Ship Thesis" using first-person plural ("we", "our").
 * ❌ NO claims of US client work.

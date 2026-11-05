@@ -222,6 +222,16 @@ def check_page(file_path: Path, slug: str, word_cap: int, claims_dict: dict):
         if re.search(r"\b3\s*(to|-)\s*5\s+business\s+days\b", s_lower):
             failures.append(f"Guardrail 16 (Advice number contradicts Terms §04 which requires 7 business days):\n    \"{sentence}\"")
 
+        # Guardrail: Assess Yourself may only describe capability facts (what it is built to do).
+        # Fails any sentence containing Assess Yourself plus any of: live, launched, serves, users, students use, in production, battle-tested.
+        if "assess yourself" in s_lower:
+            ay_forbidden = ["live", "launched", "serves", "users", "students use", "in production", "battle-tested"]
+            for term in ay_forbidden:
+                if re.search(r"\b" + re.escape(term) + r"\b", s_lower):
+                    failures.append(
+                        f"Guardrail (Assess Yourself outcome claim '{term}'): Assess Yourself may only describe capability facts (what it is built to do). Forbidden term '{term}' in:\n    \"{sentence}\""
+                    )
+
         if is_studio_claim:
             # Check for claim tags
             claim_tags = re.findall(r"\{\{c:([A-Z0-9_-]+)\}\}", sentence)
