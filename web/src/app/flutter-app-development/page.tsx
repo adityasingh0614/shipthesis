@@ -4,14 +4,14 @@ import { ServicePageLayout } from "@/components/services/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Flutter App Development for Startups and MVPs",
   description:
-    "Flutter apps for iOS and Android from one codebase. A working build on your phone every Friday, store submission handled, and code you own.",
+    "Flutter apps for iOS and Android from one codebase. A working build on your phone every Friday, offline persistence, and code you own from day one.",
   alternates: {
     canonical: "/flutter-app-development",
   },
   openGraph: {
     title: "Flutter App Development for Startups and MVPs · Ship Thesis",
     description:
-      "Flutter apps for iOS and Android from one codebase. A working build on your phone every Friday, store submission handled, and code you own.",
+      "Flutter apps for iOS and Android from one codebase. A working build on your phone every Friday, offline persistence, and code you own from day one.",
     url: "https://www.shipthesis.com/flutter-app-development",
     siteName: "Ship Thesis",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Flutter App Development for Startups and MVPs · Ship Thesis",
     description:
-      "Flutter apps for iOS and Android from one codebase. A working build on your phone every Friday, store submission handled, and code you own.",
+      "Flutter apps for iOS and Android from one codebase. A working build on your phone every Friday, offline persistence, and code you own from day one.",
     images: ["https://www.shipthesis.com/opengraph-image.png"],
   },
 };
@@ -47,7 +47,7 @@ const jsonLd = {
       },
       serviceType: "Mobile Application Development",
       description:
-        "Cross-platform iOS and Android mobile apps engineered with Flutter, offline persistence, weekly working builds, and full store submission.",
+        "Cross-platform iOS and Android mobile apps engineered with Flutter, offline persistence, weekly working builds, and clean code architecture.",
       areaServed: "Worldwide",
     },
   ],
@@ -66,7 +66,7 @@ export default function FlutterAppDevelopmentPage() {
       }
       lede="One codebase for iOS and Android. A working build on your phone every Friday, and code you own from day one."
       ctaPrefix="flutter"
-      faqLede="Direct, honest answers on Flutter, offline persistence, store submission, and post-launch maintenance."
+      faqLede="Direct, honest answers on Flutter, offline persistence, timelines, and post-launch maintenance."
       heroImage={{
         src: "/work/assess-yourself/hero.webp",
         alt: "AssessYourself offline-first Flutter mobile app preview on phone",

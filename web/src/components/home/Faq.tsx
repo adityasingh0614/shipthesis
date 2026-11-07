@@ -64,7 +64,7 @@ const ITEMS = [
   {
     icon: Lifebuoy,
     q: "What happens after launch when something breaks?",
-    a: "Every build includes 30 days of free fixes for in-scope bugs and store launch support, with optional ongoing care plans available afterwards.",
+    a: "Every build includes 30 days of free fixes for in-scope bugs and launch support, with optional ongoing care plans available afterwards.",
   },
 ];
 

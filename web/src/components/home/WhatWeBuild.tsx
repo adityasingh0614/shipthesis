@@ -87,7 +87,7 @@ export function WhatWeBuild() {
         </div>
 
         <p className={styles.includedNote}>
-          UX/UI design and App Store submission come with every build. After launch, maintenance is available as a plan.
+          UX/UI design and testing come with every build. Store submission is available separately. After launch, maintenance is available as a plan.
         </p>
 
         <div className={styles.bottomNote}>

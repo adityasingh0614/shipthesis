@@ -100,7 +100,7 @@ const homeFaqJsonLd = {
       name: "What happens after launch when something breaks?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Every build includes 30 days of free fixes for in-scope bugs and store launch support, with optional ongoing care plans available afterwards.",
+        text: "Every build includes 30 days of free fixes for in-scope bugs and launch support, with optional ongoing care plans available afterwards.",
       },
     },
   ],

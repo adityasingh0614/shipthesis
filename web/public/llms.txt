@@ -13,7 +13,7 @@ Ship Thesis is an app and SaaS development studio specializing in turning startu
 - Stack: Flutter (iOS/Android), Next.js, Supabase, PostgreSQL, Stripe, Python/Node.js microservices.
 
 ## Dedicated Services
-- [Flutter App Development](https://www.shipthesis.com/flutter-app-development): iOS and Android mobile apps from a single codebase, offline-first SQLite persistence, and App Store submission.
+- [Flutter App Development](https://www.shipthesis.com/flutter-app-development): iOS and Android mobile apps from a single codebase, offline-first SQLite persistence, and weekly working builds.
 - [SaaS & Web Platforms](https://www.shipthesis.com/saas-development): Production-grade Next.js SaaS platforms with multi-tenant PostgreSQL (RLS), Stripe/Razorpay subscriptions, and automated background jobs.
 - [MVP Development for Startups](https://www.shipthesis.com/mvp-development): Fixed-scope MVP delivery in weeks with upfront planning, weekly working builds, milestone billing, and 100% IP ownership.
 - [Applied AI Product Engineering](https://www.shipthesis.com/ai-product-development): Document parsing, structured schema enforcement, deterministic workflows, and data accuracy guardrails.
