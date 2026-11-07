@@ -32,7 +32,7 @@ const APPS = [
     type: "Windows app",
     status: "Live · 100+ users",
     slug: "chromalayer",
-    iconSrc: "/logo/ChromaLayer_256x256.png",
+    iconSrc: "/logo/ChromaLayer_app_logo.svg",
   },
   {
     name: "Assess Yourself",

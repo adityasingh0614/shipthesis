@@ -52,6 +52,7 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
   return (
     <header className={`${styles.opening} ${live ? styles.livePass : ""} ${proof ? styles.proof : ""} ${osd ? styles.osd : ""} ${admit ? styles.admit : ""}`}>
       <div className={styles.text}>
+        {study.kicker && <p className={`${styles.kicker} ${styles.rise}`} style={d(40)}>{study.kicker}</p>}
         <h1 className={`${styles.title} ${styles.rise}`} style={d(80)}>
           <span className={styles.titleAccent}>{title[0]}</span>
           {joined ? "" : " "}
@@ -122,6 +123,21 @@ export function CaseOpening({ study }: { study: CaseStudy }) {
             alt={hero.alt}
             sizes="100vw"
             priority
+            style={
+              study.slug === "chromalayer"
+                ? {
+                    width: "auto",
+                    maxWidth: "280px",
+                    height: "auto",
+                    maxHeight: "280px",
+                    objectFit: "contain",
+                    margin: "0 auto",
+                    display: "block",
+                    borderRadius: "56px",
+                    boxShadow: "0 28px 60px -16px rgba(15, 21, 37, 0.5)",
+                  }
+                : undefined
+            }
           />
         ) : (
           // A screen that isn't captured yet; the page is hidden on

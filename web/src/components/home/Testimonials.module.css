@@ -35,7 +35,7 @@
   text-wrap: pretty;
 }
 
-/* Two balanced columns for live in-house products */
+/* Two balanced columns for user reviews */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

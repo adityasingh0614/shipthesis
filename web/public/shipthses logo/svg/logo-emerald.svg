@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="t">
+  <title id="t">Ship Thesis Logo — Vibrant Emerald</title>
+  <g id="logo-mark" fill="#10B981">
+    <!-- Upper Kinetic Wing (Lunges Right) -->
+    <path d="M 128 36 L 220 128 L 164 128 L 128 92 L 92 128 L 64 100 Z" />
+    <!-- Lower Kinetic Wing (Anchors Left) -->
+    <path d="M 128 220 L 36 128 L 92 128 L 128 164 L 164 128 L 192 156 Z" />
+  </g>
+</svg>

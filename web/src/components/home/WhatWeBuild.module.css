@@ -1,5 +1,5 @@
 .section {
-  background: var(--surface);
+  background: var(--surface-alt);
   border-bottom: 1px solid var(--line);
   padding: var(--section-py) 0;
 }

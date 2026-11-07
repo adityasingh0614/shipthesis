@@ -15,7 +15,7 @@ const TESTIMONIALS: TestimonialItem[] = [
   {
     name: "Claude Bernard",
     role: "Freelance Social Media Manager",
-    company: "Poststeady (Live In-House SaaS)",
+    company: "Poststeady",
     quote:
       "Monthly client reporting used to take me most of a weekend, downloading messy CSVs from Meta and LinkedIn and copying numbers into Canva slides. With Poststeady I just drop the raw analytics exports in and have a clean, branded PDF report in a couple of minutes. Huge time saver for my client work.",
     initials: "CB",
@@ -23,7 +23,7 @@ const TESTIMONIALS: TestimonialItem[] = [
   {
     name: "Marcus T.",
     role: "Digital Artist & Motion Designer",
-    company: "ChromaLayer (Live In-House Tool)",
+    company: "ChromaLayer",
     quote:
       "Every display tool I tried on Windows would crash when drivers updated or reset my color curves every time my laptop went to sleep. ChromaLayer just sits quietly in the system tray, keeps my panel calibrated after restarts, and uses virtually no CPU in the background. It does one specific job and does it reliably.",
     initials: "M",

@@ -257,7 +257,25 @@ function ProjectCard({
               height={shot.height}
               priority={i === 0}
               sizes="(max-width: 860px) 90vw, 420px"
-              style={{ width: "100%", height: "auto", objectFit: "contain", padding: "24px", maxHeight: "280px" }}
+              style={
+                project.slug === "chromalayer"
+                  ? {
+                      width: "auto",
+                      maxWidth: "200px",
+                      height: "auto",
+                      maxHeight: "200px",
+                      objectFit: "contain",
+                      padding: 0,
+                      filter: "drop-shadow(0 16px 36px rgba(15, 21, 37, 0.35))",
+                    }
+                  : {
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                      padding: "24px",
+                      maxHeight: "280px",
+                    }
+              }
             />
           ) : (
             <>

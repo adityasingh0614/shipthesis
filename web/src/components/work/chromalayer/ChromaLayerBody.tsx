@@ -296,7 +296,7 @@ export function ChromaLayerBody() {
                 <div className={styles.clientMeta}>
                   <div className={styles.clientName}>Marcus T.</div>
                   <div className={styles.clientRole}>Digital Artist &amp; Motion Designer</div>
-                  <div className={styles.clientOrg}>ChromaLayer · Live In-House Tool</div>
+                  <div className={styles.clientOrg}>ChromaLayer</div>
                 </div>
                 <div className={styles.clientRating} aria-label="Rated 5.0 out of 5 stars">
                   <span className={styles.ratingScore}>5.0</span>

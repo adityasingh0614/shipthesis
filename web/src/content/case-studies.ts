@@ -165,12 +165,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     stamp: { status: "● LIVE \u00b7 chromalayer.app", variant: "osd" },
     liveHref: "https://chromalayer.app",
     hero: {
-      src: "/work/chromalayer/hero.webp",
-      width: 896,
-      height: 850,
-      alt: "The ChromaLayer window: vibrancy, colour temperature, brightness and contrast sliders, with Hold to Compare, Updates, License and Feedback buttons.",
+      src: "/logo/ChromaLayer_app_logo.svg",
+      width: 1024,
+      height: 1024,
+      alt: "ChromaLayer: Native Windows app logo",
     },
-    heroCaption: "The real app window \u00b7 one of its seven-control screens",
+    heroCaption: "ChromaLayer \u00b7 Native Windows utility",
     // Stays hidden on production until the real-hardware before/after photo
     // and a real testimonial exist (case-study-brief \u00a75).
     seo: {

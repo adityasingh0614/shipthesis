@@ -1,0 +1,197 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #FAFBF9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+}
+
+/* Subtle architectural grid pattern */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(20, 32, 26, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 32, 26, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+}
+
+/* Radiant emerald ambient glow */
+.glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0.03) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Monolith mark container */
+.markWrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.markSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 14px 30px rgba(16, 185, 129, 0.22));
+}
+
+/* Typography lockup */
+.brandGroup {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.brandTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #14201A;
+  line-height: 1;
+}
+
+.brandSub {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5C6E64;
+  margin-top: 2px;
+}
+
+/* Precision progress box */
+.progressBox {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 190px;
+}
+
+.track {
+  width: 100%;
+  height: 2.5px;
+  background: rgba(20, 32, 26, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  transition: width 80ms linear;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: #6B7B72;
+  text-transform: uppercase;
+}
+
+.statusText {
+  color: #10B981;
+  font-weight: 600;
+}
+
+.percentText {
+  font-weight: 700;
+  color: #14201A;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Floating replay pill button */
+.demoPill {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  color: #14201A;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(20, 32, 26, 0.08);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.demoPill:hover {
+  transform: translateY(-2px);
+  border-color: #10B981;
+  box-shadow: 0 8px 24px rgba(20, 32, 26, 0.14);
+}
+
+.demoPillDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+}
+
+@media (max-width: 600px) {
+  .markWrap {
+    width: 96px;
+    height: 96px;
+  }
+  
+  .progressBox {
+    width: 160px;
+  }
+  
+  .demoPill {
+    bottom: 84px; /* above mobile CTA */
+    right: 16px;
+    padding: 6px 12px;
+    font-size: 0.6875rem;
+  }
+}

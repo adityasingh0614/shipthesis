@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <!-- App icon background: deep slate, not pure black -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1525"/>
+      <stop offset="100%" stop-color="#060C1A"/>
+    </linearGradient>
+
+    <!-- Back layer: violet → deep navy -->
+    <linearGradient id="gBack" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="55%" stop-color="#2E4DC7"/>
+      <stop offset="100%" stop-color="#0A0F2E"/>
+    </linearGradient>
+
+    <!-- Mid layer: cyan → electric blue -->
+    <linearGradient id="gMid" x1="0%" y1="10%" x2="100%" y2="90%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="45%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+
+    <!-- Front layer: pale cloud → sky blue -->
+    <linearGradient id="gFront" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F4FF"/>
+      <stop offset="40%" stop-color="#BFDBFE"/>
+      <stop offset="80%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <!-- Subtle edge highlight on front card -->
+    <linearGradient id="gFrontEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <!-- Drop shadow filter for layers -->
+    <filter id="shadowBack" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="shadowMid" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="shadowFront" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#1E40AF" flood-opacity="0.30"/>
+    </filter>
+
+    <!-- App icon clipping mask — squircle-style -->
+    <clipPath id="iconClip">
+      <rect x="0" y="0" width="1024" height="1024" rx="224" ry="224"/>
+    </clipPath>
+  </defs>
+
+  <!-- Icon container clipped to app-icon shape -->
+  <g clip-path="url(#iconClip)">
+
+    <!-- Background -->
+    <rect width="1024" height="1024" fill="url(#bgGrad)"/>
+
+    <!-- Subtle radial glow behind layers -->
+    <radialGradient id="glow" cx="52%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="1024" height="1024" fill="url(#glow)"/>
+
+    <!-- Back card — offset upper-right, deeper violet-navy -->
+    <rect
+      x="362" y="148"
+      rx="64" ry="64"
+      width="484" height="484"
+      fill="url(#gBack)"
+      filter="url(#shadowBack)"
+      opacity="0.92"
+    />
+
+    <!-- Mid card — centered, cyan-blue -->
+    <rect
+      x="270" y="270"
+      rx="64" ry="64"
+      width="484" height="484"
+      fill="url(#gMid)"
+      filter="url(#shadowMid)"
+      opacity="0.96"
+    />
+
+    <!-- Front card — foreground, cloud-to-blue -->
+    <rect
+      x="178" y="392"
+      rx="64" ry="64"
+      width="484" height="484"
+      fill="url(#gFront)"
+      filter="url(#shadowFront)"
+    />
+
+    <!-- Gloss highlight on front card (top edge shimmer) -->
+    <rect
+      x="178" y="392"
+      rx="64" ry="64"
+      width="484" height="200"
+      fill="url(#gFrontEdge)"
+    />
+
+    <!-- Thin border on front card for crispness -->
+    <rect
+      x="178" y="392"
+      rx="64" ry="64"
+      width="484" height="484"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-width="1.5"
+      stroke-opacity="0.18"
+    />
+
+  </g>
+
+  <!-- App icon outer border (optional; crisp on light bg) -->
+  <rect
+    x="1" y="1"
+    width="1022" height="1022"
+    rx="224" ry="224"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="2"
+    stroke-opacity="0.06"
+  />
+</svg>

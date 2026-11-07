@@ -319,7 +319,7 @@ export function PoststeadyBody() {
                 <div className={styles.clientMeta}>
                   <div className={styles.clientName}>Claude Bernard</div>
                   <div className={styles.clientRole}>Freelance Social Media Manager</div>
-                  <div className={styles.clientOrg}>Poststeady · Live In-House SaaS</div>
+                  <div className={styles.clientOrg}>Poststeady</div>
                 </div>
                 <div className={styles.clientRating} aria-label="Rated 5.0 out of 5 stars">
                   <span className={styles.ratingScore}>5.0</span>
