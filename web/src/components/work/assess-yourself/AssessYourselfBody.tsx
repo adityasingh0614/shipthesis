@@ -362,9 +362,9 @@ export function AssessYourselfBody() {
                   <div className={styles.clientRole}>Founder</div>
                   <div className={styles.clientOrg}>Aptellic · Assess Yourself</div>
                 </div>
-                <div className={styles.clientBadge}>
-                  <span className={styles.badgeDot} aria-hidden="true" />
-                  Verified client build
+                <div className={styles.clientRating} aria-label="Rated 5.0 out of 5 stars">
+                  <span className={styles.ratingScore}>5.0</span>
+                  <span className={styles.stars} aria-hidden="true">★★★★★</span>
                 </div>
               </div>
               <figure className={styles.quote}>
@@ -372,7 +372,7 @@ export function AssessYourselfBody() {
                   &ldquo;
                 </span>
                 <blockquote>
-                  We had a major headache with timed mock tests on budget Android phones: if a student received a phone call or the battery went into power saver mode, the app would restart and wipe their answers. Ship Thesis built an offline-first SQLite sync engine in Flutter that saved state per question. Delivered in four weeks, directly in our GitHub repo, and tests survive interruptions seamlessly.
+                  Most dev shops put an account manager between you and the devs, then disappear for months. Working with Ship Thesis felt like having an in-house tech lead. We had fresh Flutter builds on our phones every Friday, straight answers on what to cut for v1, and zero milestone disputes. They solved our exam crash recovery in days. Genuine relief finding engineers who just build.
                 </blockquote>
                 <figcaption>
                   Valmik<span>Founder · Aptellic</span>
