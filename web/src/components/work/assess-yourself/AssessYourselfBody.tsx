@@ -52,7 +52,7 @@ const A = ({ children }: { children: ReactNode }) => (
 
 export function AssessYourselfBody() {
   const next = getCaseStudy("safety-training-platform");
-  const showTestimonial = false; // Hidden until approved wording is provided by client
+  const showTestimonial = true;
 
   return (
     <>
@@ -343,7 +343,20 @@ export function AssessYourselfBody() {
             </Head>
             <Reveal className={styles.panel}>
               <div className={styles.clientProfile}>
-                <div className={styles.clientAvatar}>V</div>
+                <div className={styles.clientAvatar}>
+                  <Image
+                    src="/logo/ay_logo.webp"
+                    alt="Assess Yourself"
+                    width={56}
+                    height={56}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      padding: "4px",
+                    }}
+                  />
+                </div>
                 <div className={styles.clientMeta}>
                   <div className={styles.clientName}>Valmik</div>
                   <div className={styles.clientRole}>Founder</div>
@@ -359,7 +372,7 @@ export function AssessYourselfBody() {
                   &ldquo;
                 </span>
                 <blockquote>
-                  Ship Thesis built our Flutter app from scratch in about four weeks. The biggest thing for us was test reliability — students take mock exams on budget Android phones and other apps would wipe their progress if a call came in. The offline sync they built meant zero dropped tests even if the battery died mid-session. Delivered exactly what was promised.
+                  Most dev shops put an account manager between you and the devs, then disappear for months. Working with Ship Thesis felt like having an in-house tech lead. We had fresh Flutter builds on our phones every Friday, straight answers on what to cut for v1, and zero milestone disputes. They solved our exam crash recovery in days. Genuine relief finding engineers who just build.
                 </blockquote>
                 <figcaption>
                   Valmik<span>Founder · Aptellic</span>

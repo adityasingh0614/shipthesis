@@ -94,6 +94,7 @@
   font-family: var(--font-mono);
   font-size: 0.9375rem;
   font-weight: 700;
+  overflow: hidden;
 }
 
 .personDetails {

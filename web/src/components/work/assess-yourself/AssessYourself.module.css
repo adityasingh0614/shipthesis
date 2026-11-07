@@ -895,6 +895,7 @@
   font-size: 1.125rem;
   font-weight: 700;
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  overflow: hidden;
 }
 
 .clientMeta {

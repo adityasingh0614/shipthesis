@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import styles from "./Testimonials.module.css";
 
@@ -9,9 +10,19 @@ interface TestimonialItem {
   company?: string;
   quote: string;
   initials: string;
+  imageSrc?: string;
 }
 
 const TESTIMONIALS: TestimonialItem[] = [
+  {
+    name: "Valmik",
+    role: "Founder",
+    company: "Aptellic",
+    quote:
+      "Most dev shops put an account manager between you and the devs, then disappear for months. Working with Ship Thesis felt like having an in-house tech lead. We had fresh Flutter builds on our phones every Friday, straight answers on what to cut for v1, and zero milestone disputes. They solved our exam crash recovery in days. Genuine relief finding engineers who just build.",
+    initials: "V",
+    imageSrc: "/logo/ay_logo.webp",
+  },
   {
     name: "Claude Bernard",
     role: "Freelance Social Media Manager",
@@ -53,7 +64,23 @@ export function Testimonials() {
             >
               <figcaption className={styles.person}>
                 <span className={styles.avatar} aria-hidden="true">
-                  {t.initials}
+                  {t.imageSrc ? (
+                    <Image
+                      src={t.imageSrc}
+                      alt=""
+                      width={44}
+                      height={44}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        padding: "4px",
+                        borderRadius: "inherit",
+                      }}
+                    />
+                  ) : (
+                    t.initials
+                  )}
                 </span>
                 <span className={styles.personDetails}>
                   <span className={styles.name}>{t.name}</span>
