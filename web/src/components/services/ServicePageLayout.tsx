@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BookingCta } from "@/components/BookingCta";
+import { ServiceFaqList } from "./ServiceFaqList";
 import styles from "./ServicePage.module.css";
 
 export interface ServiceHeroImage {
@@ -478,21 +479,7 @@ export function ServicePageLayout({
             </p>
           </div>
 
-          <ul className={styles.faqList}>
-            {faqs.map((faq, idx) => (
-              <li key={faq.q}>
-                <details className={styles.faqItem} open={idx === 0}>
-                  <summary className={styles.faqSummary}>
-                    <span>{faq.q}</span>
-                    <span className={styles.faqChevron} aria-hidden="true">&darr;</span>
-                  </summary>
-                  <div className={styles.faqAnswer}>
-                    <p>{faq.a}</p>
-                  </div>
-                </details>
-              </li>
-            ))}
-          </ul>
+          <ServiceFaqList faqs={faqs} />
         </div>
       </section>
 

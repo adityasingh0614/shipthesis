@@ -72,7 +72,6 @@ const VISIBLE = 5; // top 5 shown by default; the rest are behind "Show more"
 
 export function Faq() {
   const [showAll, setShowAll] = useState(false);
-  const items = showAll ? ITEMS : ITEMS.slice(0, VISIBLE);
 
   return (
     <section id="faq" className={styles.section} aria-labelledby="faq-title">
@@ -87,10 +86,14 @@ export function Faq() {
         </div>
 
         <div className={styles.list}>
-          {items.map((item, i) => {
-            const Icon = item.icon;
+          {ITEMS.map((item, i) => {
+            const isHidden = !showAll && i >= VISIBLE;
             return (
-              <details key={item.q} className={styles.item} open={i === 0}>
+              <details
+                key={item.q}
+                className={`${styles.item} ${isHidden ? styles.itemHidden : ""}`}
+                open={i === 0}
+              >
                 <summary className={styles.question}>
                   <span className={styles.questionText}>{item.q}</span>
                   <svg
