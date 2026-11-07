@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import styles from "./Testimonials.module.css";
 
@@ -11,6 +12,7 @@ interface TestimonialItem {
   quote: string;
   initials: string;
   imageSrc?: string;
+  caseStudyHref?: string;
 }
 
 const TESTIMONIALS: TestimonialItem[] = [
@@ -19,17 +21,10 @@ const TESTIMONIALS: TestimonialItem[] = [
     role: "Founder",
     company: "Aptellic",
     quote:
-      "Most dev shops put an account manager between you and the devs, then disappear for months. Working with Ship Thesis felt like having an in-house tech lead. We had fresh Flutter builds on our phones every Friday, straight answers on what to cut for v1, and zero milestone disputes. They solved our exam crash recovery in days. Genuine relief finding engineers who just build.",
+      "We had a major headache with timed mock tests on budget Android phones: if a student received a phone call or the battery went into power saver mode, the app would restart and wipe their answers. Ship Thesis built an offline-first SQLite sync engine in Flutter that saved state per question. Delivered in four weeks, directly in our GitHub repo, and tests survive interruptions seamlessly.",
     initials: "V",
     imageSrc: "/logo/ay_logo.webp",
-  },
-  {
-    name: "Claude Bernard",
-    role: "Freelance Social Media Manager",
-    company: "Poststeady",
-    quote:
-      "Monthly client reporting used to take me most of a weekend, downloading messy CSVs from Meta and LinkedIn and copying numbers into Canva slides. With Poststeady I just drop the raw analytics exports in and have a clean, branded PDF report in a couple of minutes. Huge time saver for my client work.",
-    initials: "CB",
+    caseStudyHref: "/work/assess-yourself",
   },
 ];
 
@@ -98,12 +93,15 @@ export function Testimonials() {
               </blockquote>
 
               <div className={styles.cardFoot}>
-                <div className={styles.rating} aria-label="Rated 5.0 out of 5 stars">
-                  <span className={styles.ratingScore}>5.0</span>
-                  <span className={styles.stars} aria-hidden="true">
-                    ★★★★★
-                  </span>
-                </div>
+                <span className={styles.verifiedBadge}>
+                  <span className={styles.verifiedDot} aria-hidden="true" />
+                  Verified client build
+                </span>
+                {t.caseStudyHref && (
+                  <Link href={t.caseStudyHref} className={styles.caseStudyLink}>
+                    Read case study &rarr;
+                  </Link>
+                )}
               </div>
             </motion.figure>
           ))}

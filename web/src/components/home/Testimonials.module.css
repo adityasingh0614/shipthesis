@@ -153,29 +153,42 @@
 .cardFoot {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  gap: 12px;
   margin-top: auto;
   padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 
-.rating {
+.verifiedBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-}
-
-.ratingScore {
+  gap: 6px;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-soft);
 }
 
-.stars {
+.verifiedDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.caseStudyLink {
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--green);
-  font-size: 0.875rem;
-  letter-spacing: 2px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 140ms ease;
+  white-space: nowrap;
+}
+
+.caseStudyLink:hover {
+  opacity: 0.75;
 }
 
 @media (max-width: 768px) {
