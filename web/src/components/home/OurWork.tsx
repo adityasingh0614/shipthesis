@@ -49,7 +49,7 @@ const PROJECTS: Project[] = [
   {
     name: "EHS Training Platform",
     title: ["EHS Training", " Platform"],
-    type: "Web platform",
+    type: "Enterprise LMS",
     color: "#00674C",
     featured: true,
     description:

@@ -83,7 +83,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "safety-training-platform",
     title: ["EHS Training", "Platform"],
     accent: "#00674C",
-    kicker: "Case study · Web platform",
+    kicker: "Case study · Enterprise LMS",
     line: "A simple, custom platform that replaced a bloated off-the-shelf LMS. Only what they use, nothing they don't.",
     card: {
       label: "Session pass · Case study 02",
@@ -94,7 +94,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       more: [
         ["Industry", "Environment, health and safety training"],
-        ["Service", "Web platform design and development"],
+        ["Service", "Enterprise platform design and development"],
       ],
       foot: ["Access: admin · trainer · learner · guest", "On our maintenance plan"],
     },
