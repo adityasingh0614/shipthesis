@@ -39,6 +39,8 @@ export type CaseStudy = {
   /** Placeholder frames stand in for screens, so the page is hidden on
       production until real ones replace them (case-study-brief §0). */
   hiddenOnProduction?: boolean;
+  /** Temporarily hidden across all environments when true. */
+  hidden?: boolean;
   /** Small mono caption under the hero shot (ChromaLayer's bench). */
   heroCaption?: string;
   seo: { title: string; description: string };
@@ -145,6 +147,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: "chromalayer",
+    hidden: true,
     title: ["Chroma", "Layer"],
     joined: true,
     accent: "#1c2450",
@@ -187,6 +190,7 @@ export function getCaseStudy(slug: string) {
 
 /** Pages with placeholder frames don't exist on production. */
 export function isVisible(study: CaseStudy) {
+  if (study.hidden) return false;
   return !(study.hiddenOnProduction && process.env.VERCEL_ENV === "production");
 }
 

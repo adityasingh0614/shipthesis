@@ -31,7 +31,6 @@ const Contact = dynamic(() =>
 const SLUGS = [
   "safety-training-platform",
   "poststeady",
-  "chromalayer",
   "assess-yourself",
 ];
 

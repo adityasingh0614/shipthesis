@@ -26,7 +26,6 @@ Ship Thesis is an app and SaaS development studio specializing in turning startu
 ## Case Studies
 - [EHS Training Platform](https://www.shipthesis.com/work/safety-training-platform): Live custom training and webinar LMS with Zoom API and Supabase.
 - [Poststeady](https://www.shipthesis.com/work/poststeady): Automated client reporting SaaS turning analytics CSVs into branded insights.
-- [ChromaLayer](https://www.shipthesis.com/work/chromalayer): Native Windows system utility for advanced screen color and temperature control.
 - [Assess Yourself](https://www.shipthesis.com/work/assess-yourself): Offline-first Flutter mobile test engine with crash-resilient session recovery.
 
 ## Engagement Model

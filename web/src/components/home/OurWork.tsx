@@ -88,26 +88,6 @@ const PROJECTS: Project[] = [
     slug: "poststeady",
   },
   {
-    name: "ChromaLayer",
-    title: ["Chroma", "Layer"],
-    type: "Windows app",
-    color: "#1c2450",
-    description:
-      "A native Windows utility for advanced, system-wide display color and temperature control.",
-    client: "Our own product",
-    stack: [
-      { src: "/logo/Microsoft_.NET_logo.svg", label: "C# / .NET / WPF" },
-      { label: "Magnification API" },
-      { src: "/logo/velopack-icon.svg", label: "Velopack" },
-      { src: "/logo/astro.svg", label: "Astro" },
-      { src: "/logo/tailwindcss.svg", label: "Tailwind CSS" },
-      { label: "Stripe" },
-      { src: "/logo/cloudflareworkers.svg", label: "Cloudflare Workers" },
-    ],
-    status: "Live · 100+ users",
-    slug: "chromalayer",
-  },
-  {
     name: "Assess Yourself",
     title: ["Assess", " Yourself"],
     type: "Mobile app",
@@ -154,7 +134,7 @@ function ProjectCard({
   /** The case study page, when there is one. */
   href?: string;
 }) {
-  const resolvedHref = href || (project.slug === "chromalayer" ? "/work/chromalayer" : undefined);
+  const resolvedHref = href;
   return (
     <article
       className={`${styles.card} ${project.featured ? styles.cardFeatured : ""}`}
@@ -257,25 +237,13 @@ function ProjectCard({
               height={shot.height}
               priority={i === 0}
               sizes="(max-width: 860px) 90vw, 420px"
-              style={
-                project.slug === "chromalayer"
-                  ? {
-                      width: "auto",
-                      maxWidth: "200px",
-                      height: "auto",
-                      maxHeight: "200px",
-                      objectFit: "contain",
-                      padding: 0,
-                      filter: "drop-shadow(0 16px 36px rgba(15, 21, 37, 0.35))",
-                    }
-                  : {
-                      width: "100%",
-                      height: "auto",
-                      objectFit: "contain",
-                      padding: "24px",
-                      maxHeight: "280px",
-                    }
-              }
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                padding: "24px",
+                maxHeight: "280px",
+              }}
             />
           ) : (
             <>

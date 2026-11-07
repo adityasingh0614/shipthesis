@@ -26,15 +26,6 @@ const APPS = [
     iconSrc: "/logo/poststeady-logo-full.svg",
   },
   {
-    name: "ChromaLayer",
-    mark: "C",
-    color: "#1c2450",
-    type: "Windows app",
-    status: "Live · 100+ users",
-    slug: "chromalayer",
-    iconSrc: "/logo/ChromaLayer_app_logo.svg",
-  },
-  {
     name: "Assess Yourself",
     mark: "AY",
     color: "#283593",

@@ -60,9 +60,7 @@ const Check = () => (
 );
 
 export function PoststeadyBody() {
-  // ChromaLayer's page isn't built yet, so the card falls back to Home's
-  // work carousel until it exists and is visible.
-  const next = getVisibleCaseStudy("chromalayer");
+  const next = getVisibleCaseStudy("assess-yourself");
   const showTestimonial = true;
 
 
@@ -389,11 +387,12 @@ export function PoststeadyBody() {
               <div>
                 <small className={styles.nextLabel}>Next project</small>
                 <h2>
-                  <span>Chroma</span>Layer
+                  <span>{next?.title[0] ?? "Assess"}</span>
+                  {next?.joined ? "" : " "}
+                  {next?.title[1] ?? "Yourself"}
                 </h2>
                 <p>
-                  Our own Windows app: seven colour controls for laptop screens
-                  that stay applied after every restart, sleep and sign-in.
+                  {next?.line ?? "An offline-first exam prep mobile app built in Flutter, with crash-resilient timed test recovery."}
                 </p>
                 <span className={styles.go}>
                   {next ? "View case study" : "See our work"} <Arrow />
