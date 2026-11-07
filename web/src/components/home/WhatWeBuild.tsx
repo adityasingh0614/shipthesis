@@ -87,7 +87,7 @@ export function WhatWeBuild() {
         </div>
 
         <p className={styles.includedNote}>
-          UX/UI design and testing come with every build. Store submission is available separately. After launch, maintenance is available as a plan.
+          All projects include custom UI/UX design, weekly build verification on your own device, and 100% code ownership. Ongoing maintenance is available post-launch.
         </p>
 
         <div className={styles.bottomNote}>

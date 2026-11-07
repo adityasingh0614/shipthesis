@@ -172,7 +172,7 @@ export default function MvpDevelopmentPage() {
       faqs={[
         {
           q: "What's included in the MVP build?",
-          a: "Everything needed to put a first version in front of customers: upfront planning, technical architecture, approved screens, the app or web product (Flutter or Next.js), a backend with logins, payment setup, and production deployment (with store submission available separately).",
+          a: "Everything needed to put a first version in front of customers: upfront planning, technical architecture, approved screens, the app or web product (Flutter or Next.js), a backend with logins, payment setup, and production deployment.",
         },
         {
           q: "How long does it take?",
