@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { LoadingScreen } from "@/components/motion-ui/LoadingScreen";
 import { HeroVisual } from "@/components/home/hero/HeroVisual";
 import { HeroText } from "@/components/home/hero/HeroText";
 import { ProofStrip } from "@/components/home/hero/ProofStrip";
@@ -112,7 +111,6 @@ export default function Home() {
   const hrefs = Object.fromEntries(SLUGS.map((s) => [s, caseStudyHref(s)]));
   return (
     <>
-      <LoadingScreen />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
