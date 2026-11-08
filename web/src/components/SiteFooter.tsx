@@ -40,7 +40,7 @@ export function SiteFooter() {
                 </svg>
               </a>
               <a
-                href="https://x.com/shipthesis"
+                href="https://x.com/AskMeAdi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
