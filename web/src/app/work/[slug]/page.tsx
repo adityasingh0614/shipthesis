@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Ship Thesis",
       type: "article",
       images:
-        "src" in study.hero
+        "src" in study.hero && study.hero.width >= 1200
           ? [
               {
                 url: `https://www.shipthesis.com${study.hero.src}`,
@@ -54,16 +54,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 alt: study.hero.alt,
               },
             ]
-          : [],
+          : [
+              {
+                url: "https://www.shipthesis.com/opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: study.seo.title,
+              },
+            ],
     },
     twitter: {
       card: "summary_large_image",
       title: study.seo.title,
       description: study.seo.description,
       images:
-        "src" in study.hero
+        "src" in study.hero && study.hero.width >= 1200
           ? [`https://www.shipthesis.com${study.hero.src}`]
-          : [],
+          : ["https://www.shipthesis.com/opengraph-image.png"],
     },
   };
 }

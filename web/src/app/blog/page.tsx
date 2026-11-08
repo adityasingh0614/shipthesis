@@ -18,6 +18,21 @@ export const metadata: Metadata = {
     url: "https://www.shipthesis.com/blog",
     siteName: "Ship Thesis",
     type: "website",
+    images: [
+      {
+        url: "https://www.shipthesis.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ship Thesis Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog · Software Engineering & MVP Notes",
+    description:
+      "Engineering notes, architecture blueprints, milestone payment breakdowns, and tactical MVP lessons from the team at Ship Thesis.",
+    images: ["https://www.shipthesis.com/opengraph-image.png"],
   },
 };
 
