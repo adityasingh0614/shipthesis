@@ -27,6 +27,8 @@ DEFAULT_URLS = [
     f"https://{HOST}/blog/how-milestone-payments-work",
     f"https://{HOST}/blog/what-to-cut-from-v1-mvp",
     f"https://{HOST}/blog/code-ownership-hiring-agency",
+    f"https://{HOST}/blog/why-weekly-working-builds-matter",
+    f"https://{HOST}/blog/flutter-vs-react-native-mvp",
 ]
 
 ENDPOINTS = [
