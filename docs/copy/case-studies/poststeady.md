@@ -112,9 +112,9 @@ AI drafts the summary (Gemini) → The PDF is printed from the page you approved
 - **ii. We cut scope on purpose.** No social logins, no YouTube guessing, no scheduling. Three spiked stories, not three missed deadlines.
 - **iii. We guard accuracy before polish.** The AI quotes only real figures. A number a client will see is checked before it looks good.
 
-The same goes for your app: **a fixed quote** after a one-week Discovery Sprint, **a new build every week**, and **code you own**.
+The same goes for your app: **fixed-scope milestones**, **a new build every week**, and **code you own**.
 
-**Buttons:** Book a Discovery Call → `/#contact` · See pricing → `/#pricing`
+**Button:** Book a Discovery Call → `/#contact`
 
 ## Next project
 

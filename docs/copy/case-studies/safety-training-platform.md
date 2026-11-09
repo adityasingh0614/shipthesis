@@ -111,9 +111,9 @@ Zoom events → Webhook, every event logged → Attendance in one step → Best 
 - **ii. We measure before we choose.** Video playback was tested both ways before we picked the faster one: 7.5×.
 - **iii. We stay after launch.** EHS Guru is still on our maintenance plan, and the platform keeps improving alongside real classes.
 
-The same goes for your app: **a fixed quote** after a one-week Discovery Sprint, **a new build every week**, and **code you own**.
+The same goes for your app: **fixed-scope milestones**, **a new build every week**, and **code you own**.
 
-**Buttons:** Book a Discovery Call → `/#contact` · See pricing → `/#pricing`
+**Button:** Book a Discovery Call → `/#contact`
 
 ## Next project
 

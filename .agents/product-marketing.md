@@ -7,31 +7,24 @@
 **Studio name:** Ship Thesis
 **Domain:** shipthesis.com · **Email:** hello@shipthesis.com
 **One-liner:** We take founders from idea to a live app in the stores — and we build and ship our own products too.
-**What it does:** A mobile-first product studio. We design, build and ship mobile apps for founders — from a scoped Discovery Sprint through MVP build to post-launch support.
+**What it does:** A mobile-first product studio. We design, build and ship mobile apps for founders — from initial technical scoping through MVP build to post-launch support.
 **Product category:** Mobile app development studios / MVP development agencies.
-**Product type:** Service / studio (project-based + support plans).
-**Business model:** Fixed-scope, fixed-timeline projects (Discovery Sprint, MVP Build) plus monthly support plans (Ship & Support). Pricing: see the Pricing section.
+**Product type:** Service / studio (project-based).
+**Business model:** Fixed-scope, fixed-timeline projects with milestone payments. Quotes are custom based on the project scope and milestones agreed upon after the free 20-minute call.
 **Mobile stack:** Flutter for cross-platform apps (default). Native iOS in Swift and native Android in Kotlin when an app needs it. Backend, admin dashboards and web built alongside the app in Node.js and Next.js / React, with Firebase, Supabase and AWS. Growth path: start on Firebase or Supabase so the MVP launches fast and cheap. If usage outgrows it, we can move the client to AWS and manage the hosting for them. We sell mobile apps; web and SaaS are part of shipping the full product, not a separate service.
 **AI capability (confirmed 2026-09-26):** we can add AI features to any app or SaaS product, whatever the client needs — summaries, chat, automation, and similar. Real proof on record: Poststeady's AI-written report summaries (Gemini), with rules against inventing numbers. No AI feature is built into Assess Yourself or the EHS Training Platform today.
 
-## Pricing
-**Discovery Sprint:** 1 week, $750. Deliverables: a written scope, a feature list split into "version one" and "later", user flows or wireframes, a stack plan, and a fixed quote with timeline and milestones. If the founder doesn't continue, they keep everything from the sprint. The $750 is credited toward the build if they continue (a standard term, not a discount).
-**MVP Build:** from $6,000. Example: An MVP from $6,000 is an iOS and Android app with sign-up and login, user profiles, one main feature (such as booking, ordering or a content feed), push notifications, a simple admin panel, and store submission. Payments, chat and third-party integrations add to the quote. Typical timeline 6–10 weeks. Payments: 30% at start, 40% at the mid-build milestone, 30% at store submission.
-**Process:** design and testing are part of every build. Screens are designed and approved before they're built; each weekly build is tested before it reaches the founder's phone, and the whole app is checked end to end before store submission.
-**Scope changes:** small tweaks are absorbed. Bigger additions are quoted before any work starts, or swapped for something of equal size.
+## Pricing & Commercial Model
+**Custom Scoping:** Every MVP quote is custom, fixed-price, and broken into clear milestones following the free 20-minute technical review.
+**Process:** Design and testing are part of every build. Screens are designed and approved before they're built; each weekly build is tested before it reaches the founder's phone, and the whole app is checked end to end before store submission.
+**Milestone Payments:** Tied to verified deliverables (e.g. Kickoff/Architecture, Working Phone Build, Store/Production Launch).
+**Scope changes:** Small tweaks are absorbed. Bigger additions are quoted before any work starts, or swapped for something of equal size.
 **Warranty:** 30 days of free fixes for in-scope bugs after launch.
-**Support plans (shown as "Support plans from $300/month"):**
-- App Care — from $300/month: the mobile app (iOS, Android or both). Bug fixes, OS and library updates, store resubmissions, up to 4 hours of small changes.
-- Product Care — from $550/month: app + backend. Everything in App Care, plus server and database monitoring, payment and login issues, up to 8 hours.
-- Full Care — from $900/month: app + backend + admin panel or web app. Everything in Product Care, plus a reply within 4 working hours, up to 15 hours.
-- All plans: unused hours don't roll over. New features are quoted separately. No public hourly rate. Work beyond a plan is quoted per request, or the client moves up a plan.
-**Requests:** shared Slack channel or email. Response within 1 business day; critical issues the same day.
-**Rules:** never mention what any existing client pays. No discounts or "founding client" offers on the site.
+**Rules:** Never mention what any existing client pays. No discounts or "founding client" offers on the site.
 
 ## Booking & Location
-**Booking:** 30-minute Discovery Call, booked through a Cal.com embed (no form). Booking questions: name, email, the idea in a few lines, any deadline (optional), budget range (optional).
-**Budget ranges:** Under $5k · $5–10k · $10–25k · $25k+
-**After the call:** if it's a fit, a Discovery Sprint proposal within 2 business days.
+**Booking:** Free 20-minute call, booked through a Cal.com embed (no form).
+**After the call:** if it's a fit, a written scope and milestone proposal within 2 business days.
 **Location:** based in India, working with US and Europe founders. Calls are booked during the founder's working hours; day-to-day questions go through Slack or email, with a reply within one business day.
 
 ## Target Audience
@@ -72,10 +65,10 @@
 | Objection | Response |
 |-----------|----------|
 | How do I know you'll actually finish? | Fixed milestones, and a working build on your phone every week. |
-| What will it really cost, and will the price creep? | A fixed quote after a one-week, $750 Discovery Sprint (credited toward the build). MVP from $6,000. |
+| What will it really cost, and will the price creep? | A fixed quote tied to locked milestones after our free 20-minute call. No open-ended hourly billing. |
 | Will I own the code and be able to hire someone else later? | Yes. Code in your GitHub, store and cloud accounts in your name, from day one. |
 | Can a small studio handle this? | We ship our own products (Poststeady and ChromaLayer, both live) and run EHS Guru's live training platform. Judge us by live work, not headcount. |
-| What happens after launch when something breaks? | 30 days of free fixes for in-scope bugs, then support plans from $300/month. |
+| What happens after launch when something breaks? | 30 days of free fixes for in-scope bugs after launch, plus ongoing maintenance options. |
 
 **Anti-persona:** Equity-only offers; budgets far below a real build; no single decision-maker; fixed deadline with no willingness to cut scope.
 
@@ -83,7 +76,7 @@
 **Push:** Previous freelancer ghosted, missed deadlines, or left messy code.
 **Pull:** Fixed quote, weekly builds, code ownership.
 **Habit:** Sticking with a cheap freelancer, or trying no-code themselves.
-**Anxiety:** Paying a lot upfront to an unknown studio — answered by the small paid Discovery Sprint.
+**Anxiety:** Paying a lot upfront to an unknown studio — answered by milestone-based payments tied to working software.
 
 ## Customer Language
 **How they describe the problem:** unknown — do not infer
@@ -114,7 +107,7 @@ Case study order everywhere: Assess Yourself, EHS Training Platform, Poststeady.
 |-------|-------|
 | We ship our own products | Poststeady (live), ChromaLayer (live) |
 | Production systems, not demos | EHS Guru's training platform (live classes, attendance, recordings), Assess Yourself (payments, subscriptions), ChromaLayer (licensing) |
-| Honest, specific scoping | Fixed quotes after Discovery Sprint |
+| Honest, specific scoping | Fixed quotes tied to verified milestone builds |
 
 ## Goals
 **Business goal:** [TBD]
@@ -144,7 +137,7 @@ Header (name, one line, then tags: Client or Own product · Platform · Stack ·
 - v13 (2026-09-25) — Studio name is final: Ship Thesis (shipthesis.com, hello@shipthesis.com).
 - v12 (2026-09-25) — Time zones: calls in the founder's working hours, Slack or email with a one-business-day reply. No overlap-hours figure.
 - v11 (2026-09-25) — AWS wording: move to AWS if usage outgrows Firebase or Supabase, and manage the hosting.
-- v10 (2026-09-25) — AWS offered as cloud hosting we set up and manage. Added the approved example of an MVP from $6,000.
+- v10 (2026-09-25) — AWS offered as cloud hosting we set up and manage.
 - v9 (2026-09-25) — Node.js added to the stack line. SEO seed is "Flutter app development", matching the site.
 - v8 (2026-09-25) — ChromaLayer is "in beta" (no end-to-end purchase tested). Supabase added to the stack line. "Retainer" → "support plans". New Booking & Location section: 30-minute call, Cal.com, budget ranges, proposal within 2 business days, based in India working with US and Europe founders.
 - v7 (2026-09-25) — No public hourly rate; work beyond a plan is quoted per request. Mobile stack keeps Firebase and AWS, with the growth-path framing (Firebase or Supabase first, AWS when usage needs it).

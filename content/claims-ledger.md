@@ -35,7 +35,7 @@ The generator and blog automation system may state facts about Ship Thesis ONLY 
 
 ## 5. Current Offers & CTAs
 * `[CTA-1]` **Primary Offer**: Free 20-minute assessment call (`https://cal.com/shipthesis/20min`) to review wireframes, architecture, and scope.
-* `[CTA-2]` **Discovery Sprint**: Not offered on the site yet. No prices or paid discovery packages mentioned.
+* `[CTA-2]` **Paid Discovery**: Not offered on the site. No prices or paid packages mentioned.
 
 ## 6. Verified Proof & Case Studies (One Fact Per Entry)
 * `[AY-1]` **Assess Yourself App**: Mobile examination and test-taking app built with Flutter for Android and iOS. *(Note: Capability fact only. App is not live; no user counts, no live or launch claims).*

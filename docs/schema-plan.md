@@ -57,30 +57,15 @@ Also on Home: `WebSite` with `name` and `url`, and `publisher` set to the Organi
 
 ---
 
-## Service (Services and Pricing)
+## Service
 
-Three `Service` nodes. Each has `provider` set to the Organization `@id`, `areaServed` set to United States and Europe, and `serviceType` given below. The Services page describes each one. The Pricing page adds `offers`.
-
-| Service | `serviceType` | `offers` (Pricing page only) |
-|---|---|---|
-| Discovery Sprint | App scoping and planning | `Offer`: `price` 750, `priceCurrency` USD. Description: 1 week, credited toward the build |
-| MVP Build | MVP app development | `Offer` with `priceSpecification`: `minPrice` 6000, `priceCurrency` USD ("from $6,000") |
-| Ship & Support | App maintenance and support | 3 `Offer`s, each a `UnitPriceSpecification` with `minPrice` and `unitText` MONTH: App Care 300, Product Care 550, Full Care 900 |
-
-- Use `minPrice` for every "from" price, never a fixed `price`, because the real number is a quote.
-- Leave out the 30-day warranty and the 30/40/30 payment split. They're terms, not prices, and they stay as page text.
-- Don't mark up the $6,000 example as its own offer.
+`Service` nodes. Each has `provider` set to the Organization `@id`, `areaServed` set to United States and Europe. All builds are custom milestone-based projects. No public prices in schema.
 
 ---
 
 ## FAQPage
 
-`mainEntity` is a list of `Question` items, each with an `acceptedAnswer`. Question and answer text must match the page word for word, without the "→" link text.
-
-**Services (6):** What does an app cost? · How long does it take to build an app? · Do I own the code? · What happens after launch? · Can we work across time zones? · Why Flutter?
-- "Can we work across time zones?" is included. Its answer: "Yes, we work with founders in the US and Europe from our base in India. We book calls during your working hours, wherever you are. Day-to-day questions go through Slack or email, with a reply within one business day. And because a new build reaches your phone every week, you can check progress on your own schedule."
-
-**Pricing (5):** How much does it cost to build an app? · How do payments work? · What if I want to change something mid-build? · What if I don't continue after the Discovery Sprint? · What does support cost after launch?
+`mainEntity` is a list of `Question` items, each with an `acceptedAnswer`. Question and answer text must match the live page word for word. Schema reflects the live home FAQ JSON-LD.
 
 ---
 

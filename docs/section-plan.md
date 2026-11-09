@@ -77,9 +77,9 @@ Structure only. Content notes are directions, not final copy. Write copy in the 
 ### 4. How it works
 - **Purpose:** The visitor understands the path and believes we won't disappear, because they'll see progress every week. *(Answers: being ghosted / will they finish.)*
 - **Content:**
-  - Three steps: Discovery Sprint → MVP Build → Ship & Support, one line each.
+  - Six steps: Free 20-minute call → Design → Development → Testing → Store submission → Launch.
   - The weekly commitment stated plainly: a working build on your phone every week, against fixed milestones.
-  - Link to /services. Don't explain pricing or ownership here.
+  - Link to /#services. Don't explain pricing or ownership here.
 - **Proof:** A process commitment. There's no project evidence of weekly builds on record. If a case study can show a build log or build count, link it here.
 - **Differentiation:** Gap 3 (weekly builds; Apps Value builds every two weeks). Gap 5 is named here and explained on Services.
 
@@ -102,9 +102,8 @@ Structure only. Content notes are directions, not final copy. Write copy in the 
 ### 7. Final CTA
 - **Purpose:** The visitor knows the first step is small and priced, not a large upfront commitment.
 - **Content:**
-  - Book a Discovery Call. Show the Discovery Sprint as the next step: one week, $750, credited toward the build.
-  - One line on what happens after booking: a call, then the sprint.
-  - Link to /services for detail and to /pricing. **No "MVP from" price here.**
+  - Book a Discovery Call. The first step is a free 20-minute call.
+  - One line on what happens after booking: 20 minutes, no pitch, written scope and milestones.
 - **Proof:** The price itself, once set.
 - **Differentiation:** Gap 5 (paid discovery as the entry point). Gap 6.
 
@@ -190,34 +189,23 @@ All three (Assess Yourself, Safety training platform, Poststeady) follow the bra
 - **Purpose:** The visitor sees the whole engagement at a glance and that it's built for founders.
 - **Content:**
   - H1 with the primary keyword.
-  - The three stages as a simple row: Discovery Sprint → MVP Build → Ship & Support.
+  - The stages: Technical Scoping → Design → MVP Build → Testing → Launch.
   - One line: founders only, mobile first.
 - **Proof:** None needed.
 - **Differentiation:** None on its own.
 
-### 2. Discovery Sprint
-- **Purpose:** The visitor understands the fixed quote comes *from* this sprint. The full price-creep answer is on /pricing.
+### 2. Technical Scoping
+- **Purpose:** The visitor understands the fixed quote comes from clear scoping during the free 20-minute call.
 - **Content:**
-  - What the sprint is.
-  - Duration: 1 week.
-  - Price: $750, credited toward the build if they continue (a standard term, not a discount).
-  - Deliverables: a written scope, a feature list split into "version one" and "later", user flows or wireframes, a stack plan, and a fixed quote with timeline and milestones.
-  - How the fixed quote is produced from it.
-  - If they don't continue: they keep everything from the sprint.
-  - Lead with **how the number is made**, not the word "fixed".
-  - Link to /pricing.
-- **Proof:** Brand brief: fixed quotes after a paid Discovery Sprint.
-- **Differentiation:** Gap 5. Synergy quotes after a 1–2 day proposal; Apps Value's scoping may not be paid or binding.
+  - Written scope, feature list split into version one and later, stack recommendations, and milestone schedule.
 
 ### 3. MVP Build
 - **Purpose:** The visitor knows what a build includes, how it runs, and what we build with.
 - **Content:**
-  - Fixed scope and timeline from the sprint. From $6,000, typically 6–10 weeks.
-  - One line on price creep (fixed quote, three payments, a clear rule for changes) linking to /pricing. Payment and scope-change detail lives on /pricing.
-  - Weekly build as the delivery format. State it as a mechanic; the trust argument is on Home.
-  - What gets built is covered in section 4. Don't list the stack here.
+  - Fixed-scope milestones (30% / 40% / 30%).
+  - Weekly build on phone as the delivery format.
 - **Proof:** Case studies.
-- **Differentiation:** Gap 3 (weekly cadence).
+- **Differentiation:** Weekly cadence.
 
 ### 4. What we build
 - **Purpose:** The visitor knows exactly what we can build, with what, and has proof for each. This mirrors Home section 5, with more detail.
@@ -250,10 +238,10 @@ All three (Assess Yourself, Safety training platform, Poststeady) follow the bra
 - **Purpose:** The visitor knows exactly what happens after launch and what it costs. *(Answers: post-launch.)*
 - **Content:**
   - Warranty: 30 days of free fixes for in-scope bugs after launch.
-  - The three plan names (App Care, Product Care, Full Care) with one line each on what they cover. No plan prices.
+  - The three plan names (App Care, Product Care, Full Care) with one line each on what they cover.
   - Requests through a shared Slack channel or email. Response within 1 business day; critical issues the same day.
   - Never mention what any existing client pays. No discounts or "founding client" offers.
-  - Close with "Support plans from $300/month. See full pricing →", linking to /pricing. Hours, extra work and plan prices live on /pricing.
+  - Ongoing maintenance options available after launch.
 - **Proof:** One line: "EHS Guru has been on our maintenance plan since launch." Link to /work/safety-training-platform.
 - **Differentiation:** Must be at least as concrete as Synergy's 4 weeks free and Apps Value's in-scope warranty (summary, "Where they beat us").
 
@@ -266,58 +254,18 @@ All three (Assess Yourself, Safety training platform, Poststeady) follow the bra
 ### 7. FAQ
 - **Purpose:** Answer cost, timeline and ownership questions directly.
 - **Content:**
-  - **What does it cost?** Use the exact numbers: MVP from $6,000, Discovery Sprint $750 (credited toward the build), the fixed quote after the sprint, support plans from $300/month. Payment split stays on /pricing. Link there.
-  - **How long does it take to build an app?** Sprint: 1 week. Typical MVP: 6–10 weeks. What makes it longer.
-  - **Do I own the code?** *(Answers: code ownership.)* Yes: code in your GitHub, store and cloud accounts in your name, from day one. State it as the baseline, not a headline, because Apps Value promises the same.
-  - **Why Flutter?** Cross-platform by default; native Swift or Kotlin when an app needs it. Secondary keyword.
-  - **What happens after launch?** Short answer (30-day warranty, plans from $300/month) that points to section 5.
+  - **What does it cost?** Every build has an agreed fixed scope and a 30% / 40% / 30% milestone schedule paid as working software is verified. We never bill open-ended hourly rates.
+  - **How long does it take to build an app?** In weeks, not months.
+  - **Do I own the code?** Yes: code in your GitHub, store and cloud accounts in your name, from day one.
+  - **Why Flutter?** Cross-platform by default; native Swift or Kotlin when an app needs it.
+  - **What happens after launch?** 30-day warranty, with ongoing maintenance support options available.
   - **Can we work across time zones?** Based in India, working with US and Europe founders. Calls booked in the founder's working hours; Slack or email with a one-business-day reply.
 - **Proof:** Brand brief objections table.
-- **Differentiation:** "MVP from" price closes the gap with Apps Value's public floor. The timeline answer is honest where Synergy's is inconsistent.
 
 ### 8. CTA
 - **Purpose:** Next step.
-- **Content:** Book a Discovery Call. One line on what happens next.
+- **Content:** Book a Discovery Call.
 - **Differentiation:** Gap 6.
-
----
-
-## Pricing `/pricing`
-
-**Primary keyword:** cost to build an app / MVP
-
-**Rules:** every final price from the brief's Pricing section. Never mention what any existing client pays. No discounts, and no founding-client offer (that's for calls only).
-
-### 1. Intro
-- **Purpose:** The visitor knows every price is here and the build price is a fixed quote from a written scope.
-- **Content:** H1 with the primary keyword. One supporting line. Button: Book a Discovery Call.
-
-### 2. Prices at a glance
-- **Purpose:** All four numbers in one look.
-- **Content:** Table: Discovery Sprint $750 / 1 week / credited toward the build; MVP Build from $6,000 / typically 6–10 weeks; 30 days of free fixes after launch; support plans from $300/month.
-
-### 3. Discovery Sprint
-- **Content:** Deliverables, the $750 credit toward the build, and that the founder keeps everything if they don't continue. Link to /services for what happens in the sprint.
-
-### 4. MVP Build
-- **Content:** From $6,000, typically 6–10 weeks, what moves the price. One concrete example of what an MVP from $6,000 includes (approved wording in the brief's Pricing section). Link to /services "What we build".
-
-### 5. How your price stays fixed
-- **Purpose:** The visitor stops worrying about price creep. *(Answers: price creep.)*
-- **Content:** The quote comes from the written scope. Payments 30% at start, 40% at the mid-build milestone, 30% at store submission. Scope changes: small tweaks absorbed; bigger additions quoted before work starts, or swapped for something of equal size.
-- **Differentiation:** Gap 5 (the number comes from paid discovery).
-
-### 6. After launch
-- **Content:** 30-day warranty. Support plans table: App Care (from $300), Product Care (from $550), Full Care (from $900), with contents from the brief. Unused hours don't roll over; new features quoted; extra work quoted or move up a plan. Slack or email; 1 business day, critical same day. Link to /services Ship & Support.
-
-### 7. FAQ
-- **Purpose:** Direct answers for search and AI snippets. First sentence of each answer stands on its own.
-- **Content:** How much does it cost to build an app? · How do payments work? · What if I want to change something mid-build? · What if I don't continue after the Discovery Sprint? · What does support cost after launch? Only facts already on the page.
-
-### 8. CTA
-- **Purpose:** The next step is the $750 Discovery Sprint, credited toward the build.
-- **Content:** Heading about the sprint. Button wording stays **Book a Discovery Call** (one CTA, one wording).
-- **Differentiation:** Gap 5, Gap 6. Closes the public-price-floor gap with Apps Value.
 
 ---
 
@@ -378,7 +326,7 @@ All three (Assess Yourself, Safety training platform, Poststeady) follow the bra
 - **Purpose:** The visitor knows what the call is for and that it commits them to nothing.
 - **Content:**
   - H1: "Start your app with one call." The primary keyword goes in the page title and meta description only.
-  - What we cover on the call: the idea, fit, and how the Discovery Sprint works.
+  - What we cover on the call: the idea, fit, scope and milestones.
   - Call length: 30 minutes.
   - What to bring, beside the booking embed.
 - **Proof:** None needed.
@@ -396,8 +344,7 @@ All three (Assess Yourself, Safety training platform, Poststeady) follow the bra
 ### 3. What happens next
 - **Purpose:** The visitor knows the steps after booking.
 - **Content:**
-  - Steps: book a time → 30-minute call → Discovery Sprint proposal within 2 business days → sprint → fixed quote.
-  - Link to /pricing for prices and terms. Don't repeat them here.
+  - Steps: book a time → 20-minute call → written scope & milestone proposal.
 - **Proof:** None needed.
 - **Differentiation:** Gap 5 (the path runs through paid discovery).
 

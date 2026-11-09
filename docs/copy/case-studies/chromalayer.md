@@ -63,7 +63,7 @@ Placeholder photo and quote until a real, approved testimonial exists.
 
 ## 08 · Conclusion (07 on production)
 
-**Why a Windows app is on a mobile studio's site**, set as the final reading: i. Staying right is the hard part · ii. We design for the real system · iii. We ship updates safely. Then the shared line (a fixed quote after a one-week Discovery Sprint, a new build every week, code you own) and Book a Discovery Call / See pricing.
+**Why a Windows app is on a mobile studio's site**, set as the final reading: i. Staying right is the hard part · ii. We design for the real system · iii. We ship updates safely. Then the shared line (fixed-scope milestones, a new build every week, code you own) and Book a Discovery Call.
 
 ## Deliberately left out
 

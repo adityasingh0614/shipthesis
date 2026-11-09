@@ -95,7 +95,6 @@ Payment split is 3:4:3 on every project.
 The founder gets a working build to test on their own phone every week (Friday
 builds).
 Code lives in the client's own GitHub from day one.
-Offer: a 1-week Discovery Sprint.
 Offer: a free 20-minute assessment call.
 Stack: Next.js, Supabase/PostgreSQL, Flutter, TypeScript.
 Proof: AssessYourself, an offline-first mobile examination app.
@@ -251,7 +250,7 @@ Blog template (900 to 1,400 words, never padded)
 4. Body: three to five H2 sections phrased as sub-questions, with one table or checklist.
 5. "How Ship Thesis does it": ledger claims only, plus the real project detail.
 6. FAQ: three to five questions.
-7. CTA: the free 20-minute assessment call or the 1-week Discovery Sprint. No prices.
+7. CTA: the free 20-minute assessment call. No prices.
 8. Footer: last-updated date, author shown as "Ship Thesis."
 Block template
 1. The problem in one sentence, then the answer.
@@ -359,7 +358,6 @@ What to cut from your first MVP (the three-screen rule)
 Flutter vs React Native for an MVP
 Next.js with Supabase for a SaaS MVP
 How to vet a dev studio: red flags before you sign
-What a 1-week Discovery Sprint is and what you get
 What to prepare before you talk to an MVP developer
 AssessYourself case study (after reviews are on the site)
 Blocks

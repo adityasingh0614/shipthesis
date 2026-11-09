@@ -14,12 +14,11 @@ Placeholders in `[BRACKETS]` must be filled before launch.
 > Start your app with one call.
 
 **Body:**
-> On the call, we talk through your idea, whether we're the right fit, and how the Discovery Sprint works. It takes 30 minutes, and booking it doesn't commit you to anything.
+> On the call, we talk through your idea, confirm technical feasibility, and discuss scope and milestones. It takes 20 minutes, and booking it doesn't commit you to anything.
 
 **What to bring (beside the booking embed):**
 > - Your idea in a few lines: what it does and who it's for.
 > - Any deadline, and why it matters.
-> - A rough budget, if you have one.
 > - Anything you've already got: sketches, designs, notes, or apps you like.
 >
 > None of it needs to be polished. Half-formed is fine.
@@ -28,18 +27,9 @@ Placeholders in `[BRACKETS]` must be filled before launch.
 
 ## 2. Booking
 
-**Heading above the embed:** Book a Discovery Call
+**Heading above the embed:** Book a Free 20-Minute Call
 
-**Cal.com booking embed** (30-minute event). Booking questions:
-
-- Name
-- Email
-- Your idea, in a few lines
-- Any deadline? *(optional)*
-- Budget range *(optional)*: Under $5k · $5–10k · $10–25k · $25k+
-
-**Under the embed:**
-> We only use these details to prepare for your call. [Privacy policy →]
+**Cal.com booking embed** (20-minute event).
 
 ---
 
@@ -47,12 +37,9 @@ Placeholders in `[BRACKETS]` must be filled before launch.
 
 **Heading:** What happens after you book
 
-> 1. **Pick a time.** Choose a slot above and you'll get a calendar confirmation straight away.
-> 2. **We talk it through.** A 30-minute call about your idea and whether we're a fit.
-> 3. **You get a proposal.** If we're a fit, we send a Discovery Sprint proposal within 2 business days.
-> 4. **The sprint, then your quote.** The sprint ends with a written scope and a fixed quote for your build.
->
-> Prices and terms are on our pricing page → *(/pricing)*
+> 1. **Pick a time.** Choose a slot and you'll get a calendar confirmation straight away.
+> 2. **We talk it through.** A 20-minute call about your idea and whether we're a fit.
+> 3. **Written scope & milestones.** After the call you get a written scope, timeline, and fixed milestones.
 
 ---
 

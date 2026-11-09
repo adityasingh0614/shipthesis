@@ -73,12 +73,6 @@ export const BLOG_POSTS_METADATA: BlogPostMeta[] = [
     ogWidth: 1200,
     ogHeight: 630,
   },
-];
-
-/**
- * Upcoming blog post drafts ready for subsequent release waves
- */
-export const UPCOMING_POSTS_METADATA: BlogPostMeta[] = [
   {
     slug: "why-weekly-working-builds-matter",
     title: "Why Do Weekly Working Builds on Your Phone Matter for an MVP?",
@@ -86,15 +80,35 @@ export const UPCOMING_POSTS_METADATA: BlogPostMeta[] = [
     description:
       "Discover why weekly working builds on your physical phone catch bugs early, eliminate agency status-report theater, and prove real engineering velocity.",
     category: "MVP",
-    datePublished: "2026-11-02T00:00:00Z",
-    dateModified: "2026-11-03T00:00:00Z",
+    datePublished: "2026-11-09T00:00:00Z",
+    dateModified: "2026-11-09T00:00:00Z",
     readTime: "5 min read",
     heroImage: "/covers/why-weekly-working-builds-matter-illustration.webp",
     ogImage: "/covers/why-weekly-working-builds-matter-og.png",
     ogWidth: 1200,
     ogHeight: 630,
   },
+  {
+    slug: "flutter-vs-react-native-mvp",
+    title: "Should You Build Your Mobile MVP in Flutter or React Native?",
+    seoTitle: "Flutter vs React Native for a Mobile MVP: Complete Guide",
+    description:
+      "Compare Flutter vs React Native for your startup mobile MVP. Understand direct canvas rendering, bridge latency, offline persistence, and velocity tradeoffs.",
+    category: "MOBILE",
+    datePublished: "2026-11-09T00:00:00Z",
+    dateModified: "2026-11-09T00:00:00Z",
+    readTime: "6 min read",
+    heroImage: "/covers/flutter-vs-react-native-mvp-illustration.webp",
+    ogImage: "/covers/flutter-vs-react-native-mvp-og.png",
+    ogWidth: 1200,
+    ogHeight: 630,
+  },
 ];
+
+/**
+ * Upcoming blog post drafts ready for subsequent release waves
+ */
+export const UPCOMING_POSTS_METADATA: BlogPostMeta[] = [];
 
 export function getAllPosts(): BlogPostMeta[] {
   return BLOG_POSTS_METADATA;

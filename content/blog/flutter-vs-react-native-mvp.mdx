@@ -1,0 +1,111 @@
+# Should You Build Your Mobile MVP in Flutter or React Native?
+
+For most startup founders building a cross-platform mobile MVP, Flutter offers faster initial velocity and predictable UI rendering, while React Native makes sense if you have an existing web React codebase or rely on specific JavaScript SDKs. Flutter compiles directly to native ARM machine code with its own rendering engine, avoiding bridge serialization overhead and ensuring visual consistency across iOS and Android devices.
+
+### The Short Version
+* **Flutter paints directly to the canvas**: Flutter bypasses native OEM interface widgets by rendering its own components via Impeller, preventing unexpected layout glitches across different Android vendor skins.
+* **React Native leverages React web codebases**: If your core product already runs on React or engineers write TypeScript daily, React Native allows business logic and state structures to be shared between web and mobile.
+* **Offline resilience and UI fluidity**: Flutter's ahead-of-time compilation and direct SQLite database integration provide steady 60fps interactions and reliable local data persistence.
+
+---
+
+## The Core Technical Difference: Direct Canvas Rendering vs. Native Bridges
+
+When evaluating Flutter and React Native for a new product, the primary architectural distinction lies in how each framework displays pixels on a mobile screen.
+
+React Native historically operated through an asynchronous JavaScript bridge that serialized messages between JavaScript business logic and platform-native UI components (such as `UIView` on iOS and `android.view.View` on Android). While recent iterations introduce the New Architecture (TurboModules and Fabric) to enable direct C++ communication, the framework still maps components to OEM system widgets. This means an update to iOS or a manufacturer-modified Android skin can alter layout spacing or button styles unexpectedly.
+
+Flutter takes an entirely different architectural path. Rather than wrapping platform-native UI widgets, Flutter controls each pixel on screen using its high-performance rendering engine (Impeller). The framework ships its own vector-rendered widget set. An iOS device and an Android phone run the exact same UI layout tree, eliminating visual regressions caused by underlying operating system component variations.
+
+---
+
+## Cross-Platform UI Consistency Across iOS and Android
+
+One of the largest time drains during early mobile development is fixing platform-specific UI quirks. 
+
+In React Native, styling is achieved via a subset of CSS Flexbox. Because these styles translate into native platform views, a text input field or picker component can behave differently on a Google Pixel than on an iPhone 16. Engineers often write conditional platform checks (`Platform.OS === 'ios'`) to maintain clean alignment, adding testing overhead to weekly sprints.
+
+Flutter structures its entire interface around a unified, composable widget tree. Whether using Material Design 3 or Cupertino (iOS-style) conventions, Flutter layouts render identically regardless of the device manufacturer:
+
+* **Predictable Typography**: Fonts, line heights, and padding render without device-dependent font metric shifts.
+* **Uniform Form Handling**: Text inputs, date pickers, and modal bottom sheets retain their visual hierarchy without custom platform patches.
+* **Pixel-Accurate Theming**: Dark mode, contrast modes, and responsive scaling behave consistently on tablets and entry-level smartphones alike.
+
+For founders validating a core workflow, this consistency avoids spending sprint cycles debugging platform layout differences.
+
+---
+
+## Performance, Complex Interactions, and Hardware Access
+
+Early-stage mobile applications rarely fail from insufficient server scale; they fail from unresponsive user interactions, clunky scrolling, or battery-draining background loops.
+
+Flutter compiles Dart ahead-of-time (AOT) directly into native ARM64 machine code. Because there is no JavaScript runtime or intermediate interpretation step, Flutter apps boot quickly and maintain 60 frames per second during complex list scrolling and view transitions.
+
+React Native relies on the Hermes JavaScript engine. For standard CRUD applications displaying text, images, and simple forms, Hermes delivers smooth interactions. However, when an application requires intensive micro-interactions, local data processing, or custom gesture handlers, the bridge layer can introduce frame drops if not tuned by seasoned engineers.
+
+Both frameworks access native device features—such as the camera, GPS, push notifications, and Bluetooth—through platform plugins. For platform APIs, Flutter uses MethodChannels to communicate with Swift and Kotlin, while React Native connects through JSI (JavaScript Interface) modules.
+
+---
+
+## Flutter vs. React Native: Direct Framework Comparison
+
+The table below outlines the core technical criteria founders consider before initiating development:
+
+| Evaluation Factor | Flutter (Google) | React Native (Meta) |
+|---|---|---|
+| **Programming Language** | Dart | TypeScript / JavaScript |
+| **Rendering Strategy** | Direct canvas rendering (Impeller engine) | Native OEM platform component mapping |
+| **UI Consistency** | Identical across all Android and iOS devices | Adapts to native platform styling and OEM skins |
+| **Compilation Model** | Ahead-of-Time (AOT) machine code | Just-in-Time / Hermes bytecode execution |
+| **Startup Speed** | Fast native binary launch | Fast with Hermes bytecode precompilation |
+| **Code Sharing with Web** | Possible, but best suited for mobile | High code sharing with existing React web apps |
+| **Community & Ecosystem** | Broad pub.dev repository curated by Google | Extensive npm package registry |
+
+---
+
+## When Does Choosing React Native Make Sense?
+
+While Flutter is often our recommendation for standalone mobile MVPs, React Native remains an effective choice under specific circumstances:
+
+1. **Existing Web Application in React**: If you have an established Next.js or React web dashboard with proprietary validation routines, React Native allows you to share data models and state management logic.
+2. **Web-First Engineering Teams**: If your internal technical hire has years of TypeScript experience and no familiarity with Dart, building with React Native avoids a language learning curve.
+3. **Heavy Reliance on Web-Only SDKs**: If your product relies on niche analytics or hardware vendor libraries that only provide JavaScript and native wrappers, React Native provides direct integration.
+
+If these constraints do not apply, Flutter's unified engine provides a faster path to an installable mobile build.
+
+---
+
+## How Ship Thesis Builds Cross-Platform Mobile MVPs
+
+At Ship Thesis, our core service is building MVPs for founders across web applications, mobile apps, and SaaS platforms {{c:SVC-1}}.
+
+For cross-platform mobile apps on iOS and Android, we build using Flutter (Dart) for native performance and offline persistence {{c:STACK-2}}.
+
+Our rule of thumb for first-version scoping is clear: a first MVP is scoped down to about three core screens or workflows to test the primary value hypothesis before adding secondary features {{c:SCOPE-1}}.
+
+In our work on Assess Yourself, the mobile examination and test-taking app was built with Flutter for Android and iOS {{c:AY-1}}.
+
+The mobile application is built so timed test state survives operating system kills, phone calls, and battery savers via a local SQLite state engine {{c:AY-2}}.
+
+The founder gets a working build to test on their own phone or browser preview every Friday {{c:BUILD-1}}.
+
+---
+
+## Frequently Asked Questions
+
+### Is Dart difficult to learn if developers know TypeScript?
+Dart was designed with syntax familiar to JavaScript, TypeScript, and Java engineers. It features strong typing, null safety, and object-oriented patterns that allow developers with modern frontend experience to write production code within days.
+
+### Will Apple or Google reject apps built with Flutter?
+No. Flutter compiles down to standard native iOS `.ipa` and Android `.aab` bundles that pass App Store and Google Play compliance checks. Thousands of leading consumer and enterprise applications run on Flutter in both official app stores.
+
+### Can a Flutter application communicate with custom backend APIs?
+Yes. Flutter applications connect to standard REST APIs, GraphQL endpoints, and WebSockets. They integrate directly with backend infrastructure such as PostgreSQL and Supabase with Row Level Security.
+
+---
+
+## Validate Your Mobile Architecture
+
+If you are deciding between Flutter and React Native for your startup's first mobile release, getting an objective architectural review saves weeks of refactoring.
+
+[Book a free 20-minute assessment call]({{BOOKING_URL}}) to review wireframes, architecture, and scope {{c:CTA-1}}. We will outline the technical stack for your product and discuss your roadmap.

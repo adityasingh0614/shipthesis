@@ -27,6 +27,7 @@ CANONICAL_PAGES = [
     {"num": 2, "slug": "what-to-cut-from-v1-mvp", "word_cap": 1400},
     {"num": 3, "slug": "code-ownership-hiring-agency", "word_cap": 1300},
     {"num": 4, "slug": "why-weekly-working-builds-matter", "word_cap": 1100},
+    {"num": 5, "slug": "flutter-vs-react-native-mvp", "word_cap": 1400},
 ]
 
 FORBIDDEN_HYPE = [

@@ -123,19 +123,7 @@ Link: "See how each one works →" (to /services).
 
 ## 5. Pricing
 
-**Job:** show our prices in the open (competitors hide theirs) and send people to /pricing.
-
-| Item | Price | Line |
-|---|---|---|
-| Discovery Sprint | $750 | One week. Credited toward your build if you continue. |
-| MVP Build | From $6,000 | Typically 6-10 weeks, as a fixed quote. |
-| Support | From $300/month | After 30 days of free fixes. |
-
-Link: "See full pricing →". No "recommended" option, no discounts.
-
-**Built 2026-09-27 (founder's direction):** a Get it built / Keep it running toggle. Build: Discovery Sprint, MVP Build, After launch (30 days free fixes). Maintain: App Care, Product Care, Full Care (from the brand brief's support plans), one line each. Copy in `docs/copy/home.md` §5.
-
-**Motion:** Segmented Toggle (pill slides on a spring), cards swap with a short staggered fade and blur, Border Beam on hover. See `docs/design/motion-components.md`.
+**Note (Discarded):** The pricing section was discarded by founder direction. There is no pricing section or /pricing route on the live site. All quotes are custom fixed-scope milestones agreed after the free 20-minute call.
 
 ---
 

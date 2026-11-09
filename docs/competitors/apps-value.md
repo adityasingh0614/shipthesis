@@ -120,7 +120,7 @@
   - Weekly builds.
   - Our own live products (Poststeady, ChromaLayer).
   - Being honest about what we won't do.
-  - A paid Discovery Sprint *before* the quote, so the fixed price is based on real discovery, not a proposal. **Unverified:** whether their weeks 1–2 play the same role.
+  - Technical scoping before the quote, so the fixed price is based on real requirements, not a guess.
 - **Our ownership line is not unique any more.** Apps Value makes the same promise. Keep it, but don't lead with it as a differentiator.
 
 ## Unverified

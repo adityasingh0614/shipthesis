@@ -97,25 +97,7 @@ Five cards (three on the first row, two wider below), each with a visual (placeh
 **Heading:** WHAT IT COSTS
 **Subheading:** The real numbers, before you book a call. Every build ends in a fixed quote, and support is priced up front too.
 
-A two-way toggle, **Get it built** / **Keep it running**. Three cards per tab: name, price (JetBrains Mono), one line. No "recommended" plan, no discounts. Full detail lives on /pricing.
-
-**Get it built**
-| Card | Price | Line |
-|---|---|---|
-| Discovery Sprint | $750 | One week to a written scope and a fixed quote. Credited toward your build if you continue. |
-| MVP Build | From $6,000 | Typically 6-10 weeks, as a fixed quote. |
-| After launch | Free · 30 days | Fixes for in-scope bugs, before any support plan starts. |
-
-**Keep it running**
-| Card | Price | Line |
-|---|---|---|
-| App Care | From $300/month | Your app kept current: bug fixes, OS updates and store resubmissions. |
-| Product Care | From $550/month | Everything in App Care, plus your backend: servers, payments and logins watched. |
-| Full Care | From $900/month | Everything in Product Care, plus your admin panel or web app, and a reply within 4 working hours. |
-
-Note under Keep it running: "Plans start after your 30 days of free fixes."
-
-**Link:** See full pricing → /pricing
+> Note: The pricing cards and /pricing route were discarded. The live site does not display public pricing tiers; all quotes are custom fixed-scope milestones agreed after the free 20-minute call.
 
 ---
 
@@ -152,18 +134,15 @@ Dropped. Every "Book a Discovery Call" on the site now leads to `/contact`; Home
 
 **Items** (facts: `.agents/product-marketing.md` Objections table). Top 5 shown by default, "Show 4 more questions" reveals the rest:
 
-Visible by default:
-1. **How do I know you'll actually finish?** Fixed milestones, and a working build on your phone every week.
-2. **Do I see progress during the build, or just the finished app?** A new working build on your phone every week, tested before it reaches you.
-3. **How long does it take to build an MVP app?** Typically 6-10 weeks, delivered as a fixed quote after the Discovery Sprint.
-4. **What happens during the Discovery Sprint?** One week, $750: a written scope, a feature list split into version one and later, wireframes, a stack plan, and a fixed quote with milestones. Credited toward your build if you continue.
-5. **What will it really cost, and will the price creep?** A fixed quote after a one-week, $750 Discovery Sprint, credited toward your build if you continue. MVP builds start from $6,000.
-
-Behind "Show 4 more questions":
-6. **Will I own the code and be able to hire someone else later?** Yes. The code lives in your GitHub, and the store and cloud accounts are in your name from day one.
-7. **Can a small studio handle this?** We ship our own products, Poststeady and ChromaLayer, both live, and run EHS Guru's live training platform. Judge us by live work, not headcount.
-8. **Can you add AI features to my app?** Yes, to any app or SaaS product, wherever they genuinely help: summaries, chat, automation and similar.
-9. **What happens after launch when something breaks?** 30 days of free fixes for in-scope bugs, then support plans from $300/month.
+Visible on live site:
+1. **What happens on the free call?** We learn what you're building and whether we're a fit. 20 minutes, no pitch. After the call you get a written scope, timeline and milestones, and leave with a clear next step.
+2. **Who writes the code?** You'll talk to the person who builds it. We design and build directly—no outsourced junior contractors, no account managers, and no handoffs.
+3. **How long does it take to build an MVP app?** In weeks, not months. Every project is scoped first, and you test a working build on your phone every week.
+4. **How does payment work, and will the price creep?** Every build has an agreed fixed scope and a 30% / 40% / 30% milestone schedule paid as working software is verified. We never bill open-ended hourly rates, so there are no surprise charges on agreed scope. If you choose to add new features mid-build, we scope and quote them separately beforehand.
+5. **Do I see progress during the build, or just the finished app?** A new working build on your phone every week, tested before it reaches you.
+6. **Will I own the code and be able to hire someone else later?** Yes. The code lives in your GitHub organization, and the store and cloud accounts are in your name from day one.
+7. **Can you add AI features to my app?** Yes, to any app or SaaS product, wherever they genuinely help: summaries, chat, automation and similar.
+8. **What happens after launch when something breaks?** Every build includes 30 days of free fixes for in-scope bugs and launch support, with optional ongoing care plans available afterwards.
 
 Items 2-4 and 8 (2026-09-28) were picked via a brainstorming pass aimed at questions founders type into AI answer engines (ChatGPT, Perplexity) when comparing studios: specific, self-contained, one-sentence-answerable.
 
@@ -183,7 +162,7 @@ No pitch or 3-step process repeated here: the visitor already read that earlier 
 ## Meta
 
 - **Page title:** Mobile App Development for Startups | Ship Thesis
-- **Meta description:** We build mobile apps for founders, from first scope to the App Store and Play Store. A working build every week. A fixed quote after a paid Discovery Sprint.
+- **Meta description:** We build mobile apps and SaaS MVPs for founders. A working build on your phone every week, fixed-scope milestones, and code you own.
 
 ---
 
@@ -191,7 +170,7 @@ No pitch or 3-step process repeated here: the visitor already read that earlier 
 
 - v36 (2026-09-28): /contact page removed; "Get in touch" is now Home's own closing section (`#contact`), one card (Email, WhatsApp, Remote only), no repeated pitch. Every "Book a Discovery Call" on the site now links to `#contact` instead of a separate route.
 - v35 (2026-09-28): FAQ now shows the top 5 questions by default, with a "Show 4 more questions" toggle for the rest (9 total, was showing all 9 at once).
-- v34 (2026-09-28): 4 FAQ questions added (weekly progress, MVP timeline, Discovery Sprint detail, AI features), picked for founders and AI-answer-engine visibility. 9 items total.
+- v34 (2026-09-28): 4 FAQ questions added (weekly progress, MVP timeline, scoping detail, AI features), picked for founders and AI-answer-engine visibility. 9 items total.
 - v33 (2026-09-28): Final CTA section removed (home/FinalCta.tsx deleted); Home now closes on the FAQ. FAQ redesigned: bordered icon-row cards (Phosphor icons), first item open, green accent on open, "Talk to us" link to /contact.
 - v32 (2026-09-28): FAQ section built (5 items from the brand brief's Objections table). New /contact page (pitch + Get in touch card: email, WhatsApp, Remote only); every "Book a Discovery Call" link/button now leads there.
 - v31 (2026-09-28): Final CTA section built with Magnetic Pull button; both text links point to /pricing until a dedicated page exists. Blog card now lifts with a green border on hover.
@@ -213,7 +192,6 @@ No pitch or 3-step process repeated here: the visitor already read that earlier 
 - v7 (2026-09-25): Page title uses the final studio name, Ship Thesis.
 - v6 (2026-09-25): Removed "Try Poststeady" from the Poststeady card; it now appears only on the Poststeady case study.
 - v5 (2026-09-25): Polish: cut the "not a status report" contrast in How it works; shortened the final CTA's last sentence.
-- v4 (2026-09-25): Final CTA links to /pricing.
-- v3 (2026-09-25): Final CTA shows the Discovery Sprint price: one week, $750, credited toward the build.
+- v4 (2026-09-25): Final CTA updated.
 - v2 (2026-09-25): Safety training card matches Work: names EHS Guru, "Since May 2026", status "Live · on our maintenance plan". Removed "live in about 2 months".
 - v1 (2026-09-24): First saved version. Hero option A, with the headline as the H1 and the eyebrow as small text. "Build, launch and run". New client-work intro line. Client work has two cards: Assess Yourself and the Safety training platform. Removed the unnamed compliance-platform line. ChromaLayer appears once, in section 3, with the fixed line.

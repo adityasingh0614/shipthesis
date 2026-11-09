@@ -41,7 +41,7 @@ Placeholders in `[BRACKETS]` must be filled before launch.
 **Heading:** Where app builds usually go wrong, and what we do about it
 
 > **The scope keeps growing until the money runs out.**
-> The Discovery Sprint puts the scope in writing before the build starts, and your quote is priced from it. See how changes are handled → *(/pricing)*
+> We lock scope and milestones in writing before the build starts, so your quote is fixed.
 >
 > **The app gets rejected at the last step.**
 > Store submissions are our job, not yours.

@@ -1,0 +1,27 @@
+{
+  "slug": "flutter-vs-react-native-mvp",
+  "template_version": "template-v1",
+  "headline": "Flutter vs React Native for a Mobile MVP",
+  "headline_word_count": 8,
+  "category": "MOBILE",
+  "scene": "Two collaborators comparing mobile performance on iOS and Android devices",
+  "alt_text": "Illustration comparing Flutter and React Native cross-platform performance for mobile MVPs.",
+  "prompt": "Flat vector tech startup illustration...",
+  "negative_prompt": "text, words, logos...",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/flutter-vs-react-native-mvp-illustration.png",
+    "illustration_webp": "/covers/flutter-vs-react-native-mvp-illustration.webp",
+    "link_preview_og": "/covers/flutter-vs-react-native-mvp-og.png",
+    "square_social": "/covers/flutter-vs-react-native-mvp-square.png",
+    "linkedin_landscape": "/covers/flutter-vs-react-native-mvp-linkedin.png"
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

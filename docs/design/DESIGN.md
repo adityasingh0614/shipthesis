@@ -137,7 +137,7 @@ Sources and reasoning: `docs/design/research.md`.
 |---|---|---|
 | Headings (h1–h4, display) | **Phudu**, weight **700** only | A bold, blocky geometric display face. Distinct from Stripe's Sohne, Apple's SF Pro and the ubiquitous Inter. Used at heading sizes only, it isn't a body face |
 | Body, buttons, UI | **System UI stack** | Native, very readable on every phone, and costs zero bytes to load |
-| Build labels and prices | **JetBrains Mono**, 500 | "Week 3", "Build 12", "$750". Phudu has no confirmed tabular figures, so every price runs in the mono, not the heading font |
+| Build labels and code | **JetBrains Mono**, 500 | "Week 3", "Build 12", technical identifiers run in the mono, not the heading font |
 
 ### Loading (performance rules)
 
@@ -272,18 +272,8 @@ Base unit **4px**. Tokens: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 1
 - **Hover (desktop):** border becomes 2px `#C9D3CF`, `card` shadow, no movement.
 
 **Pricing panel**
-- Same shell as the case study card.
-- The plan name is `h4` (Phudu). The price is set in JetBrains Mono 500 at 32px (phone) / 40px (desktop) with tabular figures. "/month" is in `muted` 15px, system font.
-- **No "recommended" plan, no inverted dark card, no discount strike-throughs.**
-- **Support plans table:** below 768px, the three plans are stacked cards. At 768px and up, a 3-column table with `tint` on the header row.
-
-**Pricing toggle**
-- A two-option switch above the pricing panels: "Build your app" (default) and "After launch".
-- **Build your app:** Discovery Sprint ($750, 1 week) and MVP Build (from $6,000), side by side, with the 30-day free-fix line below.
-- **After launch:** the three support plans (App Care, Product Care, Full Care), with the "Need more than your plan covers?" line below.
-- **Look:** a `surface` track with a 2px `hairline` border, radius `md` (12px). The selected option is `canvas` with a stronger border (`#C9D3CF`) and `ink` text; the unselected option is `muted` text with no fill. Each option is ≥ 44px tall. Full width and stacked side by side on phones; centred and no wider than its content from 480px.
-- **Both groups of pricing content stay in the page's HTML at all times, only visually hidden** (`hidden` attribute or `display: none` toggled by state, never removed from the DOM), so search engines and AI answers can read every price regardless of which option is selected.
-- **Accessible tab list:** `role="tablist"` on the track, `role="tab"` with `aria-selected` on each option, `role="tabpanel"` on each price group. Left/Right arrow keys move focus and switch the selected tab (standard tabs pattern); Enter/Space also activates. The initial tab (`Build your app`) is focusable by default; the inactive tab has `tabindex="-1"`.
+**Pricing (Discarded)**
+- The pricing toggle, tiers, and numbers were discarded from the design system by founder direction. There are no public pricing components in production. All quotes are bespoke fixed-milestone contracts agreed after the free 20-minute call.
 
 **FAQ**
 - Native `<details>` / `<summary>`. The question is `h3`-styled in `ink`, with a 20px plus/minus icon in `primary`.

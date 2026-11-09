@@ -12,7 +12,7 @@ What we take from each reference, specifically, and what we must not copy. Our o
 
 ### Take
 - **Type that scales its tracking.** Display sizes get negative letter-spacing that shrinks as the size shrinks (-1.4px at 56px → -0.2px at 20px). Body text stays at 0. This makes headlines feel dense and deliberate without shouting.
-- **Tabular figures wherever money appears.** Every price uses `tnum` so digits line up. This matters on our `/pricing` page ($750, $6,000, $300 / $550 / $900) and in support plan tables.
+- **Tabular figures for numerals.** Numerals use `tnum` so digits line up cleanly.
 - **One filled button per band.** The primary colour goes on the one filled CTA and on inline links, nowhere else. For us that means one green "Book a Discovery Call" per section.
 - **The product is the illustration.** Every feature explanation sits next to a real product mockup, not an illustration. Our equivalent is real app screens inside phone frames.
 - **Quiet, tinted shadows in two levels.** Level 1 is `0 1px 3px` at 8% for cards. Level 2 is `0 8px 24px` plus `0 2px 6px`, both at low opacity, for floating product panels. The shadows use a tint of the ink colour rather than grey, so they look clean.

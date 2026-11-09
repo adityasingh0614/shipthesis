@@ -21,19 +21,18 @@ Ship Thesis (shipthesis.com) is a studio that takes founders from first idea to 
 ## Positioning
 
 - We ship and run our own products (Poststeady and ChromaLayer, both live), so we know releases, payments and support from the founder's side.
-- A new build on the founder's phone every week, against milestones agreed up front.
-- A fixed quote that comes out of a paid, one-week Discovery Sprint, and prices published openly (competitors hide theirs).
-- The founder owns the code and the store/cloud accounts from day one.
+- A new working build on the founder's phone every week, against milestones agreed up front.
+- Fixed-scope milestones with code and store/cloud accounts owned by the founder from day one.
 - AI features built into any app or SaaS where they help.
 
 ## Operating Context
 
-Founders arrive mostly already aware of their problem and comparing studios (organic search or referral). They read on phones as much as desktops. The single action is booking a 30-minute Discovery Call through a Cal.com embed. Process: Discovery call → Discovery Sprint (1 week, scope + fixed quote) → design → development with weekly builds → testing → store submission → launch → optional support plan.
+Founders arrive comparing studios and freelancers, looking for certainty without agency bloat. They read on phones as much as desktops. The single primary action is booking a free 20-minute call through a Cal.com embed. Process: Free 20-minute call (learn idea, confirm fit, provide written scope & timeline) → Design (screen approval before build) → Development (weekly phone builds against agreed milestones) → Testing → Store submission → Launch.
 
 ## Capabilities and Constraints
 
 - Builds: cross-platform apps (Flutter), native iOS/Android (Swift, Kotlin), backends and APIs (Node.js, Next.js, Firebase, Supabase, AWS), SaaS platforms, AI features.
-- Prices (source of truth: `.agents/product-marketing.md`): Discovery Sprint $750, MVP from $6,000, support plans from $300/month, 30 days of free fixes. /pricing owns price detail.
+- Commercial model: Custom fixed-scope quotes and milestones agreed upon after the 20-minute technical review.
 - Based in India, working with US and Europe founders.
 - Never mention what any client pays; no discounts or founding-client offers.
 - Hero animation: undecided, built last. Blog: planned, automated later; no posts yet.
@@ -41,9 +40,9 @@ Founders arrive mostly already aware of their problem and comparing studios (org
 ## Brand Commitments
 
 - Name: Ship Thesis. No logo yet; the wordmark is set in type.
-- Voice: confident, not hyped; plain and specific; no exclamation marks; says the hard things (real prices, timelines, what we won't do). Words to avoid are listed in `.agents/product-marketing.md`.
+- Voice: confident, not hyped; plain and specific; no exclamation marks; says the hard things (real timelines, what we won't do). Words to avoid are listed in `.agents/product-marketing.md`.
 - One call to action everywhere: "Book a Discovery Call".
-- Pinned by the founder: light theme only; green is the brand (deep green `#0A7F55` for actions, bright green `#24B47E` for small highlights only); headings in Phudu, uppercase; labels and prices in JetBrains Mono; secondary text `#445048`; sections alternate two tones of one neutral; cards carry a clearly visible border; no gradients, no emoji, no em dashes in visible copy.
+- Pinned by the founder: light theme only; green is the brand (deep green `#0A7F55` for actions, bright green `#24B47E` for small highlights only); headings in Phudu, uppercase; labels and metadata in JetBrains Mono; secondary text `#445048`; sections alternate two tones of one neutral; cards carry a clearly visible border; no gradients, no emoji, no em dashes in visible copy.
 - Hero copy is final: "FROM FIRST IDEA TO A LIVE PRODUCT." / "AI-powered mobile apps and SaaS for founders: a new build on your phone every week, and code you own."
 - Reference the founder admires: flutteryourway.com (a direct competitor): learn from its craft, never copy its composition or wording.
 

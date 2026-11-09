@@ -98,7 +98,7 @@ See the detailed wording-overlap table in [summary.md](summary.md#synergy-labs--
 - **We beat them on:**
   - Consistent, provable timelines (weekly builds instead of a headline number).
   - A stated ownership promise.
-  - A quote grounded in a paid Discovery Sprint rather than a 1–2 day proposal.
+  - A quote grounded in evidence-based scoping rather than a vague proposal.
   - Our own shipped products.
   - Case studies that include outcomes and constraints.
 
