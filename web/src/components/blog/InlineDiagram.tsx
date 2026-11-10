@@ -500,3 +500,293 @@ export function WeeklyBuildRhythmDiagram() {
     </figure>
   );
 }
+
+// =============================================================================
+// 5. POST 5: FLUTTER VS REACT NATIVE RENDERING PIPELINE
+// =============================================================================
+export function FlutterVsReactNativeDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Flutter Direct Canvas vs React Native Bridge Architecture"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>MOBILE RENDERING RUNTIME TOPOLOGY</span>
+            <h3 className={styles.graphicTitle}>
+              Direct Canvas Rendering (Flutter) vs. Platform Bridge (React Native)
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Native GPU Pipeline</span>
+        </div>
+
+        <div className={styles.engineComparisonGrid}>
+          {/* Lane 1: Flutter */}
+          <div className={styles.engineLaneFlutter}>
+            <div className={styles.laneHeader}>
+              <span className={styles.laneTitle}>Flutter (Impeller Engine)</span>
+              <span className={styles.laneBadgeFlutter}>DIRECT CANVAS · 60 FPS</span>
+            </div>
+
+            <div className={styles.pipelineSteps}>
+              <div className={styles.pipelineStepBox}>
+                <span className={styles.pipelineStepNum}>1</span>
+                <div>
+                  <strong>Dart Code</strong>
+                  <div style={{ fontSize: "0.75rem", color: "var(--ink-soft)" }}>Strongly typed UI widget tree</div>
+                </div>
+              </div>
+              <div className={styles.pipelineStepBox}>
+                <span className={styles.pipelineStepNum}>2</span>
+                <div>
+                  <strong>AOT Compilation (ARM64)</strong>
+                  <div style={{ fontSize: "0.75rem", color: "var(--ink-soft)" }}>Zero JavaScript interpreter or bridge</div>
+                </div>
+              </div>
+              <div className={styles.pipelineStepBox}>
+                <span className={styles.pipelineStepNum}>3</span>
+                <div>
+                  <strong>Impeller GPU Rasterization</strong>
+                  <div style={{ fontSize: "0.75rem", color: "var(--ink-soft)" }}>Direct Metal (iOS) &amp; Vulkan (Android) paint</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.laneVerdict}>
+              <strong>Visual Consistency:</strong> Renders identically on every phone regardless of vendor skin or OS version.
+            </div>
+          </div>
+
+          {/* Lane 2: React Native */}
+          <div className={styles.engineLaneRN}>
+            <div className={styles.laneHeader}>
+              <span className={styles.laneTitle}>React Native (Hermes / Fabric)</span>
+              <span className={styles.laneBadgeRN}>OEM PLATFORM MAPPING</span>
+            </div>
+
+            <div className={styles.pipelineSteps}>
+              <div className={styles.pipelineStepBox}>
+                <span className={styles.pipelineStepNumRN}>1</span>
+                <div>
+                  <strong>TypeScript Code</strong>
+                  <div style={{ fontSize: "0.75rem", color: "var(--ink-soft)" }}>React component tree &amp; JSX</div>
+                </div>
+              </div>
+              <div className={styles.pipelineStepBox}>
+                <span className={styles.pipelineStepNumRN}>2</span>
+                <div>
+                  <strong>Hermes Bytecode Engine</strong>
+                  <div style={{ fontSize: "0.75rem", color: "var(--ink-soft)" }}>JSI bridge serializes messages</div>
+                </div>
+              </div>
+              <div className={styles.pipelineStepBox}>
+                <span className={styles.pipelineStepNumRN}>3</span>
+                <div>
+                  <strong>Native OEM Views</strong>
+                  <div style={{ fontSize: "0.75rem", color: "var(--ink-soft)" }}>Maps to iOS UIView &amp; Android View</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.laneVerdict}>
+              <strong>Ecosystem Strength:</strong> Shares component models and business logic with existing React web apps.
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>STACK-2 INVARIANT:</strong> Flutter compiles directly to native ARM machine code with its own rendering engine, ensuring pixel-accurate consistency across iOS and Android.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Architectural rendering differences between Flutter&apos;s direct GPU painting and React Native&apos;s native view bridge mapping.
+      </figcaption>
+    </figure>
+  );
+}
+
+// =============================================================================
+// 6. POST 6: NEXT.JS & SUPABASE MULTI-TENANT RLS ARCHITECTURE
+// =============================================================================
+export function MultiTenantSecurityDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Multi-Tenant Row Level Security Architecture"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>DATA ISOLATION &amp; AUTHORIZATION KERNEL</span>
+            <h3 className={styles.graphicTitle}>
+              Three-Tier Multi-Tenant Security: App Router to Postgres RLS
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Database-Enforced Perimeter</span>
+        </div>
+
+        <div className={styles.multiTenantGrid}>
+          {/* Tier 1 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 01</span>
+              <span className={styles.tierBadge}>FRONTEND</span>
+            </div>
+            <div className={styles.tierTitle}>Next.js App Router</div>
+            <div className={styles.tierContent}>
+              <span>Server Components query database via authenticated HTTP-only cookie tokens.</span>
+              <div className={styles.tierCodeSnippet}>auth.getUser()</div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 2 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 02</span>
+              <span className={styles.tierBadge}>AUTH CONTEXT</span>
+            </div>
+            <div className={styles.tierTitle}>Supabase Auth Claims</div>
+            <div className={styles.tierContent}>
+              <span>JWT session claims carry verified organization and role boundaries.</span>
+              <div className={styles.tierCodeSnippet}>jwt.claims.org_id</div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 3 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 03</span>
+              <span className={styles.tierBadge}>POSTGRES KERNEL</span>
+            </div>
+            <div className={styles.tierTitle}>PostgreSQL RLS Engine</div>
+            <div className={styles.tierContent}>
+              <span>Database enforces query filter automatically at the engine level.</span>
+              <div className={styles.tenantSplitBoxes}>
+                <div className={styles.tenantBoxActive}>
+                  <span>✓</span>
+                  <span>Tenant A (Active Rows)</span>
+                </div>
+                <div className={styles.tenantBoxIsolated}>
+                  <span>✕</span>
+                  <span>Tenant B (Zero Access)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>STACK-3 INVARIANT:</strong> Data isolation is evaluated by the PostgreSQL kernel on every query, preventing cross-tenant leakage at the database layer.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Multi-tenant isolation flow. PostgreSQL RLS policies evaluate session claims inside the database engine, preventing cross-tenant exposure.
+      </figcaption>
+    </figure>
+  );
+}
+
+// =============================================================================
+// 7. POST 7: DEV STUDIO VETTING GATES
+// =============================================================================
+export function AgencyVettingChecklistDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Founder Due Diligence Vetting Matrix"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>CONTRACT GOVERNANCE &amp; RISK AUDIT</span>
+            <h3 className={styles.graphicTitle}>
+              The Three Essential Governance Gates Before Signing
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Founder Protection Matrix</span>
+        </div>
+
+        <div className={styles.vettingGatesGrid}>
+          {/* Gate 1 */}
+          <div className={styles.vettingCard}>
+            <div className={styles.vettingHeader}>
+              <span className={styles.vettingGateNum}>GATE 01</span>
+              <span className={styles.tagMono}>OWN-1</span>
+            </div>
+            <div className={styles.vettingTitle}>Repository Location</div>
+            <div className={styles.flagRowGreen}>
+              <strong>Green Flag</strong>
+              Client GitHub organization from commit one. Studio works via pull requests. You are sole root admin.
+            </div>
+            <div className={styles.flagRowNeutral}>
+              <strong>Red Flag</strong>
+              Code developed in private agency repository with promised zip transfer upon final invoice.
+            </div>
+          </div>
+
+          {/* Gate 2 */}
+          <div className={styles.vettingCard}>
+            <div className={styles.vettingHeader}>
+              <span className={styles.vettingGateNum}>GATE 02</span>
+              <span className={styles.tagMono}>BILL-1 · BILL-4</span>
+            </div>
+            <div className={styles.vettingTitle}>Payment Model</div>
+            <div className={styles.flagRowGreen}>
+              <strong>Green Flag</strong>
+              30/40/30 milestone split tied to verifiable test builds. 7 business days inspection window.
+            </div>
+            <div className={styles.flagRowNeutral}>
+              <strong>Red Flag</strong>
+              50% upfront deposit or open-ended hourly timesheets billing for developer learning curves.
+            </div>
+          </div>
+
+          {/* Gate 3 */}
+          <div className={styles.vettingCard}>
+            <div className={styles.vettingHeader}>
+              <span className={styles.vettingGateNum}>GATE 03</span>
+              <span className={styles.tagMono}>BUILD-1</span>
+            </div>
+            <div className={styles.vettingTitle}>Verification Rhythm</div>
+            <div className={styles.flagRowGreen}>
+              <strong>Green Flag</strong>
+              Fresh installable test build delivered every Friday to your physical phone via TestFlight.
+            </div>
+            <div className={styles.flagRowNeutral}>
+              <strong>Red Flag</strong>
+              Monthly 60-minute Zoom meetings presenting clickable Figma files and slide decks.
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>TERMS-REV-1 INVARIANT:</strong> Client has 7 business days following delivery of each milestone build to test and inspect deliverables against written scope.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Due diligence framework for vetting dev studios. Verifiable repository ownership and milestone gates eliminate agency delivery risks.
+      </figcaption>
+    </figure>
+  );
+}

@@ -945,6 +945,311 @@
   margin-bottom: 4px;
 }
 
+/* =============================================================================
+   5. POST 5: FLUTTER VS REACT NATIVE COMPILATION & RENDERING
+   ============================================================================= */
+.engineComparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.engineLaneFlutter {
+  background: #f2f7f4;
+  border: 1.5px solid #24B47E;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.engineLaneRN {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.laneHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 10px;
+}
+
+.laneTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.laneBadgeFlutter {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--green);
+  background: #e1efe7;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.laneBadgeRN {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  background: #e6eae7;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.pipelineSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pipelineStepBox {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8125rem;
+}
+
+.pipelineStepNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--green);
+  background: #eef5f1;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pipelineStepNumRN {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  background: #eef0ef;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laneVerdict {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid var(--line);
+}
+
+/* =============================================================================
+   6. POST 6: NEXT.JS & SUPABASE MULTI-TENANT RLS ISOLATION PIPELINE
+   ============================================================================= */
+.multiTenantGrid {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr 24px 1fr;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 16px;
+}
+
+.tierCard {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.tierHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.tierNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.tierBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  color: var(--ink-muted);
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+}
+
+.tierTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tierContent {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tierCodeSnippet {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  background: #0D1612;
+  color: #24B47E;
+  padding: 6px 8px;
+  border-radius: 6px;
+  word-break: break-all;
+}
+
+.tenantSplitBoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tenantBoxActive {
+  background: #eef8f3;
+  border: 1px solid #75c99e;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.6875rem;
+  color: var(--green);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tenantBoxIsolated {
+  background: #f7f9f8;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =============================================================================
+   7. POST 7: DEV STUDIO VETTING GATES (Green Flag vs Red Flag)
+   ============================================================================= */
+.vettingGatesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.vettingCard {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vettingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.vettingGateNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.vettingTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.flagRowGreen {
+  background: #eef8f3;
+  border: 1px solid #9cd8b7;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #0b5e3f;
+}
+
+.flagRowGreen strong {
+  display: block;
+  font-size: 0.6875rem;
+  font-family: var(--font-mono), monospace;
+  color: var(--green);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.flagRowNeutral {
+  background: #f8faf9;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.flagRowNeutral strong {
+  display: block;
+  font-size: 0.6875rem;
+  font-family: var(--font-mono), monospace;
+  color: var(--ink-muted);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 768px) {
   .tradTimelineBar,
@@ -952,12 +1257,15 @@
   .invariantStrip,
   .nodesGrid,
   .rhythmGrid,
-  .rhythmComparisonRow {
+  .rhythmComparisonRow,
+  .engineComparisonGrid,
+  .vettingGatesGrid {
     grid-template-columns: 1fr;
   }
 
   .wireframeGrid,
-  .scopeSpecRow {
+  .scopeSpecRow,
+  .multiTenantGrid {
     grid-template-columns: 1fr;
   }
 

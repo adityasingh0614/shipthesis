@@ -121,6 +121,9 @@ function parseMarkdownToHtml(markdown: string): string {
   let inTable = false;
   let tableRows: string[][] = [];
   let inShortVersion = false;
+  let inCodeBlock = false;
+  let codeBlockLang = "";
+  let codeBlockLines: string[] = [];
 
   const flushList = () => {
     if (inList) {
@@ -157,7 +160,34 @@ function parseMarkdownToHtml(markdown: string): string {
   };
 
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
+    const rawLine = lines[i];
+    const line = rawLine.trim();
+
+    // Fenced Code Block
+    if (line.startsWith("```")) {
+      flushList();
+      flushTable();
+      if (!inCodeBlock) {
+        inCodeBlock = true;
+        codeBlockLang = line.slice(3).trim();
+        codeBlockLines = [];
+      } else {
+        inCodeBlock = false;
+        const codeEscaped = escapeHtml(codeBlockLines.join("\n"));
+        const langLabel = codeBlockLang ? codeBlockLang.toUpperCase() : "CODE";
+        htmlParts.push(
+          `<div class="codeBlockWrapper"><div class="codeBlockHeader"><span class="codeBlockLang">${langLabel}</span></div><pre><code class="language-${codeBlockLang}">${codeEscaped}</code></pre></div>`
+        );
+        codeBlockLang = "";
+        codeBlockLines = [];
+      }
+      continue;
+    }
+
+    if (inCodeBlock) {
+      codeBlockLines.push(rawLine);
+      continue;
+    }
 
     // Horizontal Rule
     if (line === "---") {
@@ -257,8 +287,24 @@ function parseMarkdownToHtml(markdown: string): string {
 
   flushList();
   flushTable();
+  if (inCodeBlock) {
+    const codeEscaped = escapeHtml(codeBlockLines.join("\n"));
+    const langLabel = codeBlockLang ? codeBlockLang.toUpperCase() : "CODE";
+    htmlParts.push(
+      `<div class="codeBlockWrapper"><div class="codeBlockHeader"><span class="codeBlockLang">${langLabel}</span></div><pre><code class="language-${codeBlockLang}">${codeEscaped}</code></pre></div>`
+    );
+  }
 
   return htmlParts.join("\n");
+}
+
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function inlineFormat(text: string): string {

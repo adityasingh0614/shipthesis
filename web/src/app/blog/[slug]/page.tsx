@@ -6,6 +6,9 @@ import {
   ThreeScreenMvpDiagram,
   CodeOwnershipPillarsDiagram,
   WeeklyBuildRhythmDiagram,
+  FlutterVsReactNativeDiagram,
+  MultiTenantSecurityDiagram,
+  AgencyVettingChecklistDiagram,
 } from "@/components/blog/InlineDiagram";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 
@@ -116,6 +119,45 @@ function renderContentWithDiagram(slug: string, contentHtml: string) {
           <>
             <div dangerouslySetInnerHTML={{ __html: split[0] }} />
             <WeeklyBuildRhythmDiagram />
+            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+          </>
+        );
+      }
+      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
+    }
+    case "flutter-vs-react-native-mvp": {
+      const split = splitAtHeading(contentHtml, "Flutter vs. React Native: Direct Framework Comparison");
+      if (split) {
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+            <FlutterVsReactNativeDiagram />
+            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+          </>
+        );
+      }
+      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
+    }
+    case "nextjs-supabase-multi-tenant-rls": {
+      const split = splitAtHeading(contentHtml, "Defining the Multi-Tenant Schema and Row-Level Security Policies");
+      if (split) {
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+            <MultiTenantSecurityDiagram />
+            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+          </>
+        );
+      }
+      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
+    }
+    case "how-to-vet-software-studios": {
+      const split = splitAtHeading(contentHtml, "The Founder's Due Diligence Evaluation Matrix");
+      if (split) {
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+            <AgencyVettingChecklistDiagram />
             <div dangerouslySetInnerHTML={{ __html: split[1] }} />
           </>
         );
