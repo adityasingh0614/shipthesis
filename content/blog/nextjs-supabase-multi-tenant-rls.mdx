@@ -1,0 +1,183 @@
+# Next.js and Supabase: Multi-Tenant Architecture with Row-Level Security
+
+Building multi-tenant SaaS applications requires isolating customer data at the database layer rather than relying solely on application-level filtering. Combining Next.js App Router server components with Supabase PostgreSQL Row-Level Security (RLS) enforces tenant boundaries inside the database engine, ensuring queries avoid cross-tenant data exposure even when application handlers encounter unexpected states.
+
+### The Short Version
+* **Database-enforced isolation**: Row-Level Security policies evaluate authorization rules at the PostgreSQL engine level, preventing tenants from reading or writing unauthorized rows.
+* **Stateless session context**: Supabase Auth attaches tenant metadata to authenticated JWTs, allowing Postgres policies to resolve tenant ownership without repetitive query parameters.
+* **Unified schema efficiency**: A shared schema architecture with tenant keys enables streamlined database migrations and predictable resource utilization compared to isolated database instances.
+
+---
+
+## Why Application-Level Tenant Filtering Fails at Scale
+
+In traditional web applications, developers frequently enforce data isolation by adding `where tenant_id = current_tenant` clauses to individual ORM queries or database calls.
+
+While this approach functions during initial prototyping, it introduces substantial structural vulnerability as codebases expand:
+* A developer writing a new reporting endpoint might omit the tenant filter in an inner join, unintentionally exposing organizational records.
+* Background workers or webhook handlers operating outside user session middleware can accidentally mutate records across tenants.
+* Debugging data leaks requires auditing hundreds of disparate API handlers rather than inspecting a centralized database policy.
+
+Relying exclusively on application middleware treats multi-tenancy as an opt-in code pattern rather than an immutable database constraint. Moving tenant enforcement directly into PostgreSQL eliminates this vulnerability.
+
+---
+
+## The Core Architecture: JWT Claims, App Router, and Postgres Policies
+
+The multi-tenant architecture pairs Next.js App Router on the frontend with PostgreSQL Row-Level Security on the backend:
+
+1. **User Authentication**: When an organization member authenticates via Supabase Auth, their JWT includes custom metadata specifying their `tenant_id` and assigned role (`admin`, `member`).
+2. **Server-Side Execution**: Next.js Server Components and Server Actions initialize a scoped Supabase client using authenticated session tokens retrieved from secure HTTP-only cookies.
+3. **Database Policy Evaluation**: When the server executes a SQL query, PostgreSQL extracts the user context via `auth.uid()` and `auth.jwt()`. The database applies RLS policies automatically, returning only rows corresponding to the active tenant.
+
+Because policies run inside PostgreSQL, unauthorized rows remain invisible to the application runtime, providing mathematical isolation across organizational boundaries.
+
+---
+
+## Defining the Multi-Tenant Schema and Row-Level Security Policies
+
+A resilient multi-tenant schema assigns a `tenant_id` foreign key to each tenant-owned table, supported by database indices for query performance:
+
+```sql
+-- 1. Organizations (Tenants)
+create table organizations (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  created_at timestamptz default now()
+);
+
+-- 2. Tenant Membership
+create table organization_members (
+  organization_id uuid references organizations(id) on delete cascade,
+  user_id uuid references auth.users(id) on delete cascade,
+  role text not null check (role in ('admin', 'member')),
+  primary key (organization_id, user_id)
+);
+
+-- 3. Tenant-Scoped Resource (Documents)
+create table documents (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid not null references organizations(id) on delete cascade,
+  title text not null,
+  content text,
+  created_at timestamptz default now()
+);
+
+-- 4. Enable Row Level Security
+alter table organizations enable row level security;
+alter table organization_members enable row level security;
+alter table documents enable row level security;
+```
+
+To secure the `documents` table, establish policies that verify the requesting user belongs to the assigned organization:
+
+```sql
+-- Read Policy: Members can view documents belonging to their organization
+create policy "Users can view tenant documents"
+on documents for select
+using (
+  organization_id in (
+    select organization_id from organization_members
+    where user_id = auth.uid()
+  )
+);
+
+-- Insert Policy: Members can insert documents into their organization
+create policy "Users can create tenant documents"
+on documents for insert
+with check (
+  organization_id in (
+    select organization_id from organization_members
+    where user_id = auth.uid()
+  )
+);
+```
+
+By indexing `organization_members(user_id, organization_id)`, PostgreSQL resolves these policy subqueries in sub-millisecond execution times.
+
+---
+
+## Querying Data Safely in Next.js Server Components
+
+With Row-Level Security active, Next.js Server Components can query tables without manual tenant filtering filters in application code:
+
+```typescript
+import { createServerClient } from "@/lib/supabase/server";
+
+export async function DocumentsList() {
+  const supabase = await createServerClient();
+
+  // PostgreSQL automatically restricts results to the authenticated user's tenant
+  const { data: documents, error } = await supabase
+    .from("documents")
+    .select("id, title, created_at")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    return <p className="errorText">Failed to load documents.</p>;
+  }
+
+  return (
+    <ul className="documentList">
+      {documents.map((doc) => (
+        <li key={doc.id} className="documentItem">
+          <h3>{doc.title}</h3>
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+Even if a malicious request attempts to pass a foreign document ID, PostgreSQL intercepts the query and returns an empty dataset.
+
+---
+
+## Architecture Comparison: Shared Schema vs. Database-Per-Tenant
+
+When architecting a SaaS MVP, founders often weigh a shared database schema against provisioned database instances:
+
+| Architectural Metric | Shared Schema with RLS | Database-Per-Tenant |
+|---|---|---|
+| **Infrastructure Overhead** | Single managed database instance | Multiple provisioned databases and connection pools |
+| **Migration Velocity** | Single schema migration runs in seconds | Migrations must be orchestrated across dozens of instances |
+| **Tenant Isolation** | Logical isolation verified by PostgreSQL kernel | Physical isolation at file and process boundaries |
+| **Initial MVP Velocity** | Fast implementation; scales smoothly | Complex dynamic connection routing required early |
+| **Operational Maintenance** | Centralized backups, indexing, and tuning | Multiplied backup monitoring and connection overhead |
+
+For early-stage SaaS platforms validating customer demand, a shared schema with PostgreSQL Row-Level Security delivers optimal engineering velocity while maintaining institutional-grade tenant isolation.
+
+---
+
+## How Ship Thesis Architects Multi-Tenant SaaS Backends
+
+At Ship Thesis, our core service is building MVPs for founders across web applications, mobile apps, and SaaS platforms {{c:SVC-1}}.
+
+For frontend web and SaaS platforms, we build using Next.js (App Router), React, TypeScript, and Tailwind CSS {{c:STACK-1}}.
+
+For backend, authentication, and database architecture, we implement PostgreSQL and Supabase with Row Level Security and Auth {{c:STACK-3}}.
+
+All cloud hosting accounts including Supabase and Vercel are billed directly to the client's corporate payment card {{c:OWN-2}}.
+
+The founder gets a working build to test on their own phone or browser preview every Friday {{c:BUILD-1}}.
+
+---
+
+## Frequently Asked Questions
+
+### Does Row-Level Security degrade database performance?
+When policies utilize indexed foreign keys and avoid deep nested subqueries, PostgreSQL evaluates RLS rules with negligible overhead. Wrapping tenant lookups in security-definer helper functions ensures consistent query plans.
+
+### How are background workers and administrative tasks handled?
+Automated background tasks and scheduled routines utilize Supabase Service Role credentials to bypass RLS when performing global aggregations. These processes execute within isolated backend environments and remain inaccessible to frontend clients.
+
+### Can users belong to multiple organizations?
+Yes. The schema links users to organizations through a junction table (`organization_members`). The active tenant context can be switched by updating the session JWT or passing the target organization ID into verified policy functions.
+
+---
+
+## Architect Your SaaS Data Layer
+
+Building a multi-tenant platform demands clean database boundaries from the first migration.
+
+[Book a free 20-minute assessment call]({{BOOKING_URL}}) to review wireframes, architecture, and scope {{c:CTA-1}}. This call outlines data models, authorization schemas, and milestone roadmaps for your build.

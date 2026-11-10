@@ -1,0 +1,103 @@
+# How Do You Vet a Software Development Studio Before Signing an MVP Contract?
+
+Vetting a software development studio requires verifying direct repository commits, inspecting production references rather than slide decks, and demanding deliverable-based milestone billing. Founders should insist that source code commits directly to their own GitHub organization from day one, ensuring intellectual property remains protected and eliminating handover dependencies before signing any agreement.
+
+### The Short Version
+* **Insist on day-one repository governance**: Avoid contracts where code transfer occurs only upon final settlement; source code commits should push directly to your company GitHub organization.
+* **Tie payments to verified deliverables**: Protect your runway by paying against inspectable builds with milestone structures rather than open-ended hourly retainers.
+* **Inspect physical device builds on schedule**: Require an installable mobile test build or staging URL every Friday to evaluate software velocity rather than slide decks.
+
+---
+
+## Common Traps in Early Agency Engagements
+
+When non-technical founders search for external engineering teams, agency sales presentations can make vetting difficult. Polished slide decks and curated portfolio screenshots frequently obscure how an external studio operates during active development.
+
+Three common structural issues often derail early engagements:
+
+1. **The Code Repository Hostage Trap**: Some agencies write code in private internal repositories, promising a zip archive or repository transfer only after final contract completion. If a dispute arises mid-build, the founder holds no source code or credentials despite having funded development.
+2. **Abstract Status Reporting**: Traditional studios frequently replace working software demonstrations with burn-down charts, project management ticket counts, or static design mockups. Without an installable build on a physical phone, user experience flaws remain undetected until late in the project.
+3. **Open-Ended Hourly Retainers**: Hourly billing models align financial incentives against delivery speed. When technical roadblocks occur, the founder absorbs development overruns while delivery timelines expand.
+
+Protecting your startup requires establishing clear governance terms before executing an agreement.
+
+---
+
+## Three Technical Checkpoints to Require Before Signing
+
+To evaluate an external development studio objectively, incorporate three essential technical requirements into your written agreement:
+
+### 1. Direct GitHub Repository Access
+Require the studio to provision the code repository inside your own GitHub organization prior to sprint kickoff. All commits, pull requests, and automated build pipelines should occur within infrastructure you administer. You retain administrative control to add or revoke collaborator permissions at any point.
+
+### 2. Direct Cloud and Developer Account Ownership
+Third-party services—including Supabase, Firebase, Vercel, Apple Developer, and Google Play Console—must be registered in your company name and billed directly to your payment card. A development studio requires developer-level access, not billing ownership. This separation ensures your infrastructure cannot be suspended or withheld due to agency operational changes.
+
+### 3. Predictable Milestone Payment Gates
+Structure payment disbursements around clear technical checkpoints. A balanced milestone model divides commitments into verifiable deliverables: a kickoff deposit, a mid-stage test build demonstrating core flows, and a final payment upon store submission or production release.
+
+---
+
+## Milestone Billing vs. Open-Ended Hourly Retainers
+
+The method used to fund software development shapes the engineering relationship:
+
+| Evaluation Factor | 3:4:3 Milestone Structure | Hourly Billing Retainer |
+|---|---|---|
+| **Capital Predictability** | Fixed milestone disbursements tied to working software | Variable invoices based on logged timesheets |
+| **Delivery Incentive** | Invoicing occurs upon deliverable inspection | Billing continues regardless of software completion |
+| **Inspection Standard** | Client tests working build against written scope | Client pays for developer hours expended |
+| **Scope Governance** | Scope changes documented via written addendums | Scope creep broadens total billed hours |
+| **Code Access** | Verified in client repository from first commit | Often withheld until account balance clears |
+
+---
+
+## The Founder's Due Diligence Evaluation Matrix
+
+Before signing a development agreement, review this evaluation checklist with your engineering candidates:
+
+| Vetting Criteria | Green Flag (Disciplined Studio) | Red Flag (High Risk) |
+|---|---|---|
+| **Repository Location** | Client GitHub organization from first commit | Private agency repository with promised handoff |
+| **Cloud Accounts** | Client owns Supabase, Vercel, and App Store accounts | Agency hosts infrastructure on their internal servers |
+| **Build Delivery** | Installable test build delivered every Friday | Demos conducted via screen-share presentations |
+| **Inspection Window** | 7 business days to inspect milestones | Immediate acceptance clauses upon build delivery |
+| **IP Terms** | Deliverables assigned upon milestone payment | Ambiguous copyright assignment language |
+
+---
+
+## How Ship Thesis Structures Development Agreements
+
+At Ship Thesis, our core service is building MVPs for founders across web applications, mobile apps, and SaaS platforms {{c:SVC-1}}.
+
+We do not bill by the hour {{c:BILL-4}}. Our agreements follow a clear 3:4:3 milestone structure:
+* A 30% kickoff deposit is due prior to sprint scheduling, design system initialization, and repository setup {{c:BILL-1}}.
+* A 40% midpoint milestone is invoiced upon delivery of the interactive mid-stage test build demonstrating core user authentication and primary feature flows {{c:BILL-2}}.
+* The final 30% handover milestone is invoiced upon submission to the Apple App Store / Google Play Console or production web release {{c:BILL-3}}.
+
+The code repository lives in the client's own GitHub account from the very first commit {{c:OWN-1}}. Cloud hosting providers such as Supabase and Vercel are billed directly to the client's corporate payment card {{c:OWN-2}}.
+
+Following delivery of each milestone build, the client has 7 business days to test and inspect the deliverable against written scope specifications {{c:TERMS-REV-1}}.
+
+The founder gets a working build to test on their own phone or browser preview every Friday {{c:BUILD-1}}.
+
+---
+
+## Frequently Asked Questions
+
+### What should I do if an agency refuses to use my GitHub account?
+If an agency insists on developing exclusively in their private repositories and refuses to commit code directly to your GitHub organization, treat this as a major operational concern. Legitimate engineering studios build directly within client repositories.
+
+### How does milestone acceptance work during sprint reviews?
+When a milestone build is delivered, you inspect the core workflows against the written specification agreed upon before kickoff. If defects or incomplete features are identified, the engineering team resolves them before invoicing for that milestone tranche.
+
+### Can non-technical founders inspect code quality?
+Yes. You do not need to read syntax to inspect repository health. Check that commits occur regularly with descriptive messages, automated test suites run in GitHub Actions, and dependencies utilize modern, supported libraries.
+
+---
+
+## Conduct a Technical Scope Review
+
+Before committing startup capital to an external development agreement, having an objective engineering review clarifies architecture choices and scope boundaries.
+
+[Book a free 20-minute assessment call]({{BOOKING_URL}}) to review wireframes, architecture, and scope {{c:CTA-1}}. We will examine your requirements, review your technical stack, and outline a milestone plan for your MVP in weeks.

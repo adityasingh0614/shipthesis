@@ -18,6 +18,9 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+# Binaries
+*.exe
+
 # Env files
 .env
 .env.local

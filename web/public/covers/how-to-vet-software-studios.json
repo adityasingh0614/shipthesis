@@ -1,0 +1,27 @@
+{
+  "slug": "how-to-vet-software-studios",
+  "template_version": "template-v1",
+  "headline": "How to Vet a Dev Studio Before You Sign",
+  "headline_word_count": 9,
+  "category": "CONTRACTS",
+  "scene": "A founder evaluating a contract evaluation checklist board",
+  "alt_text": "Illustration of a startup founder reviewing an agency vetting checklist for How to Vet a Dev Studio Before You Sign.",
+  "prompt": "Flat vector tech startup illustration...",
+  "negative_prompt": "text, words, logos...",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/how-to-vet-software-studios-illustration.png",
+    "illustration_webp": "/covers/how-to-vet-software-studios-illustration.webp",
+    "link_preview_og": "/covers/how-to-vet-software-studios-og.png",
+    "square_social": "/covers/how-to-vet-software-studios-square.png",
+    "linkedin_landscape": "/covers/how-to-vet-software-studios-linkedin.png"
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

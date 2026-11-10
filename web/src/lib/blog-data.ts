@@ -103,6 +103,36 @@ export const BLOG_POSTS_METADATA: BlogPostMeta[] = [
     ogWidth: 1200,
     ogHeight: 630,
   },
+  {
+    slug: "nextjs-supabase-multi-tenant-rls",
+    title: "Next.js and Supabase: Multi-Tenant Architecture with Row-Level Security",
+    seoTitle: "Next.js & Supabase Multi-Tenant Auth with Row-Level Security",
+    description:
+      "Learn how to architect multi-tenant SaaS applications using Next.js App Router and Supabase PostgreSQL Row-Level Security (RLS) for mathematical data isolation.",
+    category: "BLOCK",
+    datePublished: "2026-11-10T00:00:00Z",
+    dateModified: "2026-11-10T00:00:00Z",
+    readTime: "6 min read",
+    heroImage: "/covers/nextjs-supabase-multi-tenant-rls-illustration.webp",
+    ogImage: "/covers/nextjs-supabase-multi-tenant-rls-og.png",
+    ogWidth: 1200,
+    ogHeight: 630,
+  },
+  {
+    slug: "how-to-vet-software-studios",
+    title: "How Do You Vet a Software Development Studio Before Signing an MVP Contract?",
+    seoTitle: "How to Vet a Dev Studio: Red Flags Before You Sign an MVP Contract",
+    description:
+      "Essential technical checkpoints for vetting software studios: day-one GitHub repository governance, milestone payment gates, cloud ownership, and weekly test builds.",
+    category: "CONTRACTS",
+    datePublished: "2026-11-10T00:00:00Z",
+    dateModified: "2026-11-10T00:00:00Z",
+    readTime: "6 min read",
+    heroImage: "/covers/how-to-vet-software-studios-illustration.webp",
+    ogImage: "/covers/how-to-vet-software-studios-og.png",
+    ogWidth: 1200,
+    ogHeight: 630,
+  },
 ];
 
 /**
