@@ -31,6 +31,8 @@ DEFAULT_URLS = [
     f"https://{HOST}/blog/flutter-vs-react-native-mvp",
     f"https://{HOST}/blog/nextjs-supabase-multi-tenant-rls",
     f"https://{HOST}/blog/how-to-vet-software-studios",
+    f"https://{HOST}/blog/integrating-llms-into-saas-mvp",
+    f"https://{HOST}/blog/saas-stripe-webhooks-idempotency",
 ]
 
 ENDPOINTS = [

@@ -99,7 +99,37 @@ OG_IMAGE_SVG = f"""<?xml version="1.0" encoding="UTF-8"?>
 with open(os.path.join(LOGO_DIR, "og-image.svg"), "w", encoding="utf-8") as f:
     f.write(OG_IMAGE_SVG)
 
-# 5. Copy standalone root logo files into web/public/logo/
+# 5. Render og-image.png and twitter-image.png (1200x630) using sharp
+try:
+    import subprocess
+    node_render_script = """
+const sharp = require('sharp');
+const fs = require('fs');
+const path = require('path');
+const srcSvg = path.join(process.cwd(), 'web', 'public', 'logo', 'og-image.svg');
+const dests = [
+  path.join(process.cwd(), 'web', 'src', 'app', 'opengraph-image.png'),
+  path.join(process.cwd(), 'web', 'public', 'opengraph-image.png'),
+  path.join(process.cwd(), 'web', 'src', 'app', 'twitter-image.png'),
+  path.join(process.cwd(), 'web', 'public', 'twitter-image.png'),
+  path.join(process.cwd(), 'web', 'public', 'logo', 'og-image.png'),
+  path.join(process.cwd(), 'web', 'public', 'og-image.png'),
+];
+sharp(srcSvg)
+  .resize(1200, 630)
+  .png()
+  .toBuffer()
+  .then(buf => {
+    dests.forEach(d => fs.writeFileSync(d, buf));
+    console.log('OG & Twitter banner PNGs generated successfully via sharp.');
+  })
+  .catch(err => console.error(err));
+"""
+    subprocess.run(["node", "-e", node_render_script], cwd=BASE_DIR, check=True)
+except Exception as e:
+    print(f"Warning: Could not render SVG banners via sharp: {e}")
+
+# 6. Copy standalone root logo files into web/public/logo/
 standalone_files = [
     ("logo.svg", "logo.svg"),
     ("logo.png", "logo.png"),
