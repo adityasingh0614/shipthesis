@@ -133,6 +133,36 @@ export const BLOG_POSTS_METADATA: BlogPostMeta[] = [
     ogWidth: 1200,
     ogHeight: 630,
   },
+  {
+    slug: "integrating-llms-into-saas-mvp",
+    title: "How to Build AI Features into Your SaaS MVP Without Over-Engineering",
+    seoTitle: "Building AI Features into Your SaaS MVP: Clean Architecture Guide",
+    description:
+      "Learn how to build AI features into your SaaS MVP with structured outputs, streaming UI, prompt token budgets, and PostgreSQL state persistence.",
+    category: "AI",
+    datePublished: "2026-11-13T00:00:00Z",
+    dateModified: "2026-11-13T00:00:00Z",
+    readTime: "6 min read",
+    heroImage: "/covers/integrating-llms-into-saas-mvp-illustration.webp",
+    ogImage: "/covers/integrating-llms-into-saas-mvp-og.png",
+    ogWidth: 1200,
+    ogHeight: 630,
+  },
+  {
+    slug: "saas-stripe-webhooks-idempotency",
+    title: "How to Handle Stripe Webhooks Reliably in a Next.js SaaS MVP",
+    seoTitle: "Handling Stripe Webhooks Reliably in Next.js: Idempotency Guide",
+    description:
+      "Architect reliable Stripe webhook handlers in Next.js App Router using cryptographic signatures, PostgreSQL idempotency locks, and resilient event ledgers.",
+    category: "SAAS",
+    datePublished: "2026-11-13T00:00:00Z",
+    dateModified: "2026-11-13T00:00:00Z",
+    readTime: "6 min read",
+    heroImage: "/covers/saas-stripe-webhooks-idempotency-illustration.webp",
+    ogImage: "/covers/saas-stripe-webhooks-idempotency-og.png",
+    ogWidth: 1200,
+    ogHeight: 630,
+  },
 ];
 
 /**
@@ -141,5 +171,14 @@ export const BLOG_POSTS_METADATA: BlogPostMeta[] = [
 export const UPCOMING_POSTS_METADATA: BlogPostMeta[] = [];
 
 export function getAllPosts(): BlogPostMeta[] {
-  return BLOG_POSTS_METADATA;
+  return [...BLOG_POSTS_METADATA].sort((a, b) => {
+    const timeA = new Date(a.datePublished).getTime();
+    const timeB = new Date(b.datePublished).getTime();
+    if (timeB !== timeA) {
+      return timeB - timeA; // Descending: latest published posts first
+    }
+    const indexA = BLOG_POSTS_METADATA.indexOf(a);
+    const indexB = BLOG_POSTS_METADATA.indexOf(b);
+    return indexB - indexA;
+  });
 }

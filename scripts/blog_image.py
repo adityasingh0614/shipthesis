@@ -120,6 +120,32 @@ SCENE_LIBRARY = {
             "harsh black outlines, 3D render, photorealistic, cluttered noise."
         ),
         "alt_text": "Technical architecture diagram of multi-tenant auth and row-level security for Next.js Supabase Multi-Tenant Auth with RLS."
+    },
+    "integrating-llms-into-saas-mvp": {
+        "slug": "integrating-llms-into-saas-mvp",
+        "headline": "Building AI Features into Your SaaS MVP",
+        "category": "AI",
+        "scene": "Two founders reviewing an AI neural pipeline entering structured data blocks",
+        "prompt": (
+            "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, "
+            "two tech startup founders reviewing an AI processing workflow. On a clean widescreen monitor, an abstract geometric neural network "
+            "and glowing data token pipeline flow through a validation gate into clean structured modular blocks highlighted in brand emerald green (#0A7F55) and mint (#24B47E)."
+        ),
+        "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+        "alt_text": "Illustration of AI neural workflow and structured data outputs for Building AI Features into Your SaaS MVP."
+    },
+    "saas-stripe-webhooks-idempotency": {
+        "slug": "saas-stripe-webhooks-idempotency",
+        "headline": "Handling Stripe Webhooks Reliably in Next.js",
+        "category": "SAAS",
+        "scene": "Two founders reviewing payment event stream entering verification lock and dual-check queues",
+        "prompt": (
+            "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, "
+            "two tech startup founders reviewing an event-driven payment processing pipeline on a wide display. On screen, incoming transaction events flow into an abstract secure lock "
+            "and verification shield with dual-check verification queues highlighted in brand emerald green (#0A7F55) and mint (#24B47E)."
+        ),
+        "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+        "alt_text": "Illustration of payment webhook verification and idempotency for Handling Stripe Webhooks Reliably in Next.js."
     }
 }
 

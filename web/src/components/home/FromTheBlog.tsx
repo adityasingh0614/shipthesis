@@ -3,13 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
-import { BLOG_POSTS_METADATA } from "@/lib/blog-data";
+import { getAllPosts } from "@/lib/blog-data";
 import styles from "./FromTheBlog.module.css";
 
 export function FromTheBlog() {
   const reduceMotion = useReducedMotion();
-  // Exactly three boxes, three blocks on the home page
-  const posts = BLOG_POSTS_METADATA.slice(0, 3);
+  // Exactly three boxes, latest three blog posts on the home page
+  const posts = getAllPosts().slice(0, 3);
 
   return (
     <section className={styles.section} aria-labelledby="blog-title">

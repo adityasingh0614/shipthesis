@@ -1,0 +1,33 @@
+{
+  "slug": "saas-stripe-webhooks-idempotency",
+  "template_version": "template-v1",
+  "headline": "Handling Stripe Webhooks Reliably in Next.js",
+  "headline_word_count": 6,
+  "category": "SAAS",
+  "scene": "Two founders reviewing payment event stream entering verification lock and dual-check queues",
+  "alt_text": "Illustration of payment webhook verification and idempotency for Handling Stripe Webhooks Reliably in Next.js.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two tech startup founders reviewing an event-driven payment processing pipeline on a wide display. On screen, incoming transaction events flow into an abstract secure lock and verification shield with dual-check verification queues highlighted in brand emerald green (#0A7F55) and mint (#24B47E).",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/saas-stripe-webhooks-idempotency-illustration.png",
+    "illustration_webp": "/covers/saas-stripe-webhooks-idempotency-illustration.webp",
+    "link_preview_og": "/covers/saas-stripe-webhooks-idempotency-og.png",
+    "square_social": "/covers/saas-stripe-webhooks-idempotency-square.png",
+    "linkedin_landscape": "/covers/saas-stripe-webhooks-idempotency-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1019039,
+    "og_png": 169394,
+    "square_png": 79961,
+    "linkedin_png": 169394
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

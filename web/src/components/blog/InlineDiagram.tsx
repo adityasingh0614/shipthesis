@@ -790,3 +790,197 @@ export function AgencyVettingChecklistDiagram() {
     </figure>
   );
 }
+
+// =============================================================================
+// 8. POST 8: STREAMING AI WORKFLOW & STRUCTURED OUTPUT ARCHITECTURE
+// =============================================================================
+export function AiWorkflowArchitectureDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Streaming AI Workflow and Structured Output Architecture"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>AI PIPELINE RUNTIME TOPOLOGY</span>
+            <h3 className={styles.graphicTitle}>
+              Three-Tier AI Pipeline: Client Streaming to Validated Postgres State
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Zod Schema Contract</span>
+        </div>
+
+        <div className={styles.multiTenantGrid}>
+          {/* Tier 1 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 01</span>
+              <span className={styles.tierBadge}>CLIENT DOM</span>
+            </div>
+            <div className={styles.tierTitle}>Next.js Client SSE</div>
+            <div className={styles.tierContent}>
+              <span>Consumes Server-Sent Events stream for instant token rendering.</span>
+              <div className={styles.tierCodeSnippet}>useCompletion()</div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 2 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 02</span>
+              <span className={styles.tierBadge}>RUNTIME GUARD</span>
+            </div>
+            <div className={styles.tierTitle}>Zod Schema Validation</div>
+            <div className={styles.tierContent}>
+              <span>Validates JSON structure at runtime, blocking malformed model outputs.</span>
+              <div className={styles.tierCodeSnippet}>AnalysisSchema.parse()</div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 3 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 03</span>
+              <span className={styles.tierBadge}>PERSISTENCE</span>
+            </div>
+            <div className={styles.tierTitle}>PostgreSQL Entity State</div>
+            <div className={styles.tierContent}>
+              <span>Stores validated entity records and token usage metadata in tenant partition.</span>
+              <div className={styles.tenantSplitBoxes}>
+                <div className={styles.tenantBoxActive}>
+                  <span>✓</span>
+                  <span>Typed Entity Record</span>
+                </div>
+                <div className={styles.tenantBoxActive}>
+                  <span>✓</span>
+                  <span>Token Ledger &amp; Cache</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>STACK-1 &amp; STACK-3 INVARIANT:</strong> AI responses stream directly to the browser for low latency and validate against strict Zod schemas before writing typed records to PostgreSQL.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Architectural flow of AI streaming and structured validation from Next.js client components to PostgreSQL persistence.
+      </figcaption>
+    </figure>
+  );
+}
+
+// =============================================================================
+// 9. POST 9: STRIPE WEBHOOK IDEMPOTENCY & TRANSACTIONAL DISPATCH
+// =============================================================================
+export function StripeWebhookIdempotencyDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Stripe Webhook Idempotency and State Synchronization Architecture"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>PAYMENT INGESTION TOPOLOGY</span>
+            <h3 className={styles.graphicTitle}>
+              Idempotent Webhook Pipeline: HMAC Verification to Atomic Commit
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Zero Duplicate Billing</span>
+        </div>
+
+        <div className={styles.multiTenantGrid}>
+          {/* Tier 1 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 01</span>
+              <span className={styles.tierBadge}>STRIPE DISPATCH</span>
+            </div>
+            <div className={styles.tierTitle}>HMAC Signature Guard</div>
+            <div className={styles.tierContent}>
+              <span>Verifies raw request buffer against signing secret to prevent payload spoofing.</span>
+              <div className={styles.tierCodeSnippet}>constructEvent(rawBody)</div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 2 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 02</span>
+              <span className={styles.tierBadge}>IDEMPOTENCY LOCK</span>
+            </div>
+            <div className={styles.tierTitle}>Event Ledger Check</div>
+            <div className={styles.tierContent}>
+              <span>Queries processed_events table by unique event_id before mutating user state.</span>
+              <div className={styles.tenantSplitBoxes}>
+                <div className={styles.tenantBoxActive}>
+                  <span>✓</span>
+                  <span>New: Execute Mutation</span>
+                </div>
+                <div className={styles.tenantBoxIsolated}>
+                  <span>✕</span>
+                  <span>Duplicate: Fast 200 Ack</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 3 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>TIER 03</span>
+              <span className={styles.tierBadge}>ATOMIC COMMIT</span>
+            </div>
+            <div className={styles.tierTitle}>PostgreSQL Transaction</div>
+            <div className={styles.tierContent}>
+              <span>Atomically updates customer tier and records processed event in single transaction.</span>
+              <div className={styles.tierCodeSnippet}>processed_events.insert()</div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>STACK-4 INVARIANT:</strong> Payment webhooks verify cryptographic signatures and record unique event IDs in PostgreSQL, eliminating duplicate account credits.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Four-stage Stripe webhook ingestion pipeline with cryptographic verification and PostgreSQL idempotency locking.
+      </figcaption>
+    </figure>
+  );
+}

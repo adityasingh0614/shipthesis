@@ -1,0 +1,33 @@
+{
+  "slug": "integrating-llms-into-saas-mvp",
+  "template_version": "template-v1",
+  "headline": "Building AI Features into Your SaaS MVP",
+  "headline_word_count": 7,
+  "category": "AI",
+  "scene": "Two founders reviewing an AI neural pipeline entering structured data blocks",
+  "alt_text": "Illustration of AI neural workflow and structured data outputs for Building AI Features into Your SaaS MVP.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two tech startup founders reviewing an AI processing workflow. On a clean widescreen monitor, an abstract geometric neural network and glowing data token pipeline flow through a validation gate into clean structured modular blocks highlighted in brand emerald green (#0A7F55) and mint (#24B47E).",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/integrating-llms-into-saas-mvp-illustration.png",
+    "illustration_webp": "/covers/integrating-llms-into-saas-mvp-illustration.webp",
+    "link_preview_og": "/covers/integrating-llms-into-saas-mvp-og.png",
+    "square_social": "/covers/integrating-llms-into-saas-mvp-square.png",
+    "linkedin_landscape": "/covers/integrating-llms-into-saas-mvp-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1114939,
+    "og_png": 176452,
+    "square_png": 87811,
+    "linkedin_png": 176452
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

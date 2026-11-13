@@ -30,6 +30,8 @@ CANONICAL_PAGES = [
     {"num": 5, "slug": "flutter-vs-react-native-mvp", "word_cap": 1400},
     {"num": 6, "slug": "nextjs-supabase-multi-tenant-rls", "word_cap": 1400},
     {"num": 7, "slug": "how-to-vet-software-studios", "word_cap": 1400},
+    {"num": 8, "slug": "integrating-llms-into-saas-mvp", "word_cap": 1400},
+    {"num": 9, "slug": "saas-stripe-webhooks-idempotency", "word_cap": 1400},
 ]
 
 FORBIDDEN_HYPE = [

@@ -9,6 +9,8 @@ import {
   FlutterVsReactNativeDiagram,
   MultiTenantSecurityDiagram,
   AgencyVettingChecklistDiagram,
+  AiWorkflowArchitectureDiagram,
+  StripeWebhookIdempotencyDiagram,
 } from "@/components/blog/InlineDiagram";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 
@@ -158,6 +160,32 @@ function renderContentWithDiagram(slug: string, contentHtml: string) {
           <>
             <div dangerouslySetInnerHTML={{ __html: split[0] }} />
             <AgencyVettingChecklistDiagram />
+            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+          </>
+        );
+      }
+      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
+    }
+    case "integrating-llms-into-saas-mvp": {
+      const split = splitAtHeading(contentHtml, "Implementing Streaming and Structured Outputs in Next.js");
+      if (split) {
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+            <AiWorkflowArchitectureDiagram />
+            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+          </>
+        );
+      }
+      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
+    }
+    case "saas-stripe-webhooks-idempotency": {
+      const split = splitAtHeading(contentHtml, "Implementing Idempotent Webhook Handling in Next.js");
+      if (split) {
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+            <StripeWebhookIdempotencyDiagram />
             <div dangerouslySetInnerHTML={{ __html: split[1] }} />
           </>
         );
