@@ -31,6 +31,8 @@ DEFAULT_URLS = [
     f"https://{HOST}/blog/flutter-vs-react-native-mvp",
     f"https://{HOST}/blog/how-to-vet-software-studios",
     f"https://{HOST}/blog/fixed-scope-vs-hourly-billing",
+    f"https://{HOST}/blog/mvp-agency-vs-freelancers",
+    f"https://{HOST}/blog/how-to-hire-an-mvp-developer",
 ]
 
 ENDPOINTS = [

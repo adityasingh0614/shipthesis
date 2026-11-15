@@ -1,0 +1,33 @@
+{
+  "slug": "how-to-hire-an-mvp-developer",
+  "template_version": "template-v1",
+  "headline": "How to Hire an MVP Developer in 2026",
+  "headline_word_count": 8,
+  "category": "MVP",
+  "scene": "A founder and senior engineer vetting candidate repo and weekly phone build",
+  "alt_text": "Illustration of technical candidate vetting and git repository checkpoints for How to Hire an MVP Developer.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators examining an architectural candidate scorecard and git commit graph with mint verification checks.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/how-to-hire-an-mvp-developer-illustration.png",
+    "illustration_webp": "/covers/how-to-hire-an-mvp-developer-illustration.webp",
+    "link_preview_og": "/covers/how-to-hire-an-mvp-developer-og.png",
+    "square_social": "/covers/how-to-hire-an-mvp-developer-square.png",
+    "linkedin_landscape": "/covers/how-to-hire-an-mvp-developer-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1112295,
+    "og_png": 176192,
+    "square_png": 83729,
+    "linkedin_png": 176192
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

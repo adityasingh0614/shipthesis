@@ -9,6 +9,8 @@ import {
   FlutterVsReactNativeDiagram,
   AgencyVettingChecklistDiagram,
   FixedScopeVsHourlyBillingDiagram,
+  AgencyVsFreelancersDiagram,
+  HireMvpDeveloperScorecardDiagram,
 } from "@/components/blog/InlineDiagram";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 
@@ -158,6 +160,32 @@ function renderContentWithDiagram(slug: string, contentHtml: string) {
           <>
             <div dangerouslySetInnerHTML={{ __html: split[0] }} />
             <FixedScopeVsHourlyBillingDiagram />
+            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+          </>
+        );
+      }
+      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
+    }
+    case "mvp-agency-vs-freelancers": {
+      const split = splitAtHeading(contentHtml, "Evaluating Agency vs. Freelancer Tradeoffs");
+      if (split) {
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+            <AgencyVsFreelancersDiagram />
+            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+          </>
+        );
+      }
+      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
+    }
+    case "how-to-hire-an-mvp-developer": {
+      const split = splitAtHeading(contentHtml, "Four Contract Protections Every Founder Must Require");
+      if (split) {
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+            <HireMvpDeveloperScorecardDiagram />
             <div dangerouslySetInnerHTML={{ __html: split[1] }} />
           </>
         );

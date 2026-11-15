@@ -170,6 +170,30 @@ SCENE_LIBRARY = {
         ),
         "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
         "alt_text": "Illustration of design token pipeline from Figma to code components for Turning Figma Designs into Production Code."
+    },
+    "mvp-agency-vs-freelancers": {
+        "slug": "mvp-agency-vs-freelancers",
+        "headline": "MVP Agency vs. Freelancers for Startups",
+        "category": "CONTRACTS",
+        "scene": "A founder and engineer comparing integrated roadmap vs fragmented pieces",
+        "prompt": (
+            "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, "
+            "two startup collaborators comparing an integrated delivery roadmap with connected nodes in emerald green against fragmented pieces."
+        ),
+        "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+        "alt_text": "Illustration comparing an integrated MVP studio against fragmented freelance contractors for MVP Agency vs. Freelancers."
+    },
+    "how-to-hire-an-mvp-developer": {
+        "slug": "how-to-hire-an-mvp-developer",
+        "headline": "How to Hire an MVP Developer in 2026",
+        "category": "MVP",
+        "scene": "A founder and senior engineer vetting candidate repo and weekly phone build",
+        "prompt": (
+            "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, "
+            "two startup collaborators examining an architectural candidate scorecard and git commit graph with mint verification checks."
+        ),
+        "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+        "alt_text": "Illustration of technical candidate vetting and git repository checkpoints for How to Hire an MVP Developer."
     }
 }
 

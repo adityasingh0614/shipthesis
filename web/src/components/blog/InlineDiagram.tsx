@@ -1215,3 +1215,219 @@ export function FigmaToCodePipelineDiagram() {
     </figure>
   );
 }
+
+// =============================================================================
+// 12. POST 12: AGENCY VS FREELANCERS (Coordination Friction & Failure Modes)
+// =============================================================================
+export function AgencyVsFreelancersDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Coordination Friction and Accountability: Freelance Roster vs. Integrated Studio"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>DELIVERY ARCHITECTURE &amp; FRICTION</span>
+            <h3 className={styles.graphicTitle}>
+              Solo Freelancer Roster vs. Integrated Development Studio
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Coordination Overhead Analysis</span>
+        </div>
+
+        <div className={styles.riskGrid}>
+          {/* Freelance Roster */}
+          <div className={styles.riskColumn}>
+            <div className={styles.riskColumnHeader}>
+              <span className={styles.riskColumnBadge}>FREELANCE ROSTER</span>
+              <span className={styles.riskColumnSub}>Founder as Project Manager &amp; Integrator</span>
+            </div>
+            <div className={styles.riskCard}>
+              <div className={styles.riskCardHeader}>
+                <span className={styles.riskCardDotAmber} />
+                <span className={styles.riskCardTitle}>Coordination Friction</span>
+              </div>
+              <p className={styles.riskCardText}>
+                Founder must manage separate timezones, handoffs, API schema mismatches, and communication gaps between disconnected specialists.
+              </p>
+            </div>
+            <div className={styles.riskCard}>
+              <div className={styles.riskCardHeader}>
+                <span className={styles.riskCardDotRed} />
+                <span className={styles.riskCardTitle}>Schedule Vulnerability</span>
+              </div>
+              <p className={styles.riskCardText}>
+                If one contractor becomes unavailable or churns, dependent frontend or backend features halt entirely until an emergency replacement is vetted.
+              </p>
+            </div>
+            <div className={styles.riskCard}>
+              <div className={styles.riskCardHeader}>
+                <span className={styles.riskCardDotRed} />
+                <span className={styles.riskCardTitle}>Code Governance Drift</span>
+              </div>
+              <p className={styles.riskCardText}>
+                Inconsistent linting, conflicting repository structures, and incomplete documentation require extensive founder code auditing.
+              </p>
+            </div>
+          </div>
+
+          {/* Integrated Studio */}
+          <div className={styles.riskColumn}>
+            <div className={styles.riskColumnHeaderGreen}>
+              <span className={styles.riskColumnBadgeGreen}>INTEGRATED STUDIO</span>
+              <span className={styles.riskColumnSubGreen}>Unified Team &amp; Single Accountability</span>
+            </div>
+            <div className={styles.riskCardGreen}>
+              <div className={styles.riskCardHeader}>
+                <span className={styles.riskCardDotGreen} />
+                <span className={styles.riskCardTitleGreen}>Parallel Workstreams</span>
+              </div>
+              <p className={styles.riskCardText}>
+                Design, database schemas, and client applications progress concurrently using shared engineering conventions and agreed API specifications.
+              </p>
+            </div>
+            <div className={styles.riskCardGreen}>
+              <div className={styles.riskCardHeader}>
+                <span className={styles.riskCardDotGreen} />
+                <span className={styles.riskCardTitleGreen}>Built-in Continuity</span>
+              </div>
+              <p className={styles.riskCardText}>
+                Internal squads share repository context. Project momentum never stops due to single-contributor personal schedule changes.
+              </p>
+            </div>
+            <div className={styles.riskCardGreen}>
+              <div className={styles.riskCardHeader}>
+                <span className={styles.riskCardDotGreen} />
+                <span className={styles.riskCardTitleGreen}>Milestone Governance</span>
+              </div>
+              <p className={styles.riskCardText}>
+                Structured milestone gates release capital only after functional software is verified directly on live devices and in client GitHub.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>TERMS-IP-1 INVARIANT:</strong> Working with an integrated studio guarantees a single comprehensive bespoke IP assignment contract with direct GitHub repository ownership from day one.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Architectural comparison between freelance contractor coordination friction and integrated studio delivery systems.
+      </figcaption>
+    </figure>
+  );
+}
+
+// =============================================================================
+// 13. POST 13: HOW TO HIRE AN MVP DEVELOPER (Founder Due Diligence Scorecard)
+// =============================================================================
+export function HireMvpDeveloperScorecardDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Founder Due Diligence Scorecard for Hiring an MVP Developer"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>FOUNDER DUE DILIGENCE SCORECARD</span>
+            <h3 className={styles.graphicTitle}>
+              Four Critical Checkpoints for Hiring an MVP Developer
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Evaluation Matrix</span>
+        </div>
+
+        <div className={styles.matrixGrid}>
+          {/* Card 1 */}
+          <div className={styles.matrixCard}>
+            <div className={styles.matrixHeader}>
+              <span className={styles.matrixStep}>CHECKPOINT 01</span>
+              <span className={styles.matrixBadge}>GOVERNANCE</span>
+            </div>
+            <div className={styles.matrixTitle}>Day-One Client GitHub Ownership</div>
+            <div className={styles.matrixContent}>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotGreen} />
+                <span><strong>Pass:</strong> Codebase initiated inside client organization GitHub from commit one.</span>
+              </div>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotRed} />
+                <span><strong>Fail:</strong> Developer works in private personal account until final payment.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className={styles.matrixCard}>
+            <div className={styles.matrixHeader}>
+              <span className={styles.matrixStep}>CHECKPOINT 02</span>
+              <span className={styles.matrixBadge}>DELIVERY</span>
+            </div>
+            <div className={styles.matrixTitle}>Weekly Physical Phone Builds</div>
+            <div className={styles.matrixContent}>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotGreen} />
+                <span><strong>Pass:</strong> Installable build delivered to phone every Friday (TestFlight / APK).</span>
+              </div>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotRed} />
+                <span><strong>Fail:</strong> Reliance on Figma mockups, static screenshots, or recorded demo videos.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className={styles.matrixCard}>
+            <div className={styles.matrixHeader}>
+              <span className={styles.matrixStep}>CHECKPOINT 03</span>
+              <span className={styles.matrixBadge}>BILLING</span>
+            </div>
+            <div className={styles.matrixTitle}>Milestone Payment Protection</div>
+            <div className={styles.matrixContent}>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotGreen} />
+                <span><strong>Pass:</strong> 30/40/30 disbursement gates tied to functional inspection windows.</span>
+              </div>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotRed} />
+                <span><strong>Fail:</strong> Open-ended hourly billing where invoices grow without completed features.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4 */}
+          <div className={styles.matrixCard}>
+            <div className={styles.matrixHeader}>
+              <span className={styles.matrixStep}>CHECKPOINT 04</span>
+              <span className={styles.matrixBadge}>ARCHITECTURE</span>
+            </div>
+            <div className={styles.matrixTitle}>Ruthless Three-Screen Scope</div>
+            <div className={styles.matrixContent}>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotGreen} />
+                <span><strong>Pass:</strong> Focuses v1 exclusively on core value loop across primary workflows.</span>
+              </div>
+              <div className={styles.matrixItem}>
+                <span className={styles.matrixDotRed} />
+                <span><strong>Fail:</strong> Agrees uncritically to build social feeds, chat, and non-essential bloat.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>BUILD-1 &amp; OWN-1 INVARIANT:</strong> Weekly working builds verified on your own phone combined with complete GitHub repository access ensure founders never face delivery surprises or vendor lock-in.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Four mandatory due-diligence checkpoints to evaluate candidates and studios before signing an MVP development contract.
+      </figcaption>
+    </figure>
+  );
+}

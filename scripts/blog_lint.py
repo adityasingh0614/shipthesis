@@ -30,6 +30,8 @@ CANONICAL_PAGES = [
     {"num": 5, "slug": "flutter-vs-react-native-mvp", "word_cap": 1400},
     {"num": 6, "slug": "how-to-vet-software-studios", "word_cap": 1400},
     {"num": 7, "slug": "fixed-scope-vs-hourly-billing", "word_cap": 1400},
+    {"num": 8, "slug": "mvp-agency-vs-freelancers", "word_cap": 1400},
+    {"num": 9, "slug": "how-to-hire-an-mvp-developer", "word_cap": 1400},
 ]
 
 FORBIDDEN_HYPE = [

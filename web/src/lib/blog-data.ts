@@ -29,6 +29,36 @@ export interface BlogPostMeta {
  */
 export const BLOG_POSTS_METADATA: BlogPostMeta[] = [
   {
+    slug: "mvp-agency-vs-freelancers",
+    title: "MVP Development Agency vs. Freelancers: Which Delivers for Startups?",
+    seoTitle: "MVP Development Agency vs Freelancers: Real Costs & Risk for Startups",
+    description:
+      "Compare MVP development agencies vs. freelancers for early-stage startups. Analyze coordination friction, repository governance, schedule risk, and milestone accountability.",
+    category: "CONTRACTS",
+    datePublished: "2026-11-15T12:00:00Z",
+    dateModified: "2026-11-15T12:00:00Z",
+    readTime: "6 min read",
+    heroImage: "/covers/mvp-agency-vs-freelancers-illustration.webp",
+    ogImage: "/covers/mvp-agency-vs-freelancers-og.png",
+    ogWidth: 1200,
+    ogHeight: 630,
+  },
+  {
+    slug: "how-to-hire-an-mvp-developer",
+    title: "How to Hire an MVP Developer in 2026: The Founder's Vetting & Contract Guide",
+    seoTitle: "How to Hire an MVP Developer: Founder's Guide to Vetting & Contracts",
+    description:
+      "A founder's pragmatic guide to hiring an MVP developer. Learn essential vetting checkpoints: day-one GitHub repository ownership, weekly physical phone builds, and 30/40/30 milestone gates.",
+    category: "MVP",
+    datePublished: "2026-11-15T10:00:00Z",
+    dateModified: "2026-11-15T10:00:00Z",
+    readTime: "6 min read",
+    heroImage: "/covers/how-to-hire-an-mvp-developer-illustration.webp",
+    ogImage: "/covers/how-to-hire-an-mvp-developer-og.png",
+    ogWidth: 1200,
+    ogHeight: 630,
+  },
+  {
     slug: "fixed-scope-vs-hourly-billing",
     title: "Is Fixed Scope or Hourly Billing Better for Building a Startup MVP?",
     seoTitle: "Fixed Scope vs Hourly Billing for Startup MVPs: Why Fixed Milestones Win",

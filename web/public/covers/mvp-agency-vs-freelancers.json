@@ -1,0 +1,33 @@
+{
+  "slug": "mvp-agency-vs-freelancers",
+  "template_version": "template-v1",
+  "headline": "MVP Agency vs. Freelancers for Startups",
+  "headline_word_count": 6,
+  "category": "CONTRACTS",
+  "scene": "A founder and engineer comparing integrated roadmap vs fragmented pieces",
+  "alt_text": "Illustration comparing an integrated MVP studio against fragmented freelance contractors for MVP Agency vs. Freelancers.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators comparing an integrated delivery roadmap with connected nodes in emerald green against fragmented pieces.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/mvp-agency-vs-freelancers-illustration.png",
+    "illustration_webp": "/covers/mvp-agency-vs-freelancers-illustration.webp",
+    "link_preview_og": "/covers/mvp-agency-vs-freelancers-og.png",
+    "square_social": "/covers/mvp-agency-vs-freelancers-square.png",
+    "linkedin_landscape": "/covers/mvp-agency-vs-freelancers-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1116210,
+    "og_png": 181438,
+    "square_png": 82089,
+    "linkedin_png": 181438
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}
