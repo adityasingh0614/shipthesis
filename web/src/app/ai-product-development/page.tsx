@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.shipthesis.com/opengraph-image.png",
+        url: "https://www.shipthesis.com/opengraph-image.png?v=2",
         width: 1200,
         height: 630,
         alt: "Ship Thesis - AI Product Development for Founders",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "AI Product Development for Founders · Ship Thesis",
     description:
       "We build AI features for documents and reporting, where the numbers are calculated in code and checked before they reach your customer.",
-    images: ["https://www.shipthesis.com/opengraph-image.png"],
+    images: ["https://www.shipthesis.com/opengraph-image.png?v=2"],
   },
 };
 

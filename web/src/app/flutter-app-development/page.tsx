@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.shipthesis.com/opengraph-image.png",
+        url: "https://www.shipthesis.com/opengraph-image.png?v=2",
         width: 1200,
         height: 630,
         alt: "Ship Thesis - Flutter App Development for Startups and MVPs",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Flutter App Development for Startups and MVPs · Ship Thesis",
     description:
       "Flutter apps for iOS and Android from one codebase. A working build on your phone every Friday, offline persistence, and code you own from day one.",
-    images: ["https://www.shipthesis.com/opengraph-image.png"],
+    images: ["https://www.shipthesis.com/opengraph-image.png?v=2"],
   },
 };
 

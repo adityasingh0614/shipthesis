@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: `${SITE_URL}/opengraph-image.png`,
+        url: `${SITE_URL}/opengraph-image.png?v=2`,
         width: 1200,
         height: 630,
         alt: HOME_TITLE,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/opengraph-image.png`],
+    images: [`${SITE_URL}/opengraph-image.png?v=2`],
   },
   verification: {
     other: {
@@ -88,14 +88,15 @@ const jsonLd = {
       "@type": ["Organization", "ProfessionalService"],
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
+      legalName: SITE_NAME,
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/icon-512.png`,
+        url: `${SITE_URL}/google-logo.png?v=2`,
         width: 512,
         height: 512,
       },
-      image: `${SITE_URL}/icon-512.png`,
+      image: `${SITE_URL}/google-logo.png?v=2`,
       description: SITE_DESCRIPTION,
       email: "info@shipthesis.com",
       serviceType: [

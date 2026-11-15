@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.shipthesis.com/opengraph-image.png",
+        url: "https://www.shipthesis.com/opengraph-image.png?v=2",
         width: 1200,
         height: 630,
         alt: "Ship Thesis - MVP Development for Startups",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "MVP Development for Startups | Fixed Scope · Ship Thesis",
     description:
       "We build your MVP in weeks for a fixed price. Upfront planning, weekly working builds, milestone payments, and code in your GitHub from day one.",
-    images: ["https://www.shipthesis.com/opengraph-image.png"],
+    images: ["https://www.shipthesis.com/opengraph-image.png?v=2"],
   },
 };
 
