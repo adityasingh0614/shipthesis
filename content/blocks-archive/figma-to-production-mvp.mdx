@@ -1,0 +1,143 @@
+# How to Turn Figma Designs into Production Code for an MVP Without Rebuilding Twice
+
+Turning Figma designs into production code without rebuilding twice requires establishing direct design token mapping and strict component boundaries before writing application logic. By translating Figma color variables and spacing scales directly into Tailwind CSS utility classes and React components, engineering teams eliminate duplicate styling work and deliver maintainable software in weeks.
+
+### The Short Version
+* **Unified design token primitives**: Mapping Figma variables directly to Tailwind CSS configuration ensures consistent colors, typography scales, and surface radii across client interfaces.
+* **Three-screen core scoping**: Constraining initial wireframe files to three essential user workflows prevents design bloat from stalling frontend development momentum.
+* **Composable component boundaries**: Structuring frontend files around reusable design system primitives prevents styling duplication and simplifies future feature additions.
+
+---
+
+## Why Startups End Up Rebuilding Figma Designs Twice
+
+Many early-stage startup teams spend extensive cycles polishing pixel-perfect Figma screens, only to watch frontend engineers rebuild the interface from scratch in code. This disconnect typically occurs for three specific reasons:
+
+1. **Static Mockup Illusions**: Figma frames represent static viewports with hardcoded text lengths and fixed coordinate placements. When transformed into responsive web or mobile interfaces, layouts break under dynamic database content, varying screen aspect ratios, and mobile keyboard overlays.
+2. **Missing Token Standard**: Designers often use ad-hoc hex color codes, arbitrary padding values, and varying font sizes across different Figma artboards. When developers inspect individual elements, they write custom, one-off styles rather than pulling from a shared design token system.
+3. **Over-Specification of Non-Core Flows**: Teams frequently draft dozens of peripheral screens—such as complex profile settings, notification preferences, and secondary dashboards—before proving that users will complete the primary application action.
+
+Bridging this gap requires aligning design files directly with frontend engineering conventions from day one.
+
+---
+
+## Establishing the Design Token Bridge: Figma to Tailwind CSS
+
+The most efficient handoff process replaces arbitrary canvas values with a shared design token schema. Ship Thesis builds web and SaaS applications using Next.js, React, TypeScript, and Tailwind CSS {{c:STACK-1}}. By mapping Figma design variables directly into Tailwind's theme configuration, designers and developers speak the same styling vocabulary.
+
+### 1. Spatial and Sizing Scales
+Instead of using arbitrary pixel coordinates, layout spacing adheres to a standardized scale. A 4px base increment establishes clean vertical and horizontal rhythm:
+* Small components: `p-2` (8px) or `p-3` (12px)
+* Standard cards and inputs: `p-4` (16px) or `p-6` (24px)
+* Section containers: `py-12` (48px) or `py-16` (64px)
+
+### 2. Semantic Color Variables
+Figma color palettes should avoid raw values like `#14201A` scattered across components. Instead, define semantic variables that map directly to Tailwind CSS tokens:
+* Primary Action: `var(--brand-emerald)` (`#10B981`)
+* Deep Foreground Ink: `var(--ink-obsidian)` (`#14201A`)
+* Card Surface: `var(--surface-card)` (`#FFFFFF`)
+* Border Outline: `var(--line-subtle)` (`#E5E7EB`)
+
+---
+
+## The Three-Screen Scoping Rule for Figma Wireframes
+
+Before writing any frontend markup, founders should resist the urge to design an exhaustive twenty-screen wireframe deck. A disciplined product development process focuses on the essential value engine. We scope a first MVP down to about three core screens or workflows to test the primary value hypothesis before adding secondary capabilities {{c:SCOPE-1}}.
+
+| Screen Role | Primary Functional Objective | Common Elements to Strip |
+| :--- | :--- | :--- |
+| **1. Ingestion / Input Screen** | Captures user intent or raw business data | Social sign-ins, complex multi-step wizards, custom avatar pickers |
+| **2. Core Engine / Processing Screen** | Executes the primary business computation | Complex filter sidebars, multi-layer analytics charts, bulk export tooling |
+| **3. Output / Value Artifact Screen** | Delivers actionable results to the user | Complex social sharing integrations, comment threads, secondary export tabs |
+
+By restricting initial Figma files to this three-screen core loop, engineering teams complete production-ready React components without getting bogged down in edge-case designs.
+
+---
+
+## Architectural Code Implementation: Bridging Tokens to React Components
+
+Below is an engineered pattern illustrating how a clean token bridge maps Figma specifications into a responsive, type-safe Next.js component using Tailwind CSS:
+
+```typescript
+import React from "react";
+
+interface ActionCardProps {
+  title: string;
+  badgeLabel: string;
+  description: string;
+  onExecute: () => void;
+  status: "idle" | "processing" | "completed";
+}
+
+/**
+ * Clean primitive mapping Figma tokens to Tailwind CSS utility classes.
+ * Colors, borders, and typography align with the shared token dictionary.
+ */
+export function ActionCard({
+  title,
+  badgeLabel,
+  description,
+  onExecute,
+  status,
+}: ActionCardProps) {
+  return (
+    <article className="w-full max-w-md rounded-xl border border-line bg-surface p-6 shadow-sm transition-all hover:border-emerald-500/30">
+      {/* Header Row */}
+      <div className="flex items-center justify-between gap-3">
+        <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 font-mono text-xs font-medium text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
+          {badgeLabel}
+        </span>
+        <span className="font-mono text-xs text-ink/40 uppercase">v1 Core</span>
+      </div>
+
+      {/* Content */}
+      <h3 className="mt-3 font-display text-lg font-bold text-ink">
+        {title}
+      </h3>
+      <p className="mt-1 text-sm text-ink/70 leading-relaxed">
+        {description}
+      </p>
+
+      {/* Execution Trigger */}
+      <div className="mt-6 pt-4 border-t border-line/60 flex items-center justify-end">
+        <button
+          type="button"
+          onClick={onExecute}
+          disabled={status === "processing"}
+          className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-500 focus-visible:outline-2 focus-visible:outline-emerald-600 disabled:opacity-50"
+        >
+          {status === "processing" ? "Processing..." : "Run Analysis"}
+        </button>
+      </div>
+    </article>
+  );
+}
+```
+
+This pattern ensures that all style rules reference centralized design tokens. If product requirements necessitate shifting corner radiuses from `rounded-lg` to `rounded-xl`, updating the shared token config updates the entire application without manual component refactoring.
+
+---
+
+## Weekly Verification: Inspecting Working Code, Not Static Frames
+
+Static mockups can hide critical workflow flaws. Software is meant to be touched, scrolled, and tested against real network conditions. Under a disciplined development schedule, the founder gets a working build to test on their own phone or browser preview every Friday {{c:BUILD-1}}.
+
+Furthermore, keeping all source code inside the client's own GitHub organization from the very first commit ensures that founders own their implementation assets without agency lock-in {{c:OWN-1}}.
+
+[Book a free 20-minute assessment call]({{BOOKING_URL}}) to review wireframes, architecture, and scope {{c:CTA-1}}. We examine your design system, define component boundaries, and structure predictable development milestones.
+
+---
+
+## Frequently Asked Questions
+
+### Should we use Figma plugins that automatically generate React code?
+Automated Figma-to-code export plugins often generate brittle, unmaintainable markup full of hardcoded absolute positioning and inline CSS styles. While these tools can assist in extracting individual SVG vector paths or color tokens, production frontend architecture requires human engineering to build clean, responsive component hierarchies.
+
+### How detailed should our Figma wireframes be before hiring a development team?
+Wireframes should focus on user information hierarchy, data input fields, and core action buttons. High-fidelity visual micro-interactions and detailed motion physics can be defined during development sprints rather than stalling early engineering momentum.
+
+### Can Figma tokens support both mobile and web applications simultaneously?
+Yes. Design tokens defined as platform-agnostic JSON variables can be consumed simultaneously by Tailwind CSS for Next.js web applications and Dart theme data for cross-platform Flutter mobile applications.
+
+### What is the biggest mistake founders make in Figma before development?
+The most frequent mistake is designing dozens of hypothetical screens and administrative settings before verifying the primary value loop. Restricting initial wireframes to three core workflows saves valuable engineering cycles and accelerates time to market.

@@ -7,10 +7,8 @@ import {
   CodeOwnershipPillarsDiagram,
   WeeklyBuildRhythmDiagram,
   FlutterVsReactNativeDiagram,
-  MultiTenantSecurityDiagram,
   AgencyVettingChecklistDiagram,
-  AiWorkflowArchitectureDiagram,
-  StripeWebhookIdempotencyDiagram,
+  FixedScopeVsHourlyBillingDiagram,
 } from "@/components/blog/InlineDiagram";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 
@@ -140,19 +138,6 @@ function renderContentWithDiagram(slug: string, contentHtml: string) {
       }
       return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
     }
-    case "nextjs-supabase-multi-tenant-rls": {
-      const split = splitAtHeading(contentHtml, "Defining the Multi-Tenant Schema and Row-Level Security Policies");
-      if (split) {
-        return (
-          <>
-            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
-            <MultiTenantSecurityDiagram />
-            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
-          </>
-        );
-      }
-      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
-    }
     case "how-to-vet-software-studios": {
       const split = splitAtHeading(contentHtml, "The Founder's Due Diligence Evaluation Matrix");
       if (split) {
@@ -166,26 +151,13 @@ function renderContentWithDiagram(slug: string, contentHtml: string) {
       }
       return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
     }
-    case "integrating-llms-into-saas-mvp": {
-      const split = splitAtHeading(contentHtml, "Implementing Streaming and Structured Outputs in Next.js");
+    case "fixed-scope-vs-hourly-billing": {
+      const split = splitAtHeading(contentHtml, "Fixed Scope vs. Hourly Billing: Direct Risk Matrix");
       if (split) {
         return (
           <>
             <div dangerouslySetInnerHTML={{ __html: split[0] }} />
-            <AiWorkflowArchitectureDiagram />
-            <div dangerouslySetInnerHTML={{ __html: split[1] }} />
-          </>
-        );
-      }
-      return <div dangerouslySetInnerHTML={{ __html: contentHtml }} />;
-    }
-    case "saas-stripe-webhooks-idempotency": {
-      const split = splitAtHeading(contentHtml, "Implementing Idempotent Webhook Handling in Next.js");
-      if (split) {
-        return (
-          <>
-            <div dangerouslySetInnerHTML={{ __html: split[0] }} />
-            <StripeWebhookIdempotencyDiagram />
+            <FixedScopeVsHourlyBillingDiagram />
             <div dangerouslySetInnerHTML={{ __html: split[1] }} />
           </>
         );

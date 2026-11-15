@@ -984,3 +984,234 @@ export function StripeWebhookIdempotencyDiagram() {
     </figure>
   );
 }
+
+// =============================================================================
+// 10. POST 10: FIXED-SCOPE MILESTONES VS HOURLY BILLING (Risk Governance Diagram)
+// =============================================================================
+export function FixedScopeVsHourlyBillingDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Fixed-Scope Milestone Gating vs. Open-Ended Hourly Timesheets"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>CAPITAL GOVERNANCE &amp; INCENTIVE ALIGNMENT</span>
+            <h3 className={styles.graphicTitle}>
+              Fixed-Scope Milestone Gating vs. Open-Ended Hourly Timesheets
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Capital Follows Working Software</span>
+        </div>
+
+        {/* Lane 1: Hourly Timesheet Billing */}
+        <div className={styles.tradLane}>
+          <div className={styles.laneMetaRow}>
+            <span className={styles.tradBadge}>OPEN-ENDED HOURLY BILLING</span>
+            <span className={styles.tradMetaLabel}>100% Client Financial Risk · Uncapped Invoices</span>
+          </div>
+
+          <div className={styles.tradTimelineBar}>
+            <div className={styles.tradDepositBlock}>
+              <span className={styles.tradBlockNum}>Week 01</span>
+              <span className={styles.tradBlockLabel}>Timesheet Active</span>
+            </div>
+            <div className={styles.tradOpaqueBlock}>
+              <div className={styles.opaqueTitleRow}>
+                <span className={styles.opaqueStripe} />
+                <span className={styles.opaqueText}>HOURLY BILLING CREEP</span>
+                <span className={styles.opaqueStripe} />
+              </div>
+              <span className={styles.opaqueSubtext}>
+                Incentivizes longer development cycles · Founder audits timesheets rather than software
+              </span>
+            </div>
+            <div className={styles.tradCliffBlock}>
+              <span className={styles.cliffTitle}>Uncapped Spend</span>
+              <span className={styles.cliffSubtext}>Runaway Runway Risk</span>
+            </div>
+          </div>
+        </div>
+
+        {/* VS SEPARATOR */}
+        <div className={styles.vsSeparator}>
+          <span className={styles.vsLine} />
+          <span className={styles.vsBadge}>VS</span>
+          <span className={styles.vsLine} />
+        </div>
+
+        {/* Lane 2: 30/40/30 Fixed Milestone Pipeline */}
+        <div className={styles.multiTenantGrid} style={{ marginTop: "16px" }}>
+          {/* Milestone 1 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>STAGE 01</span>
+              <span className={styles.tierBadge}>30% DEPOSIT</span>
+            </div>
+            <div className={styles.tierTitle}>Kickoff &amp; Repository</div>
+            <div className={styles.tierContent}>
+              <span>Client GitHub provisioned day one. Architecture schemas and project scaffolding established.</span>
+              <div className={styles.tierCodeSnippet}>BILL-1 · Day-One GitHub</div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Milestone 2 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>STAGE 02</span>
+              <span className={styles.tierBadge}>40% MIDPOINT</span>
+            </div>
+            <div className={styles.tierTitle}>Interactive Build Gate</div>
+            <div className={styles.tierContent}>
+              <span>Released ONLY after founder inspects auth, database schemas, and primary flows on live staging.</span>
+              <div className={styles.tenantSplitBoxes}>
+                <div className={styles.tenantBoxActive}>
+                  <span>✓</span>
+                  <span>Tested on Devices</span>
+                </div>
+                <div className={styles.tenantBoxActive}>
+                  <span>7d</span>
+                  <span>Review Window</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Milestone 3 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>STAGE 03</span>
+              <span className={styles.tierBadge}>30% LAUNCH</span>
+            </div>
+            <div className={styles.tierTitle}>Production Handover</div>
+            <div className={styles.tierContent}>
+              <span>Production release, app store submission, and verified transfer of all credentials and code.</span>
+              <div className={styles.tierCodeSnippet}>BILL-3 · Complete IP</div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>BILL-4 INVARIANT:</strong> Ship Thesis does not bill by the hour. Billing is the 3:4:3 milestone split on each project, withholding 70% of capital until working software is demonstrated.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Comparison between open-ended hourly billing exposure and the 30/40/30 milestone inspection pipeline.
+      </figcaption>
+    </figure>
+  );
+}
+
+// =============================================================================
+// 11. POST 11: FIGMA TO PRODUCTION MVP (Design Token Ingestion Pipeline)
+// =============================================================================
+export function FigmaToCodePipelineDiagram() {
+  return (
+    <figure
+      className={styles.figure}
+      role="region"
+      aria-label="Figma Design Tokens to Production React Components"
+    >
+      <div className={styles.graphicCard}>
+        <div className={styles.graphicHeader}>
+          <div>
+            <span className={styles.tagMono}>DESIGN SYSTEM INGESTION TOPOLOGY</span>
+            <h3 className={styles.graphicTitle}>
+              Figma Design Tokens to Production React Components
+            </h3>
+          </div>
+          <span className={styles.graphicBadge}>Zero Duplicate Styling</span>
+        </div>
+
+        <div className={styles.multiTenantGrid}>
+          {/* Tier 1 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>STAGE 01</span>
+              <span className={styles.tierBadge}>FIGMA TOKENS</span>
+            </div>
+            <div className={styles.tierTitle}>Design Variables</div>
+            <div className={styles.tierContent}>
+              <span>Standardized color variables, 4px spatial rhythm, and typography scales defined in design files.</span>
+              <div className={styles.tierCodeSnippet}>colors.brand-emerald</div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 2 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>STAGE 02</span>
+              <span className={styles.tierBadge}>TAILWIND BRIDGE</span>
+            </div>
+            <div className={styles.tierTitle}>Theme Configuration</div>
+            <div className={styles.tierContent}>
+              <span>CSS variables and utility classes map tokens directly to standardized utility classes.</span>
+              <div className={styles.tenantSplitBoxes}>
+                <div className={styles.tenantBoxActive}>
+                  <span>#</span>
+                  <span>CSS Custom Props</span>
+                </div>
+                <div className={styles.tenantBoxActive}>
+                  <span>⚡</span>
+                  <span>Utility Classes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className={styles.arrowCol}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Tier 3 */}
+          <div className={styles.tierCard}>
+            <div className={styles.tierHeader}>
+              <span className={styles.tierNum}>STAGE 03</span>
+              <span className={styles.tierBadge}>REACT PRIMITIVES</span>
+            </div>
+            <div className={styles.tierTitle}>Production Components</div>
+            <div className={styles.tierContent}>
+              <span>Type-safe Next.js components consume semantic tokens with responsive states and zero styling drift.</span>
+              <div className={styles.tierCodeSnippet}>&lt;ActionCard variant="core" /&gt;</div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerQuote}>
+          <strong>STACK-1 INVARIANT:</strong> Next.js and Tailwind CSS consume standardized design tokens directly, preventing styling duplication and ensuring Figma screens map 1:1 into production code.
+        </div>
+      </div>
+
+      <figcaption className={styles.caption}>
+        <span className={styles.figureNum}>Figure 1:</span> Three-stage token mapping pipeline translating Figma variables directly into Tailwind CSS and React component primitives.
+      </figcaption>
+    </figure>
+  );
+}

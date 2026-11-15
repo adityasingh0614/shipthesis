@@ -29,10 +29,8 @@ DEFAULT_URLS = [
     f"https://{HOST}/blog/code-ownership-hiring-agency",
     f"https://{HOST}/blog/why-weekly-working-builds-matter",
     f"https://{HOST}/blog/flutter-vs-react-native-mvp",
-    f"https://{HOST}/blog/nextjs-supabase-multi-tenant-rls",
     f"https://{HOST}/blog/how-to-vet-software-studios",
-    f"https://{HOST}/blog/integrating-llms-into-saas-mvp",
-    f"https://{HOST}/blog/saas-stripe-webhooks-idempotency",
+    f"https://{HOST}/blog/fixed-scope-vs-hourly-billing",
 ]
 
 ENDPOINTS = [

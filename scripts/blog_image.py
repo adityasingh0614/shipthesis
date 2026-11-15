@@ -146,6 +146,30 @@ SCENE_LIBRARY = {
         ),
         "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
         "alt_text": "Illustration of payment webhook verification and idempotency for Handling Stripe Webhooks Reliably in Next.js."
+    },
+    "fixed-scope-vs-hourly-billing": {
+        "slug": "fixed-scope-vs-hourly-billing",
+        "headline": "Fixed-Scope Milestones vs. Hourly Billing",
+        "category": "CONTRACTS",
+        "scene": "Two founders comparing milestone gates against open timesheet burn",
+        "prompt": (
+            "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, "
+            "two startup collaborators analyzing a comparison board contrasting erratic hourly burn charts against an orderly 3-stage milestone pipeline."
+        ),
+        "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+        "alt_text": "Illustration comparing fixed-scope milestone gates against hourly billing for Fixed-Scope Milestones vs. Hourly Billing."
+    },
+    "figma-to-production-mvp": {
+        "slug": "figma-to-production-mvp",
+        "headline": "Turning Figma Designs into Production Code",
+        "category": "PRODUCT",
+        "scene": "A designer and engineer bridging Figma canvas into code components",
+        "prompt": (
+            "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, "
+            "two startup collaborators bridging design to code, transforming a Figma wireframe canvas into crisp code components."
+        ),
+        "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+        "alt_text": "Illustration of design token pipeline from Figma to code components for Turning Figma Designs into Production Code."
     }
 }
 

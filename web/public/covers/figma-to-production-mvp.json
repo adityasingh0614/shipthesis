@@ -1,0 +1,33 @@
+{
+  "slug": "figma-to-production-mvp",
+  "template_version": "template-v1",
+  "headline": "Turning Figma Designs into Production Code",
+  "headline_word_count": 6,
+  "category": "PRODUCT",
+  "scene": "A designer and engineer bridging Figma canvas into code components",
+  "alt_text": "Illustration of design token pipeline from Figma to code components for Turning Figma Designs into Production Code.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators bridging design to code, transforming a Figma wireframe canvas into crisp code components.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/figma-to-production-mvp-illustration.png",
+    "illustration_webp": "/covers/figma-to-production-mvp-illustration.webp",
+    "link_preview_og": "/covers/figma-to-production-mvp-og.png",
+    "square_social": "/covers/figma-to-production-mvp-square.png",
+    "linkedin_landscape": "/covers/figma-to-production-mvp-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 1077822,
+    "og_png": 171783,
+    "square_png": 80111,
+    "linkedin_png": 171783
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}

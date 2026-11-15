@@ -1,0 +1,33 @@
+{
+  "slug": "fixed-scope-vs-hourly-billing",
+  "template_version": "template-v1",
+  "headline": "Fixed-Scope Milestones vs. Hourly Billing",
+  "headline_word_count": 5,
+  "category": "CONTRACTS",
+  "scene": "Two founders comparing milestone gates against open timesheet burn",
+  "alt_text": "Illustration comparing fixed-scope milestone gates against hourly billing for Fixed-Scope Milestones vs. Hourly Billing.",
+  "prompt": "Flat vector illustration, modern tech startup style, soft lavender-to-white gradient background, two startup collaborators analyzing a comparison board contrasting erratic hourly burn charts against an orderly 3-stage milestone pipeline.",
+  "negative_prompt": "text, letters, words, numbers, typography, logos, brand names, watermarks, signature.",
+  "aspect_ratio": "16:9",
+  "assets": {
+    "illustration_16x9": "/covers/fixed-scope-vs-hourly-billing-illustration.png",
+    "illustration_webp": "/covers/fixed-scope-vs-hourly-billing-illustration.webp",
+    "link_preview_og": "/covers/fixed-scope-vs-hourly-billing-og.png",
+    "square_social": "/covers/fixed-scope-vs-hourly-billing-square.png",
+    "linkedin_landscape": "/covers/fixed-scope-vs-hourly-billing-linkedin.png"
+  },
+  "file_sizes_bytes": {
+    "illustration_png": 963674,
+    "og_png": 165502,
+    "square_png": 86033,
+    "linkedin_png": 165502
+  },
+  "checks": {
+    "headline_under_9_words": true,
+    "no_prices_or_timelines": true,
+    "og_under_300kb": true,
+    "no_baked_text_in_art": true,
+    "brand_colors_applied": true
+  },
+  "status": "ready_for_review"
+}
