@@ -29,6 +29,7 @@ Ship Thesis is an Indian product engineering studio founded by Aditya Kumar Sing
 - [Assess Yourself](https://www.shipthesis.com/work/assess-yourself): Offline-first Flutter mobile test engine with crash-resilient session recovery.
 
 ## Engagement Model
+- Pricing & Cost: How much does an MVP cost? It depends on scope, so we don't publish a price list. On a free 20-minute call you'll hear a ballpark range before you decide anything. Projects are paid in three milestones (30/40/30), never by the hour, and the code is in your GitHub from day one.
 - Fixed-Scope Milestones: 30% / 40% / 30% payment schedule tied to verified software delivery. No surprise hourly rates.
 - Weekly Working Builds: Test progress directly on your phone or staging domain every week.
 - 100% Code Ownership: Private git repositories created under your GitHub organization. You own all IP from day one.

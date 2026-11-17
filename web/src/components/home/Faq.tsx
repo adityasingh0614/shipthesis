@@ -23,8 +23,8 @@ const ITEMS = [
   },
   {
     icon: CurrencyDollar,
-    q: "How much does it cost?",
-    a: "Every project is scoped first, then quoted as a fixed price in writing after a free 20-minute call. No hourly billing.",
+    q: "How much does an MVP cost?",
+    a: "It depends on scope, so we don't publish a price list. On a free 20-minute call you'll hear a ballpark range before you decide anything. Projects are paid in three milestones (30/40/30), never by the hour, and the code is in your GitHub from day one.",
   },
   {
     icon: PhoneCall,

@@ -41,6 +41,14 @@ const homeFaqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
+      name: "How much does an MVP cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It depends on scope, so we don't publish a price list. On a free 20-minute call you'll hear a ballpark range before you decide anything. Projects are paid in three milestones (30/40/30), never by the hour, and the code is in your GitHub from day one.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "What happens on the free call?",
       acceptedAnswer: {
         "@type": "Answer",
