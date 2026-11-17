@@ -164,6 +164,10 @@ export default function SaasDevelopmentPage() {
       ]}
       faqs={[
         {
+          q: "How much does a SaaS MVP cost?",
+          a: "It depends on scope, so we don't publish a price list. On a free 20-minute call you'll hear a ballpark range before you decide anything. Projects are paid in three milestones (30/40/30), never by the hour, and the code is in your GitHub from day one.",
+        },
+        {
           q: "What tech stack do you use for SaaS builds?",
           a: "We build SaaS applications primarily with Next.js (React), TypeScript, and PostgreSQL (via Supabase or Neon) with Row-Level Security (RLS) for multi-tenant data isolation. For styling we use CSS modules or Tailwind, and integrate Stripe for recurring subscriptions and automated invoicing.",
         },

@@ -169,6 +169,10 @@ export default function AiProductDevelopmentPage() {
       ]}
       faqs={[
         {
+          q: "How much does an AI product MVP cost?",
+          a: "It depends on scope, so we don't publish a price list. On a free 20-minute call you'll hear a ballpark range before you decide anything. Projects are paid in three milestones (30/40/30), never by the hour, and the code is in your GitHub from day one.",
+        },
+        {
           q: "How do you stop the AI from making things up?",
           a: "No model can promise it will never be wrong, so we design around that. Numbers are calculated in regular code first. The model only writes the explanation around those exact figures, and we check its output against a strict format and test it before release.",
         },

@@ -177,6 +177,10 @@ export default function FlutterAppDevelopmentPage() {
       ]}
       faqs={[
         {
+          q: "How much does a Flutter app MVP cost?",
+          a: "It depends on scope, so we don't publish a price list. On a free 20-minute call you'll hear a ballpark range before you decide anything. Projects are paid in three milestones (30/40/30), never by the hour, and the code is in your GitHub from day one.",
+        },
+        {
           q: "Why Flutter instead of separate iPhone and Android apps?",
           a: "Native apps need two separate codebases and two rounds of testing. Flutter lets us build one app for both platforms, which means lower cost and faster delivery with a smooth, native feel.",
         },
